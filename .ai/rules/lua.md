@@ -9,7 +9,7 @@ Lua 5.1 only. Do not use Lua 5.2+ features (goto, native bitwise operators, etc.
 - **Local variables**: `camelCase` (`local playerName`, `local currentScale`)
 - **Local constants**: `UPPER_SNAKE_CASE` (`local MAX_SCALE = 3.0`)
 - **Local functions**: `camelCase` (`local function applyScale()`)
-- **Global tables/namespaces**: `PascalCase` (`NameplateScaleDB`, `ZaeUI`)
+- **Global tables/namespaces**: `PascalCase` (`ZaeUI_NameplateScaleDB`, `ZaeUI`)
 - **Table methods**: `PascalCase` (`MyAddon:OnInitialize()`)
 - **Addon prefix**: Use the addon name as prefix for globals (`SLASH_NAMEPLATESSCALE1`)
 - **Unused variables**: Prefix with `_` (`for _, value in pairs(t)`)
@@ -135,7 +135,7 @@ end
 - `Interface`: Always set to the target version (e.g. `120000` for Midnight)
 - `Title`: Human-readable addon name
 - `Notes`: Short description in English
-- `Author`: `ZaeUI`
+- `Author`: `loicngr`
 - `Version`: Semantic versioning (`1.0.0`)
 - `SavedVariables`: Explicitly list each persisted table
 - List `.lua` files in load order
