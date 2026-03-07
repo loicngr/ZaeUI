@@ -28,6 +28,7 @@ frame:SetScript("OnEvent", function(self, event, addonName)
         self:UnregisterEvent("ADDON_LOADED")
 
         print("|cff00ccff[ZaeUI_NameplateScale]|r Loaded. Target nameplate scale: " .. ZaeUI_NameplateScaleDB.scale)
+        print("|cff00ccff[ZaeUI_NameplateScale]|r Made by loicngr")
         print("|cff00ccff[ZaeUI_NameplateScale]|r Type /znps help for commands.")
     end
 end)
