@@ -4,13 +4,13 @@ A collection of lightweight World of Warcraft addons for Retail / Midnight.
 
 ## Addons
 
-| Addon | Description | Command |
-|-------|-------------|---------|
-| [ZaeUI_NameplateScale](ZaeUI_NameplateScale/) | Scale up the nameplate of your current target | `/znps` |
+| Addon | Description | Command | Download |
+|-------|-------------|---------|----------|
+| [ZaeUI_NameplateScale](ZaeUI_NameplateScale/) | Scale up the nameplate of your current target | `/znps` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplateescale) |
 
 ## Installation
 
-1. Download the addon zip from [Releases](https://github.com/loicngr/ZaeUI/releases)
+1. Download the addon zip from [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplateescale) or [GitHub Releases](https://github.com/loicngr/ZaeUI/releases)
 2. Extract the folder into:
    ```
    World of Warcraft/_retail_/Interface/AddOns/
