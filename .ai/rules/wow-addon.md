@@ -99,6 +99,16 @@ Optional fields as needed:
 - Slash global: `SLASH_ADDONNAME1 = "/cmd"`
 - Handler: `SlashCmdList["ADDONNAME"] = function(msg) end`
 
+## Versioning
+
+- Before pushing changes to an addon, **always ask the user** if the `## Version` in the `.toc` file should be bumped
+- Use semantic versioning: `MAJOR.MINOR.PATCH`
+  - `PATCH`: bug fix, minor tweak
+  - `MINOR`: new feature, new command
+  - `MAJOR`: breaking change, full rewrite
+- The version bump commit should be the last commit before pushing
+- A pre-push git hook enforces this: if `.lua` or `.toc` files changed in a `ZaeUI_*/` folder, the `.toc` version line must also be modified
+
 ## Player Messages
 
 - Colored prefix: `|cff00ccff[AddonName]|r`
