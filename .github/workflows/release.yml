@@ -126,9 +126,11 @@ jobs:
               echo "::warning::No CurseForge project ID for $ADDON_NAME, skipping"
               continue
             fi
+            TOC_VERSION=$(grep -oP '## Version:\s*\K.*' "${ADDON_NAME}/${ADDON_NAME}.toc")
+            CF_CHANGELOG=$(printf "**Release:** %s\n\n%s" "$TAG" "$RELEASE_BODY")
             METADATA=$(jq -n \
-              --arg changelog "$RELEASE_BODY" \
-              --arg version "$TAG" \
+              --arg changelog "$CF_CHANGELOG" \
+              --arg version "$TOC_VERSION" \
               --argjson gameVersions "[$CF_VERSION_ID]" \
               '{changelog: $changelog, changelogType: "markdown", displayName: $version, gameVersions: $gameVersions, releaseType: "release"}')
             echo "Uploading $zip to CurseForge project $PROJECT_ID..."
