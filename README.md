@@ -1,6 +1,7 @@
 # ZaeUI
 
 [![Lint](https://github.com/loicngr/ZaeUI/actions/workflows/lint.yml/badge.svg)](https://github.com/loicngr/ZaeUI/actions/workflows/lint.yml)
+[![Release](https://img.shields.io/github/v/release/loicngr/ZaeUI)](https://github.com/loicngr/ZaeUI/releases/latest)
 
 A collection of lightweight World of Warcraft addons for Retail / Midnight.
 
