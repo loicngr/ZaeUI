@@ -1,8 +1,8 @@
 ## Interface: 120000
 ## Title: ZaeUI_NameplateScale
-## Notes: Scale up the nameplate of your current target.
+## Notes: Scale up the nameplate of your current target with automatic overlap adjustment.
 ## Author: loicngr
-## Version: 1.0.1
+## Version: 1.1.0
 ## SavedVariables: ZaeUI_NameplateScaleDB
 
 ZaeUI_NameplateScale.lua
