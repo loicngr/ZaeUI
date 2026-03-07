@@ -28,11 +28,12 @@ frame:SetScript("OnEvent", function(self, event, addonName)
         self:UnregisterEvent("ADDON_LOADED")
 
         print("|cff00ccff[ZaeUI_NameplateScale]|r Loaded. Target nameplate scale: " .. ZaeUI_NameplateScaleDB.scale)
+        print("|cff00ccff[ZaeUI_NameplateScale]|r Type /znps help for commands.")
     end
 end)
 
 -- Slash command handler
-SLASH_ZAEUINAMEPLATESSCALE1 = "/nps"
+SLASH_ZAEUINAMEPLATESSCALE1 = "/znps"
 
 SlashCmdList["ZAEUINAMEPLATESSCALE"] = function(msg)
     msg = strtrim(msg)
@@ -44,7 +45,7 @@ SlashCmdList["ZAEUINAMEPLATESSCALE"] = function(msg)
     end
 
     if msg == "help" then
-        print("|cff00ccff[ZaeUI_NameplateScale]|r Usage: /nps <number> | /nps reset | /nps help")
+        print("|cff00ccff[ZaeUI_NameplateScale]|r Usage: /znps <number> | /znps reset | /znps help")
         return
     end
 
@@ -57,7 +58,7 @@ SlashCmdList["ZAEUINAMEPLATESSCALE"] = function(msg)
 
     local value = tonumber(msg)
     if not value then
-        print("|cff00ccff[ZaeUI_NameplateScale]|r Usage: /nps <number> | /nps reset")
+        print("|cff00ccff[ZaeUI_NameplateScale]|r Usage: /znps <number> | /znps reset")
         return
     end
 
