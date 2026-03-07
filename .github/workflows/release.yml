@@ -1,0 +1,71 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute next version
+        id: version
+        run: |
+          LATEST_TAG=$(git tag -l 'v*' --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n 1)
+          if [ -z "$LATEST_TAG" ]; then
+            NEXT_TAG="v1.0.0"
+          else
+            PATCH=$(echo "$LATEST_TAG" | sed 's/v[0-9]*\.[0-9]*\.//')
+            PREFIX=$(echo "$LATEST_TAG" | sed 's/\.[0-9]*$//')
+            NEXT_TAG="${PREFIX}.$((PATCH + 1))"
+          fi
+          echo "tag=$NEXT_TAG" >> "$GITHUB_OUTPUT"
+          echo "prev_tag=$LATEST_TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          PREV_TAG="${{ steps.version.outputs.prev_tag }}"
+          if [ -z "$PREV_TAG" ]; then
+            LOG=$(git log --oneline)
+          else
+            LOG=$(git log --oneline "${PREV_TAG}..HEAD")
+          fi
+          {
+            echo "body<<EOF"
+            echo "## Changes"
+            echo ""
+            echo "$LOG"
+            echo ""
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Zip addons
+        run: |
+          shopt -s nullglob
+          for dir in ZaeUI_*/; do
+            name="${dir%/}"
+            zip -r "${name}.zip" "$dir"
+          done
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+          RELEASE_BODY: ${{ steps.changelog.outputs.body }}
+        run: |
+          git tag "$TAG"
+          git push origin "$TAG"
+          gh release create "$TAG" \
+            --title "$TAG" \
+            --notes "$RELEASE_BODY" \
+            ZaeUI_*.zip
