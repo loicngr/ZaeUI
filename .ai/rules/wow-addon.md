@@ -6,6 +6,11 @@
 - **Interface TOC**: `120000`
 - **Lua**: 5.1 (embedded runtime in WoW client)
 
+## Addon Naming
+
+All addons use the `ZaeUI_` prefix: `ZaeUI_<FeatureName>`.
+Examples: `ZaeUI_NameplateScale`, `ZaeUI_ActionBars`.
+
 ## Addon Structure
 
 Each addon is a self-contained folder at the repository root.
@@ -14,17 +19,17 @@ The folder name MUST match the `.toc` file name exactly.
 ### Simple addon (< 200 lines)
 
 ```
-AddonName/
-├── AddonName.toc
-└── AddonName.lua
+ZaeUI_FeatureName/
+├── ZaeUI_FeatureName.toc
+└── ZaeUI_FeatureName.lua
 ```
 
 ### Complex addon
 
 ```
-AddonName/
-├── AddonName.toc
-├── AddonName.lua          -- Entry point, initialization
+ZaeUI_FeatureName/
+├── ZaeUI_FeatureName.toc
+├── ZaeUI_FeatureName.lua  -- Entry point, initialization
 ├── Core/
 │   ├── Constants.lua      -- Shared constants
 │   ├── Utils.lua          -- Utility functions
@@ -44,7 +49,7 @@ Required fields:
 
 ```toc
 ## Interface: 120000
-## Title: AddonName
+## Title: ZaeUI_FeatureName
 ## Notes: Short description in English.
 ## Author: loicngr
 ## Version: 1.0.0
@@ -53,8 +58,8 @@ Required fields:
 Optional fields as needed:
 
 ```toc
-## SavedVariables: AddonNameDB
-## SavedVariablesPerCharacter: AddonNameCharDB
+## SavedVariables: ZaeUI_FeatureNameDB
+## SavedVariablesPerCharacter: ZaeUI_FeatureNameCharDB
 ## Dependencies: RequiredAddon
 ## OptionalDeps: OptionalAddon
 ```

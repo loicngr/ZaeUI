@@ -17,9 +17,9 @@ ZaeUI/
 │   └── rules/            -- Code rules and conventions
 ├── docs/
 │   └── plans/            -- Design documents and implementation plans
-├── <AddonName>/          -- One folder per addon
-│   ├── <AddonName>.toc   -- TOC file (metadata, SavedVariables, file list)
-│   ├── <AddonName>.lua   -- Main entry point
+├── ZaeUI_<Feature>/      -- One folder per addon (ZaeUI_ prefix)
+│   ├── ZaeUI_<Feature>.toc  -- TOC file (metadata, SavedVariables, file list)
+│   ├── ZaeUI_<Feature>.lua  -- Main entry point
 │   ├── Core/             -- Business logic (if needed)
 │   ├── Modules/          -- Feature modules (if needed)
 │   └── Libs/             -- Embedded libraries (if needed)
