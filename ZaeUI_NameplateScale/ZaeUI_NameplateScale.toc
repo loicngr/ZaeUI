@@ -1,8 +1,8 @@
 ## Interface: 120000
-## Title: NameplateScale
+## Title: ZaeUI_NameplateScale
 ## Notes: Scale up the nameplate of your current target.
 ## Author: loicngr
 ## Version: 1.0.0
-## SavedVariables: NameplateScaleDB
+## SavedVariables: ZaeUI_NameplateScaleDB
 
-NameplateScale.lua
+ZaeUI_NameplateScale.lua
