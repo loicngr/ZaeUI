@@ -1,0 +1,8 @@
+## Interface: 120000
+## Title: NameplateScale
+## Notes: Scale up the nameplate of your current target.
+## Author: loicngr
+## Version: 1.0.0
+## SavedVariables: NameplateScaleDB
+
+NameplateScale.lua
