@@ -17,6 +17,11 @@ Uses the native `nameplateSelectedScale` CVar — no frame hooking, no conflicts
 | `/znps reset` | Reset to default (1.2) |
 | `/znps help` | Show help |
 
+## Download
+
+- [GitHub Releases](https://github.com/loicngr/ZaeUI/releases)
+- [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplateescale)
+
 ## Features
 
 - Scale your target's nameplate to easily spot it in combat
