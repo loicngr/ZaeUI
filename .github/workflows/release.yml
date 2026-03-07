@@ -82,3 +82,53 @@ jobs:
             --title "$TAG" \
             --notes "$RELEASE_BODY" \
             ZaeUI_*.zip
+
+      - name: Get CurseForge game version ID
+        id: cf_version
+        env:
+          CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+        run: |
+          set -euo pipefail
+          VERSION_ID=$(curl -s -f -H "X-Api-Token: $CF_TOKEN" \
+            "https://wow.curseforge.com/api/game/versions" \
+            | jq '[.[] | select(.name | test("^12\\.")) | .id] | max')
+          if [ -z "$VERSION_ID" ] || [ "$VERSION_ID" = "null" ]; then
+            echo "::error::Failed to resolve CurseForge game version ID for Midnight (12.x)"
+            exit 1
+          fi
+          echo "id=$VERSION_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Upload to CurseForge
+        env:
+          CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          CF_VERSION_ID: ${{ steps.cf_version.outputs.id }}
+          TAG: ${{ steps.version.outputs.tag }}
+          RELEASE_BODY: ${{ steps.changelog.outputs.body }}
+        run: |
+          shopt -s nullglob
+          FAILED=0
+          for zip in ZaeUI_*.zip; do
+            ADDON_NAME="${zip%.zip}"
+            PROJECT_ID=$(jq -r --arg name "$ADDON_NAME" '.[$name] // empty' .curseforge.json)
+            if [ -z "$PROJECT_ID" ]; then
+              echo "::warning::No CurseForge project ID for $ADDON_NAME, skipping"
+              continue
+            fi
+            METADATA=$(jq -n \
+              --arg changelog "$RELEASE_BODY" \
+              --arg version "$TAG" \
+              --argjson gameVersions "[$CF_VERSION_ID]" \
+              '{changelog: $changelog, changelogType: "markdown", displayName: $version, gameVersions: $gameVersions, releaseType: "release"}')
+            echo "Uploading $zip to CurseForge project $PROJECT_ID..."
+            if curl -s -f \
+              -H "X-Api-Token: $CF_TOKEN" \
+              -F "metadata=$METADATA" \
+              -F "file=@$zip" \
+              "https://wow.curseforge.com/api/projects/${PROJECT_ID}/upload-file"; then
+              echo "Uploaded $zip successfully"
+            else
+              echo "::error::Failed to upload $zip to CurseForge project $PROJECT_ID"
+              FAILED=1
+            fi
+          done
+          if [ "$FAILED" -ne 0 ]; then exit 1; fi
