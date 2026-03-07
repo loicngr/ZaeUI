@@ -5,6 +5,7 @@
 local CreateFrame = CreateFrame
 local GetCVar = GetCVar
 local SetCVar = SetCVar
+local strtrim = strtrim
 
 -- Constants
 local ADDON_NAME = "NameplateScale"
@@ -39,6 +40,11 @@ SlashCmdList["NAMEPLATESSCALE"] = function(msg)
     if msg == "" then
         local current = GetCVar("nameplateSelectedScale")
         print("|cff00ccff[NameplateScale]|r Current scale: " .. current)
+        return
+    end
+
+    if msg == "help" then
+        print("|cff00ccff[NameplateScale]|r Usage: /nps <number> | /nps reset | /nps help")
         return
     end
 
