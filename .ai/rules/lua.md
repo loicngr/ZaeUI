@@ -135,7 +135,7 @@ end
 - `Interface`: Always set to the target version (e.g. `120000` for Midnight)
 - `Title`: Human-readable addon name
 - `Notes`: Short description in English
-- `Author`: `ZaeUI`
+- `Author`: `loicngr`
 - `Version`: Semantic versioning (`1.0.0`)
 - `SavedVariables`: Explicitly list each persisted table
 - List `.lua` files in load order

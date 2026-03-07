@@ -46,7 +46,7 @@ Required fields:
 ## Interface: 120000
 ## Title: AddonName
 ## Notes: Short description in English.
-## Author: ZaeUI
+## Author: loicngr
 ## Version: 1.0.0
 ```
 
