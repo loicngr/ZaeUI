@@ -7,7 +7,7 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 ## How it works
 
 - **Scale & Overlap**: Uses the native `nameplateSelectedScale` and `nameplateOverlapV` CVars
-- **Highlight**: Adds a colored border around the target nameplate
+- **Highlight**: Adds a colored border tightly around the target health bar
 
 ## Commands
 
@@ -30,7 +30,7 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 ## Features
 
 - Scale your target's nameplate to easily spot it in combat
-- Colored border around the target nameplate (customizable thickness)
+- Colored border hugging the target health bar (customizable thickness)
 - Automatic overlap adjustment — nameplates spread out proportionally to the scale
 - Settings persist across sessions (automatic migration from ZaeUI_NameplateScale)
 - Compatible with Midnight's new nameplate overhaul
