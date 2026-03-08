@@ -3,11 +3,12 @@ max_line_length = false
 
 globals = {
     -- SavedVariables (writable)
-    "ZaeUI_NameplateScaleDB",
+    "ZaeUI_NameplatesDB",
+    "ZaeUI_NameplateScaleDB", -- migration only, remove in a future version
 
     -- Slash command system (assigned in addon code)
     "SlashCmdList",
-    "SLASH_ZAEUINAMEPLATESSCALE1",
+    "SLASH_ZAEUINAMEPLATES1",
 }
 
 read_globals = {
@@ -15,7 +16,9 @@ read_globals = {
     "strtrim",
 
     -- WoW API
+    "C_NamePlate",
     "CreateFrame",
     "GetCVar",
     "SetCVar",
+    "UnitIsUnit",
 }
