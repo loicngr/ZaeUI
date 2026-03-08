@@ -125,7 +125,7 @@ frame:RegisterEvent("ADDON_LOADED")
 
 local events = {}
 
-function events:ADDON_LOADED(addonName)
+function events.ADDON_LOADED(_, addonName)
     if addonName ~= ADDON_NAME then
         return
     end
@@ -145,27 +145,27 @@ function events:ADDON_LOADED(addonName)
     print(PREFIX .. "Type /znp help for commands.")
 end
 
-function events:PLAYER_TARGET_CHANGED()
+function events.PLAYER_TARGET_CHANGED()
     hideHighlight()
     showHighlight()
 end
 
-function events:NAME_PLATE_UNIT_ADDED(unit)
+function events.NAME_PLATE_UNIT_ADDED(_, unit)
     if UnitIsUnit(unit, "target") then
         hideHighlight()
         showHighlight()
     end
 end
 
-function events:NAME_PLATE_UNIT_REMOVED(unit)
+function events.NAME_PLATE_UNIT_REMOVED(_, unit)
     if UnitIsUnit(unit, "target") then
         hideHighlight()
     end
 end
 
-frame:SetScript("OnEvent", function(self, event, ...)
+frame:SetScript("OnEvent", function(_, event, ...)
     if events[event] then
-        events[event](self, ...)
+        events[event](frame, ...)
     end
 end)
 
