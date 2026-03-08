@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -q 'git commit'; then echo '## IMPORTANT: Before committing, you MUST:\n1. Read and follow .ai/rules/commit.md (no AI co-author, conventional commit format)\n2. Run the superpowers:requesting-code-review skill to verify all .ai/rules/ are respected in changed files\n\nDo NOT proceed with the commit until both steps are completed.'; exit 2; fi; exit 0"
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -q 'git commit'; then echo '## IMPORTANT: Before committing, you MUST:\n1. Read and follow .ai/rules/commit.md (no AI co-author, conventional commit format)\n2. Run the superpowers:requesting-code-review skill to verify all .ai/rules/ are respected in changed files\n\nDo NOT proceed with the commit until both steps are completed.'; exit 2; fi; if echo \"$CLAUDE_TOOL_INPUT\" | grep -q 'git push'; then echo '## IMPORTANT: Before pushing, you MUST verify:\n1. README.md files are up to date with any new/changed commands or features\n2. Code comments and help commands reflect the current behavior\n3. TOC Notes field is accurate\n\nDo NOT push until documentation is verified and updated if needed.'; exit 2; fi; exit 0"
           }
         ]
       }

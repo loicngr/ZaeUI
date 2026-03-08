@@ -16,14 +16,18 @@ local MIN_SCALE = 0.5
 local MAX_SCALE = 3.0
 local MIN_OVERLAP = 0.5
 local MAX_OVERLAP = 5.0
-local DEFAULT_HIGHLIGHT = true
+local DEFAULT_HIGHLIGHT = false
 local PREFIX = "|cff00ccff[ZaeUI_Nameplates]|r "
+
+local DEFAULT_BORDER = 2
+local MIN_BORDER = 1
+local MAX_BORDER = 10
 
 -- Local state
 local originalOverlapV
 local db
 local highlightFrame
-local highlightTexture
+local borderTextures
 
 -- Default settings
 local DEFAULTS = {
@@ -31,7 +35,8 @@ local DEFAULTS = {
     overlapV = nil,
     baseOverlapV = nil,
     highlight = DEFAULT_HIGHLIGHT,
-    highlightColor = { r = 0, g = 0.8, b = 1, a = 0.3 },
+    highlightColor = { r = 0, g = 0.8, b = 1, a = 0.8 },
+    borderSize = DEFAULT_BORDER,
 }
 
 --- Migrate settings from the old ZaeUI_NameplateScaleDB if present.
@@ -88,7 +93,65 @@ end
 
 -- Highlight
 
---- Show a colored background behind the target nameplate.
+--- Create the border textures (top, bottom, left, right) on the highlight frame
+--- and set their anchor points. Anchors are set once and updated via updateBorderSize.
+local function createBorderTextures()
+    highlightFrame = CreateFrame("Frame")
+    borderTextures = {}
+    for i = 1, 4 do
+        borderTextures[i] = highlightFrame:CreateTexture(nil, "OVERLAY")
+    end
+    local top, bottom, left, right = borderTextures[1], borderTextures[2], borderTextures[3], borderTextures[4]
+    local t = db.borderSize
+
+    top:SetPoint("TOPLEFT", highlightFrame, "TOPLEFT", 0, 0)
+    top:SetPoint("TOPRIGHT", highlightFrame, "TOPRIGHT", 0, 0)
+    top:SetHeight(t)
+
+    bottom:SetPoint("BOTTOMLEFT", highlightFrame, "BOTTOMLEFT", 0, 0)
+    bottom:SetPoint("BOTTOMRIGHT", highlightFrame, "BOTTOMRIGHT", 0, 0)
+    bottom:SetHeight(t)
+
+    -- Inset left/right to avoid corner overlap with top/bottom
+    left:SetPoint("TOPLEFT", highlightFrame, "TOPLEFT", 0, -t)
+    left:SetPoint("BOTTOMLEFT", highlightFrame, "BOTTOMLEFT", 0, t)
+    left:SetWidth(t)
+
+    right:SetPoint("TOPRIGHT", highlightFrame, "TOPRIGHT", 0, -t)
+    right:SetPoint("BOTTOMRIGHT", highlightFrame, "BOTTOMRIGHT", 0, t)
+    right:SetWidth(t)
+end
+
+--- Reposition border textures after a size change.
+local function updateBorderSize()
+    local t = db.borderSize
+    local top, bottom, left, right = borderTextures[1], borderTextures[2], borderTextures[3], borderTextures[4]
+
+    -- Top/bottom only need SetHeight: their anchors span full width and don't depend on t
+    top:SetHeight(t)
+    bottom:SetHeight(t)
+
+    -- Left/right need ClearAllPoints because their Y insets change with t
+    left:ClearAllPoints()
+    left:SetPoint("TOPLEFT", highlightFrame, "TOPLEFT", 0, -t)
+    left:SetPoint("BOTTOMLEFT", highlightFrame, "BOTTOMLEFT", 0, t)
+    left:SetWidth(t)
+
+    right:ClearAllPoints()
+    right:SetPoint("TOPRIGHT", highlightFrame, "TOPRIGHT", 0, -t)
+    right:SetPoint("BOTTOMRIGHT", highlightFrame, "BOTTOMRIGHT", 0, t)
+    right:SetWidth(t)
+end
+
+--- Apply border color to all 4 edge textures.
+local function applyBorderColor()
+    local c = db.highlightColor
+    for i = 1, 4 do
+        borderTextures[i]:SetColorTexture(c.r, c.g, c.b, c.a)
+    end
+end
+
+--- Show a colored border around the target nameplate.
 --- Uses a dedicated overlay frame to avoid issues with nameplate recycling.
 local function showHighlight()
     if not db.highlight then
@@ -99,20 +162,16 @@ local function showHighlight()
         return
     end
     if not highlightFrame then
-        highlightFrame = CreateFrame("Frame")
-        highlightTexture = highlightFrame:CreateTexture(nil, "BACKGROUND")
+        createBorderTextures()
     end
     highlightFrame:SetParent(namePlate)
     highlightFrame:SetAllPoints(namePlate)
-    highlightFrame:SetFrameStrata("BACKGROUND")
-    local c = db.highlightColor
-    highlightTexture:SetColorTexture(c.r, c.g, c.b, c.a)
-    highlightTexture:SetAllPoints(highlightFrame)
+    highlightFrame:SetFrameStrata("HIGH")
+    applyBorderColor()
     highlightFrame:Show()
-    highlightTexture:Show()
 end
 
---- Hide the highlight overlay.
+--- Hide the highlight border.
 local function hideHighlight()
     if highlightFrame then
         highlightFrame:Hide()
@@ -180,7 +239,7 @@ SlashCmdList["ZAEUINAMEPLATES"] = function(msg)
         local currentOverlap = GetCVar("nameplateOverlapV")
         local overlapMode = db.overlapV and "manual" or "auto"
         local highlightStatus = db.highlight and "on" or "off"
-        print(PREFIX .. "Scale: " .. currentScale .. " | Overlap: " .. currentOverlap .. " (" .. overlapMode .. ") | Highlight: " .. highlightStatus)
+        print(PREFIX .. "Scale: " .. currentScale .. " | Overlap: " .. currentOverlap .. " (" .. overlapMode .. ") | Highlight: " .. highlightStatus .. " | Border: " .. db.borderSize .. "px")
         return
     end
 
@@ -191,6 +250,7 @@ SlashCmdList["ZAEUINAMEPLATES"] = function(msg)
         print(PREFIX .. "  /znp overlap <number> - Override overlap (" .. MIN_OVERLAP .. "-" .. MAX_OVERLAP .. ")")
         print(PREFIX .. "  /znp overlap auto - Reset overlap to automatic")
         print(PREFIX .. "  /znp highlight - Toggle highlight on/off")
+        print(PREFIX .. "  /znp border <number> - Set border thickness (" .. MIN_BORDER .. "-" .. MAX_BORDER .. ")")
         return
     end
 
@@ -198,10 +258,14 @@ SlashCmdList["ZAEUINAMEPLATES"] = function(msg)
         db.scale = DEFAULT_SCALE
         db.overlapV = nil
         db.highlight = DEFAULT_HIGHLIGHT
+        db.borderSize = DEFAULT_BORDER
         local dc = DEFAULTS.highlightColor
         db.highlightColor = { r = dc.r, g = dc.g, b = dc.b, a = dc.a }
         applyScale(DEFAULT_SCALE)
         hideHighlight()
+        if highlightFrame then
+            updateBorderSize()
+        end
         showHighlight()
         print(PREFIX .. "All settings reset to defaults.")
         return
@@ -229,6 +293,27 @@ SlashCmdList["ZAEUINAMEPLATES"] = function(msg)
         db.overlapV = value
         applyOverlap(db.scale)
         print(PREFIX .. "Overlap manually set to: " .. value)
+        return
+    end
+
+    -- Border subcommand
+    local borderArg = msg:match("^border%s+(.+)$")
+    if borderArg then
+        local value = tonumber(borderArg)
+        if not value then
+            print(PREFIX .. "Usage: /znp border <number>")
+            return
+        end
+        value = math.floor(value)
+        if value < MIN_BORDER or value > MAX_BORDER then
+            print(PREFIX .. "Border thickness must be between " .. MIN_BORDER .. " and " .. MAX_BORDER)
+            return
+        end
+        db.borderSize = value
+        if highlightFrame then
+            updateBorderSize()
+        end
+        print(PREFIX .. "Border thickness set to: " .. value)
         return
     end
 
