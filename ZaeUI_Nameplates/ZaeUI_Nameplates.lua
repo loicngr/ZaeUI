@@ -19,11 +19,13 @@ local MAX_OVERLAP = 5.0
 local DEFAULT_HIGHLIGHT = true
 local PREFIX = "|cff00ccff[ZaeUI_Nameplates]|r "
 
+local BORDER_THICKNESS = 2
+
 -- Local state
 local originalOverlapV
 local db
 local highlightFrame
-local highlightTexture
+local borderTextures
 
 -- Default settings
 local DEFAULTS = {
@@ -31,7 +33,7 @@ local DEFAULTS = {
     overlapV = nil,
     baseOverlapV = nil,
     highlight = DEFAULT_HIGHLIGHT,
-    highlightColor = { r = 0, g = 0.8, b = 1, a = 0.3 },
+    highlightColor = { r = 0, g = 0.8, b = 1, a = 0.8 },
 }
 
 --- Migrate settings from the old ZaeUI_NameplateScaleDB if present.
@@ -88,7 +90,43 @@ end
 
 -- Highlight
 
---- Show a colored background behind the target nameplate.
+--- Create the border textures (top, bottom, left, right) on the highlight frame.
+local function createBorderTextures()
+    highlightFrame = CreateFrame("Frame")
+    borderTextures = {}
+    for i = 1, 4 do
+        borderTextures[i] = highlightFrame:CreateTexture(nil, "OVERLAY")
+    end
+end
+
+--- Apply border color and position the 4 edge textures around the parent frame.
+local function applyBorder()
+    local c = db.highlightColor
+    local t = BORDER_THICKNESS
+    local top, bottom, left, right = borderTextures[1], borderTextures[2], borderTextures[3], borderTextures[4]
+
+    for i = 1, 4 do
+        borderTextures[i]:SetColorTexture(c.r, c.g, c.b, c.a)
+    end
+
+    top:SetPoint("TOPLEFT", highlightFrame, "TOPLEFT", 0, 0)
+    top:SetPoint("TOPRIGHT", highlightFrame, "TOPRIGHT", 0, 0)
+    top:SetHeight(t)
+
+    bottom:SetPoint("BOTTOMLEFT", highlightFrame, "BOTTOMLEFT", 0, 0)
+    bottom:SetPoint("BOTTOMRIGHT", highlightFrame, "BOTTOMRIGHT", 0, 0)
+    bottom:SetHeight(t)
+
+    left:SetPoint("TOPLEFT", highlightFrame, "TOPLEFT", 0, 0)
+    left:SetPoint("BOTTOMLEFT", highlightFrame, "BOTTOMLEFT", 0, 0)
+    left:SetWidth(t)
+
+    right:SetPoint("TOPRIGHT", highlightFrame, "TOPRIGHT", 0, 0)
+    right:SetPoint("BOTTOMRIGHT", highlightFrame, "BOTTOMRIGHT", 0, 0)
+    right:SetWidth(t)
+end
+
+--- Show a colored border around the target nameplate.
 --- Uses a dedicated overlay frame to avoid issues with nameplate recycling.
 local function showHighlight()
     if not db.highlight then
@@ -99,20 +137,16 @@ local function showHighlight()
         return
     end
     if not highlightFrame then
-        highlightFrame = CreateFrame("Frame")
-        highlightTexture = highlightFrame:CreateTexture(nil, "BACKGROUND")
+        createBorderTextures()
     end
     highlightFrame:SetParent(namePlate)
     highlightFrame:SetAllPoints(namePlate)
-    highlightFrame:SetFrameStrata("BACKGROUND")
-    local c = db.highlightColor
-    highlightTexture:SetColorTexture(c.r, c.g, c.b, c.a)
-    highlightTexture:SetAllPoints(highlightFrame)
+    highlightFrame:SetFrameStrata("HIGH")
+    applyBorder()
     highlightFrame:Show()
-    highlightTexture:Show()
 end
 
---- Hide the highlight overlay.
+--- Hide the highlight border.
 local function hideHighlight()
     if highlightFrame then
         highlightFrame:Hide()

@@ -1,13 +1,13 @@
 # ZaeUI_Nameplates
 
-Enhance your target nameplate with scaling, automatic overlap adjustment and a colored highlight — making it easy to spot in large mob packs.
+Enhance your target nameplate with scaling, automatic overlap adjustment and a colored border — making it easy to spot in large mob packs.
 
 Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped nameplate system.
 
 ## How it works
 
 - **Scale & Overlap**: Uses the native `nameplateSelectedScale` and `nameplateOverlapV` CVars
-- **Highlight**: Adds a colored background texture behind the target nameplate
+- **Highlight**: Adds a colored border around the target nameplate
 
 ## Commands
 
@@ -29,7 +29,7 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 ## Features
 
 - Scale your target's nameplate to easily spot it in combat
-- Colored highlight behind the target nameplate
+- Colored border around the target nameplate
 - Automatic overlap adjustment — nameplates spread out proportionally to the scale
 - Settings persist across sessions (automatic migration from ZaeUI_NameplateScale)
 - Compatible with Midnight's new nameplate overhaul
