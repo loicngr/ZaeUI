@@ -24,7 +24,7 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 ## Download
 
 - [GitHub Releases](https://github.com/loicngr/ZaeUI/releases)
-- [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplateescale)
+- [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplates)
 
 ## Features
 
