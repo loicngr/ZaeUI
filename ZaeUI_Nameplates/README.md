@@ -19,6 +19,7 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 | `/znp overlap 1.8` | Manually override overlap (0.5 - 5.0) |
 | `/znp overlap auto` | Reset overlap to automatic |
 | `/znp highlight` | Toggle highlight on/off |
+| `/znp border 3` | Set border thickness (1 - 10) |
 | `/znp help` | Show help |
 
 ## Download
@@ -29,7 +30,7 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 ## Features
 
 - Scale your target's nameplate to easily spot it in combat
-- Colored border around the target nameplate
+- Colored border around the target nameplate (customizable thickness)
 - Automatic overlap adjustment — nameplates spread out proportionally to the scale
 - Settings persist across sessions (automatic migration from ZaeUI_NameplateScale)
 - Compatible with Midnight's new nameplate overhaul
