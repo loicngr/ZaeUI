@@ -16,7 +16,7 @@ local MIN_SCALE = 0.5
 local MAX_SCALE = 3.0
 local MIN_OVERLAP = 0.5
 local MAX_OVERLAP = 5.0
-local DEFAULT_HIGHLIGHT = false
+local DEFAULT_HIGHLIGHT = true
 local PREFIX = "|cff00ccff[ZaeUI_Nameplates]|r "
 
 local DEFAULT_BORDER = 2
