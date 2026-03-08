@@ -151,7 +151,19 @@ local function applyBorderColor()
     end
 end
 
---- Show a colored border around the target nameplate.
+--- Find the health bar inside a nameplate frame.
+--- Blizzard default nameplates use namePlate.UnitFrame.healthBar.
+--- @param namePlate table The nameplate root frame
+--- @return table|nil anchor The frame to anchor the border to
+local function findHealthBar(namePlate)
+    local unitFrame = namePlate.UnitFrame
+    if unitFrame and unitFrame.healthBar then
+        return unitFrame.healthBar
+    end
+    return namePlate
+end
+
+--- Show a colored border around the target nameplate health bar.
 --- Uses a dedicated overlay frame to avoid issues with nameplate recycling.
 local function showHighlight()
     if not db.highlight then
@@ -164,8 +176,9 @@ local function showHighlight()
     if not highlightFrame then
         createBorderTextures()
     end
-    highlightFrame:SetParent(namePlate)
-    highlightFrame:SetAllPoints(namePlate)
+    local anchor = findHealthBar(namePlate)
+    highlightFrame:SetParent(anchor)
+    highlightFrame:SetAllPoints(anchor)
     highlightFrame:SetFrameStrata("HIGH")
     applyBorderColor()
     highlightFrame:Show()

@@ -2,7 +2,7 @@
 ## Title: ZaeUI_Nameplates
 ## Notes: Enhance your target nameplate with scaling, overlap adjustment and highlight.
 ## Author: loicngr
-## Version: 2.0.1
+## Version: 2.0.2
 ## SavedVariables: ZaeUI_NameplatesDB ZaeUI_NameplateScaleDB
 ## X-Migration-Note: ZaeUI_NameplateScaleDB is listed for migration only, remove in a future version
 
