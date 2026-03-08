@@ -9,7 +9,7 @@
 ## Addon Naming
 
 All addons use the `ZaeUI_` prefix: `ZaeUI_<FeatureName>`.
-Examples: `ZaeUI_NameplateScale`, `ZaeUI_ActionBars`.
+Examples: `ZaeUI_Nameplates`, `ZaeUI_ActionBars`.
 
 ## Addon Structure
 

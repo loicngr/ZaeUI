@@ -9,9 +9,9 @@ Lua 5.1 only. Do not use Lua 5.2+ features (goto, native bitwise operators, etc.
 - **Local variables**: `camelCase` (`local playerName`, `local currentScale`)
 - **Local constants**: `UPPER_SNAKE_CASE` (`local MAX_SCALE = 3.0`)
 - **Local functions**: `camelCase` (`local function applyScale()`)
-- **Global tables/namespaces**: `PascalCase` (`ZaeUI_NameplateScaleDB`, `ZaeUI`)
+- **Global tables/namespaces**: `PascalCase` (`ZaeUI_NameplatesDB`, `ZaeUI`)
 - **Table methods**: `PascalCase` (`MyAddon:OnInitialize()`)
-- **Addon prefix**: Use the addon name as prefix for globals (`SLASH_NAMEPLATESSCALE1`)
+- **Addon prefix**: Use the addon name as prefix for globals (`SLASH_ZAEUINAMEPLATES1`)
 - **Unused variables**: Prefix with `_` (`for _, value in pairs(t)`)
 
 ## Scope and Globals
@@ -30,7 +30,7 @@ Lua 5.1 only. Do not use Lua 5.2+ features (goto, native bitwise operators, etc.
 
 ```lua
 -- Header: addon name and short description
--- Ex: NameplateScale: Scale up the nameplate of your current target
+-- Ex: Nameplates: Enhance your target nameplate
 
 -- 1. Local references to WoW APIs used
 local CreateFrame = CreateFrame
@@ -62,8 +62,8 @@ end
 
 - **File header**: Always include a line describing the file
   ```lua
-  -- NameplateScale: Scale up the nameplate of your current target
-  -- Uses the native CVar nameplateSelectedScale
+  -- Nameplates: Enhance your target nameplate
+  -- Uses native CVars and nameplate frame manipulation
   ```
 - **Sections**: Separate logical sections with a comment
   ```lua
