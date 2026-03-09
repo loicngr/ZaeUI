@@ -41,6 +41,9 @@ local spellData = {
     [200166] = { name = "Repentance",        cooldown = 15, category = "other" },      -- Paladin (incapacitate)
     [105421] = { name = "Blinding Light",    cooldown = 90, category = "stun" },       -- Paladin
     [389831] = { name = "Landslide",         cooldown = 90, category = "stun" },       -- Evoker
+    [100]    = { name = "Charge",            cooldown = 20, category = "other" },      -- Warrior (root)
+    [88625]  = { name = "Holy Word: Chastise", cooldown = 60, category = "stun" },    -- Priest (Holy)
+    [109248] = { name = "Binding Shot",      cooldown = 45, category = "stun" },       -- Hunter
 
     -- Other (knockbacks, disorients, incapacitates)
     [132469] = { name = "Typhoon",           cooldown = 30, category = "other" },      -- Druid
@@ -54,6 +57,15 @@ local spellData = {
     [115078] = { name = "Paralysis",         cooldown = 45, category = "other" },      -- Monk
     [2094]   = { name = "Blind",             cooldown = 120, category = "other" },     -- Rogue
     [192058] = { name = "Capacitor Totem",   cooldown = 60, category = "other" },      -- Shaman
+    [1776]   = { name = "Gouge",             cooldown = 15, category = "other" },      -- Rogue
+    [217832] = { name = "Imprison",          cooldown = 45, category = "other" },      -- Demon Hunter
+    [202137] = { name = "Sigil of Silence",  cooldown = 60, category = "other" },      -- Demon Hunter
+    [207684] = { name = "Sigil of Misery",   cooldown = 90, category = "other" },      -- Demon Hunter
+    [116844] = { name = "Ring of Peace",     cooldown = 45, category = "other" },      -- Monk
+    [113724] = { name = "Ring of Frost",     cooldown = 45, category = "other" },      -- Mage
+    [5246]   = { name = "Intimidating Shout", cooldown = 90, category = "other" },     -- Warrior
+    [207167] = { name = "Blinding Sleet",    cooldown = 60, category = "other" },      -- Death Knight
+    [187650] = { name = "Freezing Trap",     cooldown = 30, category = "other" },      -- Hunter
 }
 
 ns.spellData = spellData

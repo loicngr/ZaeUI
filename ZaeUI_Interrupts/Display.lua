@@ -14,13 +14,13 @@ local UnitName = UnitName
 local C_Spell = C_Spell
 local math_max = math.max
 local string_format = string.format
+local table_sort = table.sort
 
 local FRAME_WIDTH = 220
 local FRAME_MIN_HEIGHT = 80
 local ROW_HEIGHT = 22
 local ICON_SIZE = 18
 local PADDING = 8
-local CATEGORIES = { "interrupt", "stun", "other" }
 local CATEGORY_LABELS = { interrupt = "Interrupts", stun = "Stuns & Others" }
 local WHITE_COLOR = { r = 1, g = 1, b = 1 }
 
@@ -29,6 +29,8 @@ local rows = {}
 local classColorCache = {}
 local spellIconCache = {}
 local updateFrame
+local catEntriesInterrupt = {}
+local catEntriesStun = {}
 
 --- Create the main tracker frame.
 local function createTrackerFrame()
@@ -43,13 +45,19 @@ local function createTrackerFrame()
     })
     trackerFrame:SetBackdropColor(0, 0, 0, 0.8)
     trackerFrame:SetBackdropBorderColor(0.3, 0.3, 0.3, 1)
+    local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
+    trackerFrame:SetAlpha(opacity)
     trackerFrame:SetFrameStrata("MEDIUM")
     trackerFrame:SetClampedToScreen(true)
     trackerFrame:SetMovable(true)
     trackerFrame:EnableMouse(true)
     trackerFrame:RegisterForDrag("LeftButton")
-    trackerFrame:SetScript("OnDragStart", trackerFrame.StartMoving)
+    trackerFrame:SetScript("OnDragStart", function(self)
+        if ns.db and ns.db.lockFrame then return end
+        self:StartMoving()
+    end)
     trackerFrame:SetScript("OnDragStop", function(self)
+        if ns.db and ns.db.lockFrame then return end
         self:StopMovingOrSizing()
         -- Save position
         local point, _, relPoint, x, y = self:GetPoint()
@@ -133,6 +141,17 @@ local function getClassColor(playerName)
     return WHITE_COLOR
 end
 
+--- Check if a category is enabled in settings.
+--- @param cat string "interrupt", "stun" or "other"
+--- @return boolean
+local function isCategoryEnabled(cat)
+    local db = ns.db
+    if not db then return true end
+    if cat == "interrupt" then return db.showInterrupts ~= false end
+    if cat == "stun" then return db.showStuns ~= false end
+    return db.showOthers ~= false
+end
+
 --- Refresh the tracker display with current group data.
 function ns.refreshDisplay()
     if not trackerFrame then return end
@@ -142,94 +161,145 @@ function ns.refreshDisplay()
     local rowIndex = 0
     local now = GetTime()
     local spellData = ns.spellData or {}
+    local db = ns.db or {}
+    local hideReady = db.hideReady
+    local sortByCD = db.sortByCD
 
     -- Hide all existing rows first
     for _, row in pairs(rows) do
         row:Hide()
     end
 
-    -- Sort: interrupts first, then stuns/others
+    -- Collect all entries, grouped by display category (reuse tables to reduce GC)
     local groupData = ns.groupData or {}
-    local lastCategory = nil
+    local interruptEntries = catEntriesInterrupt
+    local stunEntries = catEntriesStun
+    local interruptCount, stunCount = 0, 0
 
-    for _, cat in ipairs(CATEGORIES) do
-        local displayCat = (cat == "other") and "stun" or cat
-
-        for playerName, data in pairs(groupData) do
-            for spellID, _ in pairs(data.spells) do
-                local info = spellData[spellID] or (ns.db and ns.db.customSpells[spellID] and { category = "other" })
-                if info then
-                    local spellCat = info.category or "other"
-                    local displaySpellCat = (spellCat == "other") and "stun" or spellCat
-                    if displaySpellCat == displayCat and spellCat == cat then
-                        -- Show category header if new category
-                        if displayCat ~= lastCategory then
-                            if CATEGORY_LABELS[displayCat] then
-                                rowIndex = rowIndex + 1
-                                local headerRow = getRow(rowIndex, content)
-                                headerRow.icon:Hide()
-                                headerRow.name:SetText("|cffffcc00" .. CATEGORY_LABELS[displayCat] .. "|r")
-                                headerRow.name:SetWidth(200)
-                                headerRow.status:SetText("")
-                                headerRow.counter:SetText("")
-                                headerRow:Show()
-                                lastCategory = displayCat
+    for playerName, data in pairs(groupData) do
+        for spellID, _ in pairs(data.spells) do
+            local info = spellData[spellID] or (db.customSpells and db.customSpells[spellID] and { category = "other" })
+            if info then
+                local spellCat = info.category or "other"
+                if isCategoryEnabled(spellCat) then
+                    local cdEnd = data.cooldowns[spellID]
+                    local onCD = cdEnd ~= nil and cdEnd > now
+                    if not hideReady or onCD then
+                        local displayCat = (spellCat == "other") and "stun" or spellCat
+                        local remaining = onCD and (cdEnd - now) or 0
+                        if displayCat == "interrupt" then
+                            interruptCount = interruptCount + 1
+                            local e = interruptEntries[interruptCount]
+                            if not e then
+                                e = {}
+                                interruptEntries[interruptCount] = e
                             end
-                        end
-
-                        rowIndex = rowIndex + 1
-                        local row = getRow(rowIndex, content)
-
-                        -- Icon (cached per spellID)
-                        if spellIconCache[spellID] == nil then
-                            local spellInfo = C_Spell.GetSpellInfo(spellID)
-                            spellIconCache[spellID] = (spellInfo and spellInfo.iconID) or false
-                        end
-                        local iconID = spellIconCache[spellID]
-                        if iconID then
-                            row.icon:SetTexture(iconID)
-                            row.icon:Show()
+                            e.playerName = playerName
+                            e.spellID = spellID
+                            e.onCD = onCD
+                            e.remaining = remaining
+                            e.counters = data.counters
                         else
-                            row.icon:Hide()
-                        end
-
-                        -- Player name with class color
-                        local color = getClassColor(playerName)
-                        row.name:SetText(string_format("|cff%02x%02x%02x%s|r",
-                            color.r * 255, color.g * 255, color.b * 255, playerName))
-                        row.name:SetWidth(100)
-
-                        -- Cooldown status
-                        local cdEnd = data.cooldowns[spellID]
-                        if cdEnd and cdEnd > now then
-                            local remaining = cdEnd - now
-                            row.status:SetText(string_format("|cffff4444%.1fs|r", remaining))
-                        else
-                            row.status:SetText("|cff44ff44Ready|r")
-                        end
-
-                        -- Spell use counter
-                        if ns.db and ns.db.showCounter then
-                            local count = data.counters and data.counters[spellID] or 0
-                            if count > 0 then
-                                row.counter:SetText("|cffaaaaaa(" .. count .. ")|r")
-                            else
-                                row.counter:SetText("")
+                            stunCount = stunCount + 1
+                            local e = stunEntries[stunCount]
+                            if not e then
+                                e = {}
+                                stunEntries[stunCount] = e
                             end
-                        else
-                            row.counter:SetText("")
+                            e.playerName = playerName
+                            e.spellID = spellID
+                            e.onCD = onCD
+                            e.remaining = remaining
+                            e.counters = data.counters
                         end
-
-                        row:Show()
                     end
                 end
             end
         end
     end
 
+    -- Sort entries within each category
+    local sortFunc
+    if sortByCD then
+        sortFunc = function(a, b)
+            if a.onCD ~= b.onCD then return a.onCD == true end
+            if a.onCD then return a.remaining > b.remaining end
+            return a.playerName < b.playerName
+        end
+        if interruptCount > 1 then table_sort(interruptEntries, sortFunc) end
+        if stunCount > 1 then table_sort(stunEntries, sortFunc) end
+    end
+
+    -- Render a category block
+    local function renderCategory(entries, count, label)
+        if count == 0 then return end
+        if label then
+            rowIndex = rowIndex + 1
+            local headerRow = getRow(rowIndex, content)
+            headerRow.icon:Hide()
+            headerRow.name:SetText("|cffffcc00" .. label .. "|r")
+            headerRow.name:SetWidth(200)
+            headerRow.status:SetText("")
+            headerRow.counter:SetText("")
+            headerRow:Show()
+        end
+        for i = 1, count do
+            local entry = entries[i]
+            rowIndex = rowIndex + 1
+            local row = getRow(rowIndex, content)
+
+            local spellID = entry.spellID
+            if spellIconCache[spellID] == nil then
+                local spellInfo = C_Spell.GetSpellInfo(spellID)
+                spellIconCache[spellID] = (spellInfo and spellInfo.iconID) or false
+            end
+            local iconID = spellIconCache[spellID]
+            if iconID then
+                row.icon:SetTexture(iconID)
+                row.icon:Show()
+            else
+                row.icon:Hide()
+            end
+
+            local color = getClassColor(entry.playerName)
+            row.name:SetText(string_format("|cff%02x%02x%02x%s|r",
+                color.r * 255, color.g * 255, color.b * 255, entry.playerName))
+            row.name:SetWidth(100)
+
+            if entry.onCD then
+                row.status:SetText(string_format("|cffff4444%.1fs|r", entry.remaining))
+            else
+                row.status:SetText("|cff44ff44Ready|r")
+            end
+
+            if db.showCounter then
+                local cnt = entry.counters and entry.counters[spellID] or 0
+                if cnt > 0 then
+                    row.counter:SetText("|cffaaaaaa(" .. cnt .. ")|r")
+                else
+                    row.counter:SetText("")
+                end
+            else
+                row.counter:SetText("")
+            end
+
+            row:Show()
+        end
+    end
+
+    renderCategory(interruptEntries, interruptCount, CATEGORY_LABELS["interrupt"])
+    renderCategory(stunEntries, stunCount, CATEGORY_LABELS["stun"])
+
     -- Resize frame
     local totalHeight = (PADDING * 2) + 14 + (rowIndex * ROW_HEIGHT)
     trackerFrame:SetHeight(math_max(FRAME_MIN_HEIGHT, totalHeight))
+end
+
+--- Apply the saved frame opacity.
+function ns.applyFrameOpacity()
+    if not trackerFrame then return end
+    local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
+    trackerFrame:SetAlpha(opacity)
 end
 
 -- Update timer for smooth cooldown display (started/stopped with frame visibility)

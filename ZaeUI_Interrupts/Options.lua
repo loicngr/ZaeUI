@@ -20,9 +20,49 @@ local function createCheckbox(parent, y, label, get, set)
     cb.text:SetFontObject("GameFontHighlight")
     cb:SetChecked(get())
     cb:SetScript("OnClick", function(self)
-        set(self:GetChecked())
+        set(not not self:GetChecked())
     end)
     return cb, y - 30
+end
+
+--- Create a slider control.
+--- @param parent table Parent frame
+--- @param y number Y offset from TOPLEFT
+--- @param label string Slider label
+--- @param minVal number Minimum value
+--- @param maxVal number Maximum value
+--- @param step number Step increment
+--- @param get function Returns current value
+--- @param set function Called with new value
+--- @param fmt string Format string for display (e.g. "%d%%")
+--- @return table slider The created slider
+--- @return number nextY The Y offset for the next widget
+local function createSlider(parent, y, label, minVal, maxVal, step, get, set, fmt)
+    local sliderLabel = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    sliderLabel:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
+    sliderLabel:SetText(label)
+
+    local valueText = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    valueText:SetPoint("LEFT", sliderLabel, "RIGHT", 8, 0)
+
+    y = y - 18
+    local slider = CreateFrame("Slider", nil, parent, "OptionsSliderTemplate")
+    slider:SetPoint("TOPLEFT", parent, "TOPLEFT", 20, y)
+    slider:SetWidth(180)
+    slider:SetMinMaxValues(minVal, maxVal)
+    slider:SetValueStep(step)
+    slider:SetObeyStepOnDrag(true)
+    slider:SetValue(get())
+    slider.Low:SetText("")
+    slider.High:SetText("")
+    slider.Text:SetText("")
+    valueText:SetText(string.format(fmt, get()))
+    slider:SetScript("OnValueChanged", function(_, value)
+        value = math.floor(value / step + 0.5) * step
+        valueText:SetText(string.format(fmt, value))
+        set(value)
+    end)
+    return slider, y - 24
 end
 
 -- Parent category ---------------------------------------------------------------
@@ -102,6 +142,69 @@ local function createOptionsPanel(parentCategory)
         function() return db.autoResetCounters end,
         function(checked)
             db.autoResetCounters = checked
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Hide ready spells (only show cooldowns)",
+        function() return db.hideReady end,
+        function(checked)
+            db.hideReady = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Sort by cooldown (on CD first)",
+        function() return db.sortByCD end,
+        function(checked)
+            db.sortByCD = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Lock tracker window position",
+        function() return db.lockFrame end,
+        function(checked)
+            db.lockFrame = checked
+        end
+    )
+
+    _, y = createSlider(panel, y, "Window opacity", 10, 100, 5,
+        function() return db.frameOpacity or 80 end,
+        function(value)
+            db.frameOpacity = value
+            if ns.applyFrameOpacity then ns.applyFrameOpacity() end
+        end,
+        "%d%%"
+    )
+
+    -- Category filters
+    y = y - 12
+    local catHeader = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    catHeader:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    catHeader:SetText("Category Filters")
+    y = y - 22
+
+    _, y = createCheckbox(panel, y, "Show Interrupts",
+        function() return db.showInterrupts end,
+        function(checked)
+            db.showInterrupts = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Show Stuns",
+        function() return db.showStuns end,
+        function(checked)
+            db.showStuns = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Show Others (knockbacks, disorients...)",
+        function() return db.showOthers end,
+        function(checked)
+            db.showOthers = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
         end
     )
 
