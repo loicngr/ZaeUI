@@ -34,11 +34,55 @@ jobs:
           echo "tag=$NEXT_TAG" >> "$GITHUB_OUTPUT"
           echo "prev_tag=$LATEST_TAG" >> "$GITHUB_OUTPUT"
 
+      - name: Detect changed addons
+        id: changed
+        env:
+          PREV_TAG: ${{ steps.version.outputs.prev_tag }}
+        run: |
+          shopt -s nullglob
+          CHANGED_ADDONS=""
+          for dir in ZaeUI_*/; do
+            name="${dir%/}"
+            toc_file="${dir}${name}.toc"
+            if [ ! -f "$toc_file" ]; then continue; fi
+
+            # Check if addon files changed since last tag
+            if [ -n "$PREV_TAG" ]; then
+              DIFF_COUNT=$(git diff --name-only "$PREV_TAG"..HEAD -- "$dir" | wc -l)
+              if [ "$DIFF_COUNT" -eq 0 ]; then
+                echo "::notice::$name: no file changes since $PREV_TAG, skipping"
+                continue
+              fi
+
+              # Check if .toc version changed
+              CURRENT_VERSION=$(grep -oP '## Version:\s*\K.*' "$toc_file" | tr -d '\r')
+              PREV_VERSION=$(git show "${PREV_TAG}:${toc_file}" 2>/dev/null | grep -oP '## Version:\s*\K.*' | tr -d '\r' || echo "")
+              if [ "$CURRENT_VERSION" = "$PREV_VERSION" ]; then
+                echo "::warning::$name: version $CURRENT_VERSION unchanged since $PREV_TAG, skipping"
+                continue
+              fi
+              echo "$name: version changed from $PREV_VERSION to $CURRENT_VERSION"
+            fi
+
+            CHANGED_ADDONS="${CHANGED_ADDONS} ${name}"
+          done
+
+          CHANGED_ADDONS=$(echo "$CHANGED_ADDONS" | xargs)
+          echo "addons=$CHANGED_ADDONS" >> "$GITHUB_OUTPUT"
+
+          if [ -z "$CHANGED_ADDONS" ]; then
+            echo "::warning::No addons with version changes detected, skipping release"
+          else
+            echo "Addons to release: $CHANGED_ADDONS"
+          fi
+
       - name: Generate changelog
+        if: steps.changed.outputs.addons != ''
         id: changelog
         env:
           PREV_TAG: ${{ steps.version.outputs.prev_tag }}
           REPO: ${{ github.repository }}
+          CHANGED_ADDONS: ${{ steps.changed.outputs.addons }}
         run: |
           if [ -z "$PREV_TAG" ]; then
             RANGE="HEAD"
@@ -46,15 +90,13 @@ jobs:
             RANGE="${PREV_TAG}..HEAD"
           fi
           {
-            echo "body<<CHANGELOG_END"
+            echo "body<<__CHANGELOG_EOF__"
             echo "## Addons"
             echo ""
-            shopt -s nullglob
-            for dir in ZaeUI_*/; do
-              name="${dir%/}"
-              toc_file="${dir}${name}.toc"
+            for name in $CHANGED_ADDONS; do
+              toc_file="${name}/${name}.toc"
               if [ -f "$toc_file" ]; then
-                version=$(grep -oP '## Version:\s*\K.*' "$toc_file")
+                version=$(grep -oP '## Version:\s*\K.*' "$toc_file" | tr -d '\r')
                 echo "- **${name}**: v${version}"
               fi
             done
@@ -72,31 +114,39 @@ jobs:
               fi
             done
             echo ""
-            echo "CHANGELOG_END"
+            echo "__CHANGELOG_EOF__"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Zip addons
+      - name: Zip changed addons
+        if: steps.changed.outputs.addons != ''
+        env:
+          CHANGED_ADDONS: ${{ steps.changed.outputs.addons }}
         run: |
-          shopt -s nullglob
-          for dir in ZaeUI_*/; do
-            name="${dir%/}"
-            zip -r "${name}.zip" "$dir"
+          for name in $CHANGED_ADDONS; do
+            zip -r "${name}.zip" "${name}/"
           done
 
       - name: Create release
+        if: steps.changed.outputs.addons != ''
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.version.outputs.tag }}
           RELEASE_BODY: ${{ steps.changelog.outputs.body }}
+          CHANGED_ADDONS: ${{ steps.changed.outputs.addons }}
         run: |
           git tag "$TAG"
           git push origin "$TAG"
+          ZIPS=""
+          for name in $CHANGED_ADDONS; do
+            ZIPS="${ZIPS} ${name}.zip"
+          done
           gh release create "$TAG" \
             --title "$TAG" \
             --notes "$RELEASE_BODY" \
-            ZaeUI_*.zip
+            $ZIPS
 
       - name: Get CurseForge game version ID
+        if: steps.changed.outputs.addons != ''
         id: cf_version
         env:
           CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
@@ -112,37 +162,37 @@ jobs:
           echo "id=$VERSION_ID" >> "$GITHUB_OUTPUT"
 
       - name: Upload to CurseForge
+        if: steps.changed.outputs.addons != ''
         env:
           CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           CF_VERSION_ID: ${{ steps.cf_version.outputs.id }}
           TAG: ${{ steps.version.outputs.tag }}
           RELEASE_BODY: ${{ steps.changelog.outputs.body }}
+          CHANGED_ADDONS: ${{ steps.changed.outputs.addons }}
         run: |
-          shopt -s nullglob
           FAILED=0
-          for zip in ZaeUI_*.zip; do
-            ADDON_NAME="${zip%.zip}"
-            PROJECT_ID=$(jq -r --arg name "$ADDON_NAME" '.[$name] // empty' .curseforge.json)
+          for name in $CHANGED_ADDONS; do
+            PROJECT_ID=$(jq -r --arg name "$name" '.[$name] // empty' .curseforge.json)
             if [ -z "$PROJECT_ID" ]; then
-              echo "::warning::No CurseForge project ID for $ADDON_NAME, skipping"
+              echo "::warning::No CurseForge project ID for $name, skipping"
               continue
             fi
-            TOC_VERSION=$(grep -oP '## Version:\s*\K.*' "${ADDON_NAME}/${ADDON_NAME}.toc")
+            TOC_VERSION=$(grep -oP '## Version:\s*\K.*' "${name}/${name}.toc" | tr -d '\r')
             CF_CHANGELOG=$(printf "**Release:** %s\n\n%s" "$TAG" "$RELEASE_BODY")
             METADATA=$(jq -n \
               --arg changelog "$CF_CHANGELOG" \
               --arg version "$TOC_VERSION" \
               --argjson gameVersions "[$CF_VERSION_ID]" \
               '{changelog: $changelog, changelogType: "markdown", displayName: $version, gameVersions: $gameVersions, releaseType: "release"}')
-            echo "Uploading $zip to CurseForge project $PROJECT_ID..."
+            echo "Uploading ${name}.zip to CurseForge project $PROJECT_ID..."
             if curl -s -f \
               -H "X-Api-Token: $CF_TOKEN" \
               -F "metadata=$METADATA" \
-              -F "file=@$zip" \
+              -F "file=@${name}.zip" \
               "https://wow.curseforge.com/api/projects/${PROJECT_ID}/upload-file"; then
-              echo "Uploaded $zip successfully"
+              echo "Uploaded ${name}.zip successfully"
             else
-              echo "::error::Failed to upload $zip to CurseForge project $PROJECT_ID"
+              echo "::error::Failed to upload ${name}.zip to CurseForge project $PROJECT_ID"
               FAILED=1
             fi
           done
