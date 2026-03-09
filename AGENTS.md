@@ -56,6 +56,11 @@ ZaeUI/
 3. **Validation**: Verify Lua syntax, review the code
 4. **Documentation**: Comment code clearly and usefully
 
+## Sync Rule
+
+- When changing or adding a slash command, always update both the CLI help text (`/znp help`) and the UI options panel if one exists
+- When changing a setting or its range, update: DEFAULTS table, slash command validation, UI control, help text, README
+
 ## Language
 
 - Code (variables, functions, inline comments) is in **English**
