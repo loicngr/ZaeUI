@@ -41,7 +41,7 @@ local spellData = {
     [200166] = { name = "Repentance",        cooldown = 15, category = "other" },      -- Paladin (incapacitate)
     [105421] = { name = "Blinding Light",    cooldown = 90, category = "stun" },       -- Paladin
     [389831] = { name = "Landslide",         cooldown = 90, category = "stun" },       -- Evoker
-    [100]    = { name = "Charge",            cooldown = 20, category = "stun" },       -- Warrior
+    [100]    = { name = "Charge",            cooldown = 20, category = "other" },      -- Warrior (root)
     [88625]  = { name = "Holy Word: Chastise", cooldown = 60, category = "stun" },    -- Priest (Holy)
     [109248] = { name = "Binding Shot",      cooldown = 45, category = "stun" },       -- Hunter
 
