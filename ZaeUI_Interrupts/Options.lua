@@ -25,6 +25,46 @@ local function createCheckbox(parent, y, label, get, set)
     return cb, y - 30
 end
 
+--- Create a slider control.
+--- @param parent table Parent frame
+--- @param y number Y offset from TOPLEFT
+--- @param label string Slider label
+--- @param minVal number Minimum value
+--- @param maxVal number Maximum value
+--- @param step number Step increment
+--- @param get function Returns current value
+--- @param set function Called with new value
+--- @param fmt string Format string for display (e.g. "%d%%")
+--- @return table slider The created slider
+--- @return number nextY The Y offset for the next widget
+local function createSlider(parent, y, label, minVal, maxVal, step, get, set, fmt)
+    local sliderLabel = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    sliderLabel:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
+    sliderLabel:SetText(label)
+
+    local valueText = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    valueText:SetPoint("LEFT", sliderLabel, "RIGHT", 8, 0)
+
+    y = y - 18
+    local slider = CreateFrame("Slider", nil, parent, "OptionsSliderTemplate")
+    slider:SetPoint("TOPLEFT", parent, "TOPLEFT", 20, y)
+    slider:SetWidth(180)
+    slider:SetMinMaxValues(minVal, maxVal)
+    slider:SetValueStep(step)
+    slider:SetObeyStepOnDrag(true)
+    slider:SetValue(get())
+    slider.Low:SetText("")
+    slider.High:SetText("")
+    slider.Text:SetText("")
+    valueText:SetText(string.format(fmt, get()))
+    slider:SetScript("OnValueChanged", function(_, value)
+        value = math.floor(value / step + 0.5) * step
+        valueText:SetText(string.format(fmt, value))
+        set(value)
+    end)
+    return slider, y - 24
+end
+
 -- Parent category ---------------------------------------------------------------
 
 --- Ensure the shared ZaeUI parent category exists.
@@ -126,6 +166,15 @@ local function createOptionsPanel(parentCategory)
         function(checked)
             db.lockFrame = checked
         end
+    )
+
+    _, y = createSlider(panel, y, "Window opacity", 10, 100, 5,
+        function() return db.frameOpacity or 80 end,
+        function(value)
+            db.frameOpacity = value
+            if ns.applyFrameOpacity then ns.applyFrameOpacity() end
+        end,
+        "%d%%"
     )
 
     -- Category filters

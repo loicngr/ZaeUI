@@ -37,6 +37,7 @@ local DEFAULTS = {
     showOthers = true,
     lockFrame = false,
     sortByCD = false,
+    frameOpacity = 80,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
     customSpells = {},    -- { [spellID] = true } added by user
     removedSpells = {},   -- { [spellID] = true } removed by user

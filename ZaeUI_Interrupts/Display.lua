@@ -40,7 +40,8 @@ local function createTrackerFrame()
         tile = true, tileSize = 16, edgeSize = 12,
         insets = { left = 2, right = 2, top = 2, bottom = 2 },
     })
-    trackerFrame:SetBackdropColor(0, 0, 0, 0.8)
+    local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
+    trackerFrame:SetBackdropColor(0, 0, 0, opacity)
     trackerFrame:SetBackdropBorderColor(0.3, 0.3, 0.3, 1)
     trackerFrame:SetFrameStrata("MEDIUM")
     trackerFrame:SetClampedToScreen(true)
@@ -273,6 +274,13 @@ function ns.refreshDisplay()
     -- Resize frame
     local totalHeight = (PADDING * 2) + 14 + (rowIndex * ROW_HEIGHT)
     trackerFrame:SetHeight(math_max(FRAME_MIN_HEIGHT, totalHeight))
+end
+
+--- Apply the saved frame opacity.
+function ns.applyFrameOpacity()
+    if not trackerFrame then return end
+    local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
+    trackerFrame:SetBackdropColor(0, 0, 0, opacity)
 end
 
 -- Update timer for smooth cooldown display (started/stopped with frame visibility)
