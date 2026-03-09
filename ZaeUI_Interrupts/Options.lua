@@ -20,7 +20,7 @@ local function createCheckbox(parent, y, label, get, set)
     cb.text:SetFontObject("GameFontHighlight")
     cb:SetChecked(get())
     cb:SetScript("OnClick", function(self)
-        set(self:GetChecked())
+        set(not not self:GetChecked())
     end)
     return cb, y - 30
 end
@@ -102,6 +102,60 @@ local function createOptionsPanel(parentCategory)
         function() return db.autoResetCounters end,
         function(checked)
             db.autoResetCounters = checked
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Hide ready spells (only show cooldowns)",
+        function() return db.hideReady end,
+        function(checked)
+            db.hideReady = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Sort by cooldown (on CD first)",
+        function() return db.sortByCD end,
+        function(checked)
+            db.sortByCD = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Lock tracker window position",
+        function() return db.lockFrame end,
+        function(checked)
+            db.lockFrame = checked
+        end
+    )
+
+    -- Category filters
+    y = y - 12
+    local catHeader = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    catHeader:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    catHeader:SetText("Category Filters")
+    y = y - 22
+
+    _, y = createCheckbox(panel, y, "Show Interrupts",
+        function() return db.showInterrupts end,
+        function(checked)
+            db.showInterrupts = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Show Stuns",
+        function() return db.showStuns end,
+        function(checked)
+            db.showStuns = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+
+    _, y = createCheckbox(panel, y, "Show Others (knockbacks, disorients...)",
+        function() return db.showOthers end,
+        function(checked)
+            db.showOthers = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
         end
     )
 

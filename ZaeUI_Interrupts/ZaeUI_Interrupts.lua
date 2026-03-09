@@ -31,6 +31,12 @@ local DEFAULTS = {
     autoHide = true,
     showCounter = true,
     autoResetCounters = true,
+    hideReady = false,
+    showInterrupts = true,
+    showStuns = true,
+    showOthers = true,
+    lockFrame = false,
+    sortByCD = false,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
     customSpells = {},    -- { [spellID] = true } added by user
     removedSpells = {},   -- { [spellID] = true } removed by user
@@ -83,15 +89,6 @@ function events.ADDON_LOADED(_, addonName)
 
     -- Scan spells on load
     ns.scanMySpells()
-
-    -- Show tracker if enabled (deferred so Display.lua has loaded its functions)
-    C_Timer.After(0, function()
-        if db.showFrame and ns.showDisplay then
-            if not db.autoHide or IsInGroup() or IsInRaid() then
-                ns.showDisplay()
-            end
-        end
-    end)
 
     print(PREFIX .. "Loaded. Type /zint help for commands.")
 end
@@ -146,6 +143,13 @@ function events.PLAYER_ENTERING_WORLD()
         local _, instanceType = IsInInstance()
         if instanceType == "party" or instanceType == "raid" then
             ns.resetCounters()
+        end
+    end
+
+    -- Show tracker on login/reload if enabled
+    if db.showFrame and ns.showDisplay then
+        if not db.autoHide or IsInGroup() or IsInRaid() then
+            ns.showDisplay()
         end
     end
 end
