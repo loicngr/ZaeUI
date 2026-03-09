@@ -8,7 +8,6 @@ local CreateFrame = CreateFrame
 local C_ChatInfo = C_ChatInfo
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
-local UnitClass = UnitClass
 local UnitName = UnitName
 local GetNumGroupMembers = GetNumGroupMembers
 local IsInInstance = IsInInstance
@@ -126,7 +125,7 @@ function events.GROUP_ROSTER_UPDATE()
     ns.sendSync()
 end
 
-function events.CHAT_MSG_ADDON(_, prefix, message, channel, sender)
+function events.CHAT_MSG_ADDON(_, prefix, message, _, sender)
     if prefix ~= COMM_PREFIX then return end
     ns.handleAddonMessage(message, sender)
 end
