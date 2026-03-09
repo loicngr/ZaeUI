@@ -9,7 +9,7 @@ A collection of lightweight World of Warcraft addons for Retail / Midnight.
 
 | Addon | Description | Command | Download |
 |-------|-------------|---------|----------|
-| [ZaeUI_Nameplates](ZaeUI_Nameplates/) | Enhance your target nameplate with scaling, overlap adjustment and highlight | `/znp` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplates) |
+| [ZaeUI_Nameplates](ZaeUI_Nameplates/) | Enhance your target nameplate with scaling, overlap adjustment, arrow indicators, highlight and options panel | `/znp` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplates) |
 
 ## Installation
 

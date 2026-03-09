@@ -17,8 +17,11 @@ read_globals = {
 
     -- WoW API
     "C_NamePlate",
+    "C_Timer",
+    "ColorPickerFrame",
     "CreateFrame",
     "GetCVar",
     "SetCVar",
+    "Settings",
     "UnitIsUnit",
 }
