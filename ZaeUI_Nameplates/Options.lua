@@ -18,19 +18,6 @@ local function createHeader(parent, y, text)
     return fs, y - 28
 end
 
---- Create a sub-header label.
---- @param parent table Parent frame
---- @param y number Y offset from TOPLEFT
---- @param text string Sub-header text
---- @return table fontString The created font string
---- @return number nextY The Y offset for the next widget
-local function createSubHeader(parent, y, text)
-    local fs = parent:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    fs:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
-    fs:SetText(text)
-    return fs, y - 24
-end
-
 --- Create a checkbox control.
 --- @param parent table Parent frame
 --- @param y number Y offset from TOPLEFT
@@ -204,7 +191,6 @@ local function createOptionsPanel()
     panel:SetSize(1, 1)
 
     local y = -16
-    local _, nextY
 
     -- Scale & Overlap section
     _, y = createHeader(panel, y, "Scale & Overlap")
