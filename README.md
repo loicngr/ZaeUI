@@ -10,7 +10,7 @@ A collection of lightweight World of Warcraft addons for Retail / Midnight.
 | Addon | Description | Command | Download |
 |-------|-------------|---------|----------|
 | [ZaeUI_Nameplates](ZaeUI_Nameplates/) | Enhance your target nameplate with scaling, overlap adjustment, arrow indicators, highlight and options panel | `/znp` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplates) |
-| [ZaeUI_Interrupts](ZaeUI_Interrupts/) | Track interrupt, stun and knockback cooldowns for your group | `/zint` | - |
+| [ZaeUI_Interrupts](ZaeUI_Interrupts/) | Track interrupt, stun and knockback cooldowns for your group | `/zint` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-interrupts) |
 
 ## Installation
 
