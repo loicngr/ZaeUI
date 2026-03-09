@@ -168,13 +168,16 @@ local function createColorPicker(parent, y, label, getColor, setColor)
     return swatch, y - 32
 end
 
--- Panel creation ----------------------------------------------------------------
+-- Parent category ---------------------------------------------------------------
 
-local function createOptionsPanel()
-    local db = ns.db
-    local C = ns.constants
+--- Ensure the shared ZaeUI parent category exists.
+--- Must be called synchronously (not in a timer) to avoid race conditions.
+--- @return table parentCategory The shared parent category
+local function ensureParentCategory()
+    if ZaeUI_SettingsCategory then
+        return ZaeUI_SettingsCategory
+    end
 
-    -- Parent category: ZaeUI (simple title frame)
     local parentPanel = CreateFrame("Frame")
     parentPanel:SetSize(1, 1)
 
@@ -185,6 +188,19 @@ local function createOptionsPanel()
     local parentDesc = parentPanel:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     parentDesc:SetPoint("TOPLEFT", parentTitle, "BOTTOMLEFT", 0, -8)
     parentDesc:SetText("A collection of lightweight World of Warcraft addons.")
+
+    local category = Settings.RegisterCanvasLayoutCategory(parentPanel, "ZaeUI")
+    category.ID = "ZaeUI"
+    Settings.RegisterAddOnCategory(category)
+    ZaeUI_SettingsCategory = category
+    return category
+end
+
+-- Panel creation ----------------------------------------------------------------
+
+local function createOptionsPanel(parentCategory)
+    local db = ns.db
+    local C = ns.constants
 
     -- Sub panel: Nameplates
     local panel = CreateFrame("Frame")
@@ -309,16 +325,11 @@ local function createOptionsPanel()
     hint:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
     hint:SetText("Target a unit to preview changes in real time.")
 
-    -- Register in Settings
-    local parentCategory = Settings.RegisterCanvasLayoutCategory(parentPanel, "ZaeUI")
-    parentCategory.ID = "ZaeUI"
-    Settings.RegisterAddOnCategory(parentCategory)
-
     local subCategory = Settings.RegisterCanvasLayoutSubcategory(parentCategory, panel, "Nameplates")
     subCategory.ID = "ZaeUI_Nameplates"
 
     -- Expose for /znp options command
-    ns.settingsCategory = parentCategory
+    ns.settingsCategory = subCategory
 end
 
 -- Wait for the main addon to finish loading before creating the panel.
@@ -331,12 +342,15 @@ loader:SetScript("OnEvent", function(self, _, addonName)
     end
     self:UnregisterEvent("ADDON_LOADED")
 
+    -- Create parent category synchronously to avoid race with other ZaeUI addons
+    local parentCategory = ensureParentCategory()
+
     -- Delay one frame to ensure ns.db is populated
     C_Timer.After(0, function()
         if ns.db then
-            createOptionsPanel()
+            createOptionsPanel(parentCategory)
         else
-            print("|cffff0000[ZaeUI_Nameplates]|r Options panel failed to load: database not initialized.")
+            print("|cff00ccff[ZaeUI_Nameplates]|r Options panel failed to load: database not initialized.")
         end
     end)
 end)
