@@ -3,8 +3,7 @@
 ## Notes: Enhance your target nameplate with scaling, overlap adjustment, highlight and arrow indicators.
 ## Author: loicngr
 ## Version: 2.1.1
-## SavedVariables: ZaeUI_NameplatesDB ZaeUI_NameplateScaleDB
-## X-Migration-Note: ZaeUI_NameplateScaleDB is listed for migration only, remove in a future version
+## SavedVariables: ZaeUI_NameplatesDB
 
 ZaeUI_Nameplates.lua
 Options.lua
