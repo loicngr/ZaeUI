@@ -22,7 +22,6 @@ local ROW_HEIGHT = 22
 local ICON_SIZE = 18
 local PADDING = 8
 local CATEGORY_LABELS = { interrupt = "Interrupts", stun = "Stuns & Others" }
-local WHITE_COLOR = { r = 1, g = 1, b = 1 }
 
 local trackerFrame
 local rows = {}
