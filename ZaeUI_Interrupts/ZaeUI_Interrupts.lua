@@ -11,8 +11,14 @@ local IsInRaid = IsInRaid
 local UnitName = UnitName
 local GetNumGroupMembers = GetNumGroupMembers
 local IsInInstance = IsInInstance
+local GetTime = GetTime
+local IsSpellKnown = IsSpellKnown
 local strtrim = strtrim
 local strsplit = strsplit
+local tonumber = tonumber
+local tostring = tostring
+local table_concat = table.concat
+local pairs = pairs
 
 -- Constants
 local ADDON_NAME = "ZaeUI_Interrupts"
@@ -24,6 +30,7 @@ local PREFIX = "|cff00ccff[ZaeUI_Interrupts]|r "
 local db
 local mySpells = {}       -- spells the local player can use { [spellID] = true }
 local groupData = {}      -- data from all group members { [playerName] = { spells = {}, cooldowns = {} } }
+local syncList = {}       -- reusable table for sendSync
 
 -- Default settings
 local DEFAULTS = {
@@ -225,6 +232,12 @@ function ns.scanMySpells()
     end
 end
 
+--- Check if we can safely send addon messages.
+--- @return boolean canSend Whether the player is in a valid group
+local function canSendMessage()
+    return (IsInGroup() or IsInRaid()) and GetNumGroupMembers() > 0
+end
+
 --- Get the appropriate channel for addon messages.
 --- @return string channel "RAID" or "PARTY"
 local function getChannel()
@@ -234,13 +247,15 @@ end
 
 --- Send a SYNC message with all tracked spell IDs.
 function ns.sendSync()
-    if not (IsInGroup() or IsInRaid()) then return end
-    local spellList = {}
-    for spellID, _ in pairs(mySpells) do
-        spellList[#spellList + 1] = tostring(spellID)
+    if not canSendMessage() then return end
+    local n = 0
+    for spellID in pairs(mySpells) do
+        n = n + 1
+        syncList[n] = tostring(spellID)
     end
-    if #spellList == 0 then return end
-    local msg = "SYNC:" .. table.concat(spellList, ",")
+    for i = n + 1, #syncList do syncList[i] = nil end
+    if n == 0 then return end
+    local msg = "SYNC:" .. table_concat(syncList, ",")
     C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, getChannel())
 end
 
@@ -248,7 +263,7 @@ end
 --- @param spellID number The spell ID used
 --- @param cooldown number The cooldown duration in seconds
 function ns.sendUsed(spellID, cooldown)
-    if not (IsInGroup() or IsInRaid()) then return end
+    if not canSendMessage() then return end
     local msg = "USED:" .. spellID .. ":" .. cooldown
     C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, getChannel())
 end
@@ -256,7 +271,7 @@ end
 --- Send a READY message when a tracked spell's cooldown ends.
 --- @param spellID number The spell ID that is ready
 function ns.sendReady(spellID)
-    if not (IsInGroup() or IsInRaid()) then return end
+    if not canSendMessage() then return end
     local msg = "READY:" .. spellID
     C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, getChannel())
 end
@@ -276,12 +291,12 @@ function ns.handleAddonMessage(message, sender)
     if name == myName then return end
 
     if msgType == "SYNC" then
-        local spellIDs = { strsplit(",", payload) }
         groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, counters = {} }
-        groupData[name].spells = {}
-        for _, idStr in ipairs(spellIDs) do
+        local spells = groupData[name].spells
+        for k in pairs(spells) do spells[k] = nil end
+        for idStr in payload:gmatch("[^,]+") do
             local id = tonumber(idStr)
-            if id then groupData[name].spells[id] = true end
+            if id then spells[id] = true end
         end
     elseif msgType == "USED" then
         local spellIDStr, cdStr = strsplit(":", payload)

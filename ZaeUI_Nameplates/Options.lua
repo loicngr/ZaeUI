@@ -3,6 +3,8 @@
 
 local _, ns = ...
 
+local math_floor = math.floor
+
 -- Widget helpers ----------------------------------------------------------------
 
 --- Create a section header label.
@@ -78,7 +80,7 @@ local function createSlider(parent, y, label, minVal, maxVal, step, get, set)
     slider:SetScript("OnValueChanged", function(_, value)
         -- Round to step precision
         local mult = 1 / step
-        value = math.floor(value * mult + 0.5) / mult
+        value = math_floor(value * mult + 0.5) / mult
         valueText:SetText(tostring(value))
         set(value)
     end)

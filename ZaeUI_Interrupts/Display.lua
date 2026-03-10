@@ -27,10 +27,18 @@ local WHITE_COLOR = { r = 1, g = 1, b = 1 }
 local trackerFrame
 local rows = {}
 local classColorCache = {}
+local classColorHexCache = {}
 local spellIconCache = {}
 local updateFrame
 local catEntriesInterrupt = {}
 local catEntriesStun = {}
+
+--- Sort comparator: on CD first, then by remaining time descending, then by name.
+local function sortByRemainingDesc(a, b)
+    if a.onCD ~= b.onCD then return a.onCD == true end
+    if a.onCD then return a.remaining > b.remaining end
+    return a.playerName < b.playerName
+end
 
 --- Create the main tracker frame.
 local function createTrackerFrame()
@@ -111,12 +119,19 @@ local function getRow(index, parent)
     return row
 end
 
---- Get class color for a player name.
+--- Cache a class color and its hex representation.
 --- @param playerName string
---- @return table color {r, g, b}
-local function getClassColor(playerName)
-    local cached = classColorCache[playerName]
-    if cached then return cached end
+--- @param color table {r, g, b}
+local function cacheClassColor(playerName, color)
+    classColorCache[playerName] = color
+    classColorHexCache[playerName] = string_format("%02x%02x%02x", color.r * 255, color.g * 255, color.b * 255)
+end
+
+--- Get class color hex string for a player name.
+--- @param playerName string
+--- @return string hex "rrggbb"
+local function getClassColorHex(playerName)
+    if classColorHexCache[playerName] then return classColorHexCache[playerName] end
 
     -- Try to find the unit ID for this player
     local numMembers = GetNumGroupMembers()
@@ -125,8 +140,8 @@ local function getClassColor(playerName)
         if UnitName(unit) == playerName then
             local _, className = UnitClass(unit)
             if className and RAID_CLASS_COLORS[className] then
-                classColorCache[playerName] = RAID_CLASS_COLORS[className]
-                return RAID_CLASS_COLORS[className]
+                cacheClassColor(playerName, RAID_CLASS_COLORS[className])
+                return classColorHexCache[playerName]
             end
         end
     end
@@ -134,11 +149,11 @@ local function getClassColor(playerName)
     if UnitName("player") == playerName then
         local _, className = UnitClass("player")
         if className and RAID_CLASS_COLORS[className] then
-            classColorCache[playerName] = RAID_CLASS_COLORS[className]
-            return RAID_CLASS_COLORS[className]
+            cacheClassColor(playerName, RAID_CLASS_COLORS[className])
+            return classColorHexCache[playerName]
         end
     end
-    return WHITE_COLOR
+    return "ffffff"
 end
 
 --- Check if a category is enabled in settings.
@@ -219,21 +234,20 @@ function ns.refreshDisplay()
     end
 
     -- Sort entries within each category
-    local sortFunc
     if sortByCD then
-        sortFunc = function(a, b)
-            if a.onCD ~= b.onCD then return a.onCD == true end
-            if a.onCD then return a.remaining > b.remaining end
-            return a.playerName < b.playerName
-        end
-        if interruptCount > 1 then table_sort(interruptEntries, sortFunc) end
-        if stunCount > 1 then table_sort(stunEntries, sortFunc) end
+        if interruptCount > 1 then table_sort(interruptEntries, sortByRemainingDesc) end
+        if stunCount > 1 then table_sort(stunEntries, sortByRemainingDesc) end
     end
 
-    -- Render a category block
-    local function renderCategory(entries, count, label)
-        if count == 0 then return end
-        if label then
+    -- Render entries for a category
+    local showCounter = db.showCounter
+    for pass = 1, 2 do
+        local entries = pass == 1 and interruptEntries or stunEntries
+        local count = pass == 1 and interruptCount or stunCount
+        local label = pass == 1 and CATEGORY_LABELS["interrupt"] or CATEGORY_LABELS["stun"]
+
+        if count > 0 then
+            -- Category header
             rowIndex = rowIndex + 1
             local headerRow = getRow(rowIndex, content)
             headerRow.icon:Hide()
@@ -242,53 +256,49 @@ function ns.refreshDisplay()
             headerRow.status:SetText("")
             headerRow.counter:SetText("")
             headerRow:Show()
-        end
-        for i = 1, count do
-            local entry = entries[i]
-            rowIndex = rowIndex + 1
-            local row = getRow(rowIndex, content)
 
-            local spellID = entry.spellID
-            if spellIconCache[spellID] == nil then
-                local spellInfo = C_Spell.GetSpellInfo(spellID)
-                spellIconCache[spellID] = (spellInfo and spellInfo.iconID) or false
-            end
-            local iconID = spellIconCache[spellID]
-            if iconID then
-                row.icon:SetTexture(iconID)
-                row.icon:Show()
-            else
-                row.icon:Hide()
-            end
+            for i = 1, count do
+                local entry = entries[i]
+                rowIndex = rowIndex + 1
+                local row = getRow(rowIndex, content)
 
-            local color = getClassColor(entry.playerName)
-            row.name:SetText(string_format("|cff%02x%02x%02x%s|r",
-                color.r * 255, color.g * 255, color.b * 255, entry.playerName))
-            row.name:SetWidth(100)
+                local spellID = entry.spellID
+                if spellIconCache[spellID] == nil then
+                    local spellInfo = C_Spell.GetSpellInfo(spellID)
+                    spellIconCache[spellID] = (spellInfo and spellInfo.iconID) or false
+                end
+                local iconID = spellIconCache[spellID]
+                if iconID then
+                    row.icon:SetTexture(iconID)
+                    row.icon:Show()
+                else
+                    row.icon:Hide()
+                end
 
-            if entry.onCD then
-                row.status:SetText(string_format("|cffff4444%.1fs|r", entry.remaining))
-            else
-                row.status:SetText("|cff44ff44Ready|r")
-            end
+                row.name:SetText("|cff" .. getClassColorHex(entry.playerName) .. entry.playerName .. "|r")
+                row.name:SetWidth(100)
 
-            if db.showCounter then
-                local cnt = entry.counters and entry.counters[spellID] or 0
-                if cnt > 0 then
-                    row.counter:SetText("|cffaaaaaa(" .. cnt .. ")|r")
+                if entry.onCD then
+                    row.status:SetText(string_format("|cffff4444%.1fs|r", entry.remaining))
+                else
+                    row.status:SetText("|cff44ff44Ready|r")
+                end
+
+                if showCounter then
+                    local cnt = entry.counters and entry.counters[spellID] or 0
+                    if cnt > 0 then
+                        row.counter:SetText("|cffaaaaaa(" .. cnt .. ")|r")
+                    else
+                        row.counter:SetText("")
+                    end
                 else
                     row.counter:SetText("")
                 end
-            else
-                row.counter:SetText("")
-            end
 
-            row:Show()
+                row:Show()
+            end
         end
     end
-
-    renderCategory(interruptEntries, interruptCount, CATEGORY_LABELS["interrupt"])
-    renderCategory(stunEntries, stunCount, CATEGORY_LABELS["stun"])
 
     -- Resize frame
     local totalHeight = (PADDING * 2) + 14 + (rowIndex * ROW_HEIGHT)
@@ -371,8 +381,9 @@ autoFrame:RegisterEvent("GROUP_JOINED")
 autoFrame:RegisterEvent("GROUP_LEFT")
 autoFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 autoFrame:SetScript("OnEvent", function()
-    -- Clear class color cache on group changes
+    -- Clear class color caches on group changes
     for k in pairs(classColorCache) do classColorCache[k] = nil end
+    for k in pairs(classColorHexCache) do classColorHexCache[k] = nil end
 
     if not ns.db then return end
     if not ns.db.showFrame then return end
