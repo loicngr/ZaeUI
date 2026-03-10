@@ -54,21 +54,6 @@ local DEFAULTS = {
     arrowOffset = DEFAULT_ARROW_OFFSET,
 }
 
---- Migrate settings from the old ZaeUI_NameplateScaleDB if present.
-local function migrateOldDB()
-    if not ZaeUI_NameplateScaleDB then
-        return
-    end
-    if not ZaeUI_NameplatesDB then
-        ZaeUI_NameplatesDB = {}
-    end
-    ZaeUI_NameplatesDB.scale = ZaeUI_NameplateScaleDB.scale
-    ZaeUI_NameplatesDB.overlapV = ZaeUI_NameplateScaleDB.overlapV
-    ZaeUI_NameplatesDB.baseOverlapV = ZaeUI_NameplateScaleDB.baseOverlapV
-    ZaeUI_NameplateScaleDB = nil
-    print(PREFIX .. "Settings migrated from ZaeUI_NameplateScale.")
-end
-
 --- Initialize database with defaults for any missing keys.
 local function initDB()
     if not ZaeUI_NameplatesDB then
@@ -273,7 +258,6 @@ function events.ADDON_LOADED(_, addonName)
     if addonName ~= ADDON_NAME then
         return
     end
-    migrateOldDB()
     initDB()
 
     originalOverlapV = db.baseOverlapV
@@ -284,8 +268,7 @@ function events.ADDON_LOADED(_, addonName)
     frame:RegisterEvent("NAME_PLATE_UNIT_ADDED")
     frame:RegisterEvent("NAME_PLATE_UNIT_REMOVED")
 
-    print(PREFIX .. "Loaded. Scale: " .. db.scale .. " | Highlight: " .. (db.highlight and "on" or "off") .. " | Arrows: " .. (db.arrows and "on" or "off"))
-    print(PREFIX .. "Type /znp help for commands.")
+    print(PREFIX .. "Loaded. Type /znp help for commands.")
 end
 
 function events.PLAYER_TARGET_CHANGED()

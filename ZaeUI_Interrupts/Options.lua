@@ -3,6 +3,8 @@
 
 local _, ns = ...
 
+local math_floor = math.floor
+
 -- Widget helpers ----------------------------------------------------------------
 
 --- Create a checkbox control.
@@ -58,7 +60,7 @@ local function createSlider(parent, y, label, minVal, maxVal, step, get, set, fm
     slider.Text:SetText("")
     valueText:SetText(string.format(fmt, get()))
     slider:SetScript("OnValueChanged", function(_, value)
-        value = math.floor(value / step + 0.5) * step
+        value = math_floor(value / step + 0.5) * step
         valueText:SetText(string.format(fmt, value))
         set(value)
     end)
