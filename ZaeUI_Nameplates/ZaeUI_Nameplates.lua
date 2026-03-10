@@ -48,7 +48,7 @@ local DEFAULTS = {
     baseOverlapV = nil,
     highlight = DEFAULT_HIGHLIGHT,
     arrows = DEFAULT_ARROWS,
-    highlightColor = { r = 1.0, g = 0.392, b = 0.035, a = 0.75 },
+    highlightColor = { r = 1.0, g = 1.0, b = 1.0, a = 0.6 },
     borderSize = DEFAULT_BORDER,
     arrowSize = DEFAULT_ARROW_SIZE,
     arrowOffset = DEFAULT_ARROW_OFFSET,
