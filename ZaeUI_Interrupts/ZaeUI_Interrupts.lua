@@ -91,6 +91,14 @@ function events.ADDON_LOADED(_, addonName)
     -- Scan spells on load
     ns.scanMySpells()
 
+    -- Show tracker if enabled (all TOC files are loaded before events fire,
+    -- so ns.showDisplay is already available here — no timer needed)
+    if db.showFrame then
+        if not db.autoHide or IsInGroup() or IsInRaid() then
+            ns.showDisplay()
+        end
+    end
+
     print(PREFIX .. "Loaded. Type /zint help for commands.")
 end
 
@@ -144,13 +152,6 @@ function events.PLAYER_ENTERING_WORLD()
         local _, instanceType = IsInInstance()
         if instanceType == "party" or instanceType == "raid" then
             ns.resetCounters()
-        end
-    end
-
-    -- Show tracker on login/reload if enabled
-    if db.showFrame and ns.showDisplay then
-        if not db.autoHide or IsInGroup() or IsInRaid() then
-            ns.showDisplay()
         end
     end
 end
