@@ -19,6 +19,7 @@ local tonumber = tonumber
 local tostring = tostring
 local table_concat = table.concat
 local pairs = pairs
+local pcall = pcall
 
 -- Constants
 local ADDON_NAME = "ZaeUI_Interrupts"
@@ -239,15 +240,22 @@ local function canSendMessage()
 end
 
 --- Get the appropriate channel for addon messages.
---- @return string channel "RAID" or "PARTY"
+--- @return string channel "INSTANCE_CHAT", "RAID" or "PARTY"
 local function getChannel()
+    if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then return "INSTANCE_CHAT" end
     if IsInRaid() then return "RAID" end
     return "PARTY"
 end
 
+--- Safely send an addon message, suppressing errors during instance transitions.
+--- @param msg string The message to send
+local function safeSend(msg)
+    if not canSendMessage() then return end
+    pcall(C_ChatInfo.SendAddonMessage, COMM_PREFIX, msg, getChannel())
+end
+
 --- Send a SYNC message with all tracked spell IDs.
 function ns.sendSync()
-    if not canSendMessage() then return end
     local n = 0
     for spellID in pairs(mySpells) do
         n = n + 1
@@ -255,25 +263,20 @@ function ns.sendSync()
     end
     for i = n + 1, #syncList do syncList[i] = nil end
     if n == 0 then return end
-    local msg = "SYNC:" .. table_concat(syncList, ",")
-    C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, getChannel())
+    safeSend("SYNC:" .. table_concat(syncList, ","))
 end
 
 --- Send a USED message when a tracked spell is cast.
 --- @param spellID number The spell ID used
 --- @param cooldown number The cooldown duration in seconds
 function ns.sendUsed(spellID, cooldown)
-    if not canSendMessage() then return end
-    local msg = "USED:" .. spellID .. ":" .. cooldown
-    C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, getChannel())
+    safeSend("USED:" .. spellID .. ":" .. cooldown)
 end
 
 --- Send a READY message when a tracked spell's cooldown ends.
 --- @param spellID number The spell ID that is ready
 function ns.sendReady(spellID)
-    if not canSendMessage() then return end
-    local msg = "READY:" .. spellID
-    C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, getChannel())
+    safeSend("READY:" .. spellID)
 end
 
 --- Handle incoming addon messages.
