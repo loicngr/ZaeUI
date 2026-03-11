@@ -40,6 +40,7 @@ ZaeUI/
 - A simple addon = a single `.lua` file + a `.toc`
 - Do not over-engineer: add modules/folders only when complexity justifies it
 - Validate Lua syntax with `luac -p` after each change if available
+- Run `luacheck ZaeUI_<AddonName>/` before committing — must pass with 0 warnings / 0 errors
 - Addon folder names must match the `.toc` file name exactly
 
 ## WoW API

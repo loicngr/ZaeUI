@@ -155,28 +155,11 @@ local function createOptionsPanel(parentCategory)
         end
     )
 
-    _, y = createCheckbox(panel, y, "Sort by cooldown (on CD first)",
-        function() return db.sortByCD end,
-        function(checked)
-            db.sortByCD = checked
-            if ns.refreshDisplay then ns.refreshDisplay() end
-        end
-    )
-
     _, y = createCheckbox(panel, y, "Lock tracker window position",
         function() return db.lockFrame end,
         function(checked)
             db.lockFrame = checked
         end
-    )
-
-    _, y = createSlider(panel, y, "Window opacity", 10, 100, 5,
-        function() return db.frameOpacity or 80 end,
-        function(value)
-            db.frameOpacity = value
-            if ns.applyFrameOpacity then ns.applyFrameOpacity() end
-        end,
-        "%d%%"
     )
 
     -- Category filters
@@ -210,11 +193,43 @@ local function createOptionsPanel(parentCategory)
         end
     )
 
+    -- Kick Markers section
+    y = y - 12
+    local markerHeader = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    markerHeader:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    markerHeader:SetText("Kick Markers")
+    y = y - 22
+
+    _, y = createCheckbox(panel, y, "Show markers in a separate window",
+        function() return db.separateMarkerWindow end,
+        function(checked)
+            db.separateMarkerWindow = checked
+            if ns.refreshDisplay then ns.refreshDisplay() end
+            if ns.refreshMarkerDisplay then ns.refreshMarkerDisplay() end
+        end
+    )
+
+    -- Common
+    y = y - 12
+    local commonHeader = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    commonHeader:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    commonHeader:SetText("Common")
+    y = y - 22
+
+    _, y = createSlider(panel, y, "Window opacity", 10, 100, 5,
+        function() return db.frameOpacity or 80 end,
+        function(value)
+            db.frameOpacity = value
+            if ns.applyFrameOpacity then ns.applyFrameOpacity() end
+        end,
+        "%d%%"
+    )
+
     -- Hint text
     y = y - 12
     local hint = panel:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     hint:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
-    hint:SetText("All group members need the addon for cooldown tracking.")
+    hint:SetText("All group members need the addon for cooldown tracking.\nUse /zint assign to open kick marker assignments.")
 
     -- Register subcategory under ZaeUI
     local subCategory = Settings.RegisterCanvasLayoutSubcategory(parentCategory, panel, "Interrupts")

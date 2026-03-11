@@ -9,7 +9,9 @@ local C_ChatInfo = C_ChatInfo
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
 local UnitName = UnitName
+local UnitClass = UnitClass
 local GetNumGroupMembers = GetNumGroupMembers
+local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local IsInInstance = IsInInstance
 local GetTime = GetTime
 local IsSpellKnown = IsSpellKnown
@@ -20,6 +22,14 @@ local tostring = tostring
 local table_concat = table.concat
 local pairs = pairs
 local pcall = pcall
+
+--- Check if the player is in any type of group (home, instance/LFG, or raid).
+--- Covers manual groups (LE_PARTY_CATEGORY_HOME) and LFG/instance groups
+--- (LE_PARTY_CATEGORY_INSTANCE) so the addon works in all scenarios.
+--- @return boolean
+function ns.isInAnyGroup()
+    return not not (IsInGroup() or IsInGroup(LE_PARTY_CATEGORY_INSTANCE) or IsInRaid())
+end
 
 -- Constants
 local ADDON_NAME = "ZaeUI_Interrupts"
@@ -37,18 +47,23 @@ local syncList = {}       -- reusable table for sendSync
 local DEFAULTS = {
     showFrame = true,
     autoHide = true,
-    showCounter = true,
+    showCounter = false,
     autoResetCounters = true,
     hideReady = false,
     showInterrupts = true,
     showStuns = true,
     showOthers = true,
     lockFrame = false,
-    sortByCD = false,
+    collapsed = false,
+    collapsedCategories = {},
     frameOpacity = 80,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
     customSpells = {},    -- { [spellID] = true } added by user
     removedSpells = {},   -- { [spellID] = true } removed by user
+    separateMarkerWindow = false, -- show markers in separate window instead of tracker
+    markerAssignments = {}, -- persisted kick marker assignments
+    assignPanelPoint = { "CENTER", nil, "CENTER", 0, 0 },
+    markerWindowPoint = { "CENTER", nil, "CENTER", 0, 0 },
 }
 
 --- Initialize database with defaults for any missing keys.
@@ -85,6 +100,7 @@ function events.ADDON_LOADED(_, addonName)
     if addonName ~= ADDON_NAME then return end
     C_ChatInfo.RegisterAddonMessagePrefix(COMM_PREFIX)
     initDB()
+    ns.markerAssignments = db.markerAssignments
 
     frame:UnregisterEvent("ADDON_LOADED")
     frame:RegisterEvent("GROUP_ROSTER_UPDATE")
@@ -96,15 +112,21 @@ function events.ADDON_LOADED(_, addonName)
 
     -- Heartbeat timer is started/stopped via GROUP_ROSTER_UPDATE
 
-    -- Scan spells on load
+    -- Scan spells on load and build class color cache
     ns.scanMySpells()
+    ns.rebuildClassColorCache()
 
     -- Show tracker if enabled (all TOC files are loaded before events fire,
     -- so ns.showDisplay is already available here — no timer needed)
     if db.showFrame then
-        if not db.autoHide or IsInGroup() or IsInRaid() then
+        if not db.autoHide or ns.isInAnyGroup() then
             ns.showDisplay()
         end
+    end
+
+    -- Refresh marker display if there are persisted assignments
+    if next(ns.markerAssignments) then
+        if ns.refreshMarkerDisplay then ns.refreshMarkerDisplay() end
     end
 
     print(PREFIX .. "Loaded. Type /zint help for commands.")
@@ -129,14 +151,19 @@ end
 
 function events.GROUP_ROSTER_UPDATE()
     -- Start or stop heartbeat based on group status
-    if IsInGroup() or IsInRaid() then
+    if ns.isInAnyGroup() then
         startHeartbeat()
     else
         stopHeartbeat()
     end
-    -- Clean stale group members, send sync
+    -- Rebuild class color cache, clean stale group members and assignments, send sync
+    ns.rebuildClassColorCache()
     ns.cleanGroupData()
+    if ns.cleanStaleAssignments then ns.cleanStaleAssignments() end
     ns.sendSync()
+    -- Refresh assignment panel and marker display
+    if ns.refreshAssignPanel then ns.refreshAssignPanel() end
+    if ns.refreshMarkerDisplay then ns.refreshMarkerDisplay() end
 end
 
 function events.CHAT_MSG_ADDON(_, prefix, message, _, sender)
@@ -236,7 +263,7 @@ end
 --- Check if we can safely send addon messages.
 --- @return boolean canSend Whether the player is in a valid group
 local function canSendMessage()
-    return (IsInGroup() or IsInRaid()) and GetNumGroupMembers() > 0
+    return ns.isInAnyGroup() and GetNumGroupMembers() > 0
 end
 
 --- Get the appropriate channel for addon messages.
@@ -252,6 +279,67 @@ end
 local function safeSend(msg)
     if not canSendMessage() then return end
     pcall(C_ChatInfo.SendAddonMessage, COMM_PREFIX, msg, getChannel())
+end
+ns.safeSend = safeSend
+
+--- Shared backdrop definition for all addon frames.
+local SHARED_BACKDROP = {
+    bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
+    edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+    tile = true, tileSize = 16, edgeSize = 12,
+    insets = { left = 2, right = 2, top = 2, bottom = 2 },
+}
+
+--- Apply standard backdrop styling to a frame.
+--- @param target table The frame (must inherit BackdropTemplate)
+function ns.applyBackdrop(target)
+    target:SetBackdrop(SHARED_BACKDROP)
+    target:SetBackdropColor(0, 0, 0, 0.8)
+    target:SetBackdropBorderColor(0.3, 0.3, 0.3, 1)
+    local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
+    target:SetAlpha(opacity)
+end
+
+--- Pre-computed class color hex strings (static, computed once).
+local classColorByClass = {}
+for className, c in pairs(RAID_CLASS_COLORS) do
+    classColorByClass[className] = string.format("%02x%02x%02x", c.r * 255, c.g * 255, c.b * 255)
+end
+
+--- Cached player-to-hex mapping, rebuilt on GROUP_ROSTER_UPDATE.
+local classColorCache = {}
+
+--- Rebuild the class color cache from current group roster.
+function ns.rebuildClassColorCache()
+    for k in pairs(classColorCache) do classColorCache[k] = nil end
+    local numMembers = GetNumGroupMembers()
+    local isRaid = IsInRaid()
+    local count = isRaid and numMembers or (numMembers - 1)
+    for i = 1, count do
+        local unit = isRaid and ("raid" .. i) or ("party" .. i)
+        local name = UnitName(unit)
+        if name and not classColorCache[name] then
+            local _, className = UnitClass(unit)
+            if className and classColorByClass[className] then
+                classColorCache[name] = classColorByClass[className]
+            end
+        end
+    end
+    local myName = UnitName("player")
+    if myName and not classColorCache[myName] then
+        local _, className = UnitClass("player")
+        if className and classColorByClass[className] then
+            classColorCache[myName] = classColorByClass[className]
+        end
+    end
+end
+
+--- Get class color hex string for a player name.
+--- Shared utility used by Display.lua, MarkerAssign.lua and MarkerDisplay.lua.
+--- @param playerName string
+--- @return string hex "rrggbb"
+function ns.getClassColorHex(playerName)
+    return classColorCache[playerName] or "ffffff"
 end
 
 --- Send a SYNC message with all tracked spell IDs.
@@ -316,6 +404,10 @@ function ns.handleAddonMessage(message, sender)
             groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, counters = {} }
             groupData[name].cooldowns[spellID] = nil
         end
+    elseif msgType == "MARKS" then
+        if ns.handleMarksMessage then
+            ns.handleMarksMessage(payload)
+        end
     end
 
     -- Refresh display
@@ -338,8 +430,10 @@ end
 function ns.cleanGroupData()
     local currentMembers = {}
     local numMembers = GetNumGroupMembers()
-    for i = 1, numMembers do
-        local unit = IsInRaid() and ("raid" .. i) or ("party" .. i)
+    local isRaid = IsInRaid()
+    local count = isRaid and numMembers or (numMembers - 1)
+    for i = 1, count do
+        local unit = isRaid and ("raid" .. i) or ("party" .. i)
         local name = UnitName(unit)
         if name then currentMembers[name] = true end
     end
@@ -364,6 +458,15 @@ SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
             ns.toggleDisplay()
         else
             print(PREFIX .. "Display not available. Type /zint help for commands.")
+        end
+        return
+    end
+
+    if msg == "assign" then
+        if ns.toggleAssignPanel then
+            ns.toggleAssignPanel()
+        else
+            print(PREFIX .. "Assignment panel not available.")
         end
         return
     end
@@ -393,6 +496,7 @@ SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
     if msg == "help" then
         print(PREFIX .. "Usage:")
         print(PREFIX .. "  /zint - Toggle the tracker window")
+        print(PREFIX .. "  /zint assign - Open kick marker assignments (leader only)")
         print(PREFIX .. "  /zint options - Open the options panel")
         print(PREFIX .. "  /zint resetcount - Reset spell use counters")
         print(PREFIX .. "  /zint reset - Reset all settings to defaults")
