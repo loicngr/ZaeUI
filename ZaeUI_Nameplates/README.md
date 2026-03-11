@@ -24,8 +24,8 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 | `/znp highlight` | Toggle border on/off |
 | `/znp border 3` | Set border thickness (1 - 10) |
 | `/znp arrows` | Toggle arrows on/off |
-| `/znp arrows size 15` | Set arrow indicator size (4 - 24) |
-| `/znp arrows offset 5` | Set arrow offset from health bar (0 - 20) |
+| `/znp arrows size 12` | Set arrow indicator size (4 - 24) |
+| `/znp arrows offset 8` | Set arrow offset from health bar (0 - 20) |
 | `/znp help` | Show help |
 
 ## Download

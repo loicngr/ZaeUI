@@ -140,6 +140,13 @@ end
 - `SavedVariables`: Explicitly list each persisted table
 - List `.lua` files in load order
 
+## Linting
+
+- Run `luacheck ZaeUI_<AddonName>/` after every code change to catch warnings and errors
+- All files must pass with **0 warnings / 0 errors** before committing
+- When adding new WoW API globals, update `.luacheckrc` (`read_globals` for read-only, `globals` for writable)
+- Use `next(t)` instead of `for _ in pairs(t) do ... break end` to check if a table is non-empty
+
 ## Anti-Patterns to Avoid
 
 - Never use `getglobal()` / `setglobal()` (deprecated)

@@ -4,17 +4,11 @@
 local _, ns = ...
 
 local CreateFrame = CreateFrame
-local UnitClass = UnitClass
 local GetTime = GetTime
-local RAID_CLASS_COLORS = RAID_CLASS_COLORS
-local GetNumGroupMembers = GetNumGroupMembers
-local IsInRaid = IsInRaid
-local IsInGroup = IsInGroup
-local UnitName = UnitName
 local C_Spell = C_Spell
 local math_max = math.max
 local string_format = string.format
-local table_sort = table.sort
+
 
 local FRAME_WIDTH = 220
 local FRAME_MIN_HEIGHT = 80
@@ -22,38 +16,21 @@ local ROW_HEIGHT = 22
 local ICON_SIZE = 18
 local PADDING = 8
 local CATEGORY_LABELS = { interrupt = "Interrupts", stun = "Stuns & Others" }
+local CAT_KEYS = { "interrupt", "stun" }
 
 local trackerFrame
 local rows = {}
-local classColorCache = {}
-local classColorHexCache = {}
 local spellIconCache = {}
 local updateFrame
 local catEntriesInterrupt = {}
 local catEntriesStun = {}
-
---- Sort comparator: on CD first, then by remaining time descending, then by name.
-local function sortByRemainingDesc(a, b)
-    if a.onCD ~= b.onCD then return a.onCD == true end
-    if a.onCD then return a.remaining > b.remaining end
-    return a.playerName < b.playerName
-end
 
 --- Create the main tracker frame.
 local function createTrackerFrame()
     trackerFrame = CreateFrame("Frame", "ZaeUI_InterruptsFrame", UIParent, "BackdropTemplate")
     trackerFrame:SetSize(FRAME_WIDTH, FRAME_MIN_HEIGHT)
     trackerFrame:SetPoint("CENTER")
-    trackerFrame:SetBackdrop({
-        bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-        edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-        tile = true, tileSize = 16, edgeSize = 12,
-        insets = { left = 2, right = 2, top = 2, bottom = 2 },
-    })
-    trackerFrame:SetBackdropColor(0, 0, 0, 0.8)
-    trackerFrame:SetBackdropBorderColor(0.3, 0.3, 0.3, 1)
-    local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
-    trackerFrame:SetAlpha(opacity)
+    ns.applyBackdrop(trackerFrame)
     trackerFrame:SetFrameStrata("MEDIUM")
     trackerFrame:SetClampedToScreen(true)
     trackerFrame:SetMovable(true)
@@ -79,6 +56,53 @@ local function createTrackerFrame()
     title:SetText("|cff00ccffInterrupts|r")
     trackerFrame.title = title
 
+    -- Collapse button (minimize/expand content)
+    local collapseBtn = CreateFrame("Button", nil, trackerFrame)
+    collapseBtn:SetSize(14, 14)
+    collapseBtn:SetPoint("TOPRIGHT", -PADDING, -PADDING)
+    local collapseIcon = collapseBtn:CreateTexture(nil, "ARTWORK")
+    collapseIcon:SetAllPoints()
+    local initCollapsed = ns.db and ns.db.collapsed
+    collapseIcon:SetTexture(initCollapsed
+        and "Interface\\Buttons\\UI-PlusButton-UP"
+        or "Interface\\Buttons\\UI-MinusButton-UP")
+    collapseIcon:SetAlpha(0.7)
+    collapseBtn:SetScript("OnEnter", function() collapseIcon:SetAlpha(1) end)
+    collapseBtn:SetScript("OnLeave", function() collapseIcon:SetAlpha(0.7) end)
+    collapseBtn:SetScript("OnClick", function()
+        local db = ns.db
+        if db then db.collapsed = not db.collapsed end
+        local collapsed = db and db.collapsed
+        collapseIcon:SetTexture(collapsed
+            and "Interface\\Buttons\\UI-PlusButton-UP"
+            or "Interface\\Buttons\\UI-MinusButton-UP")
+        ns.refreshDisplay()
+    end)
+    trackerFrame.collapseBtn = collapseBtn
+
+    -- Assign button (opens kick marker assignment panel)
+    local assignBtn = CreateFrame("Button", nil, trackerFrame)
+    assignBtn:SetSize(14, 14)
+    assignBtn:SetPoint("RIGHT", collapseBtn, "LEFT", -4, 0)
+    local assignIcon = assignBtn:CreateTexture(nil, "ARTWORK")
+    assignIcon:SetAllPoints()
+    assignIcon:SetTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcon_4")
+    assignIcon:SetAlpha(0.7)
+    assignBtn:SetScript("OnClick", function()
+        if ns.toggleAssignPanel then ns.toggleAssignPanel() end
+    end)
+    assignBtn:SetScript("OnEnter", function(self)
+        assignIcon:SetAlpha(1)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText("Kick Marker Assignments")
+        GameTooltip:AddLine("Only the group leader can assign markers.", 0.7, 0.7, 0.7, true)
+        GameTooltip:Show()
+    end)
+    assignBtn:SetScript("OnLeave", function()
+        assignIcon:SetAlpha(0.7)
+        GameTooltip:Hide()
+    end)
+
     -- Content area
     trackerFrame.content = CreateFrame("Frame", nil, trackerFrame)
     trackerFrame.content:SetPoint("TOPLEFT", PADDING, -(PADDING + 14))
@@ -103,6 +127,11 @@ local function getRow(index, parent)
     row.icon:SetSize(ICON_SIZE, ICON_SIZE)
     row.icon:SetPoint("LEFT", 0, 0)
 
+    row.marker = row:CreateTexture(nil, "ARTWORK")
+    row.marker:SetSize(14, 14)
+    row.marker:SetPoint("LEFT", row.icon, "RIGHT", 2, 0)
+    row.marker:Hide()
+
     row.name = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     row.name:SetPoint("LEFT", row.icon, "RIGHT", 4, 0)
     row.name:SetWidth(100)
@@ -118,41 +147,9 @@ local function getRow(index, parent)
     return row
 end
 
---- Cache a class color and its hex representation.
---- @param playerName string
---- @param color table {r, g, b}
-local function cacheClassColor(playerName, color)
-    classColorCache[playerName] = color
-    classColorHexCache[playerName] = string_format("%02x%02x%02x", color.r * 255, color.g * 255, color.b * 255)
-end
-
---- Get class color hex string for a player name.
---- @param playerName string
---- @return string hex "rrggbb"
+--- Get class color hex, delegating to shared namespace utility.
 local function getClassColorHex(playerName)
-    if classColorHexCache[playerName] then return classColorHexCache[playerName] end
-
-    -- Try to find the unit ID for this player
-    local numMembers = GetNumGroupMembers()
-    for i = 1, numMembers do
-        local unit = IsInRaid() and ("raid" .. i) or ("party" .. i)
-        if UnitName(unit) == playerName then
-            local _, className = UnitClass(unit)
-            if className and RAID_CLASS_COLORS[className] then
-                cacheClassColor(playerName, RAID_CLASS_COLORS[className])
-                return classColorHexCache[playerName]
-            end
-        end
-    end
-    -- Check player
-    if UnitName("player") == playerName then
-        local _, className = UnitClass("player")
-        if className and RAID_CLASS_COLORS[className] then
-            cacheClassColor(playerName, RAID_CLASS_COLORS[className])
-            return classColorHexCache[playerName]
-        end
-    end
-    return "ffffff"
+    return ns.getClassColorHex and ns.getClassColorHex(playerName) or "ffffff"
 end
 
 --- Check if a category is enabled in settings.
@@ -172,12 +169,21 @@ function ns.refreshDisplay()
     if not trackerFrame:IsShown() then return end
 
     local content = trackerFrame.content
+    local db = ns.db or {}
+
+    -- Collapsed mode: hide content, shrink frame to header only
+    if db.collapsed then
+        content:Hide()
+        local headerHeight = (PADDING * 2) + 14
+        trackerFrame:SetHeight(headerHeight)
+        return
+    end
+    content:Show()
     local rowIndex = 0
+    local visualRow = 0
     local now = GetTime()
     local spellData = ns.spellData or {}
-    local db = ns.db or {}
     local hideReady = db.hideReady
-    local sortByCD = db.sortByCD
 
     -- Hide all existing rows first
     for _, row in pairs(rows) do
@@ -232,34 +238,77 @@ function ns.refreshDisplay()
         end
     end
 
-    -- Sort entries within each category
-    if sortByCD then
-        if interruptCount > 1 then table_sort(interruptEntries, sortByRemainingDesc) end
-        if stunCount > 1 then table_sort(stunEntries, sortByRemainingDesc) end
-    end
+    -- Clear stale entries beyond current count to release references
+    for i = interruptCount + 1, #interruptEntries do interruptEntries[i] = nil end
+    for i = stunCount + 1, #stunEntries do stunEntries[i] = nil end
 
     -- Render entries for a category
     local showCounter = db.showCounter
+    local showInlineMarker = not (db.separateMarkerWindow)
+    local markerAssignments = ns.markerAssignments or {}
     for pass = 1, 2 do
         local entries = pass == 1 and interruptEntries or stunEntries
         local count = pass == 1 and interruptCount or stunCount
         local label = pass == 1 and CATEGORY_LABELS["interrupt"] or CATEGORY_LABELS["stun"]
+        local catKey = CAT_KEYS[pass]
+        local catCollapsed = db.collapsedCategories and db.collapsedCategories[catKey]
 
         if count > 0 then
             -- Category header
             rowIndex = rowIndex + 1
             local headerRow = getRow(rowIndex, content)
             headerRow.icon:Hide()
+            if headerRow.marker then headerRow.marker:Hide() end
+            headerRow.name:ClearAllPoints()
+            headerRow.name:SetPoint("LEFT", headerRow.icon, "RIGHT", 4, 0)
             headerRow.name:SetText("|cffffcc00" .. label .. "|r")
-            headerRow.name:SetWidth(200)
+            headerRow.name:SetWidth(180)
             headerRow.status:SetText("")
             headerRow.counter:SetText("")
+
+            -- Category collapse button
+            if not headerRow.collapseBtn then
+                local btn = CreateFrame("Button", nil, headerRow)
+                btn:SetSize(ROW_HEIGHT, ROW_HEIGHT)
+                btn:SetPoint("RIGHT", headerRow, "RIGHT", 0, 0)
+                local ico = btn:CreateTexture(nil, "ARTWORK")
+                ico:SetSize(12, 12)
+                ico:SetPoint("CENTER")
+                ico:SetAlpha(0.6)
+                btn:SetScript("OnEnter", function() ico:SetAlpha(1) end)
+                btn:SetScript("OnLeave", function() ico:SetAlpha(0.6) end)
+                headerRow.collapseBtn = btn
+                headerRow.collapseIcon = ico
+            end
+            headerRow.collapseIcon:SetTexture(catCollapsed
+                and "Interface\\Buttons\\UI-PlusButton-UP"
+                or "Interface\\Buttons\\UI-MinusButton-UP")
+            headerRow.collapseBtn:SetScript("OnClick", function()
+                if db.collapsedCategories then
+                    db.collapsedCategories[catKey] = not db.collapsedCategories[catKey]
+                end
+                ns.refreshDisplay()
+            end)
+            headerRow.collapseBtn:Show()
+            headerRow:ClearAllPoints()
+            headerRow:SetPoint("TOPLEFT", content, "TOPLEFT", 0, -(visualRow * ROW_HEIGHT))
+            headerRow:SetPoint("RIGHT", content, "RIGHT", 0, 0)
             headerRow:Show()
+            visualRow = visualRow + 1
+
+            if catCollapsed then
+                -- Skip rendering spell rows for this category
+                count = 0
+            end
 
             for i = 1, count do
                 local entry = entries[i]
                 rowIndex = rowIndex + 1
                 local row = getRow(rowIndex, content)
+                if row.collapseBtn then row.collapseBtn:Hide() end
+                row:ClearAllPoints()
+                row:SetPoint("TOPLEFT", content, "TOPLEFT", 0, -(visualRow * ROW_HEIGHT))
+                row:SetPoint("RIGHT", content, "RIGHT", 0, 0)
 
                 local spellID = entry.spellID
                 if spellIconCache[spellID] == nil then
@@ -274,8 +323,22 @@ function ns.refreshDisplay()
                     row.icon:Hide()
                 end
 
+                -- Show marker icon if player has an assignment (only when not using separate window)
+                local markIndex = showInlineMarker and markerAssignments[entry.playerName]
+                if markIndex and row.marker then
+                    row.marker:SetTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcon_" .. markIndex)
+                    row.marker:Show()
+                    row.name:ClearAllPoints()
+                    row.name:SetPoint("LEFT", row.marker, "RIGHT", 2, 0)
+                    row.name:SetWidth(82)
+                elseif row.marker then
+                    row.marker:Hide()
+                    row.name:ClearAllPoints()
+                    row.name:SetPoint("LEFT", row.icon, "RIGHT", 4, 0)
+                    row.name:SetWidth(100)
+                end
+
                 row.name:SetText("|cff" .. getClassColorHex(entry.playerName) .. entry.playerName .. "|r")
-                row.name:SetWidth(100)
 
                 if entry.onCD then
                     row.status:SetText(string_format("|cffff4444%.1fs|r", entry.remaining))
@@ -295,12 +358,13 @@ function ns.refreshDisplay()
                 end
 
                 row:Show()
+                visualRow = visualRow + 1
             end
         end
     end
 
     -- Resize frame
-    local totalHeight = (PADDING * 2) + 14 + (rowIndex * ROW_HEIGHT)
+    local totalHeight = (PADDING * 2) + 14 + (visualRow * ROW_HEIGHT)
     trackerFrame:SetHeight(math_max(FRAME_MIN_HEIGHT, totalHeight))
 end
 
@@ -309,6 +373,8 @@ function ns.applyFrameOpacity()
     if not trackerFrame then return end
     local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
     trackerFrame:SetAlpha(opacity)
+    if ns.applyMarkerWindowOpacity then ns.applyMarkerWindowOpacity() end
+    if ns.applyAssignPanelOpacity then ns.applyAssignPanelOpacity() end
 end
 
 -- Update timer for smooth cooldown display (started/stopped with frame visibility)
@@ -380,14 +446,10 @@ autoFrame:RegisterEvent("GROUP_JOINED")
 autoFrame:RegisterEvent("GROUP_LEFT")
 autoFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 autoFrame:SetScript("OnEvent", function()
-    -- Clear class color caches on group changes
-    for k in pairs(classColorCache) do classColorCache[k] = nil end
-    for k in pairs(classColorHexCache) do classColorHexCache[k] = nil end
-
     if not ns.db then return end
     if not ns.db.showFrame then return end
     if ns.db.autoHide then
-        if IsInGroup() or IsInRaid() then
+        if ns.isInAnyGroup() then
             ns.showDisplay()
         else
             ns.hideDisplay()
