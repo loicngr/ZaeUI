@@ -6,6 +6,7 @@ globals = {
     "ZaeUI_NameplatesDB",
     "ZaeUI_NameplateScaleDB", -- migration only, remove in a future version
     "ZaeUI_InterruptsDB",
+    "ZaeUI_ActionBarsDB",
 
     -- Shared settings category (writable, used by multiple addons)
     "ZaeUI_SettingsCategory",
@@ -14,6 +15,7 @@ globals = {
     "SlashCmdList",
     "SLASH_ZAEUINAMEPLATES1",
     "SLASH_ZAEUIINTERRUPTS1",
+    "SLASH_ZAEUIACTIONBARS1",
 }
 
 read_globals = {
@@ -38,6 +40,8 @@ read_globals = {
     "LE_PARTY_CATEGORY_INSTANCE",
     "IsSpellKnown",
     "RAID_CLASS_COLORS",
+    "EditModeManagerFrame",
+    "InCombatLockdown",
     "SetCVar",
     "Settings",
     "UIParent",

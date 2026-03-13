@@ -301,17 +301,7 @@ SLASH_ZAEUINAMEPLATES1 = "/znp"
 SlashCmdList["ZAEUINAMEPLATES"] = function(msg)
     msg = strtrim(msg)
 
-    if msg == "" then
-        local currentScale = GetCVar("nameplateSelectedScale")
-        local currentOverlap = GetCVar("nameplateOverlapV")
-        local overlapMode = db.overlapV and "manual" or "auto"
-        local highlightStatus = db.highlight and "on" or "off"
-        local arrowsStatus = db.arrows and "on" or "off"
-        print(PREFIX .. "Scale: " .. currentScale .. " | Overlap: " .. currentOverlap .. " (" .. overlapMode .. ") | Highlight: " .. highlightStatus .. " | Border: " .. db.borderSize .. "px | Arrows: " .. arrowsStatus .. " (" .. db.arrowSize .. "px, offset " .. db.arrowOffset .. ")")
-        return
-    end
-
-    if msg == "options" then
+    if msg == "" or msg == "options" then
         if ns.settingsCategory then
             Settings.OpenToCategory(ns.settingsCategory.ID)
         else
@@ -322,7 +312,7 @@ SlashCmdList["ZAEUINAMEPLATES"] = function(msg)
 
     if msg == "help" then
         print(PREFIX .. "Usage:")
-        print(PREFIX .. "  /znp options - Open the options panel")
+        print(PREFIX .. "  /znp - Open the options panel")
         print(PREFIX .. "  /znp <number> - Set target nameplate scale (" .. MIN_SCALE .. "-" .. MAX_SCALE .. ")")
         print(PREFIX .. "  /znp reset - Reset all settings to defaults")
         print(PREFIX .. "  /znp overlap <number> - Override overlap (" .. MIN_OVERLAP .. "-" .. MAX_OVERLAP .. ")")
@@ -354,6 +344,9 @@ SlashCmdList["ZAEUINAMEPLATES"] = function(msg)
             end
         end
         showHighlight()
+        if ns.refreshWidgets then
+            ns.refreshWidgets()
+        end
         print(PREFIX .. "All settings reset to defaults.")
         return
     end

@@ -24,6 +24,9 @@ local function createCheckbox(parent, y, label, get, set)
     cb:SetScript("OnClick", function(self)
         set(not not self:GetChecked())
     end)
+    cb.refresh = function()
+        cb:SetChecked(get())
+    end
     return cb, y - 30
 end
 
@@ -64,6 +67,10 @@ local function createSlider(parent, y, label, minVal, maxVal, step, get, set, fm
         valueText:SetText(string.format(fmt, value))
         set(value)
     end)
+    slider.refresh = function()
+        slider:SetValue(get())
+        valueText:SetText(string.format(fmt, get()))
+    end
     return slider, y - 24
 end
 
@@ -89,7 +96,6 @@ local function ensureParentCategory()
     parentDesc:SetText("A collection of lightweight World of Warcraft addons.")
 
     local category = Settings.RegisterCanvasLayoutCategory(parentPanel, "ZaeUI")
-    category.ID = "ZaeUI"
     Settings.RegisterAddOnCategory(category)
     ZaeUI_SettingsCategory = category
     return category
@@ -104,14 +110,30 @@ local function createOptionsPanel(parentCategory)
     local panel = CreateFrame("Frame")
     panel:SetSize(1, 1)
 
+    -- ScrollFrame fills the panel
+    local scrollFrame = CreateFrame("ScrollFrame", nil, panel, "UIPanelScrollFrameTemplate")
+    scrollFrame:SetPoint("TOPLEFT", 0, 0)
+    scrollFrame:SetPoint("BOTTOMRIGHT", -26, 0)
+
+    local content = CreateFrame("Frame", nil, scrollFrame)
+    content:SetWidth(scrollFrame:GetWidth() or 580)
+    scrollFrame:SetScrollChild(content)
+
+    panel:SetScript("OnSizeChanged", function(_, width)
+        scrollFrame:SetPoint("BOTTOMRIGHT", -26, 0)
+        content:SetWidth(width - 26)
+    end)
+
+    local widgets = {}
     local y = -16
 
-    local header = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    header:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    local header = content:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    header:SetPoint("TOPLEFT", content, "TOPLEFT", 16, y)
     header:SetText("Interrupts")
     y = y - 28
 
-    _, y = createCheckbox(panel, y, "Show tracker window",
+    local w
+    w, y = createCheckbox(content, y, "Show tracker window",
         function() return db.showFrame end,
         function(checked)
             db.showFrame = checked
@@ -124,83 +146,92 @@ local function createOptionsPanel(parentCategory)
             end
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createCheckbox(panel, y, "Auto-hide when not in a group",
+    w, y = createCheckbox(content, y, "Auto-hide when not in a group",
         function() return db.autoHide end,
         function(checked)
             db.autoHide = checked
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createCheckbox(panel, y, "Show spell use counter",
+    w, y = createCheckbox(content, y, "Show spell use counter",
         function() return db.showCounter end,
         function(checked)
             db.showCounter = checked
             if ns.refreshDisplay then ns.refreshDisplay() end
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createCheckbox(panel, y, "Auto-reset counters on instance entry",
+    w, y = createCheckbox(content, y, "Auto-reset counters on instance entry",
         function() return db.autoResetCounters end,
         function(checked)
             db.autoResetCounters = checked
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createCheckbox(panel, y, "Hide ready spells (only show cooldowns)",
+    w, y = createCheckbox(content, y, "Hide ready spells (only show cooldowns)",
         function() return db.hideReady end,
         function(checked)
             db.hideReady = checked
             if ns.refreshDisplay then ns.refreshDisplay() end
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createCheckbox(panel, y, "Lock tracker window position",
+    w, y = createCheckbox(content, y, "Lock tracker window position",
         function() return db.lockFrame end,
         function(checked)
             db.lockFrame = checked
         end
     )
+    widgets[#widgets + 1] = w
 
     -- Category filters
     y = y - 12
-    local catHeader = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    catHeader:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    local catHeader = content:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    catHeader:SetPoint("TOPLEFT", content, "TOPLEFT", 16, y)
     catHeader:SetText("Category Filters")
     y = y - 22
 
-    _, y = createCheckbox(panel, y, "Show Interrupts",
+    w, y = createCheckbox(content, y, "Show Interrupts",
         function() return db.showInterrupts end,
         function(checked)
             db.showInterrupts = checked
             if ns.refreshDisplay then ns.refreshDisplay() end
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createCheckbox(panel, y, "Show Stuns",
+    w, y = createCheckbox(content, y, "Show Stuns",
         function() return db.showStuns end,
         function(checked)
             db.showStuns = checked
             if ns.refreshDisplay then ns.refreshDisplay() end
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createCheckbox(panel, y, "Show Others (knockbacks, disorients...)",
+    w, y = createCheckbox(content, y, "Show Others (knockbacks, disorients...)",
         function() return db.showOthers end,
         function(checked)
             db.showOthers = checked
             if ns.refreshDisplay then ns.refreshDisplay() end
         end
     )
+    widgets[#widgets + 1] = w
 
     -- Kick Markers section
     y = y - 12
-    local markerHeader = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    markerHeader:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    local markerHeader = content:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    markerHeader:SetPoint("TOPLEFT", content, "TOPLEFT", 16, y)
     markerHeader:SetText("Kick Markers")
     y = y - 22
 
-    _, y = createCheckbox(panel, y, "Show markers in a separate window",
+    w, y = createCheckbox(content, y, "Show markers in a separate window",
         function() return db.separateMarkerWindow end,
         function(checked)
             db.separateMarkerWindow = checked
@@ -208,15 +239,16 @@ local function createOptionsPanel(parentCategory)
             if ns.refreshMarkerDisplay then ns.refreshMarkerDisplay() end
         end
     )
+    widgets[#widgets + 1] = w
 
     -- Common
     y = y - 12
-    local commonHeader = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    commonHeader:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    local commonHeader = content:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    commonHeader:SetPoint("TOPLEFT", content, "TOPLEFT", 16, y)
     commonHeader:SetText("Common")
     y = y - 22
 
-    _, y = createSlider(panel, y, "Window opacity", 10, 100, 5,
+    w, y = createSlider(content, y, "Window opacity", 10, 100, 5,
         function() return db.frameOpacity or 80 end,
         function(value)
             db.frameOpacity = value
@@ -224,16 +256,28 @@ local function createOptionsPanel(parentCategory)
         end,
         "%d%%"
     )
+    widgets[#widgets + 1] = w
 
     -- Hint text
     y = y - 12
-    local hint = panel:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-    hint:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    local hint = content:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+    hint:SetPoint("TOPLEFT", content, "TOPLEFT", 16, y)
     hint:SetText("All group members need the addon for cooldown tracking.\nUse /zint assign to open kick marker assignments.")
+
+    -- Set content height for scroll range
+    content:SetHeight(-y + 40)
+
+    -- Expose refresh function for /zint reset
+    ns.refreshWidgets = function()
+        for i = 1, #widgets do
+            if widgets[i].refresh then
+                widgets[i].refresh()
+            end
+        end
+    end
 
     -- Register subcategory under ZaeUI
     local subCategory = Settings.RegisterCanvasLayoutSubcategory(parentCategory, panel, "Interrupts")
-    subCategory.ID = "ZaeUI_Interrupts"
 
     -- Expose for /zint options command
     ns.settingsCategory = subCategory

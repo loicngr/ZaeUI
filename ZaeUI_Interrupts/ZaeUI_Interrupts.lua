@@ -453,11 +453,11 @@ SLASH_ZAEUIINTERRUPTS1 = "/zint"
 SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
     msg = strtrim(msg)
 
-    if msg == "" then
-        if ns.toggleDisplay then
-            ns.toggleDisplay()
+    if msg == "" or msg == "options" then
+        if ns.settingsCategory then
+            Settings.OpenToCategory(ns.settingsCategory.ID)
         else
-            print(PREFIX .. "Display not available. Type /zint help for commands.")
+            print(PREFIX .. "Options panel not yet loaded.")
         end
         return
     end
@@ -471,15 +471,6 @@ SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
         return
     end
 
-    if msg == "options" then
-        if ns.settingsCategory then
-            Settings.OpenToCategory(ns.settingsCategory.ID)
-        else
-            print(PREFIX .. "Options panel not yet loaded.")
-        end
-        return
-    end
-
     if msg == "resetcount" then
         ns.resetCounters()
         print(PREFIX .. "Spell counters reset.")
@@ -489,15 +480,17 @@ SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
     if msg == "reset" then
         ZaeUI_InterruptsDB = nil
         initDB()
+        if ns.refreshWidgets then
+            ns.refreshWidgets()
+        end
         print(PREFIX .. "All settings reset to defaults.")
         return
     end
 
     if msg == "help" then
         print(PREFIX .. "Usage:")
-        print(PREFIX .. "  /zint - Toggle the tracker window")
+        print(PREFIX .. "  /zint - Open the options panel")
         print(PREFIX .. "  /zint assign - Open kick marker assignments (leader only)")
-        print(PREFIX .. "  /zint options - Open the options panel")
         print(PREFIX .. "  /zint resetcount - Reset spell use counters")
         print(PREFIX .. "  /zint reset - Reset all settings to defaults")
         return

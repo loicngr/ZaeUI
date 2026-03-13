@@ -23,8 +23,7 @@ Works with **Midnight (12.0.0+)** and requires all group members to have the add
 
 | Command | Description |
 |---------|-------------|
-| `/zint` | Toggle the tracker window |
-| `/zint options` | Open the options panel |
+| `/zint` | Open the options panel |
 | `/zint resetcount` | Reset spell use counters |
 | `/zint reset` | Reset all settings to defaults |
 | `/zint assign` | Open kick marker assignment panel (leader only) |
