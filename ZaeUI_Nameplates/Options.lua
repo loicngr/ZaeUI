@@ -192,7 +192,6 @@ local function ensureParentCategory()
     parentDesc:SetText("A collection of lightweight World of Warcraft addons.")
 
     local category = Settings.RegisterCanvasLayoutCategory(parentPanel, "ZaeUI")
-    category.ID = "ZaeUI"
     Settings.RegisterAddOnCategory(category)
     ZaeUI_SettingsCategory = category
     return category
@@ -208,20 +207,37 @@ local function createOptionsPanel(parentCategory)
     local panel = CreateFrame("Frame")
     panel:SetSize(1, 1)
 
+    -- ScrollFrame fills the panel
+    local scrollFrame = CreateFrame("ScrollFrame", nil, panel, "UIPanelScrollFrameTemplate")
+    scrollFrame:SetPoint("TOPLEFT", 0, 0)
+    scrollFrame:SetPoint("BOTTOMRIGHT", -26, 0)
+
+    local content = CreateFrame("Frame", nil, scrollFrame)
+    content:SetWidth(scrollFrame:GetWidth() or 580)
+    scrollFrame:SetScrollChild(content)
+
+    panel:SetScript("OnSizeChanged", function(_, width)
+        scrollFrame:SetPoint("BOTTOMRIGHT", -26, 0)
+        content:SetWidth(width - 26)
+    end)
+
+    local widgets = {}
     local y = -16
 
     -- Scale & Overlap section
-    _, y = createHeader(panel, y, "Scale & Overlap")
+    _, y = createHeader(content, y, "Scale & Overlap")
 
-    _, y = createSlider(panel, y, "Target Scale", C.MIN_SCALE, C.MAX_SCALE, 0.1,
+    local w
+    w, y = createSlider(content, y, "Target Scale", C.MIN_SCALE, C.MAX_SCALE, 0.1,
         function() return db.scale end,
         function(v) db.scale = v; ns.applyScale(v) end
     )
+    widgets[#widgets + 1] = w
 
     local autoOverlapCB
     local overlapSlider
 
-    autoOverlapCB, y = createCheckbox(panel, y, "Auto Overlap",
+    autoOverlapCB, y = createCheckbox(content, y, "Auto Overlap",
         function() return db.overlapV == nil end,
         function(checked)
             if checked then
@@ -238,8 +254,9 @@ local function createOptionsPanel(parentCategory)
             end
         end
     )
+    widgets[#widgets + 1] = autoOverlapCB
 
-    overlapSlider, y = createSlider(panel, y, "Overlap Value", C.MIN_OVERLAP, C.MAX_OVERLAP, 0.1,
+    overlapSlider, y = createSlider(content, y, "Overlap Value", C.MIN_OVERLAP, C.MAX_OVERLAP, 0.1,
         function() return db.overlapV or tonumber(GetCVar("nameplateOverlapV")) or 1.1 end,
         function(v)
             db.overlapV = v
@@ -250,11 +267,12 @@ local function createOptionsPanel(parentCategory)
         end
     )
     overlapSlider:SetEnabled(db.overlapV ~= nil)
+    widgets[#widgets + 1] = overlapSlider
 
     -- Highlight section
-    _, y = createHeader(panel, y - 8, "Highlight (Border)")
+    _, y = createHeader(content, y - 8, "Highlight (Border)")
 
-    _, y = createCheckbox(panel, y, "Enable Border",
+    w, y = createCheckbox(content, y, "Enable Border",
         function() return db.highlight end,
         function(checked)
             db.highlight = checked
@@ -262,8 +280,9 @@ local function createOptionsPanel(parentCategory)
             ns.showHighlight()
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createSlider(panel, y, "Border Thickness", C.MIN_BORDER, C.MAX_BORDER, 1,
+    w, y = createSlider(content, y, "Border Thickness", C.MIN_BORDER, C.MAX_BORDER, 1,
         function() return db.borderSize end,
         function(v)
             db.borderSize = v
@@ -272,11 +291,12 @@ local function createOptionsPanel(parentCategory)
             ns.showHighlight()
         end
     )
+    widgets[#widgets + 1] = w
 
     -- Arrows section
-    _, y = createHeader(panel, y - 8, "Arrows")
+    _, y = createHeader(content, y - 8, "Arrows")
 
-    _, y = createCheckbox(panel, y, "Enable Arrows",
+    w, y = createCheckbox(content, y, "Enable Arrows",
         function() return db.arrows end,
         function(checked)
             db.arrows = checked
@@ -284,8 +304,9 @@ local function createOptionsPanel(parentCategory)
             ns.showHighlight()
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createSlider(panel, y, "Arrow Size", C.MIN_ARROW_SIZE, C.MAX_ARROW_SIZE, 1,
+    w, y = createSlider(content, y, "Arrow Size", C.MIN_ARROW_SIZE, C.MAX_ARROW_SIZE, 1,
         function() return db.arrowSize end,
         function(v)
             db.arrowSize = v
@@ -293,8 +314,9 @@ local function createOptionsPanel(parentCategory)
             ns.showHighlight()
         end
     )
+    widgets[#widgets + 1] = w
 
-    _, y = createSlider(panel, y, "Arrow Offset", C.MIN_ARROW_OFFSET, C.MAX_ARROW_OFFSET, 1,
+    w, y = createSlider(content, y, "Arrow Offset", C.MIN_ARROW_OFFSET, C.MAX_ARROW_OFFSET, 1,
         function() return db.arrowOffset end,
         function(v)
             db.arrowOffset = v
@@ -302,11 +324,12 @@ local function createOptionsPanel(parentCategory)
             ns.showHighlight()
         end
     )
+    widgets[#widgets + 1] = w
 
     -- Color section
-    _, y = createHeader(panel, y - 8, "Color")
+    _, y = createHeader(content, y - 8, "Color")
 
-    createColorPicker(panel, y, "Highlight Color",
+    w = createColorPicker(content, y, "Highlight Color",
         function()
             local c = db.highlightColor
             return c.r, c.g, c.b, c.a
@@ -320,15 +343,27 @@ local function createOptionsPanel(parentCategory)
             ns.showHighlight()
         end
     )
+    widgets[#widgets + 1] = w
 
     -- Hint text
     y = y - 40
-    local hint = panel:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-    hint:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, y)
+    local hint = content:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+    hint:SetPoint("TOPLEFT", content, "TOPLEFT", 16, y)
     hint:SetText("Target a unit to preview changes in real time.")
 
+    -- Set content height for scroll range
+    content:SetHeight(-y + 16)
+
+    -- Expose refresh function for /znp reset
+    ns.refreshWidgets = function()
+        for i = 1, #widgets do
+            if widgets[i].refresh then
+                widgets[i].refresh()
+            end
+        end
+    end
+
     local subCategory = Settings.RegisterCanvasLayoutSubcategory(parentCategory, panel, "Nameplates")
-    subCategory.ID = "ZaeUI_Nameplates"
 
     -- Expose for /znp options command
     ns.settingsCategory = subCategory

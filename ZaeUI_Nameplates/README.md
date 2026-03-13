@@ -15,8 +15,7 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 
 | Command | Description |
 |---------|-------------|
-| `/znp` | Show current settings |
-| `/znp options` | Open the options panel |
+| `/znp` | Open the options panel |
 | `/znp 1.6` | Set target nameplate scale (0.5 - 3.0) |
 | `/znp reset` | Reset all settings to defaults |
 | `/znp overlap 1.3` | Manually override overlap (0.5 - 5.0) |
