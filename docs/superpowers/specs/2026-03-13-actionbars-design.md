@@ -21,23 +21,54 @@ Addon WoW Retail permettant de cacher les barres d'action par défaut, avec affi
 
 ## Approche technique
 
-**Hook direct sur les frames Blizzard** : on récupère les frames existantes par leurs noms globaux et on applique le fade via `UIFrameFadeIn`/`UIFrameFadeOut`.
+**Hook direct sur les frames Blizzard** : on récupère les frames existantes par leurs noms globaux et on manipule leur alpha pour le fade.
+
+### Compatibilité addons tiers
+
+Avant de manipuler une barre, vérifier que la frame existe (`if not _G["MainMenuBar"] then return end`). Si ElvUI ou Bartender est détecté (frames absentes ou reparentées), désactiver l'addon pour ces barres et afficher un avertissement.
+
+### Prévention du taint
+
+- **Pas de `UIFrameFadeIn`/`UIFrameFadeOut`** sur les frames Blizzard sécurisées (cause du taint)
+- Implémenter un **fade custom** : une frame privée de l'addon avec un `OnUpdate` qui appelle `bar:SetAlpha()` progressivement
+- Stocker l'état du fade par barre (alpha courant, alpha cible, durée, elapsed)
+
+### Guard combat (`InCombatLockdown`)
+
+- Toute manipulation de frame doit être précédée d'un check `InCombatLockdown()`
+- Si en combat, les opérations sont mises en queue et exécutées au prochain `PLAYER_REGEN_ENABLED`
+- Au chargement de l'addon, vérifier l'état de combat avant d'appliquer l'alpha initial
 
 ### Mécanisme de Fade et Hover
 
 Pour chaque barre activée :
 
-1. **Init** (PLAYER_LOGIN) : mettre la barre à `SetAlpha(0)` et créer une frame overlay invisible ancrée sur la frame Blizzard
-2. **Mouse Enter overlay** : annuler tout FadeOut en cours, lancer `UIFrameFadeIn(bar, fadeInDuration, 0, 1)`
-3. **Mouse Leave overlay** : démarrer `C_Timer.After(delay, ...)` qui lance `UIFrameFadeOut(bar, fadeOutDuration, 1, 0)`
-4. **Combat** : si `showInCombat = true`, event `PLAYER_REGEN_DISABLED` → force `SetAlpha(1)`. Event `PLAYER_REGEN_ENABLED` → remet `SetAlpha(0)` avec fade out
+1. **Init** : `ADDON_LOADED` pour initialiser la DB, `PLAYER_LOGIN` pour créer les overlays et appliquer l'alpha initial (les frames Blizzard sont garanties existantes)
+2. **Mouse Enter overlay** : annuler tout FadeOut en cours via `timer:Cancel()`, lancer le fade custom vers alpha 1
+3. **Mouse Leave overlay** : démarrer `C_Timer.NewTimer(delay, ...)` (retourne un objet annulable) qui lance le fade custom vers alpha 0
+4. **Combat** : si `showInCombat = true`, event `PLAYER_REGEN_DISABLED` → fade vers alpha 1. Event `PLAYER_REGEN_ENABLED` → fade vers alpha 0 (sauf si souris sur la barre)
+
+### Interaction avec Blizzard
+
+- Hooker `bar:HookScript("OnShow", ...)` pour ré-appliquer l'alpha caché quand Blizzard force l'affichage d'une barre
+- Ne pas interférer avec l'Edit Mode : désactiver temporairement le fade si l'Edit Mode est actif
 
 ### Overlay
 
-- Frame invisible (pas de backdrop, `SetAlpha(0)`) couvrant la même zone que la barre
+- Frame invisible (pas de backdrop) couvrant la même zone que la barre, ancrée via `SetAllPoints(barFrame)`
 - `EnableMouse(true)` pour détecter OnEnter/OnLeave
-- `SetPassThroughButtons("LeftButton", "RightButton")` pour laisser passer les clics aux boutons d'action
-- Annulation du timer si la souris revient pendant le délai
+- `SetMouseClickEnabled(false)` pour laisser passer les clics aux boutons d'action (pas de taint, contrairement à `SetPassThroughButtons`)
+- Annulation du timer `C_Timer.NewTimer` si la souris revient pendant le délai
+
+### Namespace (`ns`)
+
+Utiliser le pattern `local _, ns = ...` pour partager entre fichiers :
+
+- `ns.db` — référence aux SavedVariables
+- `ns.bars` — table des barres gérées (frame, overlay, état du fade, timer)
+- `ns.applyBar(barID)` — appliquer/retirer le fade sur une barre
+- `ns.resetDefaults()` — remettre tout par défaut
+- `ns.settingsCategory` — catégorie du panneau d'options
 
 ## SavedVariables
 
@@ -91,7 +122,7 @@ ZaeUI_ActionBars/
 
 ```
 ## Interface: 120000
-## Title: ZaeUI ActionBars
+## Title: ZaeUI_ActionBars
 ## Notes: Hide action bars with mouse hover fade in/out
 ## Author: loicngr
 ## Version: 1.0.0
