@@ -42,6 +42,7 @@ read_globals = {
     "RAID_CLASS_COLORS",
     "EditModeManagerFrame",
     "InCombatLockdown",
+    "RegisterStateDriver",
     "SetCVar",
     "Settings",
     "UIParent",

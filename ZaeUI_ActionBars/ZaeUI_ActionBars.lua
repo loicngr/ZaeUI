@@ -4,6 +4,7 @@ local _, ns = ...
 -- Local references to WoW APIs
 local CreateFrame = CreateFrame
 local InCombatLockdown = InCombatLockdown
+local RegisterStateDriver = RegisterStateDriver
 local C_Timer = C_Timer
 local strtrim = strtrim
 local math_abs = math.abs
@@ -57,6 +58,9 @@ local BAR_ORDER = { "bar1", "bar2", "bar3", "bar4", "bar5", "bar6", "bar7", "bar
 -- Local state
 local db
 
+-- Behavior options: "default" (no effect), "show" (only when active), "hide" (hidden when active)
+local BEHAVIOR_DEFAULT = "default"
+
 -- Default settings per bar
 local BAR_DEFAULTS = {
     enabled = false,
@@ -64,6 +68,8 @@ local BAR_DEFAULTS = {
     fadeOut = DEFAULT_FADE_OUT,
     delay = DEFAULT_DELAY,
     showInCombat = true,
+    flyingBehavior = BEHAVIOR_DEFAULT,
+    mountedBehavior = BEHAVIOR_DEFAULT,
 }
 
 --- Initialize database with defaults for any missing keys.
@@ -78,9 +84,17 @@ local function initDB()
         if not ZaeUI_ActionBarsDB.bars[barID] then
             ZaeUI_ActionBarsDB.bars[barID] = {}
         end
+        local barDB = ZaeUI_ActionBarsDB.bars[barID]
+        -- Migrate old showWhileFlying boolean to flyingBehavior
+        if barDB.showWhileFlying ~= nil then
+            if barDB.showWhileFlying == true then
+                barDB.flyingBehavior = "show"
+            end
+            barDB.showWhileFlying = nil
+        end
         for key, value in pairs(BAR_DEFAULTS) do
-            if ZaeUI_ActionBarsDB.bars[barID][key] == nil then
-                ZaeUI_ActionBarsDB.bars[barID][key] = value
+            if barDB[key] == nil then
+                barDB[key] = value
             end
         end
     end
@@ -90,7 +104,7 @@ end
 
 -- Fade engine ---------------------------------------------------------------
 
--- Per-bar state: { frame, timer, fading, fadeElapsed, fadeDuration, fadeFrom, fadeTo, mouseOver, hooked }
+-- Per-bar state: { frame, timer, fading, fadeElapsed, fadeDuration, fadeFrom, fadeTo, mouseOver, hooked, conditionHidden }
 local barStates = {}
 
 -- Active fades tracking (avoids pairs() in OnUpdate)
@@ -101,6 +115,14 @@ local activeFadeCount = 0
 local hoverBarList = {}
 local hoverBarCount = 0
 local hoverElapsed = 0
+
+-- Combat queue: bars that need re-evaluation after combat ends
+local combatQueue = {}
+local combatQueueCount = 0
+
+-- Condition states: tracked via detector frames using RegisterStateDriver
+local isFlying = false
+local isMounted = false
 
 local engineFrame = CreateFrame("Frame")
 
@@ -148,13 +170,13 @@ local function onBarMouseEnter(barID)
     local state = barStates[barID]
     if not state then return end
     if EditModeManagerFrame and EditModeManagerFrame:IsEditModeActive() then return end
+    local settings = db.bars[barID]
     state.mouseOver = true
     -- Cancel pending fade out
     if state.timer then
         state.timer:Cancel()
         state.timer = nil
     end
-    local settings = db.bars[barID]
     startFade(barID, 1, settings.fadeIn)
 end
 
@@ -172,6 +194,87 @@ local function onBarMouseLeave(barID)
         startFade(barID, 0, settings.fadeOut)
     end)
 end
+
+-- Condition-based visibility ------------------------------------------------
+
+-- Forward declaration
+local ensureEngineRunning
+
+--- Check if a bar should be hidden based on flying and mounted behaviors.
+--- @param barID string The bar identifier
+--- @return boolean shouldHide
+local function shouldConditionHide(barID)
+    local settings = db.bars[barID]
+    local fb = settings.flyingBehavior
+    local mb = settings.mountedBehavior
+    -- "hide" when condition is active, "show" when condition is NOT active
+    if fb ~= BEHAVIOR_DEFAULT then
+        if (fb == "hide" and isFlying) or (fb == "show" and not isFlying) then
+            return true
+        end
+    end
+    if mb ~= BEHAVIOR_DEFAULT then
+        if (mb == "hide" and isMounted) or (mb == "show" and not isMounted) then
+            return true
+        end
+    end
+    return false
+end
+
+--- Apply condition visibility to all managed bars.
+--- Called when flying or mounted state changes.
+local function onConditionChanged()
+    for _, barID in ipairs(BAR_ORDER) do
+        local state = barStates[barID]
+        if state and state.frame then
+            local settings = db.bars[barID]
+            if settings.flyingBehavior ~= BEHAVIOR_DEFAULT or settings.mountedBehavior ~= BEHAVIOR_DEFAULT then
+                state.mouseOver = false
+                if state.timer then
+                    state.timer:Cancel()
+                    state.timer = nil
+                end
+
+                if shouldConditionHide(barID) then
+                    state.conditionHidden = true
+                    startFade(barID, 0, settings.fadeOut)
+                else
+                    state.conditionHidden = false
+                    if settings.enabled then
+                        startFade(barID, 0, settings.fadeOut)
+                    else
+                        state.frame:SetAlpha(1)
+                    end
+                end
+            end
+        end
+    end
+    ensureEngineRunning()
+end
+
+-- Detector frames: hidden frames whose visibility is toggled by macro conditionals.
+-- OnShow = condition active, OnHide = condition inactive.
+local flyingDetector = CreateFrame("Frame")
+flyingDetector:Hide()
+flyingDetector:SetScript("OnShow", function()
+    isFlying = true
+    onConditionChanged()
+end)
+flyingDetector:SetScript("OnHide", function()
+    isFlying = false
+    onConditionChanged()
+end)
+
+local mountedDetector = CreateFrame("Frame")
+mountedDetector:Hide()
+mountedDetector:SetScript("OnShow", function()
+    isMounted = true
+    onConditionChanged()
+end)
+mountedDetector:SetScript("OnHide", function()
+    isMounted = false
+    onConditionChanged()
+end)
 
 -- Combined OnUpdate: processes fades and polls hover state
 local function onEngineUpdate(_, elapsed)
@@ -201,7 +304,7 @@ local function onEngineUpdate(_, elapsed)
         end
     end
 
-    -- Poll IsMouseOver at throttled interval
+    -- Poll managed bars at throttled interval
     hoverElapsed = hoverElapsed + elapsed
     if hoverElapsed >= HOVER_POLL_INTERVAL then
         hoverElapsed = 0
@@ -209,11 +312,19 @@ local function onEngineUpdate(_, elapsed)
             local barID = hoverBarList[j]
             local state = barStates[barID]
             if state and state.frame then
-                local isOver = state.frame:IsMouseOver()
-                if isOver and not state.mouseOver then
-                    onBarMouseEnter(barID)
-                elseif not isOver and state.mouseOver then
-                    onBarMouseLeave(barID)
+                if state.conditionHidden then
+                    -- Enforce alpha 0 (Blizzard may reset it on some bars)
+                    if state.frame:GetAlpha() > 0 then
+                        state.frame:SetAlpha(0)
+                    end
+                elseif db.bars[barID].enabled then
+                    -- Hover-fade polling
+                    local isOver = state.frame:IsMouseOver()
+                    if isOver and not state.mouseOver then
+                        onBarMouseEnter(barID)
+                    elseif not isOver and state.mouseOver then
+                        onBarMouseLeave(barID)
+                    end
                 end
             end
         end
@@ -227,7 +338,7 @@ local function onEngineUpdate(_, elapsed)
 end
 
 --- Ensure the engine OnUpdate is running.
-local function ensureEngineRunning()
+ensureEngineRunning = function()
     engineFrame:SetScript("OnUpdate", onEngineUpdate)
 end
 
@@ -257,7 +368,7 @@ end
 
 -- Bar apply/remove -----------------------------------------------------------
 
---- Remove fade behavior from a bar (restore alpha).
+--- Remove fade behavior from a bar (restore alpha and visibility).
 --- @param barID string The bar identifier
 local function removeBar(barID)
     local state = barStates[barID]
@@ -284,6 +395,15 @@ local function removeBar(barID)
         state.frame:SetAlpha(1)
     end
     state.mouseOver = false
+    state.conditionHidden = false
+end
+
+--- Determine if a bar needs management (hover-fade or flying behavior).
+--- @param barID string The bar identifier
+--- @return boolean needsManagement
+local function barNeedsManagement(barID)
+    local settings = db.bars[barID]
+    return settings.enabled or settings.flyingBehavior ~= BEHAVIOR_DEFAULT or settings.mountedBehavior ~= BEHAVIOR_DEFAULT
 end
 
 --- Apply fade behavior to a bar (register for hover polling, set initial alpha).
@@ -294,46 +414,62 @@ local function applyBar(barID)
 
     local frameName = BAR_REGISTRY[barID]
     local barFrame = _G[frameName]
+    -- Fallback: MainMenuBar was renamed to MainActionBar in modern WoW
+    if not barFrame and frameName == "MainMenuBar" then
+        barFrame = _G["MainActionBar"]
+    end
     if not barFrame then return end
 
     local settings = db.bars[barID]
-    if not settings.enabled then
+    if not barNeedsManagement(barID) then
         removeBar(barID)
         return
     end
 
     local state = barStates[barID]
     if not state then
-        state = { frame = barFrame, timer = nil, fading = false, mouseOver = false, hooked = false }
+        state = { frame = barFrame, timer = nil, fading = false, mouseOver = false, hooked = false, conditionHidden = false }
         barStates[barID] = state
     end
 
-    -- Hook OnShow to re-hide when Blizzard forces a show
+    -- Hook OnShow to set correct alpha when Blizzard forces a show
     if not state.hooked then
         barFrame:HookScript("OnShow", function()
-            if not db.bars[barID].enabled then return end
             if state.mouseOver then return end
-            if InCombatLockdown() and db.bars[barID].showInCombat then return end
+            -- Condition hidden (flying/mounted): force alpha 0
+            if state.conditionHidden then
+                barFrame:SetAlpha(0)
+                return
+            end
+            local s = db.bars[barID]
+            if not s.enabled then return end
+            if InCombatLockdown() and s.showInCombat then return end
             barFrame:SetAlpha(0)
         end)
         state.hooked = true
     end
 
-    -- Register for hover polling
+    -- Register for polling (hover-fade and/or flying alpha enforcement)
     addHoverBar(barID)
 
-    -- Set initial alpha
-    if settings.showInCombat and InCombatLockdown() then
-        barFrame:SetAlpha(1)
-    else
+    -- Set initial visibility based on current state
+    if shouldConditionHide(barID) then
+        state.conditionHidden = true
         barFrame:SetAlpha(0)
+    elseif settings.enabled then
+        state.conditionHidden = false
+        if settings.showInCombat and InCombatLockdown() then
+            barFrame:SetAlpha(1)
+        else
+            barFrame:SetAlpha(0)
+        end
+    else
+        state.conditionHidden = false
+        barFrame:SetAlpha(1)
     end
 end
 
 -- Combat handling ------------------------------------------------------------
-
-local combatQueue = {}
-local combatQueueCount = 0
 
 local function processCombatQueue()
     for i = 1, combatQueueCount do
@@ -345,7 +481,7 @@ end
 
 local function applyAllBars()
     for _, barID in ipairs(BAR_ORDER) do
-        if db.bars[barID].enabled then
+        if barNeedsManagement(barID) then
             if InCombatLockdown() then
                 combatQueueCount = combatQueueCount + 1
                 combatQueue[combatQueueCount] = barID
@@ -376,6 +512,11 @@ function events.PLAYER_LOGIN()
     if _G["ElvUI"] or _G["Bartender4"] then
         print(PREFIX .. "Warning: ElvUI or Bartender detected. Some bars may not work correctly.")
     end
+    -- Start condition detectors (macro conditionals on helper frames)
+    RegisterStateDriver(flyingDetector, "visibility", "[flying] show; hide")
+    isFlying = flyingDetector:IsShown()
+    RegisterStateDriver(mountedDetector, "visibility", "[mounted] show; hide")
+    isMounted = mountedDetector:IsShown()
     applyAllBars()
     frame:UnregisterEvent("PLAYER_LOGIN")
     print(PREFIX .. "Loaded. Type /zab help for commands.")
@@ -457,10 +598,16 @@ SlashCmdList["ZAEUIACTIONBARS"] = function(msg)
 end
 
 -- Expose to namespace for Options.lua
+ns.BEHAVIOR_OPTIONS = {
+    { "default", "Default" },
+    { "show", "Show only" },
+    { "hide", "Hide" },
+}
 ns.constants = {
     MIN_FADE = MIN_FADE, MAX_FADE = MAX_FADE,
     DEFAULT_FADE_IN = DEFAULT_FADE_IN, DEFAULT_FADE_OUT = DEFAULT_FADE_OUT,
     MIN_DELAY = MIN_DELAY, MAX_DELAY = MAX_DELAY, DEFAULT_DELAY = DEFAULT_DELAY,
+    BEHAVIOR_DEFAULT = BEHAVIOR_DEFAULT,
     BAR_DEFAULTS = BAR_DEFAULTS,
 }
 ns.bars = barStates
