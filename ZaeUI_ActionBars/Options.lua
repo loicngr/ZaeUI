@@ -79,6 +79,75 @@ local function createSlider(parent, y, label, minVal, maxVal, step, get, set)
     return slider, y - 56
 end
 
+--- Create a cycle button that rotates through a list of options.
+--- @param parent table Parent frame
+--- @param y number Y offset from TOPLEFT
+--- @param label string Button label
+--- @param options table Array of { value, text } pairs
+--- @param get function Returns current value
+--- @param set function Called with new value
+--- @return table button The created button
+--- @return number nextY The Y offset for the next widget
+local function createCycleButton(parent, y, label, options, get, set)
+    local container = CreateFrame("Frame", nil, parent)
+    container:SetSize(350, 26)
+    container:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
+
+    local title = container:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    title:SetPoint("LEFT", 0, 0)
+    title:SetText(label .. ":")
+
+    local btn = CreateFrame("Button", nil, container)
+    btn:SetSize(120, 22)
+    btn:SetPoint("LEFT", title, "RIGHT", 8, 0)
+
+    local bg = btn:CreateTexture(nil, "BACKGROUND")
+    bg:SetAllPoints()
+    bg:SetColorTexture(0.2, 0.2, 0.2, 0.8)
+
+    local btnText = btn:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    btnText:SetPoint("CENTER")
+
+    local function updateText()
+        local current = get()
+        for i = 1, #options do
+            if options[i][1] == current then
+                btnText:SetText(options[i][2])
+                return
+            end
+        end
+        btnText:SetText("?")
+    end
+
+    updateText()
+
+    btn:SetScript("OnClick", function()
+        local current = get()
+        local nextIdx = 1
+        for i = 1, #options do
+            if options[i][1] == current then
+                nextIdx = (i % #options) + 1
+                break
+            end
+        end
+        set(options[nextIdx][1])
+        updateText()
+    end)
+
+    btn:SetScript("OnEnter", function()
+        bg:SetColorTexture(0.3, 0.3, 0.3, 0.9)
+    end)
+    btn:SetScript("OnLeave", function()
+        bg:SetColorTexture(0.2, 0.2, 0.2, 0.8)
+    end)
+
+    btn.refresh = function()
+        updateText()
+    end
+
+    return btn, y - 30
+end
+
 -- Parent category ---------------------------------------------------------------
 
 --- Ensure the shared ZaeUI parent category exists.
@@ -291,6 +360,32 @@ local function createOptionsPanel(parentCategory)
         w, y = createCheckbox(pageContent, y, "Show in combat",
             function() return barSettings.showInCombat end,
             function(checked) barSettings.showInCombat = checked end
+        )
+        widgets[#widgets + 1] = w
+
+        w, y = createCycleButton(pageContent, y, "While flying", ns.BEHAVIOR_OPTIONS,
+            function() return barSettings.flyingBehavior end,
+            function(v)
+                if InCombatLockdown() then
+                    print("|cff00ccff[ZaeUI_ActionBars]|r Cannot change this setting during combat.")
+                    return
+                end
+                barSettings.flyingBehavior = v
+                ns.applyBar(barID)
+            end
+        )
+        widgets[#widgets + 1] = w
+
+        w, y = createCycleButton(pageContent, y, "While mounted", ns.BEHAVIOR_OPTIONS,
+            function() return barSettings.mountedBehavior end,
+            function(v)
+                if InCombatLockdown() then
+                    print("|cff00ccff[ZaeUI_ActionBars]|r Cannot change this setting during combat.")
+                    return
+                end
+                barSettings.mountedBehavior = v
+                ns.applyBar(barID)
+            end
         )
         widgets[#widgets + 1] = w
 

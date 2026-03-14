@@ -2,7 +2,7 @@
 ## Title: ZaeUI_ActionBars
 ## Notes: Hide action bars with mouse hover fade in/out
 ## Author: loicngr
-## Version: 1.0.0
+## Version: 1.1.0
 ## SavedVariables: ZaeUI_ActionBarsDB
 
 ZaeUI_ActionBars.lua

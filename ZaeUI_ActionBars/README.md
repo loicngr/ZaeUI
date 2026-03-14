@@ -8,6 +8,8 @@ Hide action bars by default and reveal them on mouse hover with configurable fad
 - Smooth fade in on mouse hover, fade out when mouse leaves
 - Per-bar configuration: enable/disable, fade in/out duration, delay before fade out
 - Show bars automatically during combat (configurable per bar)
+- Flying behavior per bar: default (no effect), show only while flying, or hide while flying
+- Mounted behavior per bar: default (no effect), show only while mounted, or hide while mounted
 - Options panel under AddOns > ZaeUI > ActionBars
 - Compatible with WoW Retail / Midnight (Interface 12.0.0+)
 
@@ -25,6 +27,8 @@ Hide action bars by default and reveal them on mouse hover with configurable fad
 |---------|-------|---------|
 | Enable | on/off | off |
 | Show in combat | on/off | on |
+| While flying | Default / Show only / Hide | Default |
+| While mounted | Default / Show only / Hide | Default |
 | Fade In | 0.1 – 1.0s | 0.3s |
 | Fade Out | 0.1 – 1.0s | 0.3s |
 | Delay | 0.0 – 3.0s | 1.0s |
