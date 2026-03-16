@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: WoW API Documentation
+    url: https://warcraft.wiki.gg
+    about: Check the WoW API documentation before reporting API-related issues.

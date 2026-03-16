@@ -59,8 +59,10 @@ ZaeUI/
 
 ## Sync Rule
 
-- When changing or adding a slash command, always update both the CLI help text (`/znp help`) and the UI options panel if one exists
+- When changing an addon's features or behavior, always keep its slash command help text (e.g. `/znp help`) up to date
+- When adding or changing a slash command, also update the UI options panel if one exists
 - When changing a setting or its range, update: DEFAULTS table, slash command validation, UI control, help text, README
+- When adding or removing an addon, update the addon dropdown lists in `.github/ISSUE_TEMPLATE/bug_report.yml`, `.github/ISSUE_TEMPLATE/feature_request.yml`, and the `addonMap` in `.github/workflows/issue-labeler.yml`
 
 ## Language
 
