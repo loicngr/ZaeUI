@@ -1,0 +1,9 @@
+## Interface: 120000
+## Title: ZaeUI_FriendlyPlates
+## Notes: Friendly nameplates with name-only mode, class colors and custom font size.
+## Author: loicngr
+## Version: 1.0.0
+## SavedVariables: ZaeUI_FriendlyPlatesDB
+
+ZaeUI_FriendlyPlates.lua
+Options.lua

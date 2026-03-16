@@ -16,9 +16,10 @@ jobs:
           script: |
             const body = context.payload.issue.body || '';
             const addonMap = {
-              'ZaeUI_Nameplates': 'Nameplates',
-              'ZaeUI_Interrupts': 'Interrupts',
               'ZaeUI_ActionBars': 'ActionBars',
+              'ZaeUI_FriendlyPlates': 'FriendlyPlates',
+              'ZaeUI_Interrupts': 'Interrupts',
+              'ZaeUI_Nameplates': 'Nameplates',
             };
 
             const labels = [];
