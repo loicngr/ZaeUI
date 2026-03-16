@@ -24,11 +24,9 @@ local DEFAULT_FONT_SIZE = 14
 local MIN_FONT_SIZE = 8
 local MAX_FONT_SIZE = 28
 
--- Save original font values before any modification
-local f1, s1, fl1 = SystemFont_NamePlate_Outlined:GetFont()
-local defaultFont = { name = f1, size = s1, flags = fl1 }
-local f2, s2, fl2 = SystemFont_NamePlate:GetFont()
-local defaultFont2 = { name = f2, size = s2, flags = fl2 }
+-- Original font values, captured in ADDON_LOADED before any modification
+local defaultFont = {}
+local defaultFont2 = {}
 
 -- Local state
 local db
@@ -58,12 +56,19 @@ local function initDB()
 end
 
 --- Save the original CVar values for later restoration.
+--- Persists in SavedVariables so originals survive across sessions even when
+--- the addon has already modified CVars before logout.
 local function saveCVars()
+    if db.originalCVars then
+        baseCVars = db.originalCVars
+        return
+    end
     baseCVars = {
         nameplateShowFriendlyPlayers = GetCVar("nameplateShowFriendlyPlayers"),
         nameplateShowOnlyNameForFriendlyPlayerUnits = GetCVar("nameplateShowOnlyNameForFriendlyPlayerUnits"),
         nameplateUseClassColorForFriendlyPlayerUnitNames = GetCVar("nameplateUseClassColorForFriendlyPlayerUnitNames"),
     }
+    db.originalCVars = baseCVars
 end
 
 --- Restore the original CVar values.
@@ -78,7 +83,8 @@ end
 
 --- Force WoW to re-render all friendly player names.
 local function reloadNameplates()
-    SetCVar("UnitNameFriendlyPlayerName", GetCVar("UnitNameFriendlyPlayerName"))
+    local val = GetCVar("UnitNameFriendlyPlayerName")
+    if val then SetCVar("UnitNameFriendlyPlayerName", val) end
 end
 
 --- Apply all CVar-based settings.
@@ -122,8 +128,9 @@ end
 --- @param needDelay boolean Use a delay for forbidden nameplates
 local function forceUpdateFont(needDelay)
     if not db.customFont then return end
-    SystemFont_NamePlate_Outlined:SetFont(defaultFont.name, db.fontSize - 1, defaultFont.flags)
-    SystemFont_NamePlate:SetFont(defaultFont2.name, db.fontSize - 1, defaultFont2.flags)
+    local transientSize = db.fontSize > MIN_FONT_SIZE and (db.fontSize - 1) or (db.fontSize + 1)
+    SystemFont_NamePlate_Outlined:SetFont(defaultFont.name, transientSize, defaultFont.flags)
+    SystemFont_NamePlate:SetFont(defaultFont2.name, transientSize, defaultFont2.flags)
     if not needDelay then
         applyFont()
     else
@@ -141,6 +148,13 @@ function events.ADDON_LOADED(_, addonName)
     if addonName ~= ADDON_NAME then
         return
     end
+
+    -- Capture original font values before any addon modifies them
+    local f1, s1, fl1 = SystemFont_NamePlate_Outlined:GetFont()
+    defaultFont.name, defaultFont.size, defaultFont.flags = f1, s1, fl1
+    local f2, s2, fl2 = SystemFont_NamePlate:GetFont()
+    defaultFont2.name, defaultFont2.size, defaultFont2.flags = f2, s2, fl2
+
     initDB()
 
     frame:UnregisterEvent("ADDON_LOADED")
@@ -180,10 +194,11 @@ function events.PLAYER_LOGIN()
 
     -- Hook for forbidden nameplates: apply show-only-name on NPC units
     hooksecurefunc(NamePlateUnitFrameMixin, "OnUnitSet", function(self)
+        if not self.unit then return end
         local np = C_NamePlate.GetNamePlateForUnit(self.unit)
         if not np then
             if not self:IsPlayer() and db.showOnlyName then
-                TableUtil.TrySet(self, "showOnlyName")
+                TableUtil.TrySet(self, "showOnlyName", true)
             end
         end
     end)
@@ -194,18 +209,18 @@ function events.PLAYER_LOGIN()
         if not np then
             -- Class color on forbidden nameplates (CVar alone doesn't work)
             if db.classColor then
-                TableUtil.TrySet(self.optionTable, "colorNameBySelection")
+                TableUtil.TrySet(self.optionTable, "colorNameBySelection", true)
                 TextureLoadingGroupMixin.AddTexture({ textures = self }, "explicitIsPlayer")
             end
 
             if db.showOnlyName then
                 -- Hide cast bar
-                TableUtil.TrySet(self.castBar, "showOnlyName")
-                TableUtil.TrySet(self.castBar, "widgetsOnly")
+                TableUtil.TrySet(self.castBar, "showOnlyName", true)
+                TableUtil.TrySet(self.castBar, "widgetsOnly", true)
                 -- Hide health bar and classification on NPCs
                 if not self:IsPlayer() then
-                    TableUtil.TrySet(self.HealthBarsContainer.healthBar, "showOnlyName")
-                    TableUtil.TrySet(self.ClassificationFrame, "showOnlyName")
+                    TableUtil.TrySet(self.HealthBarsContainer.healthBar, "showOnlyName", true)
+                    TableUtil.TrySet(self.ClassificationFrame, "showOnlyName", true)
                 end
             end
         end
@@ -293,6 +308,8 @@ SlashCmdList["ZAEUIFRIENDLYPLATES"] = function(msg)
     if msg == "reset" then
         restoreCVars()
         restoreFont()
+        db.originalCVars = nil
+        baseCVars = nil
         for key, value in pairs(DEFAULTS) do
             db[key] = value
         end

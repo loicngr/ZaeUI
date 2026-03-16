@@ -110,6 +110,23 @@ local function getRow(index, parent)
     row.icon:SetSize(ICON_SIZE, ICON_SIZE)
     row.icon:SetPoint("LEFT", 0, 0)
 
+    -- Invisible overlay to capture mouse events on the icon
+    row.iconHitFrame = CreateFrame("Frame", nil, row)
+    row.iconHitFrame:SetAllPoints(row.icon)
+    row.iconHitFrame:EnableMouse(true)
+    row.iconHitFrame:SetScript("OnEnter", function(self)
+        local id = self._spellID
+        if not id then return end
+        local info = C_Spell.GetSpellInfo(id)
+        if not info then return end
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText(info.name, 1, 1, 1)
+        GameTooltip:Show()
+    end)
+    row.iconHitFrame:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+
     -- Green border overlay shown when a defensive buff is active
     row.activeBorder = row:CreateTexture(nil, "OVERLAY")
     row.activeBorder:SetPoint("TOPLEFT", row.icon, "TOPLEFT", -1, 1)
@@ -233,6 +250,7 @@ function ns.refreshDisplay()
         row:SetPoint("RIGHT", content, "RIGHT", 0, 0)
 
         local spellID = entry.spellID
+        row.iconHitFrame._spellID = spellID
 
         -- Cache spell texture
         if spellIconCache[spellID] == nil then
@@ -256,9 +274,7 @@ function ns.refreshDisplay()
 
         -- Player name with class color
         local hex = ns.getClassColorHex and ns.getClassColorHex(entry.playerName) or "ffffff"
-        local spellInfo = spellData[spellID]
-        local spellName = spellInfo and spellInfo.name or ("Spell " .. spellID)
-        row.name:SetText("|cff" .. hex .. entry.playerName .. "|r - " .. spellName)
+        row.name:SetText("|cff" .. hex .. entry.playerName .. "|r")
 
         -- Status text: Active > On cooldown > Ready
         if entry.buffActive then

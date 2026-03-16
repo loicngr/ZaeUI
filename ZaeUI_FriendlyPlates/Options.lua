@@ -63,13 +63,22 @@ local function createSlider(parent, y, label, minVal, maxVal, step, get, set)
     title:SetPoint("TOPLEFT", 0, 0)
     title:SetText(label)
 
-    local slider = CreateFrame("Slider", nil, container, "OptionsSliderTemplate")
+    local slider = CreateFrame("Slider", nil, container, "UISliderTemplate")
     slider:SetPoint("TOPLEFT", 0, -18)
     slider:SetWidth(220)
     slider:SetMinMaxValues(minVal, maxVal)
     slider:SetValueStep(step)
     slider:SetObeyStepOnDrag(true)
     slider:SetValue(get())
+    -- UISliderTemplate may not include Low/High labels; create them if missing
+    if not slider.Low then
+        slider.Low = slider:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+        slider.Low:SetPoint("TOPLEFT", slider, "BOTTOMLEFT", 0, 0)
+    end
+    if not slider.High then
+        slider.High = slider:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+        slider.High:SetPoint("TOPRIGHT", slider, "BOTTOMRIGHT", 0, 0)
+    end
     slider.Low:SetText(tostring(minVal))
     slider.High:SetText(tostring(maxVal))
 

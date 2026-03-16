@@ -220,7 +220,8 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
         groupData[myName].counters[spellID] = (groupData[myName].counters[spellID] or 0) + 1
         C_Timer.After(cd, function()
             ns.sendReady(spellID)
-            groupData[myName].cooldowns[spellID] = nil
+            local entry = groupData[myName]
+            if entry then entry.cooldowns[spellID] = nil end
             if ns.refreshDisplay then ns.refreshDisplay() end
         end)
         if ns.refreshDisplay then ns.refreshDisplay() end

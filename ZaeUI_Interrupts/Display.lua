@@ -127,6 +127,23 @@ local function getRow(index, parent)
     row.icon:SetSize(ICON_SIZE, ICON_SIZE)
     row.icon:SetPoint("LEFT", 0, 0)
 
+    -- Invisible overlay to capture mouse events on the icon
+    row.iconHitFrame = CreateFrame("Frame", nil, row)
+    row.iconHitFrame:SetAllPoints(row.icon)
+    row.iconHitFrame:EnableMouse(true)
+    row.iconHitFrame:SetScript("OnEnter", function(self)
+        local id = self._spellID
+        if not id then return end
+        local info = C_Spell.GetSpellInfo(id)
+        if not info then return end
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText(info.name, 1, 1, 1)
+        GameTooltip:Show()
+    end)
+    row.iconHitFrame:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+
     row.marker = row:CreateTexture(nil, "ARTWORK")
     row.marker:SetSize(14, 14)
     row.marker:SetPoint("LEFT", row.icon, "RIGHT", 2, 0)
@@ -277,18 +294,20 @@ function ns.refreshDisplay()
                 ico:SetAlpha(0.6)
                 btn:SetScript("OnEnter", function() ico:SetAlpha(1) end)
                 btn:SetScript("OnLeave", function() ico:SetAlpha(0.6) end)
+                btn:SetScript("OnClick", function(self)
+                    local key = self._catKey
+                    if db.collapsedCategories and key then
+                        db.collapsedCategories[key] = not db.collapsedCategories[key]
+                    end
+                    ns.refreshDisplay()
+                end)
                 headerRow.collapseBtn = btn
                 headerRow.collapseIcon = ico
             end
             headerRow.collapseIcon:SetTexture(catCollapsed
                 and "Interface\\Buttons\\UI-PlusButton-UP"
                 or "Interface\\Buttons\\UI-MinusButton-UP")
-            headerRow.collapseBtn:SetScript("OnClick", function()
-                if db.collapsedCategories then
-                    db.collapsedCategories[catKey] = not db.collapsedCategories[catKey]
-                end
-                ns.refreshDisplay()
-            end)
+            headerRow.collapseBtn._catKey = catKey
             headerRow.collapseBtn:Show()
             headerRow:ClearAllPoints()
             headerRow:SetPoint("TOPLEFT", content, "TOPLEFT", 0, -(visualRow * ROW_HEIGHT))
@@ -311,6 +330,7 @@ function ns.refreshDisplay()
                 row:SetPoint("RIGHT", content, "RIGHT", 0, 0)
 
                 local spellID = entry.spellID
+                row.iconHitFrame._spellID = spellID
                 if spellIconCache[spellID] == nil then
                     local spellInfo = C_Spell.GetSpellInfo(spellID)
                     spellIconCache[spellID] = (spellInfo and spellInfo.iconID) or false

@@ -51,6 +51,7 @@ local DEFAULTS = {
     trackerShowPersonal = true,
     trackerShowRaidwide = true,
     trackerHideWhenSolo = true,
+    collapsed = false,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
 }
 
