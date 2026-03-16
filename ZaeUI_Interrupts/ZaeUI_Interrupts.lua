@@ -190,6 +190,10 @@ function events.PLAYER_ENTERING_WORLD()
             ns.resetCounters()
         end
     end
+    ns.scanMySpells()
+    ns.rebuildClassColorCache()
+    ns.sendSync()
+    if ns.refreshDisplay then ns.refreshDisplay() end
 end
 
 function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)

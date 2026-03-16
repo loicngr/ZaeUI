@@ -354,7 +354,10 @@ function events.UNIT_PET(_, unit)
 end
 
 function events.PLAYER_ENTERING_WORLD()
+    ns.scanMySpells()
+    ns.rebuildClassColorCache()
     ns.sendSync()
+    if ns.refreshDisplay then ns.refreshDisplay() end
 end
 
 function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
