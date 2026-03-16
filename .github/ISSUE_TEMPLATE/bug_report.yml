@@ -9,6 +9,7 @@ body:
       description: Which addon is affected?
       options:
         - ZaeUI_ActionBars
+        - ZaeUI_FriendlyPlates
         - ZaeUI_Interrupts
         - ZaeUI_Nameplates
         - Multiple / Unknown

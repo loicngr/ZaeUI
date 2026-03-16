@@ -7,6 +7,7 @@ globals = {
     "ZaeUI_NameplateScaleDB", -- migration only, remove in a future version
     "ZaeUI_InterruptsDB",
     "ZaeUI_ActionBarsDB",
+    "ZaeUI_FriendlyPlatesDB",
 
     -- Shared settings category (writable, used by multiple addons)
     "ZaeUI_SettingsCategory",
@@ -16,6 +17,7 @@ globals = {
     "SLASH_ZAEUINAMEPLATES1",
     "SLASH_ZAEUIINTERRUPTS1",
     "SLASH_ZAEUIACTIONBARS1",
+    "SLASH_ZAEUIFRIENDLYPLATES1",
 }
 
 read_globals = {
@@ -50,4 +52,14 @@ read_globals = {
     "UnitIsGroupLeader",
     "UnitIsUnit",
     "UnitName",
+
+    -- WoW global objects
+    "hooksecurefunc",
+    "NamePlateDriverFrame",
+    "NamePlateFriendlyFrameOptions",
+    "NamePlateUnitFrameMixin",
+    "SystemFont_NamePlate_Outlined",
+    "SystemFont_NamePlate",
+    "TableUtil",
+    "TextureLoadingGroupMixin",
 }
