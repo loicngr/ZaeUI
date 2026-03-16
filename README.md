@@ -10,6 +10,7 @@ A collection of lightweight World of Warcraft addons for Retail / Midnight.
 | Addon | Description | Command | Download |
 |-------|-------------|---------|----------|
 | [ZaeUI_ActionBars](ZaeUI_ActionBars/) | Hide action bars with mouse hover fade in/out | `/zab` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-actionbars) |
+| [ZaeUI_Defensives](ZaeUI_Defensives/) | Track defensive cooldowns for your group in a floating tracker window | `/zdef` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-defensives) |
 | [ZaeUI_FriendlyPlates](ZaeUI_FriendlyPlates/) | Friendly nameplates with name-only mode, class colors and custom font size | `/zfp` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-friendly-plates) |
 | [ZaeUI_Interrupts](ZaeUI_Interrupts/) | Track interrupt, stun and knockback cooldowns for your group with kick marker assignments | `/zint` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-interrupts) |
 | [ZaeUI_Nameplates](ZaeUI_Nameplates/) | Enhance your target nameplate with scaling, overlap adjustment, arrow indicators, highlight and options panel | `/znp` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplates) |

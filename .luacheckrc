@@ -8,6 +8,7 @@ globals = {
     "ZaeUI_InterruptsDB",
     "ZaeUI_ActionBarsDB",
     "ZaeUI_FriendlyPlatesDB",
+    "ZaeUI_DefensivesDB",
 
     -- Shared settings category (writable, used by multiple addons)
     "ZaeUI_SettingsCategory",
@@ -18,6 +19,7 @@ globals = {
     "SLASH_ZAEUIINTERRUPTS1",
     "SLASH_ZAEUIACTIONBARS1",
     "SLASH_ZAEUIFRIENDLYPLATES1",
+    "SLASH_ZAEUIDEFENSIVES1",
 }
 
 read_globals = {
@@ -27,6 +29,7 @@ read_globals = {
 
     -- WoW API
     "C_ChatInfo",
+    "CombatLogGetCurrentEventInfo",
     "C_NamePlate",
     "C_Spell",
     "C_Timer",
@@ -49,6 +52,7 @@ read_globals = {
     "Settings",
     "UIParent",
     "UnitClass",
+    "UnitGroupRolesAssigned",
     "UnitIsGroupLeader",
     "UnitIsUnit",
     "UnitName",

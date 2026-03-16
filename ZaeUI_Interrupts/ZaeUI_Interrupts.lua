@@ -14,6 +14,7 @@ local GetNumGroupMembers = GetNumGroupMembers
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local IsInInstance = IsInInstance
 local GetTime = GetTime
+local C_Spell = C_Spell
 local IsSpellKnown = IsSpellKnown
 local strtrim = strtrim
 local strsplit = strsplit
@@ -196,7 +197,10 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
     if not mySpells[spellID] then return end
     local spellData = ns.spellData
     local info = spellData and spellData[spellID]
-    local cd = info and info.cooldown or 0
+    if not info then return end
+    -- Use actual cooldown from spell system (respects talent modifiers)
+    local cdInfo = C_Spell.GetSpellCooldown(spellID)
+    local cd = (cdInfo and cdInfo.duration and cdInfo.duration > 0) and cdInfo.duration or info.cooldown
     if cd > 0 then
         ns.sendUsed(spellID, cd)
         local myName = UnitName("player")
