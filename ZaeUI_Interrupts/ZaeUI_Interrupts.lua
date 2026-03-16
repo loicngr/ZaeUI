@@ -202,9 +202,15 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
     local spellData = ns.spellData
     local info = spellData and spellData[spellID]
     if not info then return end
-    -- Use actual cooldown from spell system (respects talent modifiers)
-    local cdInfo = C_Spell.GetSpellCooldown(spellID)
-    local cd = (cdInfo and cdInfo.duration and cdInfo.duration > 0) and cdInfo.duration or info.cooldown
+    -- Use actual cooldown from spell system (respects talent modifiers).
+    -- C_Spell.GetSpellCooldown can return tainted values; pcall avoids the
+    -- "secret number" comparison error.
+    local cd = info.cooldown
+    local ok, cdInfo = pcall(C_Spell.GetSpellCooldown, spellID)
+    if ok and cdInfo then
+        local okDur, dur = pcall(function() return cdInfo.duration and cdInfo.duration > 0 and cdInfo.duration end)
+        if okDur and dur then cd = dur end
+    end
     if cd > 0 then
         ns.sendUsed(spellID, cd)
         local myName = UnitName("player")
