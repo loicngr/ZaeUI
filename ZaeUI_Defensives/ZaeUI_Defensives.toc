@@ -2,7 +2,7 @@
 ## Title: ZaeUI_Defensives
 ## Notes: Track defensive cooldowns for your group with a floating tracker window.
 ## Author: loicngr
-## Version: 1.0.0
+## Version: 1.0.1
 ## SavedVariables: ZaeUI_DefensivesDB
 
 SpellData.lua
