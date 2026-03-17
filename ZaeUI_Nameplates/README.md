@@ -41,4 +41,4 @@ Works with **Midnight (12.0.0+)** and fully compatible with Blizzard's revamped 
 - Overlap adjustment — automatic or manual override
 - Settings persist across sessions (automatic migration from ZaeUI_NameplateScale)
 - Compatible with Midnight's new nameplate overhaul
-- No dependencies
+- Requires [ZaeUI_Shared](../ZaeUI_Shared/)

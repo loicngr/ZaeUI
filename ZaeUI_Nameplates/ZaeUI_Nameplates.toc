@@ -2,8 +2,9 @@
 ## Title: ZaeUI_Nameplates
 ## Notes: Enhance your target nameplate with scaling, overlap adjustment, highlight and arrow indicators.
 ## Author: loicngr
-## Version: 2.1.5
+## Version: 2.2.0
 ## SavedVariables: ZaeUI_NameplatesDB
+## Dependencies: ZaeUI_Shared
 
 ZaeUI_Nameplates.lua
 Options.lua

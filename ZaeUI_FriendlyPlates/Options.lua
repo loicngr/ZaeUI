@@ -3,8 +3,6 @@
 
 local _, ns = ...
 
-local math_floor = math.floor
-
 -- Widget helpers ----------------------------------------------------------------
 
 --- Create a section header label.
@@ -18,123 +16,6 @@ local function createHeader(parent, y, text)
     fs:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
     fs:SetText(text)
     return fs, y - 28
-end
-
---- Create a checkbox control.
---- @param parent table Parent frame
---- @param y number Y offset from TOPLEFT
---- @param label string Checkbox label
---- @param get function Returns current boolean value
---- @param set function Called with new boolean value
---- @return table checkbox The created checkbox
---- @return number nextY The Y offset for the next widget
-local function createCheckbox(parent, y, label, get, set)
-    local cb = CreateFrame("CheckButton", nil, parent, "UICheckButtonTemplate")
-    cb:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
-    cb.text:SetText(label)
-    cb.text:SetFontObject("GameFontHighlight")
-    cb:SetChecked(get())
-    cb:SetScript("OnClick", function(self)
-        set(self:GetChecked())
-    end)
-    cb.refresh = function()
-        cb:SetChecked(get())
-    end
-    return cb, y - 30
-end
-
---- Create a slider control with value display.
---- @param parent table Parent frame
---- @param y number Y offset from TOPLEFT
---- @param label string Slider label
---- @param minVal number Minimum value
---- @param maxVal number Maximum value
---- @param step number Step increment
---- @param get function Returns current numeric value
---- @param set function Called with new numeric value
---- @return table slider The created slider
---- @return number nextY The Y offset for the next widget
-local function createSlider(parent, y, label, minVal, maxVal, step, get, set)
-    local container = CreateFrame("Frame", nil, parent)
-    container:SetSize(250, 50)
-    container:SetPoint("TOPLEFT", parent, "TOPLEFT", 20, y)
-
-    local title = container:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    title:SetPoint("TOPLEFT", 0, 0)
-    title:SetText(label)
-
-    local slider = CreateFrame("Slider", nil, container, "UISliderTemplate")
-    slider:SetPoint("TOPLEFT", 0, -18)
-    slider:SetWidth(220)
-    slider:SetMinMaxValues(minVal, maxVal)
-    slider:SetValueStep(step)
-    slider:SetObeyStepOnDrag(true)
-    slider:SetValue(get())
-    -- UISliderTemplate may not include Low/High labels; create them if missing
-    if not slider.Low then
-        slider.Low = slider:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-        slider.Low:SetPoint("TOPLEFT", slider, "BOTTOMLEFT", 0, 0)
-    end
-    if not slider.High then
-        slider.High = slider:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-        slider.High:SetPoint("TOPRIGHT", slider, "BOTTOMRIGHT", 0, 0)
-    end
-    slider.Low:SetText(tostring(minVal))
-    slider.High:SetText(tostring(maxVal))
-
-    local valueText = container:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    valueText:SetPoint("LEFT", slider, "RIGHT", 8, 0)
-    valueText:SetText(tostring(get()))
-
-    slider:SetScript("OnValueChanged", function(_, value)
-        local mult = 1 / step
-        value = math_floor(value * mult + 0.5) / mult
-        valueText:SetText(tostring(value))
-        set(value)
-    end)
-
-    slider.refresh = function()
-        slider:SetValue(get())
-        valueText:SetText(tostring(get()))
-    end
-
-    local origSetEnabled = slider.SetEnabled
-    slider.SetEnabled = function(self, enabled)
-        origSetEnabled(self, enabled)
-        if enabled then
-            title:SetFontObject("GameFontHighlight")
-        else
-            title:SetFontObject("GameFontDisable")
-        end
-    end
-
-    return slider, y - 56
-end
-
--- Parent category ---------------------------------------------------------------
-
---- Ensure the shared ZaeUI parent category exists.
---- @return table parentCategory The shared parent category
-local function ensureParentCategory()
-    if ZaeUI_SettingsCategory then
-        return ZaeUI_SettingsCategory
-    end
-
-    local parentPanel = CreateFrame("Frame")
-    parentPanel:SetSize(1, 1)
-
-    local parentTitle = parentPanel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    parentTitle:SetPoint("TOPLEFT", 16, -16)
-    parentTitle:SetText("ZaeUI")
-
-    local parentDesc = parentPanel:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    parentDesc:SetPoint("TOPLEFT", parentTitle, "BOTTOMLEFT", 0, -8)
-    parentDesc:SetText("A collection of lightweight World of Warcraft addons.")
-
-    local category = Settings.RegisterCanvasLayoutCategory(parentPanel, "ZaeUI")
-    Settings.RegisterAddOnCategory(category)
-    ZaeUI_SettingsCategory = category
-    return category
 end
 
 -- Panel creation ----------------------------------------------------------------
@@ -171,7 +52,7 @@ local function createOptionsPanel(parentCategory)
     local customFontCB
     local fontSizeSlider
 
-    enableCB, y = createCheckbox(content, y, "Enable Friendly Nameplates",
+    enableCB, y = ZaeUI_Shared.createCheckbox(content, y, "Enable Friendly Nameplates",
         function() return db.enabled end,
         function(checked)
             db.enabled = checked
@@ -184,7 +65,7 @@ local function createOptionsPanel(parentCategory)
     )
     widgets[#widgets + 1] = enableCB
 
-    showOnlyNameCB, y = createCheckbox(content, y, "Show Only Name",
+    showOnlyNameCB, y = ZaeUI_Shared.createCheckbox(content, y, "Show Only Name",
         function() return db.showOnlyName end,
         function(checked)
             db.showOnlyName = checked
@@ -194,7 +75,7 @@ local function createOptionsPanel(parentCategory)
     showOnlyNameCB:SetEnabled(db.enabled)
     widgets[#widgets + 1] = showOnlyNameCB
 
-    classColorCB, y = createCheckbox(content, y, "Class Color Names",
+    classColorCB, y = ZaeUI_Shared.createCheckbox(content, y, "Class Color Names",
         function() return db.classColor end,
         function(checked)
             db.classColor = checked
@@ -207,7 +88,7 @@ local function createOptionsPanel(parentCategory)
     -- Font section
     _, y = createHeader(content, y - 8, "Font")
 
-    customFontCB, y = createCheckbox(content, y, "Custom Font Size",
+    customFontCB, y = ZaeUI_Shared.createCheckbox(content, y, "Custom Font Size",
         function() return db.customFont end,
         function(checked)
             db.customFont = checked
@@ -229,7 +110,7 @@ local function createOptionsPanel(parentCategory)
     customFontCB:SetEnabled(db.enabled)
     widgets[#widgets + 1] = customFontCB
 
-    fontSizeSlider, y = createSlider(content, y, "Font Size",
+    fontSizeSlider, y = ZaeUI_Shared.createSlider(content, y, "Font Size",
         C.MIN_FONT_SIZE, C.MAX_FONT_SIZE, 1,
         function() return db.fontSize end,
         function(v)
@@ -277,8 +158,9 @@ loader:SetScript("OnEvent", function(self, _, addonName)
         return
     end
     self:UnregisterEvent("ADDON_LOADED")
+    if not ZaeUI_Shared then return end
 
-    local parentCategory = ensureParentCategory()
+    local parentCategory = ZaeUI_Shared.ensureParentCategory()
 
     C_Timer.After(0, function()
         if ns.db then

@@ -30,7 +30,7 @@ Works with **Midnight (12.0.0+)**.
 - Works in dungeons and raids (forbidden nameplates supported)
 - Settings persist across sessions
 - Compatible with Midnight's nameplate overhaul
-- No dependencies
+- Requires [ZaeUI_Shared](../ZaeUI_Shared/)
 
 ## Download
 

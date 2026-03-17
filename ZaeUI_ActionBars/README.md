@@ -39,7 +39,11 @@ Hide action bars by default and reveal them on mouse hover with configurable fad
 - Suspends fade behavior while Edit Mode is active
 - Uses taint-free alpha manipulation (no UIFrameFadeIn/Out on secure frames)
 
+## Requirements
+
+- **ZaeUI_Shared** — required dependency, install from [CurseForge](https://www.curseforge.com/wow/addons/zaeui-shared)
+
 ## Installation
 
-1. Copy `ZaeUI_ActionBars/` into `World of Warcraft/_retail_/Interface/AddOns/`
+1. Copy `ZaeUI_ActionBars/` and `ZaeUI_Shared/` into `World of Warcraft/_retail_/Interface/AddOns/`
 2. Restart WoW or `/reload`

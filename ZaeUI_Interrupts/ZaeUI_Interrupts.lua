@@ -6,6 +6,7 @@ local _, ns = ...
 -- Local references to WoW APIs
 local CreateFrame = CreateFrame
 local C_ChatInfo = C_ChatInfo
+local C_Timer = C_Timer
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
 local UnitName = UnitName
@@ -14,8 +15,10 @@ local GetNumGroupMembers = GetNumGroupMembers
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local IsInInstance = IsInInstance
 local GetTime = GetTime
-local C_Spell = C_Spell
 local IsSpellKnown = IsSpellKnown
+local IsPlayerSpell = IsPlayerSpell
+local GetSpecialization = GetSpecialization
+local GetSpecializationInfo = GetSpecializationInfo
 local strtrim = strtrim
 local strsplit = strsplit
 local tonumber = tonumber
@@ -24,22 +27,13 @@ local table_concat = table.concat
 local pairs = pairs
 local pcall = pcall
 
---- Safely extract a positive duration from a potentially tainted cooldown table.
---- Must run inside pcall because tainted values throw on comparison.
---- @param cdInfo table The cooldown info table from C_Spell.GetSpellCooldown
---- @return number|nil duration The duration if positive, nil otherwise
-local function extractDuration(cdInfo)
-    if cdInfo.duration and cdInfo.duration > 0 then
-        return cdInfo.duration
-    end
-end
-
 --- Check if the player is in any type of group (home, instance/LFG, or raid).
 --- Covers manual groups (LE_PARTY_CATEGORY_HOME) and LFG/instance groups
 --- (LE_PARTY_CATEGORY_INSTANCE) so the addon works in all scenarios.
 --- @return boolean
 function ns.isInAnyGroup()
-    return not not (IsInGroup() or IsInGroup(LE_PARTY_CATEGORY_INSTANCE) or IsInRaid())
+    if not ZaeUI_Shared then return false end
+    return ZaeUI_Shared.isInAnyGroup()
 end
 
 -- Constants
@@ -51,6 +45,7 @@ local PREFIX = "|cff00ccff[ZaeUI_Interrupts]|r "
 -- Local state
 local db
 local mySpells = {}       -- spells the local player can use { [spellID] = true }
+local cooldownOverrides = {} -- talent-adjusted cooldowns { [spellID] = effectiveCD }
 local groupData = {}      -- data from all group members { [playerName] = { spells = {}, cooldowns = {} } }
 local syncList = {}       -- reusable table for sendSync
 
@@ -109,6 +104,12 @@ local events = {}
 
 function events.ADDON_LOADED(_, addonName)
     if addonName ~= ADDON_NAME then return end
+    if not ZaeUI_Shared then
+        local msg = "ZaeUI_Shared is required. Install it from CurseForge."
+        print(PREFIX .. "Error: " .. msg .. " Addon disabled.")
+        C_Timer.After(5, function() UIErrorsFrame:AddMessage("|cffff0000[" .. ADDON_NAME .. "]|r " .. msg, 1, 0.2, 0.2, 1, 5) end)
+        return
+    end
     C_ChatInfo.RegisterAddonMessagePrefix(COMM_PREFIX)
     initDB()
     ns.markerAssignments = db.markerAssignments
@@ -212,23 +213,15 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
     local spellData = ns.spellData
     local info = spellData and spellData[spellID]
     if not info then return end
-    -- Use actual cooldown from spell system (respects talent modifiers).
-    -- C_Spell.GetSpellCooldown can return tainted values; pcall avoids the
-    -- "secret number" comparison error.
-    local cd = info.cooldown
-    local ok, cdInfo = pcall(C_Spell.GetSpellCooldown, spellID)
-    if ok and cdInfo then
-        -- duration can be tainted; comparison must happen inside pcall
-        local okDur, dur = pcall(extractDuration, cdInfo)
-        if okDur and dur then cd = dur end
-    end
+    -- Use talent-adjusted cooldown if available, otherwise static from SpellData
+    local cd = cooldownOverrides[spellID] or info.cooldown
     if cd > 0 then
-        ns.sendUsed(spellID, cd)
         local myName = UnitName("player")
         if not myName then return end
         groupData[myName] = groupData[myName] or { spells = {}, cooldowns = {}, counters = {} }
         groupData[myName].cooldowns[spellID] = GetTime() + cd
         groupData[myName].counters[spellID] = (groupData[myName].counters[spellID] or 0) + 1
+        ns.sendUsed(spellID, cd)
         C_Timer.After(cd, function()
             ns.sendReady(spellID)
             local entry = groupData[myName]
@@ -253,15 +246,53 @@ ns.PREFIX = PREFIX
 ns.ADDON_NAME = ADDON_NAME
 
 --- Scan the local player's spellbook for known interrupt/stun/knockback spells.
+--- Also computes talent-adjusted cooldowns for the local player's spells.
 function ns.scanMySpells()
     for k in pairs(mySpells) do mySpells[k] = nil end
+    for k in pairs(cooldownOverrides) do cooldownOverrides[k] = nil end
     local spellData = ns.spellData
     if not spellData then return end
+    -- Resolve specID once for all spells
+    local currentSpecID
+    local specIdx = GetSpecialization()
+    if specIdx then
+        currentSpecID = GetSpecializationInfo(specIdx)
+    end
     for spellID, info in pairs(spellData) do
         if not (db.removedSpells[spellID]) then
             local isPetSpell = info.pet
             if IsSpellKnown(spellID, isPetSpell) then
                 mySpells[spellID] = true
+                -- Resolve base cooldown (may vary by spec)
+                local baseCd = info.cooldown
+                if currentSpecID and info.cooldownBySpec and info.cooldownBySpec[currentSpecID] then
+                    baseCd = info.cooldownBySpec[currentSpecID]
+                end
+                -- Apply talent-based cooldown modifiers
+                if info.cdModifiers then
+                    local cd = baseCd
+                    for _, mod in pairs(info.cdModifiers) do
+                        if mod.ranks then
+                            for r = #mod.ranks, 1, -1 do
+                                if IsPlayerSpell(mod.ranks[r].talent) then
+                                    cd = cd - mod.ranks[r].reduction
+                                    break
+                                end
+                            end
+                        elseif IsPlayerSpell(mod.talent) then
+                            local reduction = mod.reduction
+                            if currentSpecID and mod.reductionBySpec and mod.reductionBySpec[currentSpecID] then
+                                reduction = mod.reductionBySpec[currentSpecID]
+                            end
+                            cd = cd - reduction
+                        end
+                    end
+                    if cd ~= baseCd then
+                        cooldownOverrides[spellID] = cd
+                    end
+                elseif baseCd ~= info.cooldown then
+                    cooldownOverrides[spellID] = baseCd
+                end
             end
         end
     end
@@ -308,20 +339,11 @@ local function safeSend(msg)
 end
 ns.safeSend = safeSend
 
---- Shared backdrop definition for all addon frames.
-local SHARED_BACKDROP = {
-    bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-    edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-    tile = true, tileSize = 16, edgeSize = 12,
-    insets = { left = 2, right = 2, top = 2, bottom = 2 },
-}
-
 --- Apply standard backdrop styling to a frame.
 --- @param target table The frame (must inherit BackdropTemplate)
 function ns.applyBackdrop(target)
-    target:SetBackdrop(SHARED_BACKDROP)
-    target:SetBackdropColor(0, 0, 0, 0.8)
-    target:SetBackdropBorderColor(0.3, 0.3, 0.3, 1)
+    if not ZaeUI_Shared then return end
+    ZaeUI_Shared.applyBackdrop(target)
     local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
     target:SetAlpha(opacity)
 end

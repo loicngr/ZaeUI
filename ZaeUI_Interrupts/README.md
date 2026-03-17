@@ -16,6 +16,7 @@ Works with **Midnight (12.0.0+)** and requires all group members to have the add
 - **Spell Counter**: Tracks how many times each spell was used per player (auto-resets on dungeon entry)
 - **Lock Window**: Prevent accidental dragging once positioned
 - **Window Opacity**: Adjustable background opacity (10%–100%)
+- **Talent-Aware Cooldowns**: Automatically adjusts cooldown durations based on active talents and specialization
 - **Pet Spells**: Supports pet abilities like Spell Lock (Felhunter) and Axe Toss (Felguard)
 - **Options Panel**: Configuration via Escape → Options → AddOns → ZaeUI → Interrupts
 
@@ -55,7 +56,11 @@ All messages are sent via `C_ChatInfo.SendAddonMessage` with prefix `ZaeInt` on 
 
 ## Tracked Spells
 
-Covers all classes with 55 spells: interrupts, stuns, knockbacks, disorients and incapacitates. Users can add or remove spells via the `customSpells` and `removedSpells` saved variables.
+Covers all classes with 50+ spells: interrupts, stuns, knockbacks, disorients and incapacitates. Users can add or remove spells via the `customSpells` and `removedSpells` saved variables.
+
+## Requirements
+
+- **ZaeUI_Shared** — required dependency, install from [CurseForge](https://www.curseforge.com/wow/addons/zaeui-shared)
 
 ## Download
 
