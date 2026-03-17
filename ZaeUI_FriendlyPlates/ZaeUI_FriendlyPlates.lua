@@ -195,8 +195,9 @@ function events.PLAYER_LOGIN()
 
     -- Hook for forbidden nameplates: apply show-only-name on NPC units
     hooksecurefunc(NamePlateUnitFrameMixin, "OnUnitSet", function(self)
-        if not self.unit then return end
-        local np = C_NamePlate.GetNamePlateForUnit(self.unit)
+        local unit = self.unit or self.displayedUnit
+        if not unit then return end
+        local np = C_NamePlate.GetNamePlateForUnit(unit)
         if not np then
             if not self:IsPlayer() and db.showOnlyName and TableUtil and TableUtil.TrySet then
                 TableUtil.TrySet(self, "showOnlyName", true)
@@ -206,7 +207,9 @@ function events.PLAYER_LOGIN()
 
     -- Hook for forbidden nameplates: class color, cast bar, health bar
     hooksecurefunc(NamePlateUnitFrameMixin, "UpdateNameClassColor", function(self)
-        local np = C_NamePlate.GetNamePlateForUnit(self.unit)
+        local unit = self.unit or self.displayedUnit
+        if not unit then return end
+        local np = C_NamePlate.GetNamePlateForUnit(unit)
         if not np then
             if db.classColor and TableUtil and TableUtil.TrySet and TextureLoadingGroupMixin then
                 TableUtil.TrySet(self.optionTable, "colorNameBySelection", true)
