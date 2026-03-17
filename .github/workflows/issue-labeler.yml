@@ -21,6 +21,7 @@ jobs:
               'ZaeUI_FriendlyPlates': 'FriendlyPlates',
               'ZaeUI_Interrupts': 'Interrupts',
               'ZaeUI_Nameplates': 'Nameplates',
+              'ZaeUI_Shared': 'Shared',
             };
 
             const labels = [];
