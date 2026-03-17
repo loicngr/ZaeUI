@@ -9,6 +9,7 @@ A collection of lightweight World of Warcraft addons for Retail / Midnight.
 
 | Addon | Description | Command | Download |
 |-------|-------------|---------|----------|
+| [ZaeUI_Shared](ZaeUI_Shared/) | Shared utilities required by all ZaeUI addons | — | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-shared) |
 | [ZaeUI_ActionBars](ZaeUI_ActionBars/) | Hide action bars with mouse hover fade in/out | `/zab` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-actionbars) |
 | [ZaeUI_Defensives](ZaeUI_Defensives/) | Track defensive cooldowns for your group in a floating tracker window | `/zdef` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-defensives) |
 | [ZaeUI_FriendlyPlates](ZaeUI_FriendlyPlates/) | Friendly nameplates with name-only mode, class colors and custom font size | `/zfp` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-friendly-plates) |
@@ -17,12 +18,13 @@ A collection of lightweight World of Warcraft addons for Retail / Midnight.
 
 ## Installation
 
-1. Download the addon zip from [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplates) or [GitHub Releases](https://github.com/loicngr/ZaeUI/releases)
-2. Extract the folder into:
+1. Download the addon(s) from [CurseForge](https://www.curseforge.com/wow/addons/search?search=ZaeUI) or [GitHub Releases](https://github.com/loicngr/ZaeUI/releases)
+2. **ZaeUI_Shared is required** — install it alongside any other ZaeUI addon
+3. Extract the folders into:
    ```
    World of Warcraft/_retail_/Interface/AddOns/
    ```
-3. Restart WoW or `/reload`
+4. Restart WoW or `/reload`
 
 ## Project Structure
 

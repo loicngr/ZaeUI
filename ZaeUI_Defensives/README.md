@@ -8,7 +8,7 @@ Works with **Midnight (12.0.0+)** and requires all group members to have the add
 
 - **Addon Messaging**: Players broadcast their available defensive spells and cooldown usage via addon-to-addon communication
 - **Floating Tracker**: Draggable frame showing all tracked defensives with real-time cooldown timers, sorted by role (Tank > Healer > DPS)
-- **Talent-Aware Cooldowns**: Uses actual spell cooldown durations (respects talent modifiers) instead of static values
+- **Talent-Aware Cooldowns**: Automatically adjusts cooldown durations based on active talents and specialization
 - **Three Categories**: Externals (Pain Suppression, Ironbark…), Personal (Fortifying Brew, Astral Shift…), Raidwide (Rallying Cry, Aura Mastery…)
 - **Category Filters**: Show or hide externals, personal and raidwide defensives independently
 - **Lock Window**: Prevent accidental dragging once positioned
@@ -28,13 +28,13 @@ Works with **Midnight (12.0.0+)** and requires all group members to have the add
 
 - Floating tracker window with real-time defensive cooldown timers
 - Tracks externals, personal defensives and raid-wide cooldowns
-- Talent-aware cooldown durations via C_Spell.GetSpellCooldown
+- Talent-aware cooldowns: automatically adjusts cooldown durations based on active talents and specialization
 - Works in M+ (5-man) and raids (10-20+)
 - Role-based sorting (Tank > Healer > DPS)
 - Category filters to show only what matters to you
 - Settings persist across sessions
 - Compatible with Midnight's group frame system
-- No dependencies
+- Requires [ZaeUI_Shared](../ZaeUI_Shared/)
 
 ## Download
 

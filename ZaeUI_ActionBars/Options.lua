@@ -3,81 +3,7 @@
 
 local _, ns = ...
 
-local math_floor = math.floor
-
 -- Widget helpers ----------------------------------------------------------------
-
---- Create a checkbox control.
---- @param parent table Parent frame
---- @param y number Y offset from TOPLEFT
---- @param label string Checkbox label
---- @param get function Returns current boolean value
---- @param set function Called with new boolean value
---- @return table checkbox The created checkbox
---- @return number nextY The Y offset for the next widget
-local function createCheckbox(parent, y, label, get, set)
-    local cb = CreateFrame("CheckButton", nil, parent, "UICheckButtonTemplate")
-    cb:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
-    cb.text:SetText(label)
-    cb.text:SetFontObject("GameFontHighlight")
-    cb:SetChecked(get())
-    cb:SetScript("OnClick", function(self)
-        set(self:GetChecked())
-    end)
-    cb.refresh = function()
-        cb:SetChecked(get())
-    end
-    return cb, y - 30
-end
-
---- Create a slider control with value display.
---- @param parent table Parent frame
---- @param y number Y offset from TOPLEFT
---- @param label string Slider label
---- @param minVal number Minimum value
---- @param maxVal number Maximum value
---- @param step number Step increment
---- @param get function Returns current numeric value
---- @param set function Called with new numeric value
---- @return table slider The created slider
---- @return number nextY The Y offset for the next widget
-local function createSlider(parent, y, label, minVal, maxVal, step, get, set)
-    local container = CreateFrame("Frame", nil, parent)
-    container:SetSize(250, 50)
-    container:SetPoint("TOPLEFT", parent, "TOPLEFT", 20, y)
-
-    local title = container:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    title:SetPoint("TOPLEFT", 0, 0)
-    title:SetText(label)
-
-    local slider = CreateFrame("Slider", nil, container, "OptionsSliderTemplate")
-    slider:SetPoint("TOPLEFT", 0, -18)
-    slider:SetWidth(220)
-    slider:SetMinMaxValues(minVal, maxVal)
-    slider:SetValueStep(step)
-    slider:SetObeyStepOnDrag(true)
-    slider:SetValue(get())
-    slider.Low:SetText(tostring(minVal))
-    slider.High:SetText(tostring(maxVal))
-
-    local valueText = container:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    valueText:SetPoint("LEFT", slider, "RIGHT", 8, 0)
-    valueText:SetText(tostring(get()))
-
-    slider:SetScript("OnValueChanged", function(_, value)
-        local mult = 1 / step
-        value = math_floor(value * mult + 0.5) / mult
-        valueText:SetText(tostring(value))
-        set(value)
-    end)
-
-    slider.refresh = function()
-        slider:SetValue(get())
-        valueText:SetText(tostring(get()))
-    end
-
-    return slider, y - 56
-end
 
 --- Create a cycle button that rotates through a list of options.
 --- @param parent table Parent frame
@@ -146,32 +72,6 @@ local function createCycleButton(parent, y, label, options, get, set)
     end
 
     return btn, y - 30
-end
-
--- Parent category ---------------------------------------------------------------
-
---- Ensure the shared ZaeUI parent category exists.
---- @return table parentCategory The shared parent category
-local function ensureParentCategory()
-    if ZaeUI_SettingsCategory then
-        return ZaeUI_SettingsCategory
-    end
-
-    local parentPanel = CreateFrame("Frame")
-    parentPanel:SetSize(1, 1)
-
-    local parentTitle = parentPanel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    parentTitle:SetPoint("TOPLEFT", 16, -16)
-    parentTitle:SetText("ZaeUI")
-
-    local parentDesc = parentPanel:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    parentDesc:SetPoint("TOPLEFT", parentTitle, "BOTTOMLEFT", 0, -8)
-    parentDesc:SetText("A collection of lightweight World of Warcraft addons.")
-
-    local category = Settings.RegisterCanvasLayoutCategory(parentPanel, "ZaeUI")
-    Settings.RegisterAddOnCategory(category)
-    ZaeUI_SettingsCategory = category
-    return category
 end
 
 -- Tab bar colors
@@ -338,7 +238,7 @@ local function createOptionsPanel(parentCategory)
         local y = -8
         local w
 
-        w, y = createCheckbox(pageContent, y, "Enable",
+        w, y = ZaeUI_Shared.createCheckbox(pageContent, y, "Enable",
             function() return barSettings.enabled end,
             function(checked)
                 if checked and InCombatLockdown() then
@@ -357,7 +257,7 @@ local function createOptionsPanel(parentCategory)
         )
         widgets[#widgets + 1] = w
 
-        w, y = createCheckbox(pageContent, y, "Show in combat",
+        w, y = ZaeUI_Shared.createCheckbox(pageContent, y, "Show in combat",
             function() return barSettings.showInCombat end,
             function(checked) barSettings.showInCombat = checked end
         )
@@ -389,19 +289,19 @@ local function createOptionsPanel(parentCategory)
         )
         widgets[#widgets + 1] = w
 
-        w, y = createSlider(pageContent, y, "Fade In (s)", C.MIN_FADE, C.MAX_FADE, 0.1,
+        w, y = ZaeUI_Shared.createSlider(pageContent, y, "Fade In (s)", C.MIN_FADE, C.MAX_FADE, 0.1,
             function() return barSettings.fadeIn end,
             function(v) barSettings.fadeIn = v end
         )
         widgets[#widgets + 1] = w
 
-        w, y = createSlider(pageContent, y, "Fade Out (s)", C.MIN_FADE, C.MAX_FADE, 0.1,
+        w, y = ZaeUI_Shared.createSlider(pageContent, y, "Fade Out (s)", C.MIN_FADE, C.MAX_FADE, 0.1,
             function() return barSettings.fadeOut end,
             function(v) barSettings.fadeOut = v end
         )
         widgets[#widgets + 1] = w
 
-        w, y = createSlider(pageContent, y, "Delay (s)", C.MIN_DELAY, C.MAX_DELAY, 0.1,
+        w, y = ZaeUI_Shared.createSlider(pageContent, y, "Delay (s)", C.MIN_DELAY, C.MAX_DELAY, 0.1,
             function() return barSettings.delay end,
             function(v) barSettings.delay = v end
         )
@@ -442,8 +342,9 @@ loader:RegisterEvent("ADDON_LOADED")
 loader:SetScript("OnEvent", function(self, _, addonName)
     if addonName ~= "ZaeUI_ActionBars" then return end
     self:UnregisterEvent("ADDON_LOADED")
+    if not ZaeUI_Shared then return end
 
-    local parentCategory = ensureParentCategory()
+    local parentCategory = ZaeUI_Shared.ensureParentCategory()
 
     C_Timer.After(0, function()
         if ns.db then

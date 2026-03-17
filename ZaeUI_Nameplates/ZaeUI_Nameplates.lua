@@ -258,6 +258,12 @@ function events.ADDON_LOADED(_, addonName)
     if addonName ~= ADDON_NAME then
         return
     end
+    if not ZaeUI_Shared then
+        local msg = "ZaeUI_Shared is required. Install it from CurseForge."
+        print(PREFIX .. "Error: " .. msg .. " Addon disabled.")
+        C_Timer.After(5, function() UIErrorsFrame:AddMessage("|cffff0000[" .. ADDON_NAME .. "]|r " .. msg, 1, 0.2, 0.2, 1, 5) end)
+        return
+    end
     initDB()
 
     originalOverlapV = db.baseOverlapV
