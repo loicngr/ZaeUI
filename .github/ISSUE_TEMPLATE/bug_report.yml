@@ -13,6 +13,7 @@ body:
         - ZaeUI_FriendlyPlates
         - ZaeUI_Interrupts
         - ZaeUI_Nameplates
+        - ZaeUI_Shared
         - Multiple / Unknown
     validations:
       required: true

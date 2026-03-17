@@ -10,6 +10,9 @@ globals = {
     "ZaeUI_FriendlyPlatesDB",
     "ZaeUI_DefensivesDB",
 
+    -- Shared library (writable in ZaeUI_Shared, read by other addons)
+    "ZaeUI_Shared",
+
     -- Shared settings category (writable, used by multiple addons)
     "ZaeUI_SettingsCategory",
 
