@@ -222,7 +222,9 @@ function events.PLAYER_LOGIN()
                 TableUtil.TrySet(self.castBar, "widgetsOnly", true)
                 -- Hide health bar and classification on NPCs
                 if not self:IsPlayer() then
-                    TableUtil.TrySet(self.HealthBarsContainer.healthBar, "showOnlyName", true)
+                    if self.HealthBarsContainer then
+                        TableUtil.TrySet(self.HealthBarsContainer.healthBar, "showOnlyName", true)
+                    end
                     TableUtil.TrySet(self.ClassificationFrame, "showOnlyName", true)
                 end
             end
