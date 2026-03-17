@@ -120,7 +120,8 @@ end
 - Use `tonumber()` and check for `nil` before any numeric operation
 - Clamp numeric values with `math.min` / `math.max` or explicit conditions
 - Do not use `pcall` unless the code is genuinely likely to fail (external libs)
-- `C_Spell.GetSpellCooldown` returns tainted values — wrap the call in `pcall` AND any comparison on returned fields must also run inside `pcall`. Use a module-level helper function (e.g. `extractDuration`) passed to `pcall` to avoid closure allocation. `tonumber` does NOT strip taint from secret numbers
+- `C_Spell.GetSpellCooldown` returns tainted secret values — avoid it for reading cooldown durations. Use the `cdModifiers` system in SpellData instead: declare talent-based reductions, spec-dependent base CDs (`cooldownBySpec`), and spec-dependent reductions (`reductionBySpec`). These are resolved at scan time via `IsPlayerSpell` and `GetSpecializationInfo`
+- `C_Spell.GetSpellCooldownDuration` (12.0+) returns a `LuaDurationObject` but its methods also return tainted values in event handlers. Secret values cannot be extracted via `tonumber`, `tostring`, `string.format`, or `loadstring`
 
 ## In-Game Messages
 
