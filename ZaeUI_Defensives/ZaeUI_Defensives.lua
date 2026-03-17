@@ -61,19 +61,13 @@ local function initDB()
         ZaeUI_DefensivesDB = {}
     end
     for key, value in pairs(DEFAULTS) do
-        if key == "framePoint" then
-            if ZaeUI_DefensivesDB[key] == nil then
-                ZaeUI_DefensivesDB[key] = { value[1], value[2], value[3], value[4], value[5] }
-            end
-        else
-            if ZaeUI_DefensivesDB[key] == nil then
-                if type(value) == "table" then
-                    local copy = {}
-                    for k, v in pairs(value) do copy[k] = v end
-                    ZaeUI_DefensivesDB[key] = copy
-                else
-                    ZaeUI_DefensivesDB[key] = value
-                end
+        if ZaeUI_DefensivesDB[key] == nil then
+            if type(value) == "table" then
+                local copy = {}
+                for k, v in pairs(value) do copy[k] = v end
+                ZaeUI_DefensivesDB[key] = copy
+            else
+                ZaeUI_DefensivesDB[key] = value
             end
         end
     end
@@ -162,7 +156,6 @@ function ns.handleAddonMessage(message, sender)
 
     if msgType == "SYNC" then
         groupData[name] = groupData[name] or { spells = {}, cooldowns = {} }
-        groupData[name].hasAddon = true
         local spells = groupData[name].spells
         for k in pairs(spells) do spells[k] = nil end
         for idStr in payload:gmatch("[^,]+") do
@@ -222,7 +215,7 @@ function ns.cleanGroupData()
         if name then currentMembers[name] = true end
     end
     local myName = UnitName("player")
-    currentMembers[myName] = true
+    if myName then currentMembers[myName] = true end
     for name, _ in pairs(groupData) do
         if not currentMembers[name] then
             groupData[name] = nil
@@ -373,8 +366,7 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
     local cd = info.cooldown
     local ok, cdInfo = pcall(C_Spell.GetSpellCooldown, spellID)
     if ok and cdInfo then
-        local okDur, dur = pcall(function() return cdInfo.duration and cdInfo.duration > 0 and cdInfo.duration end)
-        if okDur and dur then cd = dur end
+        if cdInfo.duration and cdInfo.duration > 0 then cd = cdInfo.duration end
     end
     if cd > 0 then
         ns.sendUsed(spellID, cd)
@@ -431,6 +423,9 @@ SlashCmdList["ZAEUIDEFENSIVES"] = function(msg)
     if msg == "reset" then
         ZaeUI_DefensivesDB = nil
         initDB()
+        for k in pairs(mySpells) do mySpells[k] = nil end
+        for k in pairs(groupData) do groupData[k] = nil end
+        ns.scanMySpells()
         if ns.refreshWidgets then ns.refreshWidgets() end
         if ns.refreshDisplay then ns.refreshDisplay() end
         print(PREFIX .. "All settings reset to defaults.")

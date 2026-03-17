@@ -229,7 +229,7 @@ local function onConditionChanged()
         if state and state.frame then
             local settings = db.bars[barID]
             if settings.flyingBehavior ~= BEHAVIOR_DEFAULT or settings.mountedBehavior ~= BEHAVIOR_DEFAULT then
-                state.mouseOver = false
+                state.mouseOver = state.frame:IsMouseOver()
                 if state.timer then
                     state.timer:Cancel()
                     state.timer = nil

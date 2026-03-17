@@ -4,6 +4,7 @@
 local _, ns = ...
 
 local math_floor = math.floor
+local string_format = string.format
 
 -- Widget helpers ----------------------------------------------------------------
 
@@ -61,15 +62,15 @@ local function createSlider(parent, y, label, minVal, maxVal, step, get, set, fm
     slider.Low:SetText("")
     slider.High:SetText("")
     slider.Text:SetText("")
-    valueText:SetText(string.format(fmt, get()))
+    valueText:SetText(string_format(fmt, get()))
     slider:SetScript("OnValueChanged", function(_, value)
         value = math_floor(value / step + 0.5) * step
-        valueText:SetText(string.format(fmt, value))
+        valueText:SetText(string_format(fmt, value))
         set(value)
     end)
     slider.refresh = function()
         slider:SetValue(get())
-        valueText:SetText(string.format(fmt, get()))
+        valueText:SetText(string_format(fmt, get()))
     end
     return slider, y - 24
 end

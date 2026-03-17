@@ -268,6 +268,10 @@ function events.ADDON_LOADED(_, addonName)
     frame:RegisterEvent("NAME_PLATE_UNIT_ADDED")
     frame:RegisterEvent("NAME_PLATE_UNIT_REMOVED")
 
+    if _G["Plater"] then
+        print(PREFIX .. "Warning: Plater detected. Scale and overlap CVars may have no effect.")
+    end
+
     print(PREFIX .. "Loaded. Type /znp help for commands.")
 end
 
@@ -335,6 +339,8 @@ SlashCmdList["ZAEUINAMEPLATES"] = function(msg)
         db.arrowOffset = DEFAULT_ARROW_OFFSET
         local dc = DEFAULTS.highlightColor
         db.highlightColor = { r = dc.r, g = dc.g, b = dc.b, a = dc.a }
+        db.baseOverlapV = tonumber(GetCVar("nameplateOverlapV")) or 1.1
+        originalOverlapV = db.baseOverlapV
         applyScale(DEFAULT_SCALE)
         hideHighlight()
         if highlightFrame then

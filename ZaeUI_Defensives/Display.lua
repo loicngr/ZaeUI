@@ -25,12 +25,24 @@ local PADDING = 8
 local ROLE_ORDER = { TANK = 1, HEALER = 2, DAMAGER = 3, NONE = 4 }
 local CAT_ORDER = { external = 1, raidwide = 2, personal = 3 }
 
+--- Comparator for sorting entries by role, then player name, then category.
+local function entryComparator(a, b)
+    local ra = ROLE_ORDER[a.role] or 4
+    local rb = ROLE_ORDER[b.role] or 4
+    if ra ~= rb then return ra < rb end
+    if a.playerName ~= b.playerName then return a.playerName < b.playerName end
+    local ca = CAT_ORDER[a.category] or 99
+    local cb = CAT_ORDER[b.category] or 99
+    return ca < cb
+end
+
 -- State
 local trackerFrame
 local rows = {}
 local spellIconCache = {}
 local updateFrame
 local sortedEntries = {}
+local roleCache = {}
 
 --- Create the main tracker frame.
 local function createTrackerFrame()
@@ -147,9 +159,9 @@ local function getRow(index, parent)
 end
 
 --- Build a role lookup table for all current group members.
---- @return table roleCache { [playerName] = "TANK"|"HEALER"|"DAMAGER"|"NONE" }
+--- Populates the module-level roleCache table in-place.
 local function buildRoleCache()
-    local cache = {}
+    for k in pairs(roleCache) do roleCache[k] = nil end
     local numMembers = GetNumGroupMembers()
     local isRaid = IsInRaid()
     local count = isRaid and numMembers or (numMembers - 1)
@@ -157,14 +169,13 @@ local function buildRoleCache()
         local unit = isRaid and ("raid" .. i) or ("party" .. i)
         local name = UnitName(unit)
         if name then
-            cache[name] = UnitGroupRolesAssigned(unit) or "NONE"
+            roleCache[name] = UnitGroupRolesAssigned(unit) or "NONE"
         end
     end
     local myName = UnitName("player")
     if myName then
-        cache[myName] = UnitGroupRolesAssigned("player") or "NONE"
+        roleCache[myName] = UnitGroupRolesAssigned("player") or "NONE"
     end
-    return cache
 end
 
 --- Refresh the tracker display with current group data.
@@ -189,12 +200,12 @@ function ns.refreshDisplay()
     local groupData = ns.groupData or {}
 
     -- Hide all existing rows
-    for _, row in pairs(rows) do
-        row:Hide()
+    for i = 1, #rows do
+        rows[i]:Hide()
     end
 
     -- Build role cache for sorting
-    local roleCache = buildRoleCache()
+    buildRoleCache()
 
     -- Collect entries
     local entryCount = 0
@@ -220,8 +231,7 @@ function ns.refreshDisplay()
                     local cdEnd = data.cooldowns[spellID]
                     e.onCD = cdEnd ~= nil and cdEnd > now
                     e.remaining = e.onCD and (cdEnd - now) or 0
-                    local buffEnd = data.activeBuffs and data.activeBuffs[spellID]
-                    e.buffActive = buffEnd ~= nil and buffEnd > now
+                    e.buffActive = false
                 end
             end
         end
@@ -231,15 +241,7 @@ function ns.refreshDisplay()
     for i = entryCount + 1, #sortedEntries do sortedEntries[i] = nil end
 
     -- Sort by role order, then player name, then category order
-    sort(sortedEntries, function(a, b)
-        local ra = ROLE_ORDER[a.role] or 4
-        local rb = ROLE_ORDER[b.role] or 4
-        if ra ~= rb then return ra < rb end
-        if a.playerName ~= b.playerName then return a.playerName < b.playerName end
-        local ca = CAT_ORDER[a.category] or 99
-        local cb = CAT_ORDER[b.category] or 99
-        return ca < cb
-    end)
+    sort(sortedEntries, entryComparator)
 
     -- Render rows
     for i = 1, entryCount do
@@ -265,21 +267,14 @@ function ns.refreshDisplay()
             row.icon:Hide()
         end
 
-        -- Active buff border
-        if entry.buffActive then
-            row.activeBorder:Show()
-        else
-            row.activeBorder:Hide()
-        end
+        row.activeBorder:Hide()
 
         -- Player name with class color
         local hex = ns.getClassColorHex and ns.getClassColorHex(entry.playerName) or "ffffff"
         row.name:SetText("|cff" .. hex .. entry.playerName .. "|r")
 
         -- Status text: Active > On cooldown > Ready
-        if entry.buffActive then
-            row.status:SetText("|cff00ff00Active|r")
-        elseif entry.onCD then
+        if entry.onCD then
             row.status:SetText(string_format("|cffff4444%.1fs|r", entry.remaining))
         else
             row.status:SetText("|cff44ff44Ready|r")

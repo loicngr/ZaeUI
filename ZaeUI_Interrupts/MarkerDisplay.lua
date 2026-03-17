@@ -142,7 +142,7 @@ function ns.refreshMarkerDisplay()
     if not markerFrame then createMarkerFrame() end
 
     -- Hide all rows
-    for _, row in pairs(markerRows) do row:Hide() end
+    for i = 1, #markerRows do markerRows[i]:Hide() end
 
     -- Render rows
     local content = markerFrame.content
