@@ -120,7 +120,7 @@ end
 - Use `tonumber()` and check for `nil` before any numeric operation
 - Clamp numeric values with `math.min` / `math.max` or explicit conditions
 - Do not use `pcall` unless the code is genuinely likely to fail (external libs)
-- `C_Spell.GetSpellCooldown` returns tainted values — wrap the call AND the field access in `pcall`. Use `pcall(tonumber, cdInfo.duration)` to safely extract tainted numbers without creating a closure
+- `C_Spell.GetSpellCooldown` returns tainted values — wrap the call in `pcall` AND any comparison on returned fields must also run inside `pcall`. Use a module-level helper function (e.g. `extractDuration`) passed to `pcall` to avoid closure allocation. `tonumber` does NOT strip taint from secret numbers
 
 ## In-Game Messages
 

@@ -24,6 +24,16 @@ local table_concat = table.concat
 local pairs = pairs
 local pcall = pcall
 
+--- Safely extract a positive duration from a potentially tainted cooldown table.
+--- Must run inside pcall because tainted values throw on comparison.
+--- @param cdInfo table The cooldown info table from C_Spell.GetSpellCooldown
+--- @return number|nil duration The duration if positive, nil otherwise
+local function extractDuration(cdInfo)
+    if cdInfo.duration and cdInfo.duration > 0 then
+        return cdInfo.duration
+    end
+end
+
 --- Check if the player is in any type of group (home, instance/LFG, or raid).
 --- Covers manual groups (LE_PARTY_CATEGORY_HOME) and LFG/instance groups
 --- (LE_PARTY_CATEGORY_INSTANCE) so the addon works in all scenarios.
@@ -208,9 +218,9 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
     local cd = info.cooldown
     local ok, cdInfo = pcall(C_Spell.GetSpellCooldown, spellID)
     if ok and cdInfo then
-        -- duration can also be tainted; use pcall(tonumber) to safely extract it
-        local okDur, dur = pcall(tonumber, cdInfo.duration)
-        if okDur and dur and dur > 0 then cd = dur end
+        -- duration can be tainted; comparison must happen inside pcall
+        local okDur, dur = pcall(extractDuration, cdInfo)
+        if okDur and dur then cd = dur end
     end
     if cd > 0 then
         ns.sendUsed(spellID, cd)
