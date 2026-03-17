@@ -72,17 +72,23 @@ function ns.cleanStaleAssignments()
     end
 end
 
+-- Reverse lookup: marker index -> player name (rebuilt before each use)
+local markerToPlayer = {}
+
+local function rebuildMarkerToPlayer()
+    for k in pairs(markerToPlayer) do markerToPlayer[k] = nil end
+    for name, idx in pairs(pendingAssignments) do
+        markerToPlayer[idx] = name
+    end
+end
+
 --- Check if a marker index is already assigned to another player in pending.
 --- @param markIndex number The marker index to check
 --- @param excludeName string The player to exclude from the check
 --- @return boolean taken Whether the marker is taken
 local function isMarkerTaken(markIndex, excludeName)
-    for name, idx in pairs(pendingAssignments) do
-        if idx == markIndex and name ~= excludeName then
-            return true
-        end
-    end
-    return false
+    local owner = markerToPlayer[markIndex]
+    return owner ~= nil and owner ~= excludeName
 end
 
 -- Panel UI state
@@ -166,6 +172,8 @@ function ns.refreshAssignPanel()
         if not rosterSet[name] then pendingAssignments[name] = nil end
     end
 
+    rebuildMarkerToPlayer()
+
     -- Hide all existing rows
     for _, rowData in pairs(playerRows) do
         rowData.row:Hide()
@@ -213,9 +221,12 @@ function ns.refreshAssignPanel()
                     if currentMark == self.markIndex then
                         -- Deselect
                         pendingAssignments[self.playerName] = nil
-                    elseif not isMarkerTaken(self.markIndex, self.playerName) then
-                        -- Assign
-                        pendingAssignments[self.playerName] = self.markIndex
+                    else
+                        rebuildMarkerToPlayer()
+                        if not isMarkerTaken(self.markIndex, self.playerName) then
+                            -- Assign
+                            pendingAssignments[self.playerName] = self.markIndex
+                        end
                     end
                     ns.refreshAssignPanel()
                 end)

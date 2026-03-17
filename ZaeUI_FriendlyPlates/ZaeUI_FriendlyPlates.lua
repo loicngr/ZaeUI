@@ -94,7 +94,7 @@ local function applyCVars()
         SetCVar("nameplateShowOnlyNameForFriendlyPlayerUnits", db.showOnlyName and "1" or "0")
         SetCVar("nameplateUseClassColorForFriendlyPlayerUnitNames", db.classColor and "1" or "0")
         -- Force the "show only name" mode to actually apply on friendly player nameplates
-        if db.showOnlyName then
+        if db.showOnlyName and TextureLoadingGroupMixin and NamePlateFriendlyFrameOptions then
             TextureLoadingGroupMixin.RemoveTexture({ textures = NamePlateFriendlyFrameOptions }, "updateNameUsesGetUnitName")
         end
     end
@@ -188,6 +188,7 @@ function events.PLAYER_LOGIN()
 
     -- Hook for font re-sync when Blizzard updates nameplate size
     hooksecurefunc(NamePlateDriverFrame, "UpdateNamePlateSize", function()
+        if not db.enabled then return end
         if not db.customFont then return end
         forceUpdateFont(true)
     end)
@@ -197,7 +198,7 @@ function events.PLAYER_LOGIN()
         if not self.unit then return end
         local np = C_NamePlate.GetNamePlateForUnit(self.unit)
         if not np then
-            if not self:IsPlayer() and db.showOnlyName then
+            if not self:IsPlayer() and db.showOnlyName and TableUtil and TableUtil.TrySet then
                 TableUtil.TrySet(self, "showOnlyName", true)
             end
         end
@@ -207,13 +208,12 @@ function events.PLAYER_LOGIN()
     hooksecurefunc(NamePlateUnitFrameMixin, "UpdateNameClassColor", function(self)
         local np = C_NamePlate.GetNamePlateForUnit(self.unit)
         if not np then
-            -- Class color on forbidden nameplates (CVar alone doesn't work)
-            if db.classColor then
+            if db.classColor and TableUtil and TableUtil.TrySet and TextureLoadingGroupMixin then
                 TableUtil.TrySet(self.optionTable, "colorNameBySelection", true)
                 TextureLoadingGroupMixin.AddTexture({ textures = self }, "explicitIsPlayer")
             end
 
-            if db.showOnlyName then
+            if db.showOnlyName and TableUtil and TableUtil.TrySet then
                 -- Hide cast bar
                 TableUtil.TrySet(self.castBar, "showOnlyName", true)
                 TableUtil.TrySet(self.castBar, "widgetsOnly", true)

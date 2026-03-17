@@ -8,6 +8,7 @@ local GetTime = GetTime
 local C_Spell = C_Spell
 local math_max = math.max
 local string_format = string.format
+local sort = table.sort
 
 
 local FRAME_WIDTH = 220
@@ -17,6 +18,13 @@ local ICON_SIZE = 18
 local PADDING = 8
 local CATEGORY_LABELS = { interrupt = "Interrupts", stun = "Stuns & Others" }
 local CAT_KEYS = { "interrupt", "stun" }
+
+--- Comparator: ready spells first, then by remaining cooldown ascending, then by name.
+local function spellEntryComparator(a, b)
+    if a.onCD ~= b.onCD then return not a.onCD end
+    if a.onCD then return a.remaining < b.remaining end
+    return a.playerName < b.playerName
+end
 
 local trackerFrame
 local rows = {}
@@ -203,8 +211,8 @@ function ns.refreshDisplay()
     local hideReady = db.hideReady
 
     -- Hide all existing rows first
-    for _, row in pairs(rows) do
-        row:Hide()
+    for i = 1, #rows do
+        rows[i]:Hide()
     end
 
     -- Collect all entries, grouped by display category (reuse tables to reduce GC)
@@ -258,6 +266,10 @@ function ns.refreshDisplay()
     -- Clear stale entries beyond current count to release references
     for i = interruptCount + 1, #interruptEntries do interruptEntries[i] = nil end
     for i = stunCount + 1, #stunEntries do stunEntries[i] = nil end
+
+    -- Sort within categories: ready first, then by remaining cooldown ascending
+    if interruptCount > 1 then sort(interruptEntries, spellEntryComparator) end
+    if stunCount > 1 then sort(stunEntries, spellEntryComparator) end
 
     -- Render entries for a category
     local showCounter = db.showCounter

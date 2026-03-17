@@ -208,8 +208,7 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
     local cd = info.cooldown
     local ok, cdInfo = pcall(C_Spell.GetSpellCooldown, spellID)
     if ok and cdInfo then
-        local okDur, dur = pcall(function() return cdInfo.duration and cdInfo.duration > 0 and cdInfo.duration end)
-        if okDur and dur then cd = dur end
+        if cdInfo.duration and cdInfo.duration > 0 then cd = cdInfo.duration end
     end
     if cd > 0 then
         ns.sendUsed(spellID, cd)
@@ -454,7 +453,7 @@ function ns.cleanGroupData()
     end
     -- Always include the player
     local myName = UnitName("player")
-    currentMembers[myName] = true
+    if myName then currentMembers[myName] = true end
     for name, _ in pairs(groupData) do
         if not currentMembers[name] then
             groupData[name] = nil
@@ -495,6 +494,10 @@ SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
     if msg == "reset" then
         ZaeUI_InterruptsDB = nil
         initDB()
+        -- Clear runtime state to prevent stale timer callbacks
+        for k in pairs(mySpells) do mySpells[k] = nil end
+        for k in pairs(groupData) do groupData[k] = nil end
+        ns.scanMySpells()
         if ns.refreshWidgets then
             ns.refreshWidgets()
         end
