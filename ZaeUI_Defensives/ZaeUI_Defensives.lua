@@ -366,7 +366,9 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
     local cd = info.cooldown
     local ok, cdInfo = pcall(C_Spell.GetSpellCooldown, spellID)
     if ok and cdInfo then
-        if cdInfo.duration and cdInfo.duration > 0 then cd = cdInfo.duration end
+        -- duration can also be tainted; use pcall(tonumber) to safely extract it
+        local okDur, dur = pcall(tonumber, cdInfo.duration)
+        if okDur and dur and dur > 0 then cd = dur end
     end
     if cd > 0 then
         ns.sendUsed(spellID, cd)
