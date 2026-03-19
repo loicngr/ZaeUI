@@ -49,6 +49,10 @@ local spellData = {
     [186265] = { name = "Aspect of the Turtle",  cooldown = 180, duration = 8,  category = "personal",  class = "HUNTER" },
     [363916] = { name = "Obsidian Scales",       cooldown = 90,  duration = 12, category = "personal",  class = "EVOKER" },
 
+    -- Racial defensives (personal)
+    [20594]  = { name = "Stoneform",             cooldown = 120, duration = 8,  category = "personal",  class = "ALL" },   -- Dwarf
+    [265221] = { name = "Fireblood",             cooldown = 120, duration = 8,  category = "personal",  class = "ALL" },   -- Dark Iron Dwarf
+
     -- Raidwide defensives (benefit the whole group)
     [97462]  = { name = "Rallying Cry",          cooldown = 180, duration = 10, category = "raidwide",  class = "WARRIOR" },
     [31821]  = { name = "Aura Mastery",          cooldown = 180, duration = 8,  category = "raidwide",  class = "PALADIN",

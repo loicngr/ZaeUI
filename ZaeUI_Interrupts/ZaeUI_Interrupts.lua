@@ -61,7 +61,6 @@ local DEFAULTS = {
     showOthers = true,
     lockFrame = false,
     collapsed = false,
-    collapsedCategories = {},
     frameOpacity = 80,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
     customSpells = {},    -- { [spellID] = true } added by user
@@ -88,6 +87,8 @@ local function initDB()
             end
         end
     end
+    -- Remove deprecated keys from previous versions
+    ZaeUI_InterruptsDB.collapsedCategories = nil
     db = ZaeUI_InterruptsDB
     ns.db = db
 end

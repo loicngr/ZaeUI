@@ -17,7 +17,6 @@ local ROW_HEIGHT = 22
 local ICON_SIZE = 18
 local PADDING = 8
 local CATEGORY_LABELS = { interrupt = "Interrupts", stun = "Stuns & Others" }
-local CAT_KEYS = { "interrupt", "stun" }
 
 --- Comparator: ready spells first, then by remaining cooldown ascending, then by name.
 local function spellEntryComparator(a, b)
@@ -279,9 +278,6 @@ function ns.refreshDisplay()
         local entries = pass == 1 and interruptEntries or stunEntries
         local count = pass == 1 and interruptCount or stunCount
         local label = pass == 1 and CATEGORY_LABELS["interrupt"] or CATEGORY_LABELS["stun"]
-        local catKey = CAT_KEYS[pass]
-        local catCollapsed = db.collapsedCategories and db.collapsedCategories[catKey]
-
         if count > 0 then
             -- Category header
             rowIndex = rowIndex + 1
@@ -295,48 +291,16 @@ function ns.refreshDisplay()
             headerRow.status:SetText("")
             headerRow.counter:SetText("")
 
-            -- Category collapse button
-            if not headerRow.collapseBtn then
-                local btn = CreateFrame("Button", nil, headerRow)
-                btn:SetSize(ROW_HEIGHT, ROW_HEIGHT)
-                btn:SetPoint("RIGHT", headerRow, "RIGHT", 0, 0)
-                local ico = btn:CreateTexture(nil, "ARTWORK")
-                ico:SetSize(12, 12)
-                ico:SetPoint("CENTER")
-                ico:SetAlpha(0.6)
-                btn:SetScript("OnEnter", function() ico:SetAlpha(1) end)
-                btn:SetScript("OnLeave", function() ico:SetAlpha(0.6) end)
-                btn:SetScript("OnClick", function(self)
-                    local key = self._catKey
-                    if db.collapsedCategories and key then
-                        db.collapsedCategories[key] = not db.collapsedCategories[key]
-                    end
-                    ns.refreshDisplay()
-                end)
-                headerRow.collapseBtn = btn
-                headerRow.collapseIcon = ico
-            end
-            headerRow.collapseIcon:SetTexture(catCollapsed
-                and "Interface\\Buttons\\UI-PlusButton-UP"
-                or "Interface\\Buttons\\UI-MinusButton-UP")
-            headerRow.collapseBtn._catKey = catKey
-            headerRow.collapseBtn:Show()
             headerRow:ClearAllPoints()
             headerRow:SetPoint("TOPLEFT", content, "TOPLEFT", 0, -(visualRow * ROW_HEIGHT))
             headerRow:SetPoint("RIGHT", content, "RIGHT", 0, 0)
             headerRow:Show()
             visualRow = visualRow + 1
 
-            if catCollapsed then
-                -- Skip rendering spell rows for this category
-                count = 0
-            end
-
             for i = 1, count do
                 local entry = entries[i]
                 rowIndex = rowIndex + 1
                 local row = getRow(rowIndex, content)
-                if row.collapseBtn then row.collapseBtn:Hide() end
                 row:ClearAllPoints()
                 row:SetPoint("TOPLEFT", content, "TOPLEFT", 0, -(visualRow * ROW_HEIGHT))
                 row:SetPoint("RIGHT", content, "RIGHT", 0, 0)
