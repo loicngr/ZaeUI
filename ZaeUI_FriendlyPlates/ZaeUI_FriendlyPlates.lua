@@ -7,6 +7,8 @@ local _, ns = ...
 local CreateFrame = CreateFrame
 local GetCVar = GetCVar
 local SetCVar = SetCVar
+local InCombatLockdown = InCombatLockdown
+local wipe = wipe
 local C_NamePlate = C_NamePlate
 local C_Timer = C_Timer
 local hooksecurefunc = hooksecurefunc
@@ -40,6 +42,27 @@ local DEFAULTS = {
     customFont = DEFAULT_CUSTOM_FONT,
     fontSize = DEFAULT_FONT_SIZE,
 }
+
+-- Combat-safe CVar wrapper: queues SetCVar calls when in combat lockdown
+local pendingCVars = {}
+local combatFrame = CreateFrame("Frame")
+
+local function safeCVar(cvar, value)
+    if InCombatLockdown() then
+        pendingCVars[cvar] = value
+        combatFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+    else
+        SetCVar(cvar, value)
+    end
+end
+
+combatFrame:SetScript("OnEvent", function(self)
+    for cvar, value in pairs(pendingCVars) do
+        SetCVar(cvar, value)
+    end
+    wipe(pendingCVars)
+    self:UnregisterEvent("PLAYER_REGEN_ENABLED")
+end)
 
 --- Initialize database with defaults for any missing keys.
 local function initDB()
@@ -76,7 +99,7 @@ local function restoreCVars()
     if not baseCVars then return end
     for cvar, value in pairs(baseCVars) do
         if value then
-            SetCVar(cvar, value)
+            safeCVar(cvar, value)
         end
     end
 end
@@ -84,15 +107,15 @@ end
 --- Force WoW to re-render all friendly player names.
 local function reloadNameplates()
     local val = GetCVar("UnitNameFriendlyPlayerName")
-    if val then SetCVar("UnitNameFriendlyPlayerName", val) end
+    if val then safeCVar("UnitNameFriendlyPlayerName", val) end
 end
 
 --- Apply all CVar-based settings.
 local function applyCVars()
-    SetCVar("nameplateShowFriendlyPlayers", db.enabled and "1" or "0")
+    safeCVar("nameplateShowFriendlyPlayers", db.enabled and "1" or "0")
     if db.enabled then
-        SetCVar("nameplateShowOnlyNameForFriendlyPlayerUnits", db.showOnlyName and "1" or "0")
-        SetCVar("nameplateUseClassColorForFriendlyPlayerUnitNames", db.classColor and "1" or "0")
+        safeCVar("nameplateShowOnlyNameForFriendlyPlayerUnits", db.showOnlyName and "1" or "0")
+        safeCVar("nameplateUseClassColorForFriendlyPlayerUnitNames", db.classColor and "1" or "0")
         -- Force the "show only name" mode to actually apply on friendly player nameplates
         if db.showOnlyName and TextureLoadingGroupMixin and NamePlateFriendlyFrameOptions then
             TextureLoadingGroupMixin.RemoveTexture({ textures = NamePlateFriendlyFrameOptions }, "updateNameUsesGetUnitName")
@@ -242,9 +265,8 @@ function events.PLAYER_LOGIN()
 end
 
 function events.PLAYER_ENTERING_WORLD()
-    if db.enabled then
-        SetCVar("nameplateShowFriendlyPlayers", "1")
-    end
+    applyCVars()
+    -- Delayed reload: nameplates are not yet initialized right after a loading screen
     C_Timer.After(0.5, function() reloadNameplates() end)
 end
 

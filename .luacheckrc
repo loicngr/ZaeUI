@@ -29,6 +29,7 @@ read_globals = {
     -- Lua globals available in WoW
     "strsplit",
     "strtrim",
+    "wipe",
 
     -- WoW API
     "C_ChatInfo",
