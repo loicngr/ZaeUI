@@ -235,9 +235,11 @@ function events.PLAYER_LOGIN()
     end)
 
     -- Hook for forbidden nameplates: class color, cast bar, health bar
+    -- Only modify friendly player nameplates — enemy nameplates must stay untouched
     hooksecurefunc(NamePlateUnitFrameMixin, "UpdateNameClassColor", function(self)
         local unit = self.unit or self.displayedUnit
         if not unit then return end
+        if not self:IsPlayer() then return end
         local np = C_NamePlate.GetNamePlateForUnit(unit)
         if not np then
             if db.classColor and TableUtil and TableUtil.TrySet and TextureLoadingGroupMixin then
@@ -249,13 +251,6 @@ function events.PLAYER_LOGIN()
                 -- Hide cast bar
                 TableUtil.TrySet(self.castBar, "showOnlyName", true)
                 TableUtil.TrySet(self.castBar, "widgetsOnly", true)
-                -- Hide health bar and classification on NPCs
-                if not self:IsPlayer() then
-                    if self.HealthBarsContainer then
-                        TableUtil.TrySet(self.HealthBarsContainer.healthBar, "showOnlyName", true)
-                    end
-                    TableUtil.TrySet(self.ClassificationFrame, "showOnlyName", true)
-                end
             end
         end
     end)
