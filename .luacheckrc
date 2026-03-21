@@ -62,6 +62,7 @@ read_globals = {
     "UnitClass",
     "UnitGroupRolesAssigned",
     "UnitIsGroupLeader",
+    "UnitIsFriend",
     "UnitIsUnit",
     "UnitName",
 

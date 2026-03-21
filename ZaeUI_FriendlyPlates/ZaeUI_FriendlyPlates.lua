@@ -12,6 +12,7 @@ local wipe = wipe
 local C_NamePlate = C_NamePlate
 local C_Timer = C_Timer
 local hooksecurefunc = hooksecurefunc
+local UnitIsFriend = UnitIsFriend
 local strtrim = strtrim
 local math_floor = math.floor
 
@@ -222,10 +223,11 @@ function events.PLAYER_LOGIN()
         forceUpdateFont(true)
     end)
 
-    -- Hook for forbidden nameplates: apply show-only-name on NPC units
+    -- Hook for forbidden nameplates: apply show-only-name on friendly NPC units
     hooksecurefunc(NamePlateUnitFrameMixin, "OnUnitSet", function(self)
         local unit = self.unit or self.displayedUnit
         if not unit then return end
+        if not UnitIsFriend("player", unit) then return end
         local np = C_NamePlate.GetNamePlateForUnit(unit)
         if not np then
             if not self:IsPlayer() and db.showOnlyName and TableUtil and TableUtil.TrySet then
@@ -235,11 +237,11 @@ function events.PLAYER_LOGIN()
     end)
 
     -- Hook for forbidden nameplates: class color, cast bar, health bar
-    -- Only modify friendly player nameplates — enemy nameplates must stay untouched
+    -- Only modify friendly nameplates — enemy nameplates must stay untouched
     hooksecurefunc(NamePlateUnitFrameMixin, "UpdateNameClassColor", function(self)
         local unit = self.unit or self.displayedUnit
         if not unit then return end
-        if not self:IsPlayer() then return end
+        if not UnitIsFriend("player", unit) then return end
         local np = C_NamePlate.GetNamePlateForUnit(unit)
         if not np then
             if db.classColor and TableUtil and TableUtil.TrySet and TextureLoadingGroupMixin then
