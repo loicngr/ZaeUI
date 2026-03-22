@@ -24,7 +24,8 @@ local spellData = {
     [187707] = { name = "Muzzle",            cooldown = 15, category = "interrupt" },  -- Hunter (Survival)
     [57994]  = { name = "Wind Shear",        cooldown = 12, category = "interrupt",    -- Shaman
                  cooldownBySpec = { [264] = 30 } },                                   -- Restoration: 30s
-    [2139]   = { name = "Counterspell",      cooldown = 25, category = "interrupt" },  -- Mage
+    [2139]   = { name = "Counterspell",      cooldown = 25, category = "interrupt",    -- Mage
+                 cdModifiers = { { talent = 382297, reduction = 5 } } },              -- Quick Witted: -5s
     [147362] = { name = "Counter Shot",      cooldown = 24, category = "interrupt" },  -- Hunter (BM/MM)
     [19647]  = { name = "Spell Lock",        cooldown = 24, category = "interrupt", pet = true },  -- Warlock (Felhunter)
     [351338] = { name = "Quell",             cooldown = 20, category = "interrupt" },  -- Evoker
