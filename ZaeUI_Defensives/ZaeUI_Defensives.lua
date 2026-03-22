@@ -211,7 +211,7 @@ function ns.scanMySpells()
         currentSpecID = GetSpecializationInfo(specIdx)
     end
     for spellID, info in pairs(spellData) do
-        if IsSpellKnown(spellID) or (info.replaces and IsPlayerSpell(spellID)) then
+        if IsSpellKnown(spellID) then
             mySpells[spellID] = true
             -- Resolve base cooldown (may vary by spec)
             local baseCd = info.cooldown
@@ -245,11 +245,20 @@ function ns.scanMySpells()
             end
         end
     end
-    -- Exclude spells that are replaced by a known talent variant
-    for spellID, info in pairs(spellData) do
-        if info.replaces and mySpells[spellID] then
-            mySpells[info.replaces] = nil
-            cooldownOverrides[info.replaces] = nil
+    -- Detect talent overrides: if a known spell is overridden by a talent
+    -- variant that exists in spellData, swap to the override spell ID
+    if FindSpellOverrideByID then
+        local swaps = {}
+        for spellID in pairs(mySpells) do
+            local overrideID = FindSpellOverrideByID(spellID)
+            if overrideID and overrideID ~= spellID and spellData[overrideID] then
+                swaps[#swaps + 1] = { old = spellID, new = overrideID }
+            end
+        end
+        for _, swap in ipairs(swaps) do
+            mySpells[swap.old] = nil
+            cooldownOverrides[swap.old] = nil
+            mySpells[swap.new] = true
         end
     end
     local myName = UnitName("player")

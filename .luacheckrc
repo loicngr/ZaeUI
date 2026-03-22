@@ -65,6 +65,7 @@ read_globals = {
     "UnitIsFriend",
     "UnitIsUnit",
     "UnitExists",
+    "FindSpellOverrideByID",
     "UnitName",
 
     -- WoW global objects
