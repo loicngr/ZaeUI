@@ -64,9 +64,13 @@ read_globals = {
     "UnitIsGroupLeader",
     "UnitIsFriend",
     "UnitIsUnit",
+    "UnitExists",
     "UnitName",
 
     -- WoW global objects
+    "PartyFrame",
+    "STANDARD_TEXT_FONT",
+    "MenuUtil",
     "hooksecurefunc",
     "NamePlateDriverFrame",
     "NamePlateFriendlyFrameOptions",

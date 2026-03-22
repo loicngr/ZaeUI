@@ -37,20 +37,39 @@ local function createOptionsPanel(parentCategory)
     y = y - 28
 
     local w
-    w, y = ZaeUI_Shared.createCheckbox(content, y, "Show tracker window",
+    w, y = ZaeUI_Shared.createDropdown(content, y, "Display mode",
+        {
+            { value = "floating",  text = "Floating window" },
+            { value = "anchored",  text = "Anchored to unit frames" },
+        },
+        function() return db.displayMode or "floating" end,
+        function(value)
+            db.displayMode = value
+            ns.routeHideDisplay()
+            if db.trackerEnabled then
+                ns.routeShowDisplay()
+            end
+            if ns.refreshWidgets then ns.refreshWidgets() end
+        end
+    )
+    widgets[#widgets + 1] = w
+
+    y = y - 4
+
+    w, y = ZaeUI_Shared.createCheckbox(content, y, "Enable display",
         function() return db.trackerEnabled end,
         function(checked)
             db.trackerEnabled = checked
-            if ns.showDisplay and ns.hideDisplay then
-                if checked then
-                    ns.showDisplay()
-                else
-                    ns.hideDisplay()
-                end
+            if checked then
+                ns.routeShowDisplay()
+            else
+                ns.routeHideDisplay()
             end
         end
     )
     widgets[#widgets + 1] = w
+
+    local floatingWidgets = {}
 
     w, y = ZaeUI_Shared.createCheckbox(content, y, "Auto-hide when not in a group",
         function() return db.trackerHideWhenSolo end,
@@ -58,6 +77,7 @@ local function createOptionsPanel(parentCategory)
             db.trackerHideWhenSolo = checked
         end
     )
+    floatingWidgets[#floatingWidgets + 1] = w
     widgets[#widgets + 1] = w
 
     w, y = ZaeUI_Shared.createCheckbox(content, y, "Lock tracker window position",
@@ -66,6 +86,7 @@ local function createOptionsPanel(parentCategory)
             db.trackerLocked = checked
         end
     )
+    floatingWidgets[#floatingWidgets + 1] = w
     widgets[#widgets + 1] = w
 
     -- Sub-header: Category Filters
@@ -79,7 +100,7 @@ local function createOptionsPanel(parentCategory)
         function() return db.trackerShowExternal end,
         function(checked)
             db.trackerShowExternal = checked
-            if ns.refreshDisplay then ns.refreshDisplay() end
+            if ns.routeRefreshDisplay then ns.routeRefreshDisplay() end
         end
     )
     widgets[#widgets + 1] = w
@@ -88,7 +109,7 @@ local function createOptionsPanel(parentCategory)
         function() return db.trackerShowPersonal end,
         function(checked)
             db.trackerShowPersonal = checked
-            if ns.refreshDisplay then ns.refreshDisplay() end
+            if ns.routeRefreshDisplay then ns.routeRefreshDisplay() end
         end
     )
     widgets[#widgets + 1] = w
@@ -97,7 +118,7 @@ local function createOptionsPanel(parentCategory)
         function() return db.trackerShowRaidwide end,
         function(checked)
             db.trackerShowRaidwide = checked
-            if ns.refreshDisplay then ns.refreshDisplay() end
+            if ns.routeRefreshDisplay then ns.routeRefreshDisplay() end
         end
     )
     widgets[#widgets + 1] = w
@@ -117,6 +138,96 @@ local function createOptionsPanel(parentCategory)
         end,
         "%d%%"
     )
+    floatingWidgets[#floatingWidgets + 1] = w
+    widgets[#widgets + 1] = w
+
+    -- Sub-header: Anchored Mode Settings
+    y = y - 12
+    local anchoredHeader = content:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    anchoredHeader:SetPoint("TOPLEFT", content, "TOPLEFT", 16, y)
+    anchoredHeader:SetText("Anchored Display")
+    y = y - 22
+
+    local anchoredWidgets = {}
+
+    w, y = ZaeUI_Shared.createSlider(content, y, "Icon size", 16, 48, 1,
+        function() return db.anchoredIconSize or 28 end,
+        function(value)
+            db.anchoredIconSize = value
+            ns.routeRefreshDisplay()
+        end,
+        "%dpx"
+    )
+    anchoredWidgets[#anchoredWidgets + 1] = w
+    widgets[#widgets + 1] = w
+
+    w, y = ZaeUI_Shared.createSlider(content, y, "Spacing", 0, 10, 1,
+        function() return db.anchoredSpacing or 2 end,
+        function(value)
+            db.anchoredSpacing = value
+            ns.routeRefreshDisplay()
+        end,
+        "%dpx"
+    )
+    anchoredWidgets[#anchoredWidgets + 1] = w
+    widgets[#widgets + 1] = w
+
+    w, y = ZaeUI_Shared.createSlider(content, y, "Icons per row", 2, 8, 1,
+        function() return db.anchoredIconsPerRow or 4 end,
+        function(value)
+            db.anchoredIconsPerRow = value
+            ns.routeRefreshDisplay()
+        end
+    )
+    anchoredWidgets[#anchoredWidgets + 1] = w
+    widgets[#widgets + 1] = w
+
+    w, y = ZaeUI_Shared.createDropdown(content, y, "Anchor side",
+        {
+            { value = "BOTTOM",      text = "Bottom" },
+            { value = "BOTTOMLEFT",  text = "Bottom-left" },
+            { value = "BOTTOMRIGHT", text = "Bottom-right" },
+            { value = "TOP",         text = "Top" },
+            { value = "LEFT",        text = "Left" },
+            { value = "RIGHT",       text = "Right" },
+        },
+        function() return db.anchoredSide or "BOTTOM" end,
+        function(value)
+            db.anchoredSide = value
+            ns.routeRefreshDisplay()
+        end
+    )
+    anchoredWidgets[#anchoredWidgets + 1] = w
+    widgets[#widgets + 1] = w
+
+    w, y = ZaeUI_Shared.createSlider(content, y, "Offset X", -50, 50, 1,
+        function() return db.anchoredOffsetX or 0 end,
+        function(value)
+            db.anchoredOffsetX = value
+            ns.routeRefreshDisplay()
+        end
+    )
+    anchoredWidgets[#anchoredWidgets + 1] = w
+    widgets[#widgets + 1] = w
+
+    w, y = ZaeUI_Shared.createSlider(content, y, "Offset Y", -50, 50, 1,
+        function() return db.anchoredOffsetY or 0 end,
+        function(value)
+            db.anchoredOffsetY = value
+            ns.routeRefreshDisplay()
+        end
+    )
+    anchoredWidgets[#anchoredWidgets + 1] = w
+    widgets[#widgets + 1] = w
+
+    w, y = ZaeUI_Shared.createCheckbox(content, y, "Show own cooldowns",
+        function() return db.anchoredShowPlayer end,
+        function(checked)
+            db.anchoredShowPlayer = checked
+            ns.routeRefreshDisplay()
+        end
+    )
+    anchoredWidgets[#anchoredWidgets + 1] = w
     widgets[#widgets + 1] = w
 
     -- Hint text
@@ -124,6 +235,21 @@ local function createOptionsPanel(parentCategory)
     local hint = content:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     hint:SetPoint("TOPLEFT", content, "TOPLEFT", 16, y)
     hint:SetText("All group members need the addon for cooldown tracking.")
+
+    -- Mode visibility toggling --------------------------------------------------
+
+    local function updateModeVisibility()
+        local mode = db.displayMode or "floating"
+        local isFloating = (mode == "floating")
+        for _, fw in ipairs(floatingWidgets) do
+            if isFloating then fw:Show() else fw:Hide() end
+        end
+        appearanceHeader:SetShown(isFloating)
+        anchoredHeader:SetShown(not isFloating)
+        for _, aw in ipairs(anchoredWidgets) do
+            if isFloating then aw:Hide() else aw:Show() end
+        end
+    end
 
     content:SetHeight(-y + 40)
 
@@ -134,7 +260,10 @@ local function createOptionsPanel(parentCategory)
                 widgets[i].refresh()
             end
         end
+        updateModeVisibility()
     end
+
+    updateModeVisibility()
 
     local subCategory = Settings.RegisterCanvasLayoutSubcategory(parentCategory, panel, "Defensives")
     ns.settingsCategory = subCategory

@@ -94,7 +94,7 @@ local function createTrackerFrame()
         collapseIcon:SetTexture(collapsed
             and "Interface\\Buttons\\UI-PlusButton-UP"
             or "Interface\\Buttons\\UI-MinusButton-UP")
-        ns.refreshDisplay()
+        ns.refreshTrackerDisplay()
     end)
     trackerFrame.collapseBtn = collapseBtn
 
@@ -179,7 +179,7 @@ local function buildRoleCache()
 end
 
 --- Refresh the tracker display with current group data.
-function ns.refreshDisplay()
+function ns.refreshTrackerDisplay()
     if not trackerFrame then return end
     if not trackerFrame:IsShown() then return end
 
@@ -305,7 +305,7 @@ local function startUpdateTimer()
         updateElapsed = updateElapsed + elapsed
         if updateElapsed >= 0.1 then
             updateElapsed = 0
-            ns.refreshDisplay()
+            ns.refreshTrackerDisplay()
         end
     end)
 end
@@ -324,7 +324,7 @@ local function restoreFramePosition()
 end
 
 --- Toggle the tracker frame visibility.
-function ns.toggleDisplay()
+function ns.toggleTrackerDisplay()
     if not trackerFrame then
         createTrackerFrame()
     end
@@ -335,41 +335,25 @@ function ns.toggleDisplay()
         restoreFramePosition()
         trackerFrame:Show()
         startUpdateTimer()
-        ns.refreshDisplay()
+        ns.refreshTrackerDisplay()
     end
 end
 
 --- Show the tracker frame.
-function ns.showDisplay()
+function ns.showTrackerDisplay()
     if not trackerFrame then
         createTrackerFrame()
     end
     restoreFramePosition()
     trackerFrame:Show()
     startUpdateTimer()
-    ns.refreshDisplay()
+    ns.refreshTrackerDisplay()
 end
 
 --- Hide the tracker frame.
-function ns.hideDisplay()
+function ns.hideTrackerDisplay()
     if trackerFrame then
         trackerFrame:Hide()
     end
     stopUpdateTimer()
 end
-
--- Auto-show/hide based on group status and trackerHideWhenSolo setting
-local autoFrame = CreateFrame("Frame")
-autoFrame:RegisterEvent("GROUP_JOINED")
-autoFrame:RegisterEvent("GROUP_LEFT")
-autoFrame:SetScript("OnEvent", function()
-    if not ns.db then return end
-    if not ns.db.trackerEnabled then return end
-    if ns.db.trackerHideWhenSolo then
-        if ns.isInAnyGroup() then
-            ns.showDisplay()
-        else
-            ns.hideDisplay()
-        end
-    end
-end)
