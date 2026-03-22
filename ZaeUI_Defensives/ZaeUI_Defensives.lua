@@ -211,7 +211,7 @@ function ns.scanMySpells()
         currentSpecID = GetSpecializationInfo(specIdx)
     end
     for spellID, info in pairs(spellData) do
-        if IsSpellKnown(spellID) then
+        if IsSpellKnown(spellID) or (info.replaces and IsPlayerSpell(spellID)) then
             mySpells[spellID] = true
             -- Resolve base cooldown (may vary by spec)
             local baseCd = info.cooldown
