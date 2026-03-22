@@ -151,3 +151,67 @@ function ZaeUI_Shared.createSlider(parent, y, label, minVal, maxVal, step, get, 
 
     return slider, y - 24
 end
+
+--- Create a dropdown control.
+--- @param parent table Parent frame
+--- @param y number Y offset from TOPLEFT
+--- @param label string Dropdown label
+--- @param options table Array of { value = string, text = string }
+--- @param get function Returns current value string
+--- @param set function Called with new value string
+--- @return table dropdown The created dropdown container
+--- @return number nextY The Y offset for the next widget
+function ZaeUI_Shared.createDropdown(parent, y, label, options, get, set)
+    local dropLabel = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    dropLabel:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
+    dropLabel:SetText(label)
+    y = y - 20
+
+    local container = CreateFrame("Frame", nil, parent)
+    container:SetPoint("TOPLEFT", parent, "TOPLEFT", 16, y)
+    container:SetSize(200, 28)
+
+    local bg = container:CreateTexture(nil, "BACKGROUND")
+    bg:SetAllPoints()
+    bg:SetColorTexture(0.1, 0.1, 0.1, 0.8)
+
+    local selected = container:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    selected:SetPoint("LEFT", 8, 0)
+
+    -- Find display text for current value
+    local function updateText()
+        local val = get()
+        for _, opt in ipairs(options) do
+            if opt.value == val then
+                selected:SetText(opt.text)
+                return
+            end
+        end
+        selected:SetText(val or "")
+    end
+    updateText()
+
+    local btn = CreateFrame("Button", nil, container)
+    btn:SetAllPoints()
+    btn:SetScript("OnClick", function(self)
+        MenuUtil.CreateContextMenu(self, function(_, rootDescription)
+            for _, opt in ipairs(options) do
+                rootDescription:CreateRadio(opt.text, function() return get() == opt.value end, function()
+                    set(opt.value)
+                    updateText()
+                end)
+            end
+        end)
+    end)
+
+    local arrow = container:CreateTexture(nil, "OVERLAY")
+    arrow:SetSize(12, 12)
+    arrow:SetPoint("RIGHT", -4, 0)
+    arrow:SetTexture("Interface\\ChatFrame\\ChatFrameExpandArrow")
+
+    container.refresh = function()
+        updateText()
+    end
+
+    return container, y - 32
+end

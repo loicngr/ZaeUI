@@ -46,6 +46,9 @@ local cooldownOverrides = {} -- talent-adjusted cooldowns { [spellID] = effectiv
 local groupData = {}
 local syncList = {}
 
+-- Forward declarations for mode-aware routing (defined after event handlers)
+local refreshDisplay, showDisplay, hideDisplay
+
 -- Default settings
 local DEFAULTS = {
     trackerEnabled = true,
@@ -57,6 +60,14 @@ local DEFAULTS = {
     trackerHideWhenSolo = true,
     collapsed = false,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
+    displayMode = "floating",
+    anchoredIconSize = 28,
+    anchoredSpacing = 2,
+    anchoredIconsPerRow = 4,
+    anchoredSide = "BOTTOM",
+    anchoredOffsetX = 0,
+    anchoredOffsetY = 0,
+    anchoredShowPlayer = false,
 }
 
 --- Initialize database with defaults for any missing keys.
@@ -181,7 +192,7 @@ function ns.handleAddonMessage(message, sender)
             groupData[name].cooldowns[spellID] = nil
         end
     end
-    if ns.refreshDisplay then ns.refreshDisplay() end
+    refreshDisplay()
 end
 
 -- Spell scanning -----------------------------------------------------------
@@ -336,6 +347,7 @@ function events.ADDON_LOADED(_, addonName)
     initDB()
     ns.scanMySpells()
     ns.rebuildClassColorCache()
+    if ns.frameDisplay_Init then ns.frameDisplay_Init() end
 
     frame:UnregisterEvent("ADDON_LOADED")
     frame:RegisterEvent("PLAYER_LOGIN")
@@ -345,6 +357,8 @@ function events.ADDON_LOADED(_, addonName)
     frame:RegisterEvent("PLAYER_ENTERING_WORLD")
     frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
     frame:RegisterEvent("UNIT_PET")
+    frame:RegisterEvent("GROUP_JOINED")
+    frame:RegisterEvent("GROUP_LEFT")
 
     print(PREFIX .. "Loaded. Type /zdef help for commands.")
 end
@@ -352,7 +366,7 @@ end
 function events.PLAYER_LOGIN()
     if db.trackerEnabled then
         if not db.trackerHideWhenSolo or ns.isInAnyGroup() then
-            if ns.showDisplay then ns.showDisplay() end
+            showDisplay()
         end
     end
     frame:UnregisterEvent("PLAYER_LOGIN")
@@ -367,7 +381,7 @@ function events.GROUP_ROSTER_UPDATE()
     ns.rebuildClassColorCache()
     ns.cleanGroupData()
     ns.sendSync()
-    if ns.refreshDisplay then ns.refreshDisplay() end
+    refreshDisplay()
 end
 
 function events.CHAT_MSG_ADDON(_, prefix, message, _, sender)
@@ -386,11 +400,27 @@ function events.UNIT_PET(_, unit)
     ns.sendSync()
 end
 
+function events.GROUP_JOINED()
+    if not db then return end
+    if not db.trackerEnabled then return end
+    if db.trackerHideWhenSolo then
+        showDisplay()
+    end
+end
+
+function events.GROUP_LEFT()
+    if not db then return end
+    if not db.trackerEnabled then return end
+    if db.trackerHideWhenSolo then
+        hideDisplay()
+    end
+end
+
 function events.PLAYER_ENTERING_WORLD()
     ns.scanMySpells()
     ns.rebuildClassColorCache()
     ns.sendSync()
-    if ns.refreshDisplay then ns.refreshDisplay() end
+    refreshDisplay()
 end
 
 function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
@@ -412,9 +442,9 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
             if groupData[myName] then
                 groupData[myName].cooldowns[spellID] = nil
             end
-            if ns.refreshDisplay then ns.refreshDisplay() end
+            refreshDisplay()
         end)
-        if ns.refreshDisplay then ns.refreshDisplay() end
+        refreshDisplay()
     end
 end
 
@@ -443,10 +473,10 @@ SlashCmdList["ZAEUIDEFENSIVES"] = function(msg)
     if msg == "tracker" then
         db.trackerEnabled = not db.trackerEnabled
         if db.trackerEnabled then
-            if ns.showDisplay then ns.showDisplay() end
+            showDisplay()
             print(PREFIX .. "Tracker enabled.")
         else
-            if ns.hideDisplay then ns.hideDisplay() end
+            hideDisplay()
             print(PREFIX .. "Tracker disabled.")
         end
         if ns.refreshWidgets then ns.refreshWidgets() end
@@ -460,7 +490,7 @@ SlashCmdList["ZAEUIDEFENSIVES"] = function(msg)
         for k in pairs(groupData) do groupData[k] = nil end
         ns.scanMySpells()
         if ns.refreshWidgets then ns.refreshWidgets() end
-        if ns.refreshDisplay then ns.refreshDisplay() end
+        refreshDisplay()
         print(PREFIX .. "All settings reset to defaults.")
         return
     end
@@ -468,7 +498,7 @@ SlashCmdList["ZAEUIDEFENSIVES"] = function(msg)
     if msg == "help" then
         print(PREFIX .. "Usage:")
         print(PREFIX .. "  /zdef - Open the options panel")
-        print(PREFIX .. "  /zdef tracker - Toggle the floating tracker")
+        print(PREFIX .. "  /zdef tracker - Toggle the tracker display")
         print(PREFIX .. "  /zdef reset - Reset all settings to defaults")
         return
     end
@@ -485,3 +515,34 @@ ns.PREFIX = PREFIX
 ns.ADDON_NAME = ADDON_NAME
 ns.constants = { DEFAULTS = DEFAULTS }
 ns.safeSend = safeSend
+
+-- Mode-aware display routing ------------------------------------------------
+
+refreshDisplay = function()
+    if not db then return end
+    if not db.trackerEnabled then return end
+    if db.displayMode == "anchored" then
+        if ns.frameDisplay_RefreshAll then ns.frameDisplay_RefreshAll() end
+    else
+        if ns.refreshTrackerDisplay then ns.refreshTrackerDisplay() end
+    end
+end
+
+showDisplay = function()
+    if not db then return end
+    if not db.trackerEnabled then return end
+    if db.displayMode == "anchored" then
+        if ns.frameDisplay_RefreshAll then ns.frameDisplay_RefreshAll() end
+    else
+        if ns.showTrackerDisplay then ns.showTrackerDisplay() end
+    end
+end
+
+hideDisplay = function()
+    if ns.frameDisplay_HideAll then ns.frameDisplay_HideAll() end
+    if ns.hideTrackerDisplay then ns.hideTrackerDisplay() end
+end
+
+ns.routeRefreshDisplay = refreshDisplay
+ns.routeShowDisplay = showDisplay
+ns.routeHideDisplay = hideDisplay

@@ -1,6 +1,6 @@
 ## Interface: 120000
 ## Title: ZaeUI_Defensives
-## Notes: Track defensive cooldowns for your group with a floating tracker window.
+## Notes: Track defensive cooldowns for your group. Floating tracker or anchored to unit frames.
 ## Author: loicngr
 ## Version: 1.1.1
 ## SavedVariables: ZaeUI_DefensivesDB
@@ -9,4 +9,5 @@
 SpellData.lua
 ZaeUI_Defensives.lua
 Display.lua
+FrameDisplay.lua
 Options.lua
