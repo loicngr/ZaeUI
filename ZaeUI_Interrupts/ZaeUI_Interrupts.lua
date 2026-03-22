@@ -63,6 +63,8 @@ local DEFAULTS = {
     collapsed = false,
     frameOpacity = 80,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
+    displayStyle = "list",  -- "list" or "bars"
+    barWidth = 220,          -- 150-400px
     customSpells = {},    -- { [spellID] = true } added by user
     removedSpells = {},   -- { [spellID] = true } removed by user
     separateMarkerWindow = false, -- show markers in separate window instead of tracker
@@ -357,10 +359,13 @@ end
 
 --- Cached player-to-hex mapping, rebuilt on GROUP_ROSTER_UPDATE.
 local classColorCache = {}
+--- Cached player-to-className mapping, rebuilt alongside classColorCache.
+local classNameCache = {}
 
 --- Rebuild the class color cache from current group roster.
 function ns.rebuildClassColorCache()
     for k in pairs(classColorCache) do classColorCache[k] = nil end
+    for k in pairs(classNameCache) do classNameCache[k] = nil end
     local numMembers = GetNumGroupMembers()
     local isRaid = IsInRaid()
     local count = isRaid and numMembers or (numMembers - 1)
@@ -369,16 +374,22 @@ function ns.rebuildClassColorCache()
         local name = UnitName(unit)
         if name and not classColorCache[name] then
             local _, className = UnitClass(unit)
-            if className and classColorByClass[className] then
-                classColorCache[name] = classColorByClass[className]
+            if className then
+                classNameCache[name] = className
+                if classColorByClass[className] then
+                    classColorCache[name] = classColorByClass[className]
+                end
             end
         end
     end
     local myName = UnitName("player")
     if myName and not classColorCache[myName] then
         local _, className = UnitClass("player")
-        if className and classColorByClass[className] then
-            classColorCache[myName] = classColorByClass[className]
+        if className then
+            classNameCache[myName] = className
+            if classColorByClass[className] then
+                classColorCache[myName] = classColorByClass[className]
+            end
         end
     end
 end
@@ -389,6 +400,18 @@ end
 --- @return string hex "rrggbb"
 function ns.getClassColorHex(playerName)
     return classColorCache[playerName] or "ffffff"
+end
+
+--- Get RAID_CLASS_COLORS entry for a player name.
+--- Returns nil if the player's class is unknown.
+--- @param playerName string
+--- @return table|nil colorEntry RAID_CLASS_COLORS entry with r, g, b fields
+function ns.getClassColor(playerName)
+    local className = classNameCache[playerName]
+    if className then
+        return RAID_CLASS_COLORS[className]
+    end
+    return nil
 end
 
 --- Send a SYNC message with all tracked spell IDs.

@@ -178,6 +178,11 @@ function ZaeUI_Shared.createDropdown(parent, y, label, options, get, set)
     local selected = container:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     selected:SetPoint("LEFT", 8, 0)
 
+    local arrow = container:CreateTexture(nil, "OVERLAY")
+    arrow:SetSize(12, 12)
+    arrow:SetPoint("RIGHT", -4, 0)
+    arrow:SetTexture("Interface\\ChatFrame\\ChatFrameExpandArrow")
+
     -- Find display text for current value
     local function updateText()
         local val = get()
@@ -191,23 +196,91 @@ function ZaeUI_Shared.createDropdown(parent, y, label, options, get, set)
     end
     updateText()
 
+    -- Custom popup menu (no taint)
+    local popup = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
+    popup:SetFrameStrata("FULLSCREEN_DIALOG")
+    popup:SetBackdrop({
+        bgFile = "Interface\\Buttons\\WHITE8x8",
+        edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+        edgeSize = 12,
+        insets = { left = 2, right = 2, top = 2, bottom = 2 },
+    })
+    popup:SetBackdropColor(0.08, 0.08, 0.1, 0.95)
+    popup:SetBackdropBorderColor(0.4, 0.4, 0.4, 1)
+    popup:Hide()
+    popup:EnableMouse(true)
+
+    local OPTION_HEIGHT = 22
+    local optionButtons = {}
+    for i, opt in ipairs(options) do
+        local optBtn = CreateFrame("Button", nil, popup)
+        optBtn:SetHeight(OPTION_HEIGHT)
+        optBtn:SetPoint("TOPLEFT", popup, "TOPLEFT", 4, -4 - ((i - 1) * OPTION_HEIGHT))
+        optBtn:SetPoint("RIGHT", popup, "RIGHT", -4, 0)
+
+        local optBg = optBtn:CreateTexture(nil, "BACKGROUND")
+        optBg:SetAllPoints()
+        optBg:SetColorTexture(1, 1, 1, 0)
+
+        local optText = optBtn:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+        optText:SetPoint("LEFT", 8, 0)
+        optText:SetText(opt.text)
+
+        local optCheck = optBtn:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+        optCheck:SetPoint("RIGHT", -8, 0)
+
+        optBtn:SetScript("OnEnter", function() optBg:SetColorTexture(1, 1, 1, 0.1) end)
+        optBtn:SetScript("OnLeave", function() optBg:SetColorTexture(1, 1, 1, 0) end)
+        optBtn:SetScript("OnClick", function()
+            set(opt.value)
+            updateText()
+            popup:Hide()
+            -- Update check marks
+            for j, ob in ipairs(optionButtons) do
+                ob.check:SetText(options[j].value == opt.value and "|cff44ff44*|r" or "")
+            end
+        end)
+
+        optBtn.check = optCheck
+        optionButtons[i] = optBtn
+    end
+
+    popup:SetSize(200, 8 + (#options * OPTION_HEIGHT))
+
+    -- Close popup when clicking elsewhere
+    popup:SetScript("OnShow", function()
+        -- Update check marks on show
+        local val = get()
+        for i, ob in ipairs(optionButtons) do
+            ob.check:SetText(options[i].value == val and "|cff44ff44*|r" or "")
+        end
+    end)
+
+    -- Close on escape or click outside
+    local closeFrame = CreateFrame("Frame", nil, popup)
+    closeFrame:SetScript("OnKeyDown", function(self, key)
+        if key == "ESCAPE" then
+            popup:Hide()
+            self:SetPropagateKeyboardInput(false)
+        else
+            self:SetPropagateKeyboardInput(true)
+        end
+    end)
+
     local btn = CreateFrame("Button", nil, container)
     btn:SetAllPoints()
     btn:SetScript("OnClick", function(self)
-        MenuUtil.CreateContextMenu(self, function(_, rootDescription)
-            for _, opt in ipairs(options) do
-                rootDescription:CreateRadio(opt.text, function() return get() == opt.value end, function()
-                    set(opt.value)
-                    updateText()
-                end)
-            end
-        end)
+        if popup:IsShown() then
+            popup:Hide()
+        else
+            popup:ClearAllPoints()
+            popup:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -2)
+            popup:Show()
+        end
     end)
 
-    local arrow = container:CreateTexture(nil, "OVERLAY")
-    arrow:SetSize(12, 12)
-    arrow:SetPoint("RIGHT", -4, 0)
-    arrow:SetTexture("Interface\\ChatFrame\\ChatFrameExpandArrow")
+    -- Hide popup when parent settings panel hides
+    container:SetScript("OnHide", function() popup:Hide() end)
 
     container.refresh = function()
         updateText()

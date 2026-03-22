@@ -2,7 +2,7 @@
 ## Title: ZaeUI_Shared
 ## Notes: Shared utilities for ZaeUI addons
 ## Author: loicngr
-## Version: 1.1.1
+## Version: 1.1.2
 ## X-Curse-Project-ID: 1488489
 
 ZaeUI_Shared.lua
