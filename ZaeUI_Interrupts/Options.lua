@@ -50,6 +50,19 @@ local function createOptionsPanel(parentCategory)
     )
     widgets[#widgets + 1] = w
 
+    w, y = ZaeUI_Shared.createDropdown(content, y, "Display style",
+        {
+            { value = "list", text = "List" },
+            { value = "bars", text = "Progress Bars" },
+        },
+        function() return db.displayStyle or "list" end,
+        function(value)
+            db.displayStyle = value
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end
+    )
+    widgets[#widgets + 1] = w
+
     w, y = ZaeUI_Shared.createCheckbox(content, y, "Auto-hide when not in a group",
         function() return db.autoHide end,
         function(checked)
@@ -157,6 +170,16 @@ local function createOptionsPanel(parentCategory)
             if ns.applyFrameOpacity then ns.applyFrameOpacity() end
         end,
         "%d%%"
+    )
+    widgets[#widgets + 1] = w
+
+    w, y = ZaeUI_Shared.createSlider(content, y, "Bar width", 150, 400, 10,
+        function() return db.barWidth or 220 end,
+        function(value)
+            db.barWidth = value
+            if ns.refreshDisplay then ns.refreshDisplay() end
+        end,
+        "%dpx"
     )
     widgets[#widgets + 1] = w
 
