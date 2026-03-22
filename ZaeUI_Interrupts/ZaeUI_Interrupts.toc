@@ -2,7 +2,7 @@
 ## Title: ZaeUI_Interrupts
 ## Notes: Track interrupt, stun and knockback cooldowns for your group.
 ## Author: loicngr
-## Version: 1.4.3
+## Version: 1.4.4
 ## SavedVariables: ZaeUI_InterruptsDB
 ## Dependencies: ZaeUI_Shared
 
