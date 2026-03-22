@@ -259,6 +259,38 @@ function ns.scanMySpells()
             mySpells[swap.old] = nil
             cooldownOverrides[swap.old] = nil
             mySpells[swap.new] = true
+            -- Compute cooldown override for the replacement spell
+            local info = spellData[swap.new]
+            if info then
+                local baseCd = info.cooldown
+                if currentSpecID and info.cooldownBySpec and info.cooldownBySpec[currentSpecID] then
+                    baseCd = info.cooldownBySpec[currentSpecID]
+                end
+                if info.cdModifiers then
+                    local cd = baseCd
+                    for _, mod in pairs(info.cdModifiers) do
+                        if mod.ranks then
+                            for r = #mod.ranks, 1, -1 do
+                                if IsPlayerSpell(mod.ranks[r].talent) then
+                                    cd = cd - mod.ranks[r].reduction
+                                    break
+                                end
+                            end
+                        elseif IsPlayerSpell(mod.talent) then
+                            local reduction = mod.reduction
+                            if currentSpecID and mod.reductionBySpec and mod.reductionBySpec[currentSpecID] then
+                                reduction = mod.reductionBySpec[currentSpecID]
+                            end
+                            cd = cd - reduction
+                        end
+                    end
+                    if cd ~= baseCd then
+                        cooldownOverrides[swap.new] = cd
+                    end
+                elseif baseCd ~= info.cooldown then
+                    cooldownOverrides[swap.new] = baseCd
+                end
+            end
         end
     end
     local myName = UnitName("player")
@@ -537,7 +569,7 @@ ns.safeSend = safeSend
 refreshDisplay = function()
     if not db then return end
     if not db.trackerEnabled then return end
-    if db.displayMode == "anchored" then
+    if db.displayMode == "anchored" and not IsInRaid() then
         if ns.frameDisplay_RefreshAll then ns.frameDisplay_RefreshAll() end
     else
         if ns.refreshTrackerDisplay then ns.refreshTrackerDisplay() end
@@ -547,7 +579,7 @@ end
 showDisplay = function()
     if not db then return end
     if not db.trackerEnabled then return end
-    if db.displayMode == "anchored" then
+    if db.displayMode == "anchored" and not IsInRaid() then
         if ns.frameDisplay_RefreshAll then ns.frameDisplay_RefreshAll() end
     else
         if ns.showTrackerDisplay then ns.showTrackerDisplay() end
