@@ -396,6 +396,9 @@ function ns.frameDisplay_RefreshAll()
     if not db.trackerEnabled then return end
     if db.displayMode ~= "anchored" then return end
 
+    -- Disable in raid (too many frames, use floating tracker instead)
+    if IsInRaid() then return end
+
     -- Hide existing rows (without wiping — reuse on refresh)
     for _, row in pairs(rows) do
         for _, icon in ipairs(row.icons) do
