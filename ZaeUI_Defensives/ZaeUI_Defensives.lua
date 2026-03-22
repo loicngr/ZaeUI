@@ -43,8 +43,11 @@ local PREFIX = "|cff00ccff[ZaeUI_Defensives]|r "
 local db
 local mySpells = {}
 local cooldownOverrides = {} -- talent-adjusted cooldowns { [spellID] = effectiveCD }
+local chargeOverrides = {}   -- talent-adjusted max charges { [spellID] = maxCharges }
+local myCharges = {}         -- local player current charges { [spellID] = currentCharges }
 local groupData = {}
 local syncList = {}
+local chargeSyncList = {}
 
 -- Forward declarations for mode-aware routing (defined after event handlers)
 local refreshDisplay, showDisplay, hideDisplay
@@ -134,7 +137,8 @@ local function safeSend(msg)
     pcall(C_ChatInfo.SendAddonMessage, COMM_PREFIX, msg, getChannel())
 end
 
---- Send a SYNC message with all tracked spell IDs.
+--- Send a SYNC message with all tracked spell IDs and charge state.
+--- Format: SYNC:id1,id2,id3 or SYNC:id1,id2,id3:C:id1=cur/max,id2=cur/max
 function ns.sendSync()
     local n = 0
     for spellID in pairs(mySpells) do
@@ -143,20 +147,52 @@ function ns.sendSync()
     end
     for i = n + 1, #syncList do syncList[i] = nil end
     if n == 0 then return end
-    safeSend("SYNC:" .. table_concat(syncList, ","))
+    -- Build charge section for spells with charges
+    local chargeCount = 0
+    for spellID in pairs(mySpells) do
+        local maxCh = chargeOverrides[spellID]
+        if maxCh and maxCh > 1 then
+            local curCh = myCharges[spellID] or maxCh
+            chargeCount = chargeCount + 1
+            chargeSyncList[chargeCount] = spellID .. "=" .. curCh .. "/" .. maxCh
+        end
+    end
+    for i = chargeCount + 1, #chargeSyncList do chargeSyncList[i] = nil end
+    if chargeCount > 0 then
+        safeSend("SYNC:" .. table_concat(syncList, ",") .. ":C:" .. table_concat(chargeSyncList, ","))
+    else
+        safeSend("SYNC:" .. table_concat(syncList, ","))
+    end
 end
 
 --- Send a USED message when a tracked spell is cast.
 --- @param spellID number
 --- @param cooldown number
-function ns.sendUsed(spellID, cooldown)
-    safeSend("USED:" .. spellID .. ":" .. cooldown)
+--- @param currentCharges number|nil Current charges remaining (nil for non-charge spells)
+--- @param maxCharges number|nil Maximum charges (nil for non-charge spells)
+function ns.sendUsed(spellID, cooldown, currentCharges, maxCharges)
+    if currentCharges and maxCharges then
+        safeSend("USED:" .. spellID .. ":" .. cooldown .. ":" .. currentCharges .. ":" .. maxCharges)
+    else
+        safeSend("USED:" .. spellID .. ":" .. cooldown)
+    end
 end
 
---- Send a READY message when a tracked spell's cooldown ends.
+--- Send a READY message when a tracked spell's cooldown ends (or a charge recharges).
 --- @param spellID number
-function ns.sendReady(spellID)
-    safeSend("READY:" .. spellID)
+--- @param currentCharges number|nil Current charges after recharge (nil for non-charge spells)
+--- @param maxCharges number|nil Maximum charges (nil for non-charge spells)
+--- @param rechargeDuration number|nil Recharge duration for next charge (nil if fully recharged)
+function ns.sendReady(spellID, currentCharges, maxCharges, rechargeDuration)
+    if currentCharges and maxCharges then
+        if rechargeDuration then
+            safeSend("READY:" .. spellID .. ":" .. currentCharges .. ":" .. maxCharges .. ":" .. rechargeDuration)
+        else
+            safeSend("READY:" .. spellID .. ":" .. currentCharges .. ":" .. maxCharges)
+        end
+    else
+        safeSend("READY:" .. spellID)
+    end
 end
 
 --- Handle incoming addon messages.
@@ -170,26 +206,84 @@ function ns.handleAddonMessage(message, sender)
     if name == myName then return end
 
     if msgType == "SYNC" then
-        groupData[name] = groupData[name] or { spells = {}, cooldowns = {} }
+        groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, charges = {} }
         local spells = groupData[name].spells
+        local charges = groupData[name].charges
         for k in pairs(spells) do spells[k] = nil end
-        for idStr in payload:gmatch("[^,]+") do
+        for k in pairs(charges) do charges[k] = nil end
+        -- Split spell IDs from charge section (format: ids:C:chargeData)
+        local spellSection, chargeSection = payload:match("^(.-)%:C%:(.+)$")
+        if not spellSection then spellSection = payload end
+        for idStr in spellSection:gmatch("[^,]+") do
             local id = tonumber(idStr)
             if id then spells[id] = true end
         end
+        -- Parse charge data if present
+        if chargeSection then
+            for entry in chargeSection:gmatch("[^,]+") do
+                local idStr, curStr, maxStr = entry:match("^(%d+)=(%d+)/(%d+)$")
+                local id = tonumber(idStr)
+                local cur = tonumber(curStr)
+                local max = tonumber(maxStr)
+                if id and cur and max then
+                    local existing = charges[id]
+                    if existing then
+                        existing.current = cur
+                        existing.max = max
+                    else
+                        charges[id] = { current = cur, max = max }
+                    end
+                end
+            end
+        end
     elseif msgType == "USED" then
-        local spellIDStr, cdStr = strsplit(":", payload)
-        local spellID = tonumber(spellIDStr)
-        local cooldown = tonumber(cdStr)
+        local p1, p2, p3, p4 = strsplit(":", payload)
+        local spellID = tonumber(p1)
+        local cooldown = tonumber(p2)
+        local currentCharges = tonumber(p3)
+        local maxCharges = tonumber(p4)
         if spellID and cooldown then
-            groupData[name] = groupData[name] or { spells = {}, cooldowns = {} }
+            groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, charges = {} }
             groupData[name].cooldowns[spellID] = GetTime() + cooldown
+            if currentCharges and maxCharges then
+                local existing = groupData[name].charges[spellID]
+                if existing then
+                    existing.current = currentCharges
+                    existing.max = maxCharges
+                else
+                    groupData[name].charges[spellID] = { current = currentCharges, max = maxCharges }
+                end
+            end
         end
     elseif msgType == "READY" then
-        local spellID = tonumber(payload)
+        local p1, p2, p3, p4 = strsplit(":", payload)
+        local spellID = tonumber(p1)
+        local currentCharges = tonumber(p2)
+        local maxCharges = tonumber(p3)
+        local rechargeDuration = tonumber(p4)
         if spellID then
-            groupData[name] = groupData[name] or { spells = {}, cooldowns = {} }
-            groupData[name].cooldowns[spellID] = nil
+            groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, charges = {} }
+            if currentCharges and maxCharges and currentCharges < maxCharges then
+                -- Still recharging: update charges and set new cooldown for next charge
+                local existing = groupData[name].charges[spellID]
+                if existing then
+                    existing.current = currentCharges
+                    existing.max = maxCharges
+                else
+                    groupData[name].charges[spellID] = { current = currentCharges, max = maxCharges }
+                end
+                if rechargeDuration then
+                    groupData[name].cooldowns[spellID] = GetTime() + rechargeDuration
+                end
+            else
+                -- Fully recharged: clear cooldown but keep charge data for badge display
+                groupData[name].cooldowns[spellID] = nil
+                local existing = groupData[name].charges[spellID]
+                if existing then
+                    existing.current = currentCharges or maxCharges
+                    existing.max = maxCharges
+                end
+            end
         end
     end
     refreshDisplay()
@@ -202,6 +296,7 @@ end
 function ns.scanMySpells()
     for k in pairs(mySpells) do mySpells[k] = nil end
     for k in pairs(cooldownOverrides) do cooldownOverrides[k] = nil end
+    for k in pairs(chargeOverrides) do chargeOverrides[k] = nil end
     local spellData = ns.spellData
     if not spellData then return end
     -- Resolve specID once for all spells
@@ -243,6 +338,21 @@ function ns.scanMySpells()
             elseif baseCd ~= info.cooldown then
                 cooldownOverrides[spellID] = baseCd
             end
+            -- Compute max charges (talent-adjusted)
+            if info.charges then
+                local maxCharges = info.charges
+                if info.chargeModifiers then
+                    for _, mod in pairs(info.chargeModifiers) do
+                        if IsPlayerSpell(mod.talent) then
+                            maxCharges = maxCharges + mod.bonus
+                        end
+                    end
+                end
+                chargeOverrides[spellID] = maxCharges
+                if not myCharges[spellID] then
+                    myCharges[spellID] = maxCharges
+                end
+            end
         end
     end
     -- Detect talent overrides: if a known spell is overridden by a talent
@@ -258,6 +368,7 @@ function ns.scanMySpells()
         for _, swap in ipairs(swaps) do
             mySpells[swap.old] = nil
             cooldownOverrides[swap.old] = nil
+            chargeOverrides[swap.old] = nil
             mySpells[swap.new] = true
             -- Compute cooldown override for the replacement spell
             local info = spellData[swap.new]
@@ -290,16 +401,46 @@ function ns.scanMySpells()
                 elseif baseCd ~= info.cooldown then
                     cooldownOverrides[swap.new] = baseCd
                 end
+                -- Compute max charges for the replacement spell
+                if info.charges then
+                    local maxCharges = info.charges
+                    if info.chargeModifiers then
+                        for _, mod in pairs(info.chargeModifiers) do
+                            if IsPlayerSpell(mod.talent) then
+                                maxCharges = maxCharges + mod.bonus
+                            end
+                        end
+                    end
+                    chargeOverrides[swap.new] = maxCharges
+                    if not myCharges[swap.new] then
+                        myCharges[swap.new] = maxCharges
+                    end
+                end
             end
         end
     end
     local myName = UnitName("player")
     if myName then
-        groupData[myName] = groupData[myName] or { spells = {}, cooldowns = {} }
+        groupData[myName] = groupData[myName] or { spells = {}, cooldowns = {}, charges = {} }
         local spells = groupData[myName].spells
         for k in pairs(spells) do spells[k] = nil end
         for spellID in pairs(mySpells) do
             spells[spellID] = true
+        end
+        -- Populate charge data for display
+        local charges = groupData[myName].charges
+        for spellID in pairs(mySpells) do
+            local maxCh = chargeOverrides[spellID]
+            if maxCh and maxCh > 1 then
+                local curCh = myCharges[spellID] or maxCh
+                local existing = charges[spellID]
+                if existing then
+                    existing.current = curCh
+                    existing.max = maxCh
+                else
+                    charges[spellID] = { current = curCh, max = maxCh }
+                end
+            end
         end
     end
 end
@@ -479,10 +620,73 @@ function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
     if not info then return end
     -- Use talent-adjusted cooldown if available, otherwise static from SpellData
     local cd = cooldownOverrides[spellID] or info.cooldown
-    if cd > 0 then
-        local myName = UnitName("player")
-        if not myName then return end
-        groupData[myName] = groupData[myName] or { spells = {}, cooldowns = {} }
+    if cd <= 0 then return end
+    local myName = UnitName("player")
+    if not myName then return end
+    groupData[myName] = groupData[myName] or { spells = {}, cooldowns = {}, charges = {} }
+
+    local maxCharges = chargeOverrides[spellID]
+    if maxCharges and maxCharges > 1 then
+        -- Charge-based spell
+        local current = myCharges[spellID]
+        if not current then current = maxCharges end
+        current = current - 1
+        if current < 0 then current = 0 end
+        myCharges[spellID] = current
+
+        groupData[myName].cooldowns[spellID] = GetTime() + cd
+        ns.sendUsed(spellID, cd, current, maxCharges)
+
+        -- Timer for when this charge recharges
+        C_Timer.After(cd, function()
+            local newCurrent = (myCharges[spellID] or 0) + 1
+            if newCurrent > maxCharges then newCurrent = maxCharges end
+            myCharges[spellID] = newCurrent
+
+            if newCurrent >= maxCharges then
+                ns.sendReady(spellID, newCurrent, maxCharges)
+                if groupData[myName] then
+                    groupData[myName].cooldowns[spellID] = nil
+                    -- Keep charge data for badge display
+                    groupData[myName].charges = groupData[myName].charges or {}
+                    local existing = groupData[myName].charges[spellID]
+                    if existing then
+                        existing.current = newCurrent
+                        existing.max = maxCharges
+                    else
+                        groupData[myName].charges[spellID] = { current = newCurrent, max = maxCharges }
+                    end
+                end
+            else
+                -- Still recharging: set new cooldown timer and send rechargeDuration
+                ns.sendReady(spellID, newCurrent, maxCharges, cd)
+                if groupData[myName] then
+                    groupData[myName].cooldowns[spellID] = GetTime() + cd
+                    groupData[myName].charges = groupData[myName].charges or {}
+                    local existing = groupData[myName].charges[spellID]
+                    if existing then
+                        existing.current = newCurrent
+                        existing.max = maxCharges
+                    else
+                        groupData[myName].charges[spellID] = { current = newCurrent, max = maxCharges }
+                    end
+                end
+            end
+            refreshDisplay()
+        end)
+
+        -- Update local groupData charges
+        groupData[myName].charges = groupData[myName].charges or {}
+        local existing = groupData[myName].charges[spellID]
+        if existing then
+            existing.current = current
+            existing.max = maxCharges
+        else
+            groupData[myName].charges[spellID] = { current = current, max = maxCharges }
+        end
+        refreshDisplay()
+    else
+        -- Normal non-charge spell
         groupData[myName].cooldowns[spellID] = GetTime() + cd
         ns.sendUsed(spellID, cd)
         C_Timer.After(cd, function()
@@ -536,6 +740,7 @@ SlashCmdList["ZAEUIDEFENSIVES"] = function(msg)
         initDB()
         for k in pairs(mySpells) do mySpells[k] = nil end
         for k in pairs(groupData) do groupData[k] = nil end
+        for k in pairs(myCharges) do myCharges[k] = nil end
         ns.scanMySpells()
         if ns.refreshWidgets then ns.refreshWidgets() end
         refreshDisplay()
@@ -558,6 +763,8 @@ end
 
 ns.mySpells = mySpells
 ns.groupData = groupData
+ns.chargeOverrides = chargeOverrides
+ns.myCharges = myCharges
 ns.COMM_PREFIX = COMM_PREFIX
 ns.PREFIX = PREFIX
 ns.ADDON_NAME = ADDON_NAME
