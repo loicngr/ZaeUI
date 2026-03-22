@@ -38,7 +38,8 @@ local spellData = {
     [45438]  = { name = "Ice Block",             cooldown = 240, duration = 10, category = "personal",  class = "MAGE",
                  cdModifiers = { { talent = 382424, reduction = 60 } } },             -- Winter's Protection (2 ranks): -60s
     [414658] = { name = "Ice Cold",              cooldown = 240, duration = 6,  category = "personal",  class = "MAGE",
-                 cdModifiers = { { talent = 382424, reduction = 60 } } },             -- Replaces Ice Block; Winter's Protection: -60s
+                 replaces = 45438,                                                           -- Replaces Ice Block
+                 cdModifiers = { { talent = 382424, reduction = 60 } } },             -- Winter's Protection: -60s
     [642]    = { name = "Divine Shield",         cooldown = 300, duration = 8,  category = "personal",  class = "PALADIN",
                  cdModifiers = { { talent = 114154, reduction = 90 } } },             -- Unbreakable Spirit: -30% (90s)
     [31224]  = { name = "Cloak of Shadows",      cooldown = 120, duration = 5,  category = "personal",  class = "ROGUE" },

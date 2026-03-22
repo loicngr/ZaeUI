@@ -245,6 +245,13 @@ function ns.scanMySpells()
             end
         end
     end
+    -- Exclude spells that are replaced by a known talent variant
+    for spellID, info in pairs(spellData) do
+        if info.replaces and mySpells[spellID] then
+            mySpells[info.replaces] = nil
+            cooldownOverrides[info.replaces] = nil
+        end
+    end
     local myName = UnitName("player")
     if myName then
         groupData[myName] = groupData[myName] or { spells = {}, cooldowns = {} }
