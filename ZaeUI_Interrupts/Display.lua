@@ -141,10 +141,8 @@ local function getRow(index, parent)
     row.iconHitFrame:SetScript("OnEnter", function(self)
         local id = self._spellID
         if not id then return end
-        local info = C_Spell.GetSpellInfo(id)
-        if not info then return end
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetText(info.name, 1, 1, 1)
+        GameTooltip:SetSpellByID(id)
         GameTooltip:Show()
     end)
     row.iconHitFrame:SetScript("OnLeave", function()

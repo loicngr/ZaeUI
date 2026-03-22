@@ -172,17 +172,22 @@ local function createIcon(parent, spellID)
     icon.timerText:SetPoint("CENTER", 0, 0)
     icon.timerText:Hide()
 
+    icon.chargeText = icon:CreateFontString(nil, "OVERLAY")
+    icon.chargeText:SetFont(STANDARD_TEXT_FONT, 9, "OUTLINE")
+    icon.chargeText:SetPoint("BOTTOMRIGHT", 2, -2)
+    icon.chargeText:Hide()
+
     icon.spellID = spellID
     icon.endTime = nil
     icon.duration = nil
+    icon.chargeCount = nil
+    icon.chargeMax = nil
 
     -- Tooltip
     icon:EnableMouse(true)
     icon:SetScript("OnEnter", function(self)
-        local info = C_Spell.GetSpellInfo(self.spellID)
-        if not info then return end
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetText(info.name, 1, 1, 1)
+        GameTooltip:SetSpellByID(self.spellID)
         GameTooltip:Show()
     end)
     icon:SetScript("OnLeave", function()
@@ -206,10 +211,20 @@ end
 --- @param icon table
 --- @param now number Current GetTime()
 local function updateIconVisual(icon, now)
+    -- Charge badge
+    if icon.chargeCount and icon.chargeMax and icon.chargeMax > 1 then
+        icon.chargeText:SetText(tostring(icon.chargeCount))
+        icon.chargeText:Show()
+    else
+        icon.chargeText:Hide()
+    end
+
     if icon.endTime and icon.endTime > now then
         -- On cooldown
         local remaining = icon.endTime - now
-        icon.tex:SetDesaturated(true)
+        -- Only desaturate when no charges remain
+        local hasChargesLeft = icon.chargeCount and icon.chargeCount > 0
+        icon.tex:SetDesaturated(not hasChargesLeft)
         icon.timerText:Show()
         icon.timerText:SetText(formatTime(remaining))
         if remaining < TIMER_THRESHOLD_CRITICAL then
@@ -488,6 +503,16 @@ function ns.frameDisplay_RefreshAll()
                             row.iconBySpell[spellID] = icon
                         end
                         row.icons[i] = icon
+
+                        -- Set charge data
+                        local chargeData = data.charges and data.charges[spellID]
+                        if chargeData then
+                            icon.chargeCount = chargeData.current
+                            icon.chargeMax = chargeData.max
+                        else
+                            icon.chargeCount = nil
+                            icon.chargeMax = nil
+                        end
 
                         -- Set cooldown state
                         local cdEnd = data.cooldowns[spellID]

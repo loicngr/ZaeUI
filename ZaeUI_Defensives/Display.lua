@@ -129,10 +129,8 @@ local function getRow(index, parent)
     row.iconHitFrame:SetScript("OnEnter", function(self)
         local id = self._spellID
         if not id then return end
-        local info = C_Spell.GetSpellInfo(id)
-        if not info then return end
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetText(info.name, 1, 1, 1)
+        GameTooltip:SetSpellByID(id)
         GameTooltip:Show()
     end)
     row.iconHitFrame:SetScript("OnLeave", function()
@@ -232,6 +230,7 @@ function ns.refreshTrackerDisplay()
                     e.onCD = cdEnd ~= nil and cdEnd > now
                     e.remaining = e.onCD and (cdEnd - now) or 0
                     e.buffActive = false
+                    e.chargeData = data.charges and data.charges[spellID] or nil
                 end
             end
         end
@@ -261,7 +260,9 @@ function ns.refreshTrackerDisplay()
         local iconTex = spellIconCache[spellID]
         if iconTex then
             row.icon:SetTexture(iconTex)
-            row.icon:SetDesaturated(entry.onCD)
+            local chargeData = entry.chargeData
+            local hasChargesLeft = chargeData and chargeData.current and chargeData.current > 0
+            row.icon:SetDesaturated(entry.onCD and not hasChargesLeft)
             row.icon:Show()
         else
             row.icon:Hide()
@@ -274,7 +275,15 @@ function ns.refreshTrackerDisplay()
         row.name:SetText("|cff" .. hex .. entry.playerName .. "|r")
 
         -- Status text: Active > On cooldown > Ready
-        if entry.onCD then
+        local chargeData = entry.chargeData
+        if chargeData and chargeData.max and chargeData.max > 1 then
+            local chargeText = chargeData.current .. "/" .. chargeData.max
+            if entry.onCD then
+                row.status:SetText(string_format("|cffff4444%.1fs|r |cffffcc00(%s)|r", entry.remaining, chargeText))
+            else
+                row.status:SetText("|cff44ff44Ready|r |cffffcc00(" .. chargeText .. ")|r")
+            end
+        elseif entry.onCD then
             row.status:SetText(string_format("|cffff4444%.1fs|r", entry.remaining))
         else
             row.status:SetText("|cff44ff44Ready|r")

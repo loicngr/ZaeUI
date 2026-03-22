@@ -223,13 +223,13 @@ function events.PLAYER_LOGIN()
         forceUpdateFont(true)
     end)
 
-    -- Hook for forbidden nameplates: apply show-only-name on friendly players
+    -- Hook for forbidden nameplates: apply show-only-name on friendly players and party NPCs
     hooksecurefunc(NamePlateUnitFrameMixin, "OnUnitSet", function(self)
         if not db.enabled or not db.showOnlyName then return end
         local unit = self.unit or self.displayedUnit
         if not unit then return end
-        if not self:IsPlayer() then return end
         if not UnitIsFriend("player", unit) then return end
+        if not self:IsPlayer() and not UnitInParty(unit) then return end
         local np = C_NamePlate.GetNamePlateForUnit(unit)
         if not np and TableUtil and TableUtil.TrySet then
             TableUtil.TrySet(self, "showOnlyName", true)
@@ -237,13 +237,13 @@ function events.PLAYER_LOGIN()
     end)
 
     -- Hook for forbidden nameplates: class color, cast bar
-    -- Only modify friendly player nameplates — enemy and NPC nameplates must stay untouched
+    -- Only modify friendly player and party NPC nameplates — enemy and non-party NPC nameplates stay untouched
     hooksecurefunc(NamePlateUnitFrameMixin, "UpdateNameClassColor", function(self)
         if not db.enabled then return end
         local unit = self.unit or self.displayedUnit
         if not unit then return end
-        if not self:IsPlayer() then return end
         if not UnitIsFriend("player", unit) then return end
+        if not self:IsPlayer() and not UnitInParty(unit) then return end
         local np = C_NamePlate.GetNamePlateForUnit(unit)
         if not np then
             if db.classColor and TableUtil and TableUtil.TrySet and TextureLoadingGroupMixin then

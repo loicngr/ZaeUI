@@ -4,7 +4,8 @@
 local _, ns = ...
 
 --- Known defensive spells trackable for group members.
---- Format: [spellID] = { name, cooldown (base), duration, category, class, cooldownBySpec?, cdModifiers? }
+--- Format: [spellID] = { name, cooldown (base), duration, category, class,
+---   cooldownBySpec?, cdModifiers?, charges?, chargeModifiers? }
 --- cooldownBySpec: { [specID] = seconds } overrides the base cooldown for specific specializations.
 --- cdModifiers: list of modifiers, each one of:
 ---   { talent = spellID, reduction = seconds, reductionBySpec? }
@@ -12,6 +13,8 @@ local _, ns = ...
 ---     reductionBySpec: { [specID] = seconds } overrides reduction for specific specs.
 ---   { ranks = { { talent = spellID, reduction = seconds }, ... } }
 ---     Multi-rank talent: checks each rank from highest to lowest; applies the first match.
+--- charges: base number of max charges (nil = 1 charge = normal cooldown behavior).
+--- chargeModifiers: list of { talent = spellID, bonus = number } — talents that grant extra charges.
 local spellData = {
     -- External defensives (cast on others)
     [33206]  = { name = "Pain Suppression",     cooldown = 180, duration = 8,  category = "external",  class = "PRIEST" },
@@ -36,9 +39,15 @@ local spellData = {
     [22812]  = { name = "Barkskin",              cooldown = 45,  duration = 8,  category = "personal",  class = "DRUID" },
     [48792]  = { name = "Icebound Fortitude",    cooldown = 120, duration = 8,  category = "personal",  class = "DEATHKNIGHT" },
     [45438]  = { name = "Ice Block",             cooldown = 240, duration = 10, category = "personal",  class = "MAGE",
-                 cdModifiers = { { talent = 382424, reduction = 60 } } },             -- Winter's Protection (2 ranks): -60s
+                 charges = 1,
+                 chargeModifiers = { { talent = 1244110, bonus = 1 } },              -- Glacial Bulwark: +1 charge
+                 cdModifiers = { { talent = 382424, reduction = 30 },                -- Winter's Protection: -30s
+                                 { talent = 1265517, reduction = 30 } } },           -- Eternal Snowball: -30s
     [414658] = { name = "Ice Cold",              cooldown = 240, duration = 6,  category = "personal",  class = "MAGE",
-                 cdModifiers = { { talent = 382424, reduction = 60 } } },             -- Replaces Ice Block; Winter's Protection: -60s
+                 charges = 1,
+                 chargeModifiers = { { talent = 1244110, bonus = 1 } },              -- Glacial Bulwark: +1 charge
+                 cdModifiers = { { talent = 382424, reduction = 30 },                -- Winter's Protection: -30s
+                                 { talent = 1265517, reduction = 30 } } },           -- Replaces Ice Block; Eternal Snowball: -30s
     [642]    = { name = "Divine Shield",         cooldown = 300, duration = 8,  category = "personal",  class = "PALADIN",
                  cdModifiers = { { talent = 114154, reduction = 90 } } },             -- Unbreakable Spirit: -30% (90s)
     [31224]  = { name = "Cloak of Shadows",      cooldown = 120, duration = 5,  category = "personal",  class = "ROGUE" },
