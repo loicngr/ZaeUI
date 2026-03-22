@@ -1,4 +1,4 @@
-## Interface: 120000
+## Interface: 120001
 ## Title: ZaeUI_Nameplates
 ## Notes: Enhance your target nameplate with scaling, overlap adjustment, highlight and arrow indicators.
 ## Author: loicngr
