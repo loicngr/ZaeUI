@@ -80,6 +80,9 @@ local function initDB()
     if not ZaeUI_ActionBarsDB.bars then
         ZaeUI_ActionBarsDB.bars = {}
     end
+    if ZaeUI_ActionBarsDB.showLoadMessage == nil then
+        ZaeUI_ActionBarsDB.showLoadMessage = true
+    end
     for _, barID in ipairs(BAR_ORDER) do
         if not ZaeUI_ActionBarsDB.bars[barID] then
             ZaeUI_ActionBarsDB.bars[barID] = {}
@@ -525,7 +528,9 @@ function events.PLAYER_LOGIN()
     isMounted = mountedDetector:IsShown()
     applyAllBars()
     frame:UnregisterEvent("PLAYER_LOGIN")
-    print(PREFIX .. "Loaded. Type /zab help for commands.")
+    if db.showLoadMessage then
+        print(PREFIX .. "Loaded. Type /zab help for commands.")
+    end
 end
 
 function events.PLAYER_REGEN_DISABLED()

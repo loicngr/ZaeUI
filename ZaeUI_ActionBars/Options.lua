@@ -93,10 +93,26 @@ local function createOptionsPanel(parentCategory)
     local panel = CreateFrame("Frame")
     panel:SetSize(1, 1)
 
+    -- General options area (above tabs)
+    local generalWidgets = {}
+    local generalArea = CreateFrame("Frame", nil, panel)
+    generalArea:SetPoint("TOPLEFT", panel, "TOPLEFT", 12, -8)
+    generalArea:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -12, -8)
+    generalArea:SetHeight(30)
+
+    local gw
+    gw, _ = ZaeUI_Shared.createCheckbox(generalArea, -4, "Show load message in chat",
+        function() return currentDB.showLoadMessage end,
+        function(checked)
+            currentDB.showLoadMessage = checked
+        end
+    )
+    generalWidgets[#generalWidgets + 1] = gw
+
     -- Tab buttons container (two rows: 5 + 5)
     local tabContainer = CreateFrame("Frame", nil, panel)
-    tabContainer:SetPoint("TOPLEFT", panel, "TOPLEFT", 12, -8)
-    tabContainer:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -12, -8)
+    tabContainer:SetPoint("TOPLEFT", generalArea, "BOTTOMLEFT", 0, -4)
+    tabContainer:SetPoint("TOPRIGHT", generalArea, "BOTTOMRIGHT", 0, -4)
     tabContainer:SetHeight(TAB_HEIGHT * 2 + TAB_SPACING)
 
     -- Content area below tabs
@@ -315,6 +331,11 @@ local function createOptionsPanel(parentCategory)
 
     -- Expose refresh function for /zab reset
     ns.refreshWidgets = function()
+        for i = 1, #generalWidgets do
+            if generalWidgets[i].refresh then
+                generalWidgets[i].refresh()
+            end
+        end
         for _, barID in ipairs(orderList) do
             local wList = barWidgets[barID]
             if wList then

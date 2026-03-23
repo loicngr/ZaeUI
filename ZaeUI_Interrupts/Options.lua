@@ -176,6 +176,14 @@ local function createOptionsPanel(parentCategory)
     )
     widgets[#widgets + 1] = w
 
+    w, y = ZaeUI_Shared.createCheckbox(content, y, "Show load message in chat",
+        function() return db.showLoadMessage end,
+        function(checked)
+            db.showLoadMessage = checked
+        end
+    )
+    widgets[#widgets + 1] = w
+
     -- Hint text
     y = y - 12
     local hint = content:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
