@@ -8,6 +8,7 @@ local sort = table.sort
 local floor = math.floor
 local max = math.max
 local C_Spell = C_Spell
+local GameTooltip = GameTooltip
 
 -- Layout
 local FRAME_WIDTH_DEFAULT = 250
@@ -167,6 +168,21 @@ local function getBar(index)
     bar.icon = bar:CreateTexture(nil, "ARTWORK", nil, 2)
     bar.icon:SetSize(ICON_SIZE, ICON_SIZE)
     bar.icon:SetPoint("LEFT", PADDING, 0)
+
+    -- Tooltip hit frame over the icon
+    bar.iconHit = CreateFrame("Frame", nil, bar)
+    bar.iconHit:SetAllPoints(bar.icon)
+    bar.iconHit:EnableMouse(true)
+    bar.iconHit:SetScript("OnEnter", function(self)
+        local id = self._spellID
+        if not id then return end
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetSpellByID(id)
+        GameTooltip:Show()
+    end)
+    bar.iconHit:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
 
     bar.marker = bar:CreateTexture(nil, "ARTWORK", nil, 2)
     bar.marker:SetSize(MARKER_SIZE, MARKER_SIZE)
@@ -440,6 +456,7 @@ local function refreshBars(entryCount)
         end
         bar.icon:SetTexture(iconID)
         bar.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+        bar.iconHit._spellID = entry.spellID
 
         local classColor = ns.getClassColor(entry.playerName)
         if classColor then
