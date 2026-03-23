@@ -63,12 +63,13 @@ local DEFAULTS = {
     collapsed = false,
     frameOpacity = 80,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
-    displayStyle = "list",  -- "list" or "bars"
-    barWidth = 220,          -- 150-400px
-    customSpells = {},    -- { [spellID] = true } added by user
-    removedSpells = {},   -- { [spellID] = true } removed by user
-    separateMarkerWindow = false, -- show markers in separate window instead of tracker
-    markerAssignments = {}, -- persisted kick marker assignments
+    displayStyle = "modern",
+    frameWidth = 250,
+    frameHeight = 0,
+    customSpells = {},
+    removedSpells = {},
+    separateMarkerWindow = false,
+    markerAssignments = {},
     assignPanelPoint = { "CENTER", nil, "CENTER", 0, 0 },
     markerWindowPoint = { "CENTER", nil, "CENTER", 0, 0 },
 }
@@ -115,6 +116,13 @@ function events.ADDON_LOADED(_, addonName)
     end
     C_ChatInfo.RegisterAddonMessagePrefix(COMM_PREFIX)
     initDB()
+
+    -- Migration: force everyone to modern, clean old settings
+    if db.displayStyle == "list" or db.displayStyle == "bars" then
+        db.displayStyle = "modern"
+    end
+    db.barWidth = nil
+
     ns.markerAssignments = db.markerAssignments
 
     frame:UnregisterEvent("ADDON_LOADED")
@@ -414,6 +422,66 @@ function ns.getClassColor(playerName)
     return nil
 end
 
+--- Get class name for a player.
+--- @param playerName string
+--- @return string|nil className
+function ns.getClassName(playerName)
+    return classNameCache[playerName]
+end
+
+--- Check if the current display style is "modern".
+--- @return boolean
+function ns.isModernStyle()
+    return ns.db.displayStyle == "modern"
+end
+
+--- Refresh the active display (modern or classic).
+function ns.refreshDisplay()
+    if ns.isModernStyle() then
+        ns.refreshModernDisplay()
+    else
+        ns.refreshClassicDisplay()
+    end
+end
+
+--- Show the active display (modern or classic).
+function ns.showDisplay()
+    if ns.isModernStyle() then
+        ns.showModernDisplay()
+    else
+        ns.showClassicDisplay()
+    end
+end
+
+--- Hide the active display (modern or classic).
+function ns.hideDisplay()
+    if ns.isModernStyle() then
+        ns.hideModernDisplay()
+    else
+        ns.hideClassicDisplay()
+    end
+end
+
+--- Toggle the active display (modern or classic).
+function ns.toggleDisplay()
+    if ns.isModernStyle() then
+        ns.toggleModernDisplay()
+    else
+        ns.toggleClassicDisplay()
+    end
+end
+
+--- Switch between display modes: hide all, then show and refresh the active one.
+function ns.switchDisplayMode()
+    ns.hideClassicDisplay()
+    ns.hideModernDisplay()
+    -- Destroy marker panels so they get recreated with the new style
+    ns.destroyAssignPanel()
+    ns.destroyMarkerWindow()
+    ns.showDisplay()
+    ns.refreshDisplay()
+end
+
 --- Send a SYNC message with all tracked spell IDs.
 function ns.sendSync()
     local n = 0
@@ -559,7 +627,7 @@ SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
         if ns.refreshWidgets then
             ns.refreshWidgets()
         end
-        print(PREFIX .. "All settings reset to defaults.")
+        print(PREFIX .. "All settings reset to defaults. Please /reload to apply.")
         return
     end
 
@@ -569,6 +637,7 @@ SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
         print(PREFIX .. "  /zint assign - Open kick marker assignments (leader only)")
         print(PREFIX .. "  /zint resetcount - Reset spell use counters")
         print(PREFIX .. "  /zint reset - Reset all settings to defaults")
+        print(PREFIX .. "  Display style: Classic or Modern (change in options)")
         return
     end
 

@@ -64,6 +64,9 @@ local DEFAULTS = {
     collapsed = false,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },
     displayMode = "floating",
+    displayStyle = "modern",
+    frameWidth = 250,
+    frameHeight = 0,
     anchoredIconSize = 28,
     anchoredSpacing = 3,
     anchoredIconsPerRow = 2,
@@ -475,10 +478,13 @@ end
 
 --- Cached player-to-hex mapping, rebuilt on GROUP_ROSTER_UPDATE.
 local classColorCache = {}
+--- Cached player-to-className mapping, rebuilt alongside classColorCache.
+local classNameCache = {}
 
 --- Rebuild the class color cache from current group roster.
 function ns.rebuildClassColorCache()
     for k in pairs(classColorCache) do classColorCache[k] = nil end
+    for k in pairs(classNameCache) do classNameCache[k] = nil end
     local numMembers = GetNumGroupMembers()
     local isRaid = IsInRaid()
     local count = isRaid and numMembers or (numMembers - 1)
@@ -487,16 +493,22 @@ function ns.rebuildClassColorCache()
         local name = UnitName(unit)
         if name and not classColorCache[name] then
             local _, className = UnitClass(unit)
-            if className and classColorByClass[className] then
-                classColorCache[name] = classColorByClass[className]
+            if className then
+                classNameCache[name] = className
+                if classColorByClass[className] then
+                    classColorCache[name] = classColorByClass[className]
+                end
             end
         end
     end
     local myName = UnitName("player")
     if myName and not classColorCache[myName] then
         local _, className = UnitClass("player")
-        if className and classColorByClass[className] then
-            classColorCache[myName] = classColorByClass[className]
+        if className then
+            classNameCache[myName] = className
+            if classColorByClass[className] then
+                classColorCache[myName] = classColorByClass[className]
+            end
         end
     end
 end
@@ -506,6 +518,23 @@ end
 --- @return string hex "rrggbb"
 function ns.getClassColorHex(playerName)
     return classColorCache[playerName] or "ffffff"
+end
+
+--- Get RAID_CLASS_COLORS entry for a player name.
+--- @param playerName string
+--- @return table|nil colorEntry RAID_CLASS_COLORS entry with r, g, b fields
+function ns.getClassColor(playerName)
+    local className = classNameCache[playerName]
+    if className then
+        return RAID_CLASS_COLORS[className]
+    end
+    return nil
+end
+
+--- Check if the current display style is modern.
+--- @return boolean
+function ns.isModernStyle()
+    return ns.db.displayStyle == "modern"
 end
 
 --- Apply standard backdrop styling to a frame.
@@ -743,8 +772,7 @@ SlashCmdList["ZAEUIDEFENSIVES"] = function(msg)
         for k in pairs(myCharges) do myCharges[k] = nil end
         ns.scanMySpells()
         if ns.refreshWidgets then ns.refreshWidgets() end
-        refreshDisplay()
-        print(PREFIX .. "All settings reset to defaults.")
+        print(PREFIX .. "All settings reset to defaults. Please /reload to apply.")
         return
     end
 
@@ -753,6 +781,7 @@ SlashCmdList["ZAEUIDEFENSIVES"] = function(msg)
         print(PREFIX .. "  /zdef - Open the options panel")
         print(PREFIX .. "  /zdef tracker - Toggle the tracker display")
         print(PREFIX .. "  /zdef reset - Reset all settings to defaults")
+        print(PREFIX .. "  Display style: Classic or Modern (change in options)")
         return
     end
 
@@ -771,6 +800,42 @@ ns.ADDON_NAME = ADDON_NAME
 ns.constants = { DEFAULTS = DEFAULTS }
 ns.safeSend = safeSend
 
+-- Style-aware dispatchers for floating mode ---------------------------------
+
+--- Show the appropriate floating tracker (classic or modern).
+function ns.showTrackerDisplay()
+    if ns.isModernStyle() then
+        if ns.showModernTrackerDisplay then ns.showModernTrackerDisplay() end
+    else
+        if ns.showClassicTrackerDisplay then ns.showClassicTrackerDisplay() end
+    end
+end
+
+--- Hide the appropriate floating tracker (classic or modern).
+function ns.hideTrackerDisplay()
+    if ns.isModernStyle() then
+        if ns.hideModernTrackerDisplay then ns.hideModernTrackerDisplay() end
+    else
+        if ns.hideClassicTrackerDisplay then ns.hideClassicTrackerDisplay() end
+    end
+end
+
+--- Toggle the appropriate floating tracker (classic or modern).
+function ns.toggleTrackerDisplay()
+    if ns.isModernStyle() then
+        if ns.toggleModernTrackerDisplay then ns.toggleModernTrackerDisplay() end
+    else
+        if ns.toggleClassicTrackerDisplay then ns.toggleClassicTrackerDisplay() end
+    end
+end
+
+--- Switch between classic and modern display styles.
+function ns.switchDisplayStyle()
+    if ns.hideClassicTrackerDisplay then ns.hideClassicTrackerDisplay() end
+    if ns.hideModernTrackerDisplay then ns.hideModernTrackerDisplay() end
+    ns.showTrackerDisplay()
+end
+
 -- Mode-aware display routing ------------------------------------------------
 
 refreshDisplay = function()
@@ -779,7 +844,11 @@ refreshDisplay = function()
     if db.displayMode == "anchored" and not IsInRaid() then
         if ns.frameDisplay_RefreshAll then ns.frameDisplay_RefreshAll() end
     else
-        if ns.refreshTrackerDisplay then ns.refreshTrackerDisplay() end
+        if ns.isModernStyle() then
+            if ns.refreshModernTrackerDisplay then ns.refreshModernTrackerDisplay() end
+        else
+            if ns.refreshClassicTrackerDisplay then ns.refreshClassicTrackerDisplay() end
+        end
     end
 end
 
@@ -789,13 +858,14 @@ showDisplay = function()
     if db.displayMode == "anchored" and not IsInRaid() then
         if ns.frameDisplay_RefreshAll then ns.frameDisplay_RefreshAll() end
     else
-        if ns.showTrackerDisplay then ns.showTrackerDisplay() end
+        ns.showTrackerDisplay()
     end
 end
 
 hideDisplay = function()
     if ns.frameDisplay_HideAll then ns.frameDisplay_HideAll() end
-    if ns.hideTrackerDisplay then ns.hideTrackerDisplay() end
+    if ns.hideClassicTrackerDisplay then ns.hideClassicTrackerDisplay() end
+    if ns.hideModernTrackerDisplay then ns.hideModernTrackerDisplay() end
 end
 
 ns.routeRefreshDisplay = refreshDisplay

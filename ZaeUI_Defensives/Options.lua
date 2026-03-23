@@ -54,6 +54,24 @@ local function createOptionsPanel(parentCategory)
     )
     widgets[#widgets + 1] = w
 
+    local floatingWidgets = {}
+
+    local styleWidget
+    styleWidget, y = ZaeUI_Shared.createDropdown(content, y, "Display style",
+        {
+            { value = "classic", text = "Classic" },
+            { value = "modern",  text = "Modern" },
+        },
+        function() return db.displayStyle or "modern" end,
+        function(value)
+            db.displayStyle = value
+            ns.switchDisplayStyle()
+            if ns.refreshWidgets then ns.refreshWidgets() end
+        end
+    )
+    widgets[#widgets + 1] = styleWidget
+    floatingWidgets[#floatingWidgets + 1] = styleWidget
+
     y = y - 4
 
     w, y = ZaeUI_Shared.createCheckbox(content, y, "Enable display",
@@ -68,8 +86,6 @@ local function createOptionsPanel(parentCategory)
         end
     )
     widgets[#widgets + 1] = w
-
-    local floatingWidgets = {}
 
     w, y = ZaeUI_Shared.createCheckbox(content, y, "Auto-hide when not in a group",
         function() return db.trackerHideWhenSolo end,
@@ -135,6 +151,7 @@ local function createOptionsPanel(parentCategory)
         function(value)
             db.trackerOpacity = value
             if ns.applyFrameOpacity then ns.applyFrameOpacity() end
+            if ns.applyModernTrackerOpacity then ns.applyModernTrackerOpacity() end
         end,
         "%d%%"
     )

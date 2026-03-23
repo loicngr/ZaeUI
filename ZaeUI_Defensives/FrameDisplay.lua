@@ -168,12 +168,12 @@ local function createIcon(parent, spellID)
     icon.cooldown:SetHideCountdownNumbers(true)
 
     icon.timerText = icon:CreateFontString(nil, "OVERLAY")
-    icon.timerText:SetFont(STANDARD_TEXT_FONT, 10, "OUTLINE")
+    icon.timerText:SetFont("Interface\\AddOns\\ZaeUI_Shared\\Fonts\\Roboto.ttf", 10, "OUTLINE")
     icon.timerText:SetPoint("CENTER", 0, 0)
     icon.timerText:Hide()
 
     icon.chargeText = icon:CreateFontString(nil, "OVERLAY")
-    icon.chargeText:SetFont(STANDARD_TEXT_FONT, 9, "OUTLINE")
+    icon.chargeText:SetFont("Interface\\AddOns\\ZaeUI_Shared\\Fonts\\Roboto.ttf", 9, "OUTLINE")
     icon.chargeText:SetPoint("BOTTOMRIGHT", 2, -2)
     icon.chargeText:Hide()
 

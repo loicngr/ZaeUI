@@ -69,7 +69,8 @@ local function createTrackerFrame()
     end)
 
     -- Title
-    local title = trackerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    local title = trackerFrame:CreateFontString(nil, "OVERLAY")
+    title:SetFont("Interface\\AddOns\\ZaeUI_Shared\\Fonts\\Roboto.ttf", 11, "")
     title:SetPoint("TOPLEFT", PADDING, -PADDING)
     title:SetText("|cff00ccffDefensives|r")
     trackerFrame.title = title
@@ -94,7 +95,7 @@ local function createTrackerFrame()
         collapseIcon:SetTexture(collapsed
             and "Interface\\Buttons\\UI-PlusButton-UP"
             or "Interface\\Buttons\\UI-MinusButton-UP")
-        ns.refreshTrackerDisplay()
+        ns.refreshClassicTrackerDisplay()
     end)
     trackerFrame.collapseBtn = collapseBtn
 
@@ -144,12 +145,16 @@ local function getRow(index, parent)
     row.activeBorder:SetColorTexture(0, 1, 0, 0.6)
     row.activeBorder:Hide()
 
-    row.name = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    row.name = row:CreateFontString(nil, "OVERLAY")
+    row.name:SetFont("Interface\\AddOns\\ZaeUI_Shared\\Fonts\\Roboto.ttf", 11, "")
+    row.name:SetShadowOffset(1, -1)
     row.name:SetPoint("LEFT", row.icon, "RIGHT", 4, 0)
     row.name:SetWidth(100)
     row.name:SetJustifyH("LEFT")
 
-    row.status = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    row.status = row:CreateFontString(nil, "OVERLAY")
+    row.status:SetFont("Interface\\AddOns\\ZaeUI_Shared\\Fonts\\Roboto.ttf", 10, "")
+    row.status:SetShadowOffset(1, -1)
     row.status:SetPoint("RIGHT", row, "RIGHT", -4, 0)
 
     rows[index] = row
@@ -177,7 +182,7 @@ local function buildRoleCache()
 end
 
 --- Refresh the tracker display with current group data.
-function ns.refreshTrackerDisplay()
+function ns.refreshClassicTrackerDisplay()
     if not trackerFrame then return end
     if not trackerFrame:IsShown() then return end
 
@@ -314,7 +319,7 @@ local function startUpdateTimer()
         updateElapsed = updateElapsed + elapsed
         if updateElapsed >= 0.1 then
             updateElapsed = 0
-            ns.refreshTrackerDisplay()
+            ns.refreshClassicTrackerDisplay()
         end
     end)
 end
@@ -333,7 +338,7 @@ local function restoreFramePosition()
 end
 
 --- Toggle the tracker frame visibility.
-function ns.toggleTrackerDisplay()
+function ns.toggleClassicTrackerDisplay()
     if not trackerFrame then
         createTrackerFrame()
     end
@@ -344,23 +349,23 @@ function ns.toggleTrackerDisplay()
         restoreFramePosition()
         trackerFrame:Show()
         startUpdateTimer()
-        ns.refreshTrackerDisplay()
+        ns.refreshClassicTrackerDisplay()
     end
 end
 
 --- Show the tracker frame.
-function ns.showTrackerDisplay()
+function ns.showClassicTrackerDisplay()
     if not trackerFrame then
         createTrackerFrame()
     end
     restoreFramePosition()
     trackerFrame:Show()
     startUpdateTimer()
-    ns.refreshTrackerDisplay()
+    ns.refreshClassicTrackerDisplay()
 end
 
 --- Hide the tracker frame.
-function ns.hideTrackerDisplay()
+function ns.hideClassicTrackerDisplay()
     if trackerFrame then
         trackerFrame:Hide()
     end

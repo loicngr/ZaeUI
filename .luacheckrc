@@ -27,6 +27,7 @@ globals = {
 
 read_globals = {
     -- Lua globals available in WoW
+    "format",
     "strsplit",
     "strtrim",
     "wipe",
@@ -81,4 +82,6 @@ read_globals = {
     "SystemFont_NamePlate",
     "TableUtil",
     "TextureLoadingGroupMixin",
+    "CreateColor",
+    "ReloadUI",
 }

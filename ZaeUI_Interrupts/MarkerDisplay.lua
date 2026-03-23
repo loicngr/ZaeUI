@@ -25,7 +25,6 @@ local function createMarkerFrame()
     markerFrame = CreateFrame("Frame", "ZaeUI_InterruptsMarkerFrame", UIParent, "BackdropTemplate")
     markerFrame:SetSize(FRAME_WIDTH, 60)
     markerFrame:SetPoint("CENTER")
-    ns.applyBackdrop(markerFrame)
     markerFrame:SetFrameStrata("MEDIUM")
     markerFrame:SetClampedToScreen(true)
     markerFrame:SetMovable(true)
@@ -46,10 +45,31 @@ local function createMarkerFrame()
 
     local title = markerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     title:SetPoint("TOPLEFT", PADDING, -PADDING)
-    title:SetText("|cff00ccffKick Markers|r")
+    if ns.isModernStyle() then
+        markerFrame:SetBackdrop(nil)
+        local bg = markerFrame:CreateTexture(nil, "BACKGROUND")
+        bg:SetAllPoints()
+        bg:SetColorTexture(10/255, 14/255, 23/255, ns.db.frameOpacity / 100)
+        markerFrame.modernBg = bg
+
+        local accentLine = markerFrame:CreateTexture(nil, "ARTWORK")
+        accentLine:SetHeight(2)
+        accentLine:SetPoint("TOPLEFT", 0, -(PADDING + 14))
+        accentLine:SetPoint("TOPRIGHT", 0, -(PADDING + 14))
+        accentLine:SetColorTexture(239/255, 97/255, 34/255, 1)
+
+        title:SetText("|cffef6122KICK MARKERS|r")
+    else
+        ns.applyBackdrop(markerFrame)
+        title:SetText("|cff00ccffKick Markers|r")
+    end
 
     markerFrame.content = CreateFrame("Frame", nil, markerFrame)
-    markerFrame.content:SetPoint("TOPLEFT", PADDING, -(PADDING + 14))
+    local contentTop = PADDING + 14
+    if ns.isModernStyle() then
+        contentTop = contentTop + 4 -- extra gap below accent line
+    end
+    markerFrame.content:SetPoint("TOPLEFT", PADDING, -contentTop)
     markerFrame.content:SetPoint("RIGHT", markerFrame, "RIGHT", -PADDING, 0)
 
     markerFrame:Hide()
@@ -170,4 +190,14 @@ function ns.applyMarkerWindowOpacity()
     if not markerFrame then return end
     local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
     markerFrame:SetAlpha(opacity)
+end
+
+--- Destroy the marker window so it gets recreated with the current style.
+function ns.destroyMarkerWindow()
+    if markerFrame then
+        markerFrame:Hide()
+        markerFrame:SetParent(nil)
+        markerFrame = nil
+        for k in pairs(markerRows) do markerRows[k] = nil end
+    end
 end
