@@ -72,6 +72,7 @@ local DEFAULTS = {
     markerAssignments = {},
     assignPanelPoint = { "CENTER", nil, "CENTER", 0, 0 },
     markerWindowPoint = { "CENTER", nil, "CENTER", 0, 0 },
+    showLoadMessage = true,
 }
 
 --- Initialize database with defaults for any missing keys.
@@ -152,7 +153,9 @@ function events.ADDON_LOADED(_, addonName)
         if ns.refreshMarkerDisplay then ns.refreshMarkerDisplay() end
     end
 
-    print(PREFIX .. "Loaded. Type /zint help for commands.")
+    if db.showLoadMessage then
+        print(PREFIX .. "Loaded. Type /zint help for commands.")
+    end
 end
 
 --- Start the heartbeat sync timer.

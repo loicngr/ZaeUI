@@ -74,6 +74,7 @@ local DEFAULTS = {
     anchoredOffsetX = 2,
     anchoredOffsetY = 30,
     anchoredShowPlayer = false,
+    showLoadMessage = true,
 }
 
 --- Initialize database with defaults for any missing keys.
@@ -578,7 +579,9 @@ function events.ADDON_LOADED(_, addonName)
     frame:RegisterEvent("GROUP_JOINED")
     frame:RegisterEvent("GROUP_LEFT")
 
-    print(PREFIX .. "Loaded. Type /zdef help for commands.")
+    if db.showLoadMessage then
+        print(PREFIX .. "Loaded. Type /zdef help for commands.")
+    end
 end
 
 function events.PLAYER_LOGIN()

@@ -42,6 +42,7 @@ local DEFAULTS = {
     classColor = DEFAULT_CLASS_COLOR,
     customFont = DEFAULT_CUSTOM_FONT,
     fontSize = DEFAULT_FONT_SIZE,
+    showLoadMessage = true,
 }
 
 -- Combat-safe CVar wrapper: queues SetCVar calls when in combat lockdown
@@ -259,7 +260,9 @@ function events.PLAYER_LOGIN()
     end)
 
     frame:UnregisterEvent("PLAYER_LOGIN")
-    print(PREFIX .. "Loaded. Type /zfp help for commands.")
+    if db.showLoadMessage then
+        print(PREFIX .. "Loaded. Type /zfp help for commands.")
+    end
 end
 
 function events.PLAYER_ENTERING_WORLD()

@@ -52,6 +52,7 @@ local DEFAULTS = {
     borderSize = DEFAULT_BORDER,
     arrowSize = DEFAULT_ARROW_SIZE,
     arrowOffset = DEFAULT_ARROW_OFFSET,
+    showLoadMessage = true,
 }
 
 --- Initialize database with defaults for any missing keys.
@@ -278,7 +279,9 @@ function events.ADDON_LOADED(_, addonName)
         print(PREFIX .. "Warning: Plater detected. Scale and overlap CVars may have no effect.")
     end
 
-    print(PREFIX .. "Loaded. Type /znp help for commands.")
+    if db.showLoadMessage then
+        print(PREFIX .. "Loaded. Type /znp help for commands.")
+    end
 end
 
 function events.PLAYER_TARGET_CHANGED()
