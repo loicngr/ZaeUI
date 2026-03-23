@@ -105,7 +105,6 @@ local function createAssignFrame()
     else
         assignFrame:SetPoint("CENTER")
     end
-    ns.applyBackdrop(assignFrame)
     assignFrame:SetFrameStrata("DIALOG")
     assignFrame:SetClampedToScreen(true)
     assignFrame:SetMovable(true)
@@ -123,7 +122,25 @@ local function createAssignFrame()
     -- Title
     local title = assignFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     title:SetPoint("TOPLEFT", PADDING, -PADDING)
-    title:SetText("|cff00ccffKick Assignments|r")
+    if ns.isModernStyle() then
+        assignFrame:SetBackdrop(nil)
+        local bg = assignFrame:CreateTexture(nil, "BACKGROUND")
+        bg:SetAllPoints()
+        bg:SetColorTexture(10/255, 14/255, 23/255, ns.db.frameOpacity / 100)
+        assignFrame.modernBg = bg
+
+        -- Accent line (PADDING + 16 = header area height in MarkerAssign)
+        local accentLine = assignFrame:CreateTexture(nil, "ARTWORK")
+        accentLine:SetHeight(2)
+        accentLine:SetPoint("TOPLEFT", 0, -(PADDING + 16))
+        accentLine:SetPoint("TOPRIGHT", 0, -(PADDING + 16))
+        accentLine:SetColorTexture(239/255, 97/255, 34/255, 1)
+
+        title:SetText("|cffef6122Kick Assignments|r")
+    else
+        ns.applyBackdrop(assignFrame)
+        title:SetText("|cff00ccffKick Assignments|r")
+    end
     assignFrame.title = title
 
     -- Close button
@@ -377,5 +394,15 @@ function ns.applyAssignPanelOpacity()
     if not assignFrame then return end
     local opacity = (ns.db and ns.db.frameOpacity or 80) / 100
     assignFrame:SetAlpha(opacity)
+end
+
+--- Destroy the assignment panel so it gets recreated with the current style.
+function ns.destroyAssignPanel()
+    if assignFrame then
+        assignFrame:Hide()
+        assignFrame:SetParent(nil)
+        assignFrame = nil
+        for k in pairs(playerRows) do playerRows[k] = nil end
+    end
 end
 

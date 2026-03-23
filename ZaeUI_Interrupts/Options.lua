@@ -52,13 +52,13 @@ local function createOptionsPanel(parentCategory)
 
     w, y = ZaeUI_Shared.createDropdown(content, y, "Display style",
         {
-            { value = "list", text = "List" },
-            { value = "bars", text = "Progress Bars" },
+            { value = "classic", text = "Classic" },
+            { value = "modern",  text = "Modern" },
         },
-        function() return db.displayStyle or "list" end,
+        function() return db.displayStyle or "modern" end,
         function(value)
             db.displayStyle = value
-            if ns.refreshDisplay then ns.refreshDisplay() end
+            ns.switchDisplayMode()
         end
     )
     widgets[#widgets + 1] = w
@@ -167,19 +167,12 @@ local function createOptionsPanel(parentCategory)
         function() return db.frameOpacity or 80 end,
         function(value)
             db.frameOpacity = value
-            if ns.applyFrameOpacity then ns.applyFrameOpacity() end
+            ns.applyFrameOpacity()
+            ns.applyModernFrameOpacity()
+            ns.applyAssignPanelOpacity()
+            ns.applyMarkerWindowOpacity()
         end,
         "%d%%"
-    )
-    widgets[#widgets + 1] = w
-
-    w, y = ZaeUI_Shared.createSlider(content, y, "Bar width", 150, 400, 10,
-        function() return db.barWidth or 220 end,
-        function(value)
-            db.barWidth = value
-            if ns.refreshDisplay then ns.refreshDisplay() end
-        end,
-        "%dpx"
     )
     widgets[#widgets + 1] = w
 
