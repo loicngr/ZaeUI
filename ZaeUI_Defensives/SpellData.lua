@@ -53,8 +53,11 @@ local spellData = {
     [31224]  = { name = "Cloak of Shadows",      cooldown = 120, duration = 5,  category = "personal",  class = "ROGUE" },
     [5277]   = { name = "Evasion",               cooldown = 120, duration = 10, category = "personal",  class = "ROGUE" },
     [871]    = { name = "Shield Wall",           cooldown = 180, duration = 8,  category = "personal",  class = "WARRIOR",
-                 cdModifiers = { { talent = 397103, reduction = 60 } } },             -- Defender's Aegis: -60s
-    [118038] = { name = "Die by the Sword",      cooldown = 120, duration = 8,  category = "personal",  class = "WARRIOR" },
+                 chargeModifiers = { { talent = 397103, bonus = 1 } },               -- Defender's Aegis: +1 charge
+                 cdModifiers = { { talent = 397103, reduction = 60 },                -- Defender's Aegis: -60s
+                                 { talent = 391271, reduction = 9 } } },             -- Honed Reflexes: -5% (~9s)
+    [118038] = { name = "Die by the Sword",      cooldown = 120, duration = 8,  category = "personal",  class = "WARRIOR",
+                 cdModifiers = { { talent = 391271, reduction = 6 } } },             -- Honed Reflexes: -5% (~6s)
     [47585]  = { name = "Dispersion",            cooldown = 120, duration = 6,  category = "personal",  class = "PRIEST" },
     [104773] = { name = "Unending Resolve",      cooldown = 180, duration = 8,  category = "personal",  class = "WARLOCK" },
     [186265] = { name = "Aspect of the Turtle",  cooldown = 180, duration = 8,  category = "personal",  class = "HUNTER" },

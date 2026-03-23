@@ -2,7 +2,7 @@
 ## Title: ZaeUI_Defensives
 ## Notes: Track defensive cooldowns for your group. Floating tracker or anchored to unit frames.
 ## Author: loicngr
-## Version: 2.0.1
+## Version: 2.0.2
 ## SavedVariables: ZaeUI_DefensivesDB
 ## Dependencies: ZaeUI_Shared
 
