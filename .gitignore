@@ -4,3 +4,6 @@ docs
 .worktrees
 .superpowers
 .superpowers/
+.env.local
+scripts/
+data/

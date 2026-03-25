@@ -50,6 +50,12 @@ ZaeUI/
 - Prefer native CVars and existing Blizzard systems when possible
 - Test compatibility with popular addons (Plater, ElvUI, WeakAuras)
 
+## Git Policy
+
+- **Never commit or push without explicit user confirmation first**
+- Always ask the user before running `git commit`, `git push`, or creating a pull request
+- Wait for a clear "yes" / approval before proceeding with any git write operation
+
 ## Workflow
 
 1. **Design**: Create a document in `docs/plans/` before any non-trivial implementation
