@@ -501,7 +501,12 @@ end
 --- @param spellID number The spell ID used
 --- @param cooldown number The cooldown duration in seconds
 function ns.sendUsed(spellID, cooldown)
-    safeSend("USED:" .. spellID .. ":" .. cooldown)
+    if ns.debugSync then
+        local ok, result = pcall(C_ChatInfo.SendAddonMessage, COMM_PREFIX, "USED:" .. spellID .. ":" .. cooldown, getChannel())
+        print(PREFIX .. "[DEBUG] sendUsed spell=" .. spellID .. " cd=" .. cooldown .. " ok=" .. tostring(ok) .. " result=" .. tostring(result))
+    else
+        safeSend("USED:" .. spellID .. ":" .. cooldown)
+    end
 end
 
 --- Send a READY message when a tracked spell's cooldown ends.
@@ -540,6 +545,9 @@ function ns.handleAddonMessage(message, sender)
             groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, counters = {} }
             groupData[name].cooldowns[spellID] = GetTime() + cooldown
             groupData[name].counters[spellID] = (groupData[name].counters[spellID] or 0) + 1
+            if ns.debugSync then
+                print(PREFIX .. "[DEBUG] USED from " .. name .. ": spell=" .. spellID .. " cd=" .. cooldown .. "s")
+            end
         end
     elseif msgType == "READY" then
         local spellID = tonumber(payload)
@@ -631,6 +639,42 @@ SlashCmdList["ZAEUIINTERRUPTS"] = function(msg)
             ns.refreshWidgets()
         end
         print(PREFIX .. "All settings reset to defaults. Please /reload to apply.")
+        return
+    end
+
+    if msg == "debugsync" then
+        ns.debugSync = not ns.debugSync
+        print(PREFIX .. "Sync debug: " .. (ns.debugSync and "ON" or "OFF"))
+        return
+    end
+
+    if msg == "debug" then
+        print(PREFIX .. "--- groupData dump ---")
+        local now = GetTime()
+        for name, data in pairs(groupData) do
+            local spellList = {}
+            if data.spells then
+                for id in pairs(data.spells) do
+                    spellList[#spellList + 1] = tostring(id)
+                end
+            end
+            local cdList = {}
+            if data.cooldowns then
+                for id, cdEnd in pairs(data.cooldowns) do
+                    local rem = cdEnd - now
+                    if rem > 0 then
+                        cdList[#cdList + 1] = tostring(id) .. "=" .. string.format("%.1f", rem) .. "s"
+                    end
+                end
+            end
+            print(PREFIX .. "  " .. name
+                .. " | spells: " .. (#spellList > 0 and table_concat(spellList, ",") or "none")
+                .. " | cooldowns: " .. (#cdList > 0 and table_concat(cdList, ",") or "none"))
+        end
+        if not next(groupData) then
+            print(PREFIX .. "  (empty)")
+        end
+        print(PREFIX .. "--- end ---")
         return
     end
 
