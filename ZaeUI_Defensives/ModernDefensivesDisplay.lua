@@ -534,12 +534,6 @@ function ns.refreshModernTrackerDisplay()
     if not modernFrame then createModernFrame() end
     if not modernFrame:IsShown() then return end
 
-    -- Ensure the update timer is running when the frame is visible
-    if not updateFrame or not updateFrame:IsShown() then
-        ns.showModernTrackerDisplay()
-        return
-    end
-
     if ns.db.collapsed then
         wasCollapsed = true
         scrollFrame:Hide()
