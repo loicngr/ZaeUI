@@ -62,6 +62,7 @@ read_globals = {
     "UIParent",
     "UnitClass",
     "UnitGroupRolesAssigned",
+    "GetServerTime",
     "UnitIsGroupLeader",
     "UnitIsFriend",
     "UnitInParty",

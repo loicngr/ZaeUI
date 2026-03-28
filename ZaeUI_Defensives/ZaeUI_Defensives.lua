@@ -14,6 +14,7 @@ local UnitClass = UnitClass
 local GetNumGroupMembers = GetNumGroupMembers
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local GetTime = GetTime
+local GetServerTime = GetServerTime
 local IsSpellKnown = IsSpellKnown
 local IsPlayerSpell = IsPlayerSpell
 local GetSpecialization = GetSpecialization
@@ -24,7 +25,6 @@ local tonumber = tonumber
 local tostring = tostring
 local table_concat = table.concat
 local pairs = pairs
-local pcall = pcall
 
 --- Check if the player is in any type of group.
 --- @return boolean
@@ -134,11 +134,70 @@ local function getChannel()
     return "PARTY"
 end
 
---- Safely send an addon message, suppressing errors during instance transitions.
+-- Message queue for retrying failed sends (lockdown / throttle)
+local sendQueue = {}
+local table_remove = table.remove
+local QUEUE_RETRY_INTERVAL = 1
+local QUEUE_MAX_AGE = 30
+
+--- Try to send a message, returns true on success (result == 0).
+--- @param msg string The message to send
+--- @return boolean sent
+local function trySend(msg)
+    -- Enum.SendAddonMessageResult: 0 = Success
+    local result = C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, getChannel())
+    return result == 0
+end
+
+--- Flush queued messages that were blocked by lockdown/throttle.
+local function flushQueue()
+    if #sendQueue == 0 then return end
+    local now = GetTime()
+    -- Prune expired entries
+    local i = 1
+    while i <= #sendQueue do
+        if now - sendQueue[i].time > QUEUE_MAX_AGE then
+            table_remove(sendQueue, i)
+        else
+            i = i + 1
+        end
+    end
+    -- Try sending from the head
+    if not canSendMessage() then return end
+    while #sendQueue > 0 do
+        if trySend(sendQueue[1].msg) then
+            table_remove(sendQueue, 1)
+        else
+            break
+        end
+    end
+end
+
+local queueFrame = CreateFrame("Frame")
+local queueElapsed = 0
+
+local function queueOnUpdate(_, elapsed)
+    queueElapsed = queueElapsed + elapsed
+    if queueElapsed >= QUEUE_RETRY_INTERVAL then
+        queueElapsed = 0
+        flushQueue()
+        if #sendQueue == 0 then
+            queueFrame:SetScript("OnUpdate", nil)
+        end
+    end
+end
+
+--- Safely send an addon message, queuing on lockdown/throttle.
 --- @param msg string The message to send
 local function safeSend(msg)
     if not canSendMessage() then return end
-    pcall(C_ChatInfo.SendAddonMessage, COMM_PREFIX, msg, getChannel())
+    if not trySend(msg) then
+        sendQueue[#sendQueue + 1] = { msg = msg, time = GetTime() }
+        if #sendQueue == 1 then
+            queueElapsed = 0
+            queueFrame:SetScript("OnUpdate", queueOnUpdate)
+        end
+    end
 end
 
 --- Send a SYNC message with all tracked spell IDs and charge state.
@@ -175,10 +234,11 @@ end
 --- @param currentCharges number|nil Current charges remaining (nil for non-charge spells)
 --- @param maxCharges number|nil Maximum charges (nil for non-charge spells)
 function ns.sendUsed(spellID, cooldown, currentCharges, maxCharges)
+    local ts = GetServerTime()
     if currentCharges and maxCharges then
-        safeSend("USED:" .. spellID .. ":" .. cooldown .. ":" .. currentCharges .. ":" .. maxCharges)
+        safeSend("USED:" .. spellID .. ":" .. cooldown .. ":" .. currentCharges .. ":" .. maxCharges .. ":" .. ts)
     else
-        safeSend("USED:" .. spellID .. ":" .. cooldown)
+        safeSend("USED:" .. spellID .. ":" .. cooldown .. ":" .. ts)
     end
 end
 
@@ -241,14 +301,36 @@ function ns.handleAddonMessage(message, sender)
             end
         end
     elseif msgType == "USED" then
-        local p1, p2, p3, p4 = strsplit(":", payload)
+        -- Format: spellID:cd[:charges:max]:timestamp (timestamp optional for compat)
+        local p1, p2, p3, p4, p5 = strsplit(":", payload)
         local spellID = tonumber(p1)
         local cooldown = tonumber(p2)
-        local currentCharges = tonumber(p3)
-        local maxCharges = tonumber(p4)
         if spellID and cooldown then
+            -- Detect format by field count: 3=no charges+ts, 5=charges+ts, 2/4=old compat
+            local currentCharges, maxCharges, castTime
+            if p5 then
+                -- 5 fields: spellID:cd:charges:max:timestamp
+                currentCharges = tonumber(p3)
+                maxCharges = tonumber(p4)
+                castTime = tonumber(p5)
+            elseif p4 then
+                -- 4 fields: old format spellID:cd:charges:max (no timestamp)
+                currentCharges = tonumber(p3)
+                maxCharges = tonumber(p4)
+            elseif p3 then
+                -- 3 fields: spellID:cd:timestamp (no charges)
+                castTime = tonumber(p3)
+            end
+            -- Adjust for delivery delay using server timestamp
+            local remaining = cooldown
+            if castTime then
+                local delay = GetServerTime() - castTime
+                if delay > 0 then remaining = cooldown - delay end
+            end
             groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, charges = {} }
-            groupData[name].cooldowns[spellID] = GetTime() + cooldown
+            if remaining > 0 then
+                groupData[name].cooldowns[spellID] = GetTime() + remaining
+            end
             if currentCharges and maxCharges then
                 local existing = groupData[name].charges[spellID]
                 if existing then
