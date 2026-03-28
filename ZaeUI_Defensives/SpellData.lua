@@ -55,6 +55,7 @@ local spellData = {
     [31224]  = { name = "Cloak of Shadows",      cooldown = 120, duration = 5,  category = "personal",  class = "ROGUE" },
     [5277]   = { name = "Evasion",               cooldown = 120, duration = 10, category = "personal",  class = "ROGUE" },
     [871]    = { name = "Shield Wall",           cooldown = 180, duration = 8,  category = "personal",  class = "WARRIOR",
+                 charges = 1,
                  chargeModifiers = { { talent = 397103, bonus = 1 } },               -- Defender's Aegis: +1 charge
                  cdModifiers = { { talent = 397103, reduction = 60 },                -- Defender's Aegis: -60s
                                  { talent = 391271, reduction = 18 } } },            -- Honed Reflexes: -10% (18s)
