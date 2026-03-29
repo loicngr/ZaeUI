@@ -66,6 +66,7 @@ read_globals = {
     "UnitIsGroupLeader",
     "UnitIsFriend",
     "UnitInParty",
+    "UnitInRaid",
     "UnitIsUnit",
     "UnitExists",
     "FindSpellOverrideByID",
