@@ -2,7 +2,7 @@
 ## Title: ZaeUI_FriendlyPlates
 ## Notes: Friendly nameplates with name-only mode, class colors and custom font size.
 ## Author: loicngr
-## Version: 1.2.7
+## Version: 1.2.8
 ## SavedVariables: ZaeUI_FriendlyPlatesDB
 ## Dependencies: ZaeUI_Shared
 
