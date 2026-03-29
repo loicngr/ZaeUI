@@ -328,6 +328,7 @@ function ns.handleAddonMessage(message, sender)
                 if delay > 0 then remaining = cooldown - delay end
             end
             groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, charges = {} }
+            groupData[name].spells[spellID] = true
             if remaining > 0 then
                 groupData[name].cooldowns[spellID] = GetTime() + remaining
             end
@@ -723,7 +724,10 @@ function events.PLAYER_ENTERING_WORLD()
     ns.scanMySpells()
     ns.rebuildClassColorCache()
     ns.sendSync()
-    refreshDisplay()
+    -- Re-show display after zone transition (WoW hides all frames during loading)
+    if db.trackerEnabled and (not db.trackerHideWhenSolo or ns.isInAnyGroup()) then
+        showDisplay()
+    end
 end
 
 function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
