@@ -101,8 +101,9 @@ end
 local heartbeatElapsed = 0
 local heartbeatFrame = CreateFrame("Frame")
 
---- Start the heartbeat sync timer.
+--- Start the heartbeat sync timer. No-op if already running.
 local function startHeartbeat()
+    if heartbeatFrame:GetScript("OnUpdate") then return end
     heartbeatElapsed = 0
     heartbeatFrame:SetScript("OnUpdate", function(_, elapsed)
         heartbeatElapsed = heartbeatElapsed + elapsed
@@ -661,6 +662,7 @@ function events.ADDON_LOADED(_, addonName)
     frame:RegisterEvent("UNIT_PET")
     frame:RegisterEvent("GROUP_JOINED")
     frame:RegisterEvent("GROUP_LEFT")
+    frame:RegisterEvent("CHALLENGE_MODE_START")
 
     if db.showLoadMessage then
         print(PREFIX .. "Loaded. Type /zdef help for commands.")
@@ -723,11 +725,27 @@ end
 function events.PLAYER_ENTERING_WORLD()
     ns.scanMySpells()
     ns.rebuildClassColorCache()
+    -- Restart heartbeat in case it was stopped during a zone transition.
+    if ns.isInAnyGroup() then
+        startHeartbeat()
+    end
     ns.sendSync()
     -- Re-show display after zone transition (WoW hides all frames during loading)
     if db.trackerEnabled and (not db.trackerHideWhenSolo or ns.isInAnyGroup()) then
         showDisplay()
     end
+end
+
+function events.CHALLENGE_MODE_START()
+    -- Mythic+ keystone activated: the group category may transition (HOME→INSTANCE),
+    -- which can cause GROUP_ROSTER_UPDATE to fire with a temporarily false group state
+    -- and stop the heartbeat. Restart it once the group has stabilized.
+    C_Timer.After(1, function()
+        if ns.isInAnyGroup() then
+            startHeartbeat()
+            ns.sendSync()
+        end
+    end)
 end
 
 function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
