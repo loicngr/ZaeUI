@@ -439,6 +439,7 @@ function ns.frameDisplay_RefreshAll()
 
     local now = GetTime()
     local showPlayer = db.anchoredShowPlayer
+    local myName = UnitName("player")
 
     -- Collect units
     local units = {}
@@ -481,7 +482,7 @@ function ns.frameDisplay_RefreshAll()
                         local show = (cat == "external" and db.trackerShowExternal ~= false)
                                   or (cat == "personal" and db.trackerShowPersonal ~= false)
                                   or (cat == "raidwide" and db.trackerShowRaidwide ~= false)
-                        if show then
+                        if show and not (cat == "external" and db.trackerHideOwnExternals and playerName == myName) then
                             spellList[#spellList + 1] = spellID
                         end
                     end

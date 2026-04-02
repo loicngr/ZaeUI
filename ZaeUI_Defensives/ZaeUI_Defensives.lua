@@ -60,6 +60,7 @@ local DEFAULTS = {
     trackerShowExternal = true,
     trackerShowPersonal = false,
     trackerShowRaidwide = true,
+    trackerHideOwnExternals = false,
     trackerHideWhenSolo = true,
     collapsed = false,
     framePoint = { "CENTER", nil, "CENTER", 0, 0 },

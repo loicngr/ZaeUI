@@ -121,6 +121,15 @@ local function createOptionsPanel(parentCategory)
     )
     widgets[#widgets + 1] = w
 
+    w, y = ZaeUI_Shared.createCheckbox(content, y, "Hide Own Externals",
+        function() return db.trackerHideOwnExternals end,
+        function(checked)
+            db.trackerHideOwnExternals = checked
+            if ns.routeRefreshDisplay then ns.routeRefreshDisplay() end
+        end
+    )
+    widgets[#widgets + 1] = w
+
     w, y = ZaeUI_Shared.createCheckbox(content, y, "Show Personal",
         function() return db.trackerShowPersonal end,
         function(checked)
