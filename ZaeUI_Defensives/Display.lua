@@ -211,6 +211,7 @@ function ns.refreshClassicTrackerDisplay()
     buildRoleCache()
 
     -- Collect entries
+    local myName = UnitName("player")
     local entryCount = 0
     for playerName, data in pairs(groupData) do
         for spellID, _ in pairs(data.spells) do
@@ -220,7 +221,7 @@ function ns.refreshClassicTrackerDisplay()
                 local show = (cat == "external" and db.trackerShowExternal ~= false)
                           or (cat == "personal" and db.trackerShowPersonal ~= false)
                           or (cat == "raidwide" and db.trackerShowRaidwide ~= false)
-                if show then
+                if show and not (cat == "external" and db.trackerHideOwnExternals and playerName == myName) then
                     entryCount = entryCount + 1
                     local e = sortedEntries[entryCount]
                     if not e then

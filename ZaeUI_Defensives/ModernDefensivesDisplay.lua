@@ -123,11 +123,13 @@ local function collectAndSortEntries()
 
     buildRoleCache()
 
+    local myName = UnitName("player")
     for playerName, data in pairs(groupData) do
         if data.spells then
             for spellID in pairs(data.spells) do
                 local spellInfo = spellData[spellID]
-                if spellInfo and isCategoryEnabled(spellInfo.category) then
+                if spellInfo and isCategoryEnabled(spellInfo.category)
+                   and not (spellInfo.category == "external" and ns.db.trackerHideOwnExternals and playerName == myName) then
                     local cdEnd = data.cooldowns and data.cooldowns[spellID] or 0
                     local remaining = (cdEnd > now) and (cdEnd - now) or 0
                     local isReady = remaining == 0

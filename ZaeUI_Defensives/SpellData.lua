@@ -17,7 +17,9 @@ local _, ns = ...
 --- chargeModifiers: list of { talent = spellID, bonus = number } — talents that grant extra charges.
 local spellData = {
     -- External defensives (cast on others)
-    [33206]  = { name = "Pain Suppression",     cooldown = 180, duration = 8,  category = "external",  class = "PRIEST" },
+    [33206]  = { name = "Pain Suppression",     cooldown = 180, duration = 8,  category = "external",  class = "PRIEST",
+                 charges = 1,
+                 chargeModifiers = { { talent = 373035, bonus = 1 } } },              -- Protector of the Frail: +1 charge
     [102342] = { name = "Ironbark",              cooldown = 90,  duration = 12, category = "external",  class = "DRUID",
                  cdModifiers = { { talent = 382552, reduction = 20 } } },             -- Improved Ironbark: -20s
     [6940]   = { name = "Blessing of Sacrifice", cooldown = 120, duration = 12, category = "external",  class = "PALADIN",
