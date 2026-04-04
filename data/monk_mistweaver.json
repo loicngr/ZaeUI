@@ -1,0 +1,5632 @@
+{
+  "class": "Monk",
+  "spec": "Mistweaver",
+  "scraped_at": "2026-03-25T18:41:57.009042+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 101231,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 10
+      },
+      {
+        "node_id": 101143,
+        "name": "Soothing Mist",
+        "spell_id": 115175,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 115175,
+            "description": "Soothing Mist Talent 0% of base mana, plus 0.4% per second / per sec Channeled () Requires Monk Heals the target for (1680% of Spell Power) over 8 sec. While channeling, Enveloping Mist [ Surging Mist : Surging Mist ] [ Zen Pulse : Zen Pulse ] and Vivify may be cast instantly on the target. Mistweaver Follows the target of your Enveloping Mist and Vivify.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          101147,
+          101144
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101142,
+        "name": "Paralysis",
+        "spell_id": 115078,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 115078,
+            "description": "Paralysis Talent Requires Monk Incapacitates the target for 1 min. Limit 1. Damage may cancel the effect.",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          101147,
+          101149
+        ],
+        "row": 2,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101186,
+        "name": "Rising Sun Kick",
+        "spell_id": 107428,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 107428,
+            "description": "Rising Sun Kick Talent / 2.5% of base mana Requires Monk Windwalker Kick upwards, dealing [(143.8% of Attack Power) * [(Attack Power * 0.98)][((Attack Power + Offhand Attack Power) * 2 / 3)] -- 2H, DW / Attack Power] Physical damage . Brewmaster Kick upwards, dealing (143.8% of Attack Power) Physical damage. Mistweaver Kick upwards, dealing (143.8% of Attack Power) Physical damage. Mistweaver Applies Renewing Mist for 6 seconds to an ally within 40 yds",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          101185,
+          101149
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101144,
+        "name": "Elusive Mists",
+        "spell_id": 388681,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388681,
+            "description": "Elusive Mists Talent Requires Monk Reduces all damage taken by you and your target while channeling Soothing Mists by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101143
+        ],
+        "unlocks": [
+          110026,
+          101146
+        ],
+        "row": 3,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101147,
+        "name": "Tiger's Lust",
+        "spell_id": 116841,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 116841,
+            "description": "Tiger's Lust Talent Requires Monk Requires level 25 Increases a friendly target's movement speed by 70% for 6 sec and removes all roots and snares.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101142,
+          101143
+        ],
+        "unlocks": [
+          101153,
+          101161,
+          101146
+        ],
+        "row": 3,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101149,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 450335,
+            "name": "Crashing Momentum",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 450335,
+                "description": "Crashing Momentum Talent Requires Monk Targets you Roll through are snared by 40% for 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 116095,
+            "name": "Disable",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 116095,
+                "description": "Disable Talent / 0.7% of base mana Requires Monk Reduces the target's movement speed by 50% for 15 sec, duration refreshed by your melee attacks. [ Disable : Targets already snared will be rooted for 8 sec instead ]",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101142,
+          101186
+        ],
+        "unlocks": [
+          101089,
+          101153,
+          101148
+        ],
+        "row": 3,
+        "col": 5
+      },
+      {
+        "node_id": 101185,
+        "name": "Fast Feet",
+        "spell_id": 388809,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388809,
+            "description": "Fast Feet Talent Requires Monk Rising Sun Kick deals 70% increased damage. Spinning Crane Kick deals 10% additional damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101186
+        ],
+        "unlocks": [
+          101089,
+          101184
+        ],
+        "row": 3,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101146,
+        "name": "Grace of the Crane",
+        "spell_id": 388811,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388811,
+            "description": "Grace of the Crane Talent Requires Monk Increases all healing taken by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101147,
+          101144
+        ],
+        "unlocks": [
+          110026,
+          110024,
+          101160
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101161,
+        "name": "Bounding Agility",
+        "spell_id": 450520,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450520,
+            "description": "Bounding Agility Talent Requires Monk Roll and Chi Torpedo travel a small distance further. Modifies Buff Duration +80: Chi Torpedo",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101147
+        ],
+        "unlocks": [
+          101160
+        ],
+        "row": 4,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101153,
+        "name": "Calming Presence",
+        "spell_id": 388664,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388664,
+            "description": "Calming Presence Talent Requires Monk Reduces all damage taken by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101149,
+          101147
+        ],
+        "unlocks": [
+          101160,
+          101141,
+          110097
+        ],
+        "row": 4,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101148,
+        "name": "Wind's Reach",
+        "spell_id": 450514,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450514,
+            "description": "Wind's Reach Talent Requires Monk The range of Disable is increased by 5 yds. The duration of Crashing Momentum is increased by 3 sec and its snare now reduces movement speed by an additional 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101149
+        ],
+        "unlocks": [
+          110097
+        ],
+        "row": 4,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101089,
+        "name": "Improved Detox",
+        "spell_id": 388874,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388874,
+            "description": "Improved Detox Talent Requires Monk Detox additionally removes all Poison and Disease effects.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101149,
+          101185
+        ],
+        "unlocks": [
+          101184,
+          110027,
+          110097
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110026,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 388812,
+            "name": "Vivacious Vivification",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 388812,
+                "description": "Vivacious Vivification Talent Requires Monk Brewmaster After casting Keg Smash, your next Vivify becomes instant cast. This effect also reduces the energy cost of Vivify by 75%. Mistweaver After casting Rising Sun Kick, your next Vivify becomes instant cast. Windwalker After casting Rising Sun Kick, your next Vivify becomes instant cast. This effect also reduces the energy cost of Vivify by 75%. (500ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1266734,
+            "name": "Serene Surge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1266734,
+                "description": "Serene Surge Talent Requires Monk After casting Enveloping Mist, your next [ Sheilun's Gift / Vivify] becomes instant cast. (500ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101146,
+          101144
+        ],
+        "unlocks": [
+          102432,
+          101158
+        ],
+        "row": 5,
+        "col": 1
+      },
+      {
+        "node_id": 110024,
+        "name": "Silent Sanctuary",
+        "spell_id": 1266719,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266719,
+            "description": "Silent Sanctuary Talent Requires Monk While no enemies are within 15 yds, you heal for (300% of Spell Power) every 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101146
+        ],
+        "unlocks": [
+          102432
+        ],
+        "row": 5,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101160,
+        "name": "Jade Walk",
+        "spell_id": 450553,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450553,
+            "description": "Jade Walk Talent Requires Monk While out of combat, your movement speed is increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101161,
+          101153,
+          101146
+        ],
+        "unlocks": [
+          101167,
+          102432
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101141,
+        "name": "Pressure Points",
+        "spell_id": 450432,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450432,
+            "description": "Pressure Points Talent Requires Monk Paralysis now removes all Enrage effects from its target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101153
+        ],
+        "unlocks": [
+          101167
+        ],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110097,
+        "name": "Chi Warding",
+        "spell_id": 1277444,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1277444,
+            "description": "Chi Warding Talent Requires Monk You heal for 3% of all magical damage taken.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101089,
+          101148,
+          101153
+        ],
+        "unlocks": [
+          101167,
+          101183
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110027,
+        "name": "Reinvigoration",
+        "spell_id": 1266740,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266740,
+            "description": "Reinvigoration Talent Requires Monk After Detox successfully removes an effect from an ally, their movement speed is increased by 30% for 5 sec. (300ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101089
+        ],
+        "unlocks": [
+          101183
+        ],
+        "row": 5,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101184,
+        "name": "Ancient Arts",
+        "spell_id": 344359,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 344359,
+            "description": "Ancient Arts Talent Requires Monk Reduces the cooldown of Paralysis by 15 sec and the cooldown of Leg Sweep by 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Paralysis",
+                "type": "cd_reduction",
+                "value": 15,
+                "unit": "seconds"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "spell_id": 344359,
+            "description": "Ancient Arts Talent Requires Monk Reduces the cooldown of Paralysis by 15 sec and the cooldown of Leg Sweep by 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Paralysis",
+                "type": "cd_reduction",
+                "value": 15,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          101089,
+          101185
+        ],
+        "unlocks": [
+          110025,
+          101183
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101240,
+        "name": "Stampede of the Ancients",
+        "spell_id": 1262756,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1262756,
+            "description": "Stampede of the Ancients Talent Requires Monk Strength of the Black Ox's effect is 400% more effective on your primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110211
+        ],
+        "unlocks": [
+          101239
+        ],
+        "row": 5,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102432,
+        "name": "Chi Wave",
+        "spell_id": 450391,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450391,
+            "description": "Chi Wave Talent Requires Monk Brewmaster Every 15 sec, your next Keg Smash or Vivify releases a wave of Chi energy that flows through friends and foes, dealing (20% of Attack Power) Nature damage or (60% of Attack Power) healing. Bounces up to 7 times to targets within 25 yards. Mistweaver Every 15 sec, your next Rising Sun Kick or Vivify releases a wave of Chi energy that flows through friends and foes, dealing (20% of Attack Power) Nature damage or (60% of Attack Power) healing. Bounces up to 7 times to targets within 25 yards. Windwalker Every 15 sec, your next Rising Sun Kick or Vivify releases a wave of Chi energy that flows through friends and foes, dealing (20% of Attack Power) Nature damage or (60% of Attack Power) healing. Bounces up to 7 times to targets within 25 yards.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101160,
+          110024,
+          110026
+        ],
+        "unlocks": [
+          101158,
+          110019
+        ],
+        "row": 6,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101167,
+        "name": "Transcendence",
+        "spell_id": 101643,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 101643,
+            "description": "Transcendence Talent Requires Monk Split your body and spirit, leaving your spirit behind for 15 min. Use Transcendence: Transfer to swap locations with your spirit.",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101160,
+          101141,
+          110097
+        ],
+        "unlocks": [
+          101136,
+          101138,
+          101166
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101183,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 115173,
+            "name": "Celerity",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 115173,
+                "description": "Celerity Talent Requires Monk Requires level 25 Reduces the cooldown of Roll by 5 sec and increases its maximum number of charges by 1.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Roll",
+                    "type": "cd_reduction",
+                    "value": 5,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 115008,
+            "name": "Chi Torpedo",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 115008,
+                "description": "Chi Torpedo Talent Replaces Roll 20 sec recharge Requires Monk Requires level 25 Torpedoes you forward a long distance and increases your movement speed by 30% for 10 sec , stacking up to 2 times.",
+                "cooldown": 20.0,
+                "charges": 2,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Roll 20 sec recharge Requires Monk Requires level 25 Torpedoes you forward a long distance and increases your movement speed by 30% for 10 sec , stacking up to 2 times",
+                    "type": "replaces"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": {
+              "spell_id": null,
+              "name": "Roll 20 sec recharge Requires Monk Requires level 25 Torpedoes you forward a long distance and increases your movement speed by 30% for 10 sec , stacking up to 2 times"
+            }
+          }
+        ],
+        "dependencies": [
+          110027,
+          101184,
+          110097
+        ],
+        "unlocks": [
+          101140,
+          101182
+        ],
+        "row": 6,
+        "col": 6
+      },
+      {
+        "node_id": 110025,
+        "name": "Stillstep Coil",
+        "spell_id": 1266733,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266733,
+            "description": "Stillstep Coil Talent Requires Monk Leg Sweep applies Disable for 5.0 sec when it ends.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101184
+        ],
+        "unlocks": [
+          101140
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101158,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 450503,
+            "name": "Quick Footed",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 450503,
+                "description": "Quick Footed Talent Requires Monk The duration of snare effects on you is reduced by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 328670,
+            "name": "Hasty Provocation",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 328670,
+                "description": "Hasty Provocation Talent Requires Monk Provoked targets move towards you at 50% increased speed.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          102432,
+          110026
+        ],
+        "unlocks": [
+          101157,
+          110019
+        ],
+        "row": 7,
+        "col": 1
+      },
+      {
+        "node_id": 101166,
+        "name": "Ferocity of Xuen",
+        "spell_id": 388674,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388674,
+            "description": "Ferocity of Xuen Talent Requires Monk Increases all damage dealt by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 388674,
+            "description": "Ferocity of Xuen Talent Requires Monk Increases all damage dealt by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101167
+        ],
+        "unlocks": [
+          110019,
+          101165
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101136,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 116844,
+            "name": "Ring of Peace",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 116844,
+                "description": "Ring of Peace Talent Requires Monk Requires level 35 Form a Ring of Peace at the target location for 5 sec. Enemies that enter will be ejected from the Ring.",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 198898,
+            "name": "Song of Chi-Ji",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 198898,
+                "description": "Song of Chi-Ji Talent Requires Monk Requires level 35 Conjures a cloud of hypnotic mist that slowly travels forward. Enemies touched by the mist fall asleep, Disoriented for 20 sec.",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101167
+        ],
+        "unlocks": [
+          101173,
+          101163,
+          101165
+        ],
+        "row": 7,
+        "col": 4
+      },
+      {
+        "node_id": 101138,
+        "name": "Spirit's Essence",
+        "spell_id": 450595,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450595,
+            "description": "Spirit's Essence Talent Requires Monk Transcendence: Transfer snares targets within 10 yds by 70% for 4 sec when cast.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101167
+        ],
+        "unlocks": [
+          101173,
+          101139
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101182,
+        "name": "Tiger Tail Sweep",
+        "spell_id": 264348,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 264348,
+            "description": "Tiger Tail Sweep Talent Requires Monk Requires level 35 Increases the range of Leg Sweep by 4 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101183
+        ],
+        "unlocks": [
+          101139
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101140,
+        "name": "Improved Touch of Death",
+        "spell_id": 322113,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 322113,
+            "description": "Improved Touch of Death Talent Requires Monk Touch of Death can now be used on targets with less than 15% health remaining, dealing 35% of your maximum health in damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101183,
+          110025
+        ],
+        "unlocks": [
+          101180,
+          101139
+        ],
+        "row": 7,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110019,
+        "name": "Mist Caller",
+        "spell_id": 1266811,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266811,
+            "description": "Mist Caller Talent Requires Monk Vivify and Sheilun's Gift trigger a Gust of Mist on yourself.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101166,
+          102432,
+          101158
+        ],
+        "unlocks": [
+          101157,
+          101155
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101165,
+        "name": "Yu'lon's Grace",
+        "spell_id": 414131,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 414131,
+            "description": "Yu'lon's Grace Talent Requires Monk Find resilience in the flow of chi in battle, gaining a magic absorb shield for 1.0% of your max health every 3 sec in combat, stacking up to 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101136,
+          101166
+        ],
+        "unlocks": [
+          101155,
+          110021,
+          101164
+        ],
+        "row": 8,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101163,
+        "name": "Peace and Prosperity",
+        "spell_id": 450448,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450448,
+            "description": "Peace and Prosperity Talent Requires Monk Reduces the cooldown of Ring of Peace by 5 sec and Song of Chi-Ji's cast time is reduced by 0.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Ring of Peace",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          101136
+        ],
+        "unlocks": [
+          101164
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101173,
+        "name": "Fortifying Brew",
+        "spell_id": 115203,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 115203,
+            "description": "Fortifying Brew Talent Requires Monk Turns your skin to stone for 15 sec [ Fortifying Brew: Determination : increasing the effectiveness of Stagger by 15% ] [, and Staggering 20% of incoming damage].",
+            "cooldown": 360.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101136,
+          101138
+        ],
+        "unlocks": [
+          101174,
+          108540,
+          101164
+        ],
+        "row": 8,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101139,
+        "name": "Dance of the Wind",
+        "spell_id": 432181,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432181,
+            "description": "Dance of the Wind Talent Requires Monk Your physical damage taken is reduced by 10% and an additional 10% every 4 sec until you receive a physical attack.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101182,
+          101140,
+          101138
+        ],
+        "unlocks": [
+          101180
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101157,
+        "name": "Save Them All",
+        "spell_id": 389579,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389579,
+            "description": "Save Them All Talent Requires Monk Your healing is increased by up to 10%, based on the current health of your target. Lower health targets are healed for more.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101158,
+          110019
+        ],
+        "unlocks": [
+          101169
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101155,
+        "name": "Swift Art",
+        "spell_id": 450622,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450622,
+            "description": "Swift Art Talent Requires Monk Roll removes a snare effect once every 30 sec. (30s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101165,
+          110019
+        ],
+        "unlocks": [
+          101169
+        ],
+        "row": 9,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110021,
+        "name": "Vital Clarity",
+        "spell_id": 1266748,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266748,
+            "description": "Vital Clarity Talent Requires Monk Vivify and Sheilun's Gift critical strike chances are increased by 15% on yourself.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101165
+        ],
+        "unlocks": [
+          101175,
+          101171,
+          101169
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101164,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1242910,
+            "name": "Jade Infusion",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1242910,
+                "description": "Jade Infusion Talent Requires Monk Thunder Focus Tea summons a Jade Serpent Statue at your location. When you channel Soothing Mist, the statue will also begin to channel Soothing Mist on your target, healing for (560% of Spell Power) over 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 115313,
+            "name": "Summon Jade Serpent Statue",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 115313,
+                "description": "Summon Jade Serpent Statue Talent Requires Monk Requires level 45 Summons a Jade Serpent Statue at the target location. When you channel Soothing Mist, the statue will also begin to channel Soothing Mist on your target, healing for (560% of Spell Power) over 8 sec.",
+                "cooldown": 10.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101173,
+          101163,
+          101165
+        ],
+        "unlocks": [
+          101175
+        ],
+        "row": 9,
+        "col": 4
+      },
+      {
+        "node_id": 101174,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 388814,
+            "name": "Ironshell Brew",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 388814,
+                "description": "Ironshell Brew Talent Requires Monk Increases your maximum health by an additional 10% and your damage taken is reduced by an additional 10% while Fortifying Brew is active.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 388813,
+            "name": "Expeditious Fortification",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 388813,
+                "description": "Expeditious Fortification Talent Requires Monk Fortifying Brew cooldown reduced by 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101173
+        ],
+        "unlocks": [
+          101179,
+          101177,
+          101175
+        ],
+        "row": 9,
+        "col": 5
+      },
+      {
+        "node_id": 108540,
+        "name": "Diffuse Magic",
+        "spell_id": 1243287,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1243287,
+            "description": "Diffuse Magic Talent Requires Monk Activating Fortifying Brew transfers all currently active harmful magical effects on you back to their original caster if possible.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101173
+        ],
+        "unlocks": [],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101180,
+        "name": "Celestial Determination",
+        "spell_id": 450638,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450638,
+            "description": "Celestial Determination Talent Requires Monk While your Celestial is active, you cannot be slowed below 90% normal movement speed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101140,
+          101139
+        ],
+        "unlocks": [
+          101179
+        ],
+        "row": 9,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101169,
+        "name": "Chi Proficiency",
+        "spell_id": 450426,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450426,
+            "description": "Chi Proficiency Talent Requires Monk Magical damage done increased by 5% and healing done increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 450426,
+            "description": "Chi Proficiency Talent Requires Monk Magical damage done increased by 5% and healing done increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101157,
+          101155,
+          110021
+        ],
+        "unlocks": [
+          101168,
+          101170
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101171,
+        "name": "Healing Winds",
+        "spell_id": 450560,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450560,
+            "description": "Healing Winds Talent Requires Monk Transcendence: Transfer immediately heals you for 10% of your maximum health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110021
+        ],
+        "unlocks": [
+          101176,
+          101170
+        ],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101175,
+        "name": "Windwalking",
+        "spell_id": 157411,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 157411,
+            "description": "Windwalking Talent Requires Monk You and your allies within 10 yards have 10% increased movement speed. Stacks with other similar effects.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101174,
+          110021,
+          101164
+        ],
+        "unlocks": [
+          101176
+        ],
+        "row": 10,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101177,
+        "name": "Chi Transfer",
+        "spell_id": 1272452,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272452,
+            "description": "Chi Transfer Talent Requires Monk Touch of Death now heals you for 50% of its damage done.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101174
+        ],
+        "unlocks": [
+          101176,
+          101178
+        ],
+        "row": 10,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101179,
+        "name": "Martial Instincts",
+        "spell_id": 450427,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450427,
+            "description": "Martial Instincts Talent Requires Monk Increases your Physical damage done by 5% and Avoidance increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 450427,
+            "description": "Martial Instincts Talent Requires Monk Increases your Physical damage done by 5% and Avoidance increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101174,
+          101180
+        ],
+        "unlocks": [
+          101154,
+          101178
+        ],
+        "row": 10,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101168,
+        "name": "Lighter Than Air",
+        "spell_id": 449582,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449582,
+            "description": "Lighter Than Air Talent Requires Monk Roll causes you to become lighter than air, allowing you to double jump to dash forward a short distance once within 5 sec, but the cooldown of Roll is increased by 2 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101169
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101170,
+        "name": "Flow of Chi",
+        "spell_id": 450569,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450569,
+            "description": "Flow of Chi Talent Requires Monk You gain a bonus effect based on your current health. Above 90% health: Movement speed increased by 5%. This bonus stacks with similar effects. Between 90% and 35% health: Damage taken reduced by 5%. Below 35% health: Healing received increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101169,
+          101171
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101176,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 394110,
+            "name": "Escape from Reality",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 394110,
+                "description": "Escape from Reality Talent Requires Monk After you use Transcendence: Transfer, you can use Transcendence: Transfer again within 10 sec, ignoring its cooldown.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 434774,
+            "name": "Transcendence: Linked Spirits",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 434774,
+                "description": "Transcendence: Linked Spirits Talent Requires Monk Transcendence now tethers your spirit onto an ally for 1 hour. Use Transcendence: Transfer to teleport to your ally's location.",
+                "cooldown": 10.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101177,
+          101175,
+          101171
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 4
+      },
+      {
+        "node_id": 101178,
+        "name": "Fatal Touch",
+        "spell_id": 394123,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 394123,
+            "description": "Fatal Touch Talent Requires Monk Touch of Death's cooldown is reduced by 90 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101179,
+          101177
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101154,
+        "name": "Rushing Reflexes",
+        "spell_id": 450154,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450154,
+            "description": "Rushing Reflexes Talent Requires Monk Your heightened reflexes allow you to react swiftly to the presence of enemies, causing you to quickly lunge to the nearest enemy in front of you within 10 yards after you Roll.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101179
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 110067,
+        "name": "Celestial Conduit",
+        "spell_id": 443028,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443028,
+            "description": "Celestial Conduit Talent 5% of base mana Channeled () Requires Monk Brewmaster, Windwalker The August Celestials empower you, causing you to radiate [(220% of Attack Power) * 5] Nature damage onto enemies and [(1100% of Spell Power) * 5] healing onto up to 5 injured allies within 15 yds over 4 sec, reduced beyond 5 targets. You may move while channeling, but casting other healing or damaging spells cancels this effect. Mistweaver The August Celestials empower you, causing you to radiate [(1100% of Spell Power) * 5] healing onto up to 5 injured allies and [(220% of Attack Power) * 5] Nature damage onto enemies within 20 yds over 4 sec, reduced beyond 5 targets. You may move while channeling, but casting other healing or damaging spells cancels this effect.",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          101236,
+          101242,
+          101236,
+          109701,
+          101233,
+          101242
+        ],
+        "row": 2,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101134,
+        "name": "Enveloping Mist",
+        "spell_id": 124682,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 124682,
+            "description": "Enveloping Mist Talent 3.6% of base mana Requires Monk Wraps the target in healing mists, healing for (748.8% of Spell Power) over 6 sec / Mist Wrap : 7 sec / Invoke Yu'lon, the Jade Serpent : 10 sec / Invoke Chi-Ji, the Red Crane : 10 sec , and increasing healing received from your other spells by 10 %. Mistweaver Applies Renewing Mist for 6 seconds to an ally within 40 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          101107,
+          101133
+        ],
+        "row": 2,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101236,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 442743,
+            "name": "Temple Training",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 442743,
+                "description": "Temple Training Talent Requires Monk Windwalker Fists of Fury and Spinning Crane Kick deal 10% more damage. Mistweaver The healing of Enveloping Mist, Vivify, and Sheilun's Gift is increased by 6%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 442687,
+            "name": "Xuen's Guidance",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 442687,
+                "description": "Xuen's Guidance Talent Requires Monk Teachings of the Monastery has a 15% chance to refund a charge when consumed. The damage of Tiger Palm is increased by 10%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          110067,
+          101243,
+          110067
+        ],
+        "unlocks": [
+          101237,
+          101237,
+          101237
+        ],
+        "row": 3,
+        "col": 9
+      },
+      {
+        "node_id": 101242,
+        "name": "Courage of the White Tiger",
+        "spell_id": 443087,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443087,
+            "description": "Courage of the White Tiger Talent Requires Monk Approximately 4 procs per minute Windwalker Tiger Palm has a chance to cause Xuen to claw your target for (337.5% of Attack Power) Physical damage, healing a nearby ally for 100% of the damage done. Invoke Xuen, the White Tiger guarantees your next cast activates this effect. Mistweaver Tiger Palm, Vivify, and Sheilun's Gift have a chance to cause Xuen to claw a nearby enemy for (337.5% of Attack Power) Physical damage, healing a nearby ally for 100% of the damage done. Invoke Yu'lon, the Jade Serpent or Invoke Chi-Ji, the Red Crane guarantees your next cast activates this effect.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101243,
+          110067,
+          110067
+        ],
+        "unlocks": [
+          110211,
+          110211,
+          110211
+        ],
+        "row": 3,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101233,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 442719,
+            "name": "Restore Balance",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 442719,
+                "description": "Restore Balance Talent Requires Monk Windwalker Damage increased by 5% while Xuen, the White Tiger is active. Mistweaver Healing increased by 5% while Chi-Ji, the Red Crane or Yu'lon, the Jade Serpent is active.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 443625,
+            "name": "Yu'lon's Knowledge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443625,
+                "description": "Yu'lon's Knowledge Talent Requires Monk Rising Sun Kick damage increased by 15%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          110067
+        ],
+        "unlocks": [
+          101234
+        ],
+        "row": 3,
+        "col": 11
+      },
+      {
+        "node_id": 109701,
+        "name": "Heart of the Jade Serpent",
+        "spell_id": 443294,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443294,
+            "description": "Heart of the Jade Serpent Talent Requires Monk Windwalker Strike of the Windlord and Whirling Dragon Punch call upon Yu'lon to increase the cooldown recovery rate of Fists of Fury, Strike of the Windlord, Rising Sun Kick, and Whirling Dragon Punch by 75% for 8 sec. The channel time of Fists of Fury is reduced by 50% while Yu'lon is active. Mistweaver Thunder Focus Tea calls upon Yu'lon to increase the cooldown recovery rate of Renewing Mist, Rising Sun Kick, Life Cocoon, and Thunder Focus Tea by 75% for 8 sec. (2s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101243,
+          110067
+        ],
+        "unlocks": [
+          110218,
+          110218
+        ],
+        "row": 3,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101133,
+        "name": "Thunder Focus Tea",
+        "spell_id": 116680,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 116680,
+            "description": "Thunder Focus Tea Talent Requires Monk Receive a jolt of energy, empowering your next spell cast: Enveloping Mist : Immediately heals for (748.8% of Spell Power) and is instant cast. Renewing Mist : Duration increased by 10 sec. Rising Sun Kick : Cooldown reduced by 9 sec. [ Thunderous Focus Tea : Crackling Jade Lightning : Knockback applied immediately. Roll : Refund a charge and heal yourself for (240% of Attack Power) ]",
+            "cooldown": 30.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101134
+        ],
+        "unlocks": [
+          101096,
+          101132
+        ],
+        "row": 3,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101107,
+        "name": "Misty Coalescence",
+        "spell_id": 1268817,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268817,
+            "description": "Misty Coalescence Talent Requires Monk Renewing Mist healing is increased by up to 300% in proportion to its coverage on yourself and your allies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101134
+        ],
+        "unlocks": [
+          101132,
+          101110
+        ],
+        "row": 3,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101237,
+        "name": "Chi-Ji's Swiftness",
+        "spell_id": 443566,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443566,
+            "description": "Chi-Ji's Swiftness Talent Requires Monk Your movement speed is increased by 75% during Celestial Conduit and by 15% for 3 sec after being assisted by any Celestial.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101236,
+          101236,
+          101236
+        ],
+        "unlocks": [
+          101238,
+          101238
+        ],
+        "row": 4,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110211,
+        "name": "Strength of the Black Ox",
+        "spell_id": 443110,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443110,
+            "description": "Strength of the Black Ox Talent Requires Monk Windwalker After Xuen assists you, your next Blackout Kick refunds 2 stacks of Teachings of the Monastery and causes Niuzao to stomp at your target's location, dealing (200% of Attack Power) damage to nearby enemies, reduced beyond 5 targets. Mistweaver After Xuen assists you, your next Enveloping Mist's cast time is reduced by 50% and causes Niuzao to grant an absorb shield to 5 nearby allies for 0.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101242,
+          101242,
+          101242
+        ],
+        "unlocks": [
+          110220,
+          101240
+        ],
+        "row": 4,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101234,
+        "name": "Path of the Falling Star",
+        "spell_id": 1273154,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1273154,
+            "description": "Path of the Falling Star Talent Requires Monk Celestial Conduit's healing and damage is increased by 100% when striking a single target. Each addtional target reduces this bonus by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110221,
+          101233
+        ],
+        "unlocks": [
+          101235,
+          101235
+        ],
+        "row": 4,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110218,
+        "name": "Yu'lon's Avatar",
+        "spell_id": 1262667,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1262667,
+            "description": "Yu'lon's Avatar Talent Requires Monk Approximately 1.5 procs per minute Windwalker Heart of the Jade Serpent additionally triggers for 4 sec at 100% effectiveness after you cast Zenith. Mistweaver Vivify and Sheilun's Gift have a chance to trigger Heart of the Jade Serpent for 4 sec at 100% effectiveness. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109701,
+          109701
+        ],
+        "unlocks": [
+          109700,
+          109700
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101096,
+        "name": "Life Cocoon",
+        "spell_id": 116849,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 116849,
+            "description": "Life Cocoon Talent 2.4% of base mana Requires Monk Encases the target in a cocoon of Chi energy for 12 sec, absorbing [Total Health * 48 / 100 * (1 + Versatility)] damage and increasing all healing over time received by 50%. Mistweaver Applies Renewing Mist and Enveloping Mist to the target.",
+            "cooldown": 120.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101133
+        ],
+        "unlocks": [
+          101095,
+          101097
+        ],
+        "row": 4,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101132,
+        "name": "Mana Tea",
+        "spell_id": 115869,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 115869,
+            "description": "Mana Tea 1% of base mana Requires Monk For every you spend, you gain 1 stack of Mana Tea, with a chance equal to your critical strike chance to generate 1 extra stack. Mana Tea : Consumes 1 stack of Mana Tea per 0.5 sec to restore . Can be cast while moving, but movement speed is reduced by 40% while channeling.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101133,
+          101107
+        ],
+        "unlocks": [
+          101131
+        ],
+        "row": 4,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101110,
+        "name": "Invigorating Mists",
+        "spell_id": 274586,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 274586,
+            "description": "Invigorating Mists Talent Requires Monk Vivify heals all allies with your Renewing Mist active for (323.18% of Spell Power). Sheilun's Gift's healing is increased by 500% on its primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101107
+        ],
+        "unlocks": [
+          101108,
+          101109
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101238,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 442747,
+            "name": "Niuzao's Protection",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 442747,
+                "description": "Niuzao's Protection Talent Requires Monk Fortifying Brew grants you an absorb shield for 25% of your maximum health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 443059,
+            "name": "Jade Sanctuary",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443059,
+                "description": "Jade Sanctuary Talent Requires Monk You heal for 10% of your maximum health instantly when you activate Celestial Conduit and receive 15% less damage for its duration. This effect lingers for an additional 8 sec after Celestial Conduit ends.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101237,
+          101237
+        ],
+        "unlocks": [
+          101239,
+          101239,
+          101239
+        ],
+        "row": 5,
+        "col": 9
+      },
+      {
+        "node_id": 101240,
+        "name": "Stampede of the Ancients",
+        "spell_id": 1262756,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1262756,
+            "description": "Stampede of the Ancients Talent Requires Monk Strength of the Black Ox's effect is 400% more effective on your primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110211
+        ],
+        "unlocks": [
+          101239
+        ],
+        "row": 5,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101235,
+        "name": "Inner Compass",
+        "spell_id": 443571,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443571,
+            "description": "Inner Compass Talent Requires Monk You switch between alignments after an August Celestial assists you, increasing a corresponding secondary stat by 2%. Crane Stance : Haste Tiger Stance : Critical Strike Ox Stance : Versatility Serpent Stance : Mastery",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101234,
+          101234
+        ],
+        "unlocks": [
+          101239,
+          101239
+        ],
+        "row": 5,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109700,
+        "name": "Flowing Wisdom",
+        "spell_id": 1262672,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1262672,
+            "description": "Flowing Wisdom Talent Requires Monk Heart of the Jade Serpent increases your haste by 10% while active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110218,
+          110218
+        ],
+        "unlocks": [
+          101239,
+          101239
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101097,
+        "name": "Crane Style",
+        "spell_id": 446260,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 446260,
+            "description": "Crane Style Talent Requires Monk Approximately 10 procs per minute Rising Sun Kick now kicks up a Gust of Mist to heal 2 allies within 40 yds for (0.1% of Spell Power). Spinning Crane Kick and Blackout Kick have a chance to kick up a Gust of Mist to heal 1 ally within 40 yds for (0.1% of Spell Power).",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101096
+        ],
+        "unlocks": [
+          101099
+        ],
+        "row": 5,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101131,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 115310,
+            "name": "Revival",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 115310,
+                "description": "Revival Talent 4.374% of base mana Requires Monk Heals all party and raid members within 40 yds for (5988.28% of Spell Power) and clears them of 3 harmful Magic, all Poison, and all Disease effects. Healing reduced beyond 5 targets.",
+                "cooldown": 180.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 388615,
+            "name": "Restoral",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 388615,
+                "description": "Restoral Talent 4.374% of base mana Requires Monk Heals all party and raid members within 40 yds for (5988.28% of Spell Power) and clears them of all harmful Poison and Disease effects. Castable while stunned. Healing reduced beyond 5 targets.",
+                "cooldown": 180.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101132
+        ],
+        "unlocks": [
+          101130,
+          101092,
+          101104
+        ],
+        "row": 5,
+        "col": 18
+      },
+      {
+        "node_id": 101109,
+        "name": "Healing Elixir",
+        "spell_id": 122280,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 122280,
+            "description": "Healing Elixir Talent Requires Monk You consume a healing elixir when you drop below 40% health or generate excess healing elixirs, instantly healing you for 15% of your maximum health. You generate 1 healing elixir every 30 sec, stacking up to 2 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101110
+        ],
+        "unlocks": [
+          101111
+        ],
+        "row": 5,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101239,
+        "name": "Unity Within",
+        "spell_id": 443589,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443589,
+            "description": "Unity Within Talent Requires Monk Celestial Conduit can be recast once during its duration to call upon all of the August Celestials to assist you at 200% effectiveness. Unity Within is automatically cast when Celestial Conduit ends if not used before expiration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101238,
+          110220,
+          101235,
+          101238,
+          101238,
+          109700,
+          109700,
+          101235,
+          101240
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101095,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 388218,
+            "name": "Calming Coalescence",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 388218,
+                "description": "Calming Coalescence Talent Requires Monk The absorb amount of Life Cocoon is increased by 80%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 467270,
+            "name": "Refreshment",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 467270,
+                "description": "Refreshment Talent Requires Monk Life Cocoon grants up to 5 stacks of Mana Tea and applies 2 stacks of Healing Elixir to its target.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101096
+        ],
+        "unlocks": [
+          101094,
+          101099,
+          101100
+        ],
+        "row": 6,
+        "col": 16
+      },
+      {
+        "node_id": 101092,
+        "name": "Uplifted Spirits",
+        "spell_id": 388551,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388551,
+            "description": "Uplifted Spirits Talent Requires Monk The cooldown of [ Restoral / Revival] is reduced by 30 sec and [ Restoral / Revival] healing increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101131
+        ],
+        "unlocks": [
+          101094
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101104,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1243155,
+            "name": "Way of the Serpent",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1243155,
+                "description": "Way of the Serpent Talent Requires Monk Soothing Mist and Crackling Jade Lightning may be channeled while moving, but movement speed is reduced by 20% while channeling. [ Sheilun's Gift / Vivify] healing increased by 15% and Renewing Mist's healing is increased by 30%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 388779,
+            "name": "Way of the Crane",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 388779,
+                "description": "Way of the Crane Talent Requires Monk Tiger Palms strike twice, Blackout Kicks strike an additional 2 targets at 20% effectiveness, and Spinning Crane Kick heals 1 nearby allies for 340% of the damage done.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101131
+        ],
+        "unlocks": [
+          101129
+        ],
+        "row": 6,
+        "col": 18
+      },
+      {
+        "node_id": 101130,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 422031,
+            "name": "Energizing Brew",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 422031,
+                "description": "Energizing Brew Talent Requires Monk Mana Tea now channels 50% faster and generates 20% more Mana.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 197915,
+            "name": "Lifecycles",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 197915,
+                "description": "Lifecycles Talent Requires Monk Requires level 30 [ Sheilun's Gift / Vivify] has a 20% chance to cause your next Rising Sun Kick or Enveloping Mist to generate 1 stack of Mana Tea. Enveloping Mist and Rising Sun Kick have a 20% chance to cause your next [ Sheilun's Gift / Vivify] to generate 1 stack of Mana Tea.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101131
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 19
+      },
+      {
+        "node_id": 101108,
+        "name": "Zen Pulse",
+        "spell_id": 446326,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 446326,
+            "description": "Zen Pulse Talent Requires Monk Renewing Mist's heal over time has a chance to cause your next [ Sheilun's Gift / Vivify] to also trigger a Zen Pulse on its target and all allies with Renewing Mist, healing them for (160% of Spell Power) increased by 6% per Renewing Mist active, up to 30%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101110
+        ],
+        "unlocks": [
+          101122,
+          101111
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101223,
+        "name": "Aspect of Harmony",
+        "spell_id": 450508,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450508,
+            "description": "Aspect of Harmony Talent Requires Monk Mistweaver Store vitality from 10% of your damage dealt and 30% of your healing. Vitality stored from overhealing is reduced. For 10 sec after casting Thunder Focus Tea your spells and abilities draw upon the stored vitality to deal 40% additional healing over 8 sec. Brewmaster Store vitality from 12% of your damage dealt and 6% of your effective healing. For 10 sec after casting Celestial Brew your spells and abilities draw upon the stored vitality to deal 40% additional damage over 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          101230,
+          101222,
+          101224,
+          109694
+        ],
+        "row": 7,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101099,
+        "name": "Mists of Life",
+        "spell_id": 388548,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388548,
+            "description": "Mists of Life Talent Requires Monk Life Cocoon applies Renewing Mist and Enveloping Mist to the target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101095,
+          101097
+        ],
+        "unlocks": [
+          101100,
+          101098
+        ],
+        "row": 7,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101094,
+        "name": "Overflowing Mists",
+        "spell_id": 388511,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388511,
+            "description": "Overflowing Mists Talent Requires Monk Your Enveloping Mists heal the target for [(300% of Spell Power) * 2] each time they take direct damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101095,
+          101092
+        ],
+        "unlocks": [
+          101100,
+          101093
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101129,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 322118,
+            "name": "Invoke Yu'lon, the Jade Serpent",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 322118,
+                "description": "Invoke Yu'lon, the Jade Serpent Talent 5% of base mana Requires Monk Summons an effigy of Yu'lon, the Jade Serpent for 25 sec . Yu'lon will heal injured allies with Soothing Breath, healing the target and up to 2 allies for (210% of Spell Power) over 4.5 sec . Enveloping Mist costs 50% less mana while Yu'lon is active.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 325197,
+            "name": "Invoke Chi-Ji, the Red Crane",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 325197,
+                "description": "Invoke Chi-Ji, the Red Crane Talent 5% of base mana Requires Monk Summon an effigy of Chi-Ji for 25 sec that kicks up 3 Gust of Mists when you Blackout Kick, Rising Sun Kick, or Spinning Crane Kick, healing up to 2 allies for [(0.1% of Spell Power) * 50 / 100]. Chi-Ji's presence makes you immune to movement impairing effects, makes Enveloping Mist instant cast, and reduces the mana cost of Enveloping Mist by 20%.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101104
+        ],
+        "unlocks": [
+          101093,
+          101112,
+          101128
+        ],
+        "row": 7,
+        "col": 18
+      },
+      {
+        "node_id": 101122,
+        "name": "Deep Clarity",
+        "spell_id": 446345,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 446345,
+            "description": "Deep Clarity Talent Requires Monk After you fully consume Thunder Focus Tea, your next Vivify triggers Zen Pulse.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101108
+        ],
+        "unlocks": [
+          101112,
+          101121
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101111,
+        "name": "Rapid Diffusion",
+        "spell_id": 388847,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388847,
+            "description": "Rapid Diffusion Talent Requires Monk Rising Sun Kick and Enveloping Mist apply Renewing Mist for 6 seconds to an ally within 40 yds. (250ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 388847,
+            "description": "Rapid Diffusion Talent Requires Monk Rising Sun Kick and Enveloping Mist apply Renewing Mist for 6 seconds to an ally within 40 yds. (250ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101108,
+          101109
+        ],
+        "unlocks": [
+          101121,
+          101120
+        ],
+        "row": 7,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101222,
+        "name": "Manifestation",
+        "spell_id": 450875,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450875,
+            "description": "Manifestation Talent Requires Monk Brewmaster Chi Burst and Chi Wave deal 50% increased damage and healing. Mistweaver Chi Wave deals 50% increased damage and healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101223
+        ],
+        "unlocks": [
+          101221
+        ],
+        "row": 8,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101224,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 450867,
+            "name": "Purified Spirit",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 450867,
+                "description": "Purified Spirit Talent Requires Monk Brewmaster When Aspect of Harmony ends, any remaining vitality is expelled as damage over 8 sec, split among nearby targets. Mistweaver When Aspect of Harmony ends, any remaining vitality is expelled as healing over 8 sec, split among nearby targets.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 450870,
+            "name": "Harmonic Gambit",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 450870,
+                "description": "Harmonic Gambit Talent Requires Monk Brewmaster During Aspect of Harmony, Expel Harm and Vivify withdraw vitality to heal for an additional 40% over 8 sec. Mistweaver During Aspect of Harmony, Rising Sun Kick, Blackout Kick, and Tiger Palm also withdraw vitality to damage enemies for an additional 20% over 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101223
+        ],
+        "unlocks": [
+          101225
+        ],
+        "row": 8,
+        "col": 10
+      },
+      {
+        "node_id": 101230,
+        "name": "Balanced Stratagem",
+        "spell_id": 450889,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450889,
+            "description": "Balanced Stratagem Talent Requires Monk Casting a Physical spell or ability increases the damage and healing of your next Fire or Nature spell or ability by 3%, and vice versa. Stacks up to 5. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101223
+        ],
+        "unlocks": [
+          101229
+        ],
+        "row": 8,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109694,
+        "name": "Harmonic Surge",
+        "spell_id": 1270958,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270958,
+            "description": "Harmonic Surge Talent Requires Monk Mistweaver Casting Thunder Focus Tea guarantees that your next 2 casts of Tiger Palm or Vivify will trigger a Harmonic Surge, dealing [10 * (400% of Spell Power) / 100] Nature damage split between your target and other nearby enemies, and [40 * (500% of Spell Power) / 100] healing to up to 5 injured allies. Brewmaster Casting guarantees that your next 2 casts of Tiger Palm or Vivify will trigger a Harmonic Surge, dealing [55 * (400% of Spell Power) / 100] Nature damage split between your target and other nearby enemies, and [10 * (500% of Spell Power) / 100] healing to up to 5 injured allies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101223
+        ],
+        "unlocks": [
+          109695
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101098,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 202424,
+            "name": "Chrysalis",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 202424,
+                "description": "Chrysalis Talent Requires Monk Reduces the cooldown of Life Cocoon by 45 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Life Cocoon",
+                    "type": "cd_reduction",
+                    "value": 45,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 399226,
+            "name": "Burst of Life",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 399226,
+                "description": "Burst of Life Talent Requires Monk When Life Cocoon expires, it releases a burst of mist that restores (806% of Spell Power) health to 3 nearby allies.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101099
+        ],
+        "unlocks": [
+          101103
+        ],
+        "row": 8,
+        "col": 15
+      },
+      {
+        "node_id": 101100,
+        "name": "Yu'lon's Whisper",
+        "spell_id": 388038,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388038,
+            "description": "Yu'lon's Whisper Talent Requires Monk While channeling Mana Tea you exhale the breath of Yu'lon, healing up to 5 allies within 15 yards for (91% of Spell Power) every 0.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101099,
+          101095,
+          101094
+        ],
+        "unlocks": [
+          101127,
+          101103
+        ],
+        "row": 8,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101093,
+        "name": "Mist Wrap",
+        "spell_id": 197900,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 197900,
+            "description": "Mist Wrap Talent Requires Monk Requires level 15 Increases Enveloping Mist's duration by 1 sec and its healing bonus by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101129,
+          101094
+        ],
+        "unlocks": [
+          101127
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101128,
+        "name": "Celestial Harmony",
+        "spell_id": 343655,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 343655,
+            "description": "Celestial Harmony Talent Requires Monk When activated, Yu'lon and Chi-Ji apply Chi Cocoons to 5 targets within 40 yds, absorbing [Total Health * 24 / 100 * (1 + Versatility)] damage for 10 sec. Chi-Ji grants 4 stacks of Teachings of the Monastery when invoked. Yu'lon reduces the cast speed of Enveloping Mist by 30%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101129
+        ],
+        "unlocks": [
+          101113,
+          101127,
+          101125
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101112,
+        "name": "Dancing Mists",
+        "spell_id": 388701,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388701,
+            "description": "Dancing Mists Talent Requires Monk Renewing Mist has a 8% chance to immediately spread to an additional target when initially cast or when traveling to a new target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101122,
+          101129
+        ],
+        "unlocks": [
+          101115,
+          101125
+        ],
+        "row": 8,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101121,
+        "name": "Lotus Infusion",
+        "spell_id": 458431,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 458431,
+            "description": "Lotus Infusion Talent Requires Monk Allies with Renewing Mist receive 6% more healing from you and Renewing Mist's duration is increased by 2 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101122,
+          101111
+        ],
+        "unlocks": [
+          101115,
+          101120
+        ],
+        "row": 8,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101221,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 451041,
+            "name": "Tiger's Vigor",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 451041,
+                "description": "Tiger's Vigor Talent Requires Monk Casting Tiger's Lust reduces the remaining cooldown on Roll by 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 451043,
+            "name": "Roar from the Heavens",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 451043,
+                "description": "Roar from the Heavens Talent Requires Monk Tiger's Lust grants 20% movement speed to up to 2 allies near its target.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101222
+        ],
+        "unlocks": [
+          101220
+        ],
+        "row": 9,
+        "col": 9
+      },
+      {
+        "node_id": 101225,
+        "name": "Endless Draught",
+        "spell_id": 450892,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450892,
+            "description": "Endless Draught Talent Requires Monk Brewmaster Celestial Brew has 1 additional charge. Mistweaver Thunder Focus Tea has 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101224
+        ],
+        "unlocks": [
+          101226
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101229,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 451036,
+            "name": "Mantra of Purity",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 451036,
+                "description": "Mantra of Purity Talent Requires Monk Brewmaster Purifying Brew removes 10% additional Stagger and causes you to absorb up to [(Attack Power * 100 / 100) * (1 + Versatility)] incoming Stagger. Mistweaver When cast on yourself, your single-target healing spells heal for 10% more and restore an additional (150% of Spell Power) health over 6 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 451029,
+            "name": "Mantra of Tenacity",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 451029,
+                "description": "Mantra of Tenacity Talent Requires Monk Brewmaster Fortifying Brew applies a Chi Cocoon, absorbing [Total Health * 12 / 100 * (1 + Versatility)] damage. Mistweaver Fortifying Brew grants 20% Stagger.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101230
+        ],
+        "unlocks": [
+          101228
+        ],
+        "row": 9,
+        "col": 11
+      },
+      {
+        "node_id": 109695,
+        "name": "Potential Energy",
+        "spell_id": 1271048,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271048,
+            "description": "Potential Energy Talent Requires Monk Brewmaster Casting Keg Smash guarantees that your next cast of Tiger Palm or Vivify will cause a Harmonic Surge. Mistweaver Casting Rising Sun Kick or Rushing Wind Kick guarantees that your next cast of Tiger Palm or Vivify will cause a Harmonic Surge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109694
+        ],
+        "unlocks": [
+          109696
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101103,
+        "name": "Amplified Rush",
+        "spell_id": 1271431,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271431,
+            "description": "Amplified Rush Talent Requires Monk The healing of Gusts of Mist caused by Renewing Mist is increased by 100%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101100,
+          101098
+        ],
+        "unlocks": [
+          101102
+        ],
+        "row": 9,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101127,
+        "name": "Pool of Mists",
+        "spell_id": 173841,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 173841,
+            "description": "Pool of Mists Talent Requires Monk Renewing Mist now has 3 charges and reduces the remaining cooldown of Rising Sun Kick by 1.0 sec. Rising Sun Kick now reduces the remaining cooldown of Renewing Mist by 1.0 sec. (300ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101093,
+          101128,
+          101100
+        ],
+        "unlocks": [
+          101102,
+          101126
+        ],
+        "row": 9,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101113,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 388031,
+            "name": "Jade Bond",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 388031,
+                "description": "Jade Bond Talent Requires Monk Chi Cocoons now apply Enveloping Mist for 4 sec when they expire or are consumed, and Chi-Ji's Gusts of Mists healing is increased by 20% and Yu'lon's Soothing Breath healing is increased by 500%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 388212,
+            "name": "Gift of the Celestials",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 388212,
+                "description": "Gift of the Celestials Talent Requires Monk Reduces the cooldown of [ Invoke Chi-Ji, the Red Crane / Invoke Yul'on, the Jade Serpent] by 1 min, but decreases its duration to 12 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101128
+        ],
+        "unlocks": [
+          101126,
+          101124,
+          101114
+        ],
+        "row": 9,
+        "col": 18
+      },
+      {
+        "node_id": 101125,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 467316,
+            "name": "Jade Empowerment",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 467316,
+                "description": "Jade Empowerment Talent Requires Monk Crackling Jade Lightning's damage is increased by 300% and now chains to 4 additional enemies at 25% effectiveness.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1277302,
+            "name": "Morning Breeze",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1277302,
+                "description": "Morning Breeze Talent Requires Monk Rising Sun Kick's damage is increased by your Mastery rating and Thunder Focus Tea resets its cooldown.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101112,
+          101128
+        ],
+        "unlocks": [
+          101116,
+          101114
+        ],
+        "row": 9,
+        "col": 19
+      },
+      {
+        "node_id": 101115,
+        "name": "Focused Thunder",
+        "spell_id": 197895,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 197895,
+            "description": "Focused Thunder Talent Requires Monk Requires level 50 Thunder Focus Tea now empowers your next 2 spells.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101121,
+          101112
+        ],
+        "unlocks": [
+          101116
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101120,
+        "name": "Sheilun's Gift",
+        "spell_id": 399491,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 399491,
+            "description": "Sheilun's Gift Talent 3% of base mana Requires Monk Draws in all nearby clouds of mist, healing the friendly target and up to 2 nearby allies for (416.96% of Spell Power) and an additional [(416.96% of Spell Power) * 10 / 100] per cloud absorbed. A cloud of mist is generated every 8 sec while in combat.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101111,
+          101121
+        ],
+        "unlocks": [
+          101116,
+          101119
+        ],
+        "row": 9,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101220,
+        "name": "Overwhelming Force",
+        "spell_id": 451024,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 451024,
+            "description": "Overwhelming Force Talent Requires Monk Brewmaster Blackout Kick and Tiger Palm deal 15% additional damage to enemies in a line in front of you. Damage reduced above 5 targets. Mistweaver Rising Sun Kick, Blackout Kick and Tiger Palm deal 15% additional damage to enemies in a line in front of you. Damage reduced above 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101221
+        ],
+        "unlocks": [
+          101227
+        ],
+        "row": 10,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101226,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 450912,
+            "name": "Path of Resurgence",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 450912,
+                "description": "Path of Resurgence Talent Requires Monk Chi Burst increases vitality stored by 25% for 10 sec. (3s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 450965,
+            "name": "Way of a Thousand Strikes",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 450965,
+                "description": "Way of a Thousand Strikes Talent Requires Monk Brewmaster Blackout Kick and Tiger Palm contribute 30% additional vitality. Mistweaver Rising Sun Kick, Blackout Kick and Tiger Palm contribute 30% additional vitality.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101225
+        ],
+        "unlocks": [
+          101227
+        ],
+        "row": 10,
+        "col": 10
+      },
+      {
+        "node_id": 101228,
+        "name": "Clarity of Purpose",
+        "spell_id": 451017,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 451017,
+            "description": "Clarity of Purpose Talent Requires Monk Mistweaver Casting Enveloping Mist stores [(Spell Power * 300 / 100) * (1 + Versatility)] additional vitality. Brewmaster Casting Purifying Brew stores [(Spell Power * 300 / 100) * (1 + Versatility)] additional vitality.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101229
+        ],
+        "unlocks": [
+          101227
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109696,
+        "name": "Meditative Focus",
+        "spell_id": 1271105,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271105,
+            "description": "Meditative Focus Talent Requires Monk Blackout Combo: Increases Tiger Palm damage by an additional 50% and Keg Smash reduces the cooldown on your Brews by an additional 1.0 sec. &nbsp;Press the Advantage: Nature damage dealt by your main hand auto-attacks is increased by 100% and they now reduce the cooldown on your Brews by an additional 0.25 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109695
+        ],
+        "unlocks": [
+          101227
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101102,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 467293,
+            "name": "Jadefire Teachings",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 467293,
+                "description": "Jadefire Teachings Talent Requires Monk Ancient Teachings transfers an additional 270% damage to healing. Your Stamina is increased by 8%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 467307,
+            "name": "Rushing Wind Kick",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 467307,
+                "description": "Rushing Wind Kick Talent 1.25% of base mana Requires Monk Brewmaster, Windwalker Kick up a powerful gust of wind, dealing (179.75% of Attack Power) Nature damage in a 25 yd cone to enemies in front of you, split evenly among them. Damage is increased by 6% for each target hit, up to 30%. Mistweaver Kick up a powerful gust of wind, dealing (179.75% of Attack Power) Nature damage in a 25 yd cone to enemies in front of you, split evenly among them. Damage is increased by 6% for each target hit, up to 30%. Heals up to 5 allies affected by your heal over time effects for (500% of Spell Power).",
+                "cooldown": 10.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101127,
+          101103
+        ],
+        "unlocks": [
+          101101
+        ],
+        "row": 10,
+        "col": 16
+      },
+      {
+        "node_id": 101126,
+        "name": "Resplendent Mist",
+        "spell_id": 388020,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388020,
+            "description": "Resplendent Mist Talent Requires Monk Gust of Mists has a 30% chance to do 100% more healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 388020,
+            "description": "Resplendent Mist Talent Requires Monk Gust of Mists has a 30% chance to do 100% more healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101113,
+          101127
+        ],
+        "unlocks": [
+          101106,
+          101101
+        ],
+        "row": 10,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101124,
+        "name": "Secret Infusion",
+        "spell_id": 388491,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388491,
+            "description": "Secret Infusion Talent Requires Monk After using Thunder Focus Tea, your next spell gives 4% of a stat. Only one stat increase may be active at once: Enveloping Mist : Critical strike Renewing Mist : Haste Rising Sun Kick : Versatility",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 388491,
+            "description": "Secret Infusion Talent Requires Monk After using Thunder Focus Tea, your next spell gives 4% of a stat. Only one stat increase may be active at once: Enveloping Mist : Critical strike Renewing Mist : Haste Rising Sun Kick : Versatility",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101113
+        ],
+        "unlocks": [
+          101123,
+          101106
+        ],
+        "row": 10,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101114,
+        "name": "Misty Peaks",
+        "spell_id": 388682,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388682,
+            "description": "Misty Peaks Talent Requires Monk Renewing Mist's heal over time effect has a 5.0% chance to apply Enveloping Mist for 2 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 388682,
+            "description": "Misty Peaks Talent Requires Monk Renewing Mist's heal over time effect has a 5.0% chance to apply Enveloping Mist for 2 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101113,
+          101125
+        ],
+        "unlocks": [
+          101117,
+          101123
+        ],
+        "row": 10,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101116,
+        "name": "Peaceful Mending",
+        "spell_id": 388593,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388593,
+            "description": "Peaceful Mending Talent Requires Monk Allies targeted by Soothing Mist receive 40% more healing from your Enveloping Mist and Renewing Mist effects.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101115,
+          101120,
+          101125
+        ],
+        "unlocks": [
+          101117
+        ],
+        "row": 10,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101119,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 400053,
+            "name": "Veil of Pride",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 400053,
+                "description": "Veil of Pride Talent Requires Monk Increases Sheilun's Gift cloud of mist generation to every 4 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1270621,
+            "name": "Tranquil Tea",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1270621,
+                "description": "Tranquil Tea Talent Requires Monk Consuming Mana Tea generates 1 cloud of mist.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101120
+        ],
+        "unlocks": [
+          101117,
+          101118
+        ],
+        "row": 10,
+        "col": 21
+      },
+      {
+        "node_id": 101227,
+        "name": "Coalescence",
+        "spell_id": 450529,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450529,
+            "description": "Coalescence Talent Requires Monk Brewmaster When Aspect of Harmony deals damage, it has a chance to spread to a nearby enemy. When you directly attack an affected target, it has a chance to intensify, withdrawing additional vitality to increase its effect by up to 20%. Keg Smash no longer contributes vitality, instead drawing on available vitality to increase damage done by up to 100%. Vitality stored by other abilities is increased by 50%. Mistweaver When Aspect of Harmony heals, it has a chance to spread to a nearby ally. When you directly heal an affected target, it has a chance to intensify, withdrawing additional vitality to increase its effect by up to 20%. Vivify no longer contributes vitality, instead drawing on available vitality to increase healing done by up to 100%. Vitality stored by other abilities is increased by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101228,
+          101220,
+          101226,
+          109696
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101101,
+        "name": "Emperor's Elixir",
+        "spell_id": 1268807,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268807,
+            "description": "Emperor's Elixir Talent Requires Monk Thunder Focus Tea now empowers Enveloping Mist and Rising Sun Kick further. Enveloping Mist : Begins a channel of Soothing Mist that may be cast while moving onto your target. Rising Sun Kick : Releases a Jadefire Stomp infront of you. Jadefire Stomp : You release a Jadefire Stomp, dealing (40% of Attack Power) damage to 5 enemies in front of you.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101102,
+          101126
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101106,
+        "name": "Dance of Chi-Ji",
+        "spell_id": 438439,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 438439,
+            "description": "Dance of Chi-Ji Talent Requires Monk Approximately 3 procs per minute Your spells and abilities have a chance to make your next Spinning Crane Kick deal an additional 400% damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101126,
+          101124
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101123,
+        "name": "Mistline",
+        "spell_id": 1280297,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1280297,
+            "description": "Mistline Talent Requires Monk Renewing Mist's healing is increased by 500% on your lowest health ally with its effect.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101124,
+          101114
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101117,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 387991,
+            "name": "Tear of Morning",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 387991,
+                "description": "Tear of Morning Talent Requires Monk Your [ Sheilun's Gift / Invigorating Mist] healing is increased by [ Sheilun's Gift : 20% / 20%] and your Enveloping Mist also heals allies with Renewing Mist for 8% of its healing. The duration of Enveloping Mist is increased by 4 sec while you have a celestial summoned.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 274909,
+            "name": "Rising Mist",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 274909,
+                "description": "Rising Mist Talent Requires Monk Requires level 50 Rising Sun Kick extends your Renewing Mist and Enveloping Mist effects by 4 sec, up to 100% of their original duration. (1s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101119,
+          101114,
+          101116
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 20
+      },
+      {
+        "node_id": 101118,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 404408,
+            "name": "Legacy of Wisdom",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 404408,
+                "description": "Legacy of Wisdom Talent Requires Monk Sheilun's Gift heals 2 additional allies and its cast time is reduced by 0.5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 471761,
+            "name": "Emperor's Favor",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 471761,
+                "description": "Emperor's Favor Talent Requires Monk Sheilun's Gift's healing is increased by 20% and its cast time is reduced by 100%, but it now only heals a single ally.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101119
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 22
+      },
+      {
+        "node_id": 109516,
+        "name": "Spiritfont",
+        "spell_id": 1260511,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1260511,
+            "description": "Spiritfont Talent Requires Monk Approximately 1 procs per minute Rising Sun Kick and Vivify have a chance to activate Spiritfont, causing your next Enveloping Mist to channel Soothing Mist from you onto up to 5 allies at 20% effectiveness for 8 sec. If Spiritfont's Soothing Mists heal a full health target, they will jump to another injured ally or split its healing into your remaining Soothing Mists.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Conduit of the Celestials",
+      "nodes": [
+        {
+          "node_id": 101233,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 442719,
+              "name": "Restore Balance",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 442719,
+                  "description": "Restore Balance Talent Requires Monk Windwalker Damage increased by 5% while Xuen, the White Tiger is active. Mistweaver Healing increased by 5% while Chi-Ji, the Red Crane or Yu'lon, the Jade Serpent is active.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 443625,
+              "name": "Yu'lon's Knowledge",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443625,
+                  "description": "Yu'lon's Knowledge Talent Requires Monk Rising Sun Kick damage increased by 15%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            110067
+          ],
+          "unlocks": [
+            101234
+          ],
+          "row": 3,
+          "col": 11
+        },
+        {
+          "node_id": 101234,
+          "name": "Path of the Falling Star",
+          "spell_id": 1273154,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1273154,
+              "description": "Path of the Falling Star Talent Requires Monk Celestial Conduit's healing and damage is increased by 100% when striking a single target. Each addtional target reduces this bonus by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110221,
+            101233
+          ],
+          "unlocks": [
+            101235,
+            101235
+          ],
+          "row": 4,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101235,
+          "name": "Inner Compass",
+          "spell_id": 443571,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443571,
+              "description": "Inner Compass Talent Requires Monk You switch between alignments after an August Celestial assists you, increasing a corresponding secondary stat by 2%. Crane Stance : Haste Tiger Stance : Critical Strike Ox Stance : Versatility Serpent Stance : Mastery",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101234,
+            101234
+          ],
+          "unlocks": [
+            101239,
+            101239
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101236,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 442743,
+              "name": "Temple Training",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 442743,
+                  "description": "Temple Training Talent Requires Monk Windwalker Fists of Fury and Spinning Crane Kick deal 10% more damage. Mistweaver The healing of Enveloping Mist, Vivify, and Sheilun's Gift is increased by 6%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 442687,
+              "name": "Xuen's Guidance",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 442687,
+                  "description": "Xuen's Guidance Talent Requires Monk Teachings of the Monastery has a 15% chance to refund a charge when consumed. The damage of Tiger Palm is increased by 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            110067,
+            101243,
+            110067
+          ],
+          "unlocks": [
+            101237,
+            101237,
+            101237
+          ],
+          "row": 3,
+          "col": 9
+        },
+        {
+          "node_id": 101237,
+          "name": "Chi-Ji's Swiftness",
+          "spell_id": 443566,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443566,
+              "description": "Chi-Ji's Swiftness Talent Requires Monk Your movement speed is increased by 75% during Celestial Conduit and by 15% for 3 sec after being assisted by any Celestial.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101236,
+            101236,
+            101236
+          ],
+          "unlocks": [
+            101238,
+            101238
+          ],
+          "row": 4,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101238,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 442747,
+              "name": "Niuzao's Protection",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 442747,
+                  "description": "Niuzao's Protection Talent Requires Monk Fortifying Brew grants you an absorb shield for 25% of your maximum health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 443059,
+              "name": "Jade Sanctuary",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443059,
+                  "description": "Jade Sanctuary Talent Requires Monk You heal for 10% of your maximum health instantly when you activate Celestial Conduit and receive 15% less damage for its duration. This effect lingers for an additional 8 sec after Celestial Conduit ends.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101237,
+            101237
+          ],
+          "unlocks": [
+            101239,
+            101239,
+            101239
+          ],
+          "row": 5,
+          "col": 9
+        },
+        {
+          "node_id": 101239,
+          "name": "Unity Within",
+          "spell_id": 443589,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443589,
+              "description": "Unity Within Talent Requires Monk Celestial Conduit can be recast once during its duration to call upon all of the August Celestials to assist you at 200% effectiveness. Unity Within is automatically cast when Celestial Conduit ends if not used before expiration.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101238,
+            110220,
+            101235,
+            101238,
+            101238,
+            109700,
+            109700,
+            101235,
+            101240
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101240,
+          "name": "Stampede of the Ancients",
+          "spell_id": 1262756,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262756,
+              "description": "Stampede of the Ancients Talent Requires Monk Strength of the Black Ox's effect is 400% more effective on your primary target.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110211
+          ],
+          "unlocks": [
+            101239
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101242,
+          "name": "Courage of the White Tiger",
+          "spell_id": 443087,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443087,
+              "description": "Courage of the White Tiger Talent Requires Monk Approximately 4 procs per minute Windwalker Tiger Palm has a chance to cause Xuen to claw your target for (337.5% of Attack Power) Physical damage, healing a nearby ally for 100% of the damage done. Invoke Xuen, the White Tiger guarantees your next cast activates this effect. Mistweaver Tiger Palm, Vivify, and Sheilun's Gift have a chance to cause Xuen to claw a nearby enemy for (337.5% of Attack Power) Physical damage, healing a nearby ally for 100% of the damage done. Invoke Yu'lon, the Jade Serpent or Invoke Chi-Ji, the Red Crane guarantees your next cast activates this effect.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101243,
+            110067,
+            110067
+          ],
+          "unlocks": [
+            110211,
+            110211,
+            110211
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101243,
+          "name": "Invoke Xuen, the White Tiger",
+          "spell_id": 123904,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 123904,
+              "description": "Invoke Xuen, the White Tiger Talent Requires Monk Summons an effigy of Xuen, the White Tiger for 20 sec . Xuen attacks your primary target, and strikes 3 enemies within 10 yards every 1 sec with Tiger Lightning for (25.7% of Attack Power) Nature damage. [ Empowered Tiger Lightning : Every 4 sec, Xuen strikes your enemies with Empowered Tiger Lightning dealing 4% of the damage you have dealt to those targets in the last 4 sec ]",
+              "cooldown": 120.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            101242,
+            110221,
+            101236,
+            109701
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109700,
+          "name": "Flowing Wisdom",
+          "spell_id": 1262672,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262672,
+              "description": "Flowing Wisdom Talent Requires Monk Heart of the Jade Serpent increases your haste by 10% while active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110218,
+            110218
+          ],
+          "unlocks": [
+            101239,
+            101239
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109701,
+          "name": "Heart of the Jade Serpent",
+          "spell_id": 443294,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443294,
+              "description": "Heart of the Jade Serpent Talent Requires Monk Windwalker Strike of the Windlord and Whirling Dragon Punch call upon Yu'lon to increase the cooldown recovery rate of Fists of Fury, Strike of the Windlord, Rising Sun Kick, and Whirling Dragon Punch by 75% for 8 sec. The channel time of Fists of Fury is reduced by 50% while Yu'lon is active. Mistweaver Thunder Focus Tea calls upon Yu'lon to increase the cooldown recovery rate of Renewing Mist, Rising Sun Kick, Life Cocoon, and Thunder Focus Tea by 75% for 8 sec. (2s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101243,
+            110067
+          ],
+          "unlocks": [
+            110218,
+            110218
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110067,
+          "name": "Celestial Conduit",
+          "spell_id": 443028,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443028,
+              "description": "Celestial Conduit Talent 5% of base mana Channeled () Requires Monk Brewmaster, Windwalker The August Celestials empower you, causing you to radiate [(220% of Attack Power) * 5] Nature damage onto enemies and [(1100% of Spell Power) * 5] healing onto up to 5 injured allies within 15 yds over 4 sec, reduced beyond 5 targets. You may move while channeling, but casting other healing or damaging spells cancels this effect. Mistweaver The August Celestials empower you, causing you to radiate [(1100% of Spell Power) * 5] healing onto up to 5 injured allies and [(220% of Attack Power) * 5] Nature damage onto enemies within 20 yds over 4 sec, reduced beyond 5 targets. You may move while channeling, but casting other healing or damaging spells cancels this effect.",
+              "cooldown": 90.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            101236,
+            101242,
+            101236,
+            109701,
+            101233,
+            101242
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110211,
+          "name": "Strength of the Black Ox",
+          "spell_id": 443110,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443110,
+              "description": "Strength of the Black Ox Talent Requires Monk Windwalker After Xuen assists you, your next Blackout Kick refunds 2 stacks of Teachings of the Monastery and causes Niuzao to stomp at your target's location, dealing (200% of Attack Power) damage to nearby enemies, reduced beyond 5 targets. Mistweaver After Xuen assists you, your next Enveloping Mist's cast time is reduced by 50% and causes Niuzao to grant an absorb shield to 5 nearby allies for 0.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101242,
+            101242,
+            101242
+          ],
+          "unlocks": [
+            110220,
+            101240
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110218,
+          "name": "Yu'lon's Avatar",
+          "spell_id": 1262667,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262667,
+              "description": "Yu'lon's Avatar Talent Requires Monk Approximately 1.5 procs per minute Windwalker Heart of the Jade Serpent additionally triggers for 4 sec at 100% effectiveness after you cast Zenith. Mistweaver Vivify and Sheilun's Gift have a chance to trigger Heart of the Jade Serpent for 4 sec at 100% effectiveness. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109701,
+            109701
+          ],
+          "unlocks": [
+            109700,
+            109700
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110220,
+          "name": "Celestial Conduit",
+          "spell_id": 1248989,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248989,
+              "description": "Celestial Conduit Talent Requires Monk After Invoking Xuen, the White Tiger you may cast Celestial Conduit within 1 min. Celestial Conduit : [ Mistweaver : The August Celestials empower you, causing you to radiate [(1100% of Spell Power) * 5] healing onto up to 5 injured allies and [(220% of Attack Power) * 5] Nature damage onto enemies within 20 yds over 4 sec, reduced beyond 5 targets ] You may move while channeling, but casting other healing or damaging spells cancels this effect.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110211
+          ],
+          "unlocks": [
+            101239
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110221,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 442719,
+              "name": "Restore Balance",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 442719,
+                  "description": "Restore Balance Talent Requires Monk Windwalker Damage increased by 5% while Xuen, the White Tiger is active. Mistweaver Healing increased by 5% while Chi-Ji, the Red Crane or Yu'lon, the Jade Serpent is active.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 392986,
+              "name": "Xuen's Bond",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 392986,
+                  "description": "Xuen's Bond Talent Requires Monk Invoke Xuen, the White Tiger's damage is increased by 30% and its cooldown is reduced by 30 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101243
+          ],
+          "unlocks": [
+            101234
+          ],
+          "row": 3,
+          "col": 11
+        }
+      ]
+    },
+    {
+      "name": "Shado-Pan",
+      "nodes": [
+        {
+          "node_id": 101244,
+          "name": "Vigilant Watch",
+          "spell_id": 450993,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450993,
+              "description": "Vigilant Watch Talent Requires Monk Blackout Kick deals an additional 30% critical damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101245
+          ],
+          "unlocks": [
+            101252
+          ],
+          "row": 5,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101245,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 450991,
+              "name": "Whirling Steel",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450991,
+                  "description": "Whirling Steel Talent Requires Monk When your health drops below 50%, summon Whirling Steel, increasing your parry chance and avoidance by 15% for 6 sec. This effect can not occur more than once every 180 sec. (3m cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 450992,
+              "name": "Predictive Training",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450992,
+                  "description": "Predictive Training Talent Requires Monk When you dodge or parry an attack, reduce all damage taken by 10% for the next 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101246
+          ],
+          "unlocks": [
+            101244
+          ],
+          "row": 4,
+          "col": 23
+        },
+        {
+          "node_id": 101246,
+          "name": "Martial Precision",
+          "spell_id": 450990,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450990,
+              "description": "Martial Precision Talent Requires Monk Your attacks penetrate 12% armor.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101248
+          ],
+          "unlocks": [
+            101245
+          ],
+          "row": 3,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101247,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 450979,
+              "name": "Pride of Pandaria",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450979,
+                  "description": "Pride of Pandaria Talent Requires Monk Flurry Strikes have 15% additional chance to critically strike.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 450982,
+              "name": "High Impact",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450982,
+                  "description": "High Impact Talent Requires Monk Enemies who die within 10 sec of being damaged by a Flurry Strike explode, dealing (100% of Attack Power) physical damage to uncontrolled enemies within 8 yds.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101248
+          ],
+          "unlocks": [
+            101254
+          ],
+          "row": 3,
+          "col": 21
+        },
+        {
+          "node_id": 101248,
+          "name": "Flurry Strikes",
+          "spell_id": 450615,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450615,
+              "description": "Flurry Strikes Talent Requires Monk Windwalker Your auto attacks have a chance to generate 1-2 Flurry Charges. When you cast Fists of Fury, unleash all Flurry Charges, dealing (60% of Attack Power) Physical damage per charge. Brewmaster Your auto attacks have a chance to generate 1-2 Flurry Charges. When you cast Keg Smash, unleash all Flurry Charges, dealing (60% of Attack Power) Physical damage per charge.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            101246,
+            101247,
+            101249,
+            109697
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101249,
+          "name": "Veteran's Eye",
+          "spell_id": 450987,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450987,
+              "description": "Veteran's Eye Talent Requires Monk Haste increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101248
+          ],
+          "unlocks": [
+            101250
+          ],
+          "row": 3,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101250,
+          "name": "One Versus Many",
+          "spell_id": 450988,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450988,
+              "description": "One Versus Many Talent Requires Monk Auto attack critical strikes generate double the amount of Flurry Charges. Fists of Fury damage increased by 50%. Keg Smash damage increased by 35%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101249
+          ],
+          "unlocks": [
+            101251
+          ],
+          "row": 4,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101251,
+          "name": "Efficient Training",
+          "spell_id": 450989,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450989,
+              "description": "Efficient Training Talent Requires Monk Brewmaster Energy spenders deal an additional 20% damage. The cooldown of Invoke Niuzao, the Black Ox is reduced by 25 sec. Windwalker Energy spenders deal an additional 20% damage. The cooldown of Zenith is reduced by 10 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101250
+          ],
+          "unlocks": [
+            101252
+          ],
+          "row": 5,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101252,
+          "name": "Wisdom of the Wall",
+          "spell_id": 1272821,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272821,
+              "description": "Wisdom of the Wall Talent Requires Monk Brewmaster Invoke Niuzao, the Black Ox causes Breath of Fire to launch 3 Flurry Strikes. Windwalker Zenith causes Rising Sun Kick and Spinning Crane Kick to launch 3 Flurry Strikes. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101244,
+            101253,
+            101251,
+            109699
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101253,
+          "name": "Against All Odds",
+          "spell_id": 450986,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450986,
+              "description": "Against All Odds Talent Requires Monk Your agility is increased by 4%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101254
+          ],
+          "unlocks": [
+            101252
+          ],
+          "row": 5,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101254,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1272844,
+              "name": "Combat Stance",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1272844,
+                  "description": "Combat Stance Talent Requires Monk The cooldown of Roll is decreased by 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1272849,
+              "name": "Initiator's Edge",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1272849,
+                  "description": "Initiator's Edge Talent Requires Monk Movement speed is increased by 50% for the first 8 sec of combat.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101247
+          ],
+          "unlocks": [
+            101253
+          ],
+          "row": 4,
+          "col": 21
+        },
+        {
+          "node_id": 109697,
+          "name": "Shado Over the Battlefield",
+          "spell_id": 1262612,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262612,
+              "description": "Shado Over the Battlefield Talent Requires Monk Flurry Strikes deal (52% of Attack Power) Nature damage to all enemies within 6 yds, reduced beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101248
+          ],
+          "unlocks": [
+            109698
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109698,
+          "name": "Stand Ready",
+          "spell_id": 1262603,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262603,
+              "description": "Stand Ready Talent Requires Monk Brewmaster Activating Invoke Niuzao, the Black Ox instantly grants 10 stacks of Flurry Strikes that trigger on your next attack at 70% effectiveness. Windwalker Activating Zenith instantly grants 10 stacks of Flurry Strikes that trigger on your next attack at 70% effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109697
+          ],
+          "unlocks": [
+            109699
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109699,
+          "name": "Weapons of the Wall",
+          "spell_id": 1262610,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262610,
+              "description": "Weapons of the Wall Talent Requires Monk Brewmaster Invoke Niuzao, the Black Ox's stomp damage increased by 20%.. Windwalker Zenith Stomp damage increased by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109698
+          ],
+          "unlocks": [
+            101252
+          ],
+          "row": 5,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Master of Harmony",
+      "nodes": [
+        {
+          "node_id": 101220,
+          "name": "Overwhelming Force",
+          "spell_id": 451024,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 451024,
+              "description": "Overwhelming Force Talent Requires Monk Brewmaster Blackout Kick and Tiger Palm deal 15% additional damage to enemies in a line in front of you. Damage reduced above 5 targets. Mistweaver Rising Sun Kick, Blackout Kick and Tiger Palm deal 15% additional damage to enemies in a line in front of you. Damage reduced above 5 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101221
+          ],
+          "unlocks": [
+            101227
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101221,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 451041,
+              "name": "Tiger's Vigor",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 451041,
+                  "description": "Tiger's Vigor Talent Requires Monk Casting Tiger's Lust reduces the remaining cooldown on Roll by 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 451043,
+              "name": "Roar from the Heavens",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 451043,
+                  "description": "Roar from the Heavens Talent Requires Monk Tiger's Lust grants 20% movement speed to up to 2 allies near its target.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101222
+          ],
+          "unlocks": [
+            101220
+          ],
+          "row": 9,
+          "col": 9
+        },
+        {
+          "node_id": 101222,
+          "name": "Manifestation",
+          "spell_id": 450875,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450875,
+              "description": "Manifestation Talent Requires Monk Brewmaster Chi Burst and Chi Wave deal 50% increased damage and healing. Mistweaver Chi Wave deals 50% increased damage and healing.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101223
+          ],
+          "unlocks": [
+            101221
+          ],
+          "row": 8,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101223,
+          "name": "Aspect of Harmony",
+          "spell_id": 450508,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450508,
+              "description": "Aspect of Harmony Talent Requires Monk Mistweaver Store vitality from 10% of your damage dealt and 30% of your healing. Vitality stored from overhealing is reduced. For 10 sec after casting Thunder Focus Tea your spells and abilities draw upon the stored vitality to deal 40% additional healing over 8 sec. Brewmaster Store vitality from 12% of your damage dealt and 6% of your effective healing. For 10 sec after casting Celestial Brew your spells and abilities draw upon the stored vitality to deal 40% additional damage over 8 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            101230,
+            101222,
+            101224,
+            109694
+          ],
+          "row": 7,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101224,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 450867,
+              "name": "Purified Spirit",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450867,
+                  "description": "Purified Spirit Talent Requires Monk Brewmaster When Aspect of Harmony ends, any remaining vitality is expelled as damage over 8 sec, split among nearby targets. Mistweaver When Aspect of Harmony ends, any remaining vitality is expelled as healing over 8 sec, split among nearby targets.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 450870,
+              "name": "Harmonic Gambit",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450870,
+                  "description": "Harmonic Gambit Talent Requires Monk Brewmaster During Aspect of Harmony, Expel Harm and Vivify withdraw vitality to heal for an additional 40% over 8 sec. Mistweaver During Aspect of Harmony, Rising Sun Kick, Blackout Kick, and Tiger Palm also withdraw vitality to damage enemies for an additional 20% over 8 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101223
+          ],
+          "unlocks": [
+            101225
+          ],
+          "row": 8,
+          "col": 10
+        },
+        {
+          "node_id": 101225,
+          "name": "Endless Draught",
+          "spell_id": 450892,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450892,
+              "description": "Endless Draught Talent Requires Monk Brewmaster Celestial Brew has 1 additional charge. Mistweaver Thunder Focus Tea has 1 additional charge.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101224
+          ],
+          "unlocks": [
+            101226
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101226,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 450912,
+              "name": "Path of Resurgence",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450912,
+                  "description": "Path of Resurgence Talent Requires Monk Chi Burst increases vitality stored by 25% for 10 sec. (3s cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 450965,
+              "name": "Way of a Thousand Strikes",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450965,
+                  "description": "Way of a Thousand Strikes Talent Requires Monk Brewmaster Blackout Kick and Tiger Palm contribute 30% additional vitality. Mistweaver Rising Sun Kick, Blackout Kick and Tiger Palm contribute 30% additional vitality.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101225
+          ],
+          "unlocks": [
+            101227
+          ],
+          "row": 10,
+          "col": 10
+        },
+        {
+          "node_id": 101227,
+          "name": "Coalescence",
+          "spell_id": 450529,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450529,
+              "description": "Coalescence Talent Requires Monk Brewmaster When Aspect of Harmony deals damage, it has a chance to spread to a nearby enemy. When you directly attack an affected target, it has a chance to intensify, withdrawing additional vitality to increase its effect by up to 20%. Keg Smash no longer contributes vitality, instead drawing on available vitality to increase damage done by up to 100%. Vitality stored by other abilities is increased by 50%. Mistweaver When Aspect of Harmony heals, it has a chance to spread to a nearby ally. When you directly heal an affected target, it has a chance to intensify, withdrawing additional vitality to increase its effect by up to 20%. Vivify no longer contributes vitality, instead drawing on available vitality to increase healing done by up to 100%. Vitality stored by other abilities is increased by 50%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101228,
+            101220,
+            101226,
+            109696
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101228,
+          "name": "Clarity of Purpose",
+          "spell_id": 451017,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 451017,
+              "description": "Clarity of Purpose Talent Requires Monk Mistweaver Casting Enveloping Mist stores [(Spell Power * 300 / 100) * (1 + Versatility)] additional vitality. Brewmaster Casting Purifying Brew stores [(Spell Power * 300 / 100) * (1 + Versatility)] additional vitality.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101229
+          ],
+          "unlocks": [
+            101227
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 101229,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 451036,
+              "name": "Mantra of Purity",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 451036,
+                  "description": "Mantra of Purity Talent Requires Monk Brewmaster Purifying Brew removes 10% additional Stagger and causes you to absorb up to [(Attack Power * 100 / 100) * (1 + Versatility)] incoming Stagger. Mistweaver When cast on yourself, your single-target healing spells heal for 10% more and restore an additional (150% of Spell Power) health over 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 451029,
+              "name": "Mantra of Tenacity",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 451029,
+                  "description": "Mantra of Tenacity Talent Requires Monk Brewmaster Fortifying Brew applies a Chi Cocoon, absorbing [Total Health * 12 / 100 * (1 + Versatility)] damage. Mistweaver Fortifying Brew grants 20% Stagger.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            101230
+          ],
+          "unlocks": [
+            101228
+          ],
+          "row": 9,
+          "col": 11
+        },
+        {
+          "node_id": 101230,
+          "name": "Balanced Stratagem",
+          "spell_id": 450889,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450889,
+              "description": "Balanced Stratagem Talent Requires Monk Casting a Physical spell or ability increases the damage and healing of your next Fire or Nature spell or ability by 3%, and vice versa. Stacks up to 5. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101223
+          ],
+          "unlocks": [
+            101229
+          ],
+          "row": 8,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109694,
+          "name": "Harmonic Surge",
+          "spell_id": 1270958,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270958,
+              "description": "Harmonic Surge Talent Requires Monk Mistweaver Casting Thunder Focus Tea guarantees that your next 2 casts of Tiger Palm or Vivify will trigger a Harmonic Surge, dealing [10 * (400% of Spell Power) / 100] Nature damage split between your target and other nearby enemies, and [40 * (500% of Spell Power) / 100] healing to up to 5 injured allies. Brewmaster Casting guarantees that your next 2 casts of Tiger Palm or Vivify will trigger a Harmonic Surge, dealing [55 * (400% of Spell Power) / 100] Nature damage split between your target and other nearby enemies, and [10 * (500% of Spell Power) / 100] healing to up to 5 injured allies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            101223
+          ],
+          "unlocks": [
+            109695
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109695,
+          "name": "Potential Energy",
+          "spell_id": 1271048,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271048,
+              "description": "Potential Energy Talent Requires Monk Brewmaster Casting Keg Smash guarantees that your next cast of Tiger Palm or Vivify will cause a Harmonic Surge. Mistweaver Casting Rising Sun Kick or Rushing Wind Kick guarantees that your next cast of Tiger Palm or Vivify will cause a Harmonic Surge.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109694
+          ],
+          "unlocks": [
+            109696
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109696,
+          "name": "Meditative Focus",
+          "spell_id": 1271105,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271105,
+              "description": "Meditative Focus Talent Requires Monk Blackout Combo: Increases Tiger Palm damage by an additional 50% and Keg Smash reduces the cooldown on your Brews by an additional 1.0 sec. &nbsp;Press the Advantage: Nature damage dealt by your main hand auto-attacks is increased by 100% and they now reduce the cooldown on your Brews by an additional 0.25 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109695
+          ],
+          "unlocks": [
+            101227
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

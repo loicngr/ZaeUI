@@ -1,0 +1,4798 @@
+{
+  "class": "Death Knight",
+  "spec": "Frost",
+  "scraped_at": "2026-03-25T17:45:24.747264+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99821,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 11
+      },
+      {
+        "node_id": 76081,
+        "name": "Icebound Fortitude",
+        "spell_id": 48792,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 48792,
+            "description": "Icebound Fortitude Talent Requires Death Knight Your blood freezes, granting immunity to Stun effects and reducing all damage you take by 30% for 8 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          76045
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76071,
+        "name": "Death Strike",
+        "spell_id": 49998,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 49998,
+            "description": "Death Strike Talent Requires Death Knight Requires Melee Weapon Blood, Unholy Focuses dark power into a strike that deals (153.12% of Attack Power) Physical damage and heals you for (20 / Voracious : 21 / Improved Death Strike : 32 )% of all damage taken in the last 5 sec, minimum 7.0 % of maximum health. Frost Focuses dark power into a strike with both weapons, that deals a total of [(153.12% of Attack Power) + (29.835% of Attack Power)] Physical damage and heals you for (20 / Voracious : 21 / Improved Death Strike : 32 )% of all damage taken in the last 5 sec, minimum 7.0 % of maximum health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          76067
+        ],
+        "row": 2,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76072,
+        "name": "Raise Dead",
+        "spell_id": 46585,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 46585,
+            "description": "Raise Dead Talent Requires Death Knight Raises a [ Glyph of the Geist : geist / ghoul] to fight by your side. &nbsp;You can have a maximum of one [ Glyph of the Geist : geist / ghoul] at a time. Lasts 1 min.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          76073
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76045,
+        "name": "Runic Attenuation",
+        "spell_id": 207104,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207104,
+            "description": "Runic Attenuation Talent Requires Death Knight Requires level 25 Approximately 10.8 procs per minute Auto attacks have a chance to generate .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76081
+        ],
+        "unlocks": [
+          76044,
+          76084,
+          76052
+        ],
+        "row": 3,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76067,
+        "name": "Improved Death Strike",
+        "spell_id": 374277,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374277,
+            "description": "Improved Death Strike Talent Requires Death Knight Frost, Unholy Death Strike's cost is reduced by 10, and its healing is increased by 60%. Blood Death Strike's cost is reduced by 5, and its healing is increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76071
+        ],
+        "unlocks": [
+          76069,
+          76074,
+          76052
+        ],
+        "row": 3,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76073,
+        "name": "Cleaving Strikes",
+        "spell_id": 316916,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 316916,
+            "description": "Cleaving Strikes Talent Requires Death Knight Frost Frostscythe deals 20% increased damage during Remorseless Winter. Blood Heart Strike hits up to 3 additional enemies while you remain in Death and Decay. When leaving your Death and Decay you retain its bonus effects for 4 sec. Unholy Scourge Strike and Festering Strike deal 10% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76072
+        ],
+        "unlocks": [
+          76059,
+          76069,
+          110029
+        ],
+        "row": 3,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76084,
+        "name": "Mind Freeze",
+        "spell_id": 47528,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 47528,
+            "description": "Mind Freeze Talent Requires Death Knight Smash the target's mind with cold, interrupting spellcasting and preventing any spell in that school from being cast for 5 sec.",
+            "cooldown": 15.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76045
+        ],
+        "unlocks": [
+          101708,
+          76083
+        ],
+        "row": 4,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76044,
+        "name": "Blinding Sleet",
+        "spell_id": 207167,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207167,
+            "description": "Blinding Sleet Talent Requires Death Knight Requires level 30 Targets in a cone in front of you are blinded, causing them to wander disoriented for 5 sec. Damage may cancel the effect. When Blinding Sleet ends, enemies are slowed by 50% for 6 sec.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76045
+        ],
+        "unlocks": [
+          101708
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76052,
+        "name": "Gloom Ward",
+        "spell_id": 391571,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391571,
+            "description": "Gloom Ward Talent Requires Death Knight Absorbs are 15% more effective on you.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 391571,
+            "description": "Gloom Ward Talent Requires Death Knight Absorbs are 15% more effective on you.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76045,
+          76067
+        ],
+        "unlocks": [
+          76068,
+          76066,
+          101708
+        ],
+        "row": 4,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76074,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 391546,
+            "name": "March of Darkness",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 391546,
+                "description": "March of Darkness Talent Requires Death Knight Death's Advance grants an additional 25% movement speed over the first 3 sec. [ Price of Progress : Movement speed while using Price of Progress is increased by 5% ]",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 212552,
+            "name": "Wraith Walk",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 212552,
+                "description": "Wraith Walk Talent Channeled () Requires Death Knight Requires level 40 (Blood, Frost, Unholy) Embrace the power of the Shadowlands, removing all root effects and increasing your movement speed by 70 % for 4 sec. Taking any action cancels the effect. While active, your movement speed cannot be reduced below 170%.",
+                "cooldown": 60.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          76067
+        ],
+        "unlocks": [
+          76068
+        ],
+        "row": 4,
+        "col": 4
+      },
+      {
+        "node_id": 76069,
+        "name": "Unholy Momentum",
+        "spell_id": 374265,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374265,
+            "description": "Unholy Momentum Talent Requires Death Knight Increases Haste by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 374265,
+            "description": "Unholy Momentum Talent Requires Death Knight Increases Haste by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76073,
+          76067
+        ],
+        "unlocks": [
+          76075,
+          76068,
+          76061
+        ],
+        "row": 4,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76059,
+        "name": "Control Undead",
+        "spell_id": 111673,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 111673,
+            "description": "Control Undead Talent 1 Rune / - Requires Death Knight Dominates the target undead creature up to level 38, forcing it to do your bidding for 5 min.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76073
+        ],
+        "unlocks": [
+          76061
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110029,
+        "name": "Enfeeble",
+        "spell_id": 392566,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 392566,
+            "description": "Enfeeble Talent Requires Death Knight Your ghoul's attacks have a chance to apply Enfeeble, reducing the enemies movement speed by 30% and the damage they deal to you by 12% for 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76073
+        ],
+        "unlocks": [
+          76060,
+          76061
+        ],
+        "row": 4,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76083,
+        "name": "Coldthirst",
+        "spell_id": 378848,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378848,
+            "description": "Coldthirst Talent Requires Death Knight Successfully interrupting an enemy with Mind Freeze grants and reduces its cooldown by 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76084
+        ],
+        "unlocks": [
+          76085
+        ],
+        "row": 5,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101708,
+        "name": "Proliferating Chill",
+        "spell_id": 373930,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373930,
+            "description": "Proliferating Chill Talent Requires Death Knight Chains of Ice affects 1 additional nearby enemy.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76084,
+          76044,
+          76052
+        ],
+        "unlocks": [
+          76085
+        ],
+        "row": 5,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76066,
+        "name": "Permafrost",
+        "spell_id": 207200,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207200,
+            "description": "Permafrost Talent Requires Death Knight Requires level 40 Frost, Unholy Your auto attack damage grants you an absorb shield equal to 30% of the damage dealt.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76052
+        ],
+        "unlocks": [
+          76065,
+          76085,
+          110030
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76068,
+        "name": "Veteran of the Third War",
+        "spell_id": 48263,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 48263,
+            "description": "Veteran of the Third War Talent Requires Death Knight Frost, Unholy Stamina increased by 12%. Blood Stamina increased by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76069,
+          76074,
+          76052
+        ],
+        "unlocks": [
+          76065
+        ],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76075,
+        "name": "Death Pact",
+        "spell_id": 48743,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 48743,
+            "description": "Death Pact Talent Requires Death Knight Requires level 45 (Blood) Create a death pact that heals you for 50% of your maximum health, but absorbs incoming healing equal to 30% of your max health for 15 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76069
+        ],
+        "unlocks": [
+          76076,
+          76065,
+          110031
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76061,
+        "name": "Brittle",
+        "spell_id": 374504,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374504,
+            "description": "Brittle Talent Requires Death Knight Your diseases have a chance to weaken your enemy causing your attacks against them to deal 6% increased damage for 5 sec. (Proc chance: 15%)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76069,
+          76059,
+          110029
+        ],
+        "unlocks": [
+          76076
+        ],
+        "row": 5,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76060,
+        "name": "Blood Bond",
+        "spell_id": 1267028,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267028,
+            "description": "Blood Bond Talent Requires Death Knight While you are below 50% health, your Ghoul sacrifices 4% of its maximum health to heal you for 1% of your maximum health every sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110029
+        ],
+        "unlocks": [
+          76076
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76085,
+        "name": "Icy Talons",
+        "spell_id": 194878,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 194878,
+            "description": "Icy Talons Talent Requires Death Knight Requires level 15 Your Runic Power spending abilities increase your melee attack speed by 6% for 10 sec, stacking up to 3 times. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76066,
+          101708,
+          76083
+        ],
+        "unlocks": [
+          76064,
+          76086
+        ],
+        "row": 6,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110030,
+        "name": "Death Notes",
+        "spell_id": 1266819,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266819,
+            "description": "Death Notes Talent Requires Death Knight Raise Ally costs 30 less Runic Power.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76066
+        ],
+        "unlocks": [
+          76064
+        ],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76065,
+        "name": "Anti-Magic Zone",
+        "spell_id": 51052,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 51052,
+            "description": "Anti-Magic Zone Talent Requires Death Knight Places an Anti-Magic Zone for 6 sec , reducing the magic damage taken by party or raid members by 15%.",
+            "cooldown": 240.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76068,
+          76075,
+          76066
+        ],
+        "unlocks": [
+          76064,
+          76048,
+          76046
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110031,
+        "name": "Death Defiance",
+        "spell_id": 1266818,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266818,
+            "description": "Death Defiance Talent Requires Death Knight The cooldown of Death Pact is reduced by 30 sec, and you receive 50% increased healing while its healing absorb is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76075
+        ],
+        "unlocks": [
+          76046
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76076,
+        "name": "Unholy Bond",
+        "spell_id": 374261,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374261,
+            "description": "Unholy Bond Talent Requires Death Knight Increases the effectiveness of your Runeforge effects by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76075,
+          76061,
+          76060
+        ],
+        "unlocks": [
+          76057,
+          76046
+        ],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76086,
+        "name": "Ice Prison",
+        "spell_id": 454786,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454786,
+            "description": "Ice Prison Talent Requires Death Knight Chains of Ice now also roots enemies for 4 sec but its cooldown is increased to 12 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76085
+        ],
+        "unlocks": [
+          76087
+        ],
+        "row": 7,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76064,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 221562,
+            "name": "Asphyxiate",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 221562,
+                "description": "Asphyxiate Talent Requires Death Knight Lifts the enemy target off the ground, crushing their throat with dark energy and stunning them for 5 sec.",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 276079,
+            "name": "Death's Reach",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 276079,
+                "description": "Death's Reach Talent Requires Death Knight Requires level 30 (Frost, Unholy) Increases the range of Death Grip by 10 yds. Killing an enemy that yields experience or honor resets the cooldown of Death Grip.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          76085,
+          76065,
+          110030
+        ],
+        "unlocks": [
+          76078,
+          76087
+        ],
+        "row": 7,
+        "col": 3
+      },
+      {
+        "node_id": 76048,
+        "name": "Assimilation",
+        "spell_id": 374383,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374383,
+            "description": "Assimilation Talent Requires Death Knight The cooldown of Anti-Magic Zone is reduced by 60 sec and its duration is increased by 2 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76065
+        ],
+        "unlocks": [
+          76078
+        ],
+        "row": 7,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76046,
+        "name": "Anti-Magic Barrier",
+        "spell_id": 205727,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 205727,
+            "description": "Anti-Magic Barrier Talent Requires Death Knight Requires level 35 Reduces the cooldown of Anti-Magic Shell by 20 sec and increases its duration and amount absorbed by 40%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Anti-Magic Shell",
+                "type": "cd_reduction",
+                "value": 20,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Anti-Magic Shell by 20 sec and increases its duration and amount absorbed",
+                "type": "cd_reduction",
+                "value": 40,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          110031,
+          76076,
+          76065
+        ],
+        "unlocks": [
+          76058,
+          76078
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76057,
+        "name": "Grip of the Dead",
+        "spell_id": 273952,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 273952,
+            "description": "Grip of the Dead Talent Requires Death Knight Requires level 30 (Unholy) Requires level 40 (Blood) [ Defile / Death and Decay] reduces the movement speed of enemies within its area by 90%, decaying by 10% every sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76076
+        ],
+        "unlocks": [
+          76058
+        ],
+        "row": 7,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76087,
+        "name": "Suppression",
+        "spell_id": 374049,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374049,
+            "description": "Suppression Talent Requires Death Knight Damage taken from area of effect attacks reduced by 3%. When suffering a loss of control effect, this bonus is increased by an additional 6% for 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76086,
+          76064
+        ],
+        "unlocks": [
+          76088,
+          76051
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76078,
+        "name": "Blood Scent",
+        "spell_id": 374030,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374030,
+            "description": "Blood Scent Talent Requires Death Knight Increases Leech by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76048,
+          76064,
+          76046
+        ],
+        "unlocks": [
+          76055,
+          76051
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76058,
+        "name": "Unholy Endurance",
+        "spell_id": 389682,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389682,
+            "description": "Unholy Endurance Talent Requires Death Knight Increases Lichborne duration by 2 sec and reduces the cooldown by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76057,
+          76046
+        ],
+        "unlocks": [
+          76056,
+          76055
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76088,
+        "name": "Osmosis",
+        "spell_id": 454835,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454835,
+            "description": "Osmosis Talent Requires Death Knight Anti-Magic Shell increases healing received by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76087
+        ],
+        "unlocks": [
+          76079
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76051,
+        "name": "Insidious Chill",
+        "spell_id": 391566,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391566,
+            "description": "Insidious Chill Talent Requires Death Knight Your auto-attacks reduce the target's auto-attack speed by 5% for 30 sec, stacking up to 4 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76078,
+          76087
+        ],
+        "unlocks": [
+          76079,
+          76080
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76055,
+        "name": "Runic Protection",
+        "spell_id": 454788,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454788,
+            "description": "Runic Protection Talent Requires Death Knight Your chance to be critically struck is reduced by 3% and your Armor is increased by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76058,
+          76078
+        ],
+        "unlocks": [
+          76054,
+          76080
+        ],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76056,
+        "name": "Blood Draw",
+        "spell_id": 374598,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374598,
+            "description": "Blood Draw Talent Requires Death Knight When you fall below 30% health you drain (120% of Attack Power) health from nearby enemies, the damage you take is reduced by 10% and your Death Strike cost is reduced by 10 for 8 sec. Can only occur every 2 min.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76058
+        ],
+        "unlocks": [
+          76054
+        ],
+        "row": 9,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76079,
+        "name": "Rune Mastery",
+        "spell_id": 374574,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374574,
+            "description": "Rune Mastery Talent Requires Death Knight Consuming a Rune has a chance to increase your Strength by 3% for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 374574,
+            "description": "Rune Mastery Talent Requires Death Knight Consuming a Rune has a chance to increase your Strength by 3% for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76051,
+          76088
+        ],
+        "unlocks": [
+          76050,
+          102008
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76080,
+        "name": "Subduing Grasp",
+        "spell_id": 454822,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454822,
+            "description": "Subduing Grasp Talent Requires Death Knight When you would pull an enemy, the damage they deal to you is reduced by 6% for 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76055,
+          76051
+        ],
+        "unlocks": [
+          102007,
+          76050
+        ],
+        "row": 10,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76054,
+        "name": "Will of the Necropolis",
+        "spell_id": 206967,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 206967,
+            "description": "Will of the Necropolis Talent Requires Death Knight Requires level 35 Damage taken below 30% Health is reduced by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 206967,
+            "description": "Will of the Necropolis Talent Requires Death Knight Requires level 35 Damage taken below 30% Health is reduced by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76055,
+          76056
+        ],
+        "unlocks": [
+          102007,
+          76053
+        ],
+        "row": 10,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102008,
+        "name": "Null Magic",
+        "spell_id": 454842,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454842,
+            "description": "Null Magic Talent Requires Death Knight Frost, Unholy Magic damage taken is reduced by 5% and the duration of harmful Magic effects against you are reduced by 35%. Blood Magic damage taken is reduced by 8% and the duration of harmful Magic effects against you are reduced by 35%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76079
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76050,
+        "name": "Unyielding Will",
+        "spell_id": 457574,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 457574,
+            "description": "Unyielding Will Talent Requires Death Knight Anti-Magic Shell now removes all harmful magical effects when activated, but its cooldown is increased by 20 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76080,
+          76079
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102007,
+        "name": "Death's Echo",
+        "spell_id": 356367,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 356367,
+            "description": "Death's Echo Talent Requires Death Knight Death's Advance, Death and Decay, and Death Grip have 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76080,
+          76054
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76053,
+        "name": "Vestigial Shell",
+        "spell_id": 454851,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454851,
+            "description": "Vestigial Shell Talent Requires Death Knight Casting Anti-Magic Shell grants 2 nearby allies a Lesser Anti-Magic Shell that Absorbs up to 0 magic damage and reduces the duration of harmful Magic effects against them by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76054
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 95062,
+        "name": "Reaper's Mark",
+        "spell_id": 439843,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 439843,
+            "description": "Reaper's Mark Talent 2 Runes Requires Death Knight Frost Viciously slice into the soul of your enemy, dealing (312% of Attack Power) Shadowfrost damage and applying Reaper's Mark. Each time you deal Shadow or Frost damage, add a stack of Reaper's Mark. After 12 sec or reaching 40 stacks, the mark explodes, dealing (40.4853% of Attack Power) damage per stack. Reaper's Mark travels to an unmarked enemy nearby if the target dies. Blood Viciously slice into the soul of your enemy, dealing (368.55% of Attack Power) Shadowfrost damage and applying Reaper's Mark. Each time you deal Shadow or Frost damage, add a stack of Reaper's Mark. After 12 sec or reaching 40 stacks, the mark explodes, dealing (45.348% of Attack Power) damage per stack. Reaper's Mark travels to an unmarked enemy nearby if the target dies.",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          95058,
+          95036,
+          95043,
+          109735
+        ],
+        "row": 2,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76115,
+        "name": "Frost Strike",
+        "spell_id": 49143,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 49143,
+            "description": "Frost Strike Talent Requires Death Knight Chill your [weapon with icy power and quickly strike the enemy, dealing [(114.834% of Attack Power)] Frost damage.][weapons with icy power and quickly strike the enemy with both, dealing a total of [(80.7582% of Attack Power) + (80.7582% of Attack Power)] Frost damage.]",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          76116,
+          76114
+        ],
+        "row": 2,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95036,
+        "name": "Wave of Souls",
+        "spell_id": 439851,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 439851,
+            "description": "Wave of Souls Talent Requires Death Knight Blood Reaper's Mark sends forth bursts of Shadowfrost energy and back, dealing (211.92% of Attack Power) Shadowfrost damage both ways to all enemies caught in its path. Wave of Souls critical strikes cause enemies to take 5% increased Shadowfrost damage for 15 sec, stacking up to 2 times, and it is always a critical strike on its way back. Frost Reaper's Mark sends forth bursts of Shadowfrost energy and back, dealing (96.7079% of Attack Power) Shadowfrost damage both ways to all enemies caught in its path. Wave of Souls critical strikes cause enemies to take 5% increased Shadowfrost damage for 15 sec, stacking up to 2 times, and it is always a critical strike on its way back.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95062
+        ],
+        "unlocks": [
+          95061
+        ],
+        "row": 3,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95058,
+        "name": "Wither Away",
+        "spell_id": 441894,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441894,
+            "description": "Wither Away Talent Requires Death Knight Blood Blood Plague deals its damage 100% faster, and the second scythe of Exterminate applies Blood Plague. Frost Frost Fever deals its damage 100% faster, and the second scythe of Exterminate applies Frost Fever.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95062
+        ],
+        "unlocks": [
+          95034
+        ],
+        "row": 3,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95043,
+        "name": "Bind in Darkness",
+        "spell_id": 440031,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 440031,
+            "description": "Bind in Darkness Talent Requires Death Knight Blood Blood Boil deals 30% increased damage, and is now Shadowfrost. Shadowfrost damage applies 2 stacks to Reaper's Mark and 4 stacks when it is a critical strike. Frost Rime empowered Howling Blast deals 60% increased damage to its main target, and is now Shadowfrost. Shadowfrost damage applies 2 stacks to Reaper's Mark and 4 stacks when it is a critical strike.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95062
+        ],
+        "unlocks": [
+          95035
+        ],
+        "row": 3,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109735,
+        "name": "Frigid Resolve",
+        "spell_id": 1265859,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265859,
+            "description": "Frigid Resolve Talent Requires Death Knight Blood The effectiveness of Permafrost is increased by 100% and Exterminate grants Permafrost equal to 10% of the damage dealt. Permafrost Your auto attack damage grants you an absorb shield equal to 40% of the damage dealt. Frost The effectiveness of Permafrost is increased by 50%. Permafrost Your auto attack damage grants you an absorb shield equal to 40% of the damage dealt.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95062
+        ],
+        "unlocks": [
+          109734
+        ],
+        "row": 3,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76116,
+        "name": "Obliterate",
+        "spell_id": 49020,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 49020,
+            "description": "Obliterate Talent 2 Runes Requires Death Knight A brutal attack [that deals [(105.751% of Attack Power)] Physical and [(105.751% of Attack Power)] Frost damage.][with both weapons that deals a total of [((71.4357% of Attack Power) + (71.4357% of Attack Power))] Physical and [((71.4357% of Attack Power) + (71.4357% of Attack Power))] Frost damage.]",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76115
+        ],
+        "unlocks": [
+          76117,
+          76096
+        ],
+        "row": 3,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76114,
+        "name": "Howling Blast",
+        "spell_id": 49184,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 49184,
+            "description": "Howling Blast Talent 1 Rune / - Requires Death Knight Blast the target with a frigid wind, dealing [(22.0356% of Attack Power) * [(Attack Power * 0.98)][((Attack Power + Offhand Attack Power) * 2 / 3)] -- 2H, DW / Attack Power] [ Northrend Winds : Frost damage and applying Frost Fever to the target / Frost damage to that foe, and reduced damage to all other enemies within 10 yards, infecting all targets with Frost Fever.] Frost Fever A disease that deals [(171.2% of Attack Power) * [(Attack Power * 0.98)][((Attack Power + Offhand Attack Power) * 2 / 3)] -- 2H, DW / Attack Power] Frost damage over 24 sec and has a chance to grant the Death Knight each time it deals damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76115
+        ],
+        "unlocks": [
+          76113,
+          76096
+        ],
+        "row": 3,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95061,
+        "name": "Soul Rupture",
+        "spell_id": 437161,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 437161,
+            "description": "Soul Rupture Talent Requires Death Knight Blood When Reaper's Mark explodes, it deals 10% of the damage dealt to nearby enemies. Frost When Reaper's Mark explodes, it deals 20% of the damage dealt to nearby enemies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95036
+        ],
+        "unlocks": [
+          95032
+        ],
+        "row": 4,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95034,
+        "name": "Grim Reaper",
+        "spell_id": 434905,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 434905,
+            "description": "Grim Reaper Talent Requires Death Knight Reaper's Mark initial strike grants [3 charges of Bone Shield][Killing Machine]. Reaper's Mark explosion deals up to 30% increased damage based on your target's missing health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95058
+        ],
+        "unlocks": [
+          95057
+        ],
+        "row": 4,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95035,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 440476,
+            "name": "Pact of the Deathbringer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440476,
+                "description": "Pact of the Deathbringer Talent Requires Death Knight When you suffer a damaging effect equal to 25% of your maximum health, you instantly cast Death Pact at 50% effectiveness. May only occur every 2 min. When a Reaper's Mark explodes, the cooldowns of this effect and Death Pact are reduced by 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 440282,
+            "name": "Rune Carved Plates",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440282,
+                "description": "Rune Carved Plates Talent Requires Death Knight Each Rune spent reduces the magic damage you take by 1.5% and each Rune generated reduces the physical damage you take by 1.5% for 5 sec, up to 5 times.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95043
+        ],
+        "unlocks": [
+          95049
+        ],
+        "row": 4,
+        "col": 11
+      },
+      {
+        "node_id": 109734,
+        "name": "Deathly Blows",
+        "spell_id": 1265932,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265932,
+            "description": "Deathly Blows Talent Requires Death Knight Blood Death Strike damage increased by 12%. Frost Frost Strike damage is increased by 15% and Glacial Advance damage is increased by 5%. Reaper's Mark grants 3 charges of Bonegrinder if it is known. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109735
+        ],
+        "unlocks": [
+          109733
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76117,
+        "name": "Killing Machine",
+        "spell_id": 51128,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 51128,
+            "description": "Killing Machine Talent Requires Death Knight Your auto attack critical strikes have a chance to make your next Obliterate deal Frost damage and critically strike, or make your next Frostscythe critically strike for 4 times the normal damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76116
+        ],
+        "unlocks": [
+          76118,
+          76103
+        ],
+        "row": 4,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76096,
+        "name": "Empower Rune Weapon",
+        "spell_id": 47568,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 47568,
+            "description": "Empower Rune Weapon Talent 30 sec recharge Requires Death Knight Drain the will of your enemy to empower your rune weapon, dealing (200% of Attack Power) Shadowfrost damage and reduced damage to enemies nearby, gaining , and grants you Killing Machine.",
+            "cooldown": 30.0,
+            "charges": 2,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76116,
+          76114
+        ],
+        "unlocks": [
+          76102,
+          76103,
+          109258
+        ],
+        "row": 4,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76113,
+        "name": "Frostscythe",
+        "spell_id": 207230,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207230,
+            "description": "Frostscythe Talent 2 Runes Requires Death Knight Requires level 35 A sweeping attack that strikes all enemies in front of you for (40% of Attack Power) Frost damage. Deals reduced damage beyond 5 targets. Consumes Killing Machine to have its critical strikes deal 4 times the normal damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76114
+        ],
+        "unlocks": [
+          76102,
+          76112
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95032,
+        "name": "Swift and Painful",
+        "spell_id": 443560,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443560,
+            "description": "Swift and Painful Talent Requires Death Knight Blood If no enemies are struck by Soul Rupture, you gain 10% Strength for 8 sec. Wave of Souls is 100% more effective on the main target of your Reaper's Mark. Frost If no enemies are struck by Soul Rupture, you gain 8% Strength for 8 sec. Wave of Souls is 100% more effective on the main target of your Reaper's Mark.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95061
+        ],
+        "unlocks": [
+          95068
+        ],
+        "row": 5,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95057,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 436687,
+            "name": "Dark Talons",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 436687,
+                "description": "Dark Talons Talent Requires Death Knight Frost Consuming Killing Machine or Rime has a 25% chance to grant 3 stacks of Icy Talons and increase its maximum stacks by the same amount for 6 sec. Runic Power spending abilities count as Shadowfrost while Icy Talons is active. Blood Marrowrend and Heart Strike have a 25% chance to grant 3 stacks of Icy Talons and increase its maximum stacks by the same amount for 6 sec. Runic Power spending abilities count as Shadowfrost while Icy Talons is active. (1s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 469870,
+            "name": "Reaper's Onslaught",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469870,
+                "description": "Reaper's Onslaught Talent Requires Death Knight Blood Reduces the cooldown of Reaper's Mark by 15 sec, but the amount of Marrowrends empowered by Exterminate is reduced by 1. Frost Reduces the cooldown of Reaper's Mark by 15 sec, but the amount of Obliterates and Frostscythes empowered by Exterminate is reduced by 1.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Reaper's Mark",
+                    "type": "cd_reduction",
+                    "value": 15,
+                    "unit": "seconds"
+                  },
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Reaper's Mark",
+                    "type": "cd_reduction",
+                    "value": 15,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95034
+        ],
+        "unlocks": [
+          95068
+        ],
+        "row": 5,
+        "col": 10
+      },
+      {
+        "node_id": 95049,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 437122,
+            "name": "Death's Messenger",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 437122,
+                "description": "Death's Messenger Talent Requires Death Knight Reduces the cooldowns of Lichborne and Raise Dead by 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 439948,
+            "name": "Expelling Shield",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 439948,
+                "description": "Expelling Shield Talent Requires Death Knight When an enemy deals direct damage to your Anti-Magic Shell, their cast speed is reduced by 10% for 6 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95035
+        ],
+        "unlocks": [
+          95068
+        ],
+        "row": 5,
+        "col": 11
+      },
+      {
+        "node_id": 109733,
+        "name": "Echoing Fury",
+        "spell_id": 1265855,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265855,
+            "description": "Echoing Fury Talent Requires Death Knight Blood Reaper's Mark deals 5% increased damage. Casting Dancing Rune Weapon grants 1 stack of Exterminate with 100% first scythe and 100% second scythe effectiveness. Frost Reaper's Mark deals 5% increased damage. Casting Frostwyrm's Fury grants 2 stacks of Exterminate with 100% first scythe and 100% second scythe effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109734
+        ],
+        "unlocks": [
+          95068
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76118,
+        "name": "Arctic Assault",
+        "spell_id": 456230,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 456230,
+            "description": "Arctic Assault Talent Requires Death Knight Consuming Killing Machine fires a Glacial Advance through your target at 60% effectiveness. (300ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76117
+        ],
+        "unlocks": [
+          76098,
+          76100,
+          76121
+        ],
+        "row": 5,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76103,
+        "name": "Runic Overflow",
+        "spell_id": 316803,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 316803,
+            "description": "Runic Overflow Talent Requires Death Knight Increases Frost Strike and Glacial Advance damage by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 316803,
+            "description": "Runic Overflow Talent Requires Death Knight Increases Frost Strike and Glacial Advance damage by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76096,
+          76117
+        ],
+        "unlocks": [
+          76098
+        ],
+        "row": 5,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109258,
+        "name": "Frostbound Will",
+        "spell_id": 1238680,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1238680,
+            "description": "Frostbound Will Talent Requires Death Knight Consuming Rime reduces the cooldown of Empower Rune Weapon by 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Empower Rune Weapon",
+                "type": "cd_reduction",
+                "value": 6,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          76096
+        ],
+        "unlocks": [
+          106791,
+          76098,
+          101929
+        ],
+        "row": 5,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76102,
+        "name": "Runic Command",
+        "spell_id": 376251,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376251,
+            "description": "Runic Command Talent Requires Death Knight Increases your maximum Runic Power by 5. Increases Rune regeneration rate by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 376251,
+            "description": "Runic Command Talent Requires Death Knight Increases your maximum Runic Power by 5. Increases Rune regeneration rate by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76113,
+          76096
+        ],
+        "unlocks": [
+          106791
+        ],
+        "row": 5,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76112,
+        "name": "Biting Cold",
+        "spell_id": 377056,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377056,
+            "description": "Biting Cold Talent Requires Death Knight Remorseless Winter damage is increased by 35%. The first time Remorseless Winter deals damage to 3 different enemies, you gain Rime.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76113
+        ],
+        "unlocks": [
+          76110,
+          76092,
+          106791
+        ],
+        "row": 5,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95068,
+        "name": "Exterminate",
+        "spell_id": 441378,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441378,
+            "description": "Exterminate Talent Requires Death Knight Blood After Reaper's Mark explodes, your next 2 Marrowrends cost 1 Rune and summon 2 scythes to strike your enemies. The first scythe strikes your target for (858.54% of Attack Power) Shadowfrost damage and the second scythe strikes all enemies around your target for (469.2% of Attack Power) Shadowfrost damage [and applies Frost Fever]. Deals reduced damage beyond 8 targets. Frost After Reaper's Mark explodes, your next 2 Obliterates or Frostscythes summon 2 scythes to strike your enemies. The first scythe strikes your target for (530.368% of Attack Power) Shadowfrost damage and has a 100% chance to grant Killing Machine, the second scythe strikes all enemies around your target for (214.468% of Attack Power) Shadowfrost damage [and applies Frost Fever]. Deals reduced damage beyond 8 targets. (1s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95057,
+          95032,
+          95049,
+          109733
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76100,
+        "name": "Inexorable Assault",
+        "spell_id": 253593,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 253593,
+            "description": "Inexorable Assault Talent Requires Death Knight Requires level 15 Gain Inexorable Assault every 4 sec, stacking up to 5 times. [ Frostscythe : Obliterate and Frostscythe consume / Obliterate consumes] up to 3 stacks, dealing an additional (26.322% of Attack Power) Frost damage for each stack consumed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76118
+        ],
+        "unlocks": [
+          76121,
+          76037
+        ],
+        "row": 6,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76098,
+        "name": "Frostreaper",
+        "spell_id": 1230301,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1230301,
+            "description": "Frostreaper Talent Requires Death Knight Approximately 5 procs per minute Obliterate deals 10% increased damage and has a chance to tether the souls of its target and a nearby enemy to yours. Frost Strike severs the tethers, dealing (205.92% of Attack Power) Shadowfrost damage to both foes. (700ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76103,
+          76118,
+          109258
+        ],
+        "unlocks": [
+          76121
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101929,
+        "name": "Pillar of Frost",
+        "spell_id": 51271,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 51271,
+            "description": "Pillar of Frost Talent Requires Death Knight The power of frost increases your Strength by 30% for 12 sec.",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109258
+        ],
+        "unlocks": [
+          102009,
+          101931,
+          101930
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 106791,
+        "name": "Icy Onslaught",
+        "spell_id": 1230272,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1230272,
+            "description": "Icy Onslaught Talent Requires Death Knight Frost Strike and Glacial Advance now cause your next Frost Strike and Glacial Advance to deal 15% increased damage and cost 5 more Runic Power. This effect stacks until the next Runic Empowerment.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109258,
+          76112,
+          76102
+        ],
+        "unlocks": [
+          76092
+        ],
+        "row": 6,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76110,
+        "name": "Gathering Storm",
+        "spell_id": 194912,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 194912,
+            "description": "Gathering Storm Talent Requires Death Knight Requires level 45 Each Rune spent during Remorseless Winter increases its damage by 10%, and extends its duration by 0.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76112
+        ],
+        "unlocks": [
+          76109,
+          76092
+        ],
+        "row": 6,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95066,
+        "name": "Rider's Champion",
+        "spell_id": 444005,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444005,
+            "description": "Rider's Champion Talent Requires Death Knight Spending Runes has a chance to call forth the aid of a Horsemen for 10 sec. Mograine Casts Death and Decay at his location that follows his position and extends the duration of your diseases by 1.0 sec whenever it deals damage. Whitemane Casts Undeath on your target dealing (6.86532% of Attack Power) Shadowfrost damage per stack every 3 sec, for 24 sec. Each time Undeath deals damage it gains a stack. Cannot be refreshed. Trollbane Casts Chains of Ice on your target slowing their movement speed by 40% and increasing the damage they take from you by 5% for 8 sec. Nazgrim While Nazgrim is active you gain Apocalyptic Conquest, increasing your Strength by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          95060,
+          95067,
+          95037,
+          109741
+        ],
+        "row": 7,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76121,
+        "name": "Murderous Efficiency",
+        "spell_id": 207061,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207061,
+            "description": "Murderous Efficiency Talent Requires Death Knight Requires level 25 Consuming the Killing Machine effect has a 20% chance to grant you 1 Rune.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76098,
+          76100,
+          76118
+        ],
+        "unlocks": [
+          106790,
+          76037
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101931,
+        "name": "Rage of the Frozen Champion",
+        "spell_id": 377076,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377076,
+            "description": "Rage of the Frozen Champion Talent Requires Death Knight Frost Strike and Glacial Advance have a 15% increased chance to trigger Rime and Howling Blast generates while Rime is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101929
+        ],
+        "unlocks": [
+          76101,
+          106790,
+          76106
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101930,
+        "name": "Enduring Strength",
+        "spell_id": 377190,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377190,
+            "description": "Enduring Strength Talent Requires Death Knight When Pillar of Frost expires, your Strength is increased by 8% for 6 sec. This effect lasts 2 sec longer, up to 20 sec, for each Obliterate and Frostscythe critical strike during Pillar of Frost.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101929
+        ],
+        "unlocks": [
+          76106
+        ],
+        "row": 7,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102009,
+        "name": "Frozen Dominion",
+        "spell_id": 377226,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377226,
+            "description": "Frozen Dominion Talent Requires Death Knight Pillar of Frost now summons a Remorseless Winter that lasts 4 sec longer. Each enemy Remorseless Winter damages grants you (4 * $mastery)% Mastery, up to (4 * $mastery * 5)% for 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101929
+        ],
+        "unlocks": [
+          76105,
+          76099,
+          76106
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76092,
+        "name": "Frigid Executioner",
+        "spell_id": 377073,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377073,
+            "description": "Frigid Executioner Talent Requires Death Knight Runic Empowerment has a 25% chance to refund 1 additional Rune.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          106791,
+          76110,
+          76112
+        ],
+        "unlocks": [
+          76099,
+          76109
+        ],
+        "row": 7,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95060,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444008,
+            "name": "On a Paler Horse",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444008,
+                "description": "On a Paler Horse Talent Requires Death Knight While outdoors you are able to mount your Acherus Deathcharger in combat.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444010,
+            "name": "Death Charge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444010,
+                "description": "Death Charge Talent Requires Death Knight Call upon your Death Charger to break free of movement impairment effects. For 10 sec, while upon your Death Charger your movement speed is increased by 100%, you cannot be slowed below 100% of normal speed, and you are immune to forced movement effects and knockbacks.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95066
+        ],
+        "unlocks": [
+          95047
+        ],
+        "row": 8,
+        "col": 9
+      },
+      {
+        "node_id": 95067,
+        "name": "Mograine's Might",
+        "spell_id": 444047,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444047,
+            "description": "Mograine's Might Talent Requires Death Knight Frost Your damage is increased by 5% and you gain 5% critical strike chance while inside Mograine's Death and Decay. Unholy Your damage is increased by 5% and you gain the benefits of your Death and Decay while inside Mograine's Death and Decay.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95066
+        ],
+        "unlocks": [
+          95059
+        ],
+        "row": 8,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95037,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444074,
+            "name": "Horsemen's Aid",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444074,
+                "description": "Horsemen's Aid Talent Requires Death Knight While at your aid, the Horsemen will occasionally cast Anti-Magic Shell on you and themselves at 80% effectiveness. You may only benefit from this effect every 45 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444083,
+            "name": "Pact of the Apocalypse",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444083,
+                "description": "Pact of the Apocalypse Talent Requires Death Knight When you take damage, 5% of the damage is redirected to each active horsemen.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95066
+        ],
+        "unlocks": [
+          95063
+        ],
+        "row": 8,
+        "col": 11
+      },
+      {
+        "node_id": 109741,
+        "name": "Ride or Die!",
+        "spell_id": 1265959,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265959,
+            "description": "Ride or Die! Talent Requires Death Knight Unholy Dark Transformation summons forth Whitemane for 6 sec. Frost Pillar of Frost summons forth Trollbane for 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95066
+        ],
+        "unlocks": [
+          109740
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76037,
+        "name": "Howling Blades",
+        "spell_id": 1230223,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1230223,
+            "description": "Howling Blades Talent Requires Death Knight Rime empowered Howling Blast unleashes 2 icy blades at its target that deal (25.2% of Attack Power) Frost damage and have 15% chance to grant Killing Machine.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76100,
+          76121
+        ],
+        "unlocks": [
+          76122
+        ],
+        "row": 8,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 106790,
+        "name": "Cryogenic Chamber",
+        "spell_id": 456237,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 456237,
+            "description": "Cryogenic Chamber Talent Requires Death Knight When Howling Blast consumes Rime, 15% of the damage it deals is gathered into the next cast of Remorseless Winter, up to 20 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101931,
+          76121
+        ],
+        "unlocks": [
+          76101,
+          76122
+        ],
+        "row": 8,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76106,
+        "name": "Frostwyrm's Fury",
+        "spell_id": 279302,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 279302,
+            "description": "Frostwyrm's Fury Talent Requires Death Knight Summons a frostwyrm who breathes on all enemies within 40 yd in front of you, dealing (370.75% of Attack Power) Frost damage, stunning enemies for 3 sec, and slowing movement speed by 50% for 10 sec.",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101930,
+          102009,
+          101931
+        ],
+        "unlocks": [
+          76105,
+          76101
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76099,
+        "name": "Everfrost",
+        "spell_id": 376938,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376938,
+            "description": "Everfrost Talent Requires Death Knight Rime empowered Howling Blast deals 50% increased damage to secondary targets. Remorseless Winter deals 6% increased damage to enemies it hits, stacking up to 10 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76092,
+          102009
+        ],
+        "unlocks": [
+          76105,
+          76033
+        ],
+        "row": 8,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76109,
+        "name": "Northwinds",
+        "spell_id": 1230284,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1230284,
+            "description": "Northwinds Talent Requires Death Knight Howling Blast now hits an additional target with maximum effectiveness. Rime increases Howling Blast damage done by an additional 75%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76110,
+          76092
+        ],
+        "unlocks": [
+          76033
+        ],
+        "row": 8,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95047,
+        "name": "Whitemane's Famine",
+        "spell_id": 444033,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444033,
+            "description": "Whitemane's Famine Talent Requires Death Knight Unholy When damages an enemy affected by Undeath it gains 1 stack and infects another nearby enemy. Frost When Obliterate or Frostscythe damages an enemy affected by Undeath it gains 1 stack and infects another nearby enemy.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95060
+        ],
+        "unlocks": [
+          95044
+        ],
+        "row": 9,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95059,
+        "name": "Nazgrim's Conquest",
+        "spell_id": 444052,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444052,
+            "description": "Nazgrim's Conquest Talent Requires Death Knight If an enemy dies while Nazgrim is active, the strength of Apocalyptic Conquest is increased by 3%. Additionally, each Rune you spend increase its value by 1%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95067
+        ],
+        "unlocks": [
+          95042
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95063,
+        "name": "Trollbane's Icy Fury",
+        "spell_id": 444097,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444097,
+            "description": "Trollbane's Icy Fury Talent Requires Death Knight Unholy shatters Trollbane's Chains of Ice when hit, dealing (105.3% of Attack Power) Shadowfrost damage to nearby enemies, and slowing them by 40% for 4 sec. Deals reduced damage beyond 8 targets. Frost Obliterate and Frostscythe shatter Trollbane's Chains of Ice when hit, dealing (105.3% of Attack Power) Shadowfrost damage to nearby enemies, and slowing them by 40% for 4 sec. Deals reduced damage beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95037
+        ],
+        "unlocks": [
+          95054
+        ],
+        "row": 9,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109740,
+        "name": "Let Terror Reign",
+        "spell_id": 1265949,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265949,
+            "description": "Let Terror Reign Talent Requires Death Knight Unholy Casting Death Coil or Epidemic orders Whitemane to cast her Death Coil or Epidemic alongside you at 125% effectiveness. Frost Casting Obliterate or Frostscythe orders Trollbane to cast his Obliterate or Frostscythe alongside you at 100% effectiveness. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109741
+        ],
+        "unlocks": [
+          109739
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76122,
+        "name": "Bonegrinder",
+        "spell_id": 377098,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377098,
+            "description": "Bonegrinder Talent Requires Death Knight Consuming Killing Machine grants 1% critical strike chance for 10 sec, stacking up to 5 times. At 5 stacks your next Killing Machine consumes the stacks and grants you 10% increased Frost damage for 10 sec. (700ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 377098,
+            "description": "Bonegrinder Talent Requires Death Knight Consuming Killing Machine grants 1% critical strike chance for 10 sec, stacking up to 5 times. At 5 stacks your next Killing Machine consumes the stacks and grants you 10% increased Frost damage for 10 sec. (700ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76037,
+          106790
+        ],
+        "unlocks": [
+          76091,
+          101933
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76101,
+        "name": "Smothering Offense",
+        "spell_id": 435005,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 435005,
+            "description": "Smothering Offense Talent Requires Death Knight Your auto attack damage is increased by 10%. This amount is increased for each stack of Icy Talons you have and it can stack up to 2 additional times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101931,
+          76106,
+          106790
+        ],
+        "unlocks": [
+          101933
+        ],
+        "row": 9,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76105,
+        "name": "Avalanche",
+        "spell_id": 207142,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207142,
+            "description": "Avalanche Talent Requires Death Knight Requires level 35 Casting Howling Blast with Rime active causes jagged icicles to fall on enemies nearby your target, applying Razorice and dealing (22.47% of Attack Power) Frost damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76099,
+          102009,
+          76106
+        ],
+        "unlocks": [
+          76095
+        ],
+        "row": 9,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76033,
+        "name": "Icebreaker",
+        "spell_id": 392950,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 392950,
+            "description": "Icebreaker Talent Requires Death Knight When empowered by Rime, Howling Blast deals 30% increased damage to your primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 392950,
+            "description": "Icebreaker Talent Requires Death Knight When empowered by Rime, Howling Blast deals 30% increased damage to your primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76109,
+          76099
+        ],
+        "unlocks": [
+          76108,
+          76095
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95044,
+        "name": "Hungering Thirst",
+        "spell_id": 444037,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444037,
+            "description": "Hungering Thirst Talent Requires Death Knight Unholy The damage of your diseases and Death Coil are increased by 5%. Frost The damage of your diseases and Frost Strike are increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95047
+        ],
+        "unlocks": [
+          95041
+        ],
+        "row": 10,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95042,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444069,
+            "name": "Fury of the Horsemen",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444069,
+                "description": "Fury of the Horsemen Talent Requires Death Knight Every you spend extends the duration of the Horsemen's aid in combat by 1 sec, up to 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444072,
+            "name": "A Feast of Souls",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444072,
+                "description": "A Feast of Souls Talent Requires Death Knight Unholy While you have 2 or more Horsemen aiding you, your Runic Power spending abilities deal 20% increased damage. Frost While you have 8 or more Horsemen aiding you, your Runic Power spending abilities deal 10% increased damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95059
+        ],
+        "unlocks": [
+          95041
+        ],
+        "row": 10,
+        "col": 10
+      },
+      {
+        "node_id": 95054,
+        "name": "Mawsworn Menace",
+        "spell_id": 444099,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444099,
+            "description": "Mawsworn Menace Talent Requires Death Knight Unholy % increased damage and the cooldown of your Death and Decay is reduced by 5 sec. Frost Obliterate deals 5% increased damage and your Remorseless Winter lasts 2 sec longer.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95063
+        ],
+        "unlocks": [
+          95041
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109739,
+        "name": "Unholy Armaments",
+        "spell_id": 1265971,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265971,
+            "description": "Unholy Armaments Talent Requires Death Knight The abilities that Horsemen cast deal 5% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109740
+        ],
+        "unlocks": [
+          95041
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76091,
+        "name": "Obliteration",
+        "spell_id": 281238,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 281238,
+            "description": "Obliteration Talent Requires Death Knight Requires level 50 During Pillar of Frost, Frost Strike [ Glacial Advance : Glacial Advance ] and Howling Blast always grant Killing Machine and have a 20% chance to generate a Rune. Additionally during Pillar of Frost, Empower Rune Weapon causes your next Obliterate or Frostscythe to cost no Runes.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76122
+        ],
+        "unlocks": [
+          76123
+        ],
+        "row": 10,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101933,
+        "name": "Icy Death Torrent",
+        "spell_id": 435010,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 435010,
+            "description": "Icy Death Torrent Talent Requires Death Knight Your auto attack critical strikes have a chance to send out a torrent of ice dealing (107.712% of Attack Power) Frost damage to enemies in front of you.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76101,
+          76122
+        ],
+        "unlocks": [
+          101932
+        ],
+        "row": 10,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76095,
+        "name": "Shattering Blade",
+        "spell_id": 207057,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207057,
+            "description": "Shattering Blade Talent Requires Death Knight When Frost Strike damages an enemy with 5 stacks of Razorice it will consume them to deal an additional 115% damage. Frostbane consumes the Razorice on your main target to deal an additional 300% damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76105,
+          76033
+        ],
+        "unlocks": [
+          76094
+        ],
+        "row": 10,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76108,
+        "name": "Hyperpyrexia",
+        "spell_id": 456238,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 456238,
+            "description": "Hyperpyrexia Talent Requires Death Knight Your Runic Power spending abilities have a chance to additionally deal 30% of the damage dealt over 4 sec. (Proc chance: 35%)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76033
+        ],
+        "unlocks": [
+          76093
+        ],
+        "row": 10,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95041,
+        "name": "Apocalypse Now",
+        "spell_id": 444040,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444040,
+            "description": "Apocalypse Now Talent Requires Death Knight Army of the Dead and Frostwyrm's Fury call upon all 4 Horsemen to aid you for 20 sec. (1s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95042,
+          95044,
+          95054,
+          109739
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76123,
+        "name": "Killing Streak",
+        "spell_id": 1230153,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1230153,
+            "description": "Killing Streak Talent Requires Death Knight Obliterate and Frostscythe consume all Killing Machines to deal 25% increased critical strike damage and grant 1.5% Haste for 8 sec for each stack consumed. Multiple applications may overlap.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76091
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101932,
+        "name": "The Long Winter",
+        "spell_id": 456240,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 456240,
+            "description": "The Long Winter Talent Requires Death Knight While Pillar of Frost is active your auto-attack critical strikes increase its duration by 1 sec, up to a maximum of 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101933
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76094,
+        "name": "Frostbane",
+        "spell_id": 455993,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 455993,
+            "description": "Frostbane Talent Requires Death Knight Each foe struck with Glacial Advance has a chance to transform your next Frost Strike into Frostbane. The chance increases with the number of Razorice stacks on the target. Frostbane Start a frozen onslaught that strikes twice, unleashing the chilling essence of winter, dealing (74.52% of Attack Power) Frost damage to all enemies caught in its wake with each strike. Each enemy struck reduces the damage dealt to the next foe by 5%, down to 40%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76095
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 76093,
+        "name": "Breath of Sindragosa",
+        "spell_id": 1249658,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1249658,
+            "description": "Breath of Sindragosa Talent Requires Death Knight Call upon Sindragosa's aid in battle for 8 sec, continuously dealing [(139.788% of Attack Power) * [(Attack Power * 0.98)][((Attack Power + Offhand Attack Power) * 2 / 3)] -- 2H, DW / Attack Power] Frost damage every 1 sec to enemies in a cone in front of you. Consuming Killing Machine or Rime increases the duration by 0.8 sec. Deals reduced damage to secondary targets. Grants a charge of Empower Rune Weapon at the start and 2 Runes at the end. (100ms cooldown)",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          76108
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110400,
+        "name": "Chosen of Frostbrood",
+        "spell_id": 1265632,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265632,
+            "description": "Chosen of Frostbrood Talent Requires Death Knight Frostwyrm's Fury deals 100% increased damage to the first enemy it hits and grants you 15% Haste for 12 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "San'layn",
+      "nodes": [
+        {
+          "node_id": 95033,
+          "name": "Infliction of Sorrow",
+          "spell_id": 434143,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434143,
+              "description": "Infliction of Sorrow Talent Requires Death Knight Blood When Vampiric Strike damages an enemy affected by your Blood Plague, it extends the duration of the disease by 3.0 sec, and deals 20% of the remaining damage to the enemy. Unholy When Vampiric Strike damages an enemy affected by your plagues, it extends the duration of the plagues by 3.0 sec, and erupts them with 30% increased effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95064
+          ],
+          "unlocks": [
+            95045
+          ],
+          "row": 4,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95040,
+          "name": "Incite Terror",
+          "spell_id": 434151,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434151,
+              "description": "Incite Terror Talent Requires Death Knight Unholy Vampiric Strike and cause your targets to take 1% increased Shadow damage, up to 5% for 15 sec. Vampiric Strike benefits from Incite Terror at 400% effectiveness. Blood Vampiric Strike and Heart Strike cause your targets to take 1% increased Shadow damage, up to 5% for 15 sec. Vampiric Strike benefits from Incite Terror at 400% effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95065
+          ],
+          "unlocks": [
+            95053
+          ],
+          "row": 5,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95045,
+          "name": "Inevitable",
+          "spell_id": 1280658,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1280658,
+              "description": "Inevitable Talent Requires Death Knight Blood Blood Plague deals up to 30% increased damage based on the target's missing health. Unholy Your plagues deal up to 30% increased damage based on the target's missing health. Vampiric Strike grants maximum stacks of Clawing Shadows.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95033
+          ],
+          "unlocks": [
+            95053
+          ],
+          "row": 5,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95046,
+          "name": "The Blood is Life",
+          "spell_id": 434260,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434260,
+              "description": "The Blood is Life Talent Requires Death Knight Unholy summons a Blood Beast to attack your enemy for 10 sec. Each time the Blood Beast attacks, it stores a portion of the damage dealt. When the Blood Beast dies, it explodes, dealing 15% of the damage accumulated to nearby enemies and healing the Death Knight for the same amount. Deals reduced damage beyond 8 targets. Blood Dancing Rune Weapon summons a Blood Beast to attack your enemy for 10 sec. Each time the Blood Beast attacks, it stores a portion of the damage dealt. When the Blood Beast dies, it explodes, dealing 25% of the damage accumulated to nearby enemies and healing the Death Knight for the same amount. Deals reduced damage beyond 8 targets. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95056
+          ],
+          "unlocks": [
+            95055
+          ],
+          "row": 4,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95048,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 434033,
+              "name": "Blood-Soaked Ground",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434033,
+                  "description": "Blood-Soaked Ground Talent Requires Death Knight While you are within your Death and Decay, your physical damage taken is reduced by 5% and your chance to gain Vampiric Strike is increased by 5%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1234559,
+              "name": "Desecrate",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1234559,
+                  "description": "Desecrate Talent Requires Death Knight Blood Death and Decay has a chance to collapse whenever it damages a diseased enemy, dealing 150% of its remaining damage instantly and granting you its bonus effects for the remaining duration. Unholy Death and Decay has a chance to collapse whenever it damages a diseased enemy, dealing 300% of its remaining damage instantly and granting you its bonus effects for the remaining duration.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95051
+          ],
+          "unlocks": [
+            95065
+          ],
+          "row": 3,
+          "col": 22
+        },
+        {
+          "node_id": 95051,
+          "name": "Vampiric Strike",
+          "spell_id": 433901,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 433901,
+              "description": "Vampiric Strike Talent Requires Death Knight Blood Your Death Coil and Death Strike have a 35% chance to make your next Heart Strike become Vampiric Strike. Vampiric Strike heals you for 1% of your maximum health and grants you Essence of the Blood Queen, increasing your Haste by 2.0%, up to 10.0% for 20 sec. Unholy Your Death Coil, Epidemic and Death Strike have a 25% chance to make your next become Vampiric Strike. Vampiric Strike heals you for 2% of your maximum health and grants you Essence of the Blood Queen, increasing your Haste by 1.0%, up to 5.0% for 20 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95064,
+            95048,
+            95056,
+            109737
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95053,
+          "name": "Gift of the San'layn",
+          "spell_id": 434152,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434152,
+              "description": "Gift of the San'layn Talent Requires Death Knight Blood While Dancing Rune Weapon is active you gain Gift of the San'layn. Gift of the San'layn increases the effectiveness of your Essence of the Blood Queen by 200%, and Vampiric Strike replaces your Heart Strike for the duration. Unholy While Dark Transformation is active you gain Gift of the San'layn. Gift of the San'layn increases the effectiveness of your Essence of the Blood Queen by 80%, and Vampiric Strike replaces your for the duration.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Heart Strike for the duration",
+                  "type": "replaces"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your for the duration",
+                  "type": "replaces"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            95040,
+            95045,
+            95055,
+            109736
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": {
+            "spell_id": null,
+            "name": "your for the duration"
+          }
+        },
+        {
+          "node_id": 95055,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 434261,
+              "name": "Pact of the San'layn",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434261,
+                  "description": "Pact of the San'layn Talent Requires Death Knight You store 10% of all Shadow damage dealt into your Blood Beast to explode for additional damage when it expires.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 434263,
+              "name": "Sanguine Scent",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434263,
+                  "description": "Sanguine Scent Talent Requires Death Knight Blood Your Death Coil and Death Strike have a 15% increased chance to trigger Vampiric Strike when damaging enemies below 35% health. Unholy Your Death Coil, Epidemic and Death Strike have a 15% increased chance to trigger Vampiric Strike when damaging enemies below 35% health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95046
+          ],
+          "unlocks": [
+            95053
+          ],
+          "row": 5,
+          "col": 23
+        },
+        {
+          "node_id": 95056,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 434100,
+              "name": "Vampiric Aura",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434100,
+                  "description": "Vampiric Aura Talent Requires Death Knight Your Leech is increased by 2%. While Lichborne is active, the Leech bonus of this effect is increased by 100%, and it affects 4 allies within 12 yds.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 434136,
+              "name": "Bloody Fortitude",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434136,
+                  "description": "Bloody Fortitude Talent Requires Death Knight Icebound Fortitude reduces all damage you take by up to an additional 20% based on your missing health. Killing an enemy that yields experience or honor reduces the cooldown of Icebound Fortitude by 3 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Icebound Fortitude",
+                      "type": "cd_reduction",
+                      "value": 3,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95051
+          ],
+          "unlocks": [
+            95046
+          ],
+          "row": 3,
+          "col": 23
+        },
+        {
+          "node_id": 95064,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 433934,
+              "name": "Newly Turned",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 433934,
+                  "description": "Newly Turned Talent Requires Death Knight Raise Ally revives players at full health and grants you and your ally an absorb shield equal to 20% of your maximum health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 434028,
+              "name": "Vampiric Speed",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434028,
+                  "description": "Vampiric Speed Talent Requires Death Knight Death's Advance and Wraith Walk movement speed bonuses are increased by 10%. Activating Death's Advance or Wraith Walk increases 4 nearby allies movement speed by 20% for 5 sec. (100ms cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95051
+          ],
+          "unlocks": [
+            95033
+          ],
+          "row": 3,
+          "col": 21
+        },
+        {
+          "node_id": 95065,
+          "name": "Frenzied Bloodthirst",
+          "spell_id": 434075,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434075,
+              "description": "Frenzied Bloodthirst Talent Requires Death Knight Blood Essence of the Blood Queen stacks 2 additional times and increases the damage of your Death Coil and Death Strike by 6% per stack. Unholy Essence of the Blood Queen stacks 2 additional times and increases the damage of your Death Coil, Epidemic and Death Strike by 3% per stack.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Death Coil and Death Strike",
+                  "type": "damage_increase",
+                  "value": 6,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Death Coil, Epidemic and Death Strike",
+                  "type": "damage_increase",
+                  "value": 3,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            95048
+          ],
+          "unlocks": [
+            95040
+          ],
+          "row": 4,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109736,
+          "name": "Transfusion",
+          "spell_id": 1265574,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265574,
+              "description": "Transfusion Talent Requires Death Knight Unholy Vampiric Strike increases the damage of the Lesser Ghoul it summons by 10%. Blood Vampiric Strike increases the damage of your Dancing Rune Weapons by 20% for 8 sec. Multiple applications may overlap.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "the Lesser Ghoul it summons",
+                  "type": "damage_increase",
+                  "value": 10,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Dancing Rune Weapons",
+                  "type": "damage_increase",
+                  "value": 20,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            109738
+          ],
+          "unlocks": [
+            95053
+          ],
+          "row": 5,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109737,
+          "name": "Thrill of Blood",
+          "spell_id": 1265547,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265547,
+              "description": "Thrill of Blood Talent Requires Death Knight Blood, Unholy Essence of the Blood Queen additionally increases your Mastery by 0.2% per stack.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95051
+          ],
+          "unlocks": [
+            109738
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109738,
+          "name": "Visceral Strength",
+          "spell_id": 434157,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434157,
+              "description": "Visceral Strength Talent Requires Death Knight Blood When Crimson Scourge is consumed, you gain 12% Strength for 12 sec. Unholy When Sudden Doom is consumed, you gain 4% Strength for 5 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109737
+          ],
+          "unlocks": [
+            109736
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Rider of the Apocalypse",
+      "nodes": [
+        {
+          "node_id": 95037,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444074,
+              "name": "Horsemen's Aid",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444074,
+                  "description": "Horsemen's Aid Talent Requires Death Knight While at your aid, the Horsemen will occasionally cast Anti-Magic Shell on you and themselves at 80% effectiveness. You may only benefit from this effect every 45 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444083,
+              "name": "Pact of the Apocalypse",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444083,
+                  "description": "Pact of the Apocalypse Talent Requires Death Knight When you take damage, 5% of the damage is redirected to each active horsemen.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95066
+          ],
+          "unlocks": [
+            95063
+          ],
+          "row": 8,
+          "col": 11
+        },
+        {
+          "node_id": 95041,
+          "name": "Apocalypse Now",
+          "spell_id": 444040,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444040,
+              "description": "Apocalypse Now Talent Requires Death Knight Army of the Dead and Frostwyrm's Fury call upon all 4 Horsemen to aid you for 20 sec. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95042,
+            95044,
+            95054,
+            109739
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95042,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444069,
+              "name": "Fury of the Horsemen",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444069,
+                  "description": "Fury of the Horsemen Talent Requires Death Knight Every you spend extends the duration of the Horsemen's aid in combat by 1 sec, up to 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444072,
+              "name": "A Feast of Souls",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444072,
+                  "description": "A Feast of Souls Talent Requires Death Knight Unholy While you have 2 or more Horsemen aiding you, your Runic Power spending abilities deal 20% increased damage. Frost While you have 8 or more Horsemen aiding you, your Runic Power spending abilities deal 10% increased damage.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95059
+          ],
+          "unlocks": [
+            95041
+          ],
+          "row": 10,
+          "col": 10
+        },
+        {
+          "node_id": 95044,
+          "name": "Hungering Thirst",
+          "spell_id": 444037,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444037,
+              "description": "Hungering Thirst Talent Requires Death Knight Unholy The damage of your diseases and Death Coil are increased by 5%. Frost The damage of your diseases and Frost Strike are increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95047
+          ],
+          "unlocks": [
+            95041
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95047,
+          "name": "Whitemane's Famine",
+          "spell_id": 444033,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444033,
+              "description": "Whitemane's Famine Talent Requires Death Knight Unholy When damages an enemy affected by Undeath it gains 1 stack and infects another nearby enemy. Frost When Obliterate or Frostscythe damages an enemy affected by Undeath it gains 1 stack and infects another nearby enemy.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95060
+          ],
+          "unlocks": [
+            95044
+          ],
+          "row": 9,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95054,
+          "name": "Mawsworn Menace",
+          "spell_id": 444099,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444099,
+              "description": "Mawsworn Menace Talent Requires Death Knight Unholy % increased damage and the cooldown of your Death and Decay is reduced by 5 sec. Frost Obliterate deals 5% increased damage and your Remorseless Winter lasts 2 sec longer.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95063
+          ],
+          "unlocks": [
+            95041
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95059,
+          "name": "Nazgrim's Conquest",
+          "spell_id": 444052,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444052,
+              "description": "Nazgrim's Conquest Talent Requires Death Knight If an enemy dies while Nazgrim is active, the strength of Apocalyptic Conquest is increased by 3%. Additionally, each Rune you spend increase its value by 1%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95067
+          ],
+          "unlocks": [
+            95042
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95060,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444008,
+              "name": "On a Paler Horse",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444008,
+                  "description": "On a Paler Horse Talent Requires Death Knight While outdoors you are able to mount your Acherus Deathcharger in combat.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444010,
+              "name": "Death Charge",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444010,
+                  "description": "Death Charge Talent Requires Death Knight Call upon your Death Charger to break free of movement impairment effects. For 10 sec, while upon your Death Charger your movement speed is increased by 100%, you cannot be slowed below 100% of normal speed, and you are immune to forced movement effects and knockbacks.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95066
+          ],
+          "unlocks": [
+            95047
+          ],
+          "row": 8,
+          "col": 9
+        },
+        {
+          "node_id": 95063,
+          "name": "Trollbane's Icy Fury",
+          "spell_id": 444097,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444097,
+              "description": "Trollbane's Icy Fury Talent Requires Death Knight Unholy shatters Trollbane's Chains of Ice when hit, dealing (105.3% of Attack Power) Shadowfrost damage to nearby enemies, and slowing them by 40% for 4 sec. Deals reduced damage beyond 8 targets. Frost Obliterate and Frostscythe shatter Trollbane's Chains of Ice when hit, dealing (105.3% of Attack Power) Shadowfrost damage to nearby enemies, and slowing them by 40% for 4 sec. Deals reduced damage beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95037
+          ],
+          "unlocks": [
+            95054
+          ],
+          "row": 9,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95066,
+          "name": "Rider's Champion",
+          "spell_id": 444005,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444005,
+              "description": "Rider's Champion Talent Requires Death Knight Spending Runes has a chance to call forth the aid of a Horsemen for 10 sec. Mograine Casts Death and Decay at his location that follows his position and extends the duration of your diseases by 1.0 sec whenever it deals damage. Whitemane Casts Undeath on your target dealing (6.86532% of Attack Power) Shadowfrost damage per stack every 3 sec, for 24 sec. Each time Undeath deals damage it gains a stack. Cannot be refreshed. Trollbane Casts Chains of Ice on your target slowing their movement speed by 40% and increasing the damage they take from you by 5% for 8 sec. Nazgrim While Nazgrim is active you gain Apocalyptic Conquest, increasing your Strength by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95060,
+            95067,
+            95037,
+            109741
+          ],
+          "row": 7,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95067,
+          "name": "Mograine's Might",
+          "spell_id": 444047,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444047,
+              "description": "Mograine's Might Talent Requires Death Knight Frost Your damage is increased by 5% and you gain 5% critical strike chance while inside Mograine's Death and Decay. Unholy Your damage is increased by 5% and you gain the benefits of your Death and Decay while inside Mograine's Death and Decay.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95066
+          ],
+          "unlocks": [
+            95059
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109739,
+          "name": "Unholy Armaments",
+          "spell_id": 1265971,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265971,
+              "description": "Unholy Armaments Talent Requires Death Knight The abilities that Horsemen cast deal 5% increased damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109740
+          ],
+          "unlocks": [
+            95041
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109740,
+          "name": "Let Terror Reign",
+          "spell_id": 1265949,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265949,
+              "description": "Let Terror Reign Talent Requires Death Knight Unholy Casting Death Coil or Epidemic orders Whitemane to cast her Death Coil or Epidemic alongside you at 125% effectiveness. Frost Casting Obliterate or Frostscythe orders Trollbane to cast his Obliterate or Frostscythe alongside you at 100% effectiveness. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109741
+          ],
+          "unlocks": [
+            109739
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109741,
+          "name": "Ride or Die!",
+          "spell_id": 1265959,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265959,
+              "description": "Ride or Die! Talent Requires Death Knight Unholy Dark Transformation summons forth Whitemane for 6 sec. Frost Pillar of Frost summons forth Trollbane for 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95066
+          ],
+          "unlocks": [
+            109740
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Deathbringer",
+      "nodes": [
+        {
+          "node_id": 95032,
+          "name": "Swift and Painful",
+          "spell_id": 443560,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443560,
+              "description": "Swift and Painful Talent Requires Death Knight Blood If no enemies are struck by Soul Rupture, you gain 10% Strength for 8 sec. Wave of Souls is 100% more effective on the main target of your Reaper's Mark. Frost If no enemies are struck by Soul Rupture, you gain 8% Strength for 8 sec. Wave of Souls is 100% more effective on the main target of your Reaper's Mark.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95061
+          ],
+          "unlocks": [
+            95068
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95034,
+          "name": "Grim Reaper",
+          "spell_id": 434905,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434905,
+              "description": "Grim Reaper Talent Requires Death Knight Reaper's Mark initial strike grants [3 charges of Bone Shield][Killing Machine]. Reaper's Mark explosion deals up to 30% increased damage based on your target's missing health.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95058
+          ],
+          "unlocks": [
+            95057
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95035,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 440476,
+              "name": "Pact of the Deathbringer",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440476,
+                  "description": "Pact of the Deathbringer Talent Requires Death Knight When you suffer a damaging effect equal to 25% of your maximum health, you instantly cast Death Pact at 50% effectiveness. May only occur every 2 min. When a Reaper's Mark explodes, the cooldowns of this effect and Death Pact are reduced by 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440282,
+              "name": "Rune Carved Plates",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440282,
+                  "description": "Rune Carved Plates Talent Requires Death Knight Each Rune spent reduces the magic damage you take by 1.5% and each Rune generated reduces the physical damage you take by 1.5% for 5 sec, up to 5 times.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95043
+          ],
+          "unlocks": [
+            95049
+          ],
+          "row": 4,
+          "col": 11
+        },
+        {
+          "node_id": 95036,
+          "name": "Wave of Souls",
+          "spell_id": 439851,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 439851,
+              "description": "Wave of Souls Talent Requires Death Knight Blood Reaper's Mark sends forth bursts of Shadowfrost energy and back, dealing (211.92% of Attack Power) Shadowfrost damage both ways to all enemies caught in its path. Wave of Souls critical strikes cause enemies to take 5% increased Shadowfrost damage for 15 sec, stacking up to 2 times, and it is always a critical strike on its way back. Frost Reaper's Mark sends forth bursts of Shadowfrost energy and back, dealing (96.7079% of Attack Power) Shadowfrost damage both ways to all enemies caught in its path. Wave of Souls critical strikes cause enemies to take 5% increased Shadowfrost damage for 15 sec, stacking up to 2 times, and it is always a critical strike on its way back.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95062
+          ],
+          "unlocks": [
+            95061
+          ],
+          "row": 3,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95043,
+          "name": "Bind in Darkness",
+          "spell_id": 440031,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440031,
+              "description": "Bind in Darkness Talent Requires Death Knight Blood Blood Boil deals 30% increased damage, and is now Shadowfrost. Shadowfrost damage applies 2 stacks to Reaper's Mark and 4 stacks when it is a critical strike. Frost Rime empowered Howling Blast deals 60% increased damage to its main target, and is now Shadowfrost. Shadowfrost damage applies 2 stacks to Reaper's Mark and 4 stacks when it is a critical strike.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95062
+          ],
+          "unlocks": [
+            95035
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95049,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 437122,
+              "name": "Death's Messenger",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 437122,
+                  "description": "Death's Messenger Talent Requires Death Knight Reduces the cooldowns of Lichborne and Raise Dead by 30 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 439948,
+              "name": "Expelling Shield",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 439948,
+                  "description": "Expelling Shield Talent Requires Death Knight When an enemy deals direct damage to your Anti-Magic Shell, their cast speed is reduced by 10% for 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95035
+          ],
+          "unlocks": [
+            95068
+          ],
+          "row": 5,
+          "col": 11
+        },
+        {
+          "node_id": 95057,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 436687,
+              "name": "Dark Talons",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 436687,
+                  "description": "Dark Talons Talent Requires Death Knight Frost Consuming Killing Machine or Rime has a 25% chance to grant 3 stacks of Icy Talons and increase its maximum stacks by the same amount for 6 sec. Runic Power spending abilities count as Shadowfrost while Icy Talons is active. Blood Marrowrend and Heart Strike have a 25% chance to grant 3 stacks of Icy Talons and increase its maximum stacks by the same amount for 6 sec. Runic Power spending abilities count as Shadowfrost while Icy Talons is active. (1s cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 469870,
+              "name": "Reaper's Onslaught",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 469870,
+                  "description": "Reaper's Onslaught Talent Requires Death Knight Blood Reduces the cooldown of Reaper's Mark by 15 sec, but the amount of Marrowrends empowered by Exterminate is reduced by 1. Frost Reduces the cooldown of Reaper's Mark by 15 sec, but the amount of Obliterates and Frostscythes empowered by Exterminate is reduced by 1.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Reaper's Mark",
+                      "type": "cd_reduction",
+                      "value": 15,
+                      "unit": "seconds"
+                    },
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Reaper's Mark",
+                      "type": "cd_reduction",
+                      "value": 15,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95034
+          ],
+          "unlocks": [
+            95068
+          ],
+          "row": 5,
+          "col": 10
+        },
+        {
+          "node_id": 95058,
+          "name": "Wither Away",
+          "spell_id": 441894,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441894,
+              "description": "Wither Away Talent Requires Death Knight Blood Blood Plague deals its damage 100% faster, and the second scythe of Exterminate applies Blood Plague. Frost Frost Fever deals its damage 100% faster, and the second scythe of Exterminate applies Frost Fever.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95062
+          ],
+          "unlocks": [
+            95034
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95061,
+          "name": "Soul Rupture",
+          "spell_id": 437161,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 437161,
+              "description": "Soul Rupture Talent Requires Death Knight Blood When Reaper's Mark explodes, it deals 10% of the damage dealt to nearby enemies. Frost When Reaper's Mark explodes, it deals 20% of the damage dealt to nearby enemies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95036
+          ],
+          "unlocks": [
+            95032
+          ],
+          "row": 4,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95062,
+          "name": "Reaper's Mark",
+          "spell_id": 439843,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 439843,
+              "description": "Reaper's Mark Talent 2 Runes Requires Death Knight Frost Viciously slice into the soul of your enemy, dealing (312% of Attack Power) Shadowfrost damage and applying Reaper's Mark. Each time you deal Shadow or Frost damage, add a stack of Reaper's Mark. After 12 sec or reaching 40 stacks, the mark explodes, dealing (40.4853% of Attack Power) damage per stack. Reaper's Mark travels to an unmarked enemy nearby if the target dies. Blood Viciously slice into the soul of your enemy, dealing (368.55% of Attack Power) Shadowfrost damage and applying Reaper's Mark. Each time you deal Shadow or Frost damage, add a stack of Reaper's Mark. After 12 sec or reaching 40 stacks, the mark explodes, dealing (45.348% of Attack Power) damage per stack. Reaper's Mark travels to an unmarked enemy nearby if the target dies.",
+              "cooldown": 45.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95058,
+            95036,
+            95043,
+            109735
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95068,
+          "name": "Exterminate",
+          "spell_id": 441378,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441378,
+              "description": "Exterminate Talent Requires Death Knight Blood After Reaper's Mark explodes, your next 2 Marrowrends cost 1 Rune and summon 2 scythes to strike your enemies. The first scythe strikes your target for (858.54% of Attack Power) Shadowfrost damage and the second scythe strikes all enemies around your target for (469.2% of Attack Power) Shadowfrost damage [and applies Frost Fever]. Deals reduced damage beyond 8 targets. Frost After Reaper's Mark explodes, your next 2 Obliterates or Frostscythes summon 2 scythes to strike your enemies. The first scythe strikes your target for (530.368% of Attack Power) Shadowfrost damage and has a 100% chance to grant Killing Machine, the second scythe strikes all enemies around your target for (214.468% of Attack Power) Shadowfrost damage [and applies Frost Fever]. Deals reduced damage beyond 8 targets. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95057,
+            95032,
+            95049,
+            109733
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109733,
+          "name": "Echoing Fury",
+          "spell_id": 1265855,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265855,
+              "description": "Echoing Fury Talent Requires Death Knight Blood Reaper's Mark deals 5% increased damage. Casting Dancing Rune Weapon grants 1 stack of Exterminate with 100% first scythe and 100% second scythe effectiveness. Frost Reaper's Mark deals 5% increased damage. Casting Frostwyrm's Fury grants 2 stacks of Exterminate with 100% first scythe and 100% second scythe effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109734
+          ],
+          "unlocks": [
+            95068
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109734,
+          "name": "Deathly Blows",
+          "spell_id": 1265932,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265932,
+              "description": "Deathly Blows Talent Requires Death Knight Blood Death Strike damage increased by 12%. Frost Frost Strike damage is increased by 15% and Glacial Advance damage is increased by 5%. Reaper's Mark grants 3 charges of Bonegrinder if it is known. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109735
+          ],
+          "unlocks": [
+            109733
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109735,
+          "name": "Frigid Resolve",
+          "spell_id": 1265859,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265859,
+              "description": "Frigid Resolve Talent Requires Death Knight Blood The effectiveness of Permafrost is increased by 100% and Exterminate grants Permafrost equal to 10% of the damage dealt. Permafrost Your auto attack damage grants you an absorb shield equal to 40% of the damage dealt. Frost The effectiveness of Permafrost is increased by 50%. Permafrost Your auto attack damage grants you an absorb shield equal to 40% of the damage dealt.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95062
+          ],
+          "unlocks": [
+            109734
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5030 @@
+{
+  "class": "Warlock",
+  "spec": "Destruction",
+  "scraped_at": "2026-03-25T19:14:01.635361+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99848,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 11
+      },
+      {
+        "node_id": 71931,
+        "name": "Fel Domination",
+        "spell_id": 333889,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 333889,
+            "description": "Fel Domination Talent Requires Warlock Your next Imp, Voidwalker, Incubus, Succubus, Felhunter, or Felguard Summon spell is free and has its casting time reduced by 90%.",
+            "cooldown": 180.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          71952,
+          71932
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71933,
+        "name": "Soul Leech",
+        "spell_id": 108370,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108370,
+            "description": "Soul Leech Talent Requires Warlock All single-target damage done by you and your minions grants you and your pet shadowy shields that absorb 3% of the damage dealt for 15 sec, up to 5 / Demon Skin : 10 / Illhoof's Design : 20 / Fortified Soul : 10 % of maximum health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          71950,
+          71952
+        ],
+        "row": 2,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71949,
+        "name": "Burning Rush",
+        "spell_id": 111400,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 111400,
+            "description": "Burning Rush Talent Requires Warlock Requires level 30 Increases your movement speed by 50 %, but also damages you for 4% of your maximum health every 1 sec. Movement impairing effects may not reduce you below 100% of normal movement speed. Lasts until canceled.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          71948,
+          71950
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71932,
+        "name": "Fel Pact",
+        "spell_id": 386113,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386113,
+            "description": "Fel Pact Talent Requires Warlock Reduces the cooldown of Fel Domination by 60 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Fel Domination",
+                "type": "cd_reduction",
+                "value": 60,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          71931
+        ],
+        "unlocks": [
+          71930
+        ],
+        "row": 3,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71952,
+        "name": "Demon Skin",
+        "spell_id": 219272,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 219272,
+            "description": "Demon Skin Talent Requires Warlock Requires level 30 Your Soul Leech absorption now passively recharges at a rate of 0.2% of maximum health every 1 sec, and may now absorb an additional 5% of maximum health. Increases your armor by 45%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 219272,
+            "description": "Demon Skin Talent Requires Warlock Requires level 30 Your Soul Leech absorption now passively recharges at a rate of 0.2% of maximum health every 1 sec, and may now absorb an additional 5% of maximum health. Increases your armor by 45%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71933,
+          71931
+        ],
+        "unlocks": [
+          71916,
+          71930
+        ],
+        "row": 3,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71950,
+        "name": "Fel Armor",
+        "spell_id": 386124,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386124,
+            "description": "Fel Armor Talent Requires Warlock When Soul Leech absorbs damage, 5% of damage taken is absorbed and spread out over 5 sec. Reduces damage taken by 1.5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 386124,
+            "description": "Fel Armor Talent Requires Warlock When Soul Leech absorbs damage, 5% of damage taken is absorbed and spread out over 5 sec. Reduces damage taken by 1.5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71933,
+          71949
+        ],
+        "unlocks": [
+          71916,
+          71922
+        ],
+        "row": 3,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71948,
+        "name": "Fiendish Stride",
+        "spell_id": 386110,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386110,
+            "description": "Fiendish Stride Talent Requires Warlock Reduces the damage dealt by Burning Rush by 10%. Burning Rush increases your movement speed by an additional 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71949
+        ],
+        "unlocks": [
+          71922
+        ],
+        "row": 3,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71930,
+        "name": "Demonic Embrace",
+        "spell_id": 288843,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 288843,
+            "description": "Demonic Embrace Talent Requires Warlock Stamina increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71932,
+          71952
+        ],
+        "unlocks": [
+          109847,
+          71944
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71916,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 386648,
+            "name": "Nightmare",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 386648,
+                "description": "Nightmare Talent Requires Warlock Increases the amount of damage required to break your fear effects by 60%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 56244,
+            "name": "Horrify",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 56244,
+                "description": "Horrify Talent Requires Warlock Your Fear causes the target to tremble in place instead of fleeing in fear.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          71950,
+          71952
+        ],
+        "unlocks": [
+          109846,
+          109847
+        ],
+        "row": 4,
+        "col": 4
+      },
+      {
+        "node_id": 71922,
+        "name": "Demonic Fortitude",
+        "spell_id": 386617,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386617,
+            "description": "Demonic Fortitude Talent Requires Warlock Increases you and your pets' maximum health by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71948,
+          71950
+        ],
+        "unlocks": [
+          109844,
+          71942,
+          109846
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71944,
+        "name": "Banish",
+        "spell_id": 710,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 710,
+            "description": "Banish Talent 1.5% of base mana Requires Warlock Banishes an enemy Demon, Aberration [ Greater Banish : Undead ], or Elemental, preventing any action for 30 sec. Limit 1. Casting Banish again on the target will cancel the effect.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71930
+        ],
+        "unlocks": [
+          110071
+        ],
+        "row": 5,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109847,
+        "name": "Curse of Exhaustion",
+        "spell_id": 334275,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 334275,
+            "description": "Curse of Exhaustion Talent 1% of base mana Requires Warlock Reduces the target's movement speed by 50% for 12 sec. Curses: A warlock can only have one Curse active per target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71916,
+          71930
+        ],
+        "unlocks": [
+          100941,
+          110071
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109846,
+        "name": "Curse of Tongues",
+        "spell_id": 1714,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1714,
+            "description": "Curse of Tongues Talent 1% of base mana Requires Warlock Forces the target to speak in Demonic, increasing the casting time of all spells by 30% for 1 min. Curses: A warlock can only have one Curse active per target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71916,
+          71922
+        ],
+        "unlocks": [
+          100941,
+          110072
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109844,
+        "name": "Infernal Beneficiary",
+        "spell_id": 1265810,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265810,
+            "description": "Infernal Beneficiary Talent Requires Warlock Healing done by Drain Life also heals your primary demon at 400% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71922
+        ],
+        "unlocks": [
+          110072
+        ],
+        "row": 5,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71942,
+        "name": "Mortal Coil",
+        "spell_id": 6789,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 6789,
+            "description": "Mortal Coil Talent 2% of base mana Requires Warlock Requires level 40 Horrifies an enemy target into fleeing, incapacitating for 3 sec and healing you for 20% of maximum health.",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71922
+        ],
+        "unlocks": [
+          109845,
+          110072
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110071,
+        "name": "Pact of the Annihilan",
+        "spell_id": 1270693,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270693,
+            "description": "Pact of the Annihilan Talent Requires Warlock Increases your critical strike chance by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109847,
+          71944
+        ],
+        "unlocks": [
+          109840,
+          71936,
+          110075
+        ],
+        "row": 6,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 100941,
+        "name": "Demonic Circle",
+        "spell_id": 268358,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 268358,
+            "description": "Demonic Circle Talent 2% of base mana Requires Warlock Summons a Demonic Circle for 15 min. Cast Demonic Circle: Teleport to teleport to its location and remove all movement slowing effects. [ Kilrogg's Cunning : If you cast Demonic Circle: Summon while controlling an Eye of Kilrogg, the circle will appear where the eye is located ] You also learn: Demonic Circle: Teleport Teleports you to your Demonic Circle and removes all movement slowing effects.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109846,
+          109847
+        ],
+        "unlocks": [
+          110075,
+          110074,
+          71954
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110072,
+        "name": "Pact of the Satyr",
+        "spell_id": 1270691,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270691,
+            "description": "Pact of the Satyr Talent Requires Warlock Increases your haste by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109844,
+          109846,
+          71942
+        ],
+        "unlocks": [
+          71938,
+          110074,
+          71923
+        ],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109845,
+        "name": "Improved Mortal Coil",
+        "spell_id": 1265816,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265816,
+            "description": "Improved Mortal Coil Talent Requires Warlock Increases the range of Mortal Coil by 10 yds and the amount it heals by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71942
+        ],
+        "unlocks": [
+          71923
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71936,
+        "name": "Dark Pact",
+        "spell_id": 108416,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108416,
+            "description": "Dark Pact Talent Requires Warlock Requires level 30 Sacrifices 20% of your current health to shield you for 200% of the sacrificed health plus an additional (Spell Power * 2.5) for 20 sec. Usable while suffering from control impairing effects.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110071
+        ],
+        "unlocks": [
+          71937
+        ],
+        "row": 7,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109840,
+        "name": "Foul Mouth",
+        "spell_id": 1265813,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265813,
+            "description": "Foul Mouth Talent Requires Warlock Casting Curse of Exhaustion, Curse of Tongues, or Curse of Weakness now curses all enemies within 10 yds of the target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110071
+        ],
+        "unlocks": [
+          109843
+        ],
+        "row": 7,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110075,
+        "name": "Empowered Healthstone",
+        "spell_id": 1271699,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271699,
+            "description": "Empowered Healthstone Talent Requires Warlock Healthstones heal you for an additional 5% additional health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          100941,
+          110071
+        ],
+        "unlocks": [
+          109843
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71954,
+        "name": "Abyss Walker",
+        "spell_id": 389609,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389609,
+            "description": "Abyss Walker Talent Requires Warlock Using Demonic Circle: Teleport or your Demonic Gateway reduces all damage you take by 4% for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          100941
+        ],
+        "unlocks": [
+          110073,
+          109843
+        ],
+        "row": 7,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110074,
+        "name": "Fortified Soul",
+        "spell_id": 1271694,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271694,
+            "description": "Fortified Soul Talent Requires Warlock Soul Leech may now absorb an additional 5% of your maximum health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          100941,
+          110072
+        ],
+        "unlocks": [
+          71917,
+          110073
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71938,
+        "name": "Teachings of the Black Harvest",
+        "spell_id": 385881,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385881,
+            "description": "Teachings of the Black Harvest Talent Requires Warlock Affliction, Destruction Your primary pets gain a bonus effect. Imp : Successful Singe Magic casts grant the target 4% damage reduction for 5 sec. Voidwalker : Reduces the cooldown of Shadow Bulwark by 30 sec. Felhunter : Reduces the cooldown of Devour Magic by 5 sec. Sayaad : Reduces the cooldown of Seduction by 10 sec and causes the target to walk faster towards the demon. Demonology Your primary pets gain a bonus effect. Imp : Successful Singe Magic casts grant the target 4% damage reduction for 5 sec. Voidwalker : Reduces the cooldown of Shadow Bulwark by 30 sec. Felhunter : Reduces the cooldown of Devour Magic by 5 sec. Sayaad : Reduces the cooldown of Seduction by 10 sec and causes the target to walk faster towards the demon. Felguard : Reduces the cooldown of Pursuit by 5 sec and increases its maximum range by 5 yards.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Shadow Bulwark",
+                "type": "cd_reduction",
+                "value": 30,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Devour Magic",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Seduction",
+                "type": "cd_reduction",
+                "value": 10,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Shadow Bulwark",
+                "type": "cd_reduction",
+                "value": 30,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Devour Magic",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Seduction",
+                "type": "cd_reduction",
+                "value": 10,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Pursuit",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          110072
+        ],
+        "unlocks": [
+          71917
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71923,
+        "name": "Gorefiend's Avarice",
+        "spell_id": 1270701,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270701,
+            "description": "Gorefiend's Avarice Talent Requires Warlock Drain Life now channels 100% faster and restores health 100% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110072,
+          109845
+        ],
+        "unlocks": [
+          71917,
+          110076
+        ],
+        "row": 7,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71937,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 386664,
+            "name": "Ichor of Devils",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 386664,
+                "description": "Ichor of Devils Talent Requires Warlock Dark Pact sacrifices only 5% of your current health for the same shield value.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 386686,
+            "name": "Frequent Donor",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 386686,
+                "description": "Frequent Donor Talent Requires Warlock Reduces the cooldown of Dark Pact by 15 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Dark Pact",
+                    "type": "cd_reduction",
+                    "value": 15,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          71936
+        ],
+        "unlocks": [
+          71956
+        ],
+        "row": 8,
+        "col": 1
+      },
+      {
+        "node_id": 109843,
+        "name": "Pact of the Eredar",
+        "spell_id": 1270695,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270695,
+            "description": "Pact of the Eredar Talent Requires Warlock Increases your Intellect by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71954,
+          109840,
+          110075
+        ],
+        "unlocks": [
+          71956,
+          71955
+        ],
+        "row": 8,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110073,
+        "name": "Pact of the Nathrezim",
+        "spell_id": 1270690,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270690,
+            "description": "Pact of the Nathrezim Talent Requires Warlock Increases your Leech by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71954,
+          110074
+        ],
+        "unlocks": [
+          71947,
+          71955
+        ],
+        "row": 8,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71917,
+        "name": "Demonic Resilience",
+        "spell_id": 389590,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389590,
+            "description": "Demonic Resilience Talent Requires Warlock Reduces the chance you will be critically struck by 2%. All damage your primary demon takes is reduced by 8%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71923,
+          110074,
+          71938
+        ],
+        "unlocks": [
+          71947
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110076,
+        "name": "Empowered Drain Life",
+        "spell_id": 1271689,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271689,
+            "description": "Empowered Drain Life Talent Requires Warlock Drain Life heals for an additional 200% of damage dealt and grants Soul Leech equal to 10% of damage dealt.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71923
+        ],
+        "unlocks": [
+          71947
+        ],
+        "row": 8,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71956,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 317138,
+            "name": "Strength of Will",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 317138,
+                "description": "Strength of Will Talent Requires Warlock Unending Resolve reduces damage taken by an additional 15%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 386659,
+            "name": "Dark Accord",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 386659,
+                "description": "Dark Accord Talent Requires Warlock Reduces the cooldown of Unending Resolve by 45 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Unending Resolve",
+                    "type": "cd_reduction",
+                    "value": 45,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109843,
+          71937
+        ],
+        "unlocks": [
+          71918,
+          109842
+        ],
+        "row": 9,
+        "col": 2
+      },
+      {
+        "node_id": 71955,
+        "name": "Demonic Gateway",
+        "spell_id": 111771,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 111771,
+            "description": "Demonic Gateway Talent 10% of base mana 10 - Requires Warlock Creates a demonic gateway between two locations. Activating the gateway transports the user to the other gateway. Each player can use a Demonic Gateway only once per 90 sec.",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109843,
+          110073
+        ],
+        "unlocks": [
+          71924,
+          109841,
+          109842
+        ],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71947,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 5484,
+            "name": "Howl of Terror",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 5484,
+                "description": "Howl of Terror Talent 1.8% of base mana Requires Warlock Requires level 40 Let loose a terrifying howl, causing 5 enemies within 10 yds to flee in fear, disorienting them for 20 sec. Damage may cancel the effect.",
+                "cooldown": 40.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 30283,
+            "name": "Shadowfury",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 30283,
+                "description": "Shadowfury Talent 1% of base mana Requires Warlock Stuns all enemies within 8 yds for 3 sec.",
+                "cooldown": 60.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          71917,
+          110073,
+          110076
+        ],
+        "unlocks": [
+          71924,
+          71941
+        ],
+        "row": 9,
+        "col": 6
+      },
+      {
+        "node_id": 71918,
+        "name": "Swift Artifice",
+        "spell_id": 452902,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 452902,
+            "description": "Swift Artifice Talent Requires Warlock Reduces the cast time of Soulstone and Create Healthstone by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71956
+        ],
+        "unlocks": [
+          71926
+        ],
+        "row": 10,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109842,
+        "name": "Soul Link",
+        "spell_id": 108415,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108415,
+            "description": "Soul Link Talent Requires Warlock Demonology 5% of all damage you take is taken by your demon pet instead. Affliction, Destruction 5% of all damage you take is taken by your demon pet instead. While Grimoire of Sacrifice is active, your Stamina is increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 108415,
+            "description": "Soul Link Talent Requires Warlock Demonology 5% of all damage you take is taken by your demon pet instead. Affliction, Destruction 5% of all damage you take is taken by your demon pet instead. While Grimoire of Sacrifice is active, your Stamina is increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71955,
+          71956
+        ],
+        "unlocks": [
+          71957,
+          71926
+        ],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109841,
+        "name": "Frequent Traveler",
+        "spell_id": 1265801,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265801,
+            "description": "Frequent Traveler Talent Requires Warlock Reduces the cast time of Demonic Gateway by 0.5 sec and you can now use Demonic Gateways twice before triggering a cooldown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71955
+        ],
+        "unlocks": [
+          71957
+        ],
+        "row": 10,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71924,
+        "name": "Fel Synergy",
+        "spell_id": 389367,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389367,
+            "description": "Fel Synergy Talent Requires Warlock Soul Leech also heals you for 8% and your pet for 25% of the absorption it grants.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 389367,
+            "description": "Fel Synergy Talent Requires Warlock Soul Leech also heals you for 8% and your pet for 25% of the absorption it grants.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71955,
+          71947
+        ],
+        "unlocks": [
+          71957,
+          109848
+        ],
+        "row": 10,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71941,
+        "name": "Oppressive Darkness",
+        "spell_id": 1270255,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270255,
+            "description": "Oppressive Darkness Talent Requires Warlock Reduces the cooldown of Shadowfury by 15 sec and increases its radius by 2 yds. Reduces the cooldown of Howl of Terror by 5 sec and it now fears 5 additional enemies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Shadowfury",
+                "type": "cd_reduction",
+                "value": 15,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Howl of Terror",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          71947
+        ],
+        "unlocks": [
+          109848
+        ],
+        "row": 10,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71926,
+        "name": "Pact of Gluttony",
+        "spell_id": 386689,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386689,
+            "description": "Pact of Gluttony Talent Requires Warlock Healthstones you conjure for yourself are now Demonic Healthstones and can be used multiple times in combat. Demonic Healthstones cannot be traded. Demonic Healthstone ly restores 25% health [ Empowered Healthstone : plus an additional 30% over 6 sec / .] .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71918,
+          109842
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71957,
+        "name": "Soulburn",
+        "spell_id": 385899,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385899,
+            "description": "Soulburn Talent Requires Warlock Consumes a Soul Shard, unlocking the hidden power of your spells. Demonic Circle: Teleport : Increases your movement speed by 50% and makes you immune to snares and roots for 6 sec. Demonic Gateway : Can be cast instantly. Drain Life : Gain an absorb shield equal to the amount of healing done for 30 sec. This shield cannot exceed 30% of your maximum health. Healthstone : Increases the healing of your Healthstone by 30% and increases your maximum health by 20% for 12 sec.",
+            "cooldown": 6.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71924,
+          109841,
+          109842
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109848,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1271748,
+            "name": "Blight of Weakness",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1271748,
+                "description": "Blight of Weakness Talent Requires Warlock Call forth a cloud of cloying shadow mist that envelopes the target and all enemies within 10 yds, increasing the time between their attacks by 100% and reducing their critical strike chance by 10% for 12 sec. Curses: A warlock can only have one Curse or Blight active per target.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1271802,
+            "name": "Blight of Tongues",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1271802,
+                "description": "Blight of Tongues Talent Requires Warlock Call forth a cloud of cloying shadow mist that envelopes the target and all enemies within 10 yds, increasing their casting time of all spells by 100% for 12 sec. Curses: A warlock can only have one Curse or Blight active per target.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          71924,
+          71941
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 6
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 94840,
+        "name": "Wither",
+        "spell_id": 445468,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 445468,
+            "description": "Wither Talent 1.5% of base mana Requires Warlock Destruction Bestows a vile malediction upon the target, burning the sinew and muscle of its host, dealing (19.8375% of Spell Power) Shadowflame damage immediately and an additional (296.544% of Spell Power) Shadowflame damage over 18 sec . Periodic damage generates Fragment and has a 50% chance to generate an additional 1 on critical strikes. Replaces Immolate. Affliction Bestows a vile malediction upon the target, burning the sinew and muscle of its host, dealing (19.8375% of Spell Power) Shadowflame damage immediately and an additional (296.544% of Spell Power) Shadowflame damage over 18 sec . Replaces Corruption.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Immolate",
+                "type": "replaces"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Corruption",
+                "type": "replaces"
+              }
+            ]
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94853,
+          94837,
+          94845,
+          109836
+        ],
+        "row": 1,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": {
+          "spell_id": null,
+          "name": "Corruption"
+        }
+      },
+      {
+        "node_id": 110282,
+        "name": "Chaos Bolt",
+        "spell_id": 116858,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 116858,
+            "description": "Chaos Bolt Talent Requires Warlock Unleashes a devastating blast of chaos, dealing a critical strike for [2 * (408.618% of Spell Power)] Chaos damage. Damage is further increased by your critical strike chance.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          72069,
+          72068
+        ],
+        "row": 2,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94853,
+        "name": "Xalan's Ferocity",
+        "spell_id": 440044,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 440044,
+            "description": "Xalan's Ferocity Talent Requires Warlock Destruction Fire damage dealt by your spells and abilities is increased by 5% and your Fire spells gain 10% more critical strike chance from all sources. Affliction Fire damage dealt by your spells and abilities is increased by 6% and your Fire spells gain 10% more critical strike chance from all sources.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94840
+        ],
+        "unlocks": [
+          94822
+        ],
+        "row": 2,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94837,
+        "name": "Blackened Soul",
+        "spell_id": 440043,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 440043,
+            "description": "Blackened Soul Talent Requires Warlock Spending Soul Shards on damaging spells will further corrupt enemies affected by your Wither, increasing its stack count by 1. Each time Wither gains a stack it has a chance to collapse, consuming a stack every 1 sec to deal (99.6334% of Spell Power) Shadowflame damage to its host until 1 stack remains.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94840
+        ],
+        "unlocks": [
+          94854
+        ],
+        "row": 2,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94845,
+        "name": "Xalan's Cruelty",
+        "spell_id": 440040,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 440040,
+            "description": "Xalan's Cruelty Talent Requires Warlock Destruction Shadow damage dealt by your spells and abilities is increased by 5% and your Shadow spells gain 10% more critical strike chance from all sources. Affliction Shadow damage dealt by your spells and abilities is increased by 6% and your Shadow spells gain 10% more critical strike chance from all sources.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94840
+        ],
+        "unlocks": [
+          94835
+        ],
+        "row": 2,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109836,
+        "name": "Through the Felvine",
+        "spell_id": 1266799,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266799,
+            "description": "Through the Felvine Talent Requires Warlock Increases the damage of [ Unstable Affliction : Unstable Affliction by 8 / Chaos Bolt by 35]% and [ Seed of Corruption : Seed of Corruption by 4 / Rain of Fire by 6]%. This effect is doubled while Malevolence is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94840
+        ],
+        "unlocks": [
+          109835
+        ],
+        "row": 2,
+        "col": 25,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72068,
+        "name": "Conflagrate",
+        "spell_id": 17962,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 17962,
+            "description": "Conflagrate Talent 1% of base mana 12.96 sec recharge Requires Warlock Triggers an explosion on the target, dealing (359.309% of Spell Power) Fire damage. [ Backdraft : Reduces the cast time of your next Incinerate or Chaos Bolt by 30% for 10 sec ] Generates Fragments.",
+            "cooldown": 12.96,
+            "charges": 2,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110282
+        ],
+        "unlocks": [
+          108680,
+          72067
+        ],
+        "row": 3,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72069,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 5740,
+            "name": "Rain of Fire",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 5740,
+                "description": "Rain of Fire Talent Requires Warlock Calls down a rain of hellfire the target location, dealing [(45.9162% of Spell Power) * 8] Fire damage over 8 sec to enemies in the area. This spell is cast at a selected location.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1214467,
+            "name": "Rain of Fire",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1214467,
+                "description": "Rain of Fire Talent Requires Warlock Calls down a rain of hellfire upon your target, dealing [(45.9162% of Spell Power) * 8] Fire damage over 8 sec to enemies in the area. This spell is cast at your target.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          110282
+        ],
+        "unlocks": [
+          72065,
+          108678
+        ],
+        "row": 3,
+        "col": 19
+      },
+      {
+        "node_id": 94822,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 440057,
+            "name": "Curse of the Satyr",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440057,
+                "description": "Curse of the Satyr Talent Requires Warlock Curse of Weakness is empowered and transforms into Curse of the Satyr. Curse of the Satyr Increases the time between an enemy's attacks by 20% and the casting time of all spells by 30% for 2 min. Curses: A warlock can only have one Curse active per target.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 440059,
+            "name": "Aura of Enfeeblement",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440059,
+                "description": "Aura of Enfeeblement Talent Requires Warlock While Unending Resolve is active, enemies within 30 yds are affected by Curse of Tongues and Curse of Weakness at 100% effectiveness.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94853
+        ],
+        "unlocks": [
+          94834
+        ],
+        "row": 3,
+        "col": 22
+      },
+      {
+        "node_id": 94854,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 440048,
+            "name": "Hatefury Rituals",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440048,
+                "description": "Hatefury Rituals Talent Requires Warlock Wither deals 30% increased periodic damage but its duration is 15% shorter.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 440051,
+            "name": "Bleakheart Tactics",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440051,
+                "description": "Bleakheart Tactics Talent Requires Warlock Wither damage increased 20%. When Wither gains a stack from Blackened Soul, it has a chance to gain an additional stack.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94837
+        ],
+        "unlocks": [
+          94829
+        ],
+        "row": 3,
+        "col": 23
+      },
+      {
+        "node_id": 94835,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 440065,
+            "name": "Zevrim's Resilience",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440065,
+                "description": "Zevrim's Resilience Talent Requires Warlock Dark Pact heals you for (164.583% of Spell Power) every 1 sec while active.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 440070,
+            "name": "Illhoof's Design",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440070,
+                "description": "Illhoof's Design Talent Requires Warlock Sacrifice 10% of your maximum health. Soul Leech now absorbs an additional 15% of your maximum health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94845
+        ],
+        "unlocks": [
+          94844
+        ],
+        "row": 3,
+        "col": 24
+      },
+      {
+        "node_id": 109835,
+        "name": "Devil Fruit",
+        "spell_id": 1266805,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266805,
+            "description": "Devil Fruit Talent Requires Warlock Approximately 1 procs per minute Periodic damage dealt by Wither has a chance to grant Malevolence for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109836
+        ],
+        "unlocks": [
+          109834
+        ],
+        "row": 3,
+        "col": 25,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108680,
+        "name": "Improved Conflagrate",
+        "spell_id": 231793,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 231793,
+            "description": "Improved Conflagrate Talent Requires Warlock Conflagrate gains an additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          72068
+        ],
+        "unlocks": [
+          72059
+        ],
+        "row": 4,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72067,
+        "name": "Backdraft",
+        "spell_id": 196406,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 196406,
+            "description": "Backdraft Talent Requires Warlock Conflagrate reduces the cast time of your next Incinerate, Chaos Bolt, or Soul Fire by 30%. Maximum [ Flashover : 4 / 2] charges.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          72068
+        ],
+        "unlocks": [
+          72059,
+          71979
+        ],
+        "row": 4,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108678,
+        "name": "Practiced Chaos",
+        "spell_id": 1244284,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244284,
+            "description": "Practiced Chaos Talent Requires Warlock Increases Mastery by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          72069
+        ],
+        "unlocks": [
+          71979,
+          71973
+        ],
+        "row": 4,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72065,
+        "name": "Roaring Blaze",
+        "spell_id": 1244310,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244310,
+            "description": "Roaring Blaze Talent Requires Warlock Increases Conflagrate damage by 10%. Conflagrate now erupts the target's Immolate , spreading it up to 3 nearby enemies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          72069
+        ],
+        "unlocks": [
+          71973
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94834,
+        "name": "Mark of Xavius",
+        "spell_id": 440046,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 440046,
+            "description": "Mark of Xavius Talent Requires Warlock [ Agony : Agony damage increased by 30% / Wither damage increased by 25%.] Blackened Soul deals 2% increased damage per stack of Wither.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94822
+        ],
+        "unlocks": [
+          94842
+        ],
+        "row": 4,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94829,
+        "name": "Seeds of Their Demise",
+        "spell_id": 440055,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 440055,
+            "description": "Seeds of Their Demise Talent Requires Warlock Destruction After Wither reaches 8 stacks or when its host reaches 20% health, Wither deals (99.6334% of Spell Power) Shadowflame damage to its host every 1 sec until 1 stack remains. When Blackened Soul deals damage, you have a chance to gain 2 stacks of Flashpoint. Affliction After Wither reaches 8 stacks or when its host reaches 20% health, Wither deals (99.6334% of Spell Power) Shadowflame damage to its host every 1 sec until 1 stack remains. When Blackened Soul deals damage, you have a chance to gain Shard Instability.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94854
+        ],
+        "unlocks": [
+          94842
+        ],
+        "row": 4,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94844,
+        "name": "Mark of Peroth'arn",
+        "spell_id": 440045,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 440045,
+            "description": "Mark of Peroth'arn Talent Requires Warlock Critical strike damage dealt by Wither is increased by 10%. Wither has a chance to gain a stack when it critically strikes. Stacks gained this way do not activate Blackened Soul.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94835
+        ],
+        "unlocks": [
+          94842
+        ],
+        "row": 4,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109834,
+        "name": "Alzzin's Iniquity",
+        "spell_id": 1266803,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266803,
+            "description": "Alzzin's Iniquity Talent Requires Warlock Malevolence grants an additional 4% Haste and when cast increases the stack count of active Withers by an additional 2 stacks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109835
+        ],
+        "unlocks": [
+          94842
+        ],
+        "row": 4,
+        "col": 25,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72059,
+        "name": "Explosive Potential",
+        "spell_id": 388827,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388827,
+            "description": "Explosive Potential Talent Requires Warlock Reduces the cooldown of Conflagrate by 2 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Conflagrate",
+                "type": "cd_reduction",
+                "value": 2,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          108680,
+          72067
+        ],
+        "unlocks": [
+          72060,
+          71983
+        ],
+        "row": 5,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71979,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 387506,
+            "name": "Mayhem",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 387506,
+                "description": "Mayhem Talent Requires Warlock Your single target spells have a 35% chance to apply Havoc to a nearby enemy for 5.0 sec. Havoc Marks a target with Havoc for 5.0 sec, causing your single target spells to also strike the Havoc victim for 60% of the damage dealt. (5.1s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 80240,
+            "name": "Havoc",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 80240,
+                "description": "Havoc Talent 2% of base mana Requires Warlock Marks a target with Havoc for 15 sec , causing your single target spells to also strike the Havoc victim for 60 / Gloom of Nathreza : 67 / Improved Havoc : 70 % of the damage dealt.",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          72067,
+          108678
+        ],
+        "unlocks": [
+          71961,
+          71969,
+          71983
+        ],
+        "row": 5,
+        "col": 18
+      },
+      {
+        "node_id": 71973,
+        "name": "Scalding Flames",
+        "spell_id": 388832,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388832,
+            "description": "Scalding Flames Talent Requires Warlock Increases the damage of Immolate by 25% and its duration by 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Immolate",
+                "type": "damage_increase",
+                "value": 25,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          108678,
+          72065
+        ],
+        "unlocks": [
+          71969,
+          71974
+        ],
+        "row": 5,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94842,
+        "name": "Malevolence",
+        "spell_id": 442726,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442726,
+            "description": "Malevolence Talent 1% of base mana Requires Warlock Dark magic erupts from you and corrupts your soul for 20 sec, causing enemies suffering from your Wither to take (1265.51% of Spell Power) Shadowflame damage and increase its stack count by 6. While corrupted your Haste is increased by 8% and spending Soul Shards on damaging spells grants 1 additional stack of Wither.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94844,
+          94829,
+          94834,
+          109834
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72060,
+        "name": "Shadowburn",
+        "spell_id": 17877,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 17877,
+            "description": "Shadowburn Talent Requires Warlock Requires level 25 Blasts a target for (496.8% of Spell Power) Shadowflame damage. Only usable on enemies that have less than 20% health. Restores and refunds a charge if the target dies within 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          72059
+        ],
+        "unlocks": [
+          72061,
+          101994
+        ],
+        "row": 6,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71983,
+        "name": "Backlash",
+        "spell_id": 387384,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387384,
+            "description": "Backlash Talent Requires Warlock Increases your critical strike chance by 2%. Physical attacks against you have a 20% chance to make your next Incinerate instant cast. This effect can only occur once every 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 387384,
+            "description": "Backlash Talent Requires Warlock Increases your critical strike chance by 2%. Physical attacks against you have a 20% chance to make your next Incinerate instant cast. This effect can only occur once every 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71979,
+          72059
+        ],
+        "unlocks": [
+          72061,
+          71972,
+          71985
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71961,
+        "name": "Improved Havoc",
+        "spell_id": 1244460,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244460,
+            "description": "Improved Havoc Talent Requires Warlock Increases the duration of Havoc by 5 sec and increases the damage Havoc victims are dealt by an additional 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Havoc",
+                "type": "duration_increase",
+                "value": 5,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          71979
+        ],
+        "unlocks": [
+          71985
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71969,
+        "name": "Ashen Remains",
+        "spell_id": 387252,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387252,
+            "description": "Ashen Remains Talent Requires Warlock Chaos Bolt, Shadowburn, and Incinerate deal 3% increased damage to targets afflicted by Immolate .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 387252,
+            "description": "Ashen Remains Talent Requires Warlock Chaos Bolt, Shadowburn, and Incinerate deal 3% increased damage to targets afflicted by Immolate .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71973,
+          71979
+        ],
+        "unlocks": [
+          72062,
+          71982,
+          71985
+        ],
+        "row": 6,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71974,
+        "name": "Cataclysm",
+        "spell_id": 152108,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 152108,
+            "description": "Cataclysm Talent 1% of base mana Requires Warlock Requires level 35 Calls forth a cataclysm at the target location, dealing (364.5% of Spell Power) Shadowflame damage to all enemies within 8 yards and afflicting them with Immolate .",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71973
+        ],
+        "unlocks": [
+          71982,
+          102427
+        ],
+        "row": 6,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94855,
+        "name": "Diabolic Ritual",
+        "spell_id": 428514,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 428514,
+            "description": "Diabolic Ritual Talent Requires Warlock Destruction Casting Chaos Bolt, Rain of Fire, or Shadowburn grants Diabolic Ritual for 20 sec. If Diabolic Ritual is already active, its duration is reduced by 1 sec instead. When Diabolic Ritual expires you gain Demonic Art, causing your next Chaos Bolt, Rain of Fire, or Shadowburn to summon an Overlord, Mother of Chaos, or Pit Lord that unleashes a devastating attack against your enemies. Demonology Spending a Soul Shard on a damaging spell grants Diabolic Ritual for 20 sec. While Diabolic Ritual is active, each Soul Shard spent on a damaging spell reduces its duration by 1 sec. When Diabolic Ritual expires you gain Demonic Art, causing your next Hand of Gul'dan to summon an Overlord, Mother of Chaos, or Pit Lord that unleashes a devastating attack against your enemies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94849,
+          94856,
+          94826,
+          109833
+        ],
+        "row": 7,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101994,
+        "name": "Fiendish Cruelty",
+        "spell_id": 1245633,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1245633,
+            "description": "Fiendish Cruelty Talent Requires Warlock Critical strikes dealt by Chaos Bolt, Conflagrate, or Incinerate have a 10% chance to make your next cast of Shadowburn within 30 sec cost no Soul Shards and usable on any target regardless of health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          72060
+        ],
+        "unlocks": [
+          71980
+        ],
+        "row": 7,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72061,
+        "name": "Chaotic Inferno",
+        "spell_id": 1244788,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244788,
+            "description": "Chaotic Inferno Talent Requires Warlock Increases Chaos Bolt damage by 5% and Chaos Bolt now has a 25% chance to make your next Incinerate instant.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71983,
+          72060
+        ],
+        "unlocks": [
+          71980
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71972,
+        "name": "Flashpoint",
+        "spell_id": 387259,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387259,
+            "description": "Flashpoint Talent Requires Warlock When your Immolate deals periodic damage to a target above 80% health, gain 2% Haste for 10 sec. Stacks up to 3 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71983
+        ],
+        "unlocks": [
+          71980
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71985,
+        "name": "Summon Infernal",
+        "spell_id": 1122,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1122,
+            "description": "Summon Infernal Talent 2% of base mana Requires Warlock Summons an Infernal from the Twisting Nether, impacting for (60% of Spell Power) Fire damage and stunning all enemies in the area for 2 sec. The Infernal will serve you for 30 sec, dealing [(55% of Spell Power) * (100) / 100] damage to all nearby enemies every 2 sec and generating Fragment every 1 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71969,
+          71983,
+          71961
+        ],
+        "unlocks": [
+          71960
+        ],
+        "row": 7,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72062,
+        "name": "Emberstorm",
+        "spell_id": 454744,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454744,
+            "description": "Emberstorm Talent Requires Warlock Increases the damage done by your Fire spells by 2% and reduces the cast time of your Incinerate spell by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71969
+        ],
+        "unlocks": [
+          71971
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71982,
+        "name": "Fire and Brimstone",
+        "spell_id": 196408,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 196408,
+            "description": "Fire and Brimstone Talent Requires Warlock Requires level 35 Incinerate now also hits all enemies near your target for 25% damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71974,
+          71969
+        ],
+        "unlocks": [
+          71971
+        ],
+        "row": 7,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102427,
+        "name": "Lake of Fire",
+        "spell_id": 1244877,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244877,
+            "description": "Lake of Fire Talent Requires Warlock Cataclysm now leaves behind a lake of fire that deals [(60% of Spell Power) * 10] Fire damage to enemies within it over 10 sec. Immolate deals 20% increased damage to enemies within the lake of fire.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71974
+        ],
+        "unlocks": [
+          71971
+        ],
+        "row": 7,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94849,
+        "name": "Cloven Souls",
+        "spell_id": 428517,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 428517,
+            "description": "Cloven Souls Talent Requires Warlock Enemies damaged by your Overlord have their souls cloven, increasing damage taken by you and your pets by 5 % for 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94855
+        ],
+        "unlocks": [
+          94836
+        ],
+        "row": 8,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94856,
+        "name": "Touch of Rancora",
+        "spell_id": 429893,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429893,
+            "description": "Touch of Rancora Talent Requires Warlock Destruction Demonic Art increases the damage of your next Chaos Bolt, Rain of Fire, or Shadowburn by 20% and reduces its cast time by 50%. Casting Chaos Bolt reduces the duration of Diabolic Ritual by 1 additional sec. Demonology Demonic Art increases the damage of your next Hand of Gul'dan by 20% and reduces its cast time by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Chaos Bolt, Rain of Fire, or Shadowburn",
+                "type": "damage_increase",
+                "value": 20,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Hand of Gul'dan",
+                "type": "damage_increase",
+                "value": 20,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94855
+        ],
+        "unlocks": [
+          94848
+        ],
+        "row": 8,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94826,
+        "name": "Secrets of the Coven",
+        "spell_id": 428518,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 428518,
+            "description": "Secrets of the Coven Talent Requires Warlock Destruction Mother of Chaos empowers your next Incinerate to become Infernal Bolt. Infernal Bolt Hurl a bolt enveloped in the infernal flames of the abyss, dealing (1347.35% of Spell Power) Fire damage to your enemy target and generating . Demonology Mother of Chaos empowers your next Shadow Bolt to become Infernal Bolt. Infernal Bolt Hurl a bolt enveloped in the infernal flames of the abyss, dealing (1347.35% of Spell Power) Fire damage to your enemy target and generating .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94855
+        ],
+        "unlocks": [
+          94852
+        ],
+        "row": 8,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109833,
+        "name": "Diabolic Oculi",
+        "spell_id": 1268709,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268709,
+            "description": "Diabolic Oculi Talent Requires Warlock You summon a Diabolic Oculus, up to 3, each time the duration of Diabolic Ritual is reduced by one of your spells. Diabolic Oculi explode when consuming Demonic Art, dealing (234.62% of Spell Power) Fire damage to all enemies within 10 yds of the target. Damage reduced beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94855
+        ],
+        "unlocks": [
+          109832
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71980,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 205148,
+            "name": "Reverse Entropy",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 205148,
+                "description": "Reverse Entropy Talent Requires Warlock Requires level 25 Approximately 2.5 procs per minute Your spells have a chance to grant you 15% Haste for 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 266134,
+            "name": "Internal Combustion",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 266134,
+                "description": "Internal Combustion Talent Requires Warlock Requires level 25 Chaos Bolt consumes up to 5 sec of Immolate's damage over time effect on your target, instantly dealing that much damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          101994,
+          72061,
+          71972
+        ],
+        "unlocks": [
+          101992,
+          72066
+        ],
+        "row": 8,
+        "col": 16
+      },
+      {
+        "node_id": 71960,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 417234,
+            "name": "Crashing Chaos",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 417234,
+                "description": "Crashing Chaos Talent Requires Warlock Summon Infernal increases the damage of your next 8 casts of Chaos Bolt by 25% or your next 8 casts of Rain of Fire by 35%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "your next 8 casts of Chaos Bolt",
+                    "type": "damage_increase",
+                    "value": 25,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 266086,
+            "name": "Rain of Chaos",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 266086,
+                "description": "Rain of Chaos Talent Requires Warlock Requires level 45 While your initial Infernal is active, every Soul Shard you spend has a 15% chance to summon an additional Infernal that lasts 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          71985
+        ],
+        "unlocks": [
+          71964,
+          101992
+        ],
+        "row": 8,
+        "col": 18
+      },
+      {
+        "node_id": 71971,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 453105,
+            "name": "Summoner's Embrace",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 453105,
+                "description": "Summoner's Embrace Talent Requires Warlock Increases the damage dealt by your spells and your demon by 3%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 108503,
+            "name": "Grimoire of Sacrifice",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 108503,
+                "description": "Grimoire of Sacrifice Talent Unlimited range Requires Warlock Requires level 45 Sacrifices your demon pet for power, gaining its command demon ability, and causing your spells to sometimes also deal (37.1875% of Spell Power) additional Shadow damage. Lasts until canceled or until you summon a demon pet.",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          71982,
+          102427,
+          72062
+        ],
+        "unlocks": [
+          110281,
+          71964
+        ],
+        "row": 8,
+        "col": 20
+      },
+      {
+        "node_id": 94836,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 428911,
+            "name": "Soul-Etched Circles",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 428911,
+                "description": "Soul-Etched Circles Talent Requires Warlock You always gain the benefit of Soulburn when casting Demonic Circle: Teleport, increasing your movement speed by 50% and making you immune to snares and roots for 6 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 429072,
+            "name": "Annihilan's Bellow",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429072,
+                "description": "Annihilan's Bellow Talent Requires Warlock Howl of Terror cooldown is reduced by 10 sec and range is increased by 5 yds.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94849
+        ],
+        "unlocks": [
+          94833
+        ],
+        "row": 9,
+        "col": 9
+      },
+      {
+        "node_id": 94848,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 429902,
+            "name": "Cruelty of Kerxan",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429902,
+                "description": "Cruelty of Kerxan Talent Requires Warlock Demonology Summon Demonic Tyrant grants Diabolic Ritual and reduces its duration by 3 sec. Destruction Summon Infernal grants Diabolic Ritual and reduces its duration by 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 429917,
+            "name": "Infernal Machine",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429917,
+                "description": "Infernal Machine Talent Requires Warlock Demonology Spending Soul Shards on damaging spells while your Demonic Tyrant is active decreases the duration of Diabolic Ritual by 1 additional sec. Destruction Spending Soul Shards on damaging spells while your Infernal is active decreases the duration of Diabolic Ritual by 1 additional sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94856
+        ],
+        "unlocks": [
+          94831
+        ],
+        "row": 9,
+        "col": 10
+      },
+      {
+        "node_id": 94852,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 429115,
+            "name": "Infernal Vitality",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429115,
+                "description": "Infernal Vitality Talent Requires Warlock Unending Resolve heals you for 30% of your maximum health over 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 429130,
+            "name": "Infernal Bulwark",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429130,
+                "description": "Infernal Bulwark Talent Requires Warlock Unending Resolve grants Soul Leech equal to 10% of your maximum health and increases the maximum amount Soul Leech can absorb by 10% for 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94826
+        ],
+        "unlocks": [
+          94843
+        ],
+        "row": 9,
+        "col": 11
+      },
+      {
+        "node_id": 109832,
+        "name": "Looks That Kill",
+        "spell_id": 1268713,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268713,
+            "description": "Looks That Kill Talent Requires Warlock Your Diabolic Oculi now cast Diabolic Gaze at your primary demon's target every 1 sec while active. Diabolic Gaze Fire a beam of destructive chaos magic at the target, dealing (80% of Spell Power) Chaos damage. Damage is increased by 100% per Demonic Oculus active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109833
+        ],
+        "unlocks": [
+          109831
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72066,
+        "name": "Ruin",
+        "spell_id": 387103,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387103,
+            "description": "Ruin Talent Requires Warlock Increases the critical strike damage of your Destruction spells by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 387103,
+            "description": "Ruin Talent Requires Warlock Increases the critical strike damage of your Destruction spells by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71980
+        ],
+        "unlocks": [
+          108681,
+          71975
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101992,
+        "name": "Improved Chaos Bolt",
+        "spell_id": 456951,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 456951,
+            "description": "Improved Chaos Bolt Talent Requires Warlock Increases the damage of Chaos Bolt by 10% and reduces its cast time by 0.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Chaos Bolt",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          71980,
+          71960
+        ],
+        "unlocks": [
+          71965,
+          71975
+        ],
+        "row": 9,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71964,
+        "name": "Destructive Rapidity",
+        "spell_id": 1244928,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244928,
+            "description": "Destructive Rapidity Talent Requires Warlock Increases how quickly Rain of Fire deals damage by 25% and how quickly your Infernal's Immolation deals damage by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71971,
+          71960
+        ],
+        "unlocks": [
+          71968,
+          71965
+        ],
+        "row": 9,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110281,
+        "name": "Devastation",
+        "spell_id": 454735,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454735,
+            "description": "Devastation Talent Requires Warlock Increases the critical strike chance of your Destruction spells by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 454735,
+            "description": "Devastation Talent Requires Warlock Increases the critical strike chance of your Destruction spells by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71971
+        ],
+        "unlocks": [
+          72064,
+          71968
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94833,
+        "name": "Flames of Xoroth",
+        "spell_id": 429657,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429657,
+            "description": "Flames of Xoroth Talent Requires Warlock Fire damage increased by 4% and damage dealt by your demons is increased by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94836
+        ],
+        "unlocks": [
+          94830
+        ],
+        "row": 10,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94831,
+        "name": "Abyssal Dominion",
+        "spell_id": 429581,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429581,
+            "description": "Abyssal Dominion Talent Requires Warlock Demonology Summon Demonic Tyrant is empowered, dealing 70% increased damage and increasing the damage of your demons by 20% while active. Destruction Summon Infernal becomes empowered, dealing 40% increased damage. When your Summon Infernal ends, it fragments into two smaller Infernals at 50% effectiveness that lasts 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94848
+        ],
+        "unlocks": [
+          94830
+        ],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94843,
+        "name": "Gloom of Nathreza",
+        "spell_id": 429899,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429899,
+            "description": "Gloom of Nathreza Talent Requires Warlock Destruction Enemies marked by your Havoc take 7% increased damage from your single target spells. Demonology Hand of Gul'dan deals 15% increased damage for each Soul Shard spent.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94852
+        ],
+        "unlocks": [
+          94830
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109831,
+        "name": "Mind's Eyes",
+        "spell_id": 1268716,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268716,
+            "description": "Mind's Eyes Talent Requires Warlock Your Diabolic Oculi observe the battlefield and collect information that is imparted to you upon being exploded, each Diabolic Oculi increasing your Intellect by 2% for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109832
+        ],
+        "unlocks": [
+          94830
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108681,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1280868,
+            "name": "Dimensional Rift",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1280868,
+                "description": "Dimensional Rift Talent Requires Warlock Chaos Bolt and Shadowburn have a 10% chance to rip open a hole in space and time, opening a random portal that damages your target: Shadowy Tear Deals [(105.487% of Spell Power) * 7] Shadow damage over 14 sec. Unstable Tear Deals [(26.3718% of Spell Power) * 24] Chaos damage over 6 sec. Chaos Tear Fires a Chaos Bolt, dealing (326.508% of Spell Power) Chaos damage. This Chaos Bolt always critically strikes and your critical strike chance increases its damage. Generates Fragments.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 6353,
+            "name": "Soul Fire",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 6353,
+                "description": "Soul Fire Talent 2% of base mana Requires Warlock Requires level 15 Burns the enemy's soul, dealing (2667.17% of Spell Power) Fire damage and applying Immolate . Generates .",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          72066
+        ],
+        "unlocks": [
+          110280
+        ],
+        "row": 10,
+        "col": 15
+      },
+      {
+        "node_id": 71975,
+        "name": "Inferno",
+        "spell_id": 1280483,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1280483,
+            "description": "Inferno Talent Requires Warlock Reduces the cooldown of Summon Infernal by 30.0 sec and increases your Mastery by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Summon Infernal",
+                "type": "cd_reduction",
+                "value": 30,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Summon Infernal by 30.0 sec and increases your Mastery",
+                "type": "cd_reduction",
+                "value": 3,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          72066,
+          101992
+        ],
+        "unlocks": [
+          71966
+        ],
+        "row": 10,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71965,
+        "name": "Conflagration of Chaos",
+        "spell_id": 387108,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387108,
+            "description": "Conflagration of Chaos Talent Requires Warlock Conflagrate and Shadowburn have a 100% chance to guarantee your next cast of the ability to critically strike, and increase its damage by your critical strike chance.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101992,
+          71964
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71968,
+        "name": "Diabolic Embers",
+        "spell_id": 387173,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387173,
+            "description": "Diabolic Embers Talent Requires Warlock Incinerate now generates 100% additional Soul Shard Fragments.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110281,
+          71964
+        ],
+        "unlocks": [
+          102003
+        ],
+        "row": 10,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 72064,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1214442,
+            "name": "Demonfire Infusion",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1214442,
+                "description": "Demonfire Infusion Talent Requires Warlock Periodic damage from Immolate has a 4% chance to fire a Demonfire bolt at 100% increased effectiveness. Incinerate has a 25% chance to fire a Demonfire bolt at 100% increased effectiveness.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 196447,
+            "name": "Channel Demonfire",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 196447,
+                "description": "Channel Demonfire Talent 1.5% of base mana Channeled () Requires Warlock Requires level 50 Launches 15 bolts of felfire over 3 sec at random targets afflicted by your Immolate within 40 yds. Each bolt deals (39.355% of Spell Power) Fire damage to the target and (19.5657% of Spell Power) Fire damage to nearby enemies.",
+                "cooldown": 25.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          110281
+        ],
+        "unlocks": [
+          101993
+        ],
+        "row": 10,
+        "col": 21
+      },
+      {
+        "node_id": 94830,
+        "name": "Ruination",
+        "spell_id": 428522,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 428522,
+            "description": "Ruination Talent Requires Warlock Destruction Summoning a Pit Lord causes your next Chaos Bolt to become Ruination. Ruination Call down a demon-infested meteor from the depths of the Twisting Nether, dealing (2537.91% of Spell Power) Chaos damage on impact to all enemies within 8 yds of the target and summoning 1 Diabolic Imp. Damage is further increased by your critical strike chance and is reduced beyond 8 targets. Demonology Summoning a Pit Lord causes your next Hand of Gul'dan to become Ruination. Ruination Call down a demon-infested meteor from the depths of the Twisting Nether, dealing (2537.91% of Spell Power) Chaos damage on impact to all enemies within 8 yds of the target and summoning 3 Wild Imps. Damage is reduced beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94843,
+          94831,
+          94833,
+          109831
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110280,
+        "name": "Avatar of Destruction",
+        "spell_id": 1245089,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1245089,
+            "description": "Avatar of Destruction Talent Requires Warlock Casting Soul Fire summons an Overfiend. Opening a Dimensional Rift has a chance to summon an Overfiend instead. Summon Overfiend Generates Fragment every 1 sec and casts Chaos Bolt at 80% effectiveness at its summoner's target. Lasts 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108681
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 71966,
+        "name": "Chaos Incarnate",
+        "spell_id": 387275,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387275,
+            "description": "Chaos Incarnate Talent Requires Warlock Chaos Bolt, Rain of Fire, and Shadowburn always gain at least 70% of the maximum benefit from your Mastery: Chaotic Energies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71975
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102003,
+        "name": "Alythess's Ire",
+        "spell_id": 1244941,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244941,
+            "description": "Alythess's Ire Talent Requires Warlock Rain of Fire has a 20% chance to reduce the cost of your next Rain of Fire within 8 sec by 100%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          71968
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101993,
+        "name": "Raging Demonfire",
+        "spell_id": 387166,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387166,
+            "description": "Raging Demonfire Talent Requires Warlock Channel Demonfire fires an additional 2 bolts. Each bolt increases the remaining duration of Immolate on all targets hit by 0.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          72064
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110406,
+        "name": "Embers of Nihilam",
+        "spell_id": 1265770,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265770,
+            "description": "Embers of Nihilam Talent Requires Warlock Casting Incinerate has a chance to evoke an echo of the Dark Titan's power. Echo of Sargeras Hurl an ember torn from Nihilam at the target, dealing (187.5% of Spell Power) Shadowflame damage and an additional (162.5% of Spell Power) Shadowflame damage to all enemies within 10 yds. Damage reduced beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Soul Harvester",
+      "nodes": [
+        {
+          "node_id": 94821,
+          "name": "Wicked Reaping",
+          "spell_id": 449631,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449631,
+              "description": "Wicked Reaping Talent Requires Warlock Affliction Damage dealt by your demonic soul is increased by 10%. Consuming Nightfall feeds the demonic entity within you, causing it to appear and deal (601.005% of Spell Power) Shadow damage to your target. Demonology Damage dealt by your demonic soul is increased by 30%. Consuming Demonic Core feeds the demonic entity within you, causing it to appear and deal [(601.005% of Spell Power) * 0.4] Shadow damage to your target.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94850
+          ],
+          "unlocks": [
+            94857
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94823,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 449704,
+              "name": "Shared Fate",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449704,
+                  "description": "Shared Fate Talent Requires Warlock When you kill a target, its tortured soul is flung into a nearby enemy for 3 sec. This effect inflicts (50.6531% of Spell Power) Shadow damage to enemies within 10 yds every 1 sec. Deals reduced damage beyond 8 targets.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 449706,
+              "name": "Feast of Souls",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449706,
+                  "description": "Feast of Souls Talent Requires Warlock When you kill a target, you have a chance to generate a Soul Shard that is guaranteed to be a Succulent Soul.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94847
+          ],
+          "unlocks": [
+            94846
+          ],
+          "row": 4,
+          "col": 10
+        },
+        {
+          "node_id": 94824,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 449707,
+              "name": "Eternal Servitude",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449707,
+                  "description": "Eternal Servitude Talent Requires Warlock Fel Domination cooldown is reduced by 90 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 389623,
+              "name": "Gorefiend's Resolve",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 389623,
+                  "description": "Gorefiend's Resolve Talent Requires Warlock Targets resurrected with Soulstone resurrect with 40% additional health and 80% additional mana.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94832
+          ],
+          "unlocks": [
+            94838
+          ],
+          "row": 4,
+          "col": 11
+        },
+        {
+          "node_id": 94825,
+          "name": "Necrolyte Teachings",
+          "spell_id": 449620,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449620,
+              "description": "Necrolyte Teachings Talent Requires Warlock Affliction Shadow Bolt and Drain Soul damage increased by 20%. Nightfall increases the damage of Shadow Bolt and Drain Soul by an additional 50%. Demonology Shadow Bolt damage increased by 20%. Power Siphon increases the damage of Demonbolt by an additional 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Shadow Bolt and Drain Soul by an additional 50%. Demonology Shadow Bolt damage increased",
+                  "type": "damage_increase",
+                  "value": 20,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94851
+          ],
+          "unlocks": [
+            94850
+          ],
+          "row": 3,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94832,
+          "name": "Demoniac's Fervor",
+          "spell_id": 449629,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449629,
+              "description": "Demoniac's Fervor Talent Requires Warlock Affliction Your demonic soul deals 100% increased damage to targets affected by your Unstable Affliction. Demonology Your demonic soul deals 200% increased damage to the main target of Hand of Gul'dan.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94851
+          ],
+          "unlocks": [
+            94824
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94838,
+          "name": "Sataiel's Volition",
+          "spell_id": 449637,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449637,
+              "description": "Sataiel's Volition Talent Requires Warlock Affliction Corruption deals damage 25% faster and Haunt grants Nightfall. Demonology Wild Imp damage increased by 35% and Wild Imps that are imploded have an additional 5% chance to grant a Demonic Core.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94824
+          ],
+          "unlocks": [
+            94857
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94846,
+          "name": "Quietus",
+          "spell_id": 449634,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449634,
+              "description": "Quietus Talent Requires Warlock Demonology Soul Anathema damage increased by 25% and is dealt 20% faster. Consuming Demonic Core activates Shared Fate or Feast of Souls. Affliction Soul Anathema damage increased by 25% and is dealt 20% faster. Consuming Nightfall activates Shared Fate or Feast of Souls.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94823
+          ],
+          "unlocks": [
+            94857
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94847,
+          "name": "Soul Anathema",
+          "spell_id": 449624,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449624,
+              "description": "Soul Anathema Talent Requires Warlock Unleashing your demonic soul bestows a fiendish entity unto the soul of its targets, dealing (114.712% of Spell Power) Shadow damage over 10 sec. If this effect is reapplied, any remaining damage will be added to the new Soul Anathema.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94851
+          ],
+          "unlocks": [
+            94823
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94850,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 449701,
+              "name": "Gorebound Fortitude",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449701,
+                  "description": "Gorebound Fortitude Talent Requires Warlock You always gain the benefit of Soulburn when consuming a Healthstone, increasing its healing by 30% and increasing your maximum health by 20% for 12 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 449703,
+              "name": "Friends In Dark Places",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449703,
+                  "description": "Friends In Dark Places Talent Requires Warlock Dark Pact now shields you for an additional 50% of the sacrificed health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94825
+          ],
+          "unlocks": [
+            94821
+          ],
+          "row": 4,
+          "col": 9
+        },
+        {
+          "node_id": 94851,
+          "name": "Demonic Soul",
+          "spell_id": 449614,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449614,
+              "description": "Demonic Soul Talent Requires Warlock A demonic entity now inhabits your soul, allowing you to detect if a Soul Shard has a Succulent Soul when it's generated. Consuming a Succulent Soul unleashes your demonic soul, dealing (353.236% of Spell Power) Shadow damage to all enemies within 10 yds of the target. Damage reduced beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94847,
+            94825,
+            94832,
+            109839
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94857,
+          "name": "Shadow of Death",
+          "spell_id": 449638,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449638,
+              "description": "Shadow of Death Talent Requires Warlock Affliction Your Dark Harvest spell is empowered by the demonic entity within you, causing it to grant that each contain a Succulent Soul every 1 sec while channeled. Demonology Your Summon Demonic Tyrant spell is empowered by the demonic entity within you, causing it to grant that each contain a Succulent Soul.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94838,
+            94846,
+            94821,
+            109837
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109837,
+          "name": "Eternal Hunger",
+          "spell_id": 1268903,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1268903,
+              "description": "Eternal Hunger Talent Requires Warlock Increases the duration of Manifested Avarice by 5 sec and increases the damage of Soul Swipe by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Soul Swipe",
+                  "type": "damage_increase",
+                  "value": 10,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Manifested Avarice",
+                  "type": "duration_increase",
+                  "value": 5,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            109838
+          ],
+          "unlocks": [
+            94857
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109838,
+          "name": "Shared Vessel",
+          "spell_id": 1268889,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1268889,
+              "description": "Shared Vessel Talent Requires Warlock Increases your Mastery by 2%. This effect is doubled while the demonic entity is aiding you in combat.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109839
+          ],
+          "unlocks": [
+            109837
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109839,
+          "name": "Manifested Avarice",
+          "spell_id": 1268884,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1268884,
+              "description": "Manifested Avarice Talent Requires Warlock Each Succulent Soul consumed has an increasing chance to unleash the Demonic Soul within you, enabling it to assault your enemies for 9 sec. Soul Swipe Strikes nearby enemies with a malevolent claw, dealing (195.514% of Spell Power) Shadow damage to its target and (130.346% of Spell Power) Shadow damage to other enemies in 10 yds.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94851
+          ],
+          "unlocks": [
+            109838
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Hellcaller",
+      "nodes": [
+        {
+          "node_id": 94822,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 440057,
+              "name": "Curse of the Satyr",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440057,
+                  "description": "Curse of the Satyr Talent Requires Warlock Curse of Weakness is empowered and transforms into Curse of the Satyr. Curse of the Satyr Increases the time between an enemy's attacks by 20% and the casting time of all spells by 30% for 2 min. Curses: A warlock can only have one Curse active per target.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440059,
+              "name": "Aura of Enfeeblement",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440059,
+                  "description": "Aura of Enfeeblement Talent Requires Warlock While Unending Resolve is active, enemies within 30 yds are affected by Curse of Tongues and Curse of Weakness at 100% effectiveness.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94853
+          ],
+          "unlocks": [
+            94834
+          ],
+          "row": 3,
+          "col": 22
+        },
+        {
+          "node_id": 94829,
+          "name": "Seeds of Their Demise",
+          "spell_id": 440055,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440055,
+              "description": "Seeds of Their Demise Talent Requires Warlock Destruction After Wither reaches 8 stacks or when its host reaches 20% health, Wither deals (99.6334% of Spell Power) Shadowflame damage to its host every 1 sec until 1 stack remains. When Blackened Soul deals damage, you have a chance to gain 2 stacks of Flashpoint. Affliction After Wither reaches 8 stacks or when its host reaches 20% health, Wither deals (99.6334% of Spell Power) Shadowflame damage to its host every 1 sec until 1 stack remains. When Blackened Soul deals damage, you have a chance to gain Shard Instability.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94854
+          ],
+          "unlocks": [
+            94842
+          ],
+          "row": 4,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94834,
+          "name": "Mark of Xavius",
+          "spell_id": 440046,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440046,
+              "description": "Mark of Xavius Talent Requires Warlock [ Agony : Agony damage increased by 30% / Wither damage increased by 25%.] Blackened Soul deals 2% increased damage per stack of Wither.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94822
+          ],
+          "unlocks": [
+            94842
+          ],
+          "row": 4,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94835,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 440065,
+              "name": "Zevrim's Resilience",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440065,
+                  "description": "Zevrim's Resilience Talent Requires Warlock Dark Pact heals you for (164.583% of Spell Power) every 1 sec while active.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440070,
+              "name": "Illhoof's Design",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440070,
+                  "description": "Illhoof's Design Talent Requires Warlock Sacrifice 10% of your maximum health. Soul Leech now absorbs an additional 15% of your maximum health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94845
+          ],
+          "unlocks": [
+            94844
+          ],
+          "row": 3,
+          "col": 24
+        },
+        {
+          "node_id": 94837,
+          "name": "Blackened Soul",
+          "spell_id": 440043,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440043,
+              "description": "Blackened Soul Talent Requires Warlock Spending Soul Shards on damaging spells will further corrupt enemies affected by your Wither, increasing its stack count by 1. Each time Wither gains a stack it has a chance to collapse, consuming a stack every 1 sec to deal (99.6334% of Spell Power) Shadowflame damage to its host until 1 stack remains.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94840
+          ],
+          "unlocks": [
+            94854
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94840,
+          "name": "Wither",
+          "spell_id": 445468,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 445468,
+              "description": "Wither Talent 1.5% of base mana Requires Warlock Destruction Bestows a vile malediction upon the target, burning the sinew and muscle of its host, dealing (19.8375% of Spell Power) Shadowflame damage immediately and an additional (296.544% of Spell Power) Shadowflame damage over 18 sec . Periodic damage generates Fragment and has a 50% chance to generate an additional 1 on critical strikes. Replaces Immolate. Affliction Bestows a vile malediction upon the target, burning the sinew and muscle of its host, dealing (19.8375% of Spell Power) Shadowflame damage immediately and an additional (296.544% of Spell Power) Shadowflame damage over 18 sec . Replaces Corruption.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Immolate",
+                  "type": "replaces"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Corruption",
+                  "type": "replaces"
+                }
+              ]
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94853,
+            94837,
+            94845,
+            109836
+          ],
+          "row": 1,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": {
+            "spell_id": null,
+            "name": "Corruption"
+          }
+        },
+        {
+          "node_id": 94842,
+          "name": "Malevolence",
+          "spell_id": 442726,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442726,
+              "description": "Malevolence Talent 1% of base mana Requires Warlock Dark magic erupts from you and corrupts your soul for 20 sec, causing enemies suffering from your Wither to take (1265.51% of Spell Power) Shadowflame damage and increase its stack count by 6. While corrupted your Haste is increased by 8% and spending Soul Shards on damaging spells grants 1 additional stack of Wither.",
+              "cooldown": 60.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94844,
+            94829,
+            94834,
+            109834
+          ],
+          "unlocks": [],
+          "row": 5,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94844,
+          "name": "Mark of Peroth'arn",
+          "spell_id": 440045,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440045,
+              "description": "Mark of Peroth'arn Talent Requires Warlock Critical strike damage dealt by Wither is increased by 10%. Wither has a chance to gain a stack when it critically strikes. Stacks gained this way do not activate Blackened Soul.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94835
+          ],
+          "unlocks": [
+            94842
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94845,
+          "name": "Xalan's Cruelty",
+          "spell_id": 440040,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440040,
+              "description": "Xalan's Cruelty Talent Requires Warlock Destruction Shadow damage dealt by your spells and abilities is increased by 5% and your Shadow spells gain 10% more critical strike chance from all sources. Affliction Shadow damage dealt by your spells and abilities is increased by 6% and your Shadow spells gain 10% more critical strike chance from all sources.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94840
+          ],
+          "unlocks": [
+            94835
+          ],
+          "row": 2,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94853,
+          "name": "Xalan's Ferocity",
+          "spell_id": 440044,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440044,
+              "description": "Xalan's Ferocity Talent Requires Warlock Destruction Fire damage dealt by your spells and abilities is increased by 5% and your Fire spells gain 10% more critical strike chance from all sources. Affliction Fire damage dealt by your spells and abilities is increased by 6% and your Fire spells gain 10% more critical strike chance from all sources.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94840
+          ],
+          "unlocks": [
+            94822
+          ],
+          "row": 2,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94854,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 440048,
+              "name": "Hatefury Rituals",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440048,
+                  "description": "Hatefury Rituals Talent Requires Warlock Wither deals 30% increased periodic damage but its duration is 15% shorter.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440051,
+              "name": "Bleakheart Tactics",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440051,
+                  "description": "Bleakheart Tactics Talent Requires Warlock Wither damage increased 20%. When Wither gains a stack from Blackened Soul, it has a chance to gain an additional stack.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94837
+          ],
+          "unlocks": [
+            94829
+          ],
+          "row": 3,
+          "col": 23
+        },
+        {
+          "node_id": 109834,
+          "name": "Alzzin's Iniquity",
+          "spell_id": 1266803,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1266803,
+              "description": "Alzzin's Iniquity Talent Requires Warlock Malevolence grants an additional 4% Haste and when cast increases the stack count of active Withers by an additional 2 stacks.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109835
+          ],
+          "unlocks": [
+            94842
+          ],
+          "row": 4,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109835,
+          "name": "Devil Fruit",
+          "spell_id": 1266805,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1266805,
+              "description": "Devil Fruit Talent Requires Warlock Approximately 1 procs per minute Periodic damage dealt by Wither has a chance to grant Malevolence for 8 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109836
+          ],
+          "unlocks": [
+            109834
+          ],
+          "row": 3,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109836,
+          "name": "Through the Felvine",
+          "spell_id": 1266799,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1266799,
+              "description": "Through the Felvine Talent Requires Warlock Increases the damage of [ Unstable Affliction : Unstable Affliction by 8 / Chaos Bolt by 35]% and [ Seed of Corruption : Seed of Corruption by 4 / Rain of Fire by 6]%. This effect is doubled while Malevolence is active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94840
+          ],
+          "unlocks": [
+            109835
+          ],
+          "row": 2,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Diabolist",
+      "nodes": [
+        {
+          "node_id": 94826,
+          "name": "Secrets of the Coven",
+          "spell_id": 428518,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 428518,
+              "description": "Secrets of the Coven Talent Requires Warlock Destruction Mother of Chaos empowers your next Incinerate to become Infernal Bolt. Infernal Bolt Hurl a bolt enveloped in the infernal flames of the abyss, dealing (1347.35% of Spell Power) Fire damage to your enemy target and generating . Demonology Mother of Chaos empowers your next Shadow Bolt to become Infernal Bolt. Infernal Bolt Hurl a bolt enveloped in the infernal flames of the abyss, dealing (1347.35% of Spell Power) Fire damage to your enemy target and generating .",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94855
+          ],
+          "unlocks": [
+            94852
+          ],
+          "row": 8,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94830,
+          "name": "Ruination",
+          "spell_id": 428522,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 428522,
+              "description": "Ruination Talent Requires Warlock Destruction Summoning a Pit Lord causes your next Chaos Bolt to become Ruination. Ruination Call down a demon-infested meteor from the depths of the Twisting Nether, dealing (2537.91% of Spell Power) Chaos damage on impact to all enemies within 8 yds of the target and summoning 1 Diabolic Imp. Damage is further increased by your critical strike chance and is reduced beyond 8 targets. Demonology Summoning a Pit Lord causes your next Hand of Gul'dan to become Ruination. Ruination Call down a demon-infested meteor from the depths of the Twisting Nether, dealing (2537.91% of Spell Power) Chaos damage on impact to all enemies within 8 yds of the target and summoning 3 Wild Imps. Damage is reduced beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94843,
+            94831,
+            94833,
+            109831
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94831,
+          "name": "Abyssal Dominion",
+          "spell_id": 429581,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429581,
+              "description": "Abyssal Dominion Talent Requires Warlock Demonology Summon Demonic Tyrant is empowered, dealing 70% increased damage and increasing the damage of your demons by 20% while active. Destruction Summon Infernal becomes empowered, dealing 40% increased damage. When your Summon Infernal ends, it fragments into two smaller Infernals at 50% effectiveness that lasts 10 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94848
+          ],
+          "unlocks": [
+            94830
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94833,
+          "name": "Flames of Xoroth",
+          "spell_id": 429657,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429657,
+              "description": "Flames of Xoroth Talent Requires Warlock Fire damage increased by 4% and damage dealt by your demons is increased by 4%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94836
+          ],
+          "unlocks": [
+            94830
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94836,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 428911,
+              "name": "Soul-Etched Circles",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 428911,
+                  "description": "Soul-Etched Circles Talent Requires Warlock You always gain the benefit of Soulburn when casting Demonic Circle: Teleport, increasing your movement speed by 50% and making you immune to snares and roots for 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 429072,
+              "name": "Annihilan's Bellow",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429072,
+                  "description": "Annihilan's Bellow Talent Requires Warlock Howl of Terror cooldown is reduced by 10 sec and range is increased by 5 yds.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94849
+          ],
+          "unlocks": [
+            94833
+          ],
+          "row": 9,
+          "col": 9
+        },
+        {
+          "node_id": 94843,
+          "name": "Gloom of Nathreza",
+          "spell_id": 429899,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429899,
+              "description": "Gloom of Nathreza Talent Requires Warlock Destruction Enemies marked by your Havoc take 7% increased damage from your single target spells. Demonology Hand of Gul'dan deals 15% increased damage for each Soul Shard spent.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94852
+          ],
+          "unlocks": [
+            94830
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94848,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429902,
+              "name": "Cruelty of Kerxan",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429902,
+                  "description": "Cruelty of Kerxan Talent Requires Warlock Demonology Summon Demonic Tyrant grants Diabolic Ritual and reduces its duration by 3 sec. Destruction Summon Infernal grants Diabolic Ritual and reduces its duration by 3 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 429917,
+              "name": "Infernal Machine",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429917,
+                  "description": "Infernal Machine Talent Requires Warlock Demonology Spending Soul Shards on damaging spells while your Demonic Tyrant is active decreases the duration of Diabolic Ritual by 1 additional sec. Destruction Spending Soul Shards on damaging spells while your Infernal is active decreases the duration of Diabolic Ritual by 1 additional sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94856
+          ],
+          "unlocks": [
+            94831
+          ],
+          "row": 9,
+          "col": 10
+        },
+        {
+          "node_id": 94849,
+          "name": "Cloven Souls",
+          "spell_id": 428517,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 428517,
+              "description": "Cloven Souls Talent Requires Warlock Enemies damaged by your Overlord have their souls cloven, increasing damage taken by you and your pets by 5 % for 15 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94855
+          ],
+          "unlocks": [
+            94836
+          ],
+          "row": 8,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94852,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429115,
+              "name": "Infernal Vitality",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429115,
+                  "description": "Infernal Vitality Talent Requires Warlock Unending Resolve heals you for 30% of your maximum health over 10 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 429130,
+              "name": "Infernal Bulwark",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429130,
+                  "description": "Infernal Bulwark Talent Requires Warlock Unending Resolve grants Soul Leech equal to 10% of your maximum health and increases the maximum amount Soul Leech can absorb by 10% for 8 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94826
+          ],
+          "unlocks": [
+            94843
+          ],
+          "row": 9,
+          "col": 11
+        },
+        {
+          "node_id": 94855,
+          "name": "Diabolic Ritual",
+          "spell_id": 428514,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 428514,
+              "description": "Diabolic Ritual Talent Requires Warlock Destruction Casting Chaos Bolt, Rain of Fire, or Shadowburn grants Diabolic Ritual for 20 sec. If Diabolic Ritual is already active, its duration is reduced by 1 sec instead. When Diabolic Ritual expires you gain Demonic Art, causing your next Chaos Bolt, Rain of Fire, or Shadowburn to summon an Overlord, Mother of Chaos, or Pit Lord that unleashes a devastating attack against your enemies. Demonology Spending a Soul Shard on a damaging spell grants Diabolic Ritual for 20 sec. While Diabolic Ritual is active, each Soul Shard spent on a damaging spell reduces its duration by 1 sec. When Diabolic Ritual expires you gain Demonic Art, causing your next Hand of Gul'dan to summon an Overlord, Mother of Chaos, or Pit Lord that unleashes a devastating attack against your enemies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94849,
+            94856,
+            94826,
+            109833
+          ],
+          "row": 7,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94856,
+          "name": "Touch of Rancora",
+          "spell_id": 429893,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429893,
+              "description": "Touch of Rancora Talent Requires Warlock Destruction Demonic Art increases the damage of your next Chaos Bolt, Rain of Fire, or Shadowburn by 20% and reduces its cast time by 50%. Casting Chaos Bolt reduces the duration of Diabolic Ritual by 1 additional sec. Demonology Demonic Art increases the damage of your next Hand of Gul'dan by 20% and reduces its cast time by 50%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your next Chaos Bolt, Rain of Fire, or Shadowburn",
+                  "type": "damage_increase",
+                  "value": 20,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your next Hand of Gul'dan",
+                  "type": "damage_increase",
+                  "value": 20,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94855
+          ],
+          "unlocks": [
+            94848
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109831,
+          "name": "Mind's Eyes",
+          "spell_id": 1268716,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1268716,
+              "description": "Mind's Eyes Talent Requires Warlock Your Diabolic Oculi observe the battlefield and collect information that is imparted to you upon being exploded, each Diabolic Oculi increasing your Intellect by 2% for 10 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109832
+          ],
+          "unlocks": [
+            94830
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109832,
+          "name": "Looks That Kill",
+          "spell_id": 1268713,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1268713,
+              "description": "Looks That Kill Talent Requires Warlock Your Diabolic Oculi now cast Diabolic Gaze at your primary demon's target every 1 sec while active. Diabolic Gaze Fire a beam of destructive chaos magic at the target, dealing (80% of Spell Power) Chaos damage. Damage is increased by 100% per Demonic Oculus active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109833
+          ],
+          "unlocks": [
+            109831
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109833,
+          "name": "Diabolic Oculi",
+          "spell_id": 1268709,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1268709,
+              "description": "Diabolic Oculi Talent Requires Warlock You summon a Diabolic Oculus, up to 3, each time the duration of Diabolic Ritual is reduced by one of your spells. Diabolic Oculi explode when consuming Demonic Art, dealing (234.62% of Spell Power) Fire damage to all enemies within 10 yds of the target. Damage reduced beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94855
+          ],
+          "unlocks": [
+            109832
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

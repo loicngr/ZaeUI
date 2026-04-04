@@ -1,0 +1,5378 @@
+{
+  "class": "Priest",
+  "spec": "Shadow",
+  "scraped_at": "2026-03-25T18:56:59.431310+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99800,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 13
+      },
+      {
+        "node_id": 82717,
+        "name": "Improved Flash Heal",
+        "spell_id": 393870,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 393870,
+            "description": "Improved Flash Heal Talent Requires Priest Increases healing done by Flash Heal by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          109009,
+          82718
+        ],
+        "row": 2,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82703,
+        "name": "Angelic Feather",
+        "spell_id": 121536,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 121536,
+            "description": "Angelic Feather Talent 20 sec recharge Requires Priest Requires level 25 Places a feather at the target location, granting the first ally to walk through it 40% increased movement speed for 5 sec. Only 3 feathers can be placed at one time.",
+            "cooldown": 20.0,
+            "charges": 3,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82672,
+          109009
+        ],
+        "row": 2,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82713,
+        "name": "Mind Blast",
+        "spell_id": 8092,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 8092,
+            "description": "Mind Blast Talent 4% of base mana Requires Priest Holy Blast the target's mind for (78.336% of Spell Power) Shadow damage. Discipline Blast the target's mind for (78.336% of Spell Power) Shadow damage. Costs a high amount of mana. Shadow Blast the target's mind for (78.336% of Spell Power) Shadow damage. Generates .",
+            "cooldown": 9.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82672,
+          82701
+        ],
+        "row": 2,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94697,
+        "name": "Halo",
+        "spell_id": 120644,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 120644,
+            "description": "Halo Talent 4% of base mana Requires Priest Creates a ring of Shadow energy around you that quickly expands to a 40 yd radius, healing allies for (161% of Spell Power) and dealing [(144.2% of Spell Power) * 1 * 1 * 1 ] Shadow damage to enemies. Healing reduced beyond 6 targets. [ Shadow : Generates . ]",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94681,
+          94677,
+          94699,
+          109777
+        ],
+        "row": 2,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82718,
+        "name": "Holy Nova",
+        "spell_id": 132157,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 132157,
+            "description": "Holy Nova Talent 0.2% of base mana Requires Priest An explosion of holy light around you deals up to (40.95% of Spell Power) Holy damage to enemies and up to (31.5% of Spell Power) healing to allies within 12 yds, reduced if there are more than 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82717
+        ],
+        "unlocks": [
+          82716,
+          82715,
+          82719
+        ],
+        "row": 3,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109009,
+        "name": "Dispel Magic",
+        "spell_id": 528,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 528,
+            "description": "Dispel Magic Talent 14% of base mana Requires Priest Dispels Magic on the enemy target, removing 1 beneficial Magic effect.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82717,
+          82703
+        ],
+        "unlocks": [
+          82704,
+          82556,
+          82715
+        ],
+        "row": 3,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82672,
+        "name": "Spiritual Guidance",
+        "spell_id": 1250818,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250818,
+            "description": "Spiritual Guidance Talent Requires Priest Increases your Intellect by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82703,
+          82713
+        ],
+        "unlocks": [
+          109006,
+          82556
+        ],
+        "row": 3,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82701,
+        "name": "Psychic Scream",
+        "spell_id": 8122,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 8122,
+            "description": "Psychic Scream Talent 1.2% of base mana Requires Priest Lets out a psychic scream, causing all enemies within 8 yards to flee, disorienting them for 8 sec. Damage may interrupt the effect.",
+            "cooldown": 40.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82713
+        ],
+        "unlocks": [
+          82710,
+          109006,
+          82695
+        ],
+        "row": 3,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82719,
+        "name": "Lightburst",
+        "spell_id": 1246549,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1246549,
+            "description": "Lightburst Talent Requires Priest Increases the damage of Holy Nova by 400%, its healing by 500%, and its cooldown by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Holy Nova",
+                "type": "damage_increase",
+                "value": 400,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          82718
+        ],
+        "unlocks": [],
+        "row": 4,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82715,
+        "name": "Leap of Faith",
+        "spell_id": 73325,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 73325,
+            "description": "Leap of Faith Talent 2.6% of base mana Requires Priest Pulls the spirit of a party or raid member, instantly moving them directly in front of you.",
+            "cooldown": 90.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109009,
+          82718
+        ],
+        "unlocks": [
+          109890,
+          109917,
+          82716
+        ],
+        "row": 4,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82704,
+        "name": "Purify Disease",
+        "spell_id": 213634,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 213634,
+            "description": "Purify Disease Talent 10% of base mana Requires Priest Removes all Disease effects from a friendly target.",
+            "cooldown": 8.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109009
+        ],
+        "unlocks": [
+          109890
+        ],
+        "row": 4,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82556,
+        "name": "Power Infusion",
+        "spell_id": 10060,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 10060,
+            "description": "Power Infusion Talent Requires Priest Infuses the target with power for 15 sec, increasing haste by 20%. Can only be cast on players.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109009,
+          82672
+        ],
+        "unlocks": [
+          82687,
+          109890,
+          108731
+        ],
+        "row": 4,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109006,
+        "name": "Painful Invocation",
+        "spell_id": 1251030,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1251030,
+            "description": "Painful Invocation Talent Requires Priest Holy (Holy Fire) Increases the damage of Holy FireHoly Fire and Shadow Word: Pain by 10%. Discipline, Shadow Increases the damage of Shadow Word: Pain by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Holy FireHoly Fire and Shadow Word: Pain",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Shadow Word: Pain",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          82672,
+          82701
+        ],
+        "unlocks": [
+          82687,
+          82710
+        ],
+        "row": 4,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82695,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 390919,
+            "name": "Sheer Terror",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 390919,
+                "description": "Sheer Terror Talent Requires Priest Increases the amount of damage required to break your Psychic Scream by 25%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 55676,
+            "name": "Petrifying Scream",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 55676,
+                "description": "Petrifying Scream Talent Requires Priest Psychic Scream causes enemies to tremble in place instead of fleeing in fear. Modifies Effect #2's Value -4: Pandemonium , Psychic Scream",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82701
+        ],
+        "unlocks": [
+          82708
+        ],
+        "row": 4,
+        "col": 9
+      },
+      {
+        "node_id": 82716,
+        "name": "Surge of Light",
+        "spell_id": 109186,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 109186,
+            "description": "Surge of Light Talent Requires Priest Requires level 40 Your healing spells and Smite have a 8% chance to make your next Flash Heal instant and cost [ Holy : 50 / 50 ]% less mana. Stacks to 2.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82715,
+          82718
+        ],
+        "unlocks": [
+          82702
+        ],
+        "row": 5,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109917,
+        "name": "Body and Soul",
+        "spell_id": 64129,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 64129,
+            "description": "Body and Soul Talent Requires Priest Requires level 25 (Holy) Discipline, Shadow Power Word: Shield and Leap of Faith increase your target's movement speed by 40% for 3 sec. Holy Prayer of Mending and Leap of Faith increase your target's movement speed by 40% for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82715
+        ],
+        "unlocks": [
+          82699
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109890,
+        "name": "Mass Dispel",
+        "spell_id": 32375,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 32375,
+            "description": "Mass Dispel Talent 20% of base mana Requires Priest Dispels magic in a 15 yard radius, removing all harmful Magic from 5 friendly targets and 1 beneficial Magic effect from 5 enemy targets. Potent enough to remove Magic that is normally undispellable.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82556,
+          82715,
+          82704
+        ],
+        "unlocks": [
+          82690,
+          109019
+        ],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108731,
+        "name": "Twins of the Sun Priestess",
+        "spell_id": 373466,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373466,
+            "description": "Twins of the Sun Priestess Talent Requires Priest Power Infusion also grants you its effect at 100% value when used on an ally. If no ally is targeted, it will grant its effect at 100% value to a nearby ally, preferring damage dealers.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82556
+        ],
+        "unlocks": [
+          82690
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82687,
+        "name": "Strength of Soul",
+        "spell_id": 1250820,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250820,
+            "description": "Strength of Soul Talent Requires Priest Increases your Stamina by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109006,
+          82556
+        ],
+        "unlocks": [
+          82690,
+          109020
+        ],
+        "row": 5,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82710,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 605,
+            "name": "Mind Control",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 605,
+                "description": "Mind Control Talent 2% of base mana Requires Priest Controls a mind up to 1 level above yours for 30 sec. Does not work versus Demonic , Undead, or Mechanical beings. Shares diminishing returns with other disorienting effects.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 205364,
+            "name": "Dominate Mind",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 205364,
+                "description": "Dominate Mind Talent 2% of base mana Requires Priest Controls a mind up to 1 level above yours for 30 sec while still controlling your own mind. Does not work versus Demonic, Mechanical, or Undead beings or players . This spell shares diminishing returns with other disorienting effects.",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109006,
+          82701
+        ],
+        "unlocks": [
+          109020,
+          82693,
+          109005
+        ],
+        "row": 5,
+        "col": 8
+      },
+      {
+        "node_id": 82708,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 196704,
+            "name": "Psychic Voice",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 196704,
+                "description": "Psychic Voice Talent Requires Priest Requires level 35 (Discipline, Holy) Reduces the cooldown of Psychic Scream by 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Psychic Scream",
+                    "type": "cd_reduction",
+                    "value": 10,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1250691,
+            "name": "Void Tendrils",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1250691,
+                "description": "Void Tendrils Talent Requires Priest Call shadowy tendrils to constrict enemies when Psychic Scream ends, rooting them in place for 4 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82695
+        ],
+        "unlocks": [
+          82693
+        ],
+        "row": 5,
+        "col": 9
+      },
+      {
+        "node_id": 82702,
+        "name": "Everlasting Light",
+        "spell_id": 1249233,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1249233,
+            "description": "Everlasting Light Talent Requires Priest Surge of Light occurs up to 50% more often based on your missing mana.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82716
+        ],
+        "unlocks": [
+          82696
+        ],
+        "row": 6,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82699,
+        "name": "Move with Grace",
+        "spell_id": 390620,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390620,
+            "description": "Move with Grace Talent Requires Priest Reduces the cooldown of Leap of Faith by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Leap of Faith",
+                "type": "cd_reduction",
+                "value": 30,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          109917
+        ],
+        "unlocks": [
+          82678,
+          82696
+        ],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109019,
+        "name": "Mental Agility",
+        "spell_id": 341167,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 341167,
+            "description": "Mental Agility Talent Requires Priest Shadow Reduces the mana cost of Purify Disease and Mass Dispel by 50% and Dispel Magic by 10%. Discipline, Holy Reduces the mana cost of Purify and Mass Dispel by 50% and Dispel Magic by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109890
+        ],
+        "unlocks": [
+          82678
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82690,
+        "name": "Twin Disciplines",
+        "spell_id": 1251077,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1251077,
+            "description": "Twin Disciplines Talent Requires Priest Increases the damage and healing of your Holy and Shadow spells by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82687,
+          109890,
+          108731
+        ],
+        "unlocks": [
+          82678,
+          82712
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109020,
+        "name": "Dark Enlightenment",
+        "spell_id": 1250835,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250835,
+            "description": "Dark Enlightenment Talent Requires Priest Increases your haste by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82687,
+          82710
+        ],
+        "unlocks": [
+          82712,
+          109021
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109005,
+        "name": "False Autonomy",
+        "spell_id": 1250806,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250806,
+            "description": "False Autonomy Talent Requires Priest Increases the duration of Mind Control and Dominate Mind against enemy creatures by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Mind Control and Dominate Mind against enemy creatures",
+                "type": "duration_increase",
+                "value": 15,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          82710
+        ],
+        "unlocks": [
+          109021
+        ],
+        "row": 6,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82693,
+        "name": "Shackle Horror",
+        "spell_id": 9484,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 9484,
+            "description": "Shackle Horror Talent 1.2% of base mana Requires Priest Shackles an aberration or undead enemy for 50 sec, preventing all actions and movement. Damage will cancel the effect. Limit 1.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82708,
+          82710
+        ],
+        "unlocks": [
+          109021
+        ],
+        "row": 6,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82696,
+        "name": "Inspiration",
+        "spell_id": 390676,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390676,
+            "description": "Inspiration Talent Requires Priest Holy Reduces your target's physical damage taken by 5% for 15 sec after a critical heal with Flash Heal or Holy Word: Serenity. Discipline Reduces your target's physical damage taken by 5% for 15 sec after a critical heal with Flash Heal or Penance. Shadow Reduces your target's physical damage taken by 5% for 15 sec after a critical heal with Flash Heal.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82699,
+          82702
+        ],
+        "unlocks": [
+          109012
+        ],
+        "row": 7,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82678,
+        "name": "Binding Heals",
+        "spell_id": 368275,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 368275,
+            "description": "Binding Heals Talent Requires Priest Requires level 30 20% of Flash Heal healing on other targets also heals you.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82690,
+          109019,
+          82699
+        ],
+        "unlocks": [
+          109012,
+          82684
+        ],
+        "row": 7,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82712,
+        "name": "Shadow Word: Death",
+        "spell_id": 32379,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 32379,
+            "description": "Shadow Word: Death Talent 0.5% of base mana Requires Priest Discipline, Holy A word of dark binding that inflicts (85% of Spell Power) Shadow damage to your target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to 5% of your maximum health. Damage increased by 150% to targets below 20% health. Shadow A word of dark binding that inflicts (85% of Spell Power) Shadow damage to your target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to 5% of your maximum health. Damage increased by 150% to targets below 20% health. Generates .",
+            "cooldown": 10.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82690,
+          109020
+        ],
+        "unlocks": [
+          82684,
+          109015,
+          82711
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109021,
+        "name": "Sanguine Teachings",
+        "spell_id": 373218,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373218,
+            "description": "Sanguine Teachings Talent Requires Priest Increases your Leech by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109020,
+          109005,
+          82693
+        ],
+        "unlocks": [
+          109015
+        ],
+        "row": 7,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94684,
+        "name": "Void Torrent",
+        "spell_id": 263165,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 263165,
+            "description": "Void Torrent Talent Channeled () Requires Priest Requires level 45 Channel a torrent of void energy into the target, dealing (713.055% of Spell Power) Shadow damage over 3 sec and tearing open an Entropic Rift . Entropic Rift Mind Blast tears open an Entropic Rift that follows the enemy for 8 sec. Enemies caught in its path suffer (60% of Spell Power) Shadow damage every 1 sec while within its reach. Generates over the duration.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94693,
+          94703,
+          94670,
+          109780
+        ],
+        "row": 7,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109012,
+        "name": "Desperate Prayer",
+        "spell_id": 19236,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 19236,
+            "description": "Desperate Prayer Talent Requires Priest Increases maximum health by [ Light's Inspiration : 35 / 25]% for 10 sec, and instantly heals you for that amount.",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82696,
+          82678
+        ],
+        "unlocks": [
+          82677,
+          82680
+        ],
+        "row": 8,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82684,
+        "name": "Twist of Fate",
+        "spell_id": 390972,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390972,
+            "description": "Twist of Fate Talent Requires Priest After damaging or healing a target below 35% health, gain 5% increased damage and healing for 8 sec. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 390972,
+            "description": "Twist of Fate Talent Requires Priest After damaging or healing a target below 35% health, gain 5% increased damage and healing for 8 sec. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82712,
+          82678
+        ],
+        "unlocks": [
+          82677,
+          109011
+        ],
+        "row": 8,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82711,
+        "name": "Tithe Evasion",
+        "spell_id": 373223,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373223,
+            "description": "Tithe Evasion Talent Requires Priest Shadow Word: Death deals 50% less damage to you.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82712
+        ],
+        "unlocks": [
+          109011
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109015,
+        "name": "Fade",
+        "spell_id": 586,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 586,
+            "description": "Fade Talent Requires Priest Fade out, removing all your threat and reducing enemies' detection range against you for 10 sec.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82712,
+          109021
+        ],
+        "unlocks": [
+          109011,
+          109014,
+          82686
+        ],
+        "row": 8,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82680,
+        "name": "Angel's Mercy",
+        "spell_id": 238100,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 238100,
+            "description": "Angel's Mercy Talent Requires Priest Requires level 25 Reduces the cooldown of Desperate Prayer by 20 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Desperate Prayer",
+                "type": "cd_reduction",
+                "value": 20,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          109012
+        ],
+        "unlocks": [
+          82697,
+          82679
+        ],
+        "row": 9,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82677,
+        "name": "Protective Light",
+        "spell_id": 193063,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 193063,
+            "description": "Protective Light Talent Requires Priest Requires level 25 Casting Flash Heal on yourself reduces all damage you take by 10% for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82684,
+          109012
+        ],
+        "unlocks": [
+          109010,
+          82697
+        ],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109011,
+        "name": "Mindpierce",
+        "spell_id": 1251029,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1251029,
+            "description": "Mindpierce Talent Requires Priest Shadow Increases the damage of Mind Flay by 15%. Discipline, Holy Increases the damage of Smite by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Mind Flay",
+                "type": "damage_increase",
+                "value": 15,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Smite",
+                "type": "damage_increase",
+                "value": 15,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          82711,
+          82684,
+          109015
+        ],
+        "unlocks": [
+          109010
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109014,
+        "name": "Spectral Illusion",
+        "spell_id": 1250378,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250378,
+            "description": "Spectral Illusion Talent Requires Priest Fade creates an illusion of you for 4 sec, tricking enemies to attack it instead.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109015
+        ],
+        "unlocks": [
+          82674
+        ],
+        "row": 9,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82686,
+        "name": "Improved Fade",
+        "spell_id": 390670,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390670,
+            "description": "Improved Fade Talent Requires Priest Reduces the cooldown of Fade by (5)) sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 390670,
+            "description": "Improved Fade Talent Requires Priest Reduces the cooldown of Fade by (5)) sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109015
+        ],
+        "unlocks": [
+          82674,
+          82685
+        ],
+        "row": 9,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82679,
+        "name": "Light's Inspiration",
+        "spell_id": 373450,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373450,
+            "description": "Light's Inspiration Talent Requires Priest Increases the maximum health gained from Desperate Prayer by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82680
+        ],
+        "unlocks": [
+          82675
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82697,
+        "name": "Unwavering Will",
+        "spell_id": 373456,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373456,
+            "description": "Unwavering Will Talent Requires Priest Discipline While above 75% health, the cast time of your Flash Heal and Smite are reduced by 5%. Shadow While above 75% health, the cast time of your Flash Heal is reduced by 5%. Holy While above 75% health, the cast time of your Flash Heal, Prayer of Healing, and Smite are reduced by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 373456,
+            "description": "Unwavering Will Talent Requires Priest Discipline While above 75% health, the cast time of your Flash Heal and Smite are reduced by 5%. Shadow While above 75% health, the cast time of your Flash Heal is reduced by 5%. Holy While above 75% health, the cast time of your Flash Heal, Prayer of Healing, and Smite are reduced by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82680,
+          82677
+        ],
+        "unlocks": [
+          82675,
+          82676
+        ],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109010,
+        "name": "Spell Warding",
+        "spell_id": 390667,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390667,
+            "description": "Spell Warding Talent Requires Priest Reduces all magic damage taken by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 390667,
+            "description": "Spell Warding Talent Requires Priest Reduces all magic damage taken by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82677,
+          109011
+        ],
+        "unlocks": [
+          82676,
+          82673
+        ],
+        "row": 10,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82674,
+        "name": "Phantasm",
+        "spell_id": 108942,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108942,
+            "description": "Phantasm Talent Requires Priest Activating Fade removes all snare effects.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82686,
+          109014
+        ],
+        "unlocks": [
+          82673,
+          82685
+        ],
+        "row": 10,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82675,
+        "name": "Angelic Bulwark",
+        "spell_id": 108945,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108945,
+            "description": "Angelic Bulwark Talent Requires Priest When an attack brings you below 30% health, you gain an absorption shield equal to 25% of your maximum health for 20 sec. Cannot occur more than once every 90 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82679,
+          82697
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82676,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 415416,
+            "name": "Benevolence",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 415416,
+                "description": "Benevolence Talent Requires Priest Increases the healing of your spells by 3%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1249230,
+            "name": "Focused Power",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1249230,
+                "description": "Focused Power Talent Requires Priest Increases the damage of your spells by 3%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "your spells",
+                    "type": "damage_increase",
+                    "value": 3,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109010,
+          82697
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 4
+      },
+      {
+        "node_id": 82673,
+        "name": "Phantom Reach",
+        "spell_id": 459559,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459559,
+            "description": "Phantom Reach Talent Requires Priest Increases the range of most spells by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109010,
+          82674
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82685,
+        "name": "Translucent Image",
+        "spell_id": 373446,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373446,
+            "description": "Translucent Image Talent Requires Priest Fade reduces damage you take by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82674,
+          82686
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 82665,
+        "name": "Shadow Word: Madness",
+        "spell_id": 335467,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 335467,
+            "description": "Shadow Word: Madness Talent Requires Priest Requires Shadowform A word of madness haunts the target's mind, dealing (227.5% of Spell Power) Shadow damage instantly plus an additional 9 Shadow damage over 6 sec . Heals you for 30% of damage dealt. When reapplied to a target, all remaining damage is added to the new effect.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82666,
+          82663,
+          109017
+        ],
+        "row": 2,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82663,
+        "name": "Psychic Link",
+        "spell_id": 199484,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 199484,
+            "description": "Psychic Link Talent Requires Priest Requires level 40 Your direct damage spells inflict 20% of their damage on all other targets afflicted by your Vampiric Touch within 40 yards. Does not apply to damage from Shadowy Apparitions, Shadow Word: Pain, and Vampiric Touch.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82665
+        ],
+        "unlocks": [
+          82653
+        ],
+        "row": 3,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82666,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 238558,
+            "name": "Misery",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 238558,
+                "description": "Misery Talent Requires Priest Requires level 30 Vampiric Touch also applies Shadow Word: Pain to the target. Shadow Word: Pain lasts an additional 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1279350,
+            "name": "Invoked Nightmare",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1279350,
+                "description": "Invoked Nightmare Talent Requires Priest Shadow Word: Pain deals 150% increased damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82665
+        ],
+        "unlocks": [
+          93171
+        ],
+        "row": 3,
+        "col": 19
+      },
+      {
+        "node_id": 109017,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 288733,
+            "name": "Intangibility",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 288733,
+                "description": "Intangibility Talent Requires Priest Requires level 25 Dispersion heals you for an additional [(25 * ( 0 + 6) / 6)]% of your maximum health over its duration and its cooldown is reduced by 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 377065,
+            "name": "Mental Fortitude",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 377065,
+                "description": "Mental Fortitude Talent Requires Priest Healing from Vampiric Touch and Shadow Word: Madness when you are at maximum health will shield you for the same amount. The shield cannot exceed 10% of your maximum health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82665
+        ],
+        "unlocks": [
+          82651
+        ],
+        "row": 3,
+        "col": 20
+      },
+      {
+        "node_id": 94677,
+        "name": "Perfected Form",
+        "spell_id": 453917,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 453917,
+            "description": "Perfected Form Talent Requires Priest Shadow Your damage dealt is increased by 5% while Voidform is active. Holy Your healing done is increased by 10% while Apotheosis is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94697,
+          108724
+        ],
+        "unlocks": [
+          94686
+        ],
+        "row": 3,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94681,
+        "name": "Power Surge",
+        "spell_id": 453109,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 453109,
+            "description": "Power Surge Talent Requires Priest Casting Halo also causes you to create a Halo around you at 100% effectiveness every 5 sec for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94697,
+          108724
+        ],
+        "unlocks": [
+          94680
+        ],
+        "row": 3,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94699,
+        "name": "Manifested Power",
+        "spell_id": 453783,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 453783,
+            "description": "Manifested Power Talent Requires Priest Holy Creating a Halo grants Surge of Light. Surge of Light Your healing spells and Smite have a 8% chance to make your next Flash Heal instant and cost [ Holy : 50 / 50]% less mana. Stacks to 2. Shadow Creating a Halo upgrades your next Mind Flay to Mind Flay: Insanity. Mind Flay: Insanity Assaults the target's mind with Shadow energy, causing (542.36% of Spell Power) Shadow damage over 1.5 sec and slowing their movement speed by 70%. Generates over the duration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94697,
+          108724
+        ],
+        "unlocks": [
+          94688
+        ],
+        "row": 3,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109777,
+        "name": "Focused Outburst",
+        "spell_id": 1272320,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272320,
+            "description": "Focused Outburst Talent Requires Priest Holy Prayer of Healing mana cost reduced by 10% and its cast time is reduced by 15%. Shadow Void Volley damage increased by 15% and its cooldown is reduced by 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108724,
+          94697
+        ],
+        "unlocks": [
+          109776
+        ],
+        "row": 3,
+        "col": 25,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82653,
+        "name": "Thought Harvester",
+        "spell_id": 406788,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 406788,
+            "description": "Thought Harvester Talent Requires Priest Mind Blast gains an additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82663
+        ],
+        "unlocks": [
+          82659
+        ],
+        "row": 4,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93171,
+        "name": "Tentacle Slam",
+        "spell_id": 1227280,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1227280,
+            "description": "Tentacle Slam Talent 15 sec recharge Requires Priest Summons a massive shadowy appendage to slam the ground, dealing (68.7926% of Spell Power) Shadow damage in front of you and 8 yds around your target. Applies Vampiric Touch to up to 6 enemies, prioritizing ones without Vampiric Touch. Generates .",
+            "cooldown": 15.0,
+            "charges": 2,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82666
+        ],
+        "unlocks": [
+          82659,
+          82670
+        ],
+        "row": 4,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82651,
+        "name": "Shadowy Apparitions",
+        "spell_id": 341491,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 341491,
+            "description": "Shadowy Apparitions Talent Requires Priest Shadow Word: Madness conjures Shadowy Apparitions that float towards all targets afflicted by your Vampiric Touch for (63% of Spell Power) Shadow damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109017
+        ],
+        "unlocks": [
+          82668
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94686,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 453852,
+            "name": "Shock Pulse",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 453852,
+                "description": "Shock Pulse Talent Requires Priest Halo damage reduces enemy movement speed by 5% for 5 sec, stacking up to 5 times.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 453918,
+            "name": "Incessant Screams",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 453918,
+                "description": "Incessant Screams Talent Requires Priest Psychic Scream creates an image of you at your location. After 4 sec, the image will let out a Psychic Scream.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94677
+        ],
+        "unlocks": [
+          94678
+        ],
+        "row": 4,
+        "col": 22
+      },
+      {
+        "node_id": 94680,
+        "name": "Energy Conservation",
+        "spell_id": 1272308,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272308,
+            "description": "Energy Conservation Talent Requires Priest Power Surge lasts an additional 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94681
+        ],
+        "unlocks": [
+          94676
+        ],
+        "row": 4,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94688,
+        "name": "Empowered Surges",
+        "spell_id": 453799,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 453799,
+            "description": "Empowered Surges Talent Requires Priest Shadow Increases the damage done by Mind Flay: Insanity by 30%. Holy Your spells affected by Surge of Light heal for 5% more while Surge of Light is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94699
+        ],
+        "unlocks": [
+          94685
+        ],
+        "row": 4,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109776,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 453726,
+            "name": "Word of Supremacy",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 453726,
+                "description": "Word of Supremacy Talent Requires Priest Power Word: Fortitude grants you an additional 5% stamina.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 453729,
+            "name": "Heightened Alteration",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 453729,
+                "description": "Heightened Alteration Talent Requires Priest Shadow Increases the duration of Dispersion by 2 sec. Holy Increases the duration of Spirit of Redemption by 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Dispersion",
+                    "type": "duration_increase",
+                    "value": 2,
+                    "unit": "seconds"
+                  },
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Spirit of Redemption",
+                    "type": "duration_increase",
+                    "value": 5,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109777
+        ],
+        "unlocks": [
+          109775
+        ],
+        "row": 4,
+        "col": 25
+      },
+      {
+        "node_id": 82659,
+        "name": "Tormenting Whispers",
+        "spell_id": 1250492,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250492,
+            "description": "Tormenting Whispers Talent Requires Priest Increases Shadow Word: Madness damage by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93171,
+          82653
+        ],
+        "unlocks": [
+          82657,
+          108147,
+          82669
+        ],
+        "row": 5,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82670,
+        "name": "Descending Darkness",
+        "spell_id": 1242666,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1242666,
+            "description": "Descending Darkness Talent Requires Priest Increases Tentacle Slam damage by 300%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93171
+        ],
+        "unlocks": [
+          82657
+        ],
+        "row": 5,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82668,
+        "name": "Surge of Insanity",
+        "spell_id": 391399,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391399,
+            "description": "Surge of Insanity Talent Requires Priest Mind Flay damage increased by 15% and Insanity generation increased by 30%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82651
+        ],
+        "unlocks": [
+          82658,
+          82657,
+          108007
+        ],
+        "row": 5,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94678,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 449874,
+            "name": "Energy Compression",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 449874,
+                "description": "Energy Compression Talent Requires Priest Halo damage and healing is increased by 30%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 454001,
+            "name": "Sustained Potency",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 454001,
+                "description": "Sustained Potency Talent Requires Priest Shadow Creating a Halo extends the duration of by 1 sec. If is not active, up to 6 seconds is stored. While out of combat or affected by a loss of control effect, the duration of is paused for up to 20 sec. Holy Creating a Halo extends the duration of Apotheosis by 1 sec. If Apotheosis is not active, up to 6 seconds is stored. While out of combat or affected by a loss of control effect, the duration of Apotheosis is paused for up to 20 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94686
+        ],
+        "unlocks": [
+          94702
+        ],
+        "row": 5,
+        "col": 22
+      },
+      {
+        "node_id": 94676,
+        "name": "Resonant Energy",
+        "spell_id": 453845,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 453845,
+            "description": "Resonant Energy Talent Requires Priest Holy Allies healed by your Halo receive 2 % increased healing from you for 8 sec, stacking up to 5 times. Shadow Enemies damaged by your Halo take 2 % increased damage from you for 8 sec, stacking up to 5 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94680
+        ],
+        "unlocks": [
+          94702
+        ],
+        "row": 5,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94685,
+        "name": "Energy Cycle",
+        "spell_id": 453828,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 453828,
+            "description": "Energy Cycle Talent Requires Priest Shadow Casting Mind Flay: Insanity has a 100% chance to conjure Shadowy Apparitions. Holy (Ultimate Serenity) Consuming Surge of Light reduces the cooldown of Holy Word: Serenity by 4 sec.Consuming Surge of Light reduces the cooldown of Holy Word: Sanctify by 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Holy Word: Serenity",
+                "type": "cd_reduction",
+                "value": 4,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Holy Word: Sanctify",
+                "type": "cd_reduction",
+                "value": 4,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94688
+        ],
+        "unlocks": [
+          94702
+        ],
+        "row": 5,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109775,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1272326,
+            "name": "Realized Potential",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1272326,
+                "description": "Realized Potential Talent Requires Priest Holy Flash Heal healing increased by 10%. Healing spells and Smite have an additional 2% chance to grant Surge of Light. Shadow Shadow Word: Death damage increased by 25% and its cooldown is reduced by 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1247178,
+            "name": "Spiritwell",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1247178,
+                "description": "Spiritwell Talent Requires Priest Shadow Increases Shadowy Apparition damage by 10%. Holy Surge of Light can now be consumed by Prayer of Healing in addition to Flash Heal. Surge of Light Your healing spells and Smite have a 8% chance to make your next Flash Heal instant and cost [ Holy : 50 / 50]% less mana. Stacks to 2.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109776
+        ],
+        "unlocks": [
+          94702
+        ],
+        "row": 5,
+        "col": 25
+      },
+      {
+        "node_id": 82669,
+        "name": "Shadowy Insight",
+        "spell_id": 375888,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375888,
+            "description": "Shadowy Insight Talent Requires Priest Shadow Word: Pain periodic damage has a chance to cause your next Mind Blast to be instant and ignore its cooldown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82659
+        ],
+        "unlocks": [
+          109018,
+          82662,
+          82660
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108147,
+        "name": "Voidtouched",
+        "spell_id": 407430,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 407430,
+            "description": "Voidtouched Talent Requires Priest Increases your Shadow Word: Madness damage by 6% and increases your maximum Insanity by 50.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82659
+        ],
+        "unlocks": [
+          82662
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82657,
+        "name": "Voidform",
+        "spell_id": 228260,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 228260,
+            "description": "Voidform Talent Requires Priest Bombards your target with a Void Volley and twists your Shadowform with void magic, increasing your spell damage by 20% for 20 sec. This spell is replaced with Void Volley while Voidform is active. Void Volley Releases a volley of pure void energy, firing 10 bolts at your target and 1 bolt at all enemies within 10 yards of your target for (106.049% of Spell Power) Shadow damage. Generates .",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82668,
+          82659,
+          82670
+        ],
+        "unlocks": [
+          82662,
+          82646,
+          82656
+        ],
+        "row": 6,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82658,
+        "name": "Haunting Shadows",
+        "spell_id": 1279355,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1279355,
+            "description": "Haunting Shadows Talent Requires Priest Shadowy Apparition damage increased by 10%. When Shadowy Apparitions deal damage, they extend the duration of your Shadow Word: Pain and Vampiric Touch on the target by 1.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82668
+        ],
+        "unlocks": [
+          82646
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108007,
+        "name": "Mental Decay",
+        "spell_id": 375994,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375994,
+            "description": "Mental Decay Talent Requires Priest Increases the damage of Mind Flay by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Mind Flay",
+                "type": "damage_increase",
+                "value": 25,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          82668
+        ],
+        "unlocks": [
+          82646,
+          108031,
+          108029
+        ],
+        "row": 6,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94702,
+        "name": "Divine Halo",
+        "spell_id": 449806,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449806,
+            "description": "Divine Halo Talent Requires Priest Halo now centers around you and returns to you after it reaches its maximum distance, healing allies and damaging enemies each time it passes through them.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94678,
+          94685,
+          94676,
+          109775
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109018,
+        "name": "Shadowfiend",
+        "spell_id": 34433,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 34433,
+            "description": "Shadowfiend Talent Requires Priest Discipline Shadow Word: Death has a 100% chance to summon a Shadowfiend for 5 sec when damaging targets below 20% health. Shadowfiend Summons a Shadowfiend to attack your target for 5 sec. Generates 0.1% mana each time the Shadowfiend attacks. Shadow Shadow Word: Death has a 40% chance to summon a Shadowfiend for 5 sec when damaging targets below 20% health. Shadowfiend Summons a Shadowfiend to attack your target for 5 sec. Generates each time the Shadowfiend attacks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82669
+        ],
+        "unlocks": [
+          82645,
+          82559
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82660,
+        "name": "Dark Thoughts",
+        "spell_id": 1240388,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1240388,
+            "description": "Dark Thoughts Talent Requires Priest Increases the chance for Shadowy Insight to occur by 25%. When consuming Shadowy Insight, Mind Blast generates 1 additional Insanity.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82669
+        ],
+        "unlocks": [
+          82645
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82662,
+        "name": "Maddening Touch",
+        "spell_id": 391228,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391228,
+            "description": "Maddening Touch Talent Requires Priest Vampiric Touch deals 20% additional damage and has a chance to generate each time it deals damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82657,
+          82669,
+          108147
+        ],
+        "unlocks": [
+          82645,
+          82647
+        ],
+        "row": 7,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82656,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 341240,
+            "name": "Improved Voidform",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 341240,
+                "description": "Improved Voidform Talent Requires Priest Requires level 50 Voidform generates and increases your spell damage by an additonal 5%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1231346,
+            "name": "Ancient Madness",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1231346,
+                "description": "Ancient Madness Talent Requires Priest Casting Shadow Word: Madness increases the duration of Voidform by 3.0 sec. Each time this occurs during Voidform, its effectiveness is reduced by 25%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Voidform",
+                    "type": "duration_increase",
+                    "value": 3,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82657
+        ],
+        "unlocks": [
+          82563,
+          82647
+        ],
+        "row": 7,
+        "col": 19
+      },
+      {
+        "node_id": 82646,
+        "name": "Phantom Menace",
+        "spell_id": 1242779,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1242779,
+            "description": "Phantom Menace Talent Requires Priest Increases the critical strike chance of Shadowy Apparitions by 10% and their critical strike damage by 40%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82657,
+          82658,
+          108007
+        ],
+        "unlocks": [
+          82563,
+          108152
+        ],
+        "row": 7,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108031,
+        "name": "Dark Evangelism",
+        "spell_id": 391099,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391099,
+            "description": "Dark Evangelism Talent Requires Priest Increases your periodic spell damage by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108007
+        ],
+        "unlocks": [
+          108152
+        ],
+        "row": 7,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108029,
+        "name": "Shattered Psyche",
+        "spell_id": 391090,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391090,
+            "description": "Shattered Psyche Talent Requires Priest Mind Flay damage increases the critical strike chance of Mind Blast by 8%, stacking up to 12 times. Lasts 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108007
+        ],
+        "unlocks": [
+          82654,
+          108152
+        ],
+        "row": 7,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94693,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 451204,
+            "name": "No Escape",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 451204,
+                "description": "No Escape Talent Requires Priest Entropic Rift slows enemies by up to 70%, increased the closer they are to its center.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 451018,
+            "name": "Dark Energy",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 451018,
+                "description": "Dark Energy Talent Requires Priest Shadow Void Torrent can be used while moving. While Entropic Rift is active, you move 20% faster. Discipline While Entropic Rift is active, you move 20% faster.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94684,
+          110008
+        ],
+        "unlocks": [
+          94668
+        ],
+        "row": 8,
+        "col": 10
+      },
+      {
+        "node_id": 94703,
+        "name": "Void Blast",
+        "spell_id": 450405,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450405,
+            "description": "Void Blast Talent Requires Priest Shadow Entropic Rift upgrades Mind Blast into Void Blast while it is active. Void Blast : Sends a blast of cosmic void energy at the enemy, causing (210% of Spell Power) Shadow damage. [ Shadow : Generates . ] Discipline Entropic Rift upgrades Smite into Void Blast while it is active. Void Blast : Sends a blast of cosmic void energy at the enemy, causing (150% of Spell Power) Shadow damage. [ Shadow : Generates . ]",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94684,
+          110008
+        ],
+        "unlocks": [
+          94695
+        ],
+        "row": 8,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94670,
+        "name": "Inner Quietus",
+        "spell_id": 448278,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 448278,
+            "description": "Inner Quietus Talent Requires Priest Discipline Power Word: Shield absorbs 20% additional damage. Shadow Vampiric Touch and Shadow Word: Pain deal 20% additional damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94684,
+          110008
+        ],
+        "unlocks": [
+          100212
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109780,
+        "name": "Voidheart",
+        "spell_id": 449880,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449880,
+            "description": "Voidheart Talent Requires Priest Discipline While Entropic Rift is active, your Atonement healing is increased by 20%. Shadow While Entropic Rift is active, your Shadow damage is increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94684,
+          110008
+        ],
+        "unlocks": [
+          109779
+        ],
+        "row": 8,
+        "col": 13,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82559,
+        "name": "Subservient Shadows",
+        "spell_id": 1228516,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1228516,
+            "description": "Subservient Shadows Talent Requires Priest Summoned minions last 20% longer and deal an additional 15% damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109018
+        ],
+        "unlocks": [
+          82648
+        ],
+        "row": 8,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82645,
+        "name": "Mastermind",
+        "spell_id": 391151,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391151,
+            "description": "Mastermind Talent Requires Priest Increases the critical strike chance of Mind Blast, Mind Flay, and Shadow Word: Death by 4% and increases their critical strike damage by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 391151,
+            "description": "Mastermind Talent Requires Priest Increases the critical strike chance of Mind Blast, Mind Flay, and Shadow Word: Death by 4% and increases their critical strike damage by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82662,
+          109018,
+          82660
+        ],
+        "unlocks": [
+          82558,
+          82648
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82647,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 407470,
+            "name": "Mind's Eye",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 407470,
+                "description": "Mind's Eye Talent Requires Priest Reduces the Insanity cost of Shadow Word: Madness by 5.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 409044,
+            "name": "Distorted Reality",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 409044,
+                "description": "Distorted Reality Talent Requires Priest Increases the damage of Shadow Word: Madness by 20% and causes it to deal its damage over 12 sec, but increases its Insanity cost by 5.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Shadow Word: Madness",
+                    "type": "damage_increase",
+                    "value": 20,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82656,
+          82662
+        ],
+        "unlocks": [
+          82558,
+          108153,
+          82667
+        ],
+        "row": 8,
+        "col": 19
+      },
+      {
+        "node_id": 82563,
+        "name": "Spectral Horrors",
+        "spell_id": 407469,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 407469,
+            "description": "Spectral Horrors Talent Requires Priest Shadow Apparitions deal 50% increased damage to targets affected by your Shadow Word: Madness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82646,
+          82656
+        ],
+        "unlocks": [
+          82667
+        ],
+        "row": 8,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108152,
+        "name": "Instilled Doubt",
+        "spell_id": 1242862,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1242862,
+            "description": "Instilled Doubt Talent Requires Priest Increases the critical strike chance of Vampiric Touch and Shadow Word: Pain by 8% and their critical strike damage by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1242862,
+            "description": "Instilled Doubt Talent Requires Priest Increases the critical strike chance of Vampiric Touch and Shadow Word: Pain by 8% and their critical strike damage by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108031,
+          82646,
+          108029
+        ],
+        "unlocks": [
+          82654,
+          82667
+        ],
+        "row": 8,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94668,
+        "name": "Devour Matter",
+        "spell_id": 451840,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 451840,
+            "description": "Devour Matter Talent Requires Priest Discipline Shadow Word: Death consumes absorb shields from your target, dealing (255% of Spell Power) extra damage to them and granting you 1% mana if a shield was present. Shadow Shadow Word: Death consumes absorb shields from your target, dealing (255% of Spell Power) extra damage to them and granting you if a shield was present.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94693
+        ],
+        "unlocks": [
+          94692
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94695,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 450138,
+            "name": "Void Empowerment",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 450138,
+                "description": "Void Empowerment Talent Requires Priest Discipline Summoning an Entropic Rift extends the duration of your 5 shortest Atonements by 1 sec. Shadow Summoning an Entropic Rift grants you Shadowy Insight.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 449912,
+            "name": "Darkening Horizon",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 449912,
+                "description": "Darkening Horizon Talent Requires Priest Discipline, Shadow Void Blast increases the duration of Entropic Rift by 1.0 sec, up to a maximum of 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Entropic Rift",
+                    "type": "duration_increase",
+                    "value": 1,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94703
+        ],
+        "unlocks": [
+          94669
+        ],
+        "row": 9,
+        "col": 11
+      },
+      {
+        "node_id": 100212,
+        "name": "Voidwraith",
+        "spell_id": 451234,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 451234,
+            "description": "Voidwraith Talent Requires Priest When Entropic Rift ends, a Voidwraith is summoned from the collapsed rift for 5 sec. Voidwraith Summon a Voidwraith that casts Void Flay from afar. Void Flay deals bonus damage to high health enemies, up to a maximum of 50% if they are full health. [ Shadow : Generates each time the Voidwraith attacks. / Discipline, Holy Generates 0.5% Mana each time the Voidwraith attacks. ]",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94670
+        ],
+        "unlocks": [
+          94696
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109779,
+        "name": "Touch of the Void",
+        "spell_id": 1266856,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266856,
+            "description": "Touch of the Void Talent Requires Priest Voidheart now persists for 8 sec after Entropic Rift ends.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109780
+        ],
+        "unlocks": [
+          109778
+        ],
+        "row": 9,
+        "col": 13,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82648,
+        "name": "Mindbender",
+        "spell_id": 1230339,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1230339,
+            "description": "Mindbender Talent Requires Priest Casting Voidform summons a Mindbender for 10 sec. Mindbender Summons a shadowy fiend to attack your target. Generates each time the Mindbender attacks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82559,
+          82645
+        ],
+        "unlocks": [
+          82671,
+          82644
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82558,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 392507,
+            "name": "Deathspeaker",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 392507,
+                "description": "Deathspeaker Talent Requires Priest Approximately 2.25 procs per minute Shadow Word: Death damage increased by 25%. Shadow Word: Death gains its damage and talent bonuses against targets below 35% health instead of 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 321291,
+            "name": "Death and Madness",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 321291,
+                "description": "Death and Madness Talent Requires Priest Requires level 15 If a target dies within 7 sec after being struck by Shadow Word: Death, generate . When Shadow Word: Death fails to kill a target below 20% health, its cooldown is reset. Cannot occur more than once every 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82645,
+          82647
+        ],
+        "unlocks": [
+          82649,
+          82671,
+          108006
+        ],
+        "row": 9,
+        "col": 18
+      },
+      {
+        "node_id": 108153,
+        "name": "Mind Devourer",
+        "spell_id": 373202,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373202,
+            "description": "Mind Devourer Talent Requires Priest Mind Blast has a 8% chance to make your next Shadow Word: Madness cost no Insanity and deal 20% additional damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82647
+        ],
+        "unlocks": [
+          82649
+        ],
+        "row": 9,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82667,
+        "name": "Auspicious Spirits",
+        "spell_id": 155271,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 155271,
+            "description": "Auspicious Spirits Talent Requires Priest Requires level 40 Your Shadowy Apparitions deal 15% increased damage and have a chance to generate .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108152,
+          82563,
+          82647
+        ],
+        "unlocks": [
+          82560,
+          93170,
+          82649
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82654,
+        "name": "Maddening Tentacles",
+        "spell_id": 1279353,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1279353,
+            "description": "Maddening Tentacles Talent Requires Priest Tentacle Slam afflicts your target with Shadow Word: Madness at 25% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108029,
+          108152
+        ],
+        "unlocks": [
+          82560,
+          82655
+        ],
+        "row": 9,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94692,
+        "name": "Quickened Pulse",
+        "spell_id": 1266845,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266845,
+            "description": "Quickened Pulse Talent Requires Priest Shadow Shadow Word: Pain and Entropic Rift deal damage 14.9425% more often. Discipline Shadow Word: Pain and Entropic Rift deal damage 25% more often.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94668
+        ],
+        "unlocks": [
+          94694
+        ],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94669,
+        "name": "Void Infusion",
+        "spell_id": 450612,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450612,
+            "description": "Void Infusion Talent Requires Priest Shadow Void Blast generates 2 additional Insanity. Discipline While Entropic Rift is active, Atonement healing with Void Blast and Penance is 50% more effective.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94695
+        ],
+        "unlocks": [
+          94694
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94696,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 451311,
+            "name": "Void Leech",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 451311,
+                "description": "Void Leech Talent Requires Priest Every 3 sec siphon an amount equal to 4% of your health from an ally within 40 yds if they are higher health than you.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 451569,
+            "name": "Embrace the Shadow",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 451569,
+                "description": "Embrace the Shadow Talent Requires Priest You absorb 3% of all magic damage taken. Absorbing Shadow damage heals you for 100% of the amount absorbed.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          100212
+        ],
+        "unlocks": [
+          94694
+        ],
+        "row": 10,
+        "col": 12
+      },
+      {
+        "node_id": 109778,
+        "name": "Overwhelming Shadows",
+        "spell_id": 1266883,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266883,
+            "description": "Overwhelming Shadows Talent Requires Priest Discipline Mind Blast deals 100% increased damage. Shadow Void Torrent deals 30% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109779
+        ],
+        "unlocks": [
+          94694
+        ],
+        "row": 10,
+        "col": 13,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82644,
+        "name": "Inescapable Torment",
+        "spell_id": 373427,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373427,
+            "description": "Inescapable Torment Talent Requires Priest Shadow Mind Blast and Shadow Word: Death cause your Shadowfiend, Mindbender, and Voidwraith to teleport behind your target, slashing up to 5 nearby enemies for [(190% of Spell Power) * 0.442] Shadow damage and extending their durations by 0.7 sec. Discipline Penance, Mind Blast and Shadow Word: Death cause your Shadowfiend, Mindbender, and Voidwraith to teleport behind your target, slashing up to 5 nearby enemies for [(190% of Spell Power) * 0.442] Shadow damage and extending their durations by 0.7 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82648
+        ],
+        "unlocks": [
+          82553
+        ],
+        "row": 10,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82671,
+        "name": "Madness Weaving",
+        "spell_id": 1240394,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1240394,
+            "description": "Madness Weaving Talent Requires Priest The damage bonus from your Mastery: Shadow Weaving gains 50% additional benefit from Shadow Word: Madness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1240394,
+            "description": "Madness Weaving Talent Requires Priest The damage bonus from your Mastery: Shadow Weaving gains 50% additional benefit from Shadow Word: Madness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82648,
+          82558
+        ],
+        "unlocks": [
+          82552,
+          82553
+        ],
+        "row": 10,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108006,
+        "name": "Death's Torment",
+        "spell_id": 1240364,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1240364,
+            "description": "Death's Torment Talent Requires Priest Shadow Word: Death deals damage 2 additional times at 15% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82558
+        ],
+        "unlocks": [
+          82552
+        ],
+        "row": 10,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82649,
+        "name": "Screams of the Void",
+        "spell_id": 375767,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375767,
+            "description": "Screams of the Void Talent Requires Priest Shadow Word: Madness causes your Shadow Word: Pain and Vampiric Touch to deal damage 40% faster on all targets for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 375767,
+            "description": "Screams of the Void Talent Requires Priest Shadow Word: Madness causes your Shadow Word: Pain and Vampiric Touch to deal damage 40% faster on all targets for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82558,
+          108153,
+          82667
+        ],
+        "unlocks": [
+          82552,
+          82555
+        ],
+        "row": 10,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93170,
+        "name": "Tormented Spirits",
+        "spell_id": 391284,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391284,
+            "description": "Tormented Spirits Talent Requires Priest Your Shadow Word: Pain damage has a chance to create Shadowy Apparitions that float towards all targets afflicted by your Vampiric Touch. Critical strikes increase the chance by 100%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82667
+        ],
+        "unlocks": [
+          82555
+        ],
+        "row": 10,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82560,
+        "name": "Insidious Ire",
+        "spell_id": 373212,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373212,
+            "description": "Insidious Ire Talent Requires Priest While you have Shadow Word: Pain, Shadow Word: Madness, and Vampiric Touch active on the same target, your Mind Blast, Void Torrent, Mind Flay, and Void Volley deal 20% more damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 373212,
+            "description": "Insidious Ire Talent Requires Priest While you have Shadow Word: Pain, Shadow Word: Madness, and Vampiric Touch active on the same target, your Mind Blast, Void Torrent, Mind Flay, and Void Volley deal 20% more damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82654,
+          82667
+        ],
+        "unlocks": [
+          82643,
+          82555
+        ],
+        "row": 10,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82655,
+        "name": "Crushing Void",
+        "spell_id": 1279354,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1279354,
+            "description": "Crushing Void Talent Requires Priest Tentacle Slam deals 50% increased damage and Void Volley deals 15% increased damage. When Voidform ends, you can cast Void Volley 1 additional time within 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82654
+        ],
+        "unlocks": [
+          82643
+        ],
+        "row": 10,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94694,
+        "name": "Collapsing Void",
+        "spell_id": 448403,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 448403,
+            "description": "Collapsing Void Talent Requires Priest Discipline Each time Penance damages or heals, Entropic Rift is empowered, increasing its damage and size by 10%. After Entropic Rift ends it collapses, dealing (440% of Spell Power) Shadow damage split amongst enemy targets within 15 yds. Shadow Each time you cast Shadow Word: Madness, Entropic Rift is empowered, increasing its damage and size by 20%. After Entropic Rift ends it collapses, dealing (440% of Spell Power) Shadow damage split amongst enemy targets within 15 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94669,
+          94692,
+          94696,
+          109778
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82553,
+        "name": "Idol of Y'Shaarj",
+        "spell_id": 373310,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373310,
+            "description": "Idol of Y'Shaarj Talent Requires Priest Approximately 2 procs per minute While Shadowfiend, Mindbender, or Voidwraith are active, your haste is increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82644,
+          82671
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82552,
+        "name": "Idol of N'Zoth",
+        "spell_id": 373280,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373280,
+            "description": "Idol of N'Zoth Talent Requires Priest You create Horrific Visions when casting harmful spells on enemies. At 50 stacks of Horrific Visions, your target sees a nightmare, dealing (182% of Spell Power) Shadow damage and granting you over 3 sec. At 100 stacks, your target witnesses a vision of N'Zoth, dealing (689% of Spell Power) Shadow damage and granting you over 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82671,
+          82649,
+          108006
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82555,
+        "name": "Idol of Yogg-Saron",
+        "spell_id": 373273,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373273,
+            "description": "Idol of Yogg-Saron Talent Requires Priest After conjuring Shadowy Apparitions, gain a stack of Idol of Yogg-Saron. At 20 stacks, you summon a Thing from Beyond that casts Void Spike at nearby enemies for 20 sec. Void Spike Hurls a bolt of dark magic, dealing (93.8961% of Spell Power) Shadow damage and [(93.8961% of Spell Power) * 21 / 100] Shadow damage to all enemies within 10 yards of the target. Damage reduced beyond 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93170,
+          82649,
+          82560
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82643,
+        "name": "Idol of C'Thun",
+        "spell_id": 377349,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377349,
+            "description": "Idol of C'Thun Talent Requires Priest Approximately 2 procs per minute Mind Flay has a chance to spawn a Void Tendril that channels Mind Flay or Void Lasher that channels Mind Sear at your target. Mind Flay Assaults the target's mind with Shadow energy, causing (321.8% of Spell Power) Shadow damage over 10 sec and slowing their movement speed by 30%. Generates over the duration. Mind Sear Corrosive shadow energy radiates from the target, dealing [(34.34% of Spell Power) * 5] Shadow damage over 10 sec to all enemies within 10 yards of the target. Damage reduced beyond 5 targets. Generates over the duration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82560,
+          82655
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110408,
+        "name": "Void Apparitions",
+        "spell_id": 1264096,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264096,
+            "description": "Void Apparitions Talent Requires Priest When an effect from an Idol is activated, conjure Shadowy Apparitions.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Voidweaver",
+      "nodes": [
+        {
+          "node_id": 94668,
+          "name": "Devour Matter",
+          "spell_id": 451840,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 451840,
+              "description": "Devour Matter Talent Requires Priest Discipline Shadow Word: Death consumes absorb shields from your target, dealing (255% of Spell Power) extra damage to them and granting you 1% mana if a shield was present. Shadow Shadow Word: Death consumes absorb shields from your target, dealing (255% of Spell Power) extra damage to them and granting you if a shield was present.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94693
+          ],
+          "unlocks": [
+            94692
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94669,
+          "name": "Void Infusion",
+          "spell_id": 450612,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450612,
+              "description": "Void Infusion Talent Requires Priest Shadow Void Blast generates 2 additional Insanity. Discipline While Entropic Rift is active, Atonement healing with Void Blast and Penance is 50% more effective.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94695
+          ],
+          "unlocks": [
+            94694
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94670,
+          "name": "Inner Quietus",
+          "spell_id": 448278,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 448278,
+              "description": "Inner Quietus Talent Requires Priest Discipline Power Word: Shield absorbs 20% additional damage. Shadow Vampiric Touch and Shadow Word: Pain deal 20% additional damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94684,
+            110008
+          ],
+          "unlocks": [
+            100212
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94684,
+          "name": "Void Torrent",
+          "spell_id": 263165,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 263165,
+              "description": "Void Torrent Talent Channeled () Requires Priest Requires level 45 Channel a torrent of void energy into the target, dealing (713.055% of Spell Power) Shadow damage over 3 sec and tearing open an Entropic Rift . Entropic Rift Mind Blast tears open an Entropic Rift that follows the enemy for 8 sec. Enemies caught in its path suffer (60% of Spell Power) Shadow damage every 1 sec while within its reach. Generates over the duration.",
+              "cooldown": 30.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94693,
+            94703,
+            94670,
+            109780
+          ],
+          "row": 7,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94692,
+          "name": "Quickened Pulse",
+          "spell_id": 1266845,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1266845,
+              "description": "Quickened Pulse Talent Requires Priest Shadow Shadow Word: Pain and Entropic Rift deal damage 14.9425% more often. Discipline Shadow Word: Pain and Entropic Rift deal damage 25% more often.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94668
+          ],
+          "unlocks": [
+            94694
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94693,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 451204,
+              "name": "No Escape",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 451204,
+                  "description": "No Escape Talent Requires Priest Entropic Rift slows enemies by up to 70%, increased the closer they are to its center.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 451018,
+              "name": "Dark Energy",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 451018,
+                  "description": "Dark Energy Talent Requires Priest Shadow Void Torrent can be used while moving. While Entropic Rift is active, you move 20% faster. Discipline While Entropic Rift is active, you move 20% faster.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94684,
+            110008
+          ],
+          "unlocks": [
+            94668
+          ],
+          "row": 8,
+          "col": 10
+        },
+        {
+          "node_id": 94694,
+          "name": "Collapsing Void",
+          "spell_id": 448403,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 448403,
+              "description": "Collapsing Void Talent Requires Priest Discipline Each time Penance damages or heals, Entropic Rift is empowered, increasing its damage and size by 10%. After Entropic Rift ends it collapses, dealing (440% of Spell Power) Shadow damage split amongst enemy targets within 15 yds. Shadow Each time you cast Shadow Word: Madness, Entropic Rift is empowered, increasing its damage and size by 20%. After Entropic Rift ends it collapses, dealing (440% of Spell Power) Shadow damage split amongst enemy targets within 15 yds.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94669,
+            94692,
+            94696,
+            109778
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94695,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 450138,
+              "name": "Void Empowerment",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 450138,
+                  "description": "Void Empowerment Talent Requires Priest Discipline Summoning an Entropic Rift extends the duration of your 5 shortest Atonements by 1 sec. Shadow Summoning an Entropic Rift grants you Shadowy Insight.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 449912,
+              "name": "Darkening Horizon",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449912,
+                  "description": "Darkening Horizon Talent Requires Priest Discipline, Shadow Void Blast increases the duration of Entropic Rift by 1.0 sec, up to a maximum of 3 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Entropic Rift",
+                      "type": "duration_increase",
+                      "value": 1,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94703
+          ],
+          "unlocks": [
+            94669
+          ],
+          "row": 9,
+          "col": 11
+        },
+        {
+          "node_id": 94696,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 451311,
+              "name": "Void Leech",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 451311,
+                  "description": "Void Leech Talent Requires Priest Every 3 sec siphon an amount equal to 4% of your health from an ally within 40 yds if they are higher health than you.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 451569,
+              "name": "Embrace the Shadow",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 451569,
+                  "description": "Embrace the Shadow Talent Requires Priest You absorb 3% of all magic damage taken. Absorbing Shadow damage heals you for 100% of the amount absorbed.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            100212
+          ],
+          "unlocks": [
+            94694
+          ],
+          "row": 10,
+          "col": 12
+        },
+        {
+          "node_id": 94703,
+          "name": "Void Blast",
+          "spell_id": 450405,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450405,
+              "description": "Void Blast Talent Requires Priest Shadow Entropic Rift upgrades Mind Blast into Void Blast while it is active. Void Blast : Sends a blast of cosmic void energy at the enemy, causing (210% of Spell Power) Shadow damage. [ Shadow : Generates . ] Discipline Entropic Rift upgrades Smite into Void Blast while it is active. Void Blast : Sends a blast of cosmic void energy at the enemy, causing (150% of Spell Power) Shadow damage. [ Shadow : Generates . ]",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94684,
+            110008
+          ],
+          "unlocks": [
+            94695
+          ],
+          "row": 8,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 100212,
+          "name": "Voidwraith",
+          "spell_id": 451234,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 451234,
+              "description": "Voidwraith Talent Requires Priest When Entropic Rift ends, a Voidwraith is summoned from the collapsed rift for 5 sec. Voidwraith Summon a Voidwraith that casts Void Flay from afar. Void Flay deals bonus damage to high health enemies, up to a maximum of 50% if they are full health. [ Shadow : Generates each time the Voidwraith attacks. / Discipline, Holy Generates 0.5% Mana each time the Voidwraith attacks. ]",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94670
+          ],
+          "unlocks": [
+            94696
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109778,
+          "name": "Overwhelming Shadows",
+          "spell_id": 1266883,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1266883,
+              "description": "Overwhelming Shadows Talent Requires Priest Discipline Mind Blast deals 100% increased damage. Shadow Void Torrent deals 30% increased damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109779
+          ],
+          "unlocks": [
+            94694
+          ],
+          "row": 10,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109779,
+          "name": "Touch of the Void",
+          "spell_id": 1266856,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1266856,
+              "description": "Touch of the Void Talent Requires Priest Voidheart now persists for 8 sec after Entropic Rift ends.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109780
+          ],
+          "unlocks": [
+            109778
+          ],
+          "row": 9,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109780,
+          "name": "Voidheart",
+          "spell_id": 449880,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449880,
+              "description": "Voidheart Talent Requires Priest Discipline While Entropic Rift is active, your Atonement healing is increased by 20%. Shadow While Entropic Rift is active, your Shadow damage is increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94684,
+            110008
+          ],
+          "unlocks": [
+            109779
+          ],
+          "row": 8,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110008,
+          "name": "Entropic Rift",
+          "spell_id": 447444,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 447444,
+              "description": "Entropic Rift Talent Requires Priest Mind Blast tears open an Entropic Rift that follows the enemy for 8 sec. Enemies caught in its path suffer (60% of Spell Power) Shadow damage every 1 sec while within its reach.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            109780,
+            94670,
+            94703,
+            94693
+          ],
+          "row": 7,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Archon",
+      "nodes": [
+        {
+          "node_id": 94676,
+          "name": "Resonant Energy",
+          "spell_id": 453845,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 453845,
+              "description": "Resonant Energy Talent Requires Priest Holy Allies healed by your Halo receive 2 % increased healing from you for 8 sec, stacking up to 5 times. Shadow Enemies damaged by your Halo take 2 % increased damage from you for 8 sec, stacking up to 5 times.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94680
+          ],
+          "unlocks": [
+            94702
+          ],
+          "row": 5,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94677,
+          "name": "Perfected Form",
+          "spell_id": 453917,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 453917,
+              "description": "Perfected Form Talent Requires Priest Shadow Your damage dealt is increased by 5% while Voidform is active. Holy Your healing done is increased by 10% while Apotheosis is active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94697,
+            108724
+          ],
+          "unlocks": [
+            94686
+          ],
+          "row": 3,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94678,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 449874,
+              "name": "Energy Compression",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449874,
+                  "description": "Energy Compression Talent Requires Priest Halo damage and healing is increased by 30%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 454001,
+              "name": "Sustained Potency",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 454001,
+                  "description": "Sustained Potency Talent Requires Priest Shadow Creating a Halo extends the duration of by 1 sec. If is not active, up to 6 seconds is stored. While out of combat or affected by a loss of control effect, the duration of is paused for up to 20 sec. Holy Creating a Halo extends the duration of Apotheosis by 1 sec. If Apotheosis is not active, up to 6 seconds is stored. While out of combat or affected by a loss of control effect, the duration of Apotheosis is paused for up to 20 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94686
+          ],
+          "unlocks": [
+            94702
+          ],
+          "row": 5,
+          "col": 22
+        },
+        {
+          "node_id": 94680,
+          "name": "Energy Conservation",
+          "spell_id": 1272308,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272308,
+              "description": "Energy Conservation Talent Requires Priest Power Surge lasts an additional 5 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94681
+          ],
+          "unlocks": [
+            94676
+          ],
+          "row": 4,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94681,
+          "name": "Power Surge",
+          "spell_id": 453109,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 453109,
+              "description": "Power Surge Talent Requires Priest Casting Halo also causes you to create a Halo around you at 100% effectiveness every 5 sec for 10 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94697,
+            108724
+          ],
+          "unlocks": [
+            94680
+          ],
+          "row": 3,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94685,
+          "name": "Energy Cycle",
+          "spell_id": 453828,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 453828,
+              "description": "Energy Cycle Talent Requires Priest Shadow Casting Mind Flay: Insanity has a 100% chance to conjure Shadowy Apparitions. Holy (Ultimate Serenity) Consuming Surge of Light reduces the cooldown of Holy Word: Serenity by 4 sec.Consuming Surge of Light reduces the cooldown of Holy Word: Sanctify by 4 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Holy Word: Serenity",
+                  "type": "cd_reduction",
+                  "value": 4,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Holy Word: Sanctify",
+                  "type": "cd_reduction",
+                  "value": 4,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94688
+          ],
+          "unlocks": [
+            94702
+          ],
+          "row": 5,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94686,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 453852,
+              "name": "Shock Pulse",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 453852,
+                  "description": "Shock Pulse Talent Requires Priest Halo damage reduces enemy movement speed by 5% for 5 sec, stacking up to 5 times.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 453918,
+              "name": "Incessant Screams",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 453918,
+                  "description": "Incessant Screams Talent Requires Priest Psychic Scream creates an image of you at your location. After 4 sec, the image will let out a Psychic Scream.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94677
+          ],
+          "unlocks": [
+            94678
+          ],
+          "row": 4,
+          "col": 22
+        },
+        {
+          "node_id": 94688,
+          "name": "Empowered Surges",
+          "spell_id": 453799,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 453799,
+              "description": "Empowered Surges Talent Requires Priest Shadow Increases the damage done by Mind Flay: Insanity by 30%. Holy Your spells affected by Surge of Light heal for 5% more while Surge of Light is active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94699
+          ],
+          "unlocks": [
+            94685
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94697,
+          "name": "Halo",
+          "spell_id": 120644,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 120644,
+              "description": "Halo Talent 4% of base mana Requires Priest Creates a ring of Shadow energy around you that quickly expands to a 40 yd radius, healing allies for (161% of Spell Power) and dealing [(144.2% of Spell Power) * 1 * 1 * 1 ] Shadow damage to enemies. Healing reduced beyond 6 targets. [ Shadow : Generates . ]",
+              "cooldown": 60.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94681,
+            94677,
+            94699,
+            109777
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94699,
+          "name": "Manifested Power",
+          "spell_id": 453783,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 453783,
+              "description": "Manifested Power Talent Requires Priest Holy Creating a Halo grants Surge of Light. Surge of Light Your healing spells and Smite have a 8% chance to make your next Flash Heal instant and cost [ Holy : 50 / 50]% less mana. Stacks to 2. Shadow Creating a Halo upgrades your next Mind Flay to Mind Flay: Insanity. Mind Flay: Insanity Assaults the target's mind with Shadow energy, causing (542.36% of Spell Power) Shadow damage over 1.5 sec and slowing their movement speed by 70%. Generates over the duration.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94697,
+            108724
+          ],
+          "unlocks": [
+            94688
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94702,
+          "name": "Divine Halo",
+          "spell_id": 449806,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449806,
+              "description": "Divine Halo Talent Requires Priest Halo now centers around you and returns to you after it reaches its maximum distance, healing allies and damaging enemies each time it passes through them.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94678,
+            94685,
+            94676,
+            109775
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 108724,
+          "name": "Halo",
+          "spell_id": 120517,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 120517,
+              "description": "Halo Talent 2.7% of base mana Requires Priest Requires level 45 Creates a ring of Holy energy around you that quickly expands to a 40 yd radius, healing allies for (161% of Spell Power) and dealing [(144.2% of Spell Power) * 1 ] Holy damage to enemies. Healing reduced beyond 6 targets.",
+              "cooldown": 60.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94677,
+            94681,
+            94699,
+            109777
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109775,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1272326,
+              "name": "Realized Potential",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1272326,
+                  "description": "Realized Potential Talent Requires Priest Holy Flash Heal healing increased by 10%. Healing spells and Smite have an additional 2% chance to grant Surge of Light. Shadow Shadow Word: Death damage increased by 25% and its cooldown is reduced by 3 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1247178,
+              "name": "Spiritwell",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1247178,
+                  "description": "Spiritwell Talent Requires Priest Shadow Increases Shadowy Apparition damage by 10%. Holy Surge of Light can now be consumed by Prayer of Healing in addition to Flash Heal. Surge of Light Your healing spells and Smite have a 8% chance to make your next Flash Heal instant and cost [ Holy : 50 / 50]% less mana. Stacks to 2.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            109776
+          ],
+          "unlocks": [
+            94702
+          ],
+          "row": 5,
+          "col": 25
+        },
+        {
+          "node_id": 109776,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 453726,
+              "name": "Word of Supremacy",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 453726,
+                  "description": "Word of Supremacy Talent Requires Priest Power Word: Fortitude grants you an additional 5% stamina.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 453729,
+              "name": "Heightened Alteration",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 453729,
+                  "description": "Heightened Alteration Talent Requires Priest Shadow Increases the duration of Dispersion by 2 sec. Holy Increases the duration of Spirit of Redemption by 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Dispersion",
+                      "type": "duration_increase",
+                      "value": 2,
+                      "unit": "seconds"
+                    },
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Spirit of Redemption",
+                      "type": "duration_increase",
+                      "value": 5,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            109777
+          ],
+          "unlocks": [
+            109775
+          ],
+          "row": 4,
+          "col": 25
+        },
+        {
+          "node_id": 109777,
+          "name": "Focused Outburst",
+          "spell_id": 1272320,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272320,
+              "description": "Focused Outburst Talent Requires Priest Holy Prayer of Healing mana cost reduced by 10% and its cast time is reduced by 15%. Shadow Void Volley damage increased by 15% and its cooldown is reduced by 4 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            108724,
+            94697
+          ],
+          "unlocks": [
+            109776
+          ],
+          "row": 3,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Oracle",
+      "nodes": [
+        {
+          "node_id": 94673,
+          "name": "Prompt Prognosis",
+          "spell_id": 1246799,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1246799,
+              "description": "Prompt Prognosis Talent Requires Priest Holy Casting Prayer of Mending heals your target for (940% of Spell Power). Discipline The first bolt of each Penance cast damages or heals for 125% more.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94675
+          ],
+          "unlocks": [
+            94687
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94674,
+          "name": "Preemptive Care",
+          "spell_id": 440671,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440671,
+              "description": "Preemptive Care Talent Requires Priest Discipline Increases the duration of Atonement by 4 sec. Holy Increases the duration of your Renew by 40%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Atonement",
+                  "type": "duration_increase",
+                  "value": 4,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94683
+          ],
+          "unlocks": [
+            94675
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94675,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 440670,
+              "name": "Divine Feathers",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440670,
+                  "description": "Divine Feathers Talent Requires Priest Your Angelic Feathers increase movement speed by an additional 10%. When an ally walks through your Angelic Feather, you are also granted 100% of its effect.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440669,
+              "name": "Save the Day",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440669,
+                  "description": "Save the Day Talent Requires Priest For 6 sec after casting Leap of Faith you may cast it a second time for free, ignoring its cooldown.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94674
+          ],
+          "unlocks": [
+            94673
+          ],
+          "row": 4,
+          "col": 11
+        },
+        {
+          "node_id": 94679,
+          "name": "Waste No Time",
+          "spell_id": 440681,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440681,
+              "description": "Waste No Time Talent Requires Priest Discipline Reduces the cooldown of Power Word: Shield by 1.5 sec. Holy Reduces the cooldown of Prayer of Mending by 1.5 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Power Word: Shield",
+                  "type": "cd_reduction",
+                  "value": 1.5,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Prayer of Mending",
+                  "type": "cd_reduction",
+                  "value": 1.5,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94683
+          ],
+          "unlocks": [
+            94689
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94683,
+          "name": "Guiding Light",
+          "spell_id": 1248423,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248423,
+              "description": "Guiding Light Talent Requires Priest Discipline Penance gains an additional charge. Holy Prayer of Mending gains an additional charge.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94674,
+            94679,
+            94698,
+            109782
+          ],
+          "row": 2,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94687,
+          "name": "Twinsight",
+          "spell_id": 440742,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440742,
+              "description": "Twinsight Talent Requires Priest Discipline 3 additional Penance bolts are fired at an enemy within 40 yards when healing an ally with Penance, or fired at an ally within 40 yards when damaging an enemy with Penance. Holy An additional 4 stacks of Prayer of Mending is placed on a second ally within 40 yards when casting Prayer of Mending.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94700,
+            94673,
+            94690,
+            109781
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94689,
+          "name": "Foreseen Circumstances",
+          "spell_id": 440738,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440738,
+              "description": "Foreseen Circumstances Talent Requires Priest Holy Guardian Spirit lasts an additional 2 sec. Discipline Pain Suppression reduces damage taken by an additional 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94679
+          ],
+          "unlocks": [
+            94700
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94690,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 433905,
+              "name": "Prophet's Will",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 433905,
+                  "description": "Prophet's Will Talent Requires Priest Holy Your Flash Heal and Holy Word: Serenity are 30% more effective when cast on yourself. Discipline Your Flash Heal and Power Word: Shield are 30% more effective when cast on yourself.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 458718,
+              "name": "Desperate Measures",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 458718,
+                  "description": "Desperate Measures Talent Requires Priest Desperate Prayer lasts an additional 10 sec. Angelic Bulwark's absorption effect is increased by 15% of your maximum health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94691
+          ],
+          "unlocks": [
+            94687
+          ],
+          "row": 5,
+          "col": 10
+        },
+        {
+          "node_id": 94691,
+          "name": "Assured Safety",
+          "spell_id": 440766,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440766,
+              "description": "Assured Safety Talent Requires Priest Holy Casting Prayer of Mending applies Power Word: Shield to your target. Power Word: Shield Shields an ally for 15 sec, absorbing 0 damage. Discipline Power Word: Shield casts apply 4 stacks of Prayer of Mending to your target. Prayer of Mending Places a ward on an ally that heals them for (61% of Spell Power) the next time they take damage, and then jumps to another ally within 30 yds. Jumps up to 4 times and lasts 30 sec after each jump.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94698
+          ],
+          "unlocks": [
+            94690
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94698,
+          "name": "Preventive Measures",
+          "spell_id": 440662,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440662,
+              "description": "Preventive Measures Talent Requires Priest Holy Increases the healing done by Prayer of Mending by 15%. All damage dealt by Smite, Holy Fire and Holy Nova increased by 40%. Discipline Power Word: Shield absorbs 30% additional damage. All damage dealt by Penance, Smite and Holy Nova increased by 15%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94683
+          ],
+          "unlocks": [
+            94691
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94700,
+          "name": "Piety",
+          "spell_id": 1246802,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1246802,
+              "description": "Piety Talent Requires Priest Discipline 15% of overhealing done is redistributed to up to 4 nearby injured allies. Holy 20% of overhealing done is redistributed to up to 4 nearby injured allies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94689
+          ],
+          "unlocks": [
+            94687
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109781,
+          "name": "Unfolding Vision",
+          "spell_id": 1272363,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272363,
+              "description": "Unfolding Vision Talent Requires Priest Discipline When Power Word: Shield or Void Shield expires with absorption remaining, it jumps to a nearby injured ally and loses 40% of its maximum absorb instead. Holy When Prayer of Mending expires without healing, it jumps to a nearby injured ally and loses 2 stacks instead. Discipline When Power Word: Shield or Void Shield expires with absorption remaining, it jumps to a nearby injured ally and loses 40% of its maximum absorb instead.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109783
+          ],
+          "unlocks": [
+            94687
+          ],
+          "row": 5,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109782,
+          "name": "Words of the Wise",
+          "spell_id": 1272352,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272352,
+              "description": "Words of the Wise Talent Requires Priest Discipline Flash Heal, Plea, and Power Word: Radiance healing increased by 15%. Holy, Holy (Ultimate Serenity) Holy Word: Serenity healing increased by 10%.Holy Word: Serenity and Holy Word: Sanctify healing increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94683
+          ],
+          "unlocks": [
+            109783
+          ],
+          "row": 3,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109783,
+          "name": "Prophet's Insight",
+          "spell_id": 1272359,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272359,
+              "description": "Prophet's Insight Talent Requires Priest Discipline Atonement healing from Holy spells is increased by 15%. Holy Reduces the cooldown of your Holy Words by 5 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Holy Words",
+                  "type": "cd_reduction",
+                  "value": 5,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            109782
+          ],
+          "unlocks": [
+            109781
+          ],
+          "row": 4,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

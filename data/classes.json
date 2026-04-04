@@ -1,0 +1,280 @@
+[
+  {
+    "id": 6,
+    "name": "Death Knight",
+    "specs": [
+      {
+        "id": 250,
+        "name": "Blood",
+        "tree_id": 750
+      },
+      {
+        "id": 251,
+        "name": "Frost",
+        "tree_id": 750
+      },
+      {
+        "id": 252,
+        "name": "Unholy",
+        "tree_id": 750
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Demon Hunter",
+    "specs": [
+      {
+        "id": 577,
+        "name": "Havoc",
+        "tree_id": 854
+      },
+      {
+        "id": 581,
+        "name": "Vengeance",
+        "tree_id": 854
+      },
+      {
+        "id": 1480,
+        "name": "Devourer",
+        "tree_id": 854
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Druid",
+    "specs": [
+      {
+        "id": 102,
+        "name": "Balance",
+        "tree_id": 793
+      },
+      {
+        "id": 103,
+        "name": "Feral",
+        "tree_id": 793
+      },
+      {
+        "id": 104,
+        "name": "Guardian",
+        "tree_id": 793
+      },
+      {
+        "id": 105,
+        "name": "Restoration",
+        "tree_id": 793
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Evoker",
+    "specs": [
+      {
+        "id": 1467,
+        "name": "Devastation",
+        "tree_id": 872
+      },
+      {
+        "id": 1468,
+        "name": "Preservation",
+        "tree_id": 872
+      },
+      {
+        "id": 1473,
+        "name": "Augmentation",
+        "tree_id": 872
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Hunter",
+    "specs": [
+      {
+        "id": 253,
+        "name": "Beast Mastery",
+        "tree_id": 774
+      },
+      {
+        "id": 254,
+        "name": "Marksmanship",
+        "tree_id": 774
+      },
+      {
+        "id": 255,
+        "name": "Survival",
+        "tree_id": 774
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Mage",
+    "specs": [
+      {
+        "id": 62,
+        "name": "Arcane",
+        "tree_id": 658
+      },
+      {
+        "id": 63,
+        "name": "Fire",
+        "tree_id": 658
+      },
+      {
+        "id": 64,
+        "name": "Frost",
+        "tree_id": 658
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Monk",
+    "specs": [
+      {
+        "id": 268,
+        "name": "Brewmaster",
+        "tree_id": 1000
+      },
+      {
+        "id": 269,
+        "name": "Windwalker",
+        "tree_id": 1000
+      },
+      {
+        "id": 270,
+        "name": "Mistweaver",
+        "tree_id": 1000
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Paladin",
+    "specs": [
+      {
+        "id": 65,
+        "name": "Holy",
+        "tree_id": 790
+      },
+      {
+        "id": 66,
+        "name": "Protection",
+        "tree_id": 790
+      },
+      {
+        "id": 70,
+        "name": "Retribution",
+        "tree_id": 790
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Priest",
+    "specs": [
+      {
+        "id": 256,
+        "name": "Discipline",
+        "tree_id": 795
+      },
+      {
+        "id": 257,
+        "name": "Holy",
+        "tree_id": 795
+      },
+      {
+        "id": 258,
+        "name": "Shadow",
+        "tree_id": 795
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Rogue",
+    "specs": [
+      {
+        "id": 259,
+        "name": "Assassination",
+        "tree_id": 852
+      },
+      {
+        "id": 260,
+        "name": "Outlaw",
+        "tree_id": 852
+      },
+      {
+        "id": 261,
+        "name": "Subtlety",
+        "tree_id": 852
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Shaman",
+    "specs": [
+      {
+        "id": 262,
+        "name": "Elemental",
+        "tree_id": 786
+      },
+      {
+        "id": 263,
+        "name": "Enhancement",
+        "tree_id": 786
+      },
+      {
+        "id": 264,
+        "name": "Restoration",
+        "tree_id": 786
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Warlock",
+    "specs": [
+      {
+        "id": 265,
+        "name": "Affliction",
+        "tree_id": 720
+      },
+      {
+        "id": 266,
+        "name": "Demonology",
+        "tree_id": 720
+      },
+      {
+        "id": 267,
+        "name": "Destruction",
+        "tree_id": 720
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Warrior",
+    "specs": [
+      {
+        "id": 71,
+        "name": "Arms",
+        "tree_id": 850
+      },
+      {
+        "id": 72,
+        "name": "Fury",
+        "tree_id": 850
+      },
+      {
+        "id": 73,
+        "name": "Protection",
+        "tree_id": 850
+      }
+    ]
+  }
+]

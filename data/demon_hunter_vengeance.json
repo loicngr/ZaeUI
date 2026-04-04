@@ -1,0 +1,5259 @@
+{
+  "class": "Demon Hunter",
+  "spec": "Vengeance",
+  "scraped_at": "2026-03-25T17:49:45.117656+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99823,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 11
+      },
+      {
+        "node_id": 90942,
+        "name": "Vengeful Retreat",
+        "spell_id": 198793,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 198793,
+            "description": "Vengeful Retreat Talent Requires Demon Hunter Remove all snares and vault away. Nearby enemies take (16% of Attack Power) Physical damage [ Vengeful Bonds : and have their movement speed reduced by 70% for 3 sec ].",
+            "cooldown": 25.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90941,
+          90930
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108722,
+        "name": "Felblade",
+        "spell_id": 232893,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 232893,
+            "description": "Felblade Talent Requires Demon Hunter Requires level 15 (Havoc, Vengeance) Charge to your target and deal (122.94% of Attack Power)% Fire damage. [ Fracture : Generates . ] [ Demonic Wards : Generates . ] Generates .",
+            "cooldown": 12.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90950,
+          90941
+        ],
+        "row": 2,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90946,
+        "name": "Sigil of Misery",
+        "spell_id": 207684,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207684,
+            "description": "Sigil of Misery Talent Requires Demon Hunter Place a Sigil of Misery at the target location that activates after 2 sec . Causes all enemies affected by the sigil to cower in fear, disorienting them for 15 sec .",
+            "cooldown": 120.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90950,
+          90945
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90930,
+        "name": "Vengeful Bonds",
+        "spell_id": 320635,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320635,
+            "description": "Vengeful Bonds Talent Requires Demon Hunter Vengeful Retreat reduces the movement speed of all nearby enemies by 70% for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90942
+        ],
+        "unlocks": [
+          90931
+        ],
+        "row": 3,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90941,
+        "name": "Unrestrained Fury",
+        "spell_id": 320770,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320770,
+            "description": "Unrestrained Fury Talent Requires Demon Hunter Increases maximum Fury by 20.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108722,
+          90942
+        ],
+        "unlocks": [
+          91007,
+          90931
+        ],
+        "row": 3,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90950,
+        "name": "Shattered Restoration",
+        "spell_id": 389824,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389824,
+            "description": "Shattered Restoration Talent Requires Demon Hunter The healing of Shattered Souls is increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108722,
+          90946
+        ],
+        "unlocks": [
+          91007,
+          90948
+        ],
+        "row": 3,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90945,
+        "name": "Improved Sigil of Misery",
+        "spell_id": 320418,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320418,
+            "description": "Improved Sigil of Misery Talent Requires Demon Hunter Reduces the cooldown of Sigil of [ Sigil of Chains : Chains / Misery] by [ Sigil of Chains : 30 / 30] sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90946
+        ],
+        "unlocks": [
+          90948
+        ],
+        "row": 3,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90931,
+        "name": "Bouncing Glaives",
+        "spell_id": 320386,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320386,
+            "description": "Bouncing Glaives Talent Requires Demon Hunter Throw Glaive ricochets to 1 additional target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90941,
+          90930
+        ],
+        "unlocks": [
+          90938,
+          108729
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91007,
+        "name": "Imprison",
+        "spell_id": 217832,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 217832,
+            "description": "Imprison Talent Requires Demon Hunter Imprisons a demon, beast, or humanoid, incapacitating them for 1 min. Damage may cancel the effect. Limit 1.",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90941,
+          90950
+        ],
+        "unlocks": [
+          91006,
+          90938
+        ],
+        "row": 4,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90948,
+        "name": "Charred Warblades",
+        "spell_id": 213010,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 213010,
+            "description": "Charred Warblades Talent Requires Demon Hunter Vengeance ( Vengeance Demon Hunter ) You heal for 4% of all Fire damage you deal. You heal for 3% of all Fire damage you deal.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90950,
+          90945
+        ],
+        "unlocks": [
+          90999,
+          91006
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108729,
+        "name": "Chaos Nova",
+        "spell_id": 179057,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 179057,
+            "description": "Chaos Nova Talent Requires Demon Hunter Unleash an eruption of fel energy, dealing (27.4816% of Attack Power) Chaos damage and stunning all nearby enemies for 3 sec. [ Chaos Fragments : Each enemy stunned by Chaos Nova has a 30% chance to generate a Lesser Soul Fragment ]",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90931
+        ],
+        "unlocks": [
+          95154,
+          95154
+        ],
+        "row": 5,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90938,
+        "name": "Improved Disrupt",
+        "spell_id": 320361,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320361,
+            "description": "Improved Disrupt Talent Requires Demon Hunter Increases the range of Disrupt to 10 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90931,
+          91007
+        ],
+        "unlocks": [
+          90994,
+          95150,
+          90937
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91006,
+        "name": "Consume Magic",
+        "spell_id": 278326,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 278326,
+            "description": "Consume Magic Talent Requires Demon Hunter Consume 1 beneficial Magic effect removing it from the target [ Swallowed Anger : and granting you ].",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          91007,
+          90948
+        ],
+        "unlocks": [
+          91005,
+          95150,
+          90933
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90999,
+        "name": "Aldrachi Design",
+        "spell_id": 391409,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391409,
+            "description": "Aldrachi Design Talent Requires Demon Hunter Increases your chance to parry by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90948
+        ],
+        "unlocks": [
+          95151,
+          90933
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95154,
+        "name": "Focused Ire",
+        "spell_id": 1266296,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266296,
+            "description": "Focused Ire Talent Requires Demon Hunter Havoc, Vengeance The primary target of Chaos Nova is stunned for an additional 2 sec. Devourer The primary target of Void Nova is stunned for an additional 2 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108729,
+          108729
+        ],
+        "unlocks": [
+          90940
+        ],
+        "row": 6,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90994,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 389763,
+            "name": "Master of the Glaive",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 389763,
+                "description": "Master of the Glaive Talent Requires Demon Hunter Throw Glaive has 2 charges and snares all enemies hit by 50% for 6 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 429211,
+            "name": "Champion of the Glaive",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429211,
+                "description": "Champion of the Glaive Talent Requires Demon Hunter Throw Glaive has 2 charges and 10 yard increased range.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90938
+        ],
+        "unlocks": [
+          90936,
+          90940
+        ],
+        "row": 6,
+        "col": 2
+      },
+      {
+        "node_id": 90937,
+        "name": "Disrupting Fury",
+        "spell_id": 183782,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 183782,
+            "description": "Disrupting Fury Requires Demon Hunter Requires level 1 Disrupt generates on a successful interrupt.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90938
+        ],
+        "unlocks": [
+          90936
+        ],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95150,
+        "name": "Blazing Path",
+        "spell_id": 320416,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320416,
+            "description": "Blazing Path Talent Requires Demon Hunter Devourer Shift gains an additional charge. Havoc gains an additional charge. Vengeance Infernal Strike gains an additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          91006,
+          90938
+        ],
+        "unlocks": [
+          90936,
+          90939,
+          91004
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91005,
+        "name": "Swallowed Anger",
+        "spell_id": 320313,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320313,
+            "description": "Swallowed Anger Talent Requires Demon Hunter Consume Magic generates when a beneficial Magic effect is successfully removed from the target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          91006
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90933,
+        "name": "Aura of Pain",
+        "spell_id": 207347,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207347,
+            "description": "Aura of Pain Talent Requires Demon Hunter Increases the critical strike chance of Immolation Aura by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90999,
+          91006
+        ],
+        "unlocks": [
+          90947,
+          90927,
+          91004
+        ],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95151,
+        "name": "Live by the Glaive",
+        "spell_id": 428607,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 428607,
+            "description": "Live by the Glaive Talent Requires Demon Hunter When you parry an attack or have one of your attacks parried, restore 2% of max health and . This effect may only occur once every 5 sec. (5s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90999
+        ],
+        "unlocks": [
+          90947
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90940,
+        "name": "Pursuit",
+        "spell_id": 320654,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320654,
+            "description": "Pursuit Talent Requires Demon Hunter Mastery increases your movement speed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90994,
+          95154
+        ],
+        "unlocks": [
+          90935
+        ],
+        "row": 7,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90936,
+        "name": "Soul Rending",
+        "spell_id": 204909,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 204909,
+            "description": "Soul Rending Talent Requires Demon Hunter Requires level 35 Leech increased by 6%. Gain an additional 6% leech while Metamorphosis is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 204909,
+            "description": "Soul Rending Talent Requires Demon Hunter Requires level 35 Leech increased by 6%. Gain an additional 6% leech while Metamorphosis is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90994,
+          95150,
+          90937
+        ],
+        "unlocks": [
+          90935,
+          108728
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90939,
+        "name": "Felfire Haste",
+        "spell_id": 389846,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389846,
+            "description": "Felfire Haste Talent Requires Demon Hunter Havoc Fel Rush increases your movement speed by 10% for 8 sec. Vengeance Infernal Strike increases your movement speed by 10% for 8 sec. Devourer Shift increases your movement speed by 10% for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95150
+        ],
+        "unlocks": [
+          108728
+        ],
+        "row": 7,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91004,
+        "name": "Infernal Armor",
+        "spell_id": 320331,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320331,
+            "description": "Infernal Armor Talent Requires Demon Hunter Requires level 30 Immolation Aura increases your armor by 20% and causes melee attackers to suffer [(12% of Attack Power)] Fire damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 320331,
+            "description": "Infernal Armor Talent Requires Demon Hunter Requires level 30 Immolation Aura increases your armor by 20% and causes melee attackers to suffer [(12% of Attack Power)] Fire damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90933,
+          95150
+        ],
+        "unlocks": [
+          91000,
+          108728
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90927,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1266316,
+            "name": "Burn It Out",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1266316,
+                "description": "Burn It Out Talent Requires Demon Hunter Havoc, Vengeance Immolation Aura removes 1 Disease effect. Devourer Soul Immolation removes 1 Disease effect.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1266496,
+            "name": "Soul Cleanse",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1266496,
+                "description": "Soul Cleanse Talent Requires Demon Hunter Havoc, Vengeance Immolation Aura removes 1 Curse effect. Devourer Soul Immolation removes 1 Curse effect.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90933
+        ],
+        "unlocks": [
+          91000
+        ],
+        "row": 7,
+        "col": 6
+      },
+      {
+        "node_id": 90947,
+        "name": "Lost in Darkness",
+        "spell_id": 389849,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389849,
+            "description": "Lost in Darkness Talent Requires Demon Hunter Spectral Sight has 5 sec reduced cooldown and no longer reduces movement speed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90933,
+          95151
+        ],
+        "unlocks": [
+          91000
+        ],
+        "row": 7,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90935,
+        "name": "Illidari Knowledge",
+        "spell_id": 389696,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389696,
+            "description": "Illidari Knowledge Talent Requires Demon Hunter Reduces magic damage taken by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 389696,
+            "description": "Illidari Knowledge Talent Requires Demon Hunter Reduces magic damage taken by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90936,
+          90940
+        ],
+        "unlocks": [
+          90934,
+          95152
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108728,
+        "name": "Felbound",
+        "spell_id": 1266762,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266762,
+            "description": "Felbound Talent Requires Demon Hunter Your movement speed is increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90936,
+          90939,
+          91004
+        ],
+        "unlocks": [
+          90929,
+          95152
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91000,
+        "name": "Will of the Illidari",
+        "spell_id": 389695,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389695,
+            "description": "Will of the Illidari Talent Requires Demon Hunter Increases maximum health by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 389695,
+            "description": "Will of the Illidari Talent Requires Demon Hunter Increases maximum health by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90947,
+          90927,
+          91004
+        ],
+        "unlocks": [
+          90929,
+          95149
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90934,
+        "name": "Internal Struggle",
+        "spell_id": 393822,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 393822,
+            "description": "Internal Struggle Talent Requires Demon Hunter Increases your mastery by (2 * $mas)%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90935
+        ],
+        "unlocks": [
+          90996,
+          90996
+        ],
+        "row": 9,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95152,
+        "name": "Furious",
+        "spell_id": 1266326,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266326,
+            "description": "Furious Talent Requires Demon Hunter Attacks and abilities that generate Fury deal 3% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108728,
+          90935
+        ],
+        "unlocks": [
+          110011,
+          91002
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90929,
+        "name": "Remorseless",
+        "spell_id": 1266328,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266328,
+            "description": "Remorseless Talent Requires Demon Hunter Attacks and abilities that spend Fury deal 3% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108728,
+          91000
+        ],
+        "unlocks": [
+          90928,
+          91002
+        ],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95149,
+        "name": "First In, Last Out",
+        "spell_id": 1266497,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266497,
+            "description": "First In, Last Out Talent Requires Demon Hunter Havoc Fel Rush grants you a rapidly decaying shield equal to 6% of your maximum health. Vengeance Infernal Strike grants you a rapidly decaying shield equal to 6% of your maximum health. Devourer Shift grants you a rapidly decaying shield equal to 6% of your maximum health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          91000
+        ],
+        "unlocks": [
+          90949
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90996,
+        "name": "Erratic Felheart",
+        "spell_id": 391397,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391397,
+            "description": "Erratic Felheart Talent Requires Demon Hunter Havoc The cooldown of Fel Rush is reduced by 1.0 sec. Vengeance The cooldown of Infernal Strike is reduced by 1.0 sec. Devourer The cooldown of Shift is reduced by 1.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 391397,
+            "description": "Erratic Felheart Talent Requires Demon Hunter Havoc The cooldown of Fel Rush is reduced by 1.0 sec. Vengeance The cooldown of Infernal Strike is reduced by 1.0 sec. Devourer The cooldown of Shift is reduced by 1.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90934,
+          90934
+        ],
+        "unlocks": [
+          110010
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110011,
+        "name": "Final Breath",
+        "spell_id": 1266500,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266500,
+            "description": "Final Breath Talent Requires Demon Hunter Havoc Fully channeling Eye Beam increases the damage of its final tick by 300%. Vengeance Fully channeling Fel Devastation increases the damage of its final tick by 300%. Devourer Fully channeling Void Ray increases the damage of its final tick by 300%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "its final tick",
+                "type": "damage_increase",
+                "value": 300,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "its final tick",
+                "type": "damage_increase",
+                "value": 300,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "its final tick",
+                "type": "damage_increase",
+                "value": 300,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          95152
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91002,
+        "name": "Darkness",
+        "spell_id": 196718,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 196718,
+            "description": "Darkness Talent Requires Demon Hunter Summons darkness around you in a n 8 yd radius, granting friendly targets a 15% chance to avoid all damage from an attack. Lasts 8 sec . Chance to avoid damage increased by 100% when not in a raid.",
+            "cooldown": 300.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95152,
+          90929
+        ],
+        "unlocks": [
+          91001
+        ],
+        "row": 10,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90928,
+        "name": "Demon Muzzle",
+        "spell_id": 1266329,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266329,
+            "description": "Demon Muzzle Talent Requires Demon Hunter Interrupting a spell with Disrupt decreases your magic damage taken by 15% for 12 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90929
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90949,
+        "name": "Soul Splitter",
+        "spell_id": 1266330,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266330,
+            "description": "Soul Splitter Talent Requires Demon Hunter Any time you would generate one or more Soul Fragments, you have a 2% chance to generate an additional Soul Fragment.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1266330,
+            "description": "Soul Splitter Talent Requires Demon Hunter Any time you would generate one or more Soul Fragments, you have a 2% chance to generate an additional Soul Fragment.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95149
+        ],
+        "unlocks": [
+          90997
+        ],
+        "row": 10,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110010,
+        "name": "Wings of Wrath",
+        "spell_id": 1266493,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266493,
+            "description": "Wings of Wrath Talent Requires Demon Hunter Glide speed increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90996
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91001,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 389781,
+            "name": "Long Night",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 389781,
+                "description": "Long Night Talent Requires Demon Hunter Increases the duration of Darkness by 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Darkness",
+                    "type": "duration_increase",
+                    "value": 3,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 389783,
+            "name": "Pitch Black",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 389783,
+                "description": "Pitch Black Talent Requires Demon Hunter Reduces the cooldown of Darkness by 120 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Darkness",
+                    "type": "cd_reduction",
+                    "value": 120,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          91002
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 4
+      },
+      {
+        "node_id": 90997,
+        "name": "Demonic Resilience",
+        "spell_id": 1266307,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1266307,
+            "description": "Demonic Resilience Talent Requires Demon Hunter Havoc, Devourer Blur gains 1 additional charge. Vengeance Demon Spikes gains 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Demonic Resilience Talent Requires Demon Hunter Havoc, Devourer Blur",
+                "type": "charge_increase",
+                "value": 1
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": ". Vengeance Demon Spikes",
+                "type": "charge_increase",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90949
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 94915,
+        "name": "Art of the Glaive",
+        "spell_id": 442290,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442290,
+            "description": "Art of the Glaive Talent Requires Demon Hunter Vengeance Consuming 20 Soul Fragments or casting Sigil of Spite converts your next Throw Glaive into Reaver's Glaive. Reaver's Glaive : Throw a glaive enhanced with the essence of consumed souls at your target, dealing (335% of Attack Power) Physical damage and ricocheting to 2 additional enemies. Begins a well-practiced pattern of glaivework, enhancing your next and Soul Cleave. The enhanced ability you cast first deals 10% increased damage, and the second deals 20% increased damage. Havoc Consuming 6 Soul Fragments or casting The Hunt converts your next Throw Glaive into Reaver's Glaive. Reaver's Glaive : Throw a glaive enhanced with the essence of consumed souls at your target, dealing (335% of Attack Power) Physical damage and ricocheting to 2 additional enemies. Begins a well-practiced pattern of glaivework, enhancing your next Chaos Strike and Blade Dance. The enhanced ability you cast first deals 10% increased damage, and the second deals 20% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94911,
+          94898,
+          94903,
+          109771
+        ],
+        "row": 2,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90991,
+        "name": "Fel Devastation",
+        "spell_id": 212084,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 212084,
+            "description": "Fel Devastation Talent Channeled () Requires Demon Hunter Unleash the fel within you, damaging enemies directly in front of you for [(41.1% of Attack Power) * (10)] Fire damage over 2 sec. [ Fel Devastation : Causing damage also heals you for up to [(360% of Attack Power) * 10] health ]",
+            "cooldown": 40.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90951,
+          90990
+        ],
+        "row": 2,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94898,
+        "name": "Fury of the Aldrachi",
+        "spell_id": 442718,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442718,
+            "description": "Fury of the Aldrachi Talent Requires Demon Hunter Havoc When enhanced by Reaver's Glaive, Blade Dance casts 3 additional glaive slashes to nearby targets. Deals reduced damage beyond 8 targets. If cast after Chaos Strike, cast 6 slashes instead. Vengeance When enhanced by Reaver's Glaive, Soul Cleave casts 3 additional glaive slashes to nearby targets. Deals reduced damage beyond 8 targets. If cast after , cast 6 slashes instead.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94915
+        ],
+        "unlocks": [
+          94914
+        ],
+        "row": 3,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94911,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444926,
+            "name": "Evasive Action",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444926,
+                "description": "Evasive Action Talent Requires Demon Hunter Vengeful Retreat can be cast a second time within 3 sec. (3s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444931,
+            "name": "Unhindered Assault",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444931,
+                "description": "Unhindered Assault Talent Requires Demon Hunter Vengeful Retreat resets the cooldown of Felblade.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94915
+        ],
+        "unlocks": [
+          94896
+        ],
+        "row": 3,
+        "col": 10
+      },
+      {
+        "node_id": 94903,
+        "name": "Reaver's Mark",
+        "spell_id": 442679,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442679,
+            "description": "Reaver's Mark Talent Requires Demon Hunter Vengeance When enhanced by Reaver's Glaive, applies Reaver's Mark, which causes the target to take 7% increased damage for 20 sec. Max 2 stacks. Applies 1 additional stack of Reaver's Mark If cast after Soul Cleave. Havoc When enhanced by Reaver's Glaive, Chaos Strike applies Reaver's Mark, which causes the target to take 7% increased damage for 20 sec. Max 2 stacks. Applies 1 additional stack of Reaver's Mark If cast after Blade Dance.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94915
+        ],
+        "unlocks": [
+          94897
+        ],
+        "row": 3,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109771,
+        "name": "Broken Spirit",
+        "spell_id": 1272143,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272143,
+            "description": "Broken Spirit Talent Requires Demon Hunter Vengeance Sigil of Spite shatters 1 additional Soul Fragment. Soul Cleave has a 20% chance to shatter a Soul Fragment. Havoc The Hunt shatters 1 Soul Fragment. Blade Dance and Chaos Strike have a 15% chance to shatter a Soul Fragment. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94915
+        ],
+        "unlocks": [
+          109770
+        ],
+        "row": 3,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90990,
+        "name": "Spirit Bomb",
+        "spell_id": 247454,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 247454,
+            "description": "Spirit Bomb Talent Requires Demon Hunter Requires level 30 Consume up to 5 Soul Fragments then explode, dealing (200% of Attack Power) Fire damage to nearby enemies, increased by 20 / Soulcrush : 28 / Untethered Rage : 25 % per fragment consumed. Deals reduced damage beyond 8 targets.",
+            "cooldown": 25.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90991
+        ],
+        "unlocks": [
+          90970,
+          90989
+        ],
+        "row": 3,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90951,
+        "name": "Fiery Brand",
+        "spell_id": 204021,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 204021,
+            "description": "Fiery Brand Talent Requires Demon Hunter Brand yourself and an enemy target with demonic symbols, reducing the damage you take by 40% and instantly dealing (416% of Attack Power) Fire damage [ Fiery Brand : and [(32.2% of Attack Power) * 12] Fire damage over 12 sec ] to the enemy.",
+            "cooldown": 60.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90991
+        ],
+        "unlocks": [
+          90960,
+          90989
+        ],
+        "row": 3,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94914,
+        "name": "Aldrachi Tactics",
+        "spell_id": 442683,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442683,
+            "description": "Aldrachi Tactics Talent Requires Demon Hunter The second enhanced ability in a pattern shatters an additional Soul Fragment.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94898
+        ],
+        "unlocks": [
+          94895
+        ],
+        "row": 4,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94896,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 442714,
+            "name": "Army Unto Oneself",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 442714,
+                "description": "Army Unto Oneself Talent Requires Demon Hunter Felblade surrounds you with a Blade Ward, reducing damage taken by 10% for 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 442736,
+            "name": "Incorruptible Spirit",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 442736,
+                "description": "Incorruptible Spirit Talent Requires Demon Hunter Vengeance Each Soul Fragment you consume shields you for an additional 10% of the amount healed. Havoc Each Soul Fragment you consume shields you for an additional 15% of the amount healed.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94911
+        ],
+        "unlocks": [
+          94910
+        ],
+        "row": 4,
+        "col": 10
+      },
+      {
+        "node_id": 94897,
+        "name": "Wounded Quarry",
+        "spell_id": 442806,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442806,
+            "description": "Wounded Quarry Talent Requires Demon Hunter Vengeance Expose weaknesses in the target of your Reaver's Mark , causing your Physical damage to any enemy to also deal 20% of the damage dealt to your marked target as Chaos, and sometimes shatter a Soul Fragment. Havoc Expose weaknesses in the target of your Reaver's Mark , causing your Physical damage to any enemy to also deal 25% of the damage dealt to your marked target as Chaos, and sometimes shatter a Soul Fragment.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94903
+        ],
+        "unlocks": [
+          94906
+        ],
+        "row": 4,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109770,
+        "name": "Keen Edge",
+        "spell_id": 1272138,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272138,
+            "description": "Keen Edge Talent Requires Demon Hunter Reaver's Glaive damage is increased by 20% and other Physical-only damage is increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109771
+        ],
+        "unlocks": [
+          109769
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90970,
+        "name": "Perfectly Balanced Glaive",
+        "spell_id": 320387,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 320387,
+            "description": "Perfectly Balanced Glaive Talent Requires Demon Hunter Reduces the cooldown of Fracture by 1 sec and Throw Glaive by 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Fracture",
+                "type": "cd_reduction",
+                "value": 1,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90990
+        ],
+        "unlocks": [
+          90967,
+          90968
+        ],
+        "row": 4,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90989,
+        "name": "Quickened Sigils",
+        "spell_id": 209281,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 209281,
+            "description": "Quickened Sigils Talent Requires Demon Hunter Requires level 40 Your Sigils activate 1 second faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90951,
+          90990
+        ],
+        "unlocks": [
+          90988
+        ],
+        "row": 4,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90960,
+        "name": "Ascending Flame",
+        "spell_id": 428603,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 428603,
+            "description": "Ascending Flame Talent Requires Demon Hunter Sigil of Flame damage increased by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90951
+        ],
+        "unlocks": [
+          90952,
+          90953
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94895,
+        "name": "Incisive Blade",
+        "spell_id": 442492,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442492,
+            "description": "Incisive Blade Talent Requires Demon Hunter Havoc Chaos Strike deals 10% increased damage. Vengeance Soul Cleave deals 10% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94914
+        ],
+        "unlocks": [
+          94919
+        ],
+        "row": 5,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94910,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 442497,
+            "name": "Keen Engagement",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 442497,
+                "description": "Keen Engagement Talent Requires Demon Hunter Reaver's Glaive generates .",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444997,
+            "name": "Preemptive Strike",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444997,
+                "description": "Preemptive Strike Talent Requires Demon Hunter Throw Glaive deals (20% of Attack Power) Physical damage to enemies near its initial target.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94896
+        ],
+        "unlocks": [
+          94919
+        ],
+        "row": 5,
+        "col": 10
+      },
+      {
+        "node_id": 94906,
+        "name": "Bladecraft",
+        "spell_id": 1272153,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272153,
+            "description": "Bladecraft Talent Requires Demon Hunter Havoc Fury of the Aldrachi further empowers Blade Dance when cast after Chaos Strike, increasing slashes to 12. Reaver's Mark now stacks up to 2 times and further empowers Chaos Strike when cast after Blade Dance, applying an additional stack. Vengeance Fury of the Aldrachi further empowers Soul Cleave when cast after Fracture, increasing slashes to 12. Reaver's Mark now stacks up to 2 times and further empowers Fracture when cast after Soul Cleave, applying an additional stack.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94897
+        ],
+        "unlocks": [
+          94919
+        ],
+        "row": 5,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109769,
+        "name": "Warblade's Hunger",
+        "spell_id": 442502,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442502,
+            "description": "Warblade's Hunger Talent Requires Demon Hunter Vengeance Consuming a Soul Fragment causes your next to deal (40% of Attack Power) additional Physical damage. Havoc Consuming a Soul Fragment causes your next Chaos Strike to deal (40% of Attack Power) additional Physical damage. Felblade consumes up to 5 nearby Soul Fragments.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109770
+        ],
+        "unlocks": [
+          94919
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90968,
+        "name": "Tempered Steel",
+        "spell_id": 1265800,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265800,
+            "description": "Tempered Steel Talent Requires Demon Hunter Physical damage increased by 12%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90970
+        ],
+        "unlocks": [
+          90971,
+          90978
+        ],
+        "row": 5,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90967,
+        "name": "Calcified Spikes",
+        "spell_id": 389720,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389720,
+            "description": "Calcified Spikes Talent Requires Demon Hunter Demon Spikes reduces damage taken by 5% while active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90970
+        ],
+        "unlocks": [
+          90971
+        ],
+        "row": 5,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90988,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 391178,
+            "name": "Roaring Fire",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 391178,
+                "description": "Roaring Fire Talent Requires Demon Hunter Fel Devastation heals you for up to 50% more, based on your missing health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 202137,
+            "name": "Sigil of Silence",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 202137,
+                "description": "Sigil of Silence Talent Requires Demon Hunter Place a Sigil of Silence at the target location that activates after 2 sec . Silences all enemies affected by the sigil for 2 sec .",
+                "cooldown": 90.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90989
+        ],
+        "unlocks": [
+          90966,
+          90971,
+          90987
+        ],
+        "row": 5,
+        "col": 18
+      },
+      {
+        "node_id": 90952,
+        "name": "Retaliation",
+        "spell_id": 389729,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389729,
+            "description": "Retaliation Talent Requires Demon Hunter While Demon Spikes is active, melee attacks against you cause the attacker to take (31.2% of Attack Power) Physical damage. Generates high threat.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90960
+        ],
+        "unlocks": [
+          90987
+        ],
+        "row": 5,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90953,
+        "name": "Felfire Fist",
+        "spell_id": 389724,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389724,
+            "description": "Felfire Fist Talent Requires Demon Hunter Activating Infernal Strike out of combat or within 5 sec of entering combat places a Sigil of Flame at the target location.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90960
+        ],
+        "unlocks": [
+          90987,
+          90957
+        ],
+        "row": 5,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94919,
+        "name": "Thrill of the Fight",
+        "spell_id": 442686,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 442686,
+            "description": "Thrill of the Fight Talent Requires Demon Hunter After consuming both enhancements, gain Thrill of the Fight, increasing the damage of your next Reaver's Glaive by 30% and increasing Haste by 8% for 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94910,
+          94895,
+          94906,
+          109769
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90978,
+        "name": "Sigil of Spite",
+        "spell_id": 390163,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390163,
+            "description": "Sigil of Spite Talent Requires Demon Hunter Place a demonic sigil at the target location that activates after 2 sec . Detonates to deal (692% of Attack Power) Chaos damage and shatter up to 3 Soul Fragments from enemies affected by the sigil. Deals reduced damage beyond 5 targets.",
+            "cooldown": 60.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90968
+        ],
+        "unlocks": [
+          90977
+        ],
+        "row": 6,
+        "col": 14,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90971,
+        "name": "Agonizing Flames",
+        "spell_id": 207548,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207548,
+            "description": "Agonizing Flames Talent Requires Demon Hunter Requires level 15 Immolation Aura increases your movement speed by 10% and its duration is increased by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90988,
+          90967,
+          90968
+        ],
+        "unlocks": [
+          90977,
+          90972,
+          90969
+        ],
+        "row": 6,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90966,
+        "name": "Feed the Demon",
+        "spell_id": 218612,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 218612,
+            "description": "Feed the Demon Talent Requires Demon Hunter Requires level 35 Every spent reduces the remaining cooldown of Demon Spikes by 1.00 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90988
+        ],
+        "unlocks": [
+          90965,
+          90986,
+          90972
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90987,
+        "name": "Burning Blood",
+        "spell_id": 390213,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390213,
+            "description": "Burning Blood Talent Requires Demon Hunter Fire damage increased by 8%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90988,
+          90953,
+          90952
+        ],
+        "unlocks": [
+          90986,
+          90955,
+          90956
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90957,
+        "name": "Revel in Pain",
+        "spell_id": 343014,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 343014,
+            "description": "Revel in Pain Talent Requires Demon Hunter 5.0% of your Fire damage shields you, up to a maximum of (Total Health * 10 / 100). Shield and maximum values are doubled while Fiery Brand is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90953
+        ],
+        "unlocks": [
+          90955
+        ],
+        "row": 6,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109449,
+        "name": "Voidfall",
+        "spell_id": 1253304,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253304,
+            "description": "Voidfall Talent Requires Demon Hunter Havoc, Devourer Consume has a 35% chance to grant 1 stack of Voidfall. Upon reaching 3 stacks of Voidfall, Reap consumes a stack to reach into the Void and call down a meteor strike at your target's location, dealing (200% of Spell Power) Cosmic damage to all enemies within 8 yards. Damage reduced beyond 8 targets. Vengeance Fracture has a 35% chance to grant 1 stack of Voidfall. Upon reaching 3 stacks of Voidfall, Soul Cleave consumes a stack to reach into the Void and call down a meteor strike at your target's location, dealing (540% of Attack Power) Shadowflame damage to all enemies within 8 yards. Damage reduced beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          109452,
+          109453,
+          109455,
+          109454
+        ],
+        "row": 7,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90977,
+        "name": "Frailty",
+        "spell_id": 389958,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389958,
+            "description": "Frailty Talent Requires Demon Hunter Enemies struck by Sigil of Flame, Soul Cleave, and Spirit Bomb are afflicted with Frailty for 8 sec. You heal for 8% of all damage you deal to targets with Frailty.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90978,
+          90971
+        ],
+        "unlocks": [
+          90974,
+          90976
+        ],
+        "row": 7,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90969,
+        "name": "Feast of Souls",
+        "spell_id": 207697,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207697,
+            "description": "Feast of Souls Talent Requires Demon Hunter Requires level 25 Soul Cleave heals you for an additional (135% of Attack Power) over 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90971
+        ],
+        "unlocks": [
+          90976
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90972,
+        "name": "Fallout",
+        "spell_id": 227174,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 227174,
+            "description": "Fallout Talent Requires Demon Hunter Requires level 25 Immolation Aura's initial burst has a chance to shatter Soul Fragments from enemies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90966,
+          90971
+        ],
+        "unlocks": [
+          90976,
+          90954
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90965,
+        "name": "Ruinous Bulwark",
+        "spell_id": 326853,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 326853,
+            "description": "Ruinous Bulwark Talent Requires Demon Hunter Requires level 50 Fel Devastation heals for an additional 10%, and 50% of its healing is converted into an absorb shield for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90966
+        ],
+        "unlocks": [
+          90954
+        ],
+        "row": 7,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90986,
+        "name": "Volatile Flameblood",
+        "spell_id": 390808,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390808,
+            "description": "Volatile Flameblood Talent Requires Demon Hunter Immolation Aura has 10% increased critical strike chance and generates 1- when it deals critical damage. This effect may only occur once per 1 sec. (900ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90987,
+          90966
+        ],
+        "unlocks": [
+          90958,
+          90954
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90956,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1265924,
+            "name": "Soul Barrier",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1265924,
+                "description": "Soul Barrier Talent Requires Demon Hunter Spirit Bomb shields you for 10 sec, absorbing (Total Health * 8 / 100) damage plus (Total Health * 2 / 100) for each Soul Fragment consumed.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 395446,
+            "name": "Soul Sigils",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 395446,
+                "description": "Soul Sigils Talent Requires Demon Hunter Afflicting an enemy with a Sigil generates 1 Soul Fragment. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90987
+        ],
+        "unlocks": [
+          90958
+        ],
+        "row": 7,
+        "col": 20
+      },
+      {
+        "node_id": 90955,
+        "name": "Fel Flame Fortification",
+        "spell_id": 389705,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389705,
+            "description": "Fel Flame Fortification Talent Requires Demon Hunter You take 10% reduced magic damage while Immolation Aura is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90987,
+          90957
+        ],
+        "unlocks": [
+          90964,
+          90958
+        ],
+        "row": 7,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109454,
+        "name": "Swift Erasure",
+        "spell_id": 1253668,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253668,
+            "description": "Swift Erasure Talent Requires Demon Hunter Devourer Each stack of Voidfall grants 1% Haste. Havoc, Vengeance Each stack of Voidfall grants 2% Haste.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109449
+        ],
+        "unlocks": [
+          109448
+        ],
+        "row": 8,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109455,
+        "name": "Meteoric Rise",
+        "spell_id": 1253377,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253377,
+            "description": "Meteoric Rise Talent Requires Demon Hunter Vengeance Fel Devastation damage increased by 25%. Fel Devastation generates 3 Soul Fragments over its duration. Havoc, Devourer Void Ray damage increased by 15%. Fully channeling Void Ray generates 1 stack of Voidfall.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109449
+        ],
+        "unlocks": [
+          109447
+        ],
+        "row": 8,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109453,
+        "name": "Catastrophe",
+        "spell_id": 1253769,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253769,
+            "description": "Catastrophe Talent Requires Demon Hunter Havoc, Vengeance, Devourer Enemies struck by a Voidfall Meteor take an additional 25% damage over 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109449
+        ],
+        "unlocks": [
+          109450
+        ],
+        "row": 8,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109452,
+        "name": "Phase Shift",
+        "spell_id": 1256245,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1256245,
+            "description": "Phase Shift Talent Requires Demon Hunter Each stack of Voidfall grants 2% reduced damage taken.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109449
+        ],
+        "unlocks": [
+          109451
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90974,
+        "name": "Void Reaver",
+        "spell_id": 268175,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 268175,
+            "description": "Void Reaver Talent Requires Demon Hunter Requires level 45 Frailty now also reduces all damage you take from afflicted targets by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90977
+        ],
+        "unlocks": [
+          90975
+        ],
+        "row": 8,
+        "col": 14,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90976,
+        "name": "Painbringer",
+        "spell_id": 207387,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207387,
+            "description": "Painbringer Talent Requires Demon Hunter Consuming a Soul Fragment reduces all damage you take by 3% for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 207387,
+            "description": "Painbringer Talent Requires Demon Hunter Consuming a Soul Fragment reduces all damage you take by 3% for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90972,
+          90977,
+          90969
+        ],
+        "unlocks": [
+          90973,
+          90984,
+          90975
+        ],
+        "row": 8,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90954,
+        "name": "Sigil of Chains",
+        "spell_id": 202138,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 202138,
+            "description": "Sigil of Chains Talent Requires Demon Hunter Requires level 40 Place a Sigil of Chains at the target location that activates after 2 sec . All enemies affected by the sigil are pulled to its center and are snared, reducing movement speed by 70% for 6 sec .",
+            "cooldown": 90.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90986,
+          90965,
+          90972
+        ],
+        "unlocks": [
+          90984
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90958,
+        "name": "Fiery Demise",
+        "spell_id": 389220,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389220,
+            "description": "Fiery Demise Talent Requires Demon Hunter Fiery Brand also increases Fire damage you deal to the target by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 389220,
+            "description": "Fiery Demise Talent Requires Demon Hunter Fiery Brand also increases Fire damage you deal to the target by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90986,
+          90955,
+          90956
+        ],
+        "unlocks": [
+          90984,
+          90963,
+          90959
+        ],
+        "row": 8,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90964,
+        "name": "Chains of Anger",
+        "spell_id": 389715,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389715,
+            "description": "Chains of Anger Talent Requires Demon Hunter Increases the duration of your Sigils by 2 sec and radius by 2 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Sigils",
+                "type": "duration_increase",
+                "value": 2,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90955
+        ],
+        "unlocks": [
+          90963
+        ],
+        "row": 8,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109448,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1253399,
+            "name": "Path to Oblivion",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253399,
+                "description": "Path to Oblivion Talent Requires Demon Hunter Each stack of Voidfall grants 3% increased movement speed.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1253402,
+            "name": "State of Matter",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253402,
+                "description": "State of Matter Talent Requires Demon Hunter Havoc, Devourer Shift has 1 additional charge. Vengeance Torment has 1 additional charge.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109454
+        ],
+        "unlocks": [
+          109445
+        ],
+        "row": 9,
+        "col": 9
+      },
+      {
+        "node_id": 109447,
+        "name": "Mass Acceleration",
+        "spell_id": 1256295,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1256295,
+            "description": "Mass Acceleration Talent Requires Demon Hunter Havoc, Devourer Gain 3 stacks of Voidfall and reset the cooldown of Reap upon activating Void Metamorphosis. Vengeance Gain 3 stacks of Voidfall and reset the cooldown of Spirit Bomb upon activating Metamorphosis.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109455
+        ],
+        "unlocks": [
+          109446
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109450,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1253676,
+            "name": "Doomsayer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253676,
+                "description": "Doomsayer Talent Requires Demon Hunter Vengeance Activating Infernal Strike out of combat or within 5 sec of entering combat calls down 1 Voidfall Meteor. Devourer Activating Void Ray out of combat or within 10 sec of entering combat calls down 3 Voidfall Meteors over its duration. Havoc Activating Void Ray out of combat or within 5 sec of entering combat calls down 3 Voidfall Meteors over its duration.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1279247,
+            "name": "Harness the Cosmos",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1279247,
+                "description": "Harness the Cosmos Talent Requires Demon Hunter Voidfall Meteor damage increased by 15%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109453
+        ],
+        "unlocks": [
+          109444
+        ],
+        "row": 9,
+        "col": 11
+      },
+      {
+        "node_id": 109451,
+        "name": "Celestial Echoes",
+        "spell_id": 1253415,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253415,
+            "description": "Celestial Echoes Talent Requires Demon Hunter Vengeance Shear generates 5 additional Fury and deals 30% increased damage. Havoc, Devourer Consume generates 2 additional Fury and deals 15% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109452
+        ],
+        "unlocks": [
+          109443
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90975,
+        "name": "Focused Cleave",
+        "spell_id": 343207,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 343207,
+            "description": "Focused Cleave Talent Requires Demon Hunter Soul Cleave deals 50% increased damage to your primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90976,
+          90974
+        ],
+        "unlocks": [
+          90981
+        ],
+        "row": 9,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90973,
+        "name": "Soulmonger",
+        "spell_id": 389711,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389711,
+            "description": "Soulmonger Talent Requires Demon Hunter When consuming a Soul Fragment would heal you above full health it shields you instead, up to a maximum of (Total Health * 10 / 100).",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90976
+        ],
+        "unlocks": [
+          90981,
+          90983
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90984,
+        "name": "Stoke the Flames",
+        "spell_id": 393827,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 393827,
+            "description": "Stoke the Flames Talent Requires Demon Hunter Fel Devastation damage increased by 30%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90958,
+          90976,
+          90954
+        ],
+        "unlocks": [
+          90983
+        ],
+        "row": 9,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90959,
+        "name": "Burning Alive",
+        "spell_id": 207739,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207739,
+            "description": "Burning Alive Talent Requires Demon Hunter Requires level 25 Every 1 sec, Fiery Brand spreads to one nearby enemy.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90958
+        ],
+        "unlocks": [
+          90962,
+          90983
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90963,
+        "name": "Cycle of Binding",
+        "spell_id": 389718,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389718,
+            "description": "Cycle of Binding Talent Requires Demon Hunter Your Sigils have 15% reduced cooldowns.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90958,
+          90964
+        ],
+        "unlocks": [
+          90962
+        ],
+        "row": 9,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109445,
+        "name": "Final Hour",
+        "spell_id": 1253805,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253805,
+            "description": "Final Hour Talent Requires Demon Hunter Passive bonuses granted by each stack of Voidfall persist for 8 sec after being consumed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109448
+        ],
+        "unlocks": [
+          109442
+        ],
+        "row": 10,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109446,
+        "name": "Meteoric Fall",
+        "spell_id": 1253391,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253391,
+            "description": "Meteoric Fall Talent Requires Demon Hunter Havoc, Devourer While at 3 stacks of Voidfall, Reap consumes all 3 to rapidly call down that many meteor strikes. Vengeance While at 3 stacks of Voidfall, Spirit Bomb and Soul Cleave consumes all 3 to rapidly call down that many meteor strikes.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109447
+        ],
+        "unlocks": [
+          109442
+        ],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109444,
+        "name": "Dark Matter",
+        "spell_id": 1256307,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1256307,
+            "description": "Dark Matter Talent Requires Demon Hunter Havoc, Devourer Your first Collapsing Star after casting Void Metamorphosis causes a Cosmic meteor shower to assault the area, dealing [(50% of Spell Power) * 12] Cosmic damage over 6 sec. Vengeance Your first Spirit Bomb after entering demon form causes a Shadowflame meteor shower to assault the area, dealing [(90% of Attack Power) * 12] Shadowflame damage over 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109450
+        ],
+        "unlocks": [
+          109442
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109443,
+        "name": "Otherworldly Focus",
+        "spell_id": 1253817,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253817,
+            "description": "Otherworldly Focus Talent Requires Demon Hunter Havoc, Devourer Collapsing Star and Voidfall meteors deal 35% increased damage when striking a single target. Each additional target reduces this bonus by 5%. Vengeance Spirit Bomb and Voidfall meteors deal 35% increased damage when striking a single target. Each additional target reduces this bonus by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109451
+        ],
+        "unlocks": [
+          109442
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90981,
+        "name": "Vulnerability",
+        "spell_id": 389976,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389976,
+            "description": "Vulnerability Talent Requires Demon Hunter Frailty now also increases all damage you deal to afflicted targets by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 389976,
+            "description": "Vulnerability Talent Requires Demon Hunter Frailty now also increases all damage you deal to afflicted targets by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90973,
+          90975
+        ],
+        "unlocks": [
+          90980,
+          90982
+        ],
+        "row": 10,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90983,
+        "name": "Vengeful Beast",
+        "spell_id": 1265818,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265818,
+            "description": "Vengeful Beast Talent Requires Demon Hunter Metamorphosis has 5 sec increased duration and increases the damage of Fracture, Soul Cleave, and Spirit Bomb by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Fracture, Soul Cleave, and Spirit Bomb",
+                "type": "damage_increase",
+                "value": 20,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90959,
+          90973,
+          90984
+        ],
+        "unlocks": [
+          90979,
+          90985,
+          90982
+        ],
+        "row": 10,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90962,
+        "name": "Charred Flesh",
+        "spell_id": 336639,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 336639,
+            "description": "Charred Flesh Talent Requires Demon Hunter Requires level 30 Immolation Aura damage increases the duration of your Fiery Brand and Sigil of Flame by 0.25 sec. (900ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Fiery Brand and Sigil of Flame",
+                "type": "duration_increase",
+                "value": 0.25,
+                "unit": "seconds"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "spell_id": 336639,
+            "description": "Charred Flesh Talent Requires Demon Hunter Requires level 30 Immolation Aura damage increases the duration of your Fiery Brand and Sigil of Flame by 0.25 sec. (900ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Fiery Brand and Sigil of Flame",
+                "type": "duration_increase",
+                "value": 0.25,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90963,
+          90959
+        ],
+        "unlocks": [
+          90961,
+          90985
+        ],
+        "row": 10,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109442,
+        "name": "World Killer",
+        "spell_id": 1256353,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1256353,
+            "description": "World Killer Talent Requires Demon Hunter Havoc, Devourer The third Voidfall meteor strike called down in sequence is larger, has 50% increased area, deals 50% increased damage, and generates 1 Soul Fragment. Vengeance The third Voidfall meteor strike called down in sequence is larger, has 50% increased area, deals 50% increased damage, and reduces the remaining cooldown of Metamorphosis by 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109443,
+          109444,
+          109446,
+          109445
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90980,
+        "name": "Soulcrush",
+        "spell_id": 389985,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389985,
+            "description": "Soulcrush Talent Requires Demon Hunter The effects of Frailty are doubled.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90981
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90982,
+        "name": "Soul Carver",
+        "spell_id": 207407,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 207407,
+            "description": "Soul Carver Talent Requires Demon Hunter Carve into the soul of your target, dealing [(309% of Attack Power) + (309% of Attack Power)] Fire damage and an additional (201% of Attack Power) Fire damage over 3 sec. &nbsp;Immediately shatters 3 Soul Fragments from the target and 1 additional Soul Fragment &nbsp;every 1 sec.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90981,
+          90983
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90979,
+        "name": "Last Resort",
+        "spell_id": 209258,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 209258,
+            "description": "Last Resort Talent Requires Demon Hunter Requires level 50 Sustaining fatal damage instead transforms you to Metamorphosis form. This may occur once every 8 min.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90983
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90985,
+        "name": "Darkglare Boon",
+        "spell_id": 389708,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389708,
+            "description": "Darkglare Boon Talent Requires Demon Hunter When Fel Devastation finishes fully channeling, it refreshes 15-30% of its cooldown and refunds 15-.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90962,
+          90983
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90961,
+        "name": "Down in Flames",
+        "spell_id": 389732,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 389732,
+            "description": "Down in Flames Talent Requires Demon Hunter Fiery Brand has 12 sec reduced cooldown and 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90962
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110425,
+        "name": "Untethered Rage",
+        "spell_id": 1270444,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270444,
+            "description": "Untethered Rage Talent Requires Demon Hunter Soul Cleave and Spirit Bomb have a chance per soul fragment consumed to grant Untethered Rage, allowing Metamorphosis to be cast without incurring its cooldown and lasting 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Fel-Scarred",
+      "nodes": [
+        {
+          "node_id": 94899,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 452406,
+              "name": "Set Fire to the Pain",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452406,
+                  "description": "Set Fire to the Pain Talent Requires Demon Hunter 5% of all non-Fire damage taken is instead taken as Fire damage over 6 sec. Fire damage taken reduced by 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 452407,
+              "name": "Improved Soul Rending",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452407,
+                  "description": "Improved Soul Rending Talent Requires Demon Hunter Havoc Leech granted by Soul Rending increased by 2% and an additional 2% while Metamorphosis is active. Devourer Leech granted by Soul Rending increased by 2% and an additional 2% while Void Metamorphosis is active.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94917
+          ],
+          "unlocks": [
+            94916
+          ],
+          "row": 8,
+          "col": 11
+        },
+        {
+          "node_id": 94901,
+          "name": "Demonic Intensity",
+          "spell_id": 452415,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452415,
+              "description": "Demonic Intensity Talent Requires Demon Hunter Havoc Activating Metamorphosis greatly empowers Eye Beam, Immolation Aura. Demonsurge damage is increased by 5% for each time it previously triggered while your demon form is active. Devourer Activating Void Metamorphosis greatly empowers The Hunt. Voidsurge damage is increased by 10% for each time it previously triggered while your demon form is active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94904,
+            94902,
+            94909,
+            109772
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94902,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 452412,
+              "name": "Student of Suffering",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452412,
+                  "description": "Student of Suffering Talent Requires Demon Hunter Havoc Eye Beam applies Student of Suffering to you, increasing Mastery by (8 * $mas)% and granting every 2 sec, for 6 sec. Devourer Void Ray applies Student of Suffering to you, increasing Mastery by (8 * $mas)% and granting every 2 sec, for 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 452413,
+              "name": "Flamebound",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452413,
+                  "description": "Flamebound Talent Requires Demon Hunter Devourer Hungering Slash has 2 yd increased radius and 125% increased critical strike damage bonus. Havoc Immolation Aura has 2 yd increased radius and 50% increased critical strike damage bonus.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94912
+          ],
+          "unlocks": [
+            94901
+          ],
+          "row": 10,
+          "col": 10
+        },
+        {
+          "node_id": 94904,
+          "name": "Untethered Fury",
+          "spell_id": 452411,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452411,
+              "description": "Untethered Fury Talent Requires Demon Hunter Devourer Maximum Fury increased by 20. Havoc Maximum Fury increased by 50.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94905
+          ],
+          "unlocks": [
+            94901
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94905,
+          "name": "Burning Blades",
+          "spell_id": 452408,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452408,
+              "description": "Burning Blades Talent Requires Demon Hunter Devourer Your blades burn with Cosmic energy, causing your Voidblade, Reap, and Throw Glaive to deal an additional 35% damage as Cosmic damage. Havoc Your blades burn with Fel energy, causing the damage from Chaos Strike, Throw Glaive, Blade Dance's First Blood, and auto-attacks to burn for an additional 35% damage as Fire over 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94913
+          ],
+          "unlocks": [
+            94904
+          ],
+          "row": 9,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94909,
+          "name": "Monster Rising",
+          "spell_id": 452414,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452414,
+              "description": "Monster Rising Talent Requires Demon Hunter Havoc Agility increased by 8% while not in demon form. Devourer Intellect increased by 15% while not in demon form.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94916
+          ],
+          "unlocks": [
+            94901
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94912,
+          "name": "Violent Transformation",
+          "spell_id": 452409,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452409,
+              "description": "Violent Transformation Talent Requires Demon Hunter Devourer Entering Void Metamorphosis resets the cooldown of Voidblade and The Hunt. Havoc When you activate Metamorphosis, reset the cooldown of Immolation Aura.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94918
+          ],
+          "unlocks": [
+            94902
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94913,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 452403,
+              "name": "Wave of Debilitation",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452403,
+                  "description": "Wave of Debilitation Talent Requires Demon Hunter Havoc Chaos Nova slows enemies by 60% and reduces attack and cast speed by 15% for 5 sec after its stun fades. Devourer Void Nova slows enemies by 60% and reduces attack and cast speed by 15% for 5 sec after its stun fades.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 452404,
+              "name": "Pursuit of Angriness",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452404,
+                  "description": "Pursuit of Angriness Talent Requires Demon Hunter Movement speed increased by 1% per .",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94917
+          ],
+          "unlocks": [
+            94905
+          ],
+          "row": 8,
+          "col": 9
+        },
+        {
+          "node_id": 94916,
+          "name": "Enduring Torment",
+          "spell_id": 452410,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452410,
+              "description": "Enduring Torment Talent Requires Demon Hunter Havoc The effects of your demon form persist outside of it in a weakened state, increasing Chaos Strike and Blade Dance damage by 15%, and Haste by 5%. Devourer The effects of your demon form persist outside of it in a weakened state, increasing Mastery: Monster Within's effectiveness by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94899
+          ],
+          "unlocks": [
+            94909
+          ],
+          "row": 9,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94917,
+          "name": "Demonsurge",
+          "spell_id": 452402,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452402,
+              "description": "Demonsurge Talent Requires Demon Hunter Havoc Metamorphosis now also causes Demon Blades to generate 3 additional Fury. While demon form is active, the first cast of each empowered ability induces a Demonsurge, causing you to explode with Fel energy, dealing (280% of Attack Power) Chaos damage to nearby enemies. Deals reduced damage beyond 8 targets. Devourer Void Metamorphosis now also greatly empowers Voidblade and Hungering Slash. While demon form is active, the first cast of each empowered ability induces a Voidsurge, causing you to explode with Void energy, dealing (625% of Spell Power) Cosmic damage to nearby enemies. Deals reduced damage beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94913,
+            94918,
+            94899,
+            109773
+          ],
+          "row": 7,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94918,
+          "name": "Focused Hatred",
+          "spell_id": 452405,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452405,
+              "description": "Focused Hatred Talent Requires Demon Hunter Havoc Demonsurge deals 50% increased damage when it strikes a single target. Each additional target reduces this bonus by 10%. Devourer Voidsurge deals 50% increased damage when it strikes a single target. Each additional target reduces this bonus by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94917
+          ],
+          "unlocks": [
+            94912
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109772,
+          "name": "Volatile Instinct",
+          "spell_id": 1272453,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272453,
+              "description": "Volatile Instinct Talent Requires Demon Hunter Devourer Entering demon form causes your next Voidsurge to repeat after a short delay. Havoc Entering demon form immediately induces a Demonsurge. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109774
+          ],
+          "unlocks": [
+            94901
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109773,
+          "name": "Blind Focus",
+          "spell_id": 1272364,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272364,
+              "description": "Blind Focus Talent Requires Demon Hunter Devourer Cosmic damage increased by 3%. Effect is doubled while in demon form. Havoc Fire damage increased by 5%. Effect is doubled while in demon form.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94917
+          ],
+          "unlocks": [
+            109774
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109774,
+          "name": "Undying Embers",
+          "spell_id": 1272405,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272405,
+              "description": "Undying Embers Talent Requires Demon Hunter Havoc Immolation Aura has a 25% chance to reignite after it expires, reapplying its effect. Devourer Soul Immolation has a 25% chance to reignite after it expires, reapplying its effect.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109773
+          ],
+          "unlocks": [
+            109772
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Aldrachi Reaver",
+      "nodes": [
+        {
+          "node_id": 94895,
+          "name": "Incisive Blade",
+          "spell_id": 442492,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442492,
+              "description": "Incisive Blade Talent Requires Demon Hunter Havoc Chaos Strike deals 10% increased damage. Vengeance Soul Cleave deals 10% increased damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94914
+          ],
+          "unlocks": [
+            94919
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94896,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 442714,
+              "name": "Army Unto Oneself",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 442714,
+                  "description": "Army Unto Oneself Talent Requires Demon Hunter Felblade surrounds you with a Blade Ward, reducing damage taken by 10% for 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 442736,
+              "name": "Incorruptible Spirit",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 442736,
+                  "description": "Incorruptible Spirit Talent Requires Demon Hunter Vengeance Each Soul Fragment you consume shields you for an additional 10% of the amount healed. Havoc Each Soul Fragment you consume shields you for an additional 15% of the amount healed.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94911
+          ],
+          "unlocks": [
+            94910
+          ],
+          "row": 4,
+          "col": 10
+        },
+        {
+          "node_id": 94897,
+          "name": "Wounded Quarry",
+          "spell_id": 442806,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442806,
+              "description": "Wounded Quarry Talent Requires Demon Hunter Vengeance Expose weaknesses in the target of your Reaver's Mark , causing your Physical damage to any enemy to also deal 20% of the damage dealt to your marked target as Chaos, and sometimes shatter a Soul Fragment. Havoc Expose weaknesses in the target of your Reaver's Mark , causing your Physical damage to any enemy to also deal 25% of the damage dealt to your marked target as Chaos, and sometimes shatter a Soul Fragment.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94903
+          ],
+          "unlocks": [
+            94906
+          ],
+          "row": 4,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94898,
+          "name": "Fury of the Aldrachi",
+          "spell_id": 442718,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442718,
+              "description": "Fury of the Aldrachi Talent Requires Demon Hunter Havoc When enhanced by Reaver's Glaive, Blade Dance casts 3 additional glaive slashes to nearby targets. Deals reduced damage beyond 8 targets. If cast after Chaos Strike, cast 6 slashes instead. Vengeance When enhanced by Reaver's Glaive, Soul Cleave casts 3 additional glaive slashes to nearby targets. Deals reduced damage beyond 8 targets. If cast after , cast 6 slashes instead.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94915
+          ],
+          "unlocks": [
+            94914
+          ],
+          "row": 3,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94903,
+          "name": "Reaver's Mark",
+          "spell_id": 442679,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442679,
+              "description": "Reaver's Mark Talent Requires Demon Hunter Vengeance When enhanced by Reaver's Glaive, applies Reaver's Mark, which causes the target to take 7% increased damage for 20 sec. Max 2 stacks. Applies 1 additional stack of Reaver's Mark If cast after Soul Cleave. Havoc When enhanced by Reaver's Glaive, Chaos Strike applies Reaver's Mark, which causes the target to take 7% increased damage for 20 sec. Max 2 stacks. Applies 1 additional stack of Reaver's Mark If cast after Blade Dance.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94915
+          ],
+          "unlocks": [
+            94897
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94906,
+          "name": "Bladecraft",
+          "spell_id": 1272153,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272153,
+              "description": "Bladecraft Talent Requires Demon Hunter Havoc Fury of the Aldrachi further empowers Blade Dance when cast after Chaos Strike, increasing slashes to 12. Reaver's Mark now stacks up to 2 times and further empowers Chaos Strike when cast after Blade Dance, applying an additional stack. Vengeance Fury of the Aldrachi further empowers Soul Cleave when cast after Fracture, increasing slashes to 12. Reaver's Mark now stacks up to 2 times and further empowers Fracture when cast after Soul Cleave, applying an additional stack.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94897
+          ],
+          "unlocks": [
+            94919
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94910,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 442497,
+              "name": "Keen Engagement",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 442497,
+                  "description": "Keen Engagement Talent Requires Demon Hunter Reaver's Glaive generates .",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444997,
+              "name": "Preemptive Strike",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444997,
+                  "description": "Preemptive Strike Talent Requires Demon Hunter Throw Glaive deals (20% of Attack Power) Physical damage to enemies near its initial target.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94896
+          ],
+          "unlocks": [
+            94919
+          ],
+          "row": 5,
+          "col": 10
+        },
+        {
+          "node_id": 94911,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444926,
+              "name": "Evasive Action",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444926,
+                  "description": "Evasive Action Talent Requires Demon Hunter Vengeful Retreat can be cast a second time within 3 sec. (3s cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444931,
+              "name": "Unhindered Assault",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444931,
+                  "description": "Unhindered Assault Talent Requires Demon Hunter Vengeful Retreat resets the cooldown of Felblade.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94915
+          ],
+          "unlocks": [
+            94896
+          ],
+          "row": 3,
+          "col": 10
+        },
+        {
+          "node_id": 94914,
+          "name": "Aldrachi Tactics",
+          "spell_id": 442683,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442683,
+              "description": "Aldrachi Tactics Talent Requires Demon Hunter The second enhanced ability in a pattern shatters an additional Soul Fragment.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94898
+          ],
+          "unlocks": [
+            94895
+          ],
+          "row": 4,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94915,
+          "name": "Art of the Glaive",
+          "spell_id": 442290,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442290,
+              "description": "Art of the Glaive Talent Requires Demon Hunter Vengeance Consuming 20 Soul Fragments or casting Sigil of Spite converts your next Throw Glaive into Reaver's Glaive. Reaver's Glaive : Throw a glaive enhanced with the essence of consumed souls at your target, dealing (335% of Attack Power) Physical damage and ricocheting to 2 additional enemies. Begins a well-practiced pattern of glaivework, enhancing your next and Soul Cleave. The enhanced ability you cast first deals 10% increased damage, and the second deals 20% increased damage. Havoc Consuming 6 Soul Fragments or casting The Hunt converts your next Throw Glaive into Reaver's Glaive. Reaver's Glaive : Throw a glaive enhanced with the essence of consumed souls at your target, dealing (335% of Attack Power) Physical damage and ricocheting to 2 additional enemies. Begins a well-practiced pattern of glaivework, enhancing your next Chaos Strike and Blade Dance. The enhanced ability you cast first deals 10% increased damage, and the second deals 20% increased damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94911,
+            94898,
+            94903,
+            109771
+          ],
+          "row": 2,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94919,
+          "name": "Thrill of the Fight",
+          "spell_id": 442686,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442686,
+              "description": "Thrill of the Fight Talent Requires Demon Hunter After consuming both enhancements, gain Thrill of the Fight, increasing the damage of your next Reaver's Glaive by 30% and increasing Haste by 8% for 30 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94910,
+            94895,
+            94906,
+            109769
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109769,
+          "name": "Warblade's Hunger",
+          "spell_id": 442502,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 442502,
+              "description": "Warblade's Hunger Talent Requires Demon Hunter Vengeance Consuming a Soul Fragment causes your next to deal (40% of Attack Power) additional Physical damage. Havoc Consuming a Soul Fragment causes your next Chaos Strike to deal (40% of Attack Power) additional Physical damage. Felblade consumes up to 5 nearby Soul Fragments.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109770
+          ],
+          "unlocks": [
+            94919
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109770,
+          "name": "Keen Edge",
+          "spell_id": 1272138,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272138,
+              "description": "Keen Edge Talent Requires Demon Hunter Reaver's Glaive damage is increased by 20% and other Physical-only damage is increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109771
+          ],
+          "unlocks": [
+            109769
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109771,
+          "name": "Broken Spirit",
+          "spell_id": 1272143,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272143,
+              "description": "Broken Spirit Talent Requires Demon Hunter Vengeance Sigil of Spite shatters 1 additional Soul Fragment. Soul Cleave has a 20% chance to shatter a Soul Fragment. Havoc The Hunt shatters 1 Soul Fragment. Blade Dance and Chaos Strike have a 15% chance to shatter a Soul Fragment. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94915
+          ],
+          "unlocks": [
+            109770
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Annihilator",
+      "nodes": [
+        {
+          "node_id": 109442,
+          "name": "World Killer",
+          "spell_id": 1256353,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1256353,
+              "description": "World Killer Talent Requires Demon Hunter Havoc, Devourer The third Voidfall meteor strike called down in sequence is larger, has 50% increased area, deals 50% increased damage, and generates 1 Soul Fragment. Vengeance The third Voidfall meteor strike called down in sequence is larger, has 50% increased area, deals 50% increased damage, and reduces the remaining cooldown of Metamorphosis by 10 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109443,
+            109444,
+            109446,
+            109445
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109443,
+          "name": "Otherworldly Focus",
+          "spell_id": 1253817,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253817,
+              "description": "Otherworldly Focus Talent Requires Demon Hunter Havoc, Devourer Collapsing Star and Voidfall meteors deal 35% increased damage when striking a single target. Each additional target reduces this bonus by 5%. Vengeance Spirit Bomb and Voidfall meteors deal 35% increased damage when striking a single target. Each additional target reduces this bonus by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109451
+          ],
+          "unlocks": [
+            109442
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109444,
+          "name": "Dark Matter",
+          "spell_id": 1256307,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1256307,
+              "description": "Dark Matter Talent Requires Demon Hunter Havoc, Devourer Your first Collapsing Star after casting Void Metamorphosis causes a Cosmic meteor shower to assault the area, dealing [(50% of Spell Power) * 12] Cosmic damage over 6 sec. Vengeance Your first Spirit Bomb after entering demon form causes a Shadowflame meteor shower to assault the area, dealing [(90% of Attack Power) * 12] Shadowflame damage over 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109450
+          ],
+          "unlocks": [
+            109442
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109445,
+          "name": "Final Hour",
+          "spell_id": 1253805,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253805,
+              "description": "Final Hour Talent Requires Demon Hunter Passive bonuses granted by each stack of Voidfall persist for 8 sec after being consumed.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109448
+          ],
+          "unlocks": [
+            109442
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109446,
+          "name": "Meteoric Fall",
+          "spell_id": 1253391,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253391,
+              "description": "Meteoric Fall Talent Requires Demon Hunter Havoc, Devourer While at 3 stacks of Voidfall, Reap consumes all 3 to rapidly call down that many meteor strikes. Vengeance While at 3 stacks of Voidfall, Spirit Bomb and Soul Cleave consumes all 3 to rapidly call down that many meteor strikes.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109447
+          ],
+          "unlocks": [
+            109442
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109447,
+          "name": "Mass Acceleration",
+          "spell_id": 1256295,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1256295,
+              "description": "Mass Acceleration Talent Requires Demon Hunter Havoc, Devourer Gain 3 stacks of Voidfall and reset the cooldown of Reap upon activating Void Metamorphosis. Vengeance Gain 3 stacks of Voidfall and reset the cooldown of Spirit Bomb upon activating Metamorphosis.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109455
+          ],
+          "unlocks": [
+            109446
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109448,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1253399,
+              "name": "Path to Oblivion",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1253399,
+                  "description": "Path to Oblivion Talent Requires Demon Hunter Each stack of Voidfall grants 3% increased movement speed.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1253402,
+              "name": "State of Matter",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1253402,
+                  "description": "State of Matter Talent Requires Demon Hunter Havoc, Devourer Shift has 1 additional charge. Vengeance Torment has 1 additional charge.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            109454
+          ],
+          "unlocks": [
+            109445
+          ],
+          "row": 9,
+          "col": 9
+        },
+        {
+          "node_id": 109449,
+          "name": "Voidfall",
+          "spell_id": 1253304,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253304,
+              "description": "Voidfall Talent Requires Demon Hunter Havoc, Devourer Consume has a 35% chance to grant 1 stack of Voidfall. Upon reaching 3 stacks of Voidfall, Reap consumes a stack to reach into the Void and call down a meteor strike at your target's location, dealing (200% of Spell Power) Cosmic damage to all enemies within 8 yards. Damage reduced beyond 8 targets. Vengeance Fracture has a 35% chance to grant 1 stack of Voidfall. Upon reaching 3 stacks of Voidfall, Soul Cleave consumes a stack to reach into the Void and call down a meteor strike at your target's location, dealing (540% of Attack Power) Shadowflame damage to all enemies within 8 yards. Damage reduced beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            109452,
+            109453,
+            109455,
+            109454
+          ],
+          "row": 7,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109450,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1253676,
+              "name": "Doomsayer",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1253676,
+                  "description": "Doomsayer Talent Requires Demon Hunter Vengeance Activating Infernal Strike out of combat or within 5 sec of entering combat calls down 1 Voidfall Meteor. Devourer Activating Void Ray out of combat or within 10 sec of entering combat calls down 3 Voidfall Meteors over its duration. Havoc Activating Void Ray out of combat or within 5 sec of entering combat calls down 3 Voidfall Meteors over its duration.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1279247,
+              "name": "Harness the Cosmos",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1279247,
+                  "description": "Harness the Cosmos Talent Requires Demon Hunter Voidfall Meteor damage increased by 15%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            109453
+          ],
+          "unlocks": [
+            109444
+          ],
+          "row": 9,
+          "col": 11
+        },
+        {
+          "node_id": 109451,
+          "name": "Celestial Echoes",
+          "spell_id": 1253415,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253415,
+              "description": "Celestial Echoes Talent Requires Demon Hunter Vengeance Shear generates 5 additional Fury and deals 30% increased damage. Havoc, Devourer Consume generates 2 additional Fury and deals 15% increased damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109452
+          ],
+          "unlocks": [
+            109443
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109452,
+          "name": "Phase Shift",
+          "spell_id": 1256245,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1256245,
+              "description": "Phase Shift Talent Requires Demon Hunter Each stack of Voidfall grants 2% reduced damage taken.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109449
+          ],
+          "unlocks": [
+            109451
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109453,
+          "name": "Catastrophe",
+          "spell_id": 1253769,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253769,
+              "description": "Catastrophe Talent Requires Demon Hunter Havoc, Vengeance, Devourer Enemies struck by a Voidfall Meteor take an additional 25% damage over 8 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109449
+          ],
+          "unlocks": [
+            109450
+          ],
+          "row": 8,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109454,
+          "name": "Swift Erasure",
+          "spell_id": 1253668,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253668,
+              "description": "Swift Erasure Talent Requires Demon Hunter Devourer Each stack of Voidfall grants 1% Haste. Havoc, Vengeance Each stack of Voidfall grants 2% Haste.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109449
+          ],
+          "unlocks": [
+            109448
+          ],
+          "row": 8,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109455,
+          "name": "Meteoric Rise",
+          "spell_id": 1253377,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253377,
+              "description": "Meteoric Rise Talent Requires Demon Hunter Vengeance Fel Devastation damage increased by 25%. Fel Devastation generates 3 Soul Fragments over its duration. Havoc, Devourer Void Ray damage increased by 15%. Fully channeling Void Ray generates 1 stack of Voidfall.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109449
+          ],
+          "unlocks": [
+            109447
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Void-Scarred",
+      "nodes": [
+        {
+          "node_id": 110104,
+          "name": "Monster Rising",
+          "spell_id": 452414,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452414,
+              "description": "Monster Rising Talent Requires Demon Hunter Havoc Agility increased by 8% while not in demon form. Devourer Intellect increased by 15% while not in demon form.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110106
+          ],
+          "unlocks": [
+            110116
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110105,
+          "name": "Blind Focus",
+          "spell_id": 1272364,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272364,
+              "description": "Blind Focus Talent Requires Demon Hunter Devourer Cosmic damage increased by 3%. Effect is doubled while in demon form. Havoc Fire damage increased by 5%. Effect is doubled while in demon form.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110112
+          ],
+          "unlocks": [
+            110108
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110106,
+          "name": "Enduring Torment",
+          "spell_id": 452410,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452410,
+              "description": "Enduring Torment Talent Requires Demon Hunter Havoc The effects of your demon form persist outside of it in a weakened state, increasing Chaos Strike and Blade Dance damage by 15%, and Haste by 5%. Devourer The effects of your demon form persist outside of it in a weakened state, increasing Mastery: Monster Within's effectiveness by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110117
+          ],
+          "unlocks": [
+            110104
+          ],
+          "row": 4,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110107,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 452412,
+              "name": "Student of Suffering",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452412,
+                  "description": "Student of Suffering Talent Requires Demon Hunter Havoc Eye Beam applies Student of Suffering to you, increasing Mastery by (8 * $mas)% and granting every 2 sec, for 6 sec. Devourer Void Ray applies Student of Suffering to you, increasing Mastery by (8 * $mas)% and granting every 2 sec, for 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 452413,
+              "name": "Flamebound",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452413,
+                  "description": "Flamebound Talent Requires Demon Hunter Devourer Hungering Slash has 2 yd increased radius and 125% increased critical strike damage bonus. Havoc Immolation Aura has 2 yd increased radius and 50% increased critical strike damage bonus.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            110115
+          ],
+          "unlocks": [
+            110116
+          ],
+          "row": 5,
+          "col": 10
+        },
+        {
+          "node_id": 110108,
+          "name": "Undying Embers",
+          "spell_id": 1272405,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272405,
+              "description": "Undying Embers Talent Requires Demon Hunter Havoc Immolation Aura has a 25% chance to reignite after it expires, reapplying its effect. Devourer Soul Immolation has a 25% chance to reignite after it expires, reapplying its effect.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110105
+          ],
+          "unlocks": [
+            110110
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110109,
+          "name": "Untethered Fury",
+          "spell_id": 452411,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452411,
+              "description": "Untethered Fury Talent Requires Demon Hunter Devourer Maximum Fury increased by 20. Havoc Maximum Fury increased by 50.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110111
+          ],
+          "unlocks": [
+            110116
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110110,
+          "name": "Volatile Instinct",
+          "spell_id": 1272453,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272453,
+              "description": "Volatile Instinct Talent Requires Demon Hunter Devourer Entering demon form causes your next Voidsurge to repeat after a short delay. Havoc Entering demon form immediately induces a Demonsurge. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110108
+          ],
+          "unlocks": [
+            110116
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110111,
+          "name": "Burning Blades",
+          "spell_id": 452408,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452408,
+              "description": "Burning Blades Talent Requires Demon Hunter Devourer Your blades burn with Cosmic energy, causing your Voidblade, Reap, and Throw Glaive to deal an additional 35% damage as Cosmic damage. Havoc Your blades burn with Fel energy, causing the damage from Chaos Strike, Throw Glaive, Blade Dance's First Blood, and auto-attacks to burn for an additional 35% damage as Fire over 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110114
+          ],
+          "unlocks": [
+            110109
+          ],
+          "row": 4,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110112,
+          "name": "Demonsurge",
+          "spell_id": 452402,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452402,
+              "description": "Demonsurge Talent Requires Demon Hunter Havoc Metamorphosis now also causes Demon Blades to generate 3 additional Fury. While demon form is active, the first cast of each empowered ability induces a Demonsurge, causing you to explode with Fel energy, dealing (280% of Attack Power) Chaos damage to nearby enemies. Deals reduced damage beyond 8 targets. Devourer Void Metamorphosis now also greatly empowers Voidblade and Hungering Slash. While demon form is active, the first cast of each empowered ability induces a Voidsurge, causing you to explode with Void energy, dealing (625% of Spell Power) Cosmic damage to nearby enemies. Deals reduced damage beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            110117,
+            110105,
+            110114,
+            110113
+          ],
+          "row": 2,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110113,
+          "name": "Focused Hatred",
+          "spell_id": 452405,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452405,
+              "description": "Focused Hatred Talent Requires Demon Hunter Havoc Demonsurge deals 50% increased damage when it strikes a single target. Each additional target reduces this bonus by 10%. Devourer Voidsurge deals 50% increased damage when it strikes a single target. Each additional target reduces this bonus by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110112
+          ],
+          "unlocks": [
+            110115
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110114,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 452403,
+              "name": "Wave of Debilitation",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452403,
+                  "description": "Wave of Debilitation Talent Requires Demon Hunter Havoc Chaos Nova slows enemies by 60% and reduces attack and cast speed by 15% for 5 sec after its stun fades. Devourer Void Nova slows enemies by 60% and reduces attack and cast speed by 15% for 5 sec after its stun fades.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 452404,
+              "name": "Pursuit of Angriness",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452404,
+                  "description": "Pursuit of Angriness Talent Requires Demon Hunter Movement speed increased by 1% per .",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            110112
+          ],
+          "unlocks": [
+            110111
+          ],
+          "row": 3,
+          "col": 9
+        },
+        {
+          "node_id": 110115,
+          "name": "Violent Transformation",
+          "spell_id": 452409,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452409,
+              "description": "Violent Transformation Talent Requires Demon Hunter Devourer Entering Void Metamorphosis resets the cooldown of Voidblade and The Hunt. Havoc When you activate Metamorphosis, reset the cooldown of Immolation Aura.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110113
+          ],
+          "unlocks": [
+            110107
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110116,
+          "name": "Demonic Intensity",
+          "spell_id": 452415,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452415,
+              "description": "Demonic Intensity Talent Requires Demon Hunter Havoc Activating Metamorphosis greatly empowers Eye Beam, Immolation Aura. Demonsurge damage is increased by 5% for each time it previously triggered while your demon form is active. Devourer Activating Void Metamorphosis greatly empowers The Hunt. Voidsurge damage is increased by 10% for each time it previously triggered while your demon form is active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110110,
+            110109,
+            110107,
+            110104
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110117,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 452406,
+              "name": "Set Fire to the Pain",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452406,
+                  "description": "Set Fire to the Pain Talent Requires Demon Hunter 5% of all non-Fire damage taken is instead taken as Fire damage over 6 sec. Fire damage taken reduced by 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 452407,
+              "name": "Improved Soul Rending",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 452407,
+                  "description": "Improved Soul Rending Talent Requires Demon Hunter Havoc Leech granted by Soul Rending increased by 2% and an additional 2% while Metamorphosis is active. Devourer Leech granted by Soul Rending increased by 2% and an additional 2% while Void Metamorphosis is active.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            110112
+          ],
+          "unlocks": [
+            110106
+          ],
+          "row": 3,
+          "col": 11
+        }
+      ]
+    }
+  ]
+}

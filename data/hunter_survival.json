@@ -1,0 +1,5157 @@
+{
+  "class": "Hunter",
+  "spec": "Survival",
+  "scraped_at": "2026-03-25T18:28:35.828141+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99833,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 12
+      },
+      {
+        "node_id": 102381,
+        "name": "Rejuvenating Wind",
+        "spell_id": 385539,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385539,
+            "description": "Rejuvenating Wind Talent Requires Hunter Exhilaration now also heals you for an additional 12.0% of your maximum health over 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          102401
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102422,
+        "name": "Survival of the Fittest",
+        "spell_id": 264735,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 264735,
+            "description": "Survival of the Fittest Talent Unlimited range Requires Hunter Reduces all damage you and your pet take by 30 % for 6 sec .",
+            "cooldown": 90.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          102406
+        ],
+        "row": 2,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102411,
+        "name": "Posthaste",
+        "spell_id": 109215,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 109215,
+            "description": "Posthaste Talent Requires Hunter Requires level 40 Disengage also frees you from all movement impairing effects and increases your movement speed by 50% for 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          102423
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102401,
+        "name": "Natural Mending",
+        "spell_id": 270581,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 270581,
+            "description": "Natural Mending Talent Requires Hunter Requires level 30 Exhilaration's cooldown is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 270581,
+            "description": "Natural Mending Talent Requires Hunter Requires level 30 Exhilaration's cooldown is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102381
+        ],
+        "unlocks": [
+          110157,
+          102383
+        ],
+        "row": 3,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102406,
+        "name": "Padded Armor",
+        "spell_id": 459450,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459450,
+            "description": "Padded Armor Talent Requires Hunter Survival of the Fittest gains an additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102422
+        ],
+        "unlocks": [
+          110157,
+          109485
+        ],
+        "row": 3,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102423,
+        "name": "Hunter's Avoidance",
+        "spell_id": 384799,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384799,
+            "description": "Hunter's Avoidance Talent Requires Hunter Damage taken from area of effect attacks reduced by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102411
+        ],
+        "unlocks": [
+          102407,
+          109485
+        ],
+        "row": 3,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102383,
+        "name": "Wilderness Medicine",
+        "spell_id": 343242,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 343242,
+            "description": "Wilderness Medicine Talent Requires Hunter Mend Pet heals for an additional 25% of your pet's health over its duration, and has a 25% chance to dispel a magic effect each time it heals your pet.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102401
+        ],
+        "unlocks": [
+          102380
+        ],
+        "row": 4,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110157,
+        "name": "Combat Experience",
+        "spell_id": 1268871,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268871,
+            "description": "Combat Experience Talent Requires Hunter Your Agility is increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102406,
+          102401
+        ],
+        "unlocks": [
+          102380,
+          79837
+        ],
+        "row": 4,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109485,
+        "name": "Improved Aspect of the Cheetah",
+        "spell_id": 1258407,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1258407,
+            "description": "Improved Aspect of the Cheetah Talent Requires Hunter The cooldown of Aspect of the Cheetah is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102423,
+          102406
+        ],
+        "unlocks": [
+          79837,
+          102384
+        ],
+        "row": 4,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102407,
+        "name": "Concussive Shot",
+        "spell_id": 5116,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 5116,
+            "description": "Concussive Shot Talent Requires Hunter Survival Dazes the target, slowing movement speed by 50% for 6 sec. Beast Mastery Dazes the target, slowing movement speed by 50% for 6 sec. Cobra Shot will increase the duration of Concussive Shot on the target by 3.0 sec. Marksmanship Dazes the target, slowing movement speed by 50% for 6 sec. Steady Shot will increase the duration of Concussive Shot on the target by 3.0 sec.",
+            "cooldown": 5.0,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Concussive Shot on the target",
+                "type": "duration_increase",
+                "value": 3,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Concussive Shot on the target",
+                "type": "duration_increase",
+                "value": 3,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          102423
+        ],
+        "unlocks": [
+          102384
+        ],
+        "row": 4,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102380,
+        "name": "Precision Strikes",
+        "spell_id": 1267003,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267003,
+            "description": "Precision Strikes Talent Requires Hunter Survival Your auto attack damage is increased by 25%. Beast Mastery, Marksmanship Your auto shot damage is increased by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110157,
+          102383
+        ],
+        "unlocks": [
+          102404,
+          109489
+        ],
+        "row": 5,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 79837,
+        "name": "Muzzle",
+        "spell_id": 187707,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 187707,
+            "description": "Muzzle Talent Requires Hunter Interrupts spellcasting, preventing any spell in that school from being cast for 5 sec.",
+            "cooldown": 15.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109485,
+          110157
+        ],
+        "unlocks": [
+          109484,
+          102404,
+          102395
+        ],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102384,
+        "name": "Serrated Tips",
+        "spell_id": 459502,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459502,
+            "description": "Serrated Tips Talent Requires Hunter You gain 2% more critical strike from critical strike sources.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 459502,
+            "description": "Serrated Tips Talent Requires Hunter You gain 2% more critical strike from critical strike sources.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109485,
+          102407
+        ],
+        "unlocks": [
+          109484,
+          102419
+        ],
+        "row": 5,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109489,
+        "name": "Tranquilizing Shot",
+        "spell_id": 19801,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 19801,
+            "description": "Tranquilizing Shot Talent Requires Hunter Removes 1 Enrage and 1 Magic effect from an enemy target.",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102380
+        ],
+        "unlocks": [
+          102425,
+          102415
+        ],
+        "row": 6,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102404,
+        "name": "Pathfinding",
+        "spell_id": 378002,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378002,
+            "description": "Pathfinding Talent Requires Hunter Movement speed increased by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          79837,
+          102380
+        ],
+        "unlocks": [
+          102396,
+          102425
+        ],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102395,
+        "name": "Disruptive Rounds",
+        "spell_id": 343244,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 343244,
+            "description": "Disruptive Rounds Talent Requires Hunter Beast Mastery, Marksmanship When Counter Shot interrupts a cast, gain . Survival When Muzzle interrupts a cast, gain .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          79837
+        ],
+        "unlocks": [
+          109487,
+          102396,
+          102393
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109484,
+        "name": "Improved Feign Death",
+        "spell_id": 1258486,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1258486,
+            "description": "Improved Feign Death Talent Requires Hunter The cooldown of Feign Death is reduced by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1258486,
+            "description": "Improved Feign Death Talent Requires Hunter The cooldown of Feign Death is reduced by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          79837,
+          102384
+        ],
+        "unlocks": [
+          109487,
+          110156
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102419,
+        "name": "Misdirection",
+        "spell_id": 34477,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 34477,
+            "description": "Misdirection Talent Requires Hunter Misdirects all threat you cause to the targeted party or raid member, beginning with your next attack within 30 sec and lasting for 8 sec.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102384
+        ],
+        "unlocks": [
+          110156,
+          102412
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102415,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 459983,
+            "name": "Kodo Tranquilizer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 459983,
+                "description": "Kodo Tranquilizer Talent Requires Hunter Tranquilizing Shot removes 1 additional Magic effect from up to 2 nearby targets.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 459991,
+            "name": "Devilsaur Tranquilizer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 459991,
+                "description": "Devilsaur Tranquilizer Talent Requires Hunter If Tranquilizing Shot removes only an Enrage effect, its cooldown is reduced by 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109489
+        ],
+        "unlocks": [
+          102424
+        ],
+        "row": 7,
+        "col": 1
+      },
+      {
+        "node_id": 102425,
+        "name": "Kindling Flare",
+        "spell_id": 459506,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459506,
+            "description": "Kindling Flare Talent Requires Hunter Flare's radius is increased by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102404,
+          109489
+        ],
+        "unlocks": [
+          102424
+        ],
+        "row": 7,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102396,
+        "name": "Trigger Finger",
+        "spell_id": 459534,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459534,
+            "description": "Trigger Finger Talent Requires Hunter Haste increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 459534,
+            "description": "Trigger Finger Talent Requires Hunter Haste increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102404,
+          102395
+        ],
+        "unlocks": [
+          102390,
+          102424
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102393,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 187698,
+            "name": "Tar Trap",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 187698,
+                "description": "Tar Trap Talent Requires Hunter Hurls a tar trap to the target location that creates a 8 yd radius pool of tar around itself for 30 sec when the first enemy approaches. All enemies have 50% reduced movement speed while in the area of effect. Limit 1. Trap will exist for 1 min.",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1513,
+            "name": "Scare Beast",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1513,
+                "description": "Scare Beast Talent Requires Hunter Scares a beast, causing it to run in fear for up to 20 sec. &nbsp;Damage caused may interrupt the effect. &nbsp;Only one beast can be feared at a time.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          102395
+        ],
+        "unlocks": [
+          102390
+        ],
+        "row": 7,
+        "col": 4
+      },
+      {
+        "node_id": 109487,
+        "name": "Touch of Grass",
+        "spell_id": 1258402,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1258402,
+            "description": "Touch of Grass Talent Requires Hunter Your maximum health is increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1258402,
+            "description": "Touch of Grass Talent Requires Hunter Your maximum health is increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102395,
+          109484
+        ],
+        "unlocks": [
+          109483,
+          102390
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110156,
+        "name": "Camouflage",
+        "spell_id": 199483,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 199483,
+            "description": "Camouflage Talent Unlimited range Requires Hunter Requires level 30 You and your pet blend into the surroundings and gain stealth for 1 min. While camouflaged, you will heal for 2% of maximum health every 1 sec.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102419,
+          109484
+        ],
+        "unlocks": [
+          109483
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102412,
+        "name": "No Hard Feelings",
+        "spell_id": 459546,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459546,
+            "description": "No Hard Feelings Talent Requires Hunter When Misdirection targets your pet, it reduces the damage they take by 50% for 5 sec. The cooldown of Misdirection is reduced by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102419
+        ],
+        "unlocks": [
+          109483
+        ],
+        "row": 7,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102424,
+        "name": "Improved Aspect of the Turtle",
+        "spell_id": 1258485,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1258485,
+            "description": "Improved Aspect of the Turtle Talent Requires Hunter The cooldown of Aspect of the Turtle is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102396,
+          102425,
+          102415
+        ],
+        "unlocks": [
+          103989,
+          102414,
+          110154
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102390,
+        "name": "Specialized Arsenal",
+        "spell_id": 459542,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459542,
+            "description": "Specialized Arsenal Talent Requires Hunter Marksmanship Aimed Shot deals 10% increased damage. Beast Mastery Kill Command deals 10% increased damage. Survival Wildfire Bomb deals 10% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109487,
+          102396,
+          102393
+        ],
+        "unlocks": [
+          102414,
+          109486,
+          102391
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109483,
+        "name": "Scout's Instincts",
+        "spell_id": 459455,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459455,
+            "description": "Scout's Instincts Talent Requires Hunter You cannot be slowed below 80% of your normal movement speed while Aspect of the Cheetah is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109487,
+          110156,
+          102412
+        ],
+        "unlocks": [
+          109488,
+          109486,
+          110155
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110154,
+        "name": "Shell Wall",
+        "spell_id": 1267218,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267218,
+            "description": "Shell Wall Talent Requires Hunter Damage taken during Aspect of the Turtle is reduced by an additional 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102424
+        ],
+        "unlocks": [
+          110153
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103989,
+        "name": "Intimidation",
+        "spell_id": 19577,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 19577,
+            "description": "Intimidation Talent Requires Hunter Commands your pet to intimidate the target stunning your target for 5 sec .",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102424
+        ],
+        "unlocks": [
+          102416,
+          102394,
+          110153
+        ],
+        "row": 9,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102414,
+        "name": "Improved Snaring",
+        "spell_id": 1268868,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268868,
+            "description": "Improved Snaring Talent Requires Hunter Wing Clip slows an additional 25%. Concussive Shot slows an additional 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102390,
+          102424
+        ],
+        "unlocks": [
+          102416
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102391,
+        "name": "Lone Survivor",
+        "spell_id": 388039,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 388039,
+            "description": "Lone Survivor Talent Unlimited range Requires Hunter The duration of Survival of the Fittest is increased by 2.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102390
+        ],
+        "unlocks": [
+          102416,
+          102409
+        ],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109486,
+        "name": "Catlike Reflexes",
+        "spell_id": 1258404,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1258404,
+            "description": "Catlike Reflexes Talent Requires Hunter Aspect of the Cheetah's initial burst of speed is increased by 2.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102390,
+          109483
+        ],
+        "unlocks": [
+          102409
+        ],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109488,
+        "name": "Binding Shot",
+        "spell_id": 109248,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 109248,
+            "description": "Binding Shot Talent Requires Hunter Requires level 40 Fires a magical projectile, tethering the enemy and any other enemies within 5 yds for 10 sec, stunning them for 3 sec if they move more than 5 yds from the arrow. [ Binding Shackles : Targets stunned by Binding Shot deal 10% less damage to you for 8 sec after the effect ends ]",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109483
+        ],
+        "unlocks": [
+          102409,
+          110152,
+          102418
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110155,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 199921,
+            "name": "Trailblazer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 199921,
+                "description": "Trailblazer Talent Requires Hunter Requires level 30 Your movement speed is increased by 30% anytime you have not attacked for 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 459488,
+            "name": "Moment of Opportunity",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 459488,
+                "description": "Moment of Opportunity Talent Requires Hunter When a trap triggers, gain 30% increased movement speed for 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109483
+        ],
+        "unlocks": [
+          102418
+        ],
+        "row": 9,
+        "col": 7
+      },
+      {
+        "node_id": 110153,
+        "name": "Cold Feet",
+        "spell_id": 1268671,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268671,
+            "description": "Cold Feet Talent Requires Hunter When your Freezing Trap breaks, the victim's movement speed is reduced by 70% for 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110154,
+          103989
+        ],
+        "unlocks": [
+          102389
+        ],
+        "row": 10,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102394,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 459507,
+            "name": "Territorial Instincts",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 459507,
+                "description": "Territorial Instincts Talent Requires Hunter The cooldown of Intimidation is reduced by 20 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1258509,
+            "name": "Guttural Roar",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1258509,
+                "description": "Guttural Roar Talent Requires Hunter Intimidation now also stuns nearby enemies for 1.0 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103989
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 2
+      },
+      {
+        "node_id": 102416,
+        "name": "Born To Be Wild",
+        "spell_id": 266921,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 266921,
+            "description": "Born To Be Wild Talent Requires Hunter Requires level 40 Beast Mastery, Marksmanship The cooldown of Aspect of the Cheetah, and Aspect of the Turtle are reduced by 15 sec. Survival The cooldown of Aspect of the Eagle, Aspect of the Cheetah, and Aspect of the Turtle are reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 266921,
+            "description": "Born To Be Wild Talent Requires Hunter Requires level 40 Beast Mastery, Marksmanship The cooldown of Aspect of the Cheetah, and Aspect of the Turtle are reduced by 15 sec. Survival The cooldown of Aspect of the Eagle, Aspect of the Cheetah, and Aspect of the Turtle are reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103989,
+          102414,
+          102391
+        ],
+        "unlocks": [
+          102389,
+          110164
+        ],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102409,
+        "name": "Keen Eyesight",
+        "spell_id": 378004,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378004,
+            "description": "Keen Eyesight Talent Requires Hunter Critical strike chance increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 378004,
+            "description": "Keen Eyesight Talent Requires Hunter Critical strike chance increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109488,
+          109486,
+          102391
+        ],
+        "unlocks": [
+          102387,
+          110164
+        ],
+        "row": 10,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110152,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 459460,
+            "name": "Tar-Coated Bindings",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 459460,
+                "description": "Tar-Coated Bindings Talent Requires Hunter Binding Shot's stun duration is increased by 1 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 472729,
+            "name": "Horsehair Tether",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 472729,
+                "description": "Horsehair Tether Talent Requires Hunter When an enemy is stunned by Binding Shot, it is dragged to Binding Shot's center.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109488
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 6
+      },
+      {
+        "node_id": 102418,
+        "name": "Improved Traps",
+        "spell_id": 343247,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 343247,
+            "description": "Improved Traps Talent Requires Hunter The cooldown of Tar Trap and Freezing Trap is reduced by 5.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110155,
+          109488
+        ],
+        "unlocks": [
+          102387
+        ],
+        "row": 10,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102389,
+        "name": "Emergency Salve",
+        "spell_id": 459517,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459517,
+            "description": "Emergency Salve Talent Requires Hunter Feign Death and Aspect of the Turtle removes poison and disease effects from you.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102416,
+          110153
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110164,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 53480,
+            "name": "Roar of Sacrifice",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 53480,
+                "description": "Roar of Sacrifice Talent Requires Hunter Instructs your pet to protect a friendly target, reducing their damage taken by 15%, but 50% of all damage taken by that target is transferred to your pet. Lasts 10 sec or until your pet's health drops below 25%.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1272094,
+            "name": "Guardian's Hide",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1272094,
+                "description": "Guardian's Hide Talent Requires Hunter Your pet protects you at all times, reducing the damage you take by 3%. Your pet receives 100% of the damage it mitigates.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          102409,
+          102416
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 4
+      },
+      {
+        "node_id": 102387,
+        "name": "Unnatural Causes",
+        "spell_id": 459527,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459527,
+            "description": "Unnatural Causes Talent Requires Hunter Your damage over time effects deal 10% increased damage. This effect is increased by 50% on targets below 20% health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102409,
+          102418
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 94976,
+        "name": "Sentinel",
+        "spell_id": 1253599,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253599,
+            "description": "Sentinel Talent Requires Hunter Survival Consuming Tip of the Spear has a 10% chance to summon the aid of a Sentinel Owl that descends from the skies and applies Sentinel's Mark to your target. Sentinel's Mark Your next Wildfire Bomb deals 40% increased direct damage to the marked target. Marksmanship Your Eagle is replaced with a Sentinel Owl that applies an enhanced Sentinel's Mark. Sentinel's Mark Your next Aimed Shot deals 20% increased direct damage to the marked target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94989,
+          94973,
+          94981,
+          109807
+        ],
+        "row": 2,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102255,
+        "name": "Kill Command",
+        "spell_id": 259489,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 259489,
+            "description": "Kill Command Talent 5 sec recharge Requires Hunter Give the command to kill, causing your pet to savagely deal (300% of Attack Power) Physical damage to the enemy. Generates 15 / Invigorating Pulse : 20 / Flanker's Advantage : . Survival Increases the damage of your next non-Kill Command ability by 0%.",
+            "cooldown": 5.0,
+            "charges": 2,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next non-Kill Command ability",
+                "type": "damage_increase",
+                "value": 0,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          102262,
+          102264
+        ],
+        "row": 2,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94989,
+        "name": "Don't Look Back",
+        "spell_id": 450373,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450373,
+            "description": "Don't Look Back Talent Requires Hunter Consuming Sentinel's Mark grants you an absorb shield equal to 10.0% of your maximum health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94976
+        ],
+        "unlocks": [
+          94958
+        ],
+        "row": 3,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94973,
+        "name": "Moon's Blessing",
+        "spell_id": 1253825,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253825,
+            "description": "Moon's Blessing Talent Requires Hunter Marksmanship Consuming Precise Shots has a 10% increased chance to summon your Sentinel Owl. When your Sentinel Owl applies Sentinel's Mark, reduce the cooldown of Aimed Shot by 2.0 sec. Survival Consuming Tip of the Spear has a 10% increased chance to summon your Sentinel Owl. When your Sentinel Owl applies Sentinel's Mark, reduce the cooldown of Wildfire Bomb by 4.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Aimed Shot",
+                "type": "cd_reduction",
+                "value": 2,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Wildfire Bomb",
+                "type": "cd_reduction",
+                "value": 4,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94976
+        ],
+        "unlocks": [
+          94990
+        ],
+        "row": 3,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94981,
+        "name": "Sanctified Armaments",
+        "spell_id": 1253831,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253831,
+            "description": "Sanctified Armaments Talent Requires Hunter Survival An additional 15% of Raptor Strike's damage is dealt as Arcane damage over 6 sec. Marksmanship An additional 25% of Rapid Fire's damage is dealt as Arcane damage over 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94976
+        ],
+        "unlocks": [
+          94971
+        ],
+        "row": 3,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109807,
+        "name": "Moonlight Chakram",
+        "spell_id": 1264902,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264902,
+            "description": "Moonlight Chakram Talent Requires Hunter Survival For 15 sec after casting Takedown, Takedown is replaced with Moonlight Chakram. Moonlight Chakram Throw a chakram blessed with moonlight at your current target that will rapidly deal (284.4% of Attack Power) Physical damage 7 times, bouncing to other targets if they are nearby. Marksmanship For 15 sec after casting Trueshot, Trueshot is replaced with Moonlight Chakram. Moonlight Chakram Throw a chakram blessed with moonlight at your current target that will rapidly deal (284.4% of Attack Power) Physical damage 7 times, bouncing to other targets if they are nearby. (1s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94976
+        ],
+        "unlocks": [
+          110028
+        ],
+        "row": 3,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102264,
+        "name": "Wildfire Bomb",
+        "spell_id": 259495,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 259495,
+            "description": "Wildfire Bomb Talent Requires Hunter Hurl a bomb at the target, exploding for (157.95% of Attack Power) Fire damage in a cone and coating enemies in wildfire, scorching them for (125.928% of Attack Power) Fire damage over 6 sec. Deals reduced damage beyond 8 targets. Deals 80% increased damage to your primary target.",
+            "cooldown": 18.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102255
+        ],
+        "unlocks": [
+          102285
+        ],
+        "row": 3,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102262,
+        "name": "Raptor Strike",
+        "spell_id": 186270,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 186270,
+            "description": "Raptor Strike Talent Requires Hunter A vicious slash dealing (393.25% of Attack Power) Physical damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102255
+        ],
+        "unlocks": [
+          102263
+        ],
+        "row": 3,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94958,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1253751,
+            "name": "Stargazer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253751,
+                "description": "Stargazer Talent Requires Hunter Marksmanship Consuming Precise Shots grants 2% increased critical strike damage for 10 sec. Multiple applications may overlap. Survival Consuming Tip of the Spear grants 2% increased critical strike damage for 10 sec. Multiple applications may overlap.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1253807,
+            "name": "Open Fire",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253807,
+                "description": "Open Fire Talent Requires Hunter Survival Flamefang Pitch damage increased by 15%. Marksmanship Volley damage increased by 25%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94989
+        ],
+        "unlocks": [
+          94970
+        ],
+        "row": 4,
+        "col": 9
+      },
+      {
+        "node_id": 94990,
+        "name": "Can't Miss, Won't Miss",
+        "spell_id": 1253830,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253830,
+            "description": "Can't Miss, Won't Miss Talent Requires Hunter Marksmanship Precise Shots damage bonus increased by 40%. Trueshot duration increased by 2 &nbsp;sec. Survival Tip of the Spear damage bonus increased by 4%. Takedown duration increased by 2 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94973
+        ],
+        "unlocks": [
+          94965
+        ],
+        "row": 4,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94971,
+        "name": "Invigorating Pulse",
+        "spell_id": 450379,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 450379,
+            "description": "Invigorating Pulse Talent Requires Hunter Survival Kill Command grants an additional and its damage is increased by 20%. Maximum Focus increased by 25. Marksmanship Steady Shot grants an additional and its damage is increased by 20%. Maximum Focus increased by 25.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94981
+        ],
+        "unlocks": [
+          94980
+        ],
+        "row": 4,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110028,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1264904,
+            "name": "Twilight Requiem",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1264904,
+                "description": "Twilight Requiem Talent Requires Hunter When your Moonlight Chakram expires, it summons an explosion of moonlight, dealing (200% of Attack Power) Arcane damage to nearby enemies. Damage reduced beyond 8 targets.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1266069,
+            "name": "Stalk and Strike",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1266069,
+                "description": "Stalk and Strike Talent Requires Hunter Marksmanship Throwing your Moonlight Chakram grants you Lock and Load. Survival Throwing your Moonlight Chakram reduces the cooldown of Wildfire Bomb by 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Wildfire Bomb",
+                    "type": "cd_reduction",
+                    "value": 10,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109807
+        ],
+        "unlocks": [
+          109805
+        ],
+        "row": 4,
+        "col": 12
+      },
+      {
+        "node_id": 102285,
+        "name": "Guerrilla Tactics",
+        "spell_id": 264332,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 264332,
+            "description": "Guerrilla Tactics Talent Requires Hunter Requires level 25 Wildfire Bomb now has 2 charges, and the initial explosion deals 15% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102264
+        ],
+        "unlocks": [
+          109324,
+          102272
+        ],
+        "row": 4,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102263,
+        "name": "Tip of the Spear",
+        "spell_id": 260285,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 260285,
+            "description": "Tip of the Spear Talent Requires Hunter Requires level 45 Kill Command increases the direct damage of your other abilities by 15%, stacking up to 3 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102262
+        ],
+        "unlocks": [
+          109324,
+          109321
+        ],
+        "row": 4,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94970,
+        "name": "Arcane Talons",
+        "spell_id": 1253846,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253846,
+            "description": "Arcane Talons Talent Requires Hunter Marksmanship Sentinel's Mark further increases the damage of Aimed Shot by 15% Survival Sentinel's Mark further increases the damage of Wildfire Bomb by 50%",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Aimed Shot",
+                "type": "damage_increase",
+                "value": 15,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Wildfire Bomb",
+                "type": "damage_increase",
+                "value": 50,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94958
+        ],
+        "unlocks": [
+          94978
+        ],
+        "row": 5,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94965,
+        "name": "Lunar Calling",
+        "spell_id": 1253852,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253852,
+            "description": "Lunar Calling Talent Requires Hunter Marksmanship Feathered Frenzy further increases your chance to summon your Sentinel Owl during Trueshot by 10%. Survival Takedown summons your Sentinel Owl and your chance to summon your Sentinel Owl is increased by an additional 10% during Takedown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94990
+        ],
+        "unlocks": [
+          94978
+        ],
+        "row": 5,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94980,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1253887,
+            "name": "Conditioning",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253887,
+                "description": "Conditioning Talent Requires Hunter Your movement speed is increased by 8%. Aspect of the Cheetah's cooldown is reduced by 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1253892,
+            "name": "Scout's Vigil",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253892,
+                "description": "Scout's Vigil Talent Requires Hunter Enemy detection radius reduced by 10 yds. While in Camouflage, your stealth detection radius is increased by 25 yds.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94971
+        ],
+        "unlocks": [
+          94978
+        ],
+        "row": 5,
+        "col": 11
+      },
+      {
+        "node_id": 109805,
+        "name": "Radiant Edge",
+        "spell_id": 1264903,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264903,
+            "description": "Radiant Edge Talent Requires Hunter Your Moonlight Chakram deals 25% increased damage each time it bounces.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110028
+        ],
+        "unlocks": [
+          94978
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102272,
+        "name": "Lunge",
+        "spell_id": 378934,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378934,
+            "description": "Lunge Talent Requires Hunter The damage of your auto-attacks is increased by 25%. The cooldown of Wildfire Bomb is reduced by 1.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102285
+        ],
+        "unlocks": [
+          109309,
+          102270
+        ],
+        "row": 5,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109324,
+        "name": "Boomstick",
+        "spell_id": 1261193,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1261193,
+            "description": "Boomstick Talent Channeled () Requires Hunter Unload a series of 4 shotgun blasts 20 yds in front of you, dealing [(607.5% of Attack Power) * 4] Physical damage over 3 sec. Deals reduced damage beyond 8 targets.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102263,
+          102285
+        ],
+        "unlocks": [
+          110162,
+          102279,
+          102270
+        ],
+        "row": 5,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109321,
+        "name": "Strike as One",
+        "spell_id": 1251717,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1251717,
+            "description": "Strike as One Talent Requires Hunter Consuming Tip of the Spear provokes your pet to attack your target, dealing (180% of Attack Power) Physical damage. All damage dealt by your pet is increased by 30%. (700ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102263
+        ],
+        "unlocks": [
+          110163,
+          102279
+        ],
+        "row": 5,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94978,
+        "name": "Lunar Storm",
+        "spell_id": 1253732,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253732,
+            "description": "Lunar Storm Talent Requires Hunter When Sentinel's Mark is consumed, it summons a barrage of 4 lunar missiles, each dealing (200% of Attack Power) Arcane damage to enemies within 10 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94980,
+          94965,
+          94970,
+          109805
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109309,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1253172,
+            "name": "Shrapnel Bomb",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253172,
+                "description": "Shrapnel Bomb Talent Requires Hunter Wildfire Bomb's periodic effect is now a Bleed.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1253176,
+            "name": "Flamebreak",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253176,
+                "description": "Flamebreak Talent Requires Hunter All Fire damage dealt is increased by 8%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          102272
+        ],
+        "unlocks": [
+          109310
+        ],
+        "row": 6,
+        "col": 15
+      },
+      {
+        "node_id": 102270,
+        "name": "Bloodseeker",
+        "spell_id": 260248,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 260248,
+            "description": "Bloodseeker Talent Unlimited range Requires Hunter Requires level 35 You and your pet gain 10% attack speed for every bleeding enemy within 12 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109324,
+          102272
+        ],
+        "unlocks": [
+          109310
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110162,
+        "name": "Quick Reload",
+        "spell_id": 1272136,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272136,
+            "description": "Quick Reload Talent Requires Hunter Boomstick's cooldown is reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109324
+        ],
+        "unlocks": [
+          109319,
+          109316
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102279,
+        "name": "Flanker's Advantage",
+        "spell_id": 459964,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459964,
+            "description": "Flanker's Advantage Talent Requires Hunter Kill Command grants an additional and its critical strike chance is increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109324,
+          109321
+        ],
+        "unlocks": [
+          109305
+        ],
+        "row": 6,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110163,
+        "name": "Two Against Many",
+        "spell_id": 1251718,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1251718,
+            "description": "Two Against Many Talent Requires Hunter Strike as One damages 2 additional enemies and its damage is increased by 10% for each enemy it strikes beyond the first.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109321
+        ],
+        "unlocks": [
+          109305
+        ],
+        "row": 6,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94991,
+        "name": "Howl of the Pack Leader",
+        "spell_id": 471876,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 471876,
+            "description": "Howl of the Pack Leader Talent Requires Hunter Beast Mastery, Survival While in combat, every 30 sec your next Kill Command summons the aid of a Beast. Wyvern A Wyvern descends from the skies, letting out a battle cry that increases the damage of you and your pets by 10% for 12 sec. Boar A Boar charges through your target 1 time, dealing (1200% of Attack Power) physical damage to the primary target and (1440% of Attack Power) damage to up to 5 nearby enemies. Bear A Bear leaps into the fray, rending the flesh of your enemies, dealing (400% of Attack Power) damage over 10 sec to up to 8 nearby enemies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "you and your pets",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94985,
+          94992,
+          94962,
+          94979
+        ],
+        "row": 7,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109310,
+        "name": "Mongoose Fury",
+        "spell_id": 1252708,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1252708,
+            "description": "Mongoose Fury Talent Requires Hunter Raptor Strike increases the damage of Raptor Strike by 10% for 8 sec. Multiple applications may overlap.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Raptor Strike",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          102270,
+          109309
+        ],
+        "unlocks": [
+          109307,
+          102289,
+          109311
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109316,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1253945,
+            "name": "Mongoose Rounds",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1253945,
+                "description": "Mongoose Rounds Talent Requires Hunter Damaging one or more enemies with your Boomstick grants you 1 stack of Mongoose Fury. Mongoose Fury Raptor Strike damage increased by 10%. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1261229,
+            "name": "Wildfire Shells",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1261229,
+                "description": "Wildfire Shells Talent Requires Hunter Damaging one or more enemies with your Boomstick reduces the cooldown of Wildfire Bomb by 2.0 sec. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Wildfire Bomb",
+                    "type": "cd_reduction",
+                    "value": 2,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          110162
+        ],
+        "unlocks": [
+          109311,
+          109313
+        ],
+        "row": 7,
+        "col": 17
+      },
+      {
+        "node_id": 109319,
+        "name": "Shellshock",
+        "spell_id": 1252931,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1252931,
+            "description": "Shellshock Talent Requires Hunter Your Boomstick's damage is increased by 40% when striking a single target. Each additional target reduces this bonus by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110162
+        ],
+        "unlocks": [
+          109313,
+          102282
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109305,
+        "name": "Sic 'Em",
+        "spell_id": 1253137,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253137,
+            "description": "Sic 'Em Talent Requires Hunter When Kill Command critically strikes, it bleeds its target for an additional (40% of Attack Power) damage over 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110163,
+          102279
+        ],
+        "unlocks": [
+          109304,
+          102282,
+          109306
+        ],
+        "row": 7,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94985,
+        "name": "Pack Mentality",
+        "spell_id": 472358,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 472358,
+            "description": "Pack Mentality Talent Requires Hunter Beast Mastery Howl of the Pack Leader increases the damage of your Kill Command by 25%. Summoning a Beast reduces the cooldown of Barbed Shot by 4.0 sec. Survival Howl of the Pack Leader increases the damage of your Kill Command by 50%. Summoning a Beast reduces the cooldown of Wildfire Bomb by 6.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Barbed Shot",
+                "type": "cd_reduction",
+                "value": 4,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Wildfire Bomb",
+                "type": "cd_reduction",
+                "value": 6,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Barbed Shot by 4.0 sec. Survival Howl of the Pack Leader increases the damage of your Kill Command",
+                "type": "cd_reduction",
+                "value": 50,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Kill Command",
+                "type": "damage_increase",
+                "value": 25,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Kill Command",
+                "type": "damage_increase",
+                "value": 50,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94991
+        ],
+        "unlocks": [
+          94972
+        ],
+        "row": 8,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94992,
+        "name": "Dire Summons",
+        "spell_id": 472352,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 472352,
+            "description": "Dire Summons Talent Requires Hunter Beast Mastery Kill Command reduces the cooldown of Howl of the Pack Leader by 1.0 sec. Cobra Shot reduces the cooldown of Howl of the Pack Leader by 1.0 sec. Survival Kill Command reduces the cooldown of Howl of the Pack Leader by 1.5 sec. Raptor Strike reduces the cooldown of Howl of the Pack Leader by 1.0 sec. (700ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Howl of the Pack Leader",
+                "type": "cd_reduction",
+                "value": 1,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Howl of the Pack Leader",
+                "type": "cd_reduction",
+                "value": 1,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Howl of the Pack Leader",
+                "type": "cd_reduction",
+                "value": 1.5,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Howl of the Pack Leader",
+                "type": "cd_reduction",
+                "value": 1,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94991
+        ],
+        "unlocks": [
+          94984
+        ],
+        "row": 8,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94962,
+        "name": "Better Together",
+        "spell_id": 472357,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 472357,
+            "description": "Better Together Talent Requires Hunter Survival Damage dealt by your pet is increased by 5%. Raptor Strike damage increased by 5%. Beast Mastery Damage dealt by your pets is increased by 2%. Barbed Shot damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94991
+        ],
+        "unlocks": [
+          94988
+        ],
+        "row": 8,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94979,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 472719,
+            "name": "Slicked Shoes",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 472719,
+                "description": "Slicked Shoes Talent Requires Hunter When Disengage removes a movement impairing effect, its cooldown is reduced by 4 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1268705,
+            "name": "Masterful Call",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1268705,
+                "description": "Masterful Call Talent Requires Hunter The duration of Master's Call is increased by 2 sec and it increases the movement speed of its target by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94991
+        ],
+        "unlocks": [
+          109803
+        ],
+        "row": 8,
+        "col": 12
+      },
+      {
+        "node_id": 109307,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 385737,
+            "name": "Bloody Claws",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 385737,
+                "description": "Bloody Claws Talent Requires Hunter Each stack of Mongoose Fury also increases the damage of Strike as One by 10%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Strike as One",
+                    "type": "damage_increase",
+                    "value": 10,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1252738,
+            "name": "Wallop",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1252738,
+                "description": "Wallop Talent Requires Hunter Gaining a stack of Mongoose Fury has a 20% chance to increase the damage of your next Raptor Strike by 50%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "your next Raptor Strike",
+                    "type": "damage_increase",
+                    "value": 50,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109310
+        ],
+        "unlocks": [
+          102281
+        ],
+        "row": 8,
+        "col": 15
+      },
+      {
+        "node_id": 102289,
+        "name": "Improved Wildfire Bomb",
+        "spell_id": 321290,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 321290,
+            "description": "Improved Wildfire Bomb Talent Requires Hunter Wildfire Bomb deals 6% additional damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 321290,
+            "description": "Improved Wildfire Bomb Talent Requires Hunter Wildfire Bomb deals 6% additional damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109310
+        ],
+        "unlocks": [
+          102281
+        ],
+        "row": 8,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109311,
+        "name": "Bonding",
+        "spell_id": 1262442,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1262442,
+            "description": "Bonding Talent Requires Hunter Mastery increased by 3%. You gain 5% increased Mastery from all Mastery sources.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109310,
+          109316
+        ],
+        "unlocks": [
+          102281,
+          109323
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109313,
+        "name": "Sweeping Spear",
+        "spell_id": 378950,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378950,
+            "description": "Sweeping Spear Talent Requires Hunter Raptor Strike damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 378950,
+            "description": "Sweeping Spear Talent Requires Hunter Raptor Strike damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109316,
+          109319
+        ],
+        "unlocks": [
+          109323
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102282,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1257011,
+            "name": "Vulnerability",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1257011,
+                "description": "Vulnerability Talent Requires Hunter Raptor Strike and Boomstick deal 20% increased critical strike damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 462036,
+            "name": "Blackrock Munitions",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462036,
+                "description": "Blackrock Munitions Talent Requires Hunter Wildfire Bomb and Flamefang Pitch deal 20% increased critical strike damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109305,
+          109319
+        ],
+        "unlocks": [
+          109312,
+          109323
+        ],
+        "row": 8,
+        "col": 19
+      },
+      {
+        "node_id": 109304,
+        "name": "Shower of Blood",
+        "spell_id": 1253053,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253053,
+            "description": "Shower of Blood Talent Requires Hunter Your Bleed effects deal 8% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1253053,
+            "description": "Shower of Blood Talent Requires Hunter Your Bleed effects deal 8% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109305
+        ],
+        "unlocks": [
+          109312
+        ],
+        "row": 8,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109306,
+        "name": "Outland Venom",
+        "spell_id": 459939,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459939,
+            "description": "Outland Venom Talent Requires Hunter Each damage over time effect on a target increases the critical strike damage they receive from you by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109305
+        ],
+        "unlocks": [
+          109312
+        ],
+        "row": 8,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94972,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 472476,
+            "name": "Ursine Fury",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 472476,
+                "description": "Ursine Fury Talent Requires Hunter When your Bear is summoned, it is joined by 2 Dire Beasts.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 472524,
+            "name": "Sharpened Claws",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 472524,
+                "description": "Sharpened Claws Talent Requires Hunter The damage of your Bear's Rend Flesh is increased by 15%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94985
+        ],
+        "unlocks": [
+          94969
+        ],
+        "row": 9,
+        "col": 9
+      },
+      {
+        "node_id": 94984,
+        "name": "Fury of the Wyvern",
+        "spell_id": 472550,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 472550,
+            "description": "Fury of the Wyvern Talent Requires Hunter Beast Mastery Your pet's attacks increase your Wyvern's damage bonus by 1%, up to 10%. Casting Kill Command extends the duration of your Wyvern by 0.5 sec, up to 5 additional sec. Survival Your pet's attacks increase your Wyvern's damage bonus by 1%, up to 10%. Casting Wildfire Bomb extends the duration of your Wyvern by 5.0 sec, up to 10 additional sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94992
+        ],
+        "unlocks": [
+          94967
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94988,
+        "name": "Hogstrider",
+        "spell_id": 472639,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 472639,
+            "description": "Hogstrider Talent Requires Hunter Beast Mastery When your Boar deals damage, the damage of your next Cobra Shot is increased by 200%. Each target damaged by your Boar causes Cobra Shot to strike 1 additional target, up to 4. Survival When your Boar deals damage, the damage of your next Hatchet Toss is increased by 200%. Each target damaged by your Boar causes Hatchet Toss to strike 1 additional target, up to 4.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94962
+        ],
+        "unlocks": [
+          109804
+        ],
+        "row": 9,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109803,
+        "name": "Lethal Barbs",
+        "spell_id": 1264781,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264781,
+            "description": "Lethal Barbs Talent Requires Hunter Survival Your auto attacks grant to you and your pet. Auto attack damage increased by 15%. Beast Mastery Your auto shot grants to you and your pet. Auto shot damage increased by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94979
+        ],
+        "unlocks": [
+          109802
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102281,
+        "name": "Explosives Expert",
+        "spell_id": 378937,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378937,
+            "description": "Explosives Expert Talent Requires Hunter Wildfire Bomb, Boomstick, and Flamefang Pitch damage increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 378937,
+            "description": "Explosives Expert Talent Requires Hunter Wildfire Bomb, Boomstick, and Flamefang Pitch damage increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102289,
+          109311,
+          109307
+        ],
+        "unlocks": [
+          102252
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109323,
+        "name": "Takedown",
+        "spell_id": 1250646,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250646,
+            "description": "Takedown Talent Requires Hunter You and your pet leap to your target and strike as one, dealing [(600% of Attack Power) + (1200% of Attack Power)] Physical damage . For the next 8 sec , the damage dealt by you and your pet is increased by 20% . Generates .",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109311,
+          109313,
+          102282
+        ],
+        "unlocks": [
+          109320,
+          109470
+        ],
+        "row": 9,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109312,
+        "name": "Killer Companion",
+        "spell_id": 378955,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378955,
+            "description": "Killer Companion Talent Requires Hunter All damage dealt by your pet is increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 378955,
+            "description": "Killer Companion Talent Requires Hunter All damage dealt by your pet is increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109304,
+          109306,
+          102282
+        ],
+        "unlocks": [
+          102268
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94969,
+        "name": "No Mercy",
+        "spell_id": 472660,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 472660,
+            "description": "No Mercy Talent Requires Hunter Beast Mastery Your Bleed effects deal 10% increased damage. Survival Your Bleed effects deal 35% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94972
+        ],
+        "unlocks": [
+          94966
+        ],
+        "row": 10,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94967,
+        "name": "Shell Cover",
+        "spell_id": 472707,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 472707,
+            "description": "Shell Cover Talent Requires Hunter Survival of the Fittest now summons a Turtle to aid you, further increasing its damage reduction effect by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94984
+        ],
+        "unlocks": [
+          94966
+        ],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109804,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1264797,
+            "name": "Hoof and Blade",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1264797,
+                "description": "Hoof and Blade Talent Requires Hunter Beast Mastery Hogstrider further increases the damage of Cobra Shot by 50% and it now strikes up to 3 additional targets. Survival Hogstrider further increases the damage of Hatchet Toss by 50% and it now strikes up to 3 additional targets.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Cobra Shot",
+                    "type": "damage_increase",
+                    "value": 50,
+                    "unit": "percent"
+                  },
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Hatchet Toss",
+                    "type": "damage_increase",
+                    "value": 50,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1264792,
+            "name": "Wyvern's Gaze",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1264792,
+                "description": "Wyvern's Gaze Talent Requires Hunter The damage bonus from your Wyvern now lasts an additional 2.0 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94988
+        ],
+        "unlocks": [
+          94966
+        ],
+        "row": 10,
+        "col": 11
+      },
+      {
+        "node_id": 109802,
+        "name": "Sharpened Fangs",
+        "spell_id": 1264775,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264775,
+            "description": "Sharpened Fangs Talent Requires Hunter Your mastery is increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109803
+        ],
+        "unlocks": [
+          94966
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102252,
+        "name": "Flamefang Pitch",
+        "spell_id": 1251592,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1251592,
+            "description": "Flamefang Pitch Talent Requires Hunter Toss a fiery concoction that explodes violently upon reaching its destination, dealing (600% of Attack Power) Fire damage to enemies in its area. Damage reduced beyond 8 targets. After landing, your Flamefang Pitch ignites nearby terrain, dealing [(50% of Attack Power) * 8] Fire damage to enemies in its area over 8 sec.",
+            "cooldown": 60.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102281
+        ],
+        "unlocks": [
+          110160,
+          109317
+        ],
+        "row": 10,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109470,
+        "name": "Twin Fangs",
+        "spell_id": 1272139,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272139,
+            "description": "Twin Fangs Talent Requires Hunter Takedown grants 3 stacks of Tip of the Spear.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109323
+        ],
+        "unlocks": [
+          110161
+        ],
+        "row": 10,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109320,
+        "name": "Savagery",
+        "spell_id": 1251790,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1251790,
+            "description": "Savagery Talent Requires Hunter Takedown cooldown reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1251790,
+            "description": "Savagery Talent Requires Hunter Takedown cooldown reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109323
+        ],
+        "unlocks": [
+          110161
+        ],
+        "row": 10,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102268,
+        "name": "Wildfire Infusion",
+        "spell_id": 460198,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 460198,
+            "description": "Wildfire Infusion Talent Requires Hunter Kill Command damage increased by 15%. Kill Command reduces the cooldown of Wildfire Bomb by 1.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Wildfire Bomb",
+                "type": "cd_reduction",
+                "value": 1,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          109312
+        ],
+        "unlocks": [
+          110159,
+          102257
+        ],
+        "row": 10,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94966,
+        "name": "Stampede!",
+        "spell_id": 472741,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 472741,
+            "description": "Stampede! Talent Requires Hunter Beast Mastery Casting Bestial Wrath grants Howl of the Pack Leader and causes your next Kill Command to rouse the nearby wildlife into a Stampede, charging your target and dealing [(150% of Attack Power) * 9] Physical damage over 7 sec. Survival Casting Takedown grants Howl of the Pack Leader and causes your next Kill Command to rouse the nearby wildlife into a Stampede, charging your target and dealing [(150% of Attack Power) * 9] Physical damage over 7 sec. (5s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94967,
+          94969,
+          109804,
+          109802
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109317,
+        "name": "Grenade Juggler",
+        "spell_id": 459843,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 459843,
+            "description": "Grenade Juggler Talent Requires Hunter Flamefang Pitch gains 1 additional charge. Throwing your Flamefang Pitch grants 1 charge of Wildfire Bomb.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Grenade Juggler Talent Requires Hunter Flamefang Pitch",
+                "type": "charge_increase",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          102252
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110160,
+        "name": "Wildfire Imbuement",
+        "spell_id": 1252943,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1252943,
+            "description": "Wildfire Imbuement Talent Requires Hunter Throwing your Flamefang Pitch imbues your weapon with flame, causing you and your pet's auto-attacks to deal an additional (40% of Attack Power) Fire damage for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102252
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110161,
+        "name": "Flanked",
+        "spell_id": 1256938,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1256938,
+            "description": "Flanked Talent Requires Hunter Takedown damage increased by 50% and it now strikes 4 additional nearby targets. During Takedown, your attack speed is increased by 100%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109320,
+          109470
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102257,
+        "name": "Lethal Calibration",
+        "spell_id": 1262409,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1262409,
+            "description": "Lethal Calibration Talent Requires Hunter Wildfire Bomb reduces the cooldown of Boomstick by 2.0 sec for each enemy hit, up to 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Boomstick",
+                "type": "cd_reduction",
+                "value": 2,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          102268
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110159,
+        "name": "Primal Surge",
+        "spell_id": 1272154,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272154,
+            "description": "Primal Surge Talent Requires Hunter Kill Command grants 1 additional stack of Tip of the Spear. Tip of the Spear's damage bonus is increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102268
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110429,
+        "name": "Raptor Swipe",
+        "spell_id": 1259003,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1259003,
+            "description": "Raptor Swipe Talent Requires Hunter Raptor Strike has a 25% chance to upgrade itself to a Raptor Swipe, dealing (280% of Attack Power) Physical damage to all enemies within 15 yds in front of you. Damage reduced beyond 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Sentinel",
+      "nodes": [
+        {
+          "node_id": 94958,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1253751,
+              "name": "Stargazer",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1253751,
+                  "description": "Stargazer Talent Requires Hunter Marksmanship Consuming Precise Shots grants 2% increased critical strike damage for 10 sec. Multiple applications may overlap. Survival Consuming Tip of the Spear grants 2% increased critical strike damage for 10 sec. Multiple applications may overlap.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1253807,
+              "name": "Open Fire",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1253807,
+                  "description": "Open Fire Talent Requires Hunter Survival Flamefang Pitch damage increased by 15%. Marksmanship Volley damage increased by 25%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94989
+          ],
+          "unlocks": [
+            94970
+          ],
+          "row": 4,
+          "col": 9
+        },
+        {
+          "node_id": 94965,
+          "name": "Lunar Calling",
+          "spell_id": 1253852,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253852,
+              "description": "Lunar Calling Talent Requires Hunter Marksmanship Feathered Frenzy further increases your chance to summon your Sentinel Owl during Trueshot by 10%. Survival Takedown summons your Sentinel Owl and your chance to summon your Sentinel Owl is increased by an additional 10% during Takedown.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94990
+          ],
+          "unlocks": [
+            94978
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94970,
+          "name": "Arcane Talons",
+          "spell_id": 1253846,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253846,
+              "description": "Arcane Talons Talent Requires Hunter Marksmanship Sentinel's Mark further increases the damage of Aimed Shot by 15% Survival Sentinel's Mark further increases the damage of Wildfire Bomb by 50%",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Aimed Shot",
+                  "type": "damage_increase",
+                  "value": 15,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Wildfire Bomb",
+                  "type": "damage_increase",
+                  "value": 50,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94958
+          ],
+          "unlocks": [
+            94978
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94971,
+          "name": "Invigorating Pulse",
+          "spell_id": 450379,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450379,
+              "description": "Invigorating Pulse Talent Requires Hunter Survival Kill Command grants an additional and its damage is increased by 20%. Maximum Focus increased by 25. Marksmanship Steady Shot grants an additional and its damage is increased by 20%. Maximum Focus increased by 25.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94981
+          ],
+          "unlocks": [
+            94980
+          ],
+          "row": 4,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94973,
+          "name": "Moon's Blessing",
+          "spell_id": 1253825,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253825,
+              "description": "Moon's Blessing Talent Requires Hunter Marksmanship Consuming Precise Shots has a 10% increased chance to summon your Sentinel Owl. When your Sentinel Owl applies Sentinel's Mark, reduce the cooldown of Aimed Shot by 2.0 sec. Survival Consuming Tip of the Spear has a 10% increased chance to summon your Sentinel Owl. When your Sentinel Owl applies Sentinel's Mark, reduce the cooldown of Wildfire Bomb by 4.0 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Aimed Shot",
+                  "type": "cd_reduction",
+                  "value": 2,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Wildfire Bomb",
+                  "type": "cd_reduction",
+                  "value": 4,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94976
+          ],
+          "unlocks": [
+            94990
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94976,
+          "name": "Sentinel",
+          "spell_id": 1253599,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253599,
+              "description": "Sentinel Talent Requires Hunter Survival Consuming Tip of the Spear has a 10% chance to summon the aid of a Sentinel Owl that descends from the skies and applies Sentinel's Mark to your target. Sentinel's Mark Your next Wildfire Bomb deals 40% increased direct damage to the marked target. Marksmanship Your Eagle is replaced with a Sentinel Owl that applies an enhanced Sentinel's Mark. Sentinel's Mark Your next Aimed Shot deals 20% increased direct damage to the marked target.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94989,
+            94973,
+            94981,
+            109807
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94978,
+          "name": "Lunar Storm",
+          "spell_id": 1253732,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253732,
+              "description": "Lunar Storm Talent Requires Hunter When Sentinel's Mark is consumed, it summons a barrage of 4 lunar missiles, each dealing (200% of Attack Power) Arcane damage to enemies within 10 yds.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94980,
+            94965,
+            94970,
+            109805
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94980,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1253887,
+              "name": "Conditioning",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1253887,
+                  "description": "Conditioning Talent Requires Hunter Your movement speed is increased by 8%. Aspect of the Cheetah's cooldown is reduced by 30 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1253892,
+              "name": "Scout's Vigil",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1253892,
+                  "description": "Scout's Vigil Talent Requires Hunter Enemy detection radius reduced by 10 yds. While in Camouflage, your stealth detection radius is increased by 25 yds.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94971
+          ],
+          "unlocks": [
+            94978
+          ],
+          "row": 5,
+          "col": 11
+        },
+        {
+          "node_id": 94981,
+          "name": "Sanctified Armaments",
+          "spell_id": 1253831,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253831,
+              "description": "Sanctified Armaments Talent Requires Hunter Survival An additional 15% of Raptor Strike's damage is dealt as Arcane damage over 6 sec. Marksmanship An additional 25% of Rapid Fire's damage is dealt as Arcane damage over 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94976
+          ],
+          "unlocks": [
+            94971
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94989,
+          "name": "Don't Look Back",
+          "spell_id": 450373,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 450373,
+              "description": "Don't Look Back Talent Requires Hunter Consuming Sentinel's Mark grants you an absorb shield equal to 10.0% of your maximum health.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94976
+          ],
+          "unlocks": [
+            94958
+          ],
+          "row": 3,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94990,
+          "name": "Can't Miss, Won't Miss",
+          "spell_id": 1253830,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1253830,
+              "description": "Can't Miss, Won't Miss Talent Requires Hunter Marksmanship Precise Shots damage bonus increased by 40%. Trueshot duration increased by 2 &nbsp;sec. Survival Tip of the Spear damage bonus increased by 4%. Takedown duration increased by 2 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94973
+          ],
+          "unlocks": [
+            94965
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109805,
+          "name": "Radiant Edge",
+          "spell_id": 1264903,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264903,
+              "description": "Radiant Edge Talent Requires Hunter Your Moonlight Chakram deals 25% increased damage each time it bounces.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110028
+          ],
+          "unlocks": [
+            94978
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109807,
+          "name": "Moonlight Chakram",
+          "spell_id": 1264902,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264902,
+              "description": "Moonlight Chakram Talent Requires Hunter Survival For 15 sec after casting Takedown, Takedown is replaced with Moonlight Chakram. Moonlight Chakram Throw a chakram blessed with moonlight at your current target that will rapidly deal (284.4% of Attack Power) Physical damage 7 times, bouncing to other targets if they are nearby. Marksmanship For 15 sec after casting Trueshot, Trueshot is replaced with Moonlight Chakram. Moonlight Chakram Throw a chakram blessed with moonlight at your current target that will rapidly deal (284.4% of Attack Power) Physical damage 7 times, bouncing to other targets if they are nearby. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94976
+          ],
+          "unlocks": [
+            110028
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110028,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1264904,
+              "name": "Twilight Requiem",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1264904,
+                  "description": "Twilight Requiem Talent Requires Hunter When your Moonlight Chakram expires, it summons an explosion of moonlight, dealing (200% of Attack Power) Arcane damage to nearby enemies. Damage reduced beyond 8 targets.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1266069,
+              "name": "Stalk and Strike",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1266069,
+                  "description": "Stalk and Strike Talent Requires Hunter Marksmanship Throwing your Moonlight Chakram grants you Lock and Load. Survival Throwing your Moonlight Chakram reduces the cooldown of Wildfire Bomb by 10 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Wildfire Bomb",
+                      "type": "cd_reduction",
+                      "value": 10,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            109807
+          ],
+          "unlocks": [
+            109805
+          ],
+          "row": 4,
+          "col": 12
+        }
+      ]
+    },
+    {
+      "name": "Pack Leader",
+      "nodes": [
+        {
+          "node_id": 94962,
+          "name": "Better Together",
+          "spell_id": 472357,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 472357,
+              "description": "Better Together Talent Requires Hunter Survival Damage dealt by your pet is increased by 5%. Raptor Strike damage increased by 5%. Beast Mastery Damage dealt by your pets is increased by 2%. Barbed Shot damage increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94991
+          ],
+          "unlocks": [
+            94988
+          ],
+          "row": 8,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94966,
+          "name": "Stampede!",
+          "spell_id": 472741,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 472741,
+              "description": "Stampede! Talent Requires Hunter Beast Mastery Casting Bestial Wrath grants Howl of the Pack Leader and causes your next Kill Command to rouse the nearby wildlife into a Stampede, charging your target and dealing [(150% of Attack Power) * 9] Physical damage over 7 sec. Survival Casting Takedown grants Howl of the Pack Leader and causes your next Kill Command to rouse the nearby wildlife into a Stampede, charging your target and dealing [(150% of Attack Power) * 9] Physical damage over 7 sec. (5s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94967,
+            94969,
+            109804,
+            109802
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94967,
+          "name": "Shell Cover",
+          "spell_id": 472707,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 472707,
+              "description": "Shell Cover Talent Requires Hunter Survival of the Fittest now summons a Turtle to aid you, further increasing its damage reduction effect by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94984
+          ],
+          "unlocks": [
+            94966
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94969,
+          "name": "No Mercy",
+          "spell_id": 472660,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 472660,
+              "description": "No Mercy Talent Requires Hunter Beast Mastery Your Bleed effects deal 10% increased damage. Survival Your Bleed effects deal 35% increased damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94972
+          ],
+          "unlocks": [
+            94966
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94972,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 472476,
+              "name": "Ursine Fury",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 472476,
+                  "description": "Ursine Fury Talent Requires Hunter When your Bear is summoned, it is joined by 2 Dire Beasts.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 472524,
+              "name": "Sharpened Claws",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 472524,
+                  "description": "Sharpened Claws Talent Requires Hunter The damage of your Bear's Rend Flesh is increased by 15%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94985
+          ],
+          "unlocks": [
+            94969
+          ],
+          "row": 9,
+          "col": 9
+        },
+        {
+          "node_id": 94979,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 472719,
+              "name": "Slicked Shoes",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 472719,
+                  "description": "Slicked Shoes Talent Requires Hunter When Disengage removes a movement impairing effect, its cooldown is reduced by 4 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1268705,
+              "name": "Masterful Call",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1268705,
+                  "description": "Masterful Call Talent Requires Hunter The duration of Master's Call is increased by 2 sec and it increases the movement speed of its target by 20%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94991
+          ],
+          "unlocks": [
+            109803
+          ],
+          "row": 8,
+          "col": 12
+        },
+        {
+          "node_id": 94984,
+          "name": "Fury of the Wyvern",
+          "spell_id": 472550,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 472550,
+              "description": "Fury of the Wyvern Talent Requires Hunter Beast Mastery Your pet's attacks increase your Wyvern's damage bonus by 1%, up to 10%. Casting Kill Command extends the duration of your Wyvern by 0.5 sec, up to 5 additional sec. Survival Your pet's attacks increase your Wyvern's damage bonus by 1%, up to 10%. Casting Wildfire Bomb extends the duration of your Wyvern by 5.0 sec, up to 10 additional sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94992
+          ],
+          "unlocks": [
+            94967
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94985,
+          "name": "Pack Mentality",
+          "spell_id": 472358,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 472358,
+              "description": "Pack Mentality Talent Requires Hunter Beast Mastery Howl of the Pack Leader increases the damage of your Kill Command by 25%. Summoning a Beast reduces the cooldown of Barbed Shot by 4.0 sec. Survival Howl of the Pack Leader increases the damage of your Kill Command by 50%. Summoning a Beast reduces the cooldown of Wildfire Bomb by 6.0 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Barbed Shot",
+                  "type": "cd_reduction",
+                  "value": 4,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Wildfire Bomb",
+                  "type": "cd_reduction",
+                  "value": 6,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Barbed Shot by 4.0 sec. Survival Howl of the Pack Leader increases the damage of your Kill Command",
+                  "type": "cd_reduction",
+                  "value": 50,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Kill Command",
+                  "type": "damage_increase",
+                  "value": 25,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Kill Command",
+                  "type": "damage_increase",
+                  "value": 50,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94991
+          ],
+          "unlocks": [
+            94972
+          ],
+          "row": 8,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94988,
+          "name": "Hogstrider",
+          "spell_id": 472639,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 472639,
+              "description": "Hogstrider Talent Requires Hunter Beast Mastery When your Boar deals damage, the damage of your next Cobra Shot is increased by 200%. Each target damaged by your Boar causes Cobra Shot to strike 1 additional target, up to 4. Survival When your Boar deals damage, the damage of your next Hatchet Toss is increased by 200%. Each target damaged by your Boar causes Hatchet Toss to strike 1 additional target, up to 4.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94962
+          ],
+          "unlocks": [
+            109804
+          ],
+          "row": 9,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94991,
+          "name": "Howl of the Pack Leader",
+          "spell_id": 471876,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 471876,
+              "description": "Howl of the Pack Leader Talent Requires Hunter Beast Mastery, Survival While in combat, every 30 sec your next Kill Command summons the aid of a Beast. Wyvern A Wyvern descends from the skies, letting out a battle cry that increases the damage of you and your pets by 10% for 12 sec. Boar A Boar charges through your target 1 time, dealing (1200% of Attack Power) physical damage to the primary target and (1440% of Attack Power) damage to up to 5 nearby enemies. Bear A Bear leaps into the fray, rending the flesh of your enemies, dealing (400% of Attack Power) damage over 10 sec to up to 8 nearby enemies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "you and your pets",
+                  "type": "damage_increase",
+                  "value": 10,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94985,
+            94992,
+            94962,
+            94979
+          ],
+          "row": 7,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94992,
+          "name": "Dire Summons",
+          "spell_id": 472352,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 472352,
+              "description": "Dire Summons Talent Requires Hunter Beast Mastery Kill Command reduces the cooldown of Howl of the Pack Leader by 1.0 sec. Cobra Shot reduces the cooldown of Howl of the Pack Leader by 1.0 sec. Survival Kill Command reduces the cooldown of Howl of the Pack Leader by 1.5 sec. Raptor Strike reduces the cooldown of Howl of the Pack Leader by 1.0 sec. (700ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Howl of the Pack Leader",
+                  "type": "cd_reduction",
+                  "value": 1,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Howl of the Pack Leader",
+                  "type": "cd_reduction",
+                  "value": 1,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Howl of the Pack Leader",
+                  "type": "cd_reduction",
+                  "value": 1.5,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Howl of the Pack Leader",
+                  "type": "cd_reduction",
+                  "value": 1,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94991
+          ],
+          "unlocks": [
+            94984
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109802,
+          "name": "Sharpened Fangs",
+          "spell_id": 1264775,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264775,
+              "description": "Sharpened Fangs Talent Requires Hunter Your mastery is increased by 3%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109803
+          ],
+          "unlocks": [
+            94966
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109803,
+          "name": "Lethal Barbs",
+          "spell_id": 1264781,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264781,
+              "description": "Lethal Barbs Talent Requires Hunter Survival Your auto attacks grant to you and your pet. Auto attack damage increased by 15%. Beast Mastery Your auto shot grants to you and your pet. Auto shot damage increased by 25%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94979
+          ],
+          "unlocks": [
+            109802
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109804,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1264797,
+              "name": "Hoof and Blade",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1264797,
+                  "description": "Hoof and Blade Talent Requires Hunter Beast Mastery Hogstrider further increases the damage of Cobra Shot by 50% and it now strikes up to 3 additional targets. Survival Hogstrider further increases the damage of Hatchet Toss by 50% and it now strikes up to 3 additional targets.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Cobra Shot",
+                      "type": "damage_increase",
+                      "value": 50,
+                      "unit": "percent"
+                    },
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Hatchet Toss",
+                      "type": "damage_increase",
+                      "value": 50,
+                      "unit": "percent"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1264792,
+              "name": "Wyvern's Gaze",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1264792,
+                  "description": "Wyvern's Gaze Talent Requires Hunter The damage bonus from your Wyvern now lasts an additional 2.0 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94988
+          ],
+          "unlocks": [
+            94966
+          ],
+          "row": 10,
+          "col": 11
+        }
+      ]
+    },
+    {
+      "name": "Dark Ranger",
+      "nodes": [
+        {
+          "node_id": 94957,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 467902,
+              "name": "Banshee's Mark",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 467902,
+                  "description": "Banshee's Mark Talent Requires Hunter Black Arrow and Bleak Powder critical strike damage increased by 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 467644,
+              "name": "The Bell Tolls",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 467644,
+                  "description": "The Bell Tolls Talent Requires Hunter Beast Mastery All pet damage increased by 6%. Dire Beast damage increased by 10%. Marksmanship Critical strike chance increased by 3%. Dark Minion damage increased by 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94959
+          ],
+          "unlocks": [
+            94993
+          ],
+          "row": 5,
+          "col": 10
+        },
+        {
+          "node_id": 94959,
+          "name": "Smoke Screen",
+          "spell_id": 430709,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 430709,
+              "description": "Smoke Screen Talent Requires Hunter Exhilaration grants you 3 sec of Survival of the Fittest. Survival of the Fittest activates Exhilaration at 50% effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94968
+          ],
+          "unlocks": [
+            94957
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94960,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 430712,
+              "name": "Dark Chains",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 430712,
+                  "description": "Dark Chains Talent Requires Hunter While in combat, Disengage will chain the closest target to the ground, causing them to move 40% slower until they move 8 yards away.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 467741,
+              "name": "Shadow Dagger",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 467741,
+                  "description": "Shadow Dagger Talent Requires Hunter While in combat, Disengage releases a fan of shadow daggers, dealing (0.5% of Attack Power) Shadow damage per second and reducing affected target's movement speed by 30% for 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94974
+          ],
+          "unlocks": [
+            94982
+          ],
+          "row": 4,
+          "col": 11
+        },
+        {
+          "node_id": 94961,
+          "name": "Bleak Arrows",
+          "spell_id": 467749,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 467749,
+              "description": "Bleak Arrows Talent Requires Hunter Your auto shot now deals Shadow damage, allowing it to bypass armor. Auto shot damage increased by 100%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94987,
+            109961
+          ],
+          "unlocks": [
+            94986
+          ],
+          "row": 3,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94968,
+          "name": "Soul Drinker",
+          "spell_id": 469638,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 469638,
+              "description": "Soul Drinker Talent Requires Hunter Marksmanship Aimed Shot's chance to grant Deathblow is increased by 10%. Rapid Fire has a 100% chance to grant Deathblow. Deathblow The cooldown of is reset. Your next can be used on any target, regardless of their current health. Beast Mastery Kill Command has a 20% chance and Barbed Shot has a 50% chance to grant Deathblow. Deathblow The cooldown of Black Arrow is reset. Your next Black Arrow can be used on any target, regardless of their current health. (600ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94987,
+            109961
+          ],
+          "unlocks": [
+            94959
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94974,
+          "name": "Bleak Powder",
+          "spell_id": 467911,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 467911,
+              "description": "Bleak Powder Talent Requires Hunter Beast Mastery, Marksmanship Black Arrow now explodes in a cloud of shadow and sulfur on impact, dealing (250% of Attack Power) Shadow damage to all enemies within an 8 yd cone behind the target. Damage reduced beyond 8 targets. (700ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94987,
+            109961
+          ],
+          "unlocks": [
+            94960
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94982,
+          "name": "Umbral Reach",
+          "spell_id": 1235397,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1235397,
+              "description": "Umbral Reach Talent Requires Hunter Beast Mastery Bleak Powder now applies Black Arrow's periodic effect to all enemies it damages. If Bleak Powder damages 2 or more enemies, gain Beast Cleave if talented. Marksmanship Bleak Powder now applies Black Arrow's periodic effect to all enemies it damages. If Bleak Powder damages 2 or more enemies, gain Trick Shots if talented.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94960
+          ],
+          "unlocks": [
+            94993
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94983,
+          "name": "Blighted Quiver",
+          "spell_id": 1264291,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264291,
+              "description": "Blighted Quiver Talent Requires Hunter Beast Mastery You fire 2 additional Black Arrows during Withering Fire's barrage. Beast Cleave and Kill Cleave damage increased by 5%. Marksmanship You fire 2 additional Black Arrows during Withering Fire's barrage. Trick Shots damage bonus increased by 10%. Aspect of the Hydra's damage bonus increased by 12%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94986
+          ],
+          "unlocks": [
+            94993
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94986,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 467897,
+              "name": "Ebon Bowstring",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 467897,
+                  "description": "Ebon Bowstring Talent Requires Hunter Marksmanship Casting Black Arrow has a 15% chance to grant Deathblow. Deathblow The cooldown of is reset. Your next can be used on any target, regardless of their current health. Beast Mastery Casting Black Arrow has a 15% chance to grant Deathblow. Deathblow The cooldown of Black Arrow is reset. Your next Black Arrow can be used on any target, regardless of their current health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1277565,
+              "name": "Through the Eyes",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1277565,
+                  "description": "Through the Eyes Talent Requires Hunter Beast Mastery Black Arrow deals 20% increased damage to enemies affected by Black Arrow's periodic damage. Marksmanship Headshot can now stack 5 additional times. Headshot Damage from Kill Shot increases the damage your target receives from Kill Shot by 3%, stacking up to 10 times.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94961
+          ],
+          "unlocks": [
+            94983
+          ],
+          "row": 4,
+          "col": 9
+        },
+        {
+          "node_id": 94987,
+          "name": "Black Arrow",
+          "spell_id": 466932,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 466932,
+              "description": "Black Arrow Talent Requires Hunter Your Kill Shot is replaced with Black Arrow. Black Arrow You attempt to finish off a wounded target, dealing (348.4% of Attack Power) Shadow damage and (400% of Attack Power) Shadow damage over 8 sec. Only usable on enemies above 80% health or below 20% health.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94974,
+            94968,
+            94961,
+            109801
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94993,
+          "name": "Withering Fire",
+          "spell_id": 466990,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 466990,
+              "description": "Withering Fire Talent Requires Hunter Beast Mastery Bestial Wrath causes you to surrender to darkness, granting you Withering Fire for 10 sec and Deathblow. Withering Fire Casting Black Arrow fires a barrage of 2 additional Black Arrows at nearby targets at 50% effectiveness, prioritizing enemies that aren't affected by Black Arrow's damage over time effect. Marksmanship Trueshot causes you to surrender to darkness, granting you Withering Fire for the duration of Trueshot and Deathblow. Withering Fire Casting Black Arrow fires a barrage of 2 additional Black Arrows at nearby targets at 50% effectiveness, prioritizing enemies that aren't affected by Black Arrow's damage over time effect.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94982,
+            94957,
+            94983,
+            109799
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109799,
+          "name": "Pact of the Hollow",
+          "spell_id": 1264690,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264690,
+              "description": "Pact of the Hollow Talent Requires Hunter Marksmanship Aimed Shot causes your Dark Minion to fire a Blighted Arrow, dealing (500% of Attack Power) Shadow damage to up to 8 nearby enemies. Beast Mastery Kill Command causes your Dark Hound to Shadow Thrash, dealing (210% of Attack Power) Shadow damage to up to 8 nearby enemies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109800
+          ],
+          "unlocks": [
+            94993
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109800,
+          "name": "Wailing Dead",
+          "spell_id": 1264290,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264290,
+              "description": "Wailing Dead Talent Requires Hunter Beast Mastery Bestial Wrath summons a Dark Hound. For 15 sec after casting Bestial Wrath, Bestial Wrath is replaced with Wailing Arrow. Wailing Arrow Fire an enchanted arrow, dealing (1400% of Attack Power) Shadow damage to your target and an additional (700% of Attack Power) Shadow damage to all enemies within 8 yds of your target. Non-Player targets struck by a Wailing Arrow have their spellcasting interrupted and are silenced for 1 sec. Grants Deathblow. Marksmanship Trueshot summons a Dark Minion. For 15 sec after casting Trueshot, Trueshot is replaced with Wailing Arrow. Wailing Arrow Fire an enchanted arrow, dealing (1400% of Attack Power) Shadow damage to your target and an additional (700% of Attack Power) Shadow damage to all enemies within 8 yds of your target. Non-Player targets struck by a Wailing Arrow have their spellcasting interrupted and are silenced for 1 sec. Grants Deathblow. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109801
+          ],
+          "unlocks": [
+            109799
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109801,
+          "name": "Corpsecaller",
+          "spell_id": 1264289,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264289,
+              "description": "Corpsecaller Talent Requires Hunter Approximately 0.5 procs per minute Marksmanship Black Arrow's periodic damage has a small chance to rouse the dead, summoning a Dark Minion to fight alongside you for 20 sec. Beast Mastery When summoning a Dire Beast, you have a 10% chance to instead summon a Dark Hound that deals significantly increased damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109961,
+            94987
+          ],
+          "unlocks": [
+            109800
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109961,
+          "name": "Black Arrow",
+          "spell_id": 466930,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 466930,
+              "description": "Black Arrow Talent Requires Hunter Requires Ranged Weapon You attempt to finish off a wounded target, dealing (348.4% of Attack Power) Shadow damage and (400% of Attack Power) Shadow damage over 8 sec. Only usable on enemies above 80% health or below 20% health.",
+              "cooldown": 10.0,
+              "charges": 1,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            109801,
+            94974,
+            94968,
+            94961
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

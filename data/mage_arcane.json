@@ -1,0 +1,4892 @@
+{
+  "class": "Mage",
+  "spec": "Arcane",
+  "scraped_at": "2026-03-25T18:35:27.286724+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 62121,
+        "name": "Prismatic Barrier",
+        "spell_id": 235450,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 235450,
+            "description": "Prismatic Barrier Talent 3% of base mana Requires Mage Shields you with an arcane force, absorbing [30 / 100 * Total Health * (1 + Versatility)] damage and reducing magic damage taken by 15 % for 1 min. The duration of harmful Magic effects against you is reduced by 25%.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          62122,
+          62115
+        ],
+        "row": 1,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 99830,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 9
+      },
+      {
+        "node_id": 62115,
+        "name": "Alter Time",
+        "spell_id": 342245,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 342245,
+            "description": "Alter Time Talent 1% of base mana Requires Mage Alters the fabric of time, returning you to your current location and health when cast a second time, or after 10 sec. Effect negated by long distance or death.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62121
+        ],
+        "unlocks": [
+          108654,
+          62102
+        ],
+        "row": 2,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62122,
+        "name": "Ice Block",
+        "spell_id": 45438,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 45438,
+            "description": "Ice Block Talent Requires Mage Encases you in a block of ice, protecting you from all attacks and damage for 10 sec, but during that time you cannot attack, move, or cast spells. Causes Hypothermia, preventing you from recasting Ice Block for 30 sec.",
+            "cooldown": 240.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62121
+        ],
+        "unlocks": [
+          62107,
+          62123
+        ],
+        "row": 2,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108654,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1244087,
+            "name": "Time Walk",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1244087,
+                "description": "Time Walk Talent Requires Mage Alter Time resets the cooldown of Blink and Shimmer when you return to your original location.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1244090,
+            "name": "Temporal Realignment",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1244090,
+                "description": "Temporal Realignment Talent Requires Mage Upon dropping below 25% health, your past self corrects your timeline, casting Alter Time and instantly returning 50% of your maximum health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          62115
+        ],
+        "unlocks": [
+          62114
+        ],
+        "row": 3,
+        "col": 2
+      },
+      {
+        "node_id": 62102,
+        "name": "Master of Time",
+        "spell_id": 342249,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 342249,
+            "description": "Master of Time Talent Requires Mage Requires level 25 Reduces the cooldown of Alter Time by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Alter Time",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "spell_id": 342249,
+            "description": "Master of Time Talent Requires Mage Requires level 25 Reduces the cooldown of Alter Time by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Alter Time",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          62115
+        ],
+        "unlocks": [
+          108660,
+          62114
+        ],
+        "row": 3,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62123,
+        "name": "Winter's Protection",
+        "spell_id": 382424,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382424,
+            "description": "Winter's Protection Talent Requires Mage The cooldown of Ice Block is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 382424,
+            "description": "Winter's Protection Talent Requires Mage The cooldown of Ice Block is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62122
+        ],
+        "unlocks": [
+          108660,
+          62124
+        ],
+        "row": 3,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62107,
+        "name": "Frost Conditioning",
+        "spell_id": 1250315,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250315,
+            "description": "Frost Conditioning Talent Requires Mage Hypothermia's duration is reduced by 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62122
+        ],
+        "unlocks": [
+          62124
+        ],
+        "row": 3,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62114,
+        "name": "Arcane Warding",
+        "spell_id": 383092,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383092,
+            "description": "Arcane Warding Talent Requires Mage Reduces magic damage taken by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 383092,
+            "description": "Arcane Warding Talent Requires Mage Reduces magic damage taken by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62102,
+          108654
+        ],
+        "unlocks": [
+          62104,
+          62084
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108660,
+        "name": "Inspired Intellect",
+        "spell_id": 458437,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 458437,
+            "description": "Inspired Intellect Talent Requires Mage Arcane Intellect grants you an additional 2% Intellect.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62123,
+          62102
+        ],
+        "unlocks": [
+          62116,
+          62104,
+          101883
+        ],
+        "row": 4,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62124,
+        "name": "Mirror Image",
+        "spell_id": 55342,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 55342,
+            "description": "Mirror Image Talent 2% of base mana Requires Mage Creates 3 copies of you nearby for 15 sec, which cast spells and attack your enemies. While active, you generate significantly reduced threat. Taking direct damage will cause one of your images to dissipate (2s cooldown)",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62107,
+          62123
+        ],
+        "unlocks": [
+          108662,
+          62116
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62084,
+        "name": "Spellsteal",
+        "spell_id": 30449,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 30449,
+            "description": "Spellsteal Talent 21% of base mana Requires Mage Steals [ Kleptomania : all beneficial magic effects from the target. These effects lasts a maximum of 2 min / a beneficial magic effect from the target. This effect lasts a maximum of 2 min].",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62114
+        ],
+        "unlocks": [
+          110082,
+          62105
+        ],
+        "row": 5,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62104,
+        "name": "Quick Witted",
+        "spell_id": 382297,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382297,
+            "description": "Quick Witted Talent Requires Mage Counterspell's cooldown is reduced by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108660,
+          62114
+        ],
+        "unlocks": [
+          108661,
+          62105,
+          110079
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101883,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 31661,
+            "name": "Dragon's Breath",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 31661,
+                "description": "Dragon's Breath Talent 4% of base mana Requires Mage Enemies in a 12 yd cone in front of you take (66.99% of Spell Power) Fire damage and are disoriented for 4 sec. Damage will cancel the effect. Fire Always deals a critical strike and contributes to Hot Streak.",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 157980,
+            "name": "Supernova",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 157980,
+                "description": "Supernova Talent Requires Mage Requires level 45 Pulses arcane energy around the target enemy or ally, dealing (34.5% of Spell Power) Arcane damage to all enemies within 8 yds, and knocking them upward. A primary enemy target will take 100% increased damage.",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          108660
+        ],
+        "unlocks": [
+          108661
+        ],
+        "row": 5,
+        "col": 4
+      },
+      {
+        "node_id": 62116,
+        "name": "Remove Curse",
+        "spell_id": 475,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 475,
+            "description": "Remove Curse Talent 1.3% of base mana Requires Mage Removes all Curses from a friendly target.",
+            "cooldown": 8.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108660,
+          62124
+        ],
+        "unlocks": [
+          108661,
+          110078,
+          93524
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108662,
+        "name": "Improved Conjuration",
+        "spell_id": 1244025,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244025,
+            "description": "Improved Conjuration Talent Requires Mage Mirror Image's cooldown is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1244025,
+            "description": "Improved Conjuration Talent Requires Mage Mirror Image's cooldown is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62124
+        ],
+        "unlocks": [
+          93524
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110082,
+        "name": "Improved Spellsteal",
+        "spell_id": 1270827,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270827,
+            "description": "Improved Spellsteal Talent Requires Mage Spellsteal repeats its effect after 4 sec, but it now has a cooldown of 4.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62084
+        ],
+        "unlocks": [
+          62110
+        ],
+        "row": 6,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62105,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 212653,
+            "name": "Shimmer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 212653,
+                "description": "Shimmer Talent Replaces Blink 2% of base mana Requires Mage Requires level 25 Teleports you 20 yds forward, unless something is in the way. Unaffected by the global cooldown and castable while casting.",
+                "cooldown": 30.0,
+                "charges": 1,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Blink 2% of base mana Requires Mage Requires level 25 Teleports you 20 yds forward, unless something is in the way",
+                    "type": "replaces"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": {
+              "spell_id": null,
+              "name": "Blink 2% of base mana Requires Mage Requires level 25 Teleports you 20 yds forward, unless something is in the way"
+            }
+          },
+          {
+            "spell_id": 1244340,
+            "name": "Improved Blink",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1244340,
+                "description": "Improved Blink Talent Requires Mage [ Shimmer / Blink]'s cooldown is reduced by 2 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          62104,
+          62084
+        ],
+        "unlocks": [
+          62110,
+          62127,
+          62125
+        ],
+        "row": 6,
+        "col": 2
+      },
+      {
+        "node_id": 110079,
+        "name": "Improved Counterspell",
+        "spell_id": 1270865,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270865,
+            "description": "Improved Counterspell Talent Requires Mage Counterspell prevents casting for an additional 1.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62104
+        ],
+        "unlocks": [
+          62127
+        ],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108661,
+        "name": "Overflowing Energy",
+        "spell_id": 390218,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 390218,
+            "description": "Overflowing Energy Talent Requires Mage Arcane Each time your Arcane Barrage fails to critically strike, it gains 10% increased critical strike chance. Critical strike bonus is removed when the affected spell critically strikes. Fire Each time your Fireball fails to critically strike, it gains 20% increased critical strike chance. Critical strike bonus is removed when the affected spell critically strikes. Frost Each time your Frostbolt fails to critically strike, it gains 10% increased critical strike chance. Critical strike bonus is removed when the affected spell critically strikes.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62116,
+          62104,
+          101883
+        ],
+        "unlocks": [
+          62098,
+          62127
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110078,
+        "name": "Improved Remove Curse",
+        "spell_id": 1270847,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270847,
+            "description": "Improved Remove Curse Talent Requires Mage Casting Remove Curse on a friendly target also casts it on yourself, but its cooldown is increased by 20 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62116
+        ],
+        "unlocks": [
+          62098
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93524,
+        "name": "Greater Invisibility",
+        "spell_id": 110959,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 110959,
+            "description": "Greater Invisibility Talent Requires Mage Makes you invisible and untargetable for 20 sec, removing all threat. Any action taken cancels this effect.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62116,
+          108662
+        ],
+        "unlocks": [
+          62098,
+          62112,
+          108659
+        ],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62110,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 343183,
+            "name": "Improved Frost Nova",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 343183,
+                "description": "Improved Frost Nova Talent Requires Mage Frost Nova duration is increased by 2 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 205036,
+            "name": "Ice Ward",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 205036,
+                "description": "Ice Ward Talent Requires Mage Requires level 40 Frost Nova now has 2 charges.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          62105,
+          110082
+        ],
+        "unlocks": [
+          108658
+        ],
+        "row": 7,
+        "col": 1
+      },
+      {
+        "node_id": 62125,
+        "name": "Captured Thoughts",
+        "spell_id": 1270872,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270872,
+            "description": "Captured Thoughts Talent Requires Mage Frost The duration of Brain Freeze is increased by 15 sec. Arcane The duration of Clearcasting is increased by 10 sec. Fire The duration of Hot Streak is increased by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62105
+        ],
+        "unlocks": [
+          108658
+        ],
+        "row": 7,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62127,
+        "name": "Tome of Rhonin",
+        "spell_id": 382493,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382493,
+            "description": "Tome of Rhonin Talent Requires Mage Increases Critical Strike chance by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62105,
+          108661,
+          110079
+        ],
+        "unlocks": [
+          108658,
+          62096,
+          110081
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62098,
+        "name": "Tome of Antonidas",
+        "spell_id": 382490,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382490,
+            "description": "Tome of Antonidas Talent Requires Mage Increases Haste by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108661,
+          93524,
+          110078
+        ],
+        "unlocks": [
+          108657,
+          62096,
+          110080
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62112,
+        "name": "Incantation of Swiftness",
+        "spell_id": 382293,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382293,
+            "description": "Incantation of Swiftness Talent Requires Mage [ Greater Invisibility : Greater ]Invisibility increases your movement speed by 20% for 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 382293,
+            "description": "Incantation of Swiftness Talent Requires Mage [ Greater Invisibility : Greater ]Invisibility increases your movement speed by 20% for 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93524
+        ],
+        "unlocks": [
+          108657
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108659,
+        "name": "Master of Escape",
+        "spell_id": 210476,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 210476,
+            "description": "Master of Escape Talent Requires Mage Reduces the cooldown of Invisibility by 60 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Invisibility",
+                "type": "cd_reduction",
+                "value": 60,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          93524
+        ],
+        "unlocks": [
+          108657
+        ],
+        "row": 7,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108658,
+        "name": "Charm of Aegwynn",
+        "spell_id": 1244105,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244105,
+            "description": "Charm of Aegwynn Talent Requires Mage The critical strike damage of your spells is &nbsp;increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62110,
+          62127,
+          62125
+        ],
+        "unlocks": [
+          62129,
+          62087,
+          62086
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110081,
+        "name": "Brainstorm",
+        "spell_id": 461261,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 461261,
+            "description": "Brainstorm Talent Requires Mage Frost Gaining Brain Freeze increases your Intellect by 1% for 8 sec. Multiple instances may overlap. Arcane Gaining Clearcasting increases your Intellect by 1% for 8 sec. Multiple instances may overlap. Fire Gaining Hot Streak increases your Intellect by 1% for 8 sec. Multiple instances may overlap.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62127
+        ],
+        "unlocks": [
+          62129
+        ],
+        "row": 8,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62096,
+        "name": "Flow of Time",
+        "spell_id": 382268,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382268,
+            "description": "Flow of Time Talent Requires Mage The cooldowns of Blink and Shimmer are reduced by 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62098,
+          62127
+        ],
+        "unlocks": [
+          62129,
+          62088,
+          62100
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110080,
+        "name": "Mana Confluence",
+        "spell_id": 1270845,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270845,
+            "description": "Mana Confluence Talent Requires Mage Your mana costs are reduced by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62098
+        ],
+        "unlocks": [
+          62100
+        ],
+        "row": 8,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108657,
+        "name": "Charm of Medivh",
+        "spell_id": 1244107,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244107,
+            "description": "Charm of Medivh Talent Requires Mage Your Mastery is increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62112,
+          108659,
+          62098
+        ],
+        "unlocks": [
+          62091,
+          62092,
+          62100
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62086,
+        "name": "Permafrost Bauble",
+        "spell_id": 1265517,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265517,
+            "description": "Permafrost Bauble Talent Requires Mage The cooldown of Ice Block and Ice Cold are reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108658
+        ],
+        "unlocks": [
+          62085
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62087,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 386763,
+            "name": "Freezing Cold",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 386763,
+                "description": "Freezing Cold Talent Requires Mage Enemies hit by Cone of Cold are frozen in place for 5 sec instead of snared. When your roots expire or are dispelled, your target is snared by 80%, decaying over 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 157997,
+            "name": "Ice Nova",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 157997,
+                "description": "Ice Nova Talent Requires Mage Requires level 15 Causes a whirl of icy wind around the enemy, dealing (138% of Spell Power) Frost damage to the target and all other enemies within 8 yds, freezing them in place for 2 sec. Damage reduced beyond 8 targets.",
+                "cooldown": 25.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          108658
+        ],
+        "unlocks": [
+          62085
+        ],
+        "row": 9,
+        "col": 2
+      },
+      {
+        "node_id": 62129,
+        "name": "Time Manipulation",
+        "spell_id": 387807,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387807,
+            "description": "Time Manipulation Talent Requires Mage The cooldown of your loss of control spells are reduced by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62096,
+          108658,
+          110081
+        ],
+        "unlocks": [
+          62094,
+          62085
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62088,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 113724,
+            "name": "Ring of Frost",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 113724,
+                "description": "Ring of Frost Talent 8% of base mana Requires Mage Requires level 40 Summons a Ring of Frost for 10 sec at the target location. Enemies entering the ring are incapacitated for 10 sec. Limit 10 targets. When the incapacitate expires, enemies are slowed by 65% for 4 sec.",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 383121,
+            "name": "Mass Polymorph",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 383121,
+                "description": "Mass Polymorph Talent 4% of base mana Requires Mage Transforms all enemies within 10 yards into sheep, wandering around incapacitated for 15 sec. While affected, the victims cannot take actions but will regenerate health very quickly. Damage will cancel the effect. Only works on Beasts, Humanoids and Critters.",
+                "cooldown": 60.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          62096
+        ],
+        "unlocks": [
+          62094
+        ],
+        "row": 9,
+        "col": 4
+      },
+      {
+        "node_id": 62100,
+        "name": "Energized Barriers",
+        "spell_id": 386828,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386828,
+            "description": "Energized Barriers Talent Requires Mage Casting your barrier removes all snare effects.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108657,
+          62096,
+          110080
+        ],
+        "unlocks": [
+          62094,
+          108664
+        ],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62092,
+        "name": "Mass Invisibility",
+        "spell_id": 414664,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 414664,
+            "description": "Mass Invisibility Talent 6% of base mana Requires Mage You and your allies within 40 yards instantly become invisible for 12 sec. Taking any action will cancel the effect. Does not affect allies in combat.",
+            "cooldown": 300.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108657
+        ],
+        "unlocks": [
+          108664
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62091,
+        "name": "Barrier Diffusion",
+        "spell_id": 455428,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 455428,
+            "description": "Barrier Diffusion Talent Requires Mage When your Barrier is removed, reduce its cooldown by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108657
+        ],
+        "unlocks": [
+          108664
+        ],
+        "row": 9,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62085,
+        "name": "Ice Cold",
+        "spell_id": 414659,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 414659,
+            "description": "Ice Cold Talent Requires Mage Ice Block now reduces all damage taken by 70% for 6 sec but no longer grants Immunity, prevents movement, attacks, or casting spells. Does not incur the Global Cooldown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62087,
+          62086,
+          62129
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 62094,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1244031,
+            "name": "Spatial Manipulation",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1244031,
+                "description": "Spatial Manipulation Talent Requires Mage [ Shimmer / Blink] gains an additional charge.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1270829,
+            "name": "Reflection",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1270829,
+                "description": "Reflection Talent Requires Mage After casting [ Shimmer / Blink], it is replaced with Reflection for 8 sec. Reflection Teleports you back to where you last [ Shimmer : Shimmered / Blinked]. Castable while casting and unaffected by the global cooldown.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          62088,
+          62129,
+          62100
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 4
+      },
+      {
+        "node_id": 108664,
+        "name": "Improved Prismatic Barrier",
+        "spell_id": 321745,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 321745,
+            "description": "Improved Prismatic Barrier Talent Requires Mage Prismatic Barrier further reduces magical damage taken by an additional 10% and duration of harmful Magic effects by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          62091,
+          62092,
+          62100
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 102467,
+        "name": "Arcane Missiles",
+        "spell_id": 5143,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 5143,
+            "description": "Arcane Missiles Talent 15% of base mana Channeled () Requires Mage Requires Clearcasting Launches 5 waves of Arcane Missiles at the enemy over 2.5 sec, causing a total of [(4) * (97.992% of Spell Power)] Arcane damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          108538,
+          108539
+        ],
+        "row": 1,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94664,
+        "name": "Splintering Sorcery",
+        "spell_id": 443739,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443739,
+            "description": "Splintering Sorcery Talent Requires Mage Arcane Casting Arcane Blast or Arcane Pulse conjures an Arcane Splinter. Arcane Splinter : Conjure raw Arcane magic into a sharp projectile that deals (43.65% of Spell Power) Arcane damage. Frost Casting Frostbolt or Flurry conjures a Frost Splinter. Frost Splinter : Conjure raw Frost magic into a sharp projectile that deals (45.3% of Spell Power) Frost damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94663,
+          94661,
+          94662,
+          109669
+        ],
+        "row": 2,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108538,
+        "name": "Concentrated Power",
+        "spell_id": 414379,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 414379,
+            "description": "Concentrated Power Talent Requires Mage Arcane Missiles channels 20% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102467
+        ],
+        "unlocks": [
+          102473,
+          102445
+        ],
+        "row": 2,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108539,
+        "name": "Arcane Salvo",
+        "spell_id": 384452,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384452,
+            "description": "Arcane Salvo Talent Requires Mage Each wave of Arcane Missiles increases the damage of Arcane Barrage by 3%, up to 60%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Arcane Barrage",
+                "type": "damage_increase",
+                "value": 3,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          102467
+        ],
+        "unlocks": [
+          102471,
+          102445
+        ],
+        "row": 2,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94662,
+        "name": "Augury Abounds",
+        "spell_id": 1280165,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1280165,
+            "description": "Augury Abounds Talent Requires Mage Arcane Conjuring one or more Arcane Splinters has a 10% chance to conjure a burst of 8 Arcane Splinters. Frost Conjuring one or more Frost Splinters has a 10% chance to conjure a burst of 8 Frost Splinters. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94664
+        ],
+        "unlocks": [
+          94659
+        ],
+        "row": 3,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94663,
+        "name": "Force of Will",
+        "spell_id": 444719,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444719,
+            "description": "Force of Will Talent Requires Mage Arcane Casting Arcane Barrage conjures an Arcane Splinter for every 5 Arcane Salvo stacks consumed. Frost Ice Lance conjures a Frost Splinter for every 2 Freezing stacks Shattered from its primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94664
+        ],
+        "unlocks": [
+          94656
+        ],
+        "row": 3,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94661,
+        "name": "Splintering Orbs",
+        "spell_id": 444256,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444256,
+            "description": "Splintering Orbs Talent Requires Mage Arcane Enemies damaged by your Arcane Orb conjure 2 Arcane Splinters, up to 4. Arcane Orb damage is increased by 10%. Frost Enemies damaged by your Frozen Orb conjure 1 Frost Splinter, up to 4. Frozen Orb damage is increased by 40%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94664
+        ],
+        "unlocks": [
+          94660
+        ],
+        "row": 3,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109669,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1261106,
+            "name": "Attuned Familiar",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1261106,
+                "description": "Attuned Familiar Talent Requires Mage Arcane Your Arcane Familiar has a 50% chance to conjure a Splinter alongside its Arcane Assault. Frost Your Water Elemental has a 50% chance to conjure a Splinter alongside its Waterbolt.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444675,
+            "name": "Shifting Shards",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444675,
+                "description": "Shifting Shards Talent Requires Mage Frost Gaining Brain Freeze conjures 2 Frost Splinters. Arcane Gaining Clearcasting conjures 2 Arcane Splinters.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94664
+        ],
+        "unlocks": [
+          109668
+        ],
+        "row": 3,
+        "col": 12
+      },
+      {
+        "node_id": 102473,
+        "name": "Amplification",
+        "spell_id": 236628,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 236628,
+            "description": "Amplification Talent Requires Mage Requires level 15 Arcane Missiles fires 2 additional missiles.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108538
+        ],
+        "unlocks": [
+          102439
+        ],
+        "row": 3,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102445,
+        "name": "Improved Clearcasting",
+        "spell_id": 321420,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 321420,
+            "description": "Improved Clearcasting Talent Requires Mage Clearcasting can stack up to 2 additional times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108538,
+          108539
+        ],
+        "unlocks": [
+          102449
+        ],
+        "row": 3,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102471,
+        "name": "Arcing Cleave",
+        "spell_id": 231564,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 231564,
+            "description": "Arcing Cleave Talent Requires Mage For each Arcane Charge, Arcane Barrage hits 1 additional nearby target for 40% damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108539
+        ],
+        "unlocks": [
+          104113
+        ],
+        "row": 3,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94659,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444752,
+            "name": "Slippery Slinging",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444752,
+                "description": "Slippery Slinging Talent Requires Mage You have 40% increased movement speed during Alter Time .",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444756,
+            "name": "Look Again",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444756,
+                "description": "Look Again Talent Requires Mage While in combat, Blink summons a Mirror Image at your previous location.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94662
+        ],
+        "unlocks": [
+          94658
+        ],
+        "row": 4,
+        "col": 9
+      },
+      {
+        "node_id": 94656,
+        "name": "Controlled Instincts",
+        "spell_id": 444483,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444483,
+            "description": "Controlled Instincts Talent Requires Mage Arcane 40% of the direct damage dealt by an Arcane Splinter is also dealt to nearby enemies. Damage reduced beyond 5 targets. Frost 60% of the direct damage dealt by a Frost Splinter is also dealt to nearby enemies. Damage reduced beyond 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94663
+        ],
+        "unlocks": [
+          94657
+        ],
+        "row": 4,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94660,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444827,
+            "name": "Reactive Barrier",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444827,
+                "description": "Reactive Barrier Talent Requires Mage Frost Your Ice Barrier can absorb up to 25% more damage based on your missing Health. Max effectiveness when under 25% health. Arcane Your Prismatic Barrier can absorb up to 25% more damage based on your missing Health. Max effectiveness when under 25% health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444784,
+            "name": "Phantasmal Image",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444784,
+                "description": "Phantasmal Image Talent Requires Mage Your Mirror Image summons 1 extra clone.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94661
+        ],
+        "unlocks": [
+          94655
+        ],
+        "row": 4,
+        "col": 11
+      },
+      {
+        "node_id": 109668,
+        "name": "Infused Splinters",
+        "spell_id": 1261080,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1261080,
+            "description": "Infused Splinters Talent Requires Mage Arcane Direct damage from Arcane Splinters have a 25% chance to grant 1 stack Arcane Salvo. Arcane Salvo Increases the damage of your next Arcane Barrage by 3%. Frost Direct damage from Frost Splinters have a 15% chance to apply 1 stack of Freezing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Arcane Barrage",
+                "type": "damage_increase",
+                "value": 3,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          109669
+        ],
+        "unlocks": [
+          109667
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102439,
+        "name": "Arcane Pulse",
+        "spell_id": 1241462,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1241462,
+            "description": "Arcane Pulse Talent 4% of base mana Requires Mage A pulse of Arcane magic erupts from underneath your target, dealing (91% of Spell Power) Arcane damage to all enemies within 2 yds. Damage reduced beyond 5 targets. Each Arcane Charge increases damage by 60 %, radius by 2 yds, and mana cost by 100 %. [ Arcane (Level 10) : Generates 1 Arcane Charge. ]",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102473
+        ],
+        "unlocks": [
+          102462,
+          102460
+        ],
+        "row": 4,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102449,
+        "name": "Arcane Surge",
+        "spell_id": 365350,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 365350,
+            "description": "Arcane Surge Talent 1 to Requires Mage Expend all of your current mana to annihilate your enemy target and nearby enemies for up to [(372% of Spell Power) * 2] Arcane damage based on Mana spent. Deals reduced damage beyond 8 targets. For the next 15 sec, your Mana regeneration is increased by 425 % and spell damage is increased by 35 %. Generates Clearcasting.",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102445
+        ],
+        "unlocks": [
+          102469,
+          102460,
+          102440
+        ],
+        "row": 4,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 104113,
+        "name": "Arcane Orb",
+        "spell_id": 153626,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 153626,
+            "description": "Arcane Orb Talent 1% of base mana Requires Mage Requires level 45 Launches an Arcane Orb forward from your position, traveling up to 40 yds, dealing (243.2% of Spell Power) Arcane damage to enemies it passes through. Grants 1 Arcane Charge when cast and every time it deals damage.",
+            "cooldown": 20.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102471
+        ],
+        "unlocks": [
+          102475,
+          102469
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94658,
+        "name": "Archmage's Wrath",
+        "spell_id": 444968,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444968,
+            "description": "Archmage's Wrath Talent Requires Mage Arcane Arcane Surge damage increased by 30%. Your chance to gain Clearcasting is increased by 3%. Frost Ray of Frost damage increased by 20%. Your chance to gain Brain Freeze from Frostbolt is increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94659
+        ],
+        "unlocks": [
+          94654
+        ],
+        "row": 5,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94657,
+        "name": "Signature Spell",
+        "spell_id": 470021,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 470021,
+            "description": "Signature Spell Talent Requires Mage Arcane Arcane Blast and Arcane Pulse damage increased by 15%. Casting Touch of the Magi conjures 4 Arcane Splinters. Frost Frostbolt and Blizzard damage increased by 25%. Glacial Spike conjures 2 additional Frost Splinters.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94656
+        ],
+        "unlocks": [
+          94654
+        ],
+        "row": 5,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94655,
+        "name": "Spellfrost Teachings",
+        "spell_id": 444986,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444986,
+            "description": "Spellfrost Teachings Talent Requires Mage Arcane Direct damage from Arcane Splinters reduces the cooldown of Arcane Orb by 0.25 sec. Frost Direct damage from Frost Splinters reduces the cooldown of Frozen Orb by 0.25 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Arcane Orb",
+                "type": "cd_reduction",
+                "value": 0.25,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Frozen Orb",
+                "type": "cd_reduction",
+                "value": 0.25,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94660
+        ],
+        "unlocks": [
+          94654
+        ],
+        "row": 5,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109667,
+        "name": "Polished Focus",
+        "spell_id": 1261082,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1261082,
+            "description": "Polished Focus Talent Requires Mage Arcane Casting Arcane Barrage while at 20 or more Arcane Salvo stacks refunds 5 Arcane Salvo stacks. Arcane Barrage damage increased by 15%. Frost Ice Lance Shatters 1 additional stack of Freezing. Shatter damage increased by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109668
+        ],
+        "unlocks": [
+          94654
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102462,
+        "name": "Reverberate",
+        "spell_id": 281482,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 281482,
+            "description": "Reverberate Talent Requires Mage Requires level 45 Arcane Pulse has a 50% chance to repeat its explosion at 30% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102439
+        ],
+        "unlocks": [
+          102446
+        ],
+        "row": 5,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102460,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 205025,
+            "name": "Presence of Mind",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 205025,
+                "description": "Presence of Mind Talent Requires Mage Causes your next 2 Arcane Blasts to be instant cast .",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 236457,
+            "name": "Slipstream",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 236457,
+                "description": "Slipstream Talent Requires Mage Requires level 25 Arcane Missiles and Evocation can now be channeled while moving.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          102449,
+          102439
+        ],
+        "unlocks": [
+          102446,
+          102468
+        ],
+        "row": 5,
+        "col": 17
+      },
+      {
+        "node_id": 102440,
+        "name": "Mana Bomb",
+        "spell_id": 457521,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 457521,
+            "description": "Mana Bomb Talent Requires Mage Arcane Surge's damage is increased by an additional 50% based on your mana spent.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102449
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102469,
+        "name": "Arcane Familiar",
+        "spell_id": 205022,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 205022,
+            "description": "Arcane Familiar Talent Requires Mage Requires level 15 Casting Arcane Intellect summons a Familiar that attacks your enemies and increases your maximum mana by 10% for 1 hour.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102449,
+          104113
+        ],
+        "unlocks": [
+          102468,
+          102441,
+          109002
+        ],
+        "row": 5,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102475,
+        "name": "Charged Orb",
+        "spell_id": 384651,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384651,
+            "description": "Charged Orb Talent Requires Mage Arcane Orb gains 1 additional charge. Arcane Orb damage increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Charged Orb Talent Requires Mage Arcane Orb",
+                "type": "charge_increase",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          104113
+        ],
+        "unlocks": [
+          109002
+        ],
+        "row": 5,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94654,
+        "name": "Splinterstorm",
+        "spell_id": 443783,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443783,
+            "description": "Splinterstorm Talent Requires Mage Arcane Casting Arcane Surge generates 8 Arcane Splinters. During Arcane Surge, your chance to conjure an additional Arcane Splinter is increased to 100%. Frost Each time Ray of Frost damages one or more enemies, it generates 1 Frost Splinter. For 10 sec after casting Ray of Frost, your chance to conjure an additional Frost Splinter is increased to 100%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94658,
+          94657,
+          94655,
+          109667
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102446,
+        "name": "Intuition",
+        "spell_id": 1223798,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1223798,
+            "description": "Intuition Talent Requires Mage Upon reaching maximum stacks of Arcane Salvo, your next Arcane Barrage deals 25% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102460,
+          102462
+        ],
+        "unlocks": [
+          108535,
+          108536,
+          110442
+        ],
+        "row": 6,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102468,
+        "name": "Touch of the Magi",
+        "spell_id": 321507,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 321507,
+            "description": "Touch of the Magi Talent 5% of base mana Requires Mage Applies Touch of the Magi to your current target, accumulating 20% of the damage you deal to the target for 12 sec, and then exploding for that amount of Arcane damage to the target and reduced damage to all nearby enemies. Generates 4 Arcane Charges.",
+            "cooldown": 45.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102469,
+          102460
+        ],
+        "unlocks": [
+          102465,
+          108541,
+          108535
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102441,
+        "name": "Energized Familiar",
+        "spell_id": 452997,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 452997,
+            "description": "Energized Familiar Talent Requires Mage During Arcane Surge, your Familiar fires 4 bolts instead of 1. Damage from your Arcane Familiar has a 6% chance to grant you up to 2% of your maximum mana.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102469
+        ],
+        "unlocks": [
+          108541
+        ],
+        "row": 6,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109002,
+        "name": "Expanded Mind",
+        "spell_id": 1243557,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1243557,
+            "description": "Expanded Mind Talent Requires Mage Casting Arcane Blast or Arcane Pulse grants 2 stacks of Arcane Salvo. Casting Arcane Orb grants 2 stacks of Arcane Salvo.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102475,
+          102469
+        ],
+        "unlocks": [
+          108541,
+          102453
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94647,
+        "name": "Spellfire Spheres",
+        "spell_id": 448601,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 448601,
+            "description": "Spellfire Spheres Talent Requires Mage Arcane Casting a damaging spell has a 12% chance to conjure a Spellfire Sphere. While you're out of combat, you will slowly conjure Spellfire Spheres over time. Spellfire Sphere Increases your spell damage by 1.0%. Stacks up to 3 times. Fire Consuming Hot Streak has a 25% chance to conjure a Spellfire Sphere. While you're out of combat, you will slowly conjure Spellfire Spheres over time. Spellfire Sphere Increases your spell damage by 1.0%. Stacks up to 3 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94652,
+          94644,
+          94653,
+          109675
+        ],
+        "row": 7,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108536,
+        "name": "Consortium's Bauble",
+        "spell_id": 461260,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 461260,
+            "description": "Consortium's Bauble Talent Requires Mage Reduces Arcane Blast's mana cost by 5% and increases its damage by 8%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102446
+        ],
+        "unlocks": [
+          102454
+        ],
+        "row": 7,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110442,
+        "name": "Arcane Tempo",
+        "spell_id": 383980,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383980,
+            "description": "Arcane Tempo Talent Requires Mage Your Haste is increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102446
+        ],
+        "unlocks": [
+          102454
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108535,
+        "name": "Aether Attunement",
+        "spell_id": 1243307,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1243307,
+            "description": "Aether Attunement Talent Requires Mage Arcane Missiles now damages 2 additional targets at 50% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1243307,
+            "description": "Aether Attunement Talent Requires Mage Arcane Missiles now damages 2 additional targets at 50% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102446,
+          102468
+        ],
+        "unlocks": [
+          102454,
+          102470
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102465,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1243507,
+            "name": "Aegwynn's Technique",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1243507,
+                "description": "Aegwynn's Technique Talent Requires Mage Casting Touch of the Magi grants Clearcasting.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 342231,
+            "name": "Arcane Echo",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 342231,
+                "description": "Arcane Echo Talent Requires Mage Requires level 35 Direct damage you deal to enemies affected by [ Nether Flux / Touch of the Magi], causes an explosion that deals [ Nether Flux : [(10% of Spell Power) * 5] / (10% of Spell Power)] Arcane damage to all nearby enemies. Deals reduced damage beyond 8 targets.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          102468
+        ],
+        "unlocks": [
+          102451,
+          102470
+        ],
+        "row": 7,
+        "col": 18
+      },
+      {
+        "node_id": 108541,
+        "name": "Resonance",
+        "spell_id": 205028,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 205028,
+            "description": "Resonance Talent Requires Mage Requires level 35 Arcane Barrage deals 8% increased damage per target it hits beyond the first.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102441,
+          102468,
+          109002
+        ],
+        "unlocks": [
+          102451,
+          108551
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102453,
+        "name": "Impetus",
+        "spell_id": 383676,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383676,
+            "description": "Impetus Talent Requires Mage Arcane Blast and Arcane Pulse generate an additional Arcane Charge. Modifies Effect #2's Value +1: Arcane Blast , Arcane Pulse",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109002
+        ],
+        "unlocks": [
+          108551
+        ],
+        "row": 7,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94653,
+        "name": "Mana Cascade",
+        "spell_id": 449293,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449293,
+            "description": "Mana Cascade Talent Requires Mage Arcane Casting Arcane Blast or Arcane Barrage grants you 0.5% Haste for 10 sec. Stacks up to 10 times. Multiple instances may overlap. Fire Consuming Hot Streak grants you 0.5% Haste for 10 sec. Stacks up to 10 times. Multiple instances may overlap.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94647
+        ],
+        "unlocks": [
+          94649
+        ],
+        "row": 8,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94652,
+        "name": "Invocation: Arcane Phoenix",
+        "spell_id": 448658,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 448658,
+            "description": "Invocation: Arcane Phoenix Talent Requires Mage Arcane When you cast Arcane Surge, summon an Arcane Phoenix to aid you in battle. &nbsp; Arcane Phoenix Your Arcane Phoenix aids you for the duration of your Arcane Surge, casting random Arcane and Fire spells. Fire When you cast Combustion, summon an Arcane Phoenix to aid you in battle. &nbsp; Arcane Phoenix Your Arcane Phoenix aids you for the duration of your Combustion, casting random Arcane and Fire spells.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94647
+        ],
+        "unlocks": [
+          94645
+        ],
+        "row": 8,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94644,
+        "name": "Burden of Power",
+        "spell_id": 451035,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 451035,
+            "description": "Burden of Power Talent Requires Mage Arcane Arcane Blast damage increased by 5%. Arcane Pulse damage increased by 5%. Fire Pyroblast damage increased by 3%. Flamestrike damage increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94647
+        ],
+        "unlocks": [
+          94651
+        ],
+        "row": 8,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109675,
+        "name": "Glorious Incandescence",
+        "spell_id": 449394,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449394,
+            "description": "Glorious Incandescence Talent Requires Mage Arcane Arcane Barrage summons 1 Meteor for every 6 Arcane Salvo stacks consumed. Meteorite Calls down a meteorite which lands at the target location after 3 sec, dealing (102% of Spell Power) Fire damage to all enemies hit, reduced beyond 8 targets. Fire Generating a Spellfire Sphere causes your next cast of Fire Blast to call down a storm of 4 Meteorites on its target. Meteorite Calls down a meteorite which lands at the target location after 3 sec, dealing (102% of Spell Power) Fire damage to all enemies hit, reduced beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94647
+        ],
+        "unlocks": [
+          109674
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102454,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 12051,
+            "name": "Evocation",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 12051,
+                "description": "Evocation Talent Channeled () Requires Mage Increases your mana regeneration by 1500% for 3 sec.",
+                "cooldown": 45.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 321526,
+            "name": "Mana Adept",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 321526,
+                "description": "Mana Adept Talent Requires Mage Arcane Barrage grants you 2.0% of your maximum mana per Arcane Charge spent.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          108535,
+          108536,
+          110442
+        ],
+        "unlocks": [
+          102480
+        ],
+        "row": 8,
+        "col": 16
+      },
+      {
+        "node_id": 102470,
+        "name": "Enlightened",
+        "spell_id": 321387,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 321387,
+            "description": "Enlightened Talent Requires Mage Requires level 50 Arcane damage dealt is increased based on your current mana, up to 6% at full mana. Mana Regen is increased based on your current mana, up to 20% when out of mana.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108535,
+          102465
+        ],
+        "unlocks": [
+          108665,
+          102480
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102451,
+        "name": "Focusing Crystal",
+        "spell_id": 461257,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 461257,
+            "description": "Focusing Crystal Talent Requires Mage Each wave of Arcane Missiles has a 50% chance to grant 1 additional stack of Arcane Salvo.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102465,
+          108541
+        ],
+        "unlocks": [
+          108665,
+          108537
+        ],
+        "row": 8,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108551,
+        "name": "Illuminated Thoughts",
+        "spell_id": 384060,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384060,
+            "description": "Illuminated Thoughts Talent Requires Mage Clearcasting has a 3% increased chance to proc.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108541,
+          102453
+        ],
+        "unlocks": [
+          108537
+        ],
+        "row": 8,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94649,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 449330,
+            "name": "Merely a Setback",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 449330,
+                "description": "Merely a Setback Talent Requires Mage Arcane The bonuses provided by your Barrier spells persist an additional 8 sec after your Barrier is removed. Fire The bonuses provided by your Barrier spells persist an additional 8 sec after your Barrier is removed. Additionally, Cauterize no longer deals damage to you.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1255166,
+            "name": "Time Twist",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1255166,
+                "description": "Time Twist Talent Requires Mage The cooldown of Alter Time is reduced by 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94653
+        ],
+        "unlocks": [
+          94650
+        ],
+        "row": 9,
+        "col": 9
+      },
+      {
+        "node_id": 94645,
+        "name": "Codex of the Sunstriders",
+        "spell_id": 449382,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449382,
+            "description": "Codex of the Sunstriders Talent Requires Mage Arcane When your Arcane Phoenix is summoned, it consumes all your Spellfire Spheres. Each Sphere consumed increases your spell damage during Arcane Surge by 1% and causes your Arcane Phoenix to cast an exceptional Arcane or Fire spell over its duration. Fire When your Arcane Phoenix is summoned, it consumes all your Spellfire Spheres. Each Sphere consumed increases your spell damage during Combustion by 2% and causes your Arcane Phoenix to cast an exceptional Arcane or Fire spell over its duration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94652
+        ],
+        "unlocks": [
+          94643
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94651,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 449627,
+            "name": "Lessons in Debilitation",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 449627,
+                "description": "Lessons in Debilitation Talent Requires Mage Your Arcane Phoenix has picked up a few tricks, and will Spellsteal when it is summoned and when it expires.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1246030,
+            "name": "Explosive Potential",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1246030,
+                "description": "Explosive Potential Talent Requires Mage Arcane After casting Arcane Surge, your next Blink will cause a Blast Wave at your previous location, dealing (54.3375% of Spell Power) Fire damage, knocking enemies back 8 yds, and slowing them by 70% for 6 sec. Fire After casting Combustion, your next Blink will cause a Blast Wave at your previous location, dealing (54.3375% of Spell Power) Fire damage, knocking enemies back 8 yds, and slowing them by 70% for 6 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94644
+        ],
+        "unlocks": [
+          94648
+        ],
+        "row": 9,
+        "col": 11
+      },
+      {
+        "node_id": 109674,
+        "name": "Pyrocosm",
+        "spell_id": 1260673,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1260673,
+            "description": "Pyrocosm Talent Requires Mage Fire Damage from Fireball has a 20% chance to summon a Meteorite. When a Meteorite lands, the cooldown of Fire Blast is reduced by 0.5 sec. Arcane Each wave of Arcane Missiles has a 10% chance to summon a Meteorite. When a Meteorite lands, you have a 5% chance to gain Clearcasting.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109675
+        ],
+        "unlocks": [
+          109673
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102480,
+        "name": "Prodigious Savant",
+        "spell_id": 384612,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384612,
+            "description": "Prodigious Savant Talent Requires Mage Arcane Charges increase the damage of Arcane Blast, Arcane Pulse, and Arcane Barrage by an additional 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 384612,
+            "description": "Prodigious Savant Talent Requires Mage Arcane Charges increase the damage of Arcane Blast, Arcane Pulse, and Arcane Barrage by an additional 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102470,
+          102454
+        ],
+        "unlocks": [
+          102472,
+          102476
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108665,
+        "name": "Eureka",
+        "spell_id": 452198,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 452198,
+            "description": "Eureka Talent Requires Mage When a spell consumes Clearcasting, its damage is increased by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102470,
+          102451
+        ],
+        "unlocks": [
+          109478
+        ],
+        "row": 9,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108537,
+        "name": "Arcane Singularity",
+        "spell_id": 1244001,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244001,
+            "description": "Arcane Singularity Talent Requires Mage Arcane Salvo damage bonus increased by 2%. Arcane Salvo : Increases the damage of your next Arcane Barrage by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Arcane Barrage",
+                "type": "damage_increase",
+                "value": 3,
+                "unit": "percent"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "spell_id": 1244001,
+            "description": "Arcane Singularity Talent Requires Mage Arcane Salvo damage bonus increased by 2%. Arcane Salvo : Increases the damage of your next Arcane Barrage by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Arcane Barrage",
+                "type": "damage_increase",
+                "value": 3,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          108551,
+          102451
+        ],
+        "unlocks": [
+          102438,
+          102474
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94650,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 449412,
+            "name": "Savor the Moment",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 449412,
+                "description": "Savor the Moment Talent Requires Mage Arcane When you cast Arcane Surge, its duration is extended by 0.4 sec for each Spellfire Sphere you have, up to 2.0 sec. Fire When you cast Combustion, its duration is extended by 0.4 sec for each Spellfire Sphere you have, up to 2.0 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 449349,
+            "name": "Sunfury Execution",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 449349,
+                "description": "Sunfury Execution Talent Requires Mage Arcane Arcane Barrage deals 5% increased damage to enemies affected by your Touch of the Magi. Fire Pyroclasm's damage bonus is increased by 20% and Meteor grants Pyroclasm if talented.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94649
+        ],
+        "unlocks": [
+          94646
+        ],
+        "row": 10,
+        "col": 9
+      },
+      {
+        "node_id": 94643,
+        "name": "Ashes of Inspiration",
+        "spell_id": 1260272,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1260272,
+            "description": "Ashes of Inspiration Talent Requires Mage When your Arcane Phoenix expires, it grants you Lesser Time Warp for 6 sec. Lesser Time Warp Warp the flow of time, increasing your haste by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94645
+        ],
+        "unlocks": [
+          94646
+        ],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94648,
+        "name": "Rondurmancy",
+        "spell_id": 449596,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449596,
+            "description": "Rondurmancy Talent Requires Mage Spellfire Spheres can now stack up to 5 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94651
+        ],
+        "unlocks": [
+          94646
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109673,
+        "name": "Spellfire Salvo",
+        "spell_id": 1260616,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1260616,
+            "description": "Spellfire Salvo Talent Requires Mage Arcane Arcane Salvo can stack 5 additional times. Meteorite damage increased by 15%. Fire Fire Blast cooldown reduced by 1.0 sec. Meteorite damage increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109674
+        ],
+        "unlocks": [
+          94646
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102472,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 461248,
+            "name": "High Voltage",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 461248,
+                "description": "High Voltage Talent Requires Mage Each wave of Arcane Missiles has a 50% chance to grant you 1 Arcane Charge. Arcane Missiles damage increased by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 461251,
+            "name": "Charged Missiles",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 461251,
+                "description": "Charged Missiles Talent Requires Mage Each wave of Arcane Missiles will consume an Arcane Charge to increase its damage by 40%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          102480
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 15
+      },
+      {
+        "node_id": 102476,
+        "name": "Overflowing Insight",
+        "spell_id": 1243542,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1243542,
+            "description": "Overflowing Insight Talent Requires Mage The damage of Arcane Blast and Arcane Pulse are increased by 15%, but their mana costs are increased by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          102480
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109478,
+        "name": "Overpowered Missiles",
+        "spell_id": 1244329,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244329,
+            "description": "Overpowered Missiles Talent Requires Mage Gaining Clearcasting has a 25% chance to cause your next Arcane Missiles to be Overpowered, causing it to deal 100% increased damage, generate maximum stacks of Arcane Salvo, and strike 3 additional targets at 50% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108665
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102438,
+        "name": "Orb Mastery",
+        "spell_id": 1243435,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1243435,
+            "description": "Orb Mastery Talent Requires Mage Casting Arcane Orb while you have Clearcasting causes you to fire 2 additional Arcane Orbs at 100% effectiveness. Casting Arcane Orb now consumes Clearcasting.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108537
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 102474,
+        "name": "Orb Barrage",
+        "spell_id": 384858,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384858,
+            "description": "Orb Barrage Talent Requires Mage Arcane Barrage has a 4% chance per stack of Arcane Salvo to launch an Arcane Orb in front of you at 100% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108537
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94646,
+        "name": "Memory of Al'ar",
+        "spell_id": 449619,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449619,
+            "description": "Memory of Al'ar Talent Requires Mage Arcane During Arcane Surge, you gain twice as many stacks of Mana Cascade. When your Arcane Phoenix expires, it empowers you, granting Arcane Soul for 4.0 sec. Arcane Soul : Arcane Barrage grants Clearcasting and generates 4 Arcane Charges. Each cast of Arcane Barrage grants 5 stacks of Arcane Salvo and casting Arcane Barrage does not consume Arcane Salvo. Fire During Combustion, you gain twice as many stacks of Mana Cascade. When your Arcane Phoenix expires, it empowers you, granting Hyperthermia for 4.0 sec. Hyperthermia : Pyroblast and Flamestrike have no cast time, are guaranteed to critically strike, and increase the damage of Pyroblast and Flamestrike by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Pyroblast and Flamestrike",
+                "type": "damage_increase",
+                "value": 15,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94643,
+          94650,
+          94648,
+          109673
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110420,
+        "name": "Touch of the Archmage",
+        "spell_id": 1257942,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1257942,
+            "description": "Touch of the Archmage Talent Requires Mage Touch of the Magi increases the damage your target receives from you by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Sunfury",
+      "nodes": [
+        {
+          "node_id": 94643,
+          "name": "Ashes of Inspiration",
+          "spell_id": 1260272,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260272,
+              "description": "Ashes of Inspiration Talent Requires Mage When your Arcane Phoenix expires, it grants you Lesser Time Warp for 6 sec. Lesser Time Warp Warp the flow of time, increasing your haste by 15%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94645
+          ],
+          "unlocks": [
+            94646
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94644,
+          "name": "Burden of Power",
+          "spell_id": 451035,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 451035,
+              "description": "Burden of Power Talent Requires Mage Arcane Arcane Blast damage increased by 5%. Arcane Pulse damage increased by 5%. Fire Pyroblast damage increased by 3%. Flamestrike damage increased by 3%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94647
+          ],
+          "unlocks": [
+            94651
+          ],
+          "row": 8,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94645,
+          "name": "Codex of the Sunstriders",
+          "spell_id": 449382,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449382,
+              "description": "Codex of the Sunstriders Talent Requires Mage Arcane When your Arcane Phoenix is summoned, it consumes all your Spellfire Spheres. Each Sphere consumed increases your spell damage during Arcane Surge by 1% and causes your Arcane Phoenix to cast an exceptional Arcane or Fire spell over its duration. Fire When your Arcane Phoenix is summoned, it consumes all your Spellfire Spheres. Each Sphere consumed increases your spell damage during Combustion by 2% and causes your Arcane Phoenix to cast an exceptional Arcane or Fire spell over its duration.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94652
+          ],
+          "unlocks": [
+            94643
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94646,
+          "name": "Memory of Al'ar",
+          "spell_id": 449619,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449619,
+              "description": "Memory of Al'ar Talent Requires Mage Arcane During Arcane Surge, you gain twice as many stacks of Mana Cascade. When your Arcane Phoenix expires, it empowers you, granting Arcane Soul for 4.0 sec. Arcane Soul : Arcane Barrage grants Clearcasting and generates 4 Arcane Charges. Each cast of Arcane Barrage grants 5 stacks of Arcane Salvo and casting Arcane Barrage does not consume Arcane Salvo. Fire During Combustion, you gain twice as many stacks of Mana Cascade. When your Arcane Phoenix expires, it empowers you, granting Hyperthermia for 4.0 sec. Hyperthermia : Pyroblast and Flamestrike have no cast time, are guaranteed to critically strike, and increase the damage of Pyroblast and Flamestrike by 15%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Pyroblast and Flamestrike",
+                  "type": "damage_increase",
+                  "value": 15,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94643,
+            94650,
+            94648,
+            109673
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94647,
+          "name": "Spellfire Spheres",
+          "spell_id": 448601,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 448601,
+              "description": "Spellfire Spheres Talent Requires Mage Arcane Casting a damaging spell has a 12% chance to conjure a Spellfire Sphere. While you're out of combat, you will slowly conjure Spellfire Spheres over time. Spellfire Sphere Increases your spell damage by 1.0%. Stacks up to 3 times. Fire Consuming Hot Streak has a 25% chance to conjure a Spellfire Sphere. While you're out of combat, you will slowly conjure Spellfire Spheres over time. Spellfire Sphere Increases your spell damage by 1.0%. Stacks up to 3 times.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94652,
+            94644,
+            94653,
+            109675
+          ],
+          "row": 7,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94648,
+          "name": "Rondurmancy",
+          "spell_id": 449596,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449596,
+              "description": "Rondurmancy Talent Requires Mage Spellfire Spheres can now stack up to 5 times.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94651
+          ],
+          "unlocks": [
+            94646
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94649,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 449330,
+              "name": "Merely a Setback",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449330,
+                  "description": "Merely a Setback Talent Requires Mage Arcane The bonuses provided by your Barrier spells persist an additional 8 sec after your Barrier is removed. Fire The bonuses provided by your Barrier spells persist an additional 8 sec after your Barrier is removed. Additionally, Cauterize no longer deals damage to you.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1255166,
+              "name": "Time Twist",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1255166,
+                  "description": "Time Twist Talent Requires Mage The cooldown of Alter Time is reduced by 10 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94653
+          ],
+          "unlocks": [
+            94650
+          ],
+          "row": 9,
+          "col": 9
+        },
+        {
+          "node_id": 94650,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 449412,
+              "name": "Savor the Moment",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449412,
+                  "description": "Savor the Moment Talent Requires Mage Arcane When you cast Arcane Surge, its duration is extended by 0.4 sec for each Spellfire Sphere you have, up to 2.0 sec. Fire When you cast Combustion, its duration is extended by 0.4 sec for each Spellfire Sphere you have, up to 2.0 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 449349,
+              "name": "Sunfury Execution",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449349,
+                  "description": "Sunfury Execution Talent Requires Mage Arcane Arcane Barrage deals 5% increased damage to enemies affected by your Touch of the Magi. Fire Pyroclasm's damage bonus is increased by 20% and Meteor grants Pyroclasm if talented.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94649
+          ],
+          "unlocks": [
+            94646
+          ],
+          "row": 10,
+          "col": 9
+        },
+        {
+          "node_id": 94651,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 449627,
+              "name": "Lessons in Debilitation",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 449627,
+                  "description": "Lessons in Debilitation Talent Requires Mage Your Arcane Phoenix has picked up a few tricks, and will Spellsteal when it is summoned and when it expires.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1246030,
+              "name": "Explosive Potential",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1246030,
+                  "description": "Explosive Potential Talent Requires Mage Arcane After casting Arcane Surge, your next Blink will cause a Blast Wave at your previous location, dealing (54.3375% of Spell Power) Fire damage, knocking enemies back 8 yds, and slowing them by 70% for 6 sec. Fire After casting Combustion, your next Blink will cause a Blast Wave at your previous location, dealing (54.3375% of Spell Power) Fire damage, knocking enemies back 8 yds, and slowing them by 70% for 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94644
+          ],
+          "unlocks": [
+            94648
+          ],
+          "row": 9,
+          "col": 11
+        },
+        {
+          "node_id": 94652,
+          "name": "Invocation: Arcane Phoenix",
+          "spell_id": 448658,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 448658,
+              "description": "Invocation: Arcane Phoenix Talent Requires Mage Arcane When you cast Arcane Surge, summon an Arcane Phoenix to aid you in battle. &nbsp; Arcane Phoenix Your Arcane Phoenix aids you for the duration of your Arcane Surge, casting random Arcane and Fire spells. Fire When you cast Combustion, summon an Arcane Phoenix to aid you in battle. &nbsp; Arcane Phoenix Your Arcane Phoenix aids you for the duration of your Combustion, casting random Arcane and Fire spells.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94647
+          ],
+          "unlocks": [
+            94645
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94653,
+          "name": "Mana Cascade",
+          "spell_id": 449293,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449293,
+              "description": "Mana Cascade Talent Requires Mage Arcane Casting Arcane Blast or Arcane Barrage grants you 0.5% Haste for 10 sec. Stacks up to 10 times. Multiple instances may overlap. Fire Consuming Hot Streak grants you 0.5% Haste for 10 sec. Stacks up to 10 times. Multiple instances may overlap.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94647
+          ],
+          "unlocks": [
+            94649
+          ],
+          "row": 8,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109673,
+          "name": "Spellfire Salvo",
+          "spell_id": 1260616,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260616,
+              "description": "Spellfire Salvo Talent Requires Mage Arcane Arcane Salvo can stack 5 additional times. Meteorite damage increased by 15%. Fire Fire Blast cooldown reduced by 1.0 sec. Meteorite damage increased by 15%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109674
+          ],
+          "unlocks": [
+            94646
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109674,
+          "name": "Pyrocosm",
+          "spell_id": 1260673,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260673,
+              "description": "Pyrocosm Talent Requires Mage Fire Damage from Fireball has a 20% chance to summon a Meteorite. When a Meteorite lands, the cooldown of Fire Blast is reduced by 0.5 sec. Arcane Each wave of Arcane Missiles has a 10% chance to summon a Meteorite. When a Meteorite lands, you have a 5% chance to gain Clearcasting.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109675
+          ],
+          "unlocks": [
+            109673
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109675,
+          "name": "Glorious Incandescence",
+          "spell_id": 449394,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 449394,
+              "description": "Glorious Incandescence Talent Requires Mage Arcane Arcane Barrage summons 1 Meteor for every 6 Arcane Salvo stacks consumed. Meteorite Calls down a meteorite which lands at the target location after 3 sec, dealing (102% of Spell Power) Fire damage to all enemies hit, reduced beyond 8 targets. Fire Generating a Spellfire Sphere causes your next cast of Fire Blast to call down a storm of 4 Meteorites on its target. Meteorite Calls down a meteorite which lands at the target location after 3 sec, dealing (102% of Spell Power) Fire damage to all enemies hit, reduced beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94647
+          ],
+          "unlocks": [
+            109674
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Spellslinger",
+      "nodes": [
+        {
+          "node_id": 94654,
+          "name": "Splinterstorm",
+          "spell_id": 443783,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443783,
+              "description": "Splinterstorm Talent Requires Mage Arcane Casting Arcane Surge generates 8 Arcane Splinters. During Arcane Surge, your chance to conjure an additional Arcane Splinter is increased to 100%. Frost Each time Ray of Frost damages one or more enemies, it generates 1 Frost Splinter. For 10 sec after casting Ray of Frost, your chance to conjure an additional Frost Splinter is increased to 100%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94658,
+            94657,
+            94655,
+            109667
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94655,
+          "name": "Spellfrost Teachings",
+          "spell_id": 444986,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444986,
+              "description": "Spellfrost Teachings Talent Requires Mage Arcane Direct damage from Arcane Splinters reduces the cooldown of Arcane Orb by 0.25 sec. Frost Direct damage from Frost Splinters reduces the cooldown of Frozen Orb by 0.25 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Arcane Orb",
+                  "type": "cd_reduction",
+                  "value": 0.25,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Frozen Orb",
+                  "type": "cd_reduction",
+                  "value": 0.25,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94660
+          ],
+          "unlocks": [
+            94654
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94656,
+          "name": "Controlled Instincts",
+          "spell_id": 444483,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444483,
+              "description": "Controlled Instincts Talent Requires Mage Arcane 40% of the direct damage dealt by an Arcane Splinter is also dealt to nearby enemies. Damage reduced beyond 5 targets. Frost 60% of the direct damage dealt by a Frost Splinter is also dealt to nearby enemies. Damage reduced beyond 5 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94663
+          ],
+          "unlocks": [
+            94657
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94657,
+          "name": "Signature Spell",
+          "spell_id": 470021,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 470021,
+              "description": "Signature Spell Talent Requires Mage Arcane Arcane Blast and Arcane Pulse damage increased by 15%. Casting Touch of the Magi conjures 4 Arcane Splinters. Frost Frostbolt and Blizzard damage increased by 25%. Glacial Spike conjures 2 additional Frost Splinters.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94656
+          ],
+          "unlocks": [
+            94654
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94658,
+          "name": "Archmage's Wrath",
+          "spell_id": 444968,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444968,
+              "description": "Archmage's Wrath Talent Requires Mage Arcane Arcane Surge damage increased by 30%. Your chance to gain Clearcasting is increased by 3%. Frost Ray of Frost damage increased by 20%. Your chance to gain Brain Freeze from Frostbolt is increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94659
+          ],
+          "unlocks": [
+            94654
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94659,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444752,
+              "name": "Slippery Slinging",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444752,
+                  "description": "Slippery Slinging Talent Requires Mage You have 40% increased movement speed during Alter Time .",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444756,
+              "name": "Look Again",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444756,
+                  "description": "Look Again Talent Requires Mage While in combat, Blink summons a Mirror Image at your previous location.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94662
+          ],
+          "unlocks": [
+            94658
+          ],
+          "row": 4,
+          "col": 9
+        },
+        {
+          "node_id": 94660,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444827,
+              "name": "Reactive Barrier",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444827,
+                  "description": "Reactive Barrier Talent Requires Mage Frost Your Ice Barrier can absorb up to 25% more damage based on your missing Health. Max effectiveness when under 25% health. Arcane Your Prismatic Barrier can absorb up to 25% more damage based on your missing Health. Max effectiveness when under 25% health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444784,
+              "name": "Phantasmal Image",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444784,
+                  "description": "Phantasmal Image Talent Requires Mage Your Mirror Image summons 1 extra clone.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94661
+          ],
+          "unlocks": [
+            94655
+          ],
+          "row": 4,
+          "col": 11
+        },
+        {
+          "node_id": 94661,
+          "name": "Splintering Orbs",
+          "spell_id": 444256,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444256,
+              "description": "Splintering Orbs Talent Requires Mage Arcane Enemies damaged by your Arcane Orb conjure 2 Arcane Splinters, up to 4. Arcane Orb damage is increased by 10%. Frost Enemies damaged by your Frozen Orb conjure 1 Frost Splinter, up to 4. Frozen Orb damage is increased by 40%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94664
+          ],
+          "unlocks": [
+            94660
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94662,
+          "name": "Augury Abounds",
+          "spell_id": 1280165,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1280165,
+              "description": "Augury Abounds Talent Requires Mage Arcane Conjuring one or more Arcane Splinters has a 10% chance to conjure a burst of 8 Arcane Splinters. Frost Conjuring one or more Frost Splinters has a 10% chance to conjure a burst of 8 Frost Splinters. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94664
+          ],
+          "unlocks": [
+            94659
+          ],
+          "row": 3,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94663,
+          "name": "Force of Will",
+          "spell_id": 444719,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444719,
+              "description": "Force of Will Talent Requires Mage Arcane Casting Arcane Barrage conjures an Arcane Splinter for every 5 Arcane Salvo stacks consumed. Frost Ice Lance conjures a Frost Splinter for every 2 Freezing stacks Shattered from its primary target.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94664
+          ],
+          "unlocks": [
+            94656
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94664,
+          "name": "Splintering Sorcery",
+          "spell_id": 443739,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443739,
+              "description": "Splintering Sorcery Talent Requires Mage Arcane Casting Arcane Blast or Arcane Pulse conjures an Arcane Splinter. Arcane Splinter : Conjure raw Arcane magic into a sharp projectile that deals (43.65% of Spell Power) Arcane damage. Frost Casting Frostbolt or Flurry conjures a Frost Splinter. Frost Splinter : Conjure raw Frost magic into a sharp projectile that deals (45.3% of Spell Power) Frost damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94663,
+            94661,
+            94662,
+            109669
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109667,
+          "name": "Polished Focus",
+          "spell_id": 1261082,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1261082,
+              "description": "Polished Focus Talent Requires Mage Arcane Casting Arcane Barrage while at 20 or more Arcane Salvo stacks refunds 5 Arcane Salvo stacks. Arcane Barrage damage increased by 15%. Frost Ice Lance Shatters 1 additional stack of Freezing. Shatter damage increased by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109668
+          ],
+          "unlocks": [
+            94654
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109668,
+          "name": "Infused Splinters",
+          "spell_id": 1261080,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1261080,
+              "description": "Infused Splinters Talent Requires Mage Arcane Direct damage from Arcane Splinters have a 25% chance to grant 1 stack Arcane Salvo. Arcane Salvo Increases the damage of your next Arcane Barrage by 3%. Frost Direct damage from Frost Splinters have a 15% chance to apply 1 stack of Freezing.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your next Arcane Barrage",
+                  "type": "damage_increase",
+                  "value": 3,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            109669
+          ],
+          "unlocks": [
+            109667
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109669,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1261106,
+              "name": "Attuned Familiar",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1261106,
+                  "description": "Attuned Familiar Talent Requires Mage Arcane Your Arcane Familiar has a 50% chance to conjure a Splinter alongside its Arcane Assault. Frost Your Water Elemental has a 50% chance to conjure a Splinter alongside its Waterbolt.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444675,
+              "name": "Shifting Shards",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444675,
+                  "description": "Shifting Shards Talent Requires Mage Frost Gaining Brain Freeze conjures 2 Frost Splinters. Arcane Gaining Clearcasting conjures 2 Arcane Splinters.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94664
+          ],
+          "unlocks": [
+            109668
+          ],
+          "row": 3,
+          "col": 12
+        }
+      ]
+    },
+    {
+      "name": "Frostfire",
+      "nodes": [
+        {
+          "node_id": 94632,
+          "name": "Flash Freezeburn",
+          "spell_id": 431178,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431178,
+              "description": "Flash Freezeburn Talent Requires Mage Frost Glacial Spike damage increased by 15% and it now explodes on impact, dealing 25% of its damage to up to 5 nearby enemies. Additionally, Glacial Spike now grants Frostfire Empowerment. Fire Meteor's damage is increased by 25%. Meteor now grants Frostfire Empowerment.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94640
+          ],
+          "unlocks": [
+            94635
+          ],
+          "row": 4,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94633,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 431067,
+              "name": "Elemental Affinity",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431067,
+                  "description": "Elemental Affinity Talent Requires Mage Frost The cooldown of Fire spells is reduced by 30%. Fire The cooldown of Frost spells with a base cooldown shorter than 4 minutes is reduced by 30%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 431112,
+              "name": "Flame and Frost",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431112,
+                  "description": "Flame and Frost Talent Requires Mage Fire Cauterize resets the cooldown of your Frost spells with a base cooldown shorter than 4 minutes when it activates. Frost Ice Block and Ice Cold reset the cooldowns of your Fire spells",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94636,
+            109956
+          ],
+          "unlocks": [
+            94634
+          ],
+          "row": 2,
+          "col": 23
+        },
+        {
+          "node_id": 94634,
+          "name": "Dualcasting Adept",
+          "spell_id": 1248014,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248014,
+              "description": "Dualcasting Adept Talent Requires Mage Frost Your Fire spells deal 20% increased critical strike damage. Shatter damage increased by 15%. Blizzard damage increased by 15%. Fire Your Frost spells deal 20% increased critical strike damage. Pyroblast damage increased by 15%. Flamestrike damage increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94633
+          ],
+          "unlocks": [
+            94637
+          ],
+          "row": 3,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94635,
+          "name": "Isothermic Core",
+          "spell_id": 431095,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431095,
+              "description": "Isothermic Core Talent Requires Mage Frost Comet Storm now also calls down a Meteor, dealing (900% of Spell Power) Fire damage to nearby enemies. Damage reduced beyond 8 targets. Damage from Meteor Shatters 1 stacks of Freezing. Fire Meteor now also calls down a Comet Storm, dealing [(92.8% of Spell Power) * 7] Frost damage to nearby enemies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94632,
+            94639,
+            94637,
+            109670
+          ],
+          "unlocks": [],
+          "row": 5,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94636,
+          "name": "Frostfire Bolt",
+          "spell_id": 431044,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431044,
+              "description": "Frostfire Bolt Talent 2% of base mana Requires Mage Launches a bolt of frostfire at the enemy, causing (247% of Spell Power) Frostfire damage, slowing movement speed by 50%, and causing an additional (20.6% of Spell Power) Frostfire damage over 8 sec. Frost Applies 1 stack of Freezing.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94633,
+            94641,
+            94642,
+            109672
+          ],
+          "row": 1,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94637,
+          "name": "Blast Radius",
+          "spell_id": 1248016,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248016,
+              "description": "Blast Radius Talent Requires Mage Frost Comet Storm damage increased by 20%. Meteor damage increased by 20%. Fire Meteor damage increased by 20%. Comet Storm damage increased by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94634
+          ],
+          "unlocks": [
+            94635
+          ],
+          "row": 4,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94638,
+          "name": "Heat Sink",
+          "spell_id": 1248002,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248002,
+              "description": "Heat Sink Talent Requires Mage Fire Fire Blast now deals Frostfire damage and its damage is increased by 15%. Frost Flurry now deals Frostfire damage and its damage is increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94642
+          ],
+          "unlocks": [
+            94639
+          ],
+          "row": 3,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94639,
+          "name": "Frostfire Infusion",
+          "spell_id": 431166,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431166,
+              "description": "Frostfire Infusion Talent Requires Mage Frost Frostfire Bolt has an additional 5% chance to grant Brain Freeze. The damage of your Frost spells and Fire spells are increased by 4%. Fire Frostfire Bolt's critical strike chance is increased by 15%.. The damage of your Frost spells and Fire spells are increased by 4%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94638
+          ],
+          "unlocks": [
+            94635
+          ],
+          "row": 4,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94640,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 431117,
+              "name": "Thermal Conditioning",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431117,
+                  "description": "Thermal Conditioning Talent Requires Mage Frostfire Bolt's cast time is reduced by 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 431189,
+              "name": "Severe Temperatures",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431189,
+                  "description": "Severe Temperatures Talent Requires Mage Frostfire Empowerment stacks 1 additional time and it causes Frostfire Bolt to explode for an additional 20% of its damage.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94641
+          ],
+          "unlocks": [
+            94632
+          ],
+          "row": 3,
+          "col": 22
+        },
+        {
+          "node_id": 94641,
+          "name": "Frostfire Empowerment",
+          "spell_id": 431176,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431176,
+              "description": "Frostfire Empowerment Talent Requires Mage Fire Casting Frostfire spells has a 10% chance to activate Frostfire Empowerment, causing your next Frostfire Bolt to be instant cast, deal 60% increased damage, explode for 60% of its damage to nearby enemies. Damage reduced beyond 5 targets. Frost Casting Frostfire spells has a 10% chance to activate Frostfire Empowerment, causing your next Frostfire Bolt to be instant cast, deal 60% increased damage, explode for 60% of its damage to nearby enemies. Damage reduced beyond 5 targets. Damage from Frostfire Empowerment applies 1 stack of Freezing.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94636,
+            109956
+          ],
+          "unlocks": [
+            94640
+          ],
+          "row": 2,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94642,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 431066,
+              "name": "Imbued Warding",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431066,
+                  "description": "Imbued Warding Talent Requires Mage Fire Blazing Barrier also casts an Ice Barrier at 25% effectiveness. Frost Ice Barrier also casts a Blazing Barrier at 25% effectiveness.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 431131,
+              "name": "Meltdown",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431131,
+                  "description": "Meltdown Talent Requires Mage You melt slightly out of your Ice Block and Ice Cold, allowing you to move slowly during Ice Block and increasing your movement speed over time. Ice Block and Ice Cold trigger a Blazing Barrier when they end.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94636,
+            109956
+          ],
+          "unlocks": [
+            94638
+          ],
+          "row": 2,
+          "col": 21
+        },
+        {
+          "node_id": 109670,
+          "name": "Elemental Conduit",
+          "spell_id": 1262845,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262845,
+              "description": "Elemental Conduit Talent Requires Mage Fire Comet Storm and Glacial Spike now apply Ignite. Your Haste is increased by 2%. Frost Meteor and Pyroblast now apply Ignite. Your Haste is increased by 2%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109671
+          ],
+          "unlocks": [
+            94635
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109671,
+          "name": "Molten Chill",
+          "spell_id": 1262844,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262844,
+              "description": "Molten Chill Talent Requires Mage Fire Your Frostfire spells apply Ignite at 10% increased effectiveness. Frost Your Frostfire spells apply Ignite, dealing an additional 30% of their damage over 9 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109672
+          ],
+          "unlocks": [
+            109670
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109672,
+          "name": "Duality",
+          "spell_id": 1262843,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1262843,
+              "description": "Duality Talent Requires Mage Frost Casting Glacial Spike also casts a Pyroblast, dealing (705% of Spell Power) Fire damage. Fire Casting Pyroblast has a 20% chance to also cast a Glacial Spike, dealing (366.24% of Spell Power) Frost damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109956,
+            94636
+          ],
+          "unlocks": [
+            109671
+          ],
+          "row": 2,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109956,
+          "name": "Frostfire Bolt",
+          "spell_id": 431044,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431044,
+              "description": "Frostfire Bolt Talent 2% of base mana Requires Mage Launches a bolt of frostfire at the enemy, causing (247% of Spell Power) Frostfire damage, slowing movement speed by 50%, and causing an additional (20.6% of Spell Power) Frostfire damage over 8 sec. Frost Applies 1 stack of Freezing.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            109672,
+            94633,
+            94641,
+            94642
+          ],
+          "row": 1,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

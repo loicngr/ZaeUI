@@ -1,0 +1,5101 @@
+{
+  "class": "Rogue",
+  "spec": "Subtlety",
+  "scraped_at": "2026-03-25T19:03:37.142451+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99842,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 11
+      },
+      {
+        "node_id": 90740,
+        "name": "Shiv",
+        "spell_id": 5938,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 5938,
+            "description": "Shiv Talent Requires Rogue Requires One-Handed Melee Weapon Attack with your [ Improved Shiv : poisoned blades / off-hand], dealing (125.4% of Attack Power)% Physical damage, dispelling all enrage effects and applying a concentrated form of your active Non-Lethal poison. Awards 1 combo points.",
+            "cooldown": 30.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90764,
+          110325
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90684,
+        "name": "Blind",
+        "spell_id": 2094,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 2094,
+            "description": "Blind Talent Requires Rogue Blinds the target, causing it to wander disoriented for 1 min. Damage may interrupt the effect. Limit 1.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90695,
+          90764,
+          90741
+        ],
+        "row": 2,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90697,
+        "name": "Cloak of Shadows",
+        "spell_id": 31224,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 31224,
+            "description": "Cloak of Shadows Talent Requires Rogue Provides a moment of magic immunity, instantly removing all harmful spell effects. The cloak lingers, causing you to resist harmful spells for 5 sec .",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90695,
+          110324
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110325,
+        "name": "Toxic Stiletto",
+        "spell_id": 1267182,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267182,
+            "description": "Toxic Stiletto Talent Requires Rogue Shiv's Energy cost is reduced by 20, its cooldown is reduced by 15 sec, and its range is increased by 3 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90740
+        ],
+        "unlocks": [
+          90636
+        ],
+        "row": 3,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90764,
+        "name": "Fleet Footed",
+        "spell_id": 378813,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378813,
+            "description": "Fleet Footed Talent Requires Rogue Movement speed increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90740,
+          90684
+        ],
+        "unlocks": [
+          90636,
+          90742
+        ],
+        "row": 3,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90741,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1776,
+            "name": "Gouge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1776,
+                "description": "Gouge Talent Requires Rogue Requires Melee Weapon Gouges the eyes of an enemy target, incapacitating for 4 sec. Damage may interrupt the effect. Must be in front of your target. Awards 1 combo points.",
+                "cooldown": 25.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 200733,
+            "name": "Airborne Irritant",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 200733,
+                "description": "Airborne Irritant Talent Requires Rogue Requires level 15 Blind has 80% reduced cooldown and 80% reduced duration.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90684
+        ],
+        "unlocks": [
+          90742
+        ],
+        "row": 3,
+        "col": 4
+      },
+      {
+        "node_id": 90695,
+        "name": "Thrill Seeking",
+        "spell_id": 394931,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 394931,
+            "description": "Thrill Seeking Talent Requires Rogue Outlaw Grappling Hook has 1 additional charge. Assassination, Subtlety Shadowstep has 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90684,
+          90697
+        ],
+        "unlocks": [
+          90686,
+          90742
+        ],
+        "row": 3,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110324,
+        "name": "Shadowrunner",
+        "spell_id": 378807,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378807,
+            "description": "Shadowrunner Talent Requires Rogue While Stealth or Shadow Dance is active, you move 20% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90697
+        ],
+        "unlocks": [
+          90686
+        ],
+        "row": 3,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90636,
+        "name": "Master Poisoner",
+        "spell_id": 378436,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378436,
+            "description": "Master Poisoner Talent Requires Rogue Increases the non-damaging effects of your weapon poisons by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90764,
+          110325
+        ],
+        "unlocks": [
+          90637,
+          90745
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90742,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 79008,
+            "name": "Elusiveness",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 79008,
+                "description": "Elusiveness Talent Requires Rogue Requires level 35 Evasion also reduces damage taken by 20%, and Feint also reduces non-area-of-effect damage taken by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 31230,
+            "name": "Cheat Death",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 31230,
+                "description": "Cheat Death Talent Requires Rogue Requires level 35 Fatal attacks instead reduce you to 7% of your maximum health. For 3 sec afterward, you take 85% reduced damage. Cannot trigger more often than once per 6 min.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90695,
+          90741,
+          90764
+        ],
+        "unlocks": [
+          110323
+        ],
+        "row": 4,
+        "col": 4
+      },
+      {
+        "node_id": 90686,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 57934,
+            "name": "Tricks of the Trade",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 57934,
+                "description": "Tricks of the Trade Talent Requires Rogue [ Thick as Thieves : Increases the target's damage by 15%, and redirects / Redirects] all threat you cause to the targeted party or raid member, beginning with your next damaging attack within the next 30 sec and lasting 6 sec. (100ms cooldown)",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 379005,
+            "name": "Blackjack",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 379005,
+                "description": "Blackjack Talent Requires Rogue Enemies have 30% reduced damage and healing for 6 sec after Blind or Sap's effect on them ends.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90695,
+          110324
+        ],
+        "unlocks": [
+          90687,
+          90746
+        ],
+        "row": 4,
+        "col": 6
+      },
+      {
+        "node_id": 90637,
+        "name": "Improved Wound Poison",
+        "spell_id": 319066,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 319066,
+            "description": "Improved Wound Poison Talent Requires Rogue Wound Poison can now stack 2 additional times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90636
+        ],
+        "unlocks": [
+          94567,
+          90762
+        ],
+        "row": 5,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90745,
+        "name": "Nimble Fingers",
+        "spell_id": 378427,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378427,
+            "description": "Nimble Fingers Talent Requires Rogue Energy cost of Feint and Crimson Vial reduced by 10.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90636
+        ],
+        "unlocks": [
+          90747,
+          90762,
+          90744
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110323,
+        "name": "Deadened Nerves",
+        "spell_id": 231719,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 231719,
+            "description": "Deadened Nerves Talent Requires Rogue Physical damage taken reduced by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90742
+        ],
+        "unlocks": [
+          90747
+        ],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90746,
+        "name": "Quick Fingers",
+        "spell_id": 1267210,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267210,
+            "description": "Quick Fingers Talent Requires Rogue Increases your Agility by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90686
+        ],
+        "unlocks": [
+          90747,
+          90754,
+          94563
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90687,
+        "name": "Improved Sprint",
+        "spell_id": 231691,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 231691,
+            "description": "Improved Sprint Talent Requires Rogue Reduces the cooldown of Sprint by 60 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Sprint",
+                "type": "cd_reduction",
+                "value": 60,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90686
+        ],
+        "unlocks": [
+          90754,
+          101714
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94567,
+        "name": "Superior Mixture",
+        "spell_id": 423701,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 423701,
+            "description": "Superior Mixture Talent Requires Rogue Crippling Poison reduces movement speed by an additional 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90637
+        ],
+        "unlocks": [
+          90763
+        ],
+        "row": 6,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90762,
+        "name": "Evasion",
+        "spell_id": 5277,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 5277,
+            "description": "Evasion Talent Requires Rogue Increases your dodge chance by 100% for 10 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90637,
+          90745
+        ],
+        "unlocks": [
+          90743,
+          90763
+        ],
+        "row": 6,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90744,
+        "name": "Iron Stomach",
+        "spell_id": 193546,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 193546,
+            "description": "Iron Stomach Talent Requires Rogue Requires level 35 Increases the healing you receive from Crimson Vial, healing potions, and healthstones by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90745
+        ],
+        "unlocks": [
+          90743
+        ],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90747,
+        "name": "Virulent Poisons",
+        "spell_id": 381543,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381543,
+            "description": "Virulent Poisons Talent Requires Rogue Increases the damage of your weapon poisons by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your weapon poisons",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90745,
+          90746,
+          110323
+        ],
+        "unlocks": [
+          90743,
+          94562
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94563,
+        "name": "Stillshroud",
+        "spell_id": 423662,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 423662,
+            "description": "Stillshroud Talent Requires Rogue Shroud of Concealment has 50% reduced cooldown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90746
+        ],
+        "unlocks": [
+          94562
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90754,
+        "name": "Graceful Guile",
+        "spell_id": 423647,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 423647,
+            "description": "Graceful Guile Talent Requires Rogue Feint has 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90687,
+          90746
+        ],
+        "unlocks": [
+          94562,
+          94561
+        ],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101714,
+        "name": "Featherfoot",
+        "spell_id": 423683,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 423683,
+            "description": "Featherfoot Talent Requires Rogue Sprint increases movement speed by an additional 30% and has 4 sec increased duration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90687
+        ],
+        "unlocks": [
+          94561
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90763,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 5761,
+            "name": "Numbing Poison",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 5761,
+                "description": "Numbing Poison Talent Requires Rogue Requires One-Handed Melee Weapon Coats your weapons with a Non-Lethal Poison that lasts for 1 hour. Each strike has a 30% chance of poisoning the enemy, clouding their mind and slowing their attack and casting speed by 15 / Master Poisoner : 18 / Master Poisoner : 18 % for 10 sec. (Proc chance: 30%)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 381637,
+            "name": "Atrophic Poison",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 381637,
+                "description": "Atrophic Poison Talent Requires Rogue Requires One-Handed Melee Weapon Coats your weapons with a Non-Lethal Poison that lasts for 1 hour. Each strike has a 30% chance of poisoning the enemy, reducing their damage by ( - 3 *- 1)% for 10 sec. (Proc chance: 30%)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90762,
+          94567
+        ],
+        "unlocks": [
+          90760
+        ],
+        "row": 7,
+        "col": 2
+      },
+      {
+        "node_id": 90743,
+        "name": "Deadly Precision",
+        "spell_id": 381542,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381542,
+            "description": "Deadly Precision Talent Requires Rogue Increases the critical strike chance of your attacks that generate combo points by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90762,
+          90744,
+          90747
+        ],
+        "unlocks": [
+          90760,
+          90752
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94562,
+        "name": "Deep Cuts",
+        "spell_id": 1267216,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267216,
+            "description": "Deep Cuts Talent Requires Rogue Your finishing moves deal 6% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90754,
+          90747,
+          94563
+        ],
+        "unlocks": [
+          90692,
+          90752
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94561,
+        "name": "Unbreakable Stride",
+        "spell_id": 400804,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 400804,
+            "description": "Unbreakable Stride Talent Requires Rogue Reduces the duration of movement slowing effects 30%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90754,
+          101714
+        ],
+        "unlocks": [
+          90692
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90760,
+        "name": "Danger Sense",
+        "spell_id": 1267220,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267220,
+            "description": "Danger Sense Talent Requires Rogue You have a 20% chance to partially evade any damage dealt to you, reducing the damage it deals by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90743,
+          90763
+        ],
+        "unlocks": [
+          90749,
+          90758
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90752,
+        "name": "Swift Slasher",
+        "spell_id": 381988,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381988,
+            "description": "Swift Slasher Talent Requires Rogue Slice and Dice grants additional attack speed equal to 100% of your Haste.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90743,
+          94562
+        ],
+        "unlocks": [
+          90640,
+          90751,
+          90749
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90692,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 381620,
+            "name": "Improved Ambush",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 381620,
+                "description": "Improved Ambush Talent Requires Rogue [ Shadowstrike : Shadowstrike damage increased by 8% / Ambush generates 1 additional combo point].",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 381621,
+            "name": "Tight Spender",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 381621,
+                "description": "Tight Spender Talent Requires Rogue Energy cost of finishing moves reduced by 6%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94561,
+          94562
+        ],
+        "unlocks": [
+          90751,
+          90691
+        ],
+        "row": 8,
+        "col": 6
+      },
+      {
+        "node_id": 90758,
+        "name": "Leeching Poison",
+        "spell_id": 280716,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 280716,
+            "description": "Leeching Poison Talent Requires Rogue Requires level 35 Adds a Leeching effect to your Lethal poisons, granting you 3.0% Leech.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90760
+        ],
+        "unlocks": [
+          90759
+        ],
+        "row": 9,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90749,
+        "name": "Lethality",
+        "spell_id": 382238,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382238,
+            "description": "Lethality Talent Requires Rogue Critical strike chance increased by 1%. Critical strike damage bonus of your attacks that generate combo points increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 382238,
+            "description": "Lethality Talent Requires Rogue Critical strike chance increased by 1%. Critical strike damage bonus of your attacks that generate combo points increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90760,
+          90752
+        ],
+        "unlocks": [
+          90748
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90640,
+        "name": "Recuperator",
+        "spell_id": 378996,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378996,
+            "description": "Recuperator Talent Requires Rogue Slice and Dice heals you for up to 1% of your maximum health per 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90752
+        ],
+        "unlocks": [
+          90639
+        ],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90751,
+        "name": "Alacrity",
+        "spell_id": 193539,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 193539,
+            "description": "Alacrity Talent Requires Rogue Requires level 45 (Assassination, Outlaw, Subtlety) Haste increased by 1.5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 193539,
+            "description": "Alacrity Talent Requires Rogue Requires level 45 (Assassination, Outlaw, Subtlety) Haste increased by 1.5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90692,
+          90752
+        ],
+        "unlocks": [
+          90750
+        ],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90691,
+        "name": "Soothing Darkness",
+        "spell_id": 393970,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 393970,
+            "description": "Soothing Darkness Talent Requires Rogue You are healed for 30% of your maximum health over 6 sec after activating Vanish.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90692
+        ],
+        "unlocks": [
+          90688
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90759,
+        "name": "Vigor",
+        "spell_id": 14983,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 14983,
+            "description": "Vigor Talent Requires Rogue Requires level 30 Increases your maximum Energy by 50 and Energy regeneration by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 14983,
+            "description": "Vigor Talent Requires Rogue Requires level 30 Increases your maximum Energy by 50 and Energy regeneration by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90758
+        ],
+        "unlocks": [
+          90756
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90639,
+        "name": "Supercharger",
+        "spell_id": 470347,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 470347,
+            "description": "Supercharger Talent Requires Rogue Outlaw Adrenaline Rush supercharges 1 combo point. Damaging finishing moves consume a supercharged combo point to function as if they spent 2 additional combo points. Assassination Kingsbane supercharges 1 combo point. Damaging finishing moves consume a supercharged combo point to function as if they spent 2 additional combo points. Subtlety Shadow Dance supercharges 1 combo point. Damaging finishing moves consume a supercharged combo point to function as if they spent 2 additional combo points.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 470347,
+            "description": "Supercharger Talent Requires Rogue Outlaw Adrenaline Rush supercharges 1 combo point. Damaging finishing moves consume a supercharged combo point to function as if they spent 2 additional combo points. Assassination Kingsbane supercharges 1 combo point. Damaging finishing moves consume a supercharged combo point to function as if they spent 2 additional combo points. Subtlety Shadow Dance supercharges 1 combo point. Damaging finishing moves consume a supercharged combo point to function as if they spent 2 additional combo points.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90640
+        ],
+        "unlocks": [
+          90638
+        ],
+        "row": 10,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90688,
+        "name": "Subterfuge",
+        "spell_id": 108208,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108208,
+            "description": "Subterfuge Talent Requires Rogue Requires level 25 Subtlety Abilities requiring Stealth can be used for 2 sec after Stealth breaks. Combat benefits requiring Stealth persist for an additional 2 sec after Stealth breaks. Assassination Abilities requiring Stealth can be used for 3 sec after Stealth breaks. Combat benefits requiring Stealth persist for an additional 3 sec after Stealth breaks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 108208,
+            "description": "Subterfuge Talent Requires Rogue Requires level 25 Subtlety Abilities requiring Stealth can be used for 2 sec after Stealth breaks. Combat benefits requiring Stealth persist for an additional 2 sec after Stealth breaks. Assassination Abilities requiring Stealth can be used for 3 sec after Stealth breaks. Combat benefits requiring Stealth persist for an additional 3 sec after Stealth breaks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90691
+        ],
+        "unlocks": [
+          101713
+        ],
+        "row": 10,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90756,
+        "name": "Thistle Tea",
+        "spell_id": 381623,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381623,
+            "description": "Thistle Tea Talent 1 min recharge Requires Rogue Restore . When your Energy is reduced below 30, drink a Thistle Tea.",
+            "cooldown": 60.0,
+            "charges": 3,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90759
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90748,
+        "name": "Cold Blooded Killer",
+        "spell_id": 382245,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382245,
+            "description": "Cold Blooded Killer Talent Requires Rogue Critically striking with an attack that generates combo points increases the critical strike chance of your next finishing move by 10%. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90749
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90638,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 470669,
+            "name": "Echoing Reprimand",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 470669,
+                "description": "Echoing Reprimand Talent Requires Rogue Subtlety After consuming a supercharged combo point, your next Backstab also strikes the target with an Echoing Reprimand dealing (118% of Attack Power) Physical damage. Assassination After consuming a supercharged combo point, your next Mutilate also strikes the target with an Echoing Reprimand dealing (118% of Attack Power) Physical damage. Outlaw After consuming a supercharged combo point, your next Sinister Strike also strikes the target with an Echoing Reprimand dealing (118% of Attack Power) Physical damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 470668,
+            "name": "Forced Induction",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 470668,
+                "description": "Forced Induction Talent Requires Rogue Increase the bonus granted when a damaging finishing move consumes a supercharged combo point by 1.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90639
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 4
+      },
+      {
+        "node_id": 90750,
+        "name": "Deeper Stratagem",
+        "spell_id": 193531,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 193531,
+            "description": "Deeper Stratagem Talent Requires Rogue Requires level 30 Gain 1 additional max combo point. Your finishing moves that consume more than 5 combo points have increased effects, and your finishing moves deal 5% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90751
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101713,
+        "name": "Without a Trace",
+        "spell_id": 382513,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382513,
+            "description": "Without a Trace Talent Requires Rogue Vanish has 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90688
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 95136,
+        "name": "Deathstalker's Mark",
+        "spell_id": 457052,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 457052,
+            "description": "Deathstalker's Mark Talent Requires Rogue Assassination Garrote applies 3 stacks of Deathstalker's Mark to your target, unless Deathstalker's Mark is already active. When you spend 5 or more combo points on attacks against a Marked target you consume an application of Deathstalker's Mark, dealing (120% of Attack Power) Plague damage. Subtlety Shadowstrike applies 3 stacks of Deathstalker's Mark to your target, unless Deathstalker's Mark is already active. When you spend 5 or more combo points on attacks against a Marked target you consume an application of Deathstalker's Mark, dealing (120% of Attack Power) Plague damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          95132,
+          95110,
+          95117,
+          109762
+        ],
+        "row": 2,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90690,
+        "name": "Find Weakness",
+        "spell_id": 91023,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 91023,
+            "description": "Find Weakness Talent Requires Rogue Your Stealth abilities allow you to see the flaws in enemies' defenses, causing your attacks to ignore 30% armor for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90739,
+          90710,
+          90726
+        ],
+        "row": 2,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95110,
+        "name": "Clear the Witnesses",
+        "spell_id": 1248793,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1248793,
+            "description": "Clear the Witnesses Talent Requires Rogue Assassination Fan of Knives damage increased by 40%. Subtlety Shuriken Storm damage increased by 40%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95136
+        ],
+        "unlocks": [
+          95135
+        ],
+        "row": 3,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95132,
+        "name": "Hunt Them Down",
+        "spell_id": 457054,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 457054,
+            "description": "Hunt Them Down Talent Requires Rogue Auto-attacks against Marked targets deal an additional (10% of Attack Power) Plague damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95136
+        ],
+        "unlocks": [
+          95108
+        ],
+        "row": 3,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95117,
+        "name": "Singular Focus",
+        "spell_id": 457055,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 457055,
+            "description": "Singular Focus Talent Requires Rogue Damage dealt to targets other than your Marked target deals 5% Plague damage to your Marked target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95136
+        ],
+        "unlocks": [
+          95109
+        ],
+        "row": 3,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109762,
+        "name": "Precise Killer",
+        "spell_id": 1272989,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1272989,
+            "description": "Precise Killer Talent Requires Rogue Critical strike damage bonus increased by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95136
+        ],
+        "unlocks": [
+          109761
+        ],
+        "row": 3,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90739,
+        "name": "Improved Backstab",
+        "spell_id": 319949,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 319949,
+            "description": "Improved Backstab Talent Requires Rogue [ Gloomblade / Backstab] has 15% increased critical strike chance. While behind your target, Backstab critical strikes grant Find Weakness for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90690
+        ],
+        "unlocks": [
+          90700
+        ],
+        "row": 3,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90726,
+        "name": "Shadow Blades",
+        "spell_id": 121471,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 121471,
+            "description": "Shadow Blades Talent Requires Rogue Draws upon surrounding shadows to empower your weapons, causing your attacks to deal 20% additional damage as Shadow and causing your combo point generating abilities to generate double combo points for 16 sec.",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90690
+        ],
+        "unlocks": [
+          90728
+        ],
+        "row": 3,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90710,
+        "name": "Improved Shuriken Storm",
+        "spell_id": 319951,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 319951,
+            "description": "Improved Shuriken Storm Talent Requires Rogue Shuriken Storm has 15% increased critical strike chance. Shuriken Storm critical strikes grant Find Weakness for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90690
+        ],
+        "unlocks": [
+          94582
+        ],
+        "row": 3,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95135,
+        "name": "Unshakeable Drive",
+        "spell_id": 1248774,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1248774,
+            "description": "Unshakeable Drive Talent Requires Rogue Subtlety When you consume an application of Deathstalker's Mark, the damage of your next is increased by 50% or Shadowstrike increased by 25%. Assassination When you consume an application of Deathstalker's Mark, the damage of your next Ambush or Mutilate is increased by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95110
+        ],
+        "unlocks": [
+          95106
+        ],
+        "row": 4,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95108,
+        "name": "Corrupt the Blood",
+        "spell_id": 1248785,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1248785,
+            "description": "Corrupt the Blood Talent Requires Rogue Subtlety Deathstalker's Mark damage increased by 25%. Assassination Rupture damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95132
+        ],
+        "unlocks": [
+          95131
+        ],
+        "row": 4,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95109,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 457056,
+            "name": "Lingering Darkness",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 457056,
+                "description": "Lingering Darkness Talent Requires Rogue Assassination After Deathmark expires, gain 30% increased Nature damage for 30 sec. Subtlety After Shadow Blades expires, gain 30% increased Shadow damage for 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 457062,
+            "name": "Symbolic Victory",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 457062,
+                "description": "Symbolic Victory Talent Requires Rogue Assassination Kingsbane additionally increases the damage of your next two Envenoms by 18%. Subtlety Shadow Dance additionally increases the damage of your next Eviscerate or Black Powder by 15%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "your next two Envenoms",
+                    "type": "damage_increase",
+                    "value": 18,
+                    "unit": "percent"
+                  },
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "your next Eviscerate or Black Powder",
+                    "type": "damage_increase",
+                    "value": 15,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95117
+        ],
+        "unlocks": [
+          95123
+        ],
+        "row": 4,
+        "col": 11
+      },
+      {
+        "node_id": 109761,
+        "name": "Quietus Celeris",
+        "spell_id": 1273017,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1273017,
+            "description": "Quietus Celeris Talent Requires Rogue Deathstalker's Mark has a 30% chance to immediately consume a stack when applied.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109762
+        ],
+        "unlocks": [
+          109760
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90700,
+        "name": "Premeditation",
+        "spell_id": 343160,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 343160,
+            "description": "Premeditation Talent Requires Rogue Requires level 15 After entering Stealth, your next combo point generating ability generates full combo points.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90739
+        ],
+        "unlocks": [
+          90698,
+          90701
+        ],
+        "row": 4,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90728,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 382503,
+            "name": "Quick Decisions",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 382503,
+                "description": "Quick Decisions Talent Requires Rogue Shadowstep's cooldown is reduced by 20%, and its maximum range is increased by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 426563,
+            "name": "Ephemeral Bond",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 426563,
+                "description": "Ephemeral Bond Talent Requires Rogue Increases healing received by 8%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90726
+        ],
+        "unlocks": [
+          90733,
+          90701
+        ],
+        "row": 4,
+        "col": 18
+      },
+      {
+        "node_id": 94582,
+        "name": "Silent Storm",
+        "spell_id": 385722,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385722,
+            "description": "Silent Storm Talent Requires Rogue Gaining Stealth, Vanish, or Shadow Dance causes your next Shuriken Storm to have 100% increased chance to critically strike.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90710
+        ],
+        "unlocks": [
+          90714,
+          90733
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95106,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 457022,
+            "name": "Ethereal Cloak",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 457022,
+                "description": "Ethereal Cloak Talent Requires Rogue Cloak of Shadows duration increased by 2 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 457034,
+            "name": "Bait and Switch",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 457034,
+                "description": "Bait and Switch Talent Requires Rogue Evasion reduces magical damage taken by 15%. Cloak of Shadows reduces physical damage taken by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95135
+        ],
+        "unlocks": [
+          95142
+        ],
+        "row": 5,
+        "col": 9
+      },
+      {
+        "node_id": 95131,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 457067,
+            "name": "Momentum of Despair",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 457067,
+                "description": "Momentum of Despair Talent Requires Rogue Assassination If you have critically struck with Fan of Knives, increase the critical strike chance of Fan of Knives and Crimson Tempest by 10% and critical strike damage by 20% for 8 sec. Subtlety If you have critically struck with Shuriken Storm, increase the critical strike chance of Shuriken Storm and Black Powder by 10% and critical strike damage by 30% for 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 457068,
+            "name": "Follow the Blood",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 457068,
+                "description": "Follow the Blood Talent Requires Rogue Assassination Fan of Knives and Crimson Tempest deal 30% additional damage while 2 or more enemies are afflicted with Rupture. Subtlety Shuriken Storm and Black Powder deal 15% additional damage while Find Weakness is active.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95108
+        ],
+        "unlocks": [
+          95142
+        ],
+        "row": 5,
+        "col": 10
+      },
+      {
+        "node_id": 95123,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 457057,
+            "name": "Shadewalker",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 457057,
+                "description": "Shadewalker Talent Requires Rogue Each time you consume a stack of Deathstalker's Mark, reduce the cooldown of Shadowstep by 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Shadowstep",
+                    "type": "cd_reduction",
+                    "value": 3,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 457063,
+            "name": "Shroud of Night",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 457063,
+                "description": "Shroud of Night Talent Requires Rogue Shroud of Concealment duration increased by 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95109
+        ],
+        "unlocks": [
+          95142
+        ],
+        "row": 5,
+        "col": 11
+      },
+      {
+        "node_id": 109760,
+        "name": "Mass Casualty",
+        "spell_id": 1273035,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1273035,
+            "description": "Mass Casualty Talent Requires Rogue Assassination Deathstalker's Mark deals 40% of its normal damage to all other enemies within 8 yds that are afflicted by Rupture. Subtlety Deathstalker's Mark deals 75% of its normal damage to all other enemies within 8 yds when a stack is consumed by Black Powder.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109761
+        ],
+        "unlocks": [
+          95142
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90698,
+        "name": "Shrouded in Darkness",
+        "spell_id": 382507,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382507,
+            "description": "Shrouded in Darkness Talent Requires Rogue Shroud of Concealment increases the movement speed of allies by 100% and leaving its area no longer cancels the effect.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90700
+        ],
+        "unlocks": [
+          90727
+        ],
+        "row": 5,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90701,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 257505,
+            "name": "Shot in the Dark",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 257505,
+                "description": "Shot in the Dark Talent Requires Rogue Requires level 40 After using Vanish or Shadow Dance, your next Cheap Shot is free and ignores its cooldown.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 428486,
+            "name": "Exhilarating Execution",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 428486,
+                "description": "Exhilarating Execution Talent Requires Rogue Your finishing moves heal you for 5% of damage done. At full health gain shielding instead, absorbing up to 10% of your maximum health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90700,
+          90728
+        ],
+        "unlocks": [
+          90727,
+          90699,
+          90734
+        ],
+        "row": 5,
+        "col": 17
+      },
+      {
+        "node_id": 90733,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 382515,
+            "name": "Cloaked in Shadows",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 382515,
+                "description": "Cloaked in Shadows Talent Requires Rogue Vanish grants you a shield for 6 sec, absorbing damage equal to 18% of your maximum health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 382514,
+            "name": "Fade to Nothing",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 382514,
+                "description": "Fade to Nothing Talent Requires Rogue Movement speed increased by 20% and damage taken reduced by 10% for 8 sec after gaining Stealth, Vanish, or Shadow Dance.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90728,
+          94582
+        ],
+        "unlocks": [
+          90715,
+          90709,
+          90734
+        ],
+        "row": 5,
+        "col": 19
+      },
+      {
+        "node_id": 90714,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 277953,
+            "name": "Night Terrors",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 277953,
+                "description": "Night Terrors Talent Requires Rogue Requires level 40 Shuriken Storm reduces enemies' movement speed by 50% for 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 428387,
+            "name": "Terrifying Pace",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 428387,
+                "description": "Terrifying Pace Talent Requires Rogue Shuriken Storm increases your movement speed by 30% for 3 sec when striking 3 or more enemies.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94582
+        ],
+        "unlocks": [
+          90709
+        ],
+        "row": 5,
+        "col": 21
+      },
+      {
+        "node_id": 95142,
+        "name": "Darkest Night",
+        "spell_id": 457058,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 457058,
+            "description": "Darkest Night Talent Requires Rogue Assassination When you consume the final Deathstalker's Mark from a target or your target dies, gain and Darkest Night, causing your next Envenom cast with 5 or more combo points to critically strike, deal 30% additional damage, and apply 3 stacks of Deathstalker's Mark to the target if no other Deathstalker's Mark is active. Envenom cast with Darkest Night does not consume a stack of active Deathstalker's Marks. Subtlety When you consume the final Deathstalker's Mark from a target or your target dies, gain and Darkest Night, causing your next Eviscerate cast with 5 or more combo points to critically strike, deal 50% additional damage, and apply 3 stacks of Deathstalker's Mark to the target if no other Deathstalker's Mark is active. Eviscerate cast with Darkest Night does not consume a stack of active Deathstalker's Marks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95131,
+          95106,
+          95123,
+          109760
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90727,
+        "name": "Master of Shadows",
+        "spell_id": 196976,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 196976,
+            "description": "Master of Shadows Talent Requires Rogue Requires level 50 Gain over 3 sec when you enter Stealth or activate Shadow Dance.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90698,
+          90701
+        ],
+        "unlocks": [
+          90737,
+          90703,
+          101715
+        ],
+        "row": 6,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90699,
+        "name": "Gloomblade",
+        "spell_id": 200758,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 200758,
+            "description": "Gloomblade Talent Replaces Backstab Requires Rogue Requires level 15 Punctures your target with your shadow-infused blade for (123% of Attack Power) Shadow damage, bypassing armor. [ Improved Backstab : Critical strikes apply Find Weakness for 10 sec ] Awards 1 combo points.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Backstab Requires Rogue Requires level 15 Punctures your target with your shadow-infused blade for (123% of Attack Power) Shadow damage, bypassing armor",
+                "type": "replaces"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90701
+        ],
+        "unlocks": [
+          101715
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": {
+          "spell_id": null,
+          "name": "Backstab Requires Rogue Requires level 15 Punctures your target with your shadow-infused blade for (123% of Attack Power) Shadow damage, bypassing armor"
+        }
+      },
+      {
+        "node_id": 90734,
+        "name": "Shadow Focus",
+        "spell_id": 108209,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108209,
+            "description": "Shadow Focus Talent Requires Rogue Requires level 25 Abilities deal 10% more damage while Stealth or Shadow Dance is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90701,
+          90733
+        ],
+        "unlocks": [
+          101715,
+          90723
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90715,
+        "name": "Improved Secret Technique",
+        "spell_id": 1279444,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1279444,
+            "description": "Improved Secret Technique Talent Requires Rogue Secret Technique damage increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90733
+        ],
+        "unlocks": [
+          90723
+        ],
+        "row": 6,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90709,
+        "name": "Relentless Strikes",
+        "spell_id": 58423,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 58423,
+            "description": "Relentless Strikes Talent Requires Rogue Your finishing moves generate per combo point spent.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90714,
+          90733
+        ],
+        "unlocks": [
+          90717,
+          90722,
+          90723
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95140,
+        "name": "Unseen Blade",
+        "spell_id": 441146,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441146,
+            "description": "Unseen Blade Talent Requires Rogue Subtlety and Shadowstrike now also strike with an Unseen Blade dealing (280% of Attack Power) damage. Targets struck are Fazed for 10 sec. Fazed enemies take 5% more damage from you and cannot parry your attacks. This effect may occur once every 20 sec. Outlaw Sinister Strike and Ambush now also strike with an Unseen Blade dealing (280% of Attack Power) damage. Targets struck are Fazed for 10 sec. Fazed enemies take 5% more damage from you and cannot parry your attacks. This effect may occur once every 20 sec. (750ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          95141,
+          95111,
+          95121,
+          109765
+        ],
+        "row": 7,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90737,
+        "name": "Weaponmaster",
+        "spell_id": 193537,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 193537,
+            "description": "Weaponmaster Talent Requires Rogue Requires level 15 [ Gloomblade / Backstab] and Shadowstrike have a 15% chance to create a Shadow Clone that repeats the attack for 50% of normal damage as Shadow.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90727
+        ],
+        "unlocks": [
+          90738
+        ],
+        "row": 7,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90703,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 382508,
+            "name": "Planned Execution",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 382508,
+                "description": "Planned Execution Talent Requires Rogue Shadow Dance increases the critical strike damage bonus of your abilities by 10%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 426555,
+            "name": "Warning Signs",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 426555,
+                "description": "Warning Signs Talent Requires Rogue Shadow Dance increases attack speed by 25%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90727
+        ],
+        "unlocks": [
+          90738,
+          90735
+        ],
+        "row": 7,
+        "col": 16
+      },
+      {
+        "node_id": 101715,
+        "name": "Double Dance",
+        "spell_id": 394930,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 394930,
+            "description": "Double Dance Talent Requires Rogue Shadow Dance has 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90727,
+          90699,
+          90734
+        ],
+        "unlocks": [
+          90735,
+          90724
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90723,
+        "name": "Shadowed Finishers",
+        "spell_id": 382511,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382511,
+            "description": "Shadowed Finishers Talent Requires Rogue Eviscerate and Black Powder deal an additional 30% damage as Shadow while Find Weakness is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90715,
+          90709,
+          90734
+        ],
+        "unlocks": [
+          90724,
+          90713
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90722,
+        "name": "Secret Stratagem",
+        "spell_id": 394320,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 394320,
+            "description": "Secret Stratagem Talent Requires Rogue Gain 1 additional max combo point. Your finishing moves that consume more than 5 combo points have increased effects, and your finishing moves deal 5% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90709
+        ],
+        "unlocks": [
+          90716,
+          90713
+        ],
+        "row": 7,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90717,
+        "name": "Shuriken Tornado",
+        "spell_id": 1264764,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264764,
+            "description": "Shuriken Tornado Talent Requires Rogue Shuriken Storm has a 15% chance to create a Shadow Clone that repeats the attack for 50% of normal damage as Shadow.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90709
+        ],
+        "unlocks": [
+          90716
+        ],
+        "row": 7,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95121,
+        "name": "Surprising Strikes",
+        "spell_id": 441273,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441273,
+            "description": "Surprising Strikes Talent Requires Rogue Attacks that generate combo points deal 50% increased critical strike damage to Fazed targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95140
+        ],
+        "unlocks": [
+          95134
+        ],
+        "row": 8,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95141,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 441247,
+            "name": "Smoke",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441247,
+                "description": "Smoke Talent Requires Rogue You take 5% reduced damage from Fazed targets.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 441250,
+            "name": "Mirrors",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441250,
+                "description": "Mirrors Talent Requires Rogue Feint reduces damage taken from area-of-effect attacks by an additional 10%",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95140
+        ],
+        "unlocks": [
+          95133
+        ],
+        "row": 8,
+        "col": 10
+      },
+      {
+        "node_id": 95111,
+        "name": "Flawless Form",
+        "spell_id": 441321,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441321,
+            "description": "Flawless Form Talent Requires Rogue Outlaw Unseen Blade and Killing Spree increase the damage of your finishing moves by 4% for 12 sec. Max 5 stacks. Subtlety Unseen Blade and Secret Technique increase the damage of your finishing moves by 4% for 12 sec. Max 5 stacks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your finishing moves",
+                "type": "damage_increase",
+                "value": 4,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your finishing moves",
+                "type": "damage_increase",
+                "value": 4,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          95140
+        ],
+        "unlocks": [
+          95137
+        ],
+        "row": 8,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109765,
+        "name": "Hoodwink",
+        "spell_id": 1276626,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1276626,
+            "description": "Hoodwink Talent Requires Rogue Fazed increases damage taken by an additional 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95140
+        ],
+        "unlocks": [
+          109764
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90738,
+        "name": "Umbral Edge",
+        "spell_id": 1281468,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1281468,
+            "description": "Umbral Edge Talent Requires Rogue Shadow Clones deal 15% increased damage. Cheap Shot creates a Shadow Clone to Shadowstrike the target for 50% of normal damage as Shadow. Kidney Shot creates a Shadow Clone to Eviscerate the target for 50% of normal damage as Shadow.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90703,
+          90737
+        ],
+        "unlocks": [
+          90704
+        ],
+        "row": 8,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90735,
+        "name": "The First Dance",
+        "spell_id": 382505,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382505,
+            "description": "The First Dance Talent Requires Rogue Remaining out of combat for 6 sec increases the duration of your next Shadow Dance by 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Shadow Dance",
+                "type": "duration_increase",
+                "value": 3,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          101715,
+          90703
+        ],
+        "unlocks": [
+          90704,
+          90707
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90724,
+        "name": "Deepening Shadows",
+        "spell_id": 185314,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 185314,
+            "description": "Deepening Shadows Talent Requires Rogue Shadow Dance duration is increased by 150% of your Haste stat. Current bonus duration: ( 0 / 1000) sec",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90723,
+          101715
+        ],
+        "unlocks": [
+          90721,
+          90731,
+          90707
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90713,
+        "name": "Veiltouched",
+        "spell_id": 382017,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382017,
+            "description": "Veiltouched Talent Requires Rogue Your abilities deal 5% increased magic damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90722,
+          90723
+        ],
+        "unlocks": [
+          90718,
+          90721
+        ],
+        "row": 8,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90716,
+        "name": "Replicating Shadows",
+        "spell_id": 382506,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382506,
+            "description": "Replicating Shadows Talent Requires Rogue Shadow Clones deal 15% increased damage and your effects that have a chance to create them have 5% additional chance to occur.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90722,
+          90717
+        ],
+        "unlocks": [
+          90718
+        ],
+        "row": 8,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95134,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 441403,
+            "name": "So Tricky",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441403,
+                "description": "So Tricky Talent Requires Rogue Tricks of the Trade's threat redirect duration is increased to 1 hour.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 441415,
+            "name": "Don't Be Suspicious",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441415,
+                "description": "Don't Be Suspicious Talent Requires Rogue Blind and Shroud of Concealment have 10% reduced cooldown. Pick Pocket and Sap have 10 yd increased range.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95121
+        ],
+        "unlocks": [
+          95118
+        ],
+        "row": 9,
+        "col": 9
+      },
+      {
+        "node_id": 95133,
+        "name": "Devious Distractions",
+        "spell_id": 441263,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441263,
+            "description": "Devious Distractions Talent Requires Rogue Outlaw Killing Spree applies Fazed to any targets struck. Subtlety Secret Technique applies Fazed to any targets struck.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95141
+        ],
+        "unlocks": [
+          95116
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95137,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 441346,
+            "name": "Thousand Cuts",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441346,
+                "description": "Thousand Cuts Talent Requires Rogue Approximately 4.5 procs per minute Slice and Dice grants 10% additional attack speed and gives your auto-attacks a chance to refresh your opportunity to strike with Unseen Blade.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 441359,
+            "name": "Flickerstrike",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441359,
+                "description": "Flickerstrike Talent Requires Rogue Taking damage from an area-of-effect attack while Feint is active or dodging while Evasion is active refreshes your opportunity to strike with Unseen Blade. This effect may only occur once every 5 sec. (5s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95111
+        ],
+        "unlocks": [
+          95128
+        ],
+        "row": 9,
+        "col": 11
+      },
+      {
+        "node_id": 109764,
+        "name": "Flashing Steel",
+        "spell_id": 1276630,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1276630,
+            "description": "Flashing Steel Talent Requires Rogue Unseen Blade may now occur once every 15 sec and has 25% chance to strike twice.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109765
+        ],
+        "unlocks": [
+          109763
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90704,
+        "name": "Improved Find Weakness",
+        "spell_id": 382512,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382512,
+            "description": "Improved Find Weakness Talent Requires Rogue Find Weakness causes your attacks to ignore an additional 20% armor.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90738,
+          90735
+        ],
+        "unlocks": [
+          90706
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90707,
+        "name": "Perforated Veins",
+        "spell_id": 382518,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382518,
+            "description": "Perforated Veins Talent Requires Rogue [ Gloomblade / Backstab], Shuriken Storm, and Shadowstrike have 10% increased damage while Find Weakness is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90724,
+          90735
+        ],
+        "unlocks": [
+          90732,
+          90706
+        ],
+        "row": 9,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90731,
+        "name": "Lingering Shadow",
+        "spell_id": 382524,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382524,
+            "description": "Lingering Shadow Talent Requires Rogue After Shadow Dance ends, [ Gloomblade / Backstab] deals an additional 50% damage as Shadow, fading by 2.8% per sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90724
+        ],
+        "unlocks": [
+          90732
+        ],
+        "row": 9,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90721,
+        "name": "Deeper Daggers",
+        "spell_id": 382517,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382517,
+            "description": "Deeper Daggers Talent Requires Rogue Shadow damage increased by 8%. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90724,
+          90713
+        ],
+        "unlocks": [
+          90720,
+          90732
+        ],
+        "row": 9,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90718,
+        "name": "Potent Powder",
+        "spell_id": 1265952,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265952,
+            "description": "Potent Powder Talent Requires Rogue Black Powder deals increased damage equal to 20% of your Mastery when it spends 5 or more combo points. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90713,
+          90716
+        ],
+        "unlocks": [
+          90720
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95118,
+        "name": "Disorienting Strikes",
+        "spell_id": 441274,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441274,
+            "description": "Disorienting Strikes Talent Requires Rogue Outlaw Killing Spree has 10% reduced cooldown and allows your next 2 strikes of Unseen Blade to ignore its cooldown. Subtlety Secret Technique has 10% reduced cooldown and allows your next 2 strikes of Unseen Blade to ignore its cooldown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95134
+        ],
+        "unlocks": [
+          95115
+        ],
+        "row": 10,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95116,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 441429,
+            "name": "Cloud Cover",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441429,
+                "description": "Cloud Cover Talent Requires Rogue Distract now also creates a cloud of smoke for 10 sec. Cooldown increased to 90 sec. Attacks from within the cloud apply Fazed.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 441398,
+            "name": "No Scruples",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441398,
+                "description": "No Scruples Talent Requires Rogue Finishing moves have 10% increased chance to critically strike Fazed targets.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95133
+        ],
+        "unlocks": [
+          95115
+        ],
+        "row": 10,
+        "col": 10
+      },
+      {
+        "node_id": 95128,
+        "name": "Nimble Flurry",
+        "spell_id": 441367,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441367,
+            "description": "Nimble Flurry Talent Requires Rogue Outlaw Blade Flurry damage is increased by 30% while Flawless Form is active. Subtlety Your auto-attacks, Unseen Blade, and Coup de Grace also strike up to 7 nearby enemies for 50% of normal damage while Flawless Form is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95137
+        ],
+        "unlocks": [
+          95115
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109763,
+        "name": "Clever Combatant",
+        "spell_id": 1276679,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1276679,
+            "description": "Clever Combatant Talent Requires Rogue Outlaw Pistol Shot has 20% increased critical strike chance and now triggers Unseen Blade when available. Subtlety Shuriken Storm has 10% increased critical strike chance and now triggers Unseen Blade when available.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109764
+        ],
+        "unlocks": [
+          95115
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90706,
+        "name": "Death Perception",
+        "spell_id": 469642,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469642,
+            "description": "Death Perception Talent Requires Rogue Find Weakness increases the damage of finishing moves by 5%. Shadow Dance increases the damage of finishing moves by 5%. Shadow Blades increases the damage of finishing moves by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "finishing moves",
+                "type": "damage_increase",
+                "value": 5,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "finishing moves",
+                "type": "damage_increase",
+                "value": 5,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "finishing moves",
+                "type": "damage_increase",
+                "value": 5,
+                "unit": "percent"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "spell_id": 469642,
+            "description": "Death Perception Talent Requires Rogue Find Weakness increases the damage of finishing moves by 5%. Shadow Dance increases the damage of finishing moves by 5%. Shadow Blades increases the damage of finishing moves by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "finishing moves",
+                "type": "damage_increase",
+                "value": 5,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "finishing moves",
+                "type": "damage_increase",
+                "value": 5,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "finishing moves",
+                "type": "damage_increase",
+                "value": 5,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90707,
+          90704
+        ],
+        "unlocks": [
+          94580,
+          90705
+        ],
+        "row": 10,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90732,
+        "name": "Dark Shadow",
+        "spell_id": 245687,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 245687,
+            "description": "Dark Shadow Talent Requires Rogue Requires level 45 Shadow Dance increases all ability damage by 5%, and Shadowstrike and Shruiken Storm damage by an additional 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 245687,
+            "description": "Dark Shadow Talent Requires Rogue Requires level 45 Shadow Dance increases all ability damage by 5%, and Shadowstrike and Shruiken Storm damage by an additional 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90721,
+          90731,
+          90707
+        ],
+        "unlocks": [
+          94581,
+          94580,
+          90730
+        ],
+        "row": 10,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90720,
+        "name": "Finality",
+        "spell_id": 382525,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382525,
+            "description": "Finality Talent Requires Rogue Eviscerate and Black Powder have 15% increased critical strike damage bonus.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 382525,
+            "description": "Finality Talent Requires Rogue Eviscerate and Black Powder have 15% increased critical strike damage bonus.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90721,
+          90718
+        ],
+        "unlocks": [
+          94581,
+          90719
+        ],
+        "row": 10,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95115,
+        "name": "Coup de Grace",
+        "spell_id": 441423,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441423,
+            "description": "Coup de Grace Talent Requires Rogue Outlaw After 4 strikes with Unseen Blade, your next Dispatch will be performed as a Coup de Grace, functioning as if it had consumed 5 additional combo points, and granting you 5 stacks of Flawless Form. Subtlety After 4 strikes with Unseen Blade, your next Eviscerate will be performed as a Coup de Grace, functioning as if it had consumed 5 additional combo points, and granting you 5 stacks of Flawless Form.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95116,
+          95118,
+          95128,
+          109763
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90705,
+        "name": "The Rotten",
+        "spell_id": 382015,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382015,
+            "description": "The Rotten Talent Requires Rogue After activating Shadow Dance, your next 2 attacks that generate combo points deal 35% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90706
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94580,
+        "name": "Shadowcraft",
+        "spell_id": 426594,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 426594,
+            "description": "Shadowcraft Talent Requires Rogue While Shadow Dance is active, your Shadow Techniques triggers 40% more frequently, stores 1 additional combo point, and generates 2 additional Energy.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90732,
+          90706
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90730,
+        "name": "Danse Macabre",
+        "spell_id": 382528,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382528,
+            "description": "Danse Macabre Talent Requires Rogue While Shadow Dance is active, each different attack that generates or spends combo points lashes out at the target, dealing (420% of Attack Power) Shadow damage. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90732
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94581,
+        "name": "Goremaw's Bite",
+        "spell_id": 426591,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 426591,
+            "description": "Goremaw's Bite Talent Requires Rogue Lashes out at the target, inflicting (326.7% of Attack Power) Shadow damage and causing your next 3 finishing moves to cost no Energy. Awards 3 combo points.",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90720,
+          90732
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90719,
+        "name": "Dark Brew",
+        "spell_id": 382504,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382504,
+            "description": "Dark Brew Talent Requires Rogue Your weapon poisons have 10% increased application chance and now deal damage as Shadow instead of Nature. Shadow damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90720
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110432,
+        "name": "Ancient Arts",
+        "spell_id": 1268932,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1268932,
+            "description": "Ancient Arts Talent Requires Rogue Damaging attacks that expend Shadow Techniques to generate combo points have a 15% chance per stack expended to create a Shadow Clone that repeats the attack for 50% of normal damage as Shadow.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Trickster",
+      "nodes": [
+        {
+          "node_id": 95111,
+          "name": "Flawless Form",
+          "spell_id": 441321,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441321,
+              "description": "Flawless Form Talent Requires Rogue Outlaw Unseen Blade and Killing Spree increase the damage of your finishing moves by 4% for 12 sec. Max 5 stacks. Subtlety Unseen Blade and Secret Technique increase the damage of your finishing moves by 4% for 12 sec. Max 5 stacks.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your finishing moves",
+                  "type": "damage_increase",
+                  "value": 4,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your finishing moves",
+                  "type": "damage_increase",
+                  "value": 4,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            95140
+          ],
+          "unlocks": [
+            95137
+          ],
+          "row": 8,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95115,
+          "name": "Coup de Grace",
+          "spell_id": 441423,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441423,
+              "description": "Coup de Grace Talent Requires Rogue Outlaw After 4 strikes with Unseen Blade, your next Dispatch will be performed as a Coup de Grace, functioning as if it had consumed 5 additional combo points, and granting you 5 stacks of Flawless Form. Subtlety After 4 strikes with Unseen Blade, your next Eviscerate will be performed as a Coup de Grace, functioning as if it had consumed 5 additional combo points, and granting you 5 stacks of Flawless Form.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95116,
+            95118,
+            95128,
+            109763
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95116,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441429,
+              "name": "Cloud Cover",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441429,
+                  "description": "Cloud Cover Talent Requires Rogue Distract now also creates a cloud of smoke for 10 sec. Cooldown increased to 90 sec. Attacks from within the cloud apply Fazed.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441398,
+              "name": "No Scruples",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441398,
+                  "description": "No Scruples Talent Requires Rogue Finishing moves have 10% increased chance to critically strike Fazed targets.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95133
+          ],
+          "unlocks": [
+            95115
+          ],
+          "row": 10,
+          "col": 10
+        },
+        {
+          "node_id": 95118,
+          "name": "Disorienting Strikes",
+          "spell_id": 441274,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441274,
+              "description": "Disorienting Strikes Talent Requires Rogue Outlaw Killing Spree has 10% reduced cooldown and allows your next 2 strikes of Unseen Blade to ignore its cooldown. Subtlety Secret Technique has 10% reduced cooldown and allows your next 2 strikes of Unseen Blade to ignore its cooldown.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95134
+          ],
+          "unlocks": [
+            95115
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95121,
+          "name": "Surprising Strikes",
+          "spell_id": 441273,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441273,
+              "description": "Surprising Strikes Talent Requires Rogue Attacks that generate combo points deal 50% increased critical strike damage to Fazed targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95140
+          ],
+          "unlocks": [
+            95134
+          ],
+          "row": 8,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95128,
+          "name": "Nimble Flurry",
+          "spell_id": 441367,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441367,
+              "description": "Nimble Flurry Talent Requires Rogue Outlaw Blade Flurry damage is increased by 30% while Flawless Form is active. Subtlety Your auto-attacks, Unseen Blade, and Coup de Grace also strike up to 7 nearby enemies for 50% of normal damage while Flawless Form is active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95137
+          ],
+          "unlocks": [
+            95115
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95133,
+          "name": "Devious Distractions",
+          "spell_id": 441263,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441263,
+              "description": "Devious Distractions Talent Requires Rogue Outlaw Killing Spree applies Fazed to any targets struck. Subtlety Secret Technique applies Fazed to any targets struck.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95141
+          ],
+          "unlocks": [
+            95116
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95134,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441403,
+              "name": "So Tricky",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441403,
+                  "description": "So Tricky Talent Requires Rogue Tricks of the Trade's threat redirect duration is increased to 1 hour.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441415,
+              "name": "Don't Be Suspicious",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441415,
+                  "description": "Don't Be Suspicious Talent Requires Rogue Blind and Shroud of Concealment have 10% reduced cooldown. Pick Pocket and Sap have 10 yd increased range.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95121
+          ],
+          "unlocks": [
+            95118
+          ],
+          "row": 9,
+          "col": 9
+        },
+        {
+          "node_id": 95137,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441346,
+              "name": "Thousand Cuts",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441346,
+                  "description": "Thousand Cuts Talent Requires Rogue Approximately 4.5 procs per minute Slice and Dice grants 10% additional attack speed and gives your auto-attacks a chance to refresh your opportunity to strike with Unseen Blade.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441359,
+              "name": "Flickerstrike",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441359,
+                  "description": "Flickerstrike Talent Requires Rogue Taking damage from an area-of-effect attack while Feint is active or dodging while Evasion is active refreshes your opportunity to strike with Unseen Blade. This effect may only occur once every 5 sec. (5s cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95111
+          ],
+          "unlocks": [
+            95128
+          ],
+          "row": 9,
+          "col": 11
+        },
+        {
+          "node_id": 95140,
+          "name": "Unseen Blade",
+          "spell_id": 441146,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441146,
+              "description": "Unseen Blade Talent Requires Rogue Subtlety and Shadowstrike now also strike with an Unseen Blade dealing (280% of Attack Power) damage. Targets struck are Fazed for 10 sec. Fazed enemies take 5% more damage from you and cannot parry your attacks. This effect may occur once every 20 sec. Outlaw Sinister Strike and Ambush now also strike with an Unseen Blade dealing (280% of Attack Power) damage. Targets struck are Fazed for 10 sec. Fazed enemies take 5% more damage from you and cannot parry your attacks. This effect may occur once every 20 sec. (750ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95141,
+            95111,
+            95121,
+            109765
+          ],
+          "row": 7,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95141,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441247,
+              "name": "Smoke",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441247,
+                  "description": "Smoke Talent Requires Rogue You take 5% reduced damage from Fazed targets.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441250,
+              "name": "Mirrors",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441250,
+                  "description": "Mirrors Talent Requires Rogue Feint reduces damage taken from area-of-effect attacks by an additional 10%",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95140
+          ],
+          "unlocks": [
+            95133
+          ],
+          "row": 8,
+          "col": 10
+        },
+        {
+          "node_id": 109763,
+          "name": "Clever Combatant",
+          "spell_id": 1276679,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1276679,
+              "description": "Clever Combatant Talent Requires Rogue Outlaw Pistol Shot has 20% increased critical strike chance and now triggers Unseen Blade when available. Subtlety Shuriken Storm has 10% increased critical strike chance and now triggers Unseen Blade when available.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109764
+          ],
+          "unlocks": [
+            95115
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109764,
+          "name": "Flashing Steel",
+          "spell_id": 1276630,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1276630,
+              "description": "Flashing Steel Talent Requires Rogue Unseen Blade may now occur once every 15 sec and has 25% chance to strike twice.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109765
+          ],
+          "unlocks": [
+            109763
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109765,
+          "name": "Hoodwink",
+          "spell_id": 1276626,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1276626,
+              "description": "Hoodwink Talent Requires Rogue Fazed increases damage taken by an additional 3%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95140
+          ],
+          "unlocks": [
+            109764
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Fatebound",
+      "nodes": [
+        {
+          "node_id": 95107,
+          "name": "Deal Fate",
+          "spell_id": 454419,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 454419,
+              "description": "Deal Fate Talent Requires Rogue Outlaw Sinister Strike generates 1 additional combo point when it grants Opportunity. Assassination Mutilate, Ambush, and Fan of Knives generate 1 additional combo point when they trigger Seal Fate.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95138
+          ],
+          "unlocks": [
+            95119
+          ],
+          "row": 3,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95114,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1249190,
+              "name": "Overflowing Purse",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1249190,
+                  "description": "Overflowing Purse Talent Requires Rogue Outlaw Dispatch has a 4% chance to flip 3 Fatebound Coins. Assassination Envenom has a 15% chance to flip 3 Fatebound Coins.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 454435,
+              "name": "Destiny Defined",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 454435,
+                  "description": "Destiny Defined Talent Requires Rogue Outlaw Sinister Strike has 5% increased chance to strike an additional time and grant Opportunity and your Fatebound Coins flipped have an additional 5% chance to match the same face as the last flip. Assassination Weapon poisons have 5% increased application chance and your Fatebound Coins flipped have an additional 5% chance to match the same face as the last flip.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95139
+          ],
+          "unlocks": [
+            95127
+          ],
+          "row": 4,
+          "col": 23
+        },
+        {
+          "node_id": 95119,
+          "name": "Delivered Doom",
+          "spell_id": 1249194,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1249194,
+              "description": "Delivered Doom Talent Requires Rogue Outlaw Dispatch and Between the Eyes deal 5% more damage when they consume 5 or more combo points. Assassination Envenom deals 5% more damage when it consumes 5 or more combo points.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95107
+          ],
+          "unlocks": [
+            95127
+          ],
+          "row": 4,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95120,
+          "name": "Edge Case",
+          "spell_id": 453457,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 453457,
+              "description": "Edge Case Talent Requires Rogue Outlaw Activating Adrenaline Rush flips a Fatebound Coin and causes it to land on its edge, counting as both Heads and Tails. Assassination Activating Deathmark flips a Fatebound Coin and causes it to land on its edge, counting as both Heads and Tails.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95130
+          ],
+          "unlocks": [
+            95129
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95122,
+          "name": "Mean Streak",
+          "spell_id": 453428,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 453428,
+              "description": "Mean Streak Talent Requires Rogue Outlaw Fatebound Coins flipped by Dispatch are 33% more likely to match the same face as the last flip. Assassination Fatebound Coins flipped by Envenom are 33% more likely to match the same face as the last flip.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95125
+          ],
+          "unlocks": [
+            95139
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95125,
+          "name": "Hand of Fate",
+          "spell_id": 452536,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 452536,
+              "description": "Hand of Fate Talent Requires Rogue Flip a Fatebound Coin each time a finishing move consumes 5 or more combo points. Heads increases the damage of your attacks by 10%, lasting 15 sec or until you flip Tails. Tails deals (168% of Attack Power) Cosmic damage to your target. For each time the same face is flipped in a row, Heads increases damage by an additional 2% and Tails increases its damage by 10%. (200ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your attacks",
+                  "type": "damage_increase",
+                  "value": 10,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95138,
+            95122,
+            95130,
+            109767
+          ],
+          "row": 1,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95127,
+          "name": "Lucky Coin",
+          "spell_id": 1248970,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248970,
+              "description": "Lucky Coin Talent Requires Rogue Every 7 coin flips, keep a lucky coin that bends you towards your fate for 12 sec. Your Agility is increased by 4%, the damage and bonuses of Fatebound Coins are increased by 50%, and coin flips are 15% more likely to match the same face as the last flip. Coin flips do not count toward finding a lucky coin while you have a lucky coin.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95114,
+            95119,
+            95129,
+            109766
+          ],
+          "unlocks": [],
+          "row": 5,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95129,
+          "name": "Rush to the Inevitable",
+          "spell_id": 1249204,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1249204,
+              "description": "Rush to the Inevitable Talent Requires Rogue Outlaw Gain every time you flip a Fatebound Coin. Gain for Coins that land on their edge. Assassination Gain every time you flip a Fatebound Coin. Gain for Coins that land on their edge.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95120
+          ],
+          "unlocks": [
+            95127
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95130,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 454432,
+              "name": "Inexorable March",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 454432,
+                  "description": "Inexorable March Talent Requires Rogue You cannot be slowed below 70% of normal movement speed while your Fatebound Coin flips have an active streak of at least 2 flips matching the same face.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 454433,
+              "name": "Death's Arrival",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 454433,
+                  "description": "Death's Arrival Talent Requires Rogue Outlaw Grappling Hook may be used a second time within 3 sec with no cooldown, but its total cooldown is increased by 5 sec. Assassination Shadowstep may be used a second time within 3 sec with no cooldown, but its total cooldown is increased by 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95125
+          ],
+          "unlocks": [
+            95120
+          ],
+          "row": 2,
+          "col": 24
+        },
+        {
+          "node_id": 95138,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1249201,
+              "name": "Chosen's Revelry",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1249201,
+                  "description": "Chosen's Revelry Talent Requires Rogue Flipping a Fatebound Coin restores (30% of Attack Power) health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 454286,
+              "name": "Tempted Fate",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 454286,
+                  "description": "Tempted Fate Talent Requires Rogue You have a 30% chance to absorb 10% of any damage taken.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95125
+          ],
+          "unlocks": [
+            95107
+          ],
+          "row": 2,
+          "col": 22
+        },
+        {
+          "node_id": 95139,
+          "name": "Fate Intertwined",
+          "spell_id": 1249215,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1249215,
+              "description": "Fate Intertwined Talent Requires Rogue Outlaw Blade Flurry causes an additional 6% of attack damage dealt to be dealt to affected enemies. Assassination Caustic Spatter causes an additional 5% of Nature damage dealt to be dealt to affected enemies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95122
+          ],
+          "unlocks": [
+            95114
+          ],
+          "row": 3,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109766,
+          "name": "Ravenholdt Mint",
+          "spell_id": 1276809,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1276809,
+              "description": "Ravenholdt Mint Talent Requires Rogue Flipping Heads increases damage by an additional 4%. Damage dealt by flipping Tails is increased by 12%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109768
+          ],
+          "unlocks": [
+            95127
+          ],
+          "row": 4,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109767,
+          "name": "Sometimes Lucky",
+          "spell_id": 1277030,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1277030,
+              "description": "Sometimes Lucky Talent Requires Rogue Critical strike chance increased by 3%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95125
+          ],
+          "unlocks": [
+            109768
+          ],
+          "row": 2,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109768,
+          "name": "Controlled Chaos",
+          "spell_id": 1276816,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1276816,
+              "description": "Controlled Chaos Talent Requires Rogue After flipping a Fatebound Coin that ends a streak of 4 or more, flip another that matches the same face.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109767
+          ],
+          "unlocks": [
+            109766
+          ],
+          "row": 3,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Deathstalker",
+      "nodes": [
+        {
+          "node_id": 95106,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 457022,
+              "name": "Ethereal Cloak",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 457022,
+                  "description": "Ethereal Cloak Talent Requires Rogue Cloak of Shadows duration increased by 2 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 457034,
+              "name": "Bait and Switch",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 457034,
+                  "description": "Bait and Switch Talent Requires Rogue Evasion reduces magical damage taken by 15%. Cloak of Shadows reduces physical damage taken by 20%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95135
+          ],
+          "unlocks": [
+            95142
+          ],
+          "row": 5,
+          "col": 9
+        },
+        {
+          "node_id": 95108,
+          "name": "Corrupt the Blood",
+          "spell_id": 1248785,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248785,
+              "description": "Corrupt the Blood Talent Requires Rogue Subtlety Deathstalker's Mark damage increased by 25%. Assassination Rupture damage increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95132
+          ],
+          "unlocks": [
+            95131
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95109,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 457056,
+              "name": "Lingering Darkness",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 457056,
+                  "description": "Lingering Darkness Talent Requires Rogue Assassination After Deathmark expires, gain 30% increased Nature damage for 30 sec. Subtlety After Shadow Blades expires, gain 30% increased Shadow damage for 30 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 457062,
+              "name": "Symbolic Victory",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 457062,
+                  "description": "Symbolic Victory Talent Requires Rogue Assassination Kingsbane additionally increases the damage of your next two Envenoms by 18%. Subtlety Shadow Dance additionally increases the damage of your next Eviscerate or Black Powder by 15%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "your next two Envenoms",
+                      "type": "damage_increase",
+                      "value": 18,
+                      "unit": "percent"
+                    },
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "your next Eviscerate or Black Powder",
+                      "type": "damage_increase",
+                      "value": 15,
+                      "unit": "percent"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95117
+          ],
+          "unlocks": [
+            95123
+          ],
+          "row": 4,
+          "col": 11
+        },
+        {
+          "node_id": 95110,
+          "name": "Clear the Witnesses",
+          "spell_id": 1248793,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248793,
+              "description": "Clear the Witnesses Talent Requires Rogue Assassination Fan of Knives damage increased by 40%. Subtlety Shuriken Storm damage increased by 40%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95136
+          ],
+          "unlocks": [
+            95135
+          ],
+          "row": 3,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95117,
+          "name": "Singular Focus",
+          "spell_id": 457055,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 457055,
+              "description": "Singular Focus Talent Requires Rogue Damage dealt to targets other than your Marked target deals 5% Plague damage to your Marked target.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95136
+          ],
+          "unlocks": [
+            95109
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95123,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 457057,
+              "name": "Shadewalker",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 457057,
+                  "description": "Shadewalker Talent Requires Rogue Each time you consume a stack of Deathstalker's Mark, reduce the cooldown of Shadowstep by 3 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Shadowstep",
+                      "type": "cd_reduction",
+                      "value": 3,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 457063,
+              "name": "Shroud of Night",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 457063,
+                  "description": "Shroud of Night Talent Requires Rogue Shroud of Concealment duration increased by 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95109
+          ],
+          "unlocks": [
+            95142
+          ],
+          "row": 5,
+          "col": 11
+        },
+        {
+          "node_id": 95131,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 457067,
+              "name": "Momentum of Despair",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 457067,
+                  "description": "Momentum of Despair Talent Requires Rogue Assassination If you have critically struck with Fan of Knives, increase the critical strike chance of Fan of Knives and Crimson Tempest by 10% and critical strike damage by 20% for 8 sec. Subtlety If you have critically struck with Shuriken Storm, increase the critical strike chance of Shuriken Storm and Black Powder by 10% and critical strike damage by 30% for 8 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 457068,
+              "name": "Follow the Blood",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 457068,
+                  "description": "Follow the Blood Talent Requires Rogue Assassination Fan of Knives and Crimson Tempest deal 30% additional damage while 2 or more enemies are afflicted with Rupture. Subtlety Shuriken Storm and Black Powder deal 15% additional damage while Find Weakness is active.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95108
+          ],
+          "unlocks": [
+            95142
+          ],
+          "row": 5,
+          "col": 10
+        },
+        {
+          "node_id": 95132,
+          "name": "Hunt Them Down",
+          "spell_id": 457054,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 457054,
+              "description": "Hunt Them Down Talent Requires Rogue Auto-attacks against Marked targets deal an additional (10% of Attack Power) Plague damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95136
+          ],
+          "unlocks": [
+            95108
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95135,
+          "name": "Unshakeable Drive",
+          "spell_id": 1248774,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1248774,
+              "description": "Unshakeable Drive Talent Requires Rogue Subtlety When you consume an application of Deathstalker's Mark, the damage of your next is increased by 50% or Shadowstrike increased by 25%. Assassination When you consume an application of Deathstalker's Mark, the damage of your next Ambush or Mutilate is increased by 50%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95110
+          ],
+          "unlocks": [
+            95106
+          ],
+          "row": 4,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95136,
+          "name": "Deathstalker's Mark",
+          "spell_id": 457052,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 457052,
+              "description": "Deathstalker's Mark Talent Requires Rogue Assassination Garrote applies 3 stacks of Deathstalker's Mark to your target, unless Deathstalker's Mark is already active. When you spend 5 or more combo points on attacks against a Marked target you consume an application of Deathstalker's Mark, dealing (120% of Attack Power) Plague damage. Subtlety Shadowstrike applies 3 stacks of Deathstalker's Mark to your target, unless Deathstalker's Mark is already active. When you spend 5 or more combo points on attacks against a Marked target you consume an application of Deathstalker's Mark, dealing (120% of Attack Power) Plague damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95132,
+            95110,
+            95117,
+            109762
+          ],
+          "row": 2,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95142,
+          "name": "Darkest Night",
+          "spell_id": 457058,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 457058,
+              "description": "Darkest Night Talent Requires Rogue Assassination When you consume the final Deathstalker's Mark from a target or your target dies, gain and Darkest Night, causing your next Envenom cast with 5 or more combo points to critically strike, deal 30% additional damage, and apply 3 stacks of Deathstalker's Mark to the target if no other Deathstalker's Mark is active. Envenom cast with Darkest Night does not consume a stack of active Deathstalker's Marks. Subtlety When you consume the final Deathstalker's Mark from a target or your target dies, gain and Darkest Night, causing your next Eviscerate cast with 5 or more combo points to critically strike, deal 50% additional damage, and apply 3 stacks of Deathstalker's Mark to the target if no other Deathstalker's Mark is active. Eviscerate cast with Darkest Night does not consume a stack of active Deathstalker's Marks.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95131,
+            95106,
+            95123,
+            109760
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109760,
+          "name": "Mass Casualty",
+          "spell_id": 1273035,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1273035,
+              "description": "Mass Casualty Talent Requires Rogue Assassination Deathstalker's Mark deals 40% of its normal damage to all other enemies within 8 yds that are afflicted by Rupture. Subtlety Deathstalker's Mark deals 75% of its normal damage to all other enemies within 8 yds when a stack is consumed by Black Powder.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109761
+          ],
+          "unlocks": [
+            95142
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109761,
+          "name": "Quietus Celeris",
+          "spell_id": 1273017,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1273017,
+              "description": "Quietus Celeris Talent Requires Rogue Deathstalker's Mark has a 30% chance to immediately consume a stack when applied.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109762
+          ],
+          "unlocks": [
+            109760
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109762,
+          "name": "Precise Killer",
+          "spell_id": 1272989,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1272989,
+              "description": "Precise Killer Talent Requires Rogue Critical strike damage bonus increased by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95136
+          ],
+          "unlocks": [
+            109761
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

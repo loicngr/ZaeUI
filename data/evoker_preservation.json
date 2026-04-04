@@ -1,0 +1,4949 @@
+{
+  "class": "Evoker",
+  "spec": "Preservation",
+  "scraped_at": "2026-03-25T18:10:37.742209+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99826,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 2,
+        "col": 10
+      },
+      {
+        "node_id": 93305,
+        "name": "Landslide",
+        "spell_id": 358385,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 358385,
+            "description": "Landslide Talent 1.4% of base mana 10 - Requires Evoker Conjure a path of shifting stone towards the target location, rooting enemies for 15 sec. Damage may cancel the effect.",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          93312
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93304,
+        "name": "Obsidian Scales",
+        "spell_id": 363916,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 363916,
+            "description": "Obsidian Scales Talent Requires Evoker Reinforce your scales, reducing damage taken by 30 %. Lasts 12 sec.",
+            "cooldown": 90.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          103843
+        ],
+        "row": 4,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93306,
+        "name": "Expunge",
+        "spell_id": 365585,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 365585,
+            "description": "Expunge Talent 10% of base mana Requires Evoker Expunge toxins affecting an ally, removing all Poison effects.",
+            "cooldown": 8.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          93341
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93312,
+        "name": "Natural Convergence",
+        "spell_id": 369913,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 369913,
+            "description": "Natural Convergence Talent Requires Evoker Augmentation Disintegrate channels 20% faster and Eruption's cast time is reduced by 20%. Devastation, Preservation Disintegrate channels 20% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93305
+        ],
+        "unlocks": [
+          93270,
+          93302,
+          93311
+        ],
+        "row": 5,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103843,
+        "name": "Heavy Wingbeats",
+        "spell_id": 368838,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 368838,
+            "description": "Heavy Wingbeats Talent Requires Evoker Wing Buffet's cooldown is reduced by 2 min.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93304
+        ],
+        "unlocks": [
+          93289,
+          93295,
+          93302
+        ],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93341,
+        "name": "Verdant Embrace",
+        "spell_id": 360995,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 360995,
+            "description": "Verdant Embrace Talent 10% of base mana Requires Evoker Fly to an ally and heal them for (920% of Spell Power), or heal yourself for the same amount.",
+            "cooldown": 24.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93306
+        ],
+        "unlocks": [
+          93295,
+          93294,
+          93340
+        ],
+        "row": 5,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93270,
+        "name": "Forger of Mountains",
+        "spell_id": 375528,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375528,
+            "description": "Forger of Mountains Talent Requires Evoker Landslide's cooldown is reduced by 30 sec, and it can withstand 200% more damage before breaking.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93312
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93302,
+        "name": "Innate Magic",
+        "spell_id": 375520,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375520,
+            "description": "Innate Magic Talent Requires Evoker Essence regenerates 5% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 375520,
+            "description": "Innate Magic Talent Requires Evoker Essence regenerates 5% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93312,
+          103843
+        ],
+        "unlocks": [
+          93311,
+          93301,
+          103844
+        ],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93289,
+        "name": "Obsidian Bulwark",
+        "spell_id": 375406,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375406,
+            "description": "Obsidian Bulwark Talent Requires Evoker Obsidian Scales has an additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103843
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93295,
+        "name": "Enkindled",
+        "spell_id": 375554,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375554,
+            "description": "Enkindled Talent Requires Evoker Living Flame deals 3% more damage and healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 375554,
+            "description": "Enkindled Talent Requires Evoker Living Flame deals 3% more damage and healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93341,
+          103843
+        ],
+        "unlocks": [
+          93290,
+          93294,
+          103844
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93340,
+        "name": "Scarlet Adaptation",
+        "spell_id": 372469,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 372469,
+            "description": "Scarlet Adaptation Talent Requires Evoker Store 20% of your effective healing, up to (Spell Power * 2.254 * 1 ). Your next damaging Living Flame consumes all stored healing to increase its damage dealt.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93341
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93311,
+        "name": "Inner Radiance",
+        "spell_id": 386405,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386405,
+            "description": "Inner Radiance Talent Requires Evoker Your Living Flame and Emerald Blossom are 30% more effective on yourself.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93312,
+          93302
+        ],
+        "unlocks": [
+          93271,
+          93310
+        ],
+        "row": 7,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93301,
+        "name": "Recall",
+        "spell_id": 371806,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 371806,
+            "description": "Recall Talent Requires Evoker You may reactivate [ Dream Flight : Dream Flight and ] [ Breath of Eons / Deep Breath ] within 3 sec after landing to travel back in time to your takeoff location.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93302
+        ],
+        "unlocks": [
+          93355
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103844,
+        "name": "Clobbering Sweep",
+        "spell_id": 375443,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375443,
+            "description": "Clobbering Sweep Talent Requires Evoker Tail Swipe's cooldown is reduced by 2 min.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93295,
+          93302
+        ],
+        "unlocks": [],
+        "row": 7,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93290,
+        "name": "Tailwind",
+        "spell_id": 375556,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375556,
+            "description": "Tailwind Talent Requires Evoker Hover increases your movement speed by 70% for the first 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93295
+        ],
+        "unlocks": [
+          93349
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93294,
+        "name": "Cauterizing Flame",
+        "spell_id": 374251,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374251,
+            "description": "Cauterizing Flame Talent 10% of base mana Requires Evoker Cauterize an ally's wounds, removing all Bleed, Poison, Curse, and Disease effects. Heals for (350% of Spell Power) upon removing any effect.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93295,
+          93341
+        ],
+        "unlocks": [
+          93292,
+          93293
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93271,
+        "name": "Ancient Flame",
+        "spell_id": 369990,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 369990,
+            "description": "Ancient Flame Talent Requires Evoker Casting Emerald Blossom or Verdant Embrace reduces the cast time of your next Living Flame by 40%. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93311
+        ],
+        "unlocks": [],
+        "row": 8,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93310,
+        "name": "Instinctive Arcana",
+        "spell_id": 376164,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376164,
+            "description": "Instinctive Arcana Talent Requires Evoker Your Magic damage done is increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 376164,
+            "description": "Instinctive Arcana Talent Requires Evoker Your Magic damage done is increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93311
+        ],
+        "unlocks": [
+          110064
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93350,
+        "name": "Tip the Scales",
+        "spell_id": 370553,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 370553,
+            "description": "Tip the Scales Talent Requires Evoker Compress time to make your next empowered spell cast instantly at its maximum empower level.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          93349,
+          93300,
+          93355
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93292,
+        "name": "Attuned to the Dream",
+        "spell_id": 376930,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376930,
+            "description": "Attuned to the Dream Talent Requires Evoker Devastation, Augmentation Your healing done and healing received are increased by 2%. Preservation Your healing done and healing received are increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 376930,
+            "description": "Attuned to the Dream Talent Requires Evoker Devastation, Augmentation Your healing done and healing received are increased by 2%. Preservation Your healing done and healing received are increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93294
+        ],
+        "unlocks": [
+          93291
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93293,
+        "name": "Sleep Walk",
+        "spell_id": 360806,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 360806,
+            "description": "Sleep Walk Talent 1% of base mana Requires Evoker Disorient an enemy for 20 sec, causing them to sleep walk towards you. Damage has a chance to awaken them.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93294
+        ],
+        "unlocks": [],
+        "row": 8,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110064,
+        "name": "Protracted Talons",
+        "spell_id": 369909,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 369909,
+            "description": "Protracted Talons Talent Requires Evoker Azure Strike damages 1 additional enemy.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93310
+        ],
+        "unlocks": [
+          93309,
+          93353
+        ],
+        "row": 9,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93355,
+        "name": "Inherent Resistance",
+        "spell_id": 375544,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375544,
+            "description": "Inherent Resistance Talent Requires Evoker Devastation, Augmentation Magic damage taken reduced by 2%. Preservation Magic damage taken reduced by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 375544,
+            "description": "Inherent Resistance Talent Requires Evoker Devastation, Augmentation Magic damage taken reduced by 2%. Preservation Magic damage taken reduced by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93301,
+          93350
+        ],
+        "unlocks": [
+          93299,
+          93309
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93300,
+        "name": "Draconic Legacy",
+        "spell_id": 376166,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376166,
+            "description": "Draconic Legacy Talent Requires Evoker Your Stamina is increased by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93350
+        ],
+        "unlocks": [
+          93354
+        ],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93349,
+        "name": "Extended Flight",
+        "spell_id": 375517,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375517,
+            "description": "Extended Flight Talent Requires Evoker Hover lasts 4 sec longer.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 375517,
+            "description": "Extended Flight Talent Requires Evoker Hover lasts 4 sec longer.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93290,
+          93350
+        ],
+        "unlocks": [
+          93286,
+          93348
+        ],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93291,
+        "name": "Bountiful Bloom",
+        "spell_id": 370886,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 370886,
+            "description": "Bountiful Bloom Talent Requires Evoker Emerald Blossom heals 2 additional allies.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93292
+        ],
+        "unlocks": [
+          93348
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93353,
+        "name": "Regenerative Magic",
+        "spell_id": 387787,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387787,
+            "description": "Regenerative Magic Talent Requires Evoker Your Leech is increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110064
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93309,
+        "name": "Blast Furnace",
+        "spell_id": 375510,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375510,
+            "description": "Blast Furnace Talent Requires Evoker Fire Breath's damage over time lasts 4 sec longer.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110064,
+          93355
+        ],
+        "unlocks": [
+          93298,
+          93307,
+          93308
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93299,
+        "name": "Exuberance",
+        "spell_id": 375542,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375542,
+            "description": "Exuberance Talent Requires Evoker While above 75% health, your movement speed is increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93355
+        ],
+        "unlocks": [
+          93298
+        ],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93354,
+        "name": "Renewing Blaze",
+        "spell_id": 374348,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374348,
+            "description": "Renewing Blaze Talent Requires Evoker Obsidian Scales surrounds you with a Renewing Blaze, causing 100% of the damage it reduced to be healed back over 8 sec .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93300
+        ],
+        "unlocks": [
+          93345,
+          93288,
+          93298
+        ],
+        "row": 10,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93286,
+        "name": "Walloping Blow",
+        "spell_id": 387341,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387341,
+            "description": "Walloping Blow Talent Requires Evoker Wing Buffet and Tail Swipe knock enemies further and daze them, reducing movement speed by 70% for 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93349
+        ],
+        "unlocks": [
+          93288
+        ],
+        "row": 10,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93348,
+        "name": "Panacea",
+        "spell_id": 387761,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387761,
+            "description": "Panacea Talent Requires Evoker Emerald Blossom and Verdant Embrace instantly heal you for (200% of Spell Power) when cast.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93291,
+          93349
+        ],
+        "unlocks": [
+          93288,
+          93344,
+          93347
+        ],
+        "row": 10,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93308,
+        "name": "Stretch Time",
+        "spell_id": 410352,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 410352,
+            "description": "Stretch Time Talent Requires Evoker While flying during [ Breath of Eons / Deep Breath], 100% of damage you would take is instead dealt over 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93309
+        ],
+        "unlocks": [
+          93343,
+          110065
+        ],
+        "row": 11,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93307,
+        "name": "Unravel",
+        "spell_id": 1264378,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264378,
+            "description": "Unravel Talent Requires Evoker Direct damage from Fire Breath consumes absorb shields from enemies, dealing (300% of Spell Power) additional Spellfrost damage to them.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93309
+        ],
+        "unlocks": [
+          93343
+        ],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93298,
+        "name": "Oppressing Roar",
+        "spell_id": 372048,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 372048,
+            "description": "Oppressing Roar Talent Requires Evoker Let out a bone-shaking roar at enemies in a cone in front of you, increasing the duration of crowd controls that affect them by 50% in the next 10 sec. [ Overawe : Removes 1 Enrage effect from each enemy ]",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93299,
+          93309,
+          93354
+        ],
+        "unlocks": [
+          93352,
+          93343,
+          93297
+        ],
+        "row": 11,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93345,
+        "name": "Foci of Life",
+        "spell_id": 375574,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375574,
+            "description": "Foci of Life Talent Requires Evoker Renewing Blaze restores you more quickly, causing damage you take to be healed back over 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93354
+        ],
+        "unlocks": [
+          93352
+        ],
+        "row": 11,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93288,
+        "name": "Rescue",
+        "spell_id": 370665,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 370665,
+            "description": "Rescue Talent Requires Evoker Swoop to an ally and fly with them to the target location. Clears movement impairing effects from you and your ally.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93348,
+          93286,
+          93354
+        ],
+        "unlocks": [
+          93352,
+          93287
+        ],
+        "row": 11,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93347,
+        "name": "Lush Growth",
+        "spell_id": 375561,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375561,
+            "description": "Lush Growth Talent Requires Evoker Green spells restore 5% more health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 375561,
+            "description": "Lush Growth Talent Requires Evoker Green spells restore 5% more health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93348
+        ],
+        "unlocks": [
+          93346
+        ],
+        "row": 11,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93344,
+        "name": "Source of Magic",
+        "spell_id": 369459,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 369459,
+            "description": "Source of Magic Talent Requires Evoker Redirect your excess magic to a friendly healer for 1 hour. When you cast an empowered spell, you restore 0.25% of their maximum mana per empower level. Limit 1.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93348
+        ],
+        "unlocks": [
+          93715
+        ],
+        "row": 11,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110065,
+        "name": "Strike from Above",
+        "spell_id": 1267206,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267206,
+            "description": "Strike from Above Talent Requires Evoker Glide speed and height increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93308
+        ],
+        "unlocks": [
+          93342
+        ],
+        "row": 12,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93343,
+        "name": "Leaping Flames",
+        "spell_id": 369939,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 369939,
+            "description": "Leaping Flames Talent Requires Evoker Fire Breath causes your next Living Flame to strike 1 additional target per empower level.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93307,
+          93298,
+          93308
+        ],
+        "unlocks": [
+          93342
+        ],
+        "row": 12,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93297,
+        "name": "Overawe",
+        "spell_id": 374346,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374346,
+            "description": "Overawe Talent Requires Evoker Oppressing Roar removes 1 Enrage effect from each enemy, and its cooldown is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93298
+        ],
+        "unlocks": [],
+        "row": 12,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93352,
+        "name": "Aerial Mastery",
+        "spell_id": 365933,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 365933,
+            "description": "Aerial Mastery Talent Requires Evoker Hover gains 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Aerial Mastery Talent Requires Evoker Hover",
+                "type": "charge_increase",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          93288,
+          93345,
+          93298
+        ],
+        "unlocks": [
+          93351
+        ],
+        "row": 12,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93287,
+        "name": "Twin Guardian",
+        "spell_id": 370888,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 370888,
+            "description": "Twin Guardian Talent Requires Evoker Rescue increases movement speed by 100% and allows spells to be cast while moving for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93288
+        ],
+        "unlocks": [
+          93346
+        ],
+        "row": 12,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93715,
+        "name": "Potent Mana",
+        "spell_id": 418101,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 418101,
+            "description": "Potent Mana Talent Requires Evoker Source of Magic increases the target's healing and damage done by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93344
+        ],
+        "unlocks": [
+          93346
+        ],
+        "row": 12,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93342,
+        "name": "Terror of the Skies",
+        "spell_id": 371032,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 371032,
+            "description": "Terror of the Skies Talent Requires Evoker [ Breath of Eons / Deep Breath] stuns enemies for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93343,
+          110065
+        ],
+        "unlocks": [],
+        "row": 13,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93351,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 374968,
+            "name": "Time Spiral",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 374968,
+                "description": "Time Spiral Talent Requires Evoker Bend time, allowing you and your allies within 40 yds to cast their major movement ability once in the next 10 sec, even if it is on cooldown.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 406732,
+            "name": "Spatial Paradox",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 406732,
+                "description": "Spatial Paradox Talent Requires Evoker Evoke a paradox for you and a friendly healer, allowing casting while moving and increasing the range of most spells by 100% for 10 sec. Affects the nearest healer within 60 yds, if you do not have a healer targeted.",
+                "cooldown": 180.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          93352
+        ],
+        "unlocks": [],
+        "row": 13,
+        "col": 4
+      },
+      {
+        "node_id": 93346,
+        "name": "Zephyr",
+        "spell_id": 374227,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 374227,
+            "description": "Zephyr Talent Requires Evoker Conjure an updraft to lift you and your 4 nearest allies within 20 yds into the air, reducing damage taken from area-of-effect attacks by 20% and increasing movement speed by 30% for 8 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93347,
+          93287,
+          93715
+        ],
+        "unlocks": [],
+        "row": 13,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 93196,
+        "name": "Unknown",
+        "spell_id": null,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 25,
+        "enriched": false,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94950,
+        "name": "Legacy of the Lifebinder",
+        "spell_id": 1264269,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264269,
+            "description": "Legacy of the Lifebinder Talent Requires Evoker Preservation Dream Breath and Fire Breath gain an additional charge. Devastation Fire Breath gains an additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          99857,
+          94937,
+          94956,
+          109797
+        ],
+        "row": 3,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94937,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444849,
+            "name": "Trailblazer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444849,
+                "description": "Trailblazer Talent Requires Evoker Devastation Hover and Deep Breath travel 40% faster, and Hover travels 40% further. Preservation Hover, Deep Breath, and Dream Flight travel 40% faster, and Hover travels 40% further.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 445074,
+            "name": "Shape of Flame",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 445074,
+                "description": "Shape of Flame Talent Requires Evoker Tail Swipe and Wing Buffet scorch enemies and blind them with ash, causing their next attack within 4 sec to miss.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94950
+        ],
+        "unlocks": [
+          94949
+        ],
+        "row": 4,
+        "col": 9
+      },
+      {
+        "node_id": 99857,
+        "name": "Ashes in Motion",
+        "spell_id": 1264365,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264365,
+            "description": "Ashes in Motion Talent Requires Evoker Fire Breath's cooldown is reduced by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94950
+        ],
+        "unlocks": [
+          94946
+        ],
+        "row": 4,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94956,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444016,
+            "name": "Enkindle",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444016,
+                "description": "Enkindle Talent Requires Evoker Essence abilities are enhanced with Flame, dealing 20% of healing or damage done as Fire over 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444845,
+            "name": "Expanded Lungs",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444845,
+                "description": "Expanded Lungs Talent Requires Evoker Fire Breath's damage over time is increased by 30%. Dream Breath's heal over time is increased by 30%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94950
+        ],
+        "unlocks": [
+          94923
+        ],
+        "row": 4,
+        "col": 11
+      },
+      {
+        "node_id": 109797,
+        "name": "Essence Well",
+        "spell_id": 1265993,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265993,
+            "description": "Essence Well Talent Requires Evoker Preservation Dream Breath and Fire Breath have a 50% chance to generate Essence Burst. Devastation Fire Breath has a 50% chance to generate Essence Burst. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94950
+        ],
+        "unlocks": [
+          109798
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93339,
+        "name": "Echo",
+        "spell_id": 364343,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 364343,
+            "description": "Echo Talent / 1.9% of base mana Requires Evoker Wrap an ally with temporal energy, healing them for (240% of Spell Power) and causing your next healing spell to cast an additional time on that ally at [ceil(70 / Time Lord : 105 / Golden Opportunity : 77 )]% of normal healing. Essence spells cannot be Echoed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          93240,
+          93338
+        ],
+        "row": 4,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94949,
+        "name": "Conduit of Flame",
+        "spell_id": 444843,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444843,
+            "description": "Conduit of Flame Talent Requires Evoker Critical strike chance against targets above 50% health increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94937
+        ],
+        "unlocks": [
+          94920
+        ],
+        "row": 5,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94946,
+        "name": "Burning Adrenaline",
+        "spell_id": 444020,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444020,
+            "description": "Burning Adrenaline Talent Requires Evoker Preservation Fire Breath and Dream Breath reach their maximum empower level 20% faster. Devastation Fire Breath reaches its maximum empower level 20% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          99857
+        ],
+        "unlocks": [
+          94945
+        ],
+        "row": 5,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94923,
+        "name": "Fulminous Roar",
+        "spell_id": 1218447,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1218447,
+            "description": "Fulminous Roar Talent Requires Evoker Preservation Fire Breath and Dream Breath deal their damage and healing 20% more often. Devastation Fire Breath deals its damage 20% more often.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94956
+        ],
+        "unlocks": [
+          94931
+        ],
+        "row": 5,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109798,
+        "name": "Twin Flame",
+        "spell_id": 1265979,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265979,
+            "description": "Twin Flame Talent Requires Evoker Preservation Consuming Essence Burst fires a twin flame, healing your target for (390% of Spell Power). Devastation Consuming Essence Burst fires a twin flame, striking your target for (180% of Spell Power) Fire damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109797
+        ],
+        "unlocks": [
+          109796
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93240,
+        "name": "Dream Breath",
+        "spell_id": 355936,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 355936,
+            "description": "Dream Breath Talent 4.9% of base mana Channeled () Requires Evoker Inhale, gathering the power of the Dream. Release to exhale, healing yourself and 5 injured allies in a 40 yd cone in front of you for [(184.32% of Spell Power) + (30.72% of Spell Power) * (8 + 0 )]. I: &nbsp; Heals (184.32% of Spell Power) instantly and [(30.72% of Spell Power) * (8 + 0 )] over (16 + 0 ) sec. II: &nbsp;Heals [(184.32% of Spell Power) + (30.72% of Spell Power) * 2] instantly and [(30.72% of Spell Power) * (6 + 0 )] over (12 + 0 ) sec. III: Heals [(184.32% of Spell Power) + (30.72% of Spell Power) * 4] instantly and [(30.72% of Spell Power) * (4 + 0 )] over (8 + 0 ) sec.",
+            "cooldown": 30.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93339
+        ],
+        "unlocks": [
+          93239,
+          93241
+        ],
+        "row": 5,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93338,
+        "name": "Reversion",
+        "spell_id": 366155,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 366155,
+            "description": "Reversion Talent 2.2% of base mana 9 sec recharge Requires Evoker Reverse an ally's injuries, [ Golden Hour : instantly healing them for 15% of damage taken in the last 5 sec and an additional / healing them for] (256.5% of Spell Power) over 12 sec. When Reversion critically heals, its duration is extended by 2 sec, up to a maximum of 12 sec.",
+            "cooldown": 9.0,
+            "charges": 2,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93339
+        ],
+        "unlocks": [
+          93239,
+          93337
+        ],
+        "row": 5,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94920,
+        "name": "Titanic Precision",
+        "spell_id": 445625,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 445625,
+            "description": "Titanic Precision Talent Requires Evoker Devastation Living Flame and Azure Strike have 1 extra chance to trigger Essence Burst when they critically strike. Preservation Living Flame has 1 extra chance to trigger Essence Burst when it critically strikes.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94949
+        ],
+        "unlocks": [
+          94922
+        ],
+        "row": 6,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94945,
+        "name": "Deep Exhalation",
+        "spell_id": 1264321,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264321,
+            "description": "Deep Exhalation Talent Requires Evoker Devastation Fire Breath's damage over time lasts 4 sec longer. Preservation Fire Breath's damage over time lasts 4 sec longer. Dream Breath's heal over time lasts 6 sec longer.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94946
+        ],
+        "unlocks": [
+          94922
+        ],
+        "row": 6,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94931,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444322,
+            "name": "Lifecinders",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444322,
+                "description": "Lifecinders Talent Requires Evoker Obsidian Scales also applies to your target or 1 nearby injured ally at 50% value.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 445958,
+            "name": "Draconic Instincts",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 445958,
+                "description": "Draconic Instincts Talent Requires Evoker Your wounds have a small chance to cauterize, healing you for 30% of damage taken. Occurs more often from attacks that deal high damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94923
+        ],
+        "unlocks": [
+          94922
+        ],
+        "row": 6,
+        "col": 11
+      },
+      {
+        "node_id": 109796,
+        "name": "Fire Torrent",
+        "spell_id": 1265992,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265992,
+            "description": "Fire Torrent Talent Requires Evoker Twin Flame bounces to up to 2 additional targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109798
+        ],
+        "unlocks": [
+          94922
+        ],
+        "row": 6,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93241,
+        "name": "Temporal Compression",
+        "spell_id": 362874,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 362874,
+            "description": "Temporal Compression Talent Requires Evoker Each cast of a Bronze spell causes your next empower spell to reach maximum level in 10% less time, stacking up to 4 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93240
+        ],
+        "unlocks": [
+          93253
+        ],
+        "row": 6,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93239,
+        "name": "Essence Burst",
+        "spell_id": 369297,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 369297,
+            "description": "Essence Burst Talent Requires Evoker Living Flame has a 20% chance, and Reversion has a 15% chance to make your next Essence ability free. [ Essence Attunement : Stacks 1 times ]",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93338,
+          93240
+        ],
+        "unlocks": [
+          93238
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93337,
+        "name": "Rewind",
+        "spell_id": 363534,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 363534,
+            "description": "Rewind Talent 5.5% of base mana Requires Evoker Rewind 30% of damage taken in the last 5 seconds by all allies within 40 yds. Always heals for at least (Spell Power * 0.4 * 5). Healing increased by 200% when not in a raid.",
+            "cooldown": 240.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93338
+        ],
+        "unlocks": [
+          93336
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94922,
+        "name": "Consume Flame",
+        "spell_id": 444088,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444088,
+            "description": "Consume Flame Talent Requires Evoker Devastation Disintegrate damage consumes 1.0 sec of Fire Breath from enemies it damages, detonating it for 115% of the amount consumed. Pyre damage consumes 4 sec of Fire Breath from enemies it damages, detonating it for 115% of the amount consumed. Preservation Verdant Embrace healing consumes 4 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed. Emerald Blossom healing consumes 2 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94920,
+          94945,
+          94931,
+          109796
+        ],
+        "unlocks": [],
+        "row": 7,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93253,
+        "name": "Lifebind",
+        "spell_id": 373270,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373270,
+            "description": "Lifebind Talent Unlimited range Requires Evoker Verdant Embrace temporarily bonds your life with an ally, causing your healing on either partner to heal the other for 60% of the amount. Lasts 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93241
+        ],
+        "unlocks": [
+          93247,
+          93245
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93238,
+        "name": "Essence Attunement",
+        "spell_id": 375722,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375722,
+            "description": "Essence Attunement Talent Requires Evoker Essence Burst stacks 2 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93239
+        ],
+        "unlocks": [
+          93255,
+          93247,
+          93252
+        ],
+        "row": 7,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93336,
+        "name": "Time Dilation",
+        "spell_id": 357170,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 357170,
+            "description": "Time Dilation Talent 2.2% of base mana Requires Evoker Stretch time around an ally for the next 8 sec, causing 50% of damage they would take to instead be dealt over 8 sec.",
+            "cooldown": 60.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93337
+        ],
+        "unlocks": [
+          93257,
+          93255,
+          93335
+        ],
+        "row": 7,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94954,
+        "name": "Chrono Flame",
+        "spell_id": 431442,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431442,
+            "description": "Chrono Flame Talent Requires Evoker Preservation Living Flame is enhanced with Bronze magic, repeating 15% of the damage or healing you dealt to the target in the last 5 sec as Arcane, up to [(Spell Power * 2.5) * (1 + Versatility)] . Devastation, Augmentation Living Flame is enhanced with Bronze magic, repeating 25% of the damage or healing you dealt to the target in the last 5 sec as Arcane, up to [(Spell Power * 2.5) * (1 + Versatility)].",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94948,
+          94955,
+          94925,
+          109510
+        ],
+        "row": 8,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93245,
+        "name": "Unshakable",
+        "spell_id": 1239581,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1239581,
+            "description": "Unshakable Talent Requires Evoker Your empower spells are 10% more effective. While charging a healing empower spell, you cannot be knocked back.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93253
+        ],
+        "unlocks": [
+          93246,
+          93242
+        ],
+        "row": 8,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93247,
+        "name": "Fluttering Seedlings",
+        "spell_id": 359793,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 359793,
+            "description": "Fluttering Seedlings Talent Requires Evoker Emerald Blossom sends out flying seedlings when it bursts, healing 2 allies up to 40 yds away for (155.4% of Spell Power).",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 359793,
+            "description": "Fluttering Seedlings Talent Requires Evoker Emerald Blossom sends out flying seedlings when it bursts, healing 2 allies up to 40 yds away for (155.4% of Spell Power).",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93238,
+          93253
+        ],
+        "unlocks": [
+          93246,
+          93248
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93252,
+        "name": "Font of Magic",
+        "spell_id": 375783,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375783,
+            "description": "Font of Magic Talent Requires Evoker Your empower spells' maximum level is increased by 1.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93238
+        ],
+        "unlocks": [
+          93249
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93255,
+        "name": "Golden Hour",
+        "spell_id": 378196,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378196,
+            "description": "Golden Hour Talent Requires Evoker Reversion instantly heals the target for 15% of damage taken in the last 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93336,
+          93238
+        ],
+        "unlocks": [
+          93254,
+          93256
+        ],
+        "row": 8,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93335,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 376207,
+            "name": "Delay Harm",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 376207,
+                "description": "Delay Harm Talent Requires Evoker 15% of delayed damage from Time Dilation is absorbed.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 376204,
+            "name": "Just in Time",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 376204,
+                "description": "Just in Time Talent Requires Evoker Time Dilation gains an additional charge, and its cooldown is reduced by 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          93336
+        ],
+        "unlocks": [],
+        "row": 8,
+        "col": 20
+      },
+      {
+        "node_id": 93257,
+        "name": "Temporal Anomaly",
+        "spell_id": 373861,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373861,
+            "description": "Temporal Anomaly Talent 7.5% of base mana Requires Evoker Send forward a vortex of temporal energy, absorbing [Spell Power * 5 * (1 + Versatility)] damage on you and any allies in its path. Absorption is reduced beyond 5 targets.",
+            "cooldown": 15.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93336
+        ],
+        "unlocks": [
+          93256,
+          93258
+        ],
+        "row": 8,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94948,
+        "name": "Warp",
+        "spell_id": 429483,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429483,
+            "description": "Warp Talent Requires Evoker Hover now causes you to briefly warp out of existence and appear at your destination. Hover's cooldown is also reduced by 5 sec. Hover continues to allow Evoker spells to be cast while moving.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94954
+        ],
+        "unlocks": [
+          94935
+        ],
+        "row": 9,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94955,
+        "name": "Temporal Burst",
+        "spell_id": 431695,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431695,
+            "description": "Temporal Burst Talent Requires Evoker Tip the Scales overloads you with temporal energy, increasing your haste, movement speed, and cooldown recovery rate by 30%, decreasing over 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94954
+        ],
+        "unlocks": [
+          94947
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109510,
+        "name": "Chronoboon",
+        "spell_id": 1260484,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1260484,
+            "description": "Chronoboon Talent Requires Evoker Tip the Scales' cooldown is reduced by 30 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94954
+        ],
+        "unlocks": [
+          109509
+        ],
+        "row": 9,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94925,
+        "name": "Reverberations",
+        "spell_id": 431615,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431615,
+            "description": "Reverberations Talent Requires Evoker [ Preservation : Verdant Embrace heals for an additional 60% over 8 sec ]",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94954
+        ],
+        "unlocks": [
+          94951
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93242,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 376138,
+            "name": "Empath",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 376138,
+                "description": "Empath Talent Requires Evoker Empower spells increase your Essence regeneration rate by 100% for 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 376150,
+            "name": "Spiritual Clarity",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 376150,
+                "description": "Spiritual Clarity Talent Requires Evoker Dream Breath's cooldown is reduced by 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          93245
+        ],
+        "unlocks": [
+          93250
+        ],
+        "row": 9,
+        "col": 15
+      },
+      {
+        "node_id": 93246,
+        "name": "Exhilarating Burst",
+        "spell_id": 377100,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377100,
+            "description": "Exhilarating Burst Talent Requires Evoker Each time you gain Essence Burst, your critical heals are 230% effective instead of the usual 200% for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 377100,
+            "description": "Exhilarating Burst Talent Requires Evoker Each time you gain Essence Burst, your critical heals are 230% effective instead of the usual 200% for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93247,
+          93245
+        ],
+        "unlocks": [],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93248,
+        "name": "Field of Dreams",
+        "spell_id": 370062,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 370062,
+            "description": "Field of Dreams Talent Requires Evoker Every other Emerald Blossom has a 100% chance for one of your Fluttering Seedlings to grow into a new Emerald Blossom.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93247
+        ],
+        "unlocks": [
+          93250,
+          93267
+        ],
+        "row": 9,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93249,
+        "name": "Power Nexus",
+        "spell_id": 369908,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 369908,
+            "description": "Power Nexus Talent Requires Evoker Increases your maximum Essence to 6.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93252
+        ],
+        "unlocks": [
+          93267
+        ],
+        "row": 9,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93254,
+        "name": "Time Lord",
+        "spell_id": 372527,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 372527,
+            "description": "Time Lord Talent Requires Evoker Echo replicates 50% more healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 372527,
+            "description": "Time Lord Talent Requires Evoker Echo replicates 50% more healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93255
+        ],
+        "unlocks": [
+          93260,
+          93267
+        ],
+        "row": 9,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93256,
+        "name": "Flow State",
+        "spell_id": 385696,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385696,
+            "description": "Flow State Talent Requires Evoker Empower spells cause time to flow 10% faster for you, increasing movement speed, cooldown recharge rate, and cast speed. Lasts 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 385696,
+            "description": "Flow State Talent Requires Evoker Empower spells cause time to flow 10% faster for you, increasing movement speed, cooldown recharge rate, and cast speed. Lasts 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93257,
+          93255
+        ],
+        "unlocks": [],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93258,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 376236,
+            "name": "Resonating Sphere",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 376236,
+                "description": "Resonating Sphere Talent Requires Evoker Temporal Anomaly applies Echo at 30% effectiveness to the first 5 allies it passes through.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 376237,
+            "name": "Nozdormu's Teachings",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 376237,
+                "description": "Nozdormu's Teachings Talent Requires Evoker Temporal Anomaly reduces the cooldowns of your empower spells by 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          93257
+        ],
+        "unlocks": [
+          93260
+        ],
+        "row": 9,
+        "col": 21
+      },
+      {
+        "node_id": 94935,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 431873,
+            "name": "Temporality",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 431873,
+                "description": "Temporality Talent Requires Evoker Warp reduces damage taken by 20%, starting high and reducing over 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 432008,
+            "name": "Motes of Acceleration",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 432008,
+                "description": "Motes of Acceleration Talent Requires Evoker Warp leaves a trail of Motes of Acceleration. Allies who come in contact with a mote gain 20% increased movement speed for 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94948
+        ],
+        "unlocks": [
+          94932
+        ],
+        "row": 10,
+        "col": 9
+      },
+      {
+        "node_id": 94947,
+        "name": "Nozdormu Adept",
+        "spell_id": 431715,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431715,
+            "description": "Nozdormu Adept Talent Requires Evoker Devastation, Augmentation Prescience cooldown reduced by 2 sec and it grants 1% additional critical strike chance. Preservation Temporal Anomaly mana cost reduced by 15% and cooldown reduced by 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94955
+        ],
+        "unlocks": [
+          94930
+        ],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109509,
+        "name": "Energy Cycles",
+        "spell_id": 1260568,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1260568,
+            "description": "Energy Cycles Talent Requires Evoker Temporal Burst grants Essence Burst every 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109510
+        ],
+        "unlocks": [
+          109508
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94951,
+        "name": "Primacy",
+        "spell_id": 431657,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431657,
+            "description": "Primacy Talent Requires Evoker For each [ Preservation : healing over time effect from Verdant Embrace ] gain 3% haste, up to 9%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94925
+        ],
+        "unlocks": [
+          94942
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93250,
+        "name": "Call of Ysera",
+        "spell_id": 373834,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 373834,
+            "description": "Call of Ysera Talent Unlimited range Requires Evoker Dream Breath healing increased by 20%, and Living Flame healing increased by 30%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93248,
+          93242
+        ],
+        "unlocks": [
+          93269,
+          93251,
+          93237
+        ],
+        "row": 10,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93267,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 359816,
+            "name": "Dream Flight",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 359816,
+                "description": "Dream Flight Talent 4% of base mana 15 - Requires Evoker Take in a deep breath and fly to the targeted location, healing all allies in your path for (500% of Spell Power) immediately, and (1000% of Spell Power) over 15 sec, reduced beyond 5 targets. Removes all root effects. You are immune to movement impairing and loss of control effects. Damage taken while you are flying is absorbed, up to 100% of your maximum health.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 370537,
+            "name": "Stasis",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 370537,
+                "description": "Stasis Talent 4% of base mana Requires Evoker Causes your next 3 helpful spells to be duplicated and stored in a time lock. You may reactivate Stasis any time within 30 sec to quickly unleash their magic.",
+                "cooldown": 90.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          93254,
+          93248,
+          93249
+        ],
+        "unlocks": [
+          93237,
+          93264,
+          93266
+        ],
+        "row": 10,
+        "col": 18
+      },
+      {
+        "node_id": 93260,
+        "name": "Grace Period",
+        "spell_id": 376239,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376239,
+            "description": "Grace Period Talent Requires Evoker Your healing is increased by 10% on targets with your Reversion.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93258,
+          93254
+        ],
+        "unlocks": [
+          93264,
+          93259,
+          93261
+        ],
+        "row": 10,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94932,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 431874,
+            "name": "Double-time",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 431874,
+                "description": "Double-time Talent Requires Evoker Devastation, Augmentation Ebon Might and Prescience gain a chance equal to your critical strike chance to grant 50% additional stats. Preservation When Dream Breath or Fire Breath critically strike, their duration is extended by 2 sec, up to a maximum of 12 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 431984,
+            "name": "Time Convergence",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 431984,
+                "description": "Time Convergence Talent Requires Evoker Non-defensive abilities with a 45 second or longer cooldown grant 5% Intellect for 15 sec. Essence spells extend the duration by 1 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94935
+        ],
+        "unlocks": [
+          94929
+        ],
+        "row": 11,
+        "col": 9
+      },
+      {
+        "node_id": 94930,
+        "name": "Instability Matrix",
+        "spell_id": 431484,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431484,
+            "description": "Instability Matrix Talent Requires Evoker Each time you cast an empower spell, unstable time magic reduces its cooldown by up to 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94947
+        ],
+        "unlocks": [
+          94929
+        ],
+        "row": 11,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109508,
+        "name": "Overclock",
+        "spell_id": 1260647,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1260647,
+            "description": "Overclock Talent Requires Evoker Chrono Flames' maximum damage or healing is increased by 40%, up to [(Spell Power * 3.5) * (1 + Versatility)] Arcane.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109509
+        ],
+        "unlocks": [
+          94929
+        ],
+        "row": 11,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94942,
+        "name": "Golden Opportunity",
+        "spell_id": 432004,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432004,
+            "description": "Golden Opportunity Talent Requires Evoker Preservation Echo is 10% more effective. Devastation, Augmentation Prescience lasts 15% longer.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94951
+        ],
+        "unlocks": [
+          94929
+        ],
+        "row": 11,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93269,
+        "name": "Spark of Insight",
+        "spell_id": 377099,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377099,
+            "description": "Spark of Insight Talent Requires Evoker Consuming a full Temporal Compression grants you Essence Burst.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93250
+        ],
+        "unlocks": [
+          93268
+        ],
+        "row": 11,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93251,
+        "name": "Ouroboros",
+        "spell_id": 381921,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381921,
+            "description": "Ouroboros Talent Requires Evoker Casting Echo grants one stack of Ouroboros, increasing the healing of your next Emerald Blossom by 30%, stacking up to 5 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93250
+        ],
+        "unlocks": [
+          93268
+        ],
+        "row": 11,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93237,
+        "name": "Life-Giver's Flame",
+        "spell_id": 371426,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 371426,
+            "description": "Life-Giver's Flame Talent Requires Evoker Fire Breath heals 5 nearby injured allies for 80% of damage done to up to 5 targets, split evenly among them.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93250,
+          93267
+        ],
+        "unlocks": [
+          93236,
+          93268
+        ],
+        "row": 11,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93266,
+        "name": "Inner Flame",
+        "spell_id": 1242745,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1242745,
+            "description": "Inner Flame Talent Requires Evoker Casting Dream Flight or Stasis increases your healing over time by 60% and causes Living Flame and Reversion to have a 100% increased chance to grant Essence Burst. Lasts [ Dream Flight : 20 / 15] sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93267
+        ],
+        "unlocks": [
+          93236
+        ],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93264,
+        "name": "Temporal Artificer",
+        "spell_id": 381922,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381922,
+            "description": "Temporal Artificer Talent Requires Evoker Rewind's cooldown is reduced by 60 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93260,
+          93267
+        ],
+        "unlocks": [
+          93236,
+          93263
+        ],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93261,
+        "name": "Energy Loop",
+        "spell_id": 372233,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 372233,
+            "description": "Energy Loop Level 90 Talent Requires Evoker Disintegrate deals 35% more damage and generates ( 2250 * 4) mana over its duration. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93260
+        ],
+        "unlocks": [
+          93263
+        ],
+        "row": 11,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93259,
+        "name": "Time of Need",
+        "spell_id": 368412,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 368412,
+            "description": "Time of Need Talent Requires Evoker When you or an ally fall below 30% health, a version of yourself enters your timeline and heals them for (920% of Spell Power). Your alternate self continues healing for 8 sec before returning to their timeline. May only occur once every 60 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93260
+        ],
+        "unlocks": [
+          93263
+        ],
+        "row": 11,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94929,
+        "name": "Afterimage",
+        "spell_id": 431875,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431875,
+            "description": "Afterimage Talent Requires Evoker Empower spells send up to 3 Chrono Flames to your targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94930,
+          94932,
+          94942,
+          109508
+        ],
+        "unlocks": [],
+        "row": 12,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93268,
+        "name": "Renewing Breath",
+        "spell_id": 371257,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 371257,
+            "description": "Renewing Breath Talent Requires Evoker Dream Breath healing is increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 371257,
+            "description": "Renewing Breath Talent Requires Evoker Dream Breath healing is increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93237,
+          93269,
+          93251
+        ],
+        "unlocks": [
+          99803,
+          93243
+        ],
+        "row": 12,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93236,
+        "name": "Lifeforce Mender",
+        "spell_id": 376179,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376179,
+            "description": "Lifeforce Mender Talent Requires Evoker Red spells deal 20% additional damage and healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 376179,
+            "description": "Lifeforce Mender Talent Requires Evoker Red spells deal 20% additional damage and healing.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93264,
+          93237,
+          93266
+        ],
+        "unlocks": [
+          99804
+        ],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93263,
+        "name": "Timeless Magic",
+        "spell_id": 376240,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376240,
+            "description": "Timeless Magic Talent Requires Evoker Reversion, Time Dilation, Echo, and Temporal Anomaly last 15% longer and cost 15% less mana.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 376240,
+            "description": "Timeless Magic Talent Requires Evoker Reversion, Time Dilation, Echo, and Temporal Anomaly last 15% longer and cost 15% less mana.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93264,
+          93259,
+          93261
+        ],
+        "unlocks": [
+          93265,
+          93262
+        ],
+        "row": 12,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93243,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1241669,
+            "name": "Dream Simulacrum",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1241669,
+                "description": "Dream Simulacrum Talent Unlimited range Requires Evoker Verdant Embrace healing is increased by 30%. In addition, it no longer causes you to leap to your target, instead sending forth a Dream Simulacrum.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1241704,
+            "name": "Wings of Liberty",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1241704,
+                "description": "Wings of Liberty Talent Unlimited range Requires Evoker Verdant Embrace gains an additional charge.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          93268
+        ],
+        "unlocks": [],
+        "row": 13,
+        "col": 15
+      },
+      {
+        "node_id": 99803,
+        "name": "Titan's Gift",
+        "spell_id": 443264,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443264,
+            "description": "Titan's Gift Talent Requires Evoker Essence Burst increases the effectiveness of your next Essence ability by 35%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93268
+        ],
+        "unlocks": [],
+        "row": 13,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 99804,
+        "name": "Lifespark",
+        "spell_id": 443177,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443177,
+            "description": "Lifespark Talent Requires Evoker Reversion healing has a chance to cause your next Living Flame to cast instantly and deal 50% increased healing or damage. Stacks up to 2 charges.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93236
+        ],
+        "unlocks": [],
+        "row": 13,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93265,
+        "name": "Twin Echoes",
+        "spell_id": 1242031,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1242031,
+            "description": "Twin Echoes Talent Requires Evoker Casting Emerald Blossom causes your next Echo to cast on an additional ally within 25 yards at 100% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93263
+        ],
+        "unlocks": [],
+        "row": 13,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93262,
+        "name": "Tempo Charged",
+        "spell_id": 1237978,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1237978,
+            "description": "Tempo Charged Talent Requires Evoker Bronze healing and absorption increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93263
+        ],
+        "unlocks": [],
+        "row": 13,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110413,
+        "name": "Merithra's Blessing",
+        "spell_id": 1256577,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1256577,
+            "description": "Merithra's Blessing Talent Requires Evoker Essence abilities have a chance to infuse your next Reversion with the power of the Green Dragonflight, upgrading it to Merithra's Blessing: Merithra's Blessing Spring a bloom of life from your target, healing them and up to 4 other allies within 30 yards for (250% of Spell Power). Blooms may heal your primary target multiple times if no nearby injured allies are present. (Proc chance: 20%)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 14,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Scalecommander",
+      "nodes": [
+        {
+          "node_id": 94921,
+          "name": "Melt Armor",
+          "spell_id": 441176,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441176,
+              "description": "Melt Armor Talent Requires Evoker Augmentation Deep Breath causes enemies to take 20% increased damage from Bombardments and Essence abilities for 12 sec. Preservation Deep Breath causes enemies to take 20% increased damage from Bombardments and Essence abilities for 12 sec. Devastation Deep Breath causes enemies to take 20% increased damage from Bombardments and Essence abilities for 12 sec. The duration of this effect is extended when Deep Breath is cast multiple times.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94952
+          ],
+          "unlocks": [
+            94933
+          ],
+          "row": 4,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94928,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441212,
+              "name": "Extended Battle",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441212,
+                  "description": "Extended Battle Talent Requires Evoker Essence abilities extend Bombardments by 1 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441219,
+              "name": "Diverted Power",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441219,
+                  "description": "Diverted Power Talent Requires Evoker Bombardments have a chance to generate Essence Burst.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94953
+          ],
+          "unlocks": [
+            94941
+          ],
+          "row": 5,
+          "col": 22
+        },
+        {
+          "node_id": 94933,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441180,
+              "name": "Hardened Scales",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441180,
+                  "description": "Hardened Scales Talent Requires Evoker Obsidian Scales reduces damage taken by an additional 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441181,
+              "name": "Menacing Presence",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441181,
+                  "description": "Menacing Presence Talent Requires Evoker Knocking enemies up or backwards reduces their damage done to you by 15% for 8 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94921
+          ],
+          "unlocks": [
+            94941
+          ],
+          "row": 5,
+          "col": 21
+        },
+        {
+          "node_id": 94934,
+          "name": "Unrelenting Siege",
+          "spell_id": 441246,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441246,
+              "description": "Unrelenting Siege Talent Requires Evoker Devastation For each second you are in combat, Azure Strike, Living Flame, and Disintegrate deal 1% increased damage, up to 15%. Preservation, Augmentation For each second you are in combat, Azure Strike, Living Flame, and Eruption deal 1% increased damage, up to 15%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94944
+          ],
+          "unlocks": [
+            94943
+          ],
+          "row": 4,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94936,
+          "name": "Bombardments",
+          "spell_id": 434300,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434300,
+              "description": "Bombardments Talent Requires Evoker Devastation Mass Disintegrate marks your primary target for destruction for the next 6 sec. You and your allies have a chance to trigger a Bombardment when attacking marked targets, dealing [$INT * 4.75 * (1 + Versatility) * Percent Damage] Volcanic damage split amongst all nearby enemies. Preservation, Augmentation Mass Eruption marks your primary target for destruction for the next 6 sec. You and your allies have a chance to trigger a Bombardment when attacking marked targets, dealing [$INT * 4.75 * (1 + Versatility) * Percent Damage] Volcanic damage split amongst all nearby enemies.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94939,
+            98931
+          ],
+          "unlocks": [
+            94953
+          ],
+          "row": 3,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94939,
+          "name": "Mass Disintegrate",
+          "spell_id": 436335,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 436335,
+              "description": "Mass Disintegrate Talent Requires Evoker Empower spells cause your next Disintegrate to strike up to 3 targets. When striking fewer than 3 targets, Disintegrate damage is increased by 10% for each missing target.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94936,
+            94944,
+            94952,
+            109795
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94941,
+          "name": "Maneuverability",
+          "spell_id": 433871,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 433871,
+              "description": "Maneuverability Talent Requires Evoker Augmentation Deep Breath can now be steered in your desired direction. In addition, Deep Breath burns targets for (600% of Spell Power) Volcanic damage over 12 sec. Preservation Deep Breath can now be steered in your desired direction. In addition, Deep Breath burns targets for (600% of Spell Power) Volcanic damage over 12 sec. Devastation Deep Breath can now be steered in your desired direction. In addition, Deep Breath burns targets for (600% of Spell Power) Volcanic damage over 12 sec. The duration of this effect is extended when Deep Breath is cast multiple times.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94928,
+            94933,
+            94943,
+            109793,
+            109793
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94943,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441253,
+              "name": "Nimble Flyer",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441253,
+                  "description": "Nimble Flyer Talent Requires Evoker While Hovering, damage taken from area of effect attacks is reduced by 10%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441257,
+              "name": "Slipstream",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441257,
+                  "description": "Slipstream Talent Requires Evoker Deep Breath resets a charge of Hover.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94934
+          ],
+          "unlocks": [
+            94941
+          ],
+          "row": 5,
+          "col": 23
+        },
+        {
+          "node_id": 94944,
+          "name": "Onslaught",
+          "spell_id": 441245,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441245,
+              "description": "Onslaught Talent Requires Evoker Entering combat grants a charge of Burnout, causing your next Living Flame to cast instantly.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94939,
+            98931
+          ],
+          "unlocks": [
+            94934
+          ],
+          "row": 3,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94952,
+          "name": "Might of the Black Dragonflight",
+          "spell_id": 441705,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441705,
+              "description": "Might of the Black Dragonflight Talent Requires Evoker Black spells deal 20% increased damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            98931,
+            94939
+          ],
+          "unlocks": [
+            94921
+          ],
+          "row": 3,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94953,
+          "name": "Wingleader",
+          "spell_id": 441206,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441206,
+              "description": "Wingleader Talent Requires Evoker Preservation, Augmentation Bombardments reduce the cooldown of Breath of Eons by 1.0 sec for each target struck, up to 3.0 sec. Devastation Bombardments reduce the cooldown of Deep Breath by 0.5 sec for each target struck, up to 1.5 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Breath of Eons",
+                  "type": "cd_reduction",
+                  "value": 1,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Deep Breath",
+                  "type": "cd_reduction",
+                  "value": 0.5,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94936
+          ],
+          "unlocks": [
+            94928
+          ],
+          "row": 4,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 98931,
+          "name": "Mass Eruption",
+          "spell_id": 438587,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 438587,
+              "description": "Mass Eruption Talent Requires Evoker Empower spells cause your next Eruption to strike up to 3 targets. When striking less than 3 targets, Eruption damage is increased by 10% for each missing target.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94944,
+            94936,
+            94952,
+            109795
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109793,
+          "name": "Refined Essence",
+          "spell_id": 1261452,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1261452,
+              "description": "Refined Essence Talent Requires Evoker Essence abilities deal 15% additional damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109794,
+            109794
+          ],
+          "unlocks": [
+            94941,
+            94941
+          ],
+          "row": 5,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109794,
+          "name": "Concentrated Power",
+          "spell_id": 1261448,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1261448,
+              "description": "Concentrated Power Talent Requires Evoker Devastation Mass Disintegrate strikes 1 additional target. Preservation, Augmentation Mass Eruption strikes 1 additional target.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109795,
+            109795
+          ],
+          "unlocks": [
+            109793,
+            109793
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109795,
+          "name": "Command Squadron",
+          "spell_id": 1260745,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260745,
+              "description": "Command Squadron Talent Requires Evoker While flying during [ Breath of Eons / Deep Breath] you are assisted by a squadron of Dracthyr who assault enemies with Pyre, dealing (180% of Spell Power) Fire damage to nearby enemies up to 8 times.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            98931,
+            94939
+          ],
+          "unlocks": [
+            109794,
+            109794
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Flameshaper",
+      "nodes": [
+        {
+          "node_id": 94920,
+          "name": "Titanic Precision",
+          "spell_id": 445625,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 445625,
+              "description": "Titanic Precision Talent Requires Evoker Devastation Living Flame and Azure Strike have 1 extra chance to trigger Essence Burst when they critically strike. Preservation Living Flame has 1 extra chance to trigger Essence Burst when it critically strikes.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94949
+          ],
+          "unlocks": [
+            94922
+          ],
+          "row": 6,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94922,
+          "name": "Consume Flame",
+          "spell_id": 444088,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444088,
+              "description": "Consume Flame Talent Requires Evoker Devastation Disintegrate damage consumes 1.0 sec of Fire Breath from enemies it damages, detonating it for 115% of the amount consumed. Pyre damage consumes 4 sec of Fire Breath from enemies it damages, detonating it for 115% of the amount consumed. Preservation Verdant Embrace healing consumes 4 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed. Emerald Blossom healing consumes 2 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94920,
+            94945,
+            94931,
+            109796
+          ],
+          "unlocks": [],
+          "row": 7,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94923,
+          "name": "Fulminous Roar",
+          "spell_id": 1218447,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1218447,
+              "description": "Fulminous Roar Talent Requires Evoker Preservation Fire Breath and Dream Breath deal their damage and healing 20% more often. Devastation Fire Breath deals its damage 20% more often.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94956
+          ],
+          "unlocks": [
+            94931
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94931,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444322,
+              "name": "Lifecinders",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444322,
+                  "description": "Lifecinders Talent Requires Evoker Obsidian Scales also applies to your target or 1 nearby injured ally at 50% value.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 445958,
+              "name": "Draconic Instincts",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445958,
+                  "description": "Draconic Instincts Talent Requires Evoker Your wounds have a small chance to cauterize, healing you for 30% of damage taken. Occurs more often from attacks that deal high damage.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94923
+          ],
+          "unlocks": [
+            94922
+          ],
+          "row": 6,
+          "col": 11
+        },
+        {
+          "node_id": 94937,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444849,
+              "name": "Trailblazer",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444849,
+                  "description": "Trailblazer Talent Requires Evoker Devastation Hover and Deep Breath travel 40% faster, and Hover travels 40% further. Preservation Hover, Deep Breath, and Dream Flight travel 40% faster, and Hover travels 40% further.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 445074,
+              "name": "Shape of Flame",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445074,
+                  "description": "Shape of Flame Talent Requires Evoker Tail Swipe and Wing Buffet scorch enemies and blind them with ash, causing their next attack within 4 sec to miss.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94950
+          ],
+          "unlocks": [
+            94949
+          ],
+          "row": 4,
+          "col": 9
+        },
+        {
+          "node_id": 94945,
+          "name": "Deep Exhalation",
+          "spell_id": 1264321,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264321,
+              "description": "Deep Exhalation Talent Requires Evoker Devastation Fire Breath's damage over time lasts 4 sec longer. Preservation Fire Breath's damage over time lasts 4 sec longer. Dream Breath's heal over time lasts 6 sec longer.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94946
+          ],
+          "unlocks": [
+            94922
+          ],
+          "row": 6,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94946,
+          "name": "Burning Adrenaline",
+          "spell_id": 444020,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444020,
+              "description": "Burning Adrenaline Talent Requires Evoker Preservation Fire Breath and Dream Breath reach their maximum empower level 20% faster. Devastation Fire Breath reaches its maximum empower level 20% faster.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            99857
+          ],
+          "unlocks": [
+            94945
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94949,
+          "name": "Conduit of Flame",
+          "spell_id": 444843,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444843,
+              "description": "Conduit of Flame Talent Requires Evoker Critical strike chance against targets above 50% health increased by 15%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94937
+          ],
+          "unlocks": [
+            94920
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94950,
+          "name": "Legacy of the Lifebinder",
+          "spell_id": 1264269,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264269,
+              "description": "Legacy of the Lifebinder Talent Requires Evoker Preservation Dream Breath and Fire Breath gain an additional charge. Devastation Fire Breath gains an additional charge.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            99857,
+            94937,
+            94956,
+            109797
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94956,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444016,
+              "name": "Enkindle",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444016,
+                  "description": "Enkindle Talent Requires Evoker Essence abilities are enhanced with Flame, dealing 20% of healing or damage done as Fire over 8 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444845,
+              "name": "Expanded Lungs",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444845,
+                  "description": "Expanded Lungs Talent Requires Evoker Fire Breath's damage over time is increased by 30%. Dream Breath's heal over time is increased by 30%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94950
+          ],
+          "unlocks": [
+            94923
+          ],
+          "row": 4,
+          "col": 11
+        },
+        {
+          "node_id": 99857,
+          "name": "Ashes in Motion",
+          "spell_id": 1264365,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264365,
+              "description": "Ashes in Motion Talent Requires Evoker Fire Breath's cooldown is reduced by 5 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94950
+          ],
+          "unlocks": [
+            94946
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109796,
+          "name": "Fire Torrent",
+          "spell_id": 1265992,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265992,
+              "description": "Fire Torrent Talent Requires Evoker Twin Flame bounces to up to 2 additional targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109798
+          ],
+          "unlocks": [
+            94922
+          ],
+          "row": 6,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109797,
+          "name": "Essence Well",
+          "spell_id": 1265993,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265993,
+              "description": "Essence Well Talent Requires Evoker Preservation Dream Breath and Fire Breath have a 50% chance to generate Essence Burst. Devastation Fire Breath has a 50% chance to generate Essence Burst. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94950
+          ],
+          "unlocks": [
+            109798
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109798,
+          "name": "Twin Flame",
+          "spell_id": 1265979,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1265979,
+              "description": "Twin Flame Talent Requires Evoker Preservation Consuming Essence Burst fires a twin flame, healing your target for (390% of Spell Power). Devastation Consuming Essence Burst fires a twin flame, striking your target for (180% of Spell Power) Fire damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109797
+          ],
+          "unlocks": [
+            109796
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Chronowarden",
+      "nodes": [
+        {
+          "node_id": 94925,
+          "name": "Reverberations",
+          "spell_id": 431615,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431615,
+              "description": "Reverberations Talent Requires Evoker [ Preservation : Verdant Embrace heals for an additional 60% over 8 sec ]",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94954
+          ],
+          "unlocks": [
+            94951
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94929,
+          "name": "Afterimage",
+          "spell_id": 431875,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431875,
+              "description": "Afterimage Talent Requires Evoker Empower spells send up to 3 Chrono Flames to your targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94930,
+            94932,
+            94942,
+            109508
+          ],
+          "unlocks": [],
+          "row": 12,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94930,
+          "name": "Instability Matrix",
+          "spell_id": 431484,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431484,
+              "description": "Instability Matrix Talent Requires Evoker Each time you cast an empower spell, unstable time magic reduces its cooldown by up to 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94947
+          ],
+          "unlocks": [
+            94929
+          ],
+          "row": 11,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94932,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 431874,
+              "name": "Double-time",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431874,
+                  "description": "Double-time Talent Requires Evoker Devastation, Augmentation Ebon Might and Prescience gain a chance equal to your critical strike chance to grant 50% additional stats. Preservation When Dream Breath or Fire Breath critically strike, their duration is extended by 2 sec, up to a maximum of 12 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 431984,
+              "name": "Time Convergence",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431984,
+                  "description": "Time Convergence Talent Requires Evoker Non-defensive abilities with a 45 second or longer cooldown grant 5% Intellect for 15 sec. Essence spells extend the duration by 1 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94935
+          ],
+          "unlocks": [
+            94929
+          ],
+          "row": 11,
+          "col": 9
+        },
+        {
+          "node_id": 94935,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 431873,
+              "name": "Temporality",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431873,
+                  "description": "Temporality Talent Requires Evoker Warp reduces damage taken by 20%, starting high and reducing over 3 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 432008,
+              "name": "Motes of Acceleration",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 432008,
+                  "description": "Motes of Acceleration Talent Requires Evoker Warp leaves a trail of Motes of Acceleration. Allies who come in contact with a mote gain 20% increased movement speed for 30 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94948
+          ],
+          "unlocks": [
+            94932
+          ],
+          "row": 10,
+          "col": 9
+        },
+        {
+          "node_id": 94942,
+          "name": "Golden Opportunity",
+          "spell_id": 432004,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432004,
+              "description": "Golden Opportunity Talent Requires Evoker Preservation Echo is 10% more effective. Devastation, Augmentation Prescience lasts 15% longer.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94951
+          ],
+          "unlocks": [
+            94929
+          ],
+          "row": 11,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94947,
+          "name": "Nozdormu Adept",
+          "spell_id": 431715,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431715,
+              "description": "Nozdormu Adept Talent Requires Evoker Devastation, Augmentation Prescience cooldown reduced by 2 sec and it grants 1% additional critical strike chance. Preservation Temporal Anomaly mana cost reduced by 15% and cooldown reduced by 4 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94955
+          ],
+          "unlocks": [
+            94930
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94948,
+          "name": "Warp",
+          "spell_id": 429483,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429483,
+              "description": "Warp Talent Requires Evoker Hover now causes you to briefly warp out of existence and appear at your destination. Hover's cooldown is also reduced by 5 sec. Hover continues to allow Evoker spells to be cast while moving.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94954
+          ],
+          "unlocks": [
+            94935
+          ],
+          "row": 9,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94951,
+          "name": "Primacy",
+          "spell_id": 431657,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431657,
+              "description": "Primacy Talent Requires Evoker For each [ Preservation : healing over time effect from Verdant Embrace ] gain 3% haste, up to 9%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94925
+          ],
+          "unlocks": [
+            94942
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94954,
+          "name": "Chrono Flame",
+          "spell_id": 431442,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431442,
+              "description": "Chrono Flame Talent Requires Evoker Preservation Living Flame is enhanced with Bronze magic, repeating 15% of the damage or healing you dealt to the target in the last 5 sec as Arcane, up to [(Spell Power * 2.5) * (1 + Versatility)] . Devastation, Augmentation Living Flame is enhanced with Bronze magic, repeating 25% of the damage or healing you dealt to the target in the last 5 sec as Arcane, up to [(Spell Power * 2.5) * (1 + Versatility)].",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94948,
+            94955,
+            94925,
+            109510
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94955,
+          "name": "Temporal Burst",
+          "spell_id": 431695,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431695,
+              "description": "Temporal Burst Talent Requires Evoker Tip the Scales overloads you with temporal energy, increasing your haste, movement speed, and cooldown recovery rate by 30%, decreasing over 30 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94954
+          ],
+          "unlocks": [
+            94947
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109508,
+          "name": "Overclock",
+          "spell_id": 1260647,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260647,
+              "description": "Overclock Talent Requires Evoker Chrono Flames' maximum damage or healing is increased by 40%, up to [(Spell Power * 3.5) * (1 + Versatility)] Arcane.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109509
+          ],
+          "unlocks": [
+            94929
+          ],
+          "row": 11,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109509,
+          "name": "Energy Cycles",
+          "spell_id": 1260568,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260568,
+              "description": "Energy Cycles Talent Requires Evoker Temporal Burst grants Essence Burst every 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109510
+          ],
+          "unlocks": [
+            109508
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109510,
+          "name": "Chronoboon",
+          "spell_id": 1260484,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260484,
+              "description": "Chronoboon Talent Requires Evoker Tip the Scales' cooldown is reduced by 30 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94954
+          ],
+          "unlocks": [
+            109509
+          ],
+          "row": 9,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

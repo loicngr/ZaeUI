@@ -1,0 +1,5827 @@
+{
+  "class": "Druid",
+  "spec": "Guardian",
+  "scraped_at": "2026-03-25T17:56:43.105092+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99807,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 14
+      },
+      {
+        "node_id": 82199,
+        "name": "Rake",
+        "spell_id": 1822,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1822,
+            "description": "Rake Talent Requires Druid Requires Cat Form Rake the target for (29.1% of Attack Power) Bleed damage and an additional (147% of Attack Power) Bleed damage over 15 sec. [ Infected Wounds : Reduces the target's movement speed by 20% for 12 sec ] Awards 1 combo point.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82223,
+          82222,
+          82239
+        ],
+        "row": 2,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82220,
+        "name": "Frenzied Regeneration",
+        "spell_id": 22842,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 22842,
+            "description": "Frenzied Regeneration Talent Requires Druid Requires Bear Form Guardian Heals you for 24% health over 3 sec . Balance, Feral, Restoration Heals you for 24% health over 3 sec .",
+            "cooldown": 36.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82223,
+          82219,
+          82218
+        ],
+        "row": 2,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82217,
+        "name": "Rejuvenation",
+        "spell_id": 774,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 774,
+            "description": "Rejuvenation Talent 5% of base mana Requires Druid Heals the target for (292% of Spell Power) over 12 sec / Germination : 14 sec / Lingering Healing : 15 sec . [ Germination : You can apply Rejuvenation twice to the same target ] [ Incarnation: Tree of Life : Tree of Life: Healing increased by 40% and Mana cost reduced by 30%. ]",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82205,
+          82241,
+          82219
+        ],
+        "row": 2,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91044,
+        "name": "Starfire",
+        "spell_id": 197628,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 197628,
+            "description": "Starfire Talent 0.6% of base mana Requires Druid Call down a burst of energy, causing (93% of Spell Power) Arcane damage to the target, and [(93% of Spell Power) * 35 / Warrior of Elune : 45.5 / Wild Surges : 55 / Moon Guardian : 55 / 100] Arcane damage to all other enemies within 5 yards. Deals reduced damage beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82208,
+          82200
+        ],
+        "row": 2,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91046,
+        "name": "Starfire",
+        "spell_id": 197628,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 197628,
+            "description": "Starfire Talent 0.6% of base mana Requires Druid Call down a burst of energy, causing (93% of Spell Power) Arcane damage to the target, and [(93% of Spell Power) * 35 / Warrior of Elune : 45.5 / Wild Surges : 55 / Moon Guardian : 55 / 100] Arcane damage to all other enemies within 5 yards. Deals reduced damage beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 2,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82239,
+        "name": "Grievous Wounds",
+        "spell_id": 474526,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 474526,
+            "description": "Grievous Wounds Talent Requires Druid Rake, Rip, and Thrash damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82199
+        ],
+        "unlocks": [],
+        "row": 3,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82223,
+        "name": "Swipe",
+        "spell_id": 213764,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 213764,
+            "description": "Swipe Talent Requires Druid Requires Cat Form, Bear Form Balance, Guardian, Restoration Swipe nearby enemies, inflicting Physical damage. Damage varies by shapeshift form. Feral Swipe nearby enemies, inflicting Physical damage. Damage varies by shapeshift form. Awards 1 combo point.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82220,
+          82199
+        ],
+        "unlocks": [
+          82225,
+          82218
+        ],
+        "row": 3,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82219,
+        "name": "Ursoc's Spirit",
+        "spell_id": 449182,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449182,
+            "description": "Ursoc's Spirit Talent Requires Druid Stamina increased by 4%. Stamina in Bear Form is increased by an additional 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82217,
+          82220
+        ],
+        "unlocks": [
+          104085,
+          82241,
+          82218
+        ],
+        "row": 3,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82205,
+        "name": "Wild Growth",
+        "spell_id": 48438,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 48438,
+            "description": "Wild Growth Talent 15% of base mana Requires Druid Heals up to 5 injured allies within 30 yards of the target for (231.7% of Spell Power) over 7 sec. Healing starts high and declines over the duration. [ Incarnation: Tree of Life : Tree of Life: Affects 2 additional targets. ]",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82217
+        ],
+        "unlocks": [
+          82214
+        ],
+        "row": 3,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82200,
+        "name": "Starsurge",
+        "spell_id": 197626,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 197626,
+            "description": "Starsurge Talent 0.6% of base mana Requires Druid Launch a surge of stellar energies at the target, dealing (210.1% of Spell Power) Astral damage.",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          91044
+        ],
+        "unlocks": [],
+        "row": 3,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82222,
+        "name": "Rip",
+        "spell_id": 1079,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1079,
+            "description": "Rip Talent / 1 to 5 Combo Points Requires Druid Requires Cat Form Finishing move that causes Bleed damage over time. Lasts longer per combo point. &nbsp; 1 point &nbsp;: [(62.26% of Attack Power) * 2 / 6] over 1 sec &nbsp; 2 points: [(62.26% of Attack Power) * 3 / 6] over 2 sec &nbsp; 3 points: [(62.26% of Attack Power) * 4 / 6] over 3 sec &nbsp; 4 points: [(62.26% of Attack Power) * 5 / 6] over 3 sec &nbsp; 5 points: [(62.26% of Attack Power) * 6 / 6] over 4 sec",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82199
+        ],
+        "unlocks": [
+          82225,
+          82221
+        ],
+        "row": 4,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82218,
+        "name": "Verdant Heart",
+        "spell_id": 301768,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 301768,
+            "description": "Verdant Heart Talent Requires Druid Frenzied Regeneration and Barkskin increase all healing received by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82219,
+          82223,
+          82220
+        ],
+        "unlocks": [
+          104085,
+          82227,
+          82225
+        ],
+        "row": 4,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82241,
+        "name": "Remove Corruption",
+        "spell_id": 2782,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 2782,
+            "description": "Remove Corruption Talent 10% of base mana Requires Druid Nullifies corrupting effects on the friendly target, removing all Curse and Poison effects.",
+            "cooldown": 8.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82217,
+          82219
+        ],
+        "unlocks": [
+          104085,
+          82214,
+          82211
+        ],
+        "row": 4,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82208,
+        "name": "Moonkin Form",
+        "spell_id": 24858,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 24858,
+            "description": "Moonkin Form Talent Requires Druid Shapeshift into [ Glyph of Stars : Astral Form / Moonkin Form], increasing the damage of your spells by 10% and your armor by 125%, and granting protection from Polymorph effects. The act of shapeshifting frees you from movement impairing effects. Balance While in this form, single-target attacks against you have a 101% chance to make your next Starfire instant.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          91044
+        ],
+        "unlocks": [
+          82214,
+          93714
+        ],
+        "row": 4,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 91047,
+        "name": "Moonkin Form",
+        "spell_id": 197625,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 197625,
+            "description": "Moonkin Form Talent Requires Druid Shapeshift into [ Glyph of Stars : Astral Form / Moonkin Form], increasing the damage of your spells by 10% and your armor by 125%, and granting protection from Polymorph effects. The act of shapeshifting frees you from movement impairing effects.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82214
+        ],
+        "row": 4,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82221,
+        "name": "Maim",
+        "spell_id": 22570,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 22570,
+            "description": "Maim Talent / 1 to 5 Combo Points Requires Druid Requires Cat Form Finishing move that causes Physical damage and stuns the target. Damage and duration increased per combo point: &nbsp; 1 point &nbsp;: [(14.4% of Attack Power)] damage, 1 sec &nbsp; 2 points: [(14.4% of Attack Power) * 2] damage, 2 sec &nbsp; 3 points: [(14.4% of Attack Power) * 3] damage, 3 sec &nbsp; 4 points: [(14.4% of Attack Power) * 4] damage, 4 sec &nbsp; 5 points: [(14.4% of Attack Power) * 5] damage, 5 sec",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82222
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82225,
+        "name": "Killer Instinct",
+        "spell_id": 108299,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108299,
+            "description": "Killer Instinct Talent Requires Druid Physical damage and Armor increased by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 108299,
+            "description": "Killer Instinct Talent Requires Druid Physical damage and Armor increased by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82222,
+          82223,
+          82218
+        ],
+        "unlocks": [
+          82198,
+          82224,
+          82228
+        ],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82227,
+        "name": "Ironfur",
+        "spell_id": 192081,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 192081,
+            "description": "Ironfur Talent Requires Druid Requires Bear Form Increases armor by (124 / Master Shapeshifter : 161 / Reinforced Fur : 139 * Agility / 100) for 7 sec .",
+            "cooldown": 0.5,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82218
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 104085,
+        "name": "Improved Barkskin",
+        "spell_id": 327993,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 327993,
+            "description": "Improved Barkskin Talent Requires Druid Barkskin's duration is increased by 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82219,
+          82218,
+          82241
+        ],
+        "unlocks": [
+          82242,
+          82206,
+          82228
+        ],
+        "row": 5,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82211,
+        "name": "Hibernate",
+        "spell_id": 2637,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 2637,
+            "description": "Hibernate Talent 1.2% of base mana Requires Druid Forces the enemy target to sleep for up to 40 sec. Any damage will awaken the target. Only one target can be forced to hibernate at a time. Only works on Beasts and Dragonkin.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82241
+        ],
+        "unlocks": [
+          82206
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82214,
+        "name": "Nurturing Instinct",
+        "spell_id": 33873,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 33873,
+            "description": "Nurturing Instinct Talent Requires Druid Magical damage and healing increased by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 33873,
+            "description": "Nurturing Instinct Talent Requires Druid Magical damage and healing increased by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          91047,
+          82205,
+          82208,
+          82241
+        ],
+        "unlocks": [
+          82232,
+          82206,
+          82210
+        ],
+        "row": 5,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93714,
+        "name": "Sunfire",
+        "spell_id": 93402,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 93402,
+            "description": "Sunfire Talent 1.8% of base mana Requires Druid Feral, Guardian, Restoration A quick beam of solar light burns the enemy for (21.2% of Spell Power) Nature damage and then an additional (165.6% of Spell Power) Nature damage over 18 sec. Balance A quick beam of solar light burns the enemy for (21.2% of Spell Power) Nature damage and then an additional (165.6% of Spell Power) Nature damage over 18 sec. Generates .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82208
+        ],
+        "unlocks": [
+          100223
+        ],
+        "row": 5,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82224,
+        "name": "Primal Fury",
+        "spell_id": 159286,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 159286,
+            "description": "Primal Fury Requires Druid While in Cat Form, when you critically strike with an attack that generates a combo point, you gain an additional combo point. Damage over time cannot trigger this effect. Mangle critical strike damage increased by 20%. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82225
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82228,
+        "name": "Thick Hide",
+        "spell_id": 16931,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 16931,
+            "description": "Thick Hide Talent Requires Druid Reduces all damage taken by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82225,
+          104085
+        ],
+        "unlocks": [
+          82198,
+          100177,
+          82229
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82242,
+        "name": "Skull Bash",
+        "spell_id": 106839,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 106839,
+            "description": "Skull Bash Talent Requires Druid Requires Cat Form, Bear Form You charge and bash the target's skull, interrupting spellcasting and preventing any spell in that school from being cast for 5 sec.",
+            "cooldown": 15.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          104085
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82206,
+        "name": "Natural Recovery",
+        "spell_id": 377796,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377796,
+            "description": "Natural Recovery Talent Requires Druid Healing you receive is increased by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82214,
+          104085,
+          82211
+        ],
+        "unlocks": [
+          82240,
+          82232,
+          82229
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82210,
+        "name": "Astral Influence",
+        "spell_id": 197524,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 197524,
+            "description": "Astral Influence Talent Requires Druid Increases the range of all of your spells by 5 yards.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82214
+        ],
+        "unlocks": [
+          100223
+        ],
+        "row": 6,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82198,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 102401,
+            "name": "Wild Charge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 102401,
+                "description": "Wild Charge Talent 5 - Requires Druid Requires level 25 Fly to a nearby ally's position.",
+                "cooldown": 15.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 252216,
+            "name": "Tiger Dash",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 252216,
+                "description": "Tiger Dash Talent Requires Druid Requires level 25 Shift into Cat Form and increase your movement speed by 200%, reducing gradually over 5 sec.",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82225,
+          82228
+        ],
+        "unlocks": [
+          82235,
+          82236,
+          100177
+        ],
+        "row": 7,
+        "col": 4
+      },
+      {
+        "node_id": 82229,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 2908,
+            "name": "Soothe",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 2908,
+                "description": "Soothe Talent 1.12% of base mana Requires Druid Soothes the target, dispelling all enrage effects.",
+                "cooldown": 10.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 33786,
+            "name": "Cyclone",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 33786,
+                "description": "Cyclone Talent 1.2% of base mana Requires Druid Tosses the enemy target into the air, disorienting them but making them invulnerable for up to 5 sec. Only one target can be affected by your Cyclone at a time.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82206,
+          82228
+        ],
+        "unlocks": [
+          82234
+        ],
+        "row": 7,
+        "col": 6
+      },
+      {
+        "node_id": 82232,
+        "name": "Aessina's Renewal",
+        "spell_id": 474678,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 474678,
+            "description": "Aessina's Renewal Talent Requires Druid When a hit deals more than 12% of your maximum health, instantly heal for 10% of your health. This effect cannot occur more than once every 30 seconds. (30s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82214,
+          82206
+        ],
+        "unlocks": [
+          82209,
+          82207,
+          82240
+        ],
+        "row": 7,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 100223,
+        "name": "Starlight Conduit",
+        "spell_id": 451211,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 451211,
+            "description": "Starlight Conduit Talent Requires Druid Balance, Feral, Guardian, Restoration Wrath, Starsurge, and Starfire damage increased by 5%. Starsurge's cooldown is reduced by 4 sec and its mana cost is reduced by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82210,
+          93714
+        ],
+        "unlocks": [],
+        "row": 7,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82236,
+        "name": "Feline Swiftness",
+        "spell_id": 131768,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 131768,
+            "description": "Feline Swiftness Talent Requires Druid Increases your movement speed by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82198
+        ],
+        "unlocks": [
+          100176
+        ],
+        "row": 8,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82235,
+        "name": "Well-Honed Instincts",
+        "spell_id": 377847,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377847,
+            "description": "Well-Honed Instincts Talent Requires Druid When you fall below 40% health, you cast Frenzied Regeneration, up to once every 120 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82198
+        ],
+        "unlocks": [
+          100176,
+          104082
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 100177,
+        "name": "Matted Fur",
+        "spell_id": 385786,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385786,
+            "description": "Matted Fur Talent Requires Druid When you use Barkskin or Survival Instincts, absorb [1200 / 100 * 1.25 * Attack Power * (1 + Versatility)] damage for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 385786,
+            "description": "Matted Fur Talent Requires Druid When you use Barkskin or Survival Instincts, absorb [1200 / 100 * 1.25 * Attack Power * (1 + Versatility)] damage for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82228,
+          82198
+        ],
+        "unlocks": [],
+        "row": 8,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82234,
+        "name": "Stampeding Roar",
+        "spell_id": 106898,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 106898,
+            "description": "Stampeding Roar Talent Requires Druid Shift into Bear Form and let loose a wild roar, increasing the movement speed of all friendly players within 15 yards by 60% for 8 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82229
+        ],
+        "unlocks": [
+          82233,
+          104080,
+          104081
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82240,
+        "name": "Lingering Healing",
+        "spell_id": 231040,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 231040,
+            "description": "Lingering Healing Talent Requires Druid Rejuvenation's duration is increased by 3 sec. Regrowth's duration is increased by 3 sec when cast on yourself.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82206,
+          82232
+        ],
+        "unlocks": [],
+        "row": 8,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82209,
+        "name": "Typhoon",
+        "spell_id": 132469,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 132469,
+            "description": "Typhoon Talent Requires Druid Blasts targets within 15 yards in front of you with a violent Typhoon, knocking them back and reducing their movement speed by 50% for 6 sec. Usable in all shapeshift forms.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82232
+        ],
+        "unlocks": [
+          100175,
+          104079
+        ],
+        "row": 8,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82207,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 102359,
+            "name": "Mass Entanglement",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 102359,
+                "description": "Mass Entanglement Talent Requires Druid Requires level 35 Roots the target and all enemies within 12 yards in place for 10 sec. Damage may interrupt the effect. Usable in all shapeshift forms.",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 102793,
+            "name": "Ursol's Vortex",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 102793,
+                "description": "Ursol's Vortex Talent Requires Druid Conjures a vortex of wind for 10 sec at the destination, reducing the movement speed of all enemies within 8 yards by 50%. The first time an enemy attempts to leave the vortex, winds will pull that enemy back to its center. Usable in all shapeshift forms.",
+                "cooldown": 60.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82232
+        ],
+        "unlocks": [
+          100175
+        ],
+        "row": 8,
+        "col": 9
+      },
+      {
+        "node_id": 100176,
+        "name": "Oakskin",
+        "spell_id": 449191,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449191,
+            "description": "Oakskin Talent Requires Druid Survival Instincts and Barkskin reduce damage taken by an additional 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82235,
+          82236
+        ],
+        "unlocks": [
+          100174,
+          82237,
+          82246
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 104082,
+        "name": "Perfectly-Honed Instincts",
+        "spell_id": 1213597,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1213597,
+            "description": "Perfectly-Honed Instincts Talent Requires Druid Well-Honed Instincts can trigger up to once every 90 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82235
+        ],
+        "unlocks": [],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 104081,
+        "name": "Instincts of the Claw",
+        "spell_id": 449184,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449184,
+            "description": "Instincts of the Claw Talent Requires Druid Ferocious Bite and Maul damage increased by 8%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82234
+        ],
+        "unlocks": [],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82233,
+        "name": "Lycara's Teachings",
+        "spell_id": 378988,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378988,
+            "description": "Lycara's Teachings Talent Requires Druid You gain 3% of a stat while in each form: No Form: Haste Cat Form: Critical Strike Bear Form: Versatility Moonkin Form: Mastery",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 378988,
+            "description": "Lycara's Teachings Talent Requires Druid You gain 3% of a stat while in each form: No Form: Haste Cat Form: Critical Strike Bear Form: Versatility Moonkin Form: Mastery",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82234
+        ],
+        "unlocks": [
+          82230,
+          92229,
+          104078
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 104080,
+        "name": "Lore of the Grove",
+        "spell_id": 449185,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449185,
+            "description": "Lore of the Grove Talent Requires Druid Moonfire and Sunfire damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82234
+        ],
+        "unlocks": [],
+        "row": 9,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 104079,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 400142,
+            "name": "Gale Winds",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 400142,
+                "description": "Gale Winds Talent Requires Druid Increases Typhoon's radius by 20% and its range by 5 yds.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 400140,
+            "name": "Incessant Tempest",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 400140,
+                "description": "Incessant Tempest Talent Requires Druid Reduces the cooldown of Typhoon by 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Typhoon",
+                    "type": "cd_reduction",
+                    "value": 5,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82209
+        ],
+        "unlocks": [],
+        "row": 9,
+        "col": 8
+      },
+      {
+        "node_id": 100175,
+        "name": "Gift of the Wild",
+        "spell_id": 1262034,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1262034,
+            "description": "Gift of the Wild Talent Requires Druid Mark of the Wild is 100% more effective on yourself.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82207,
+          82209
+        ],
+        "unlocks": [
+          100173,
+          82243,
+          82244
+        ],
+        "row": 9,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82237,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 99,
+            "name": "Incapacitating Roar",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 99,
+                "description": "Incapacitating Roar Talent Requires Druid Shift into Bear Form and invoke the spirit of Ursol to let loose a deafening roar, incapacitating all enemies within 10 yards for 3 sec. Damage may cancel the effect.",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 5211,
+            "name": "Mighty Bash",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 5211,
+                "description": "Mighty Bash Talent Requires Druid Requires level 35 Invokes the spirit of Ursoc to stun the target for 4 sec. Usable in all shapeshift forms.",
+                "cooldown": 60.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          100176
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 2
+      },
+      {
+        "node_id": 100174,
+        "name": "Ursine Vigor",
+        "spell_id": 377842,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377842,
+            "description": "Ursine Vigor Talent Requires Druid For 4 sec after shifting into Bear Form, your health and armor are increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          100176
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82230,
+        "name": "Improved Stampeding Roar",
+        "spell_id": 288826,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 288826,
+            "description": "Improved Stampeding Roar Talent Requires Druid Cooldown reduced by 60 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82233
+        ],
+        "unlocks": [
+          82231
+        ],
+        "row": 10,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 104078,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 474530,
+            "name": "Circle of the Wild",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 474530,
+                "description": "Circle of the Wild Talent Requires Druid Restoration Physical damage dealt by your abilities increased by 25%. Balance, Feral, Guardian Physical damage dealt by your abilities increased by 5%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 474541,
+            "name": "Circle of the Heavens",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 474541,
+                "description": "Circle of the Heavens Talent Requires Druid Restoration Magical damage dealt by your spells increased by 25%. Balance, Feral, Guardian Magical damage dealt by your spells increased by 5%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82233
+        ],
+        "unlocks": [
+          82231
+        ],
+        "row": 10,
+        "col": 6
+      },
+      {
+        "node_id": 92229,
+        "name": "Lycara's Inspiration",
+        "spell_id": 1232897,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1232897,
+            "description": "Lycara's Inspiration Talent Requires Druid You gain a bonus while in each form inspired by the breadth of your Druidic knowledge: No Form: 4% Magic Damage Cat Form: 4% Stamina Bear Form: 5% Movement Speed Moonkin Form: 3% Area damage taken reduction",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82233
+        ],
+        "unlocks": [
+          82231
+        ],
+        "row": 10,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 100173,
+        "name": "Symbiotic Relationship",
+        "spell_id": 474750,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 474750,
+            "description": "Symbiotic Relationship Talent 2% of base mana Requires Druid Form a bond with an ally. Your self-healing also heals your bonded ally for 10% of the amount healed. Your healing to your bonded ally also heals you for 8% of the amount healed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          100175
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 8,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82243,
+        "name": "Forestwalk",
+        "spell_id": 400129,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 400129,
+            "description": "Forestwalk Talent Requires Druid Casting Regrowth increases your movement speed and healing received by 8% for 6 sec. (1s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 400129,
+            "description": "Forestwalk Talent Requires Druid Casting Regrowth increases your movement speed and healing received by 8% for 6 sec. (1s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          100175
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82246,
+        "name": "Fluid Form",
+        "spell_id": 449193,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 449193,
+            "description": "Fluid Form Talent Requires Druid Shred, Rake, and Skull Bash can be used in any form and shift you into Cat Form, if necessary. Mangle can be used in any form and shifts you into Bear Form. Wrath and Starfire shift you into Moonkin Form, if known.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          100176
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82231,
+        "name": "Heart of the Wild",
+        "spell_id": 1261867,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1261867,
+            "description": "Heart of the Wild Talent Requires Druid Restoration Perform a powerful off-role ability depending on your currently active shapeshift form. Balance, Feral Perform a powerful off-role ability depending on your currently active shapeshift form. Non-shapeshifted: Empowered Wild Growth that heals up to 5 injured allies within 30 yards of the target for [(231.7% of Spell Power) * 600 / 100] over 7 sec. Guardian Perform a powerful off-role ability depending on your currently active shapeshift form. Non-shapeshifted: Empowered Wild Growth that heals up to 5 injured allies within 30 yards of the target for [(231.7% of Spell Power) * 600 / 100] over 7 sec. Cat Form: Unleash an empowered Feral Frenzy on your enemy target, dealing [(16.3% of Attack Power) * 1000 / 100] Physical damage and an additional [1000 / 100 * (32.67% of Attack Power) * 6 / 2] Bleed damage over 6 sec. Awards 5 combo points. Moonkin Form: Call down waves of empowered falling stars upon enemies within 40 yds, dealing [54 * (21.76% of Spell Power)] Astral damage over 8 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82230,
+          92229,
+          104078
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82244,
+        "name": "Innervate",
+        "spell_id": 29166,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 29166,
+            "description": "Innervate Talent Requires Druid Infuse a friendly healer with energy, allowing them to cast spells without spending mana for 8 sec. [ Natural Wisdom : If cast on somebody else, you gain the effect at 50% effectiveness ]",
+            "cooldown": 180.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          100175
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 94608,
+        "name": "Boundless Moonlight",
+        "spell_id": 424058,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 424058,
+            "description": "Boundless Moonlight Talent Requires Druid Balance Fury of Elune Fury of Elune now ends with a flash of energy, blasting nearby enemies for (216.32% of Spell Power) Astral damage. Full Moon Full Moon calls down 2 Minor Moons that deal (188.5% of Spell Power) Astral damage and generate . Guardian Lunar Beam Lunar Beam now causes you to leech life equal to 10% of all damage dealt to enemies within the beam. Fury of Elune Fury of Elune now ends with a flash of energy, blasting nearby enemies for (216.32% of Spell Power) Astral damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94594,
+          94588,
+          94598,
+          109720
+        ],
+        "row": 2,
+        "col": 13,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82127,
+        "name": "Maul",
+        "spell_id": 6807,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 6807,
+            "description": "Maul Talent Requires Druid Requires Bear Form Maul the target for (312% of Attack Power) Physical damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          82126,
+          82129
+        ],
+        "row": 2,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94598,
+        "name": "Moon Guardian",
+        "spell_id": 429520,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429520,
+            "description": "Moon Guardian Talent Requires Druid Guardian Free automatic Moonfires from Galactic Guardian generate . Balance Moonfire and Starfire generate 2 additional Astral Power.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94608
+        ],
+        "unlocks": [
+          94596
+        ],
+        "row": 3,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94588,
+        "name": "Lunar Insight",
+        "spell_id": 429530,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429530,
+            "description": "Lunar Insight Talent Requires Druid Balance Moonfire deals 20% additional damage. Guardian Moonfire deals 8% additional damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94608
+        ],
+        "unlocks": [
+          94607
+        ],
+        "row": 3,
+        "col": 13,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94594,
+        "name": "Glistening Fur",
+        "spell_id": 429533,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429533,
+            "description": "Glistening Fur Talent Requires Druid Bear Form and Moonkin Form reduce Arcane damage taken by 6% and all other magic damage taken by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94608
+        ],
+        "unlocks": [
+          94597
+        ],
+        "row": 3,
+        "col": 14,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109720,
+        "name": "Star Cascade",
+        "spell_id": 1271206,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271206,
+            "description": "Star Cascade Talent Requires Druid Balance Gaining Astral Power with Wrath or Starfire has a 40% chance to launch a Starsurge at a victim at 70% effectiveness. Guardian Thrash has a 50% chance to launch a Starsurge at a victim at 120% effectiveness. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94608
+        ],
+        "unlocks": [
+          109719
+        ],
+        "row": 3,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82126,
+        "name": "Gore",
+        "spell_id": 210706,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 210706,
+            "description": "Gore Talent Requires Druid Thrash, Swipe, Moonfire, and Maul have a 15% chance to reset the cooldown on Mangle, and to cause it to generate an additional . (200ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82127
+        ],
+        "unlocks": [
+          109275,
+          92227
+        ],
+        "row": 3,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82129,
+        "name": "Survival Instincts",
+        "spell_id": 61336,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 61336,
+            "description": "Survival Instincts Talent Requires Druid Reduces all damage you take by 50 % for 6 sec.",
+            "cooldown": 180.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82127
+        ],
+        "unlocks": [
+          92585,
+          109376
+        ],
+        "row": 3,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94596,
+        "name": "Stellar Command",
+        "spell_id": 429668,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429668,
+            "description": "Stellar Command Talent Requires Druid Balance Increases the damage of Fury of Elune by 15% and the damage of Full Moon by 25%. Guardian Increases the damage of Lunar Beam by 30% and Fury of Elune by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Fury of Elune",
+                "type": "damage_increase",
+                "value": 15,
+                "unit": "percent"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Lunar Beam",
+                "type": "damage_increase",
+                "value": 30,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94598
+        ],
+        "unlocks": [
+          94590
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94607,
+        "name": "Atmospheric Exposure",
+        "spell_id": 429532,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429532,
+            "description": "Atmospheric Exposure Talent Requires Druid Balance Enemies damaged by Full Moon or Fury of Elune take 6% increased damage from you for 6 sec. Guardian Enemies damaged by Lunar Beam or Fury of Elune take 6% increased damage from you for 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94588
+        ],
+        "unlocks": [
+          94585
+        ],
+        "row": 4,
+        "col": 13,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94597,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 429538,
+            "name": "Moondust",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429538,
+                "description": "Moondust Talent Requires Druid Enemies affected by Moonfire are slowed by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 443046,
+            "name": "Elune's Grace",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443046,
+                "description": "Elune's Grace Talent Requires Druid Using Wild Charge while in Bear Form or Moonkin Form incurs a 3 sec shorter cooldown.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94594
+        ],
+        "unlocks": [
+          94586
+        ],
+        "row": 4,
+        "col": 14
+      },
+      {
+        "node_id": 109719,
+        "name": "Penumbral Swell",
+        "spell_id": 1271261,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271261,
+            "description": "Penumbral Swell Talent Requires Druid Guardian Lunar Beam increases Arcane damage you deal by 10% while it is active. Balance Lunar Eclipse increases Arcane damage by an additional 3%. Guardian Lunar Beam increases Arcane damage you deal by 10% while it is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109720
+        ],
+        "unlocks": [
+          109718
+        ],
+        "row": 4,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109275,
+        "name": "Front of the Pack",
+        "spell_id": 377835,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377835,
+            "description": "Front of the Pack Talent Requires Druid Stampeding Roar's radius is increased by 30%. Your movement speed is increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82126
+        ],
+        "unlocks": [
+          82160
+        ],
+        "row": 4,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 92227,
+        "name": "Persistence",
+        "spell_id": 1251406,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1251406,
+            "description": "Persistence Talent Requires Druid When you shapeshift out of Bear Form, its benefits to health and armor slowly decay over 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82126
+        ],
+        "unlocks": [
+          82149,
+          82160
+        ],
+        "row": 4,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 92585,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 372119,
+            "name": "Dream of Cenarius",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 372119,
+                "description": "Dream of Cenarius Talent Requires Druid Approximately 3 procs per minute When you take non-periodic damage, you have a chance to cause your next Regrowth to heal for an additional 130%, and to be instant, free, and castable in all forms for 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1278886,
+            "name": "Dream Guide",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1278886,
+                "description": "Dream Guide Talent Requires Druid Approximately 3 procs per minute When you take non-periodic damage, you have a chance to gain a charge of Dream Guide. When you or a nearby ally drops below 40% health, you consume a charge of Dream Guide to automatically cast Regrowth on them.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82129
+        ],
+        "unlocks": [
+          82131,
+          82149
+        ],
+        "row": 4,
+        "col": 21
+      },
+      {
+        "node_id": 109376,
+        "name": "Infected Wounds",
+        "spell_id": 345208,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 345208,
+            "description": "Infected Wounds Talent Requires Druid Mangle and Maul cause an Infected Wound in the target, reducing their movement speed by 50% for 12 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82129
+        ],
+        "unlocks": [
+          82131
+        ],
+        "row": 4,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94590,
+        "name": "Lunar Calling",
+        "spell_id": 429523,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 429523,
+            "description": "Lunar Calling Talent Requires Druid Balance Starfire deals 120% increased damage to its primary target. Wrath no longer changes your Eclipse ability's mode to Solar Eclipse. Guardian Thrash now deals Arcane damage and its damage is increased by 12%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94596
+        ],
+        "unlocks": [
+          94587
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94585,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 428655,
+            "name": "The Light of Elune",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 428655,
+                "description": "The Light of Elune Talent Requires Druid Approximately 1 procs per minute Balance Moonfire damage has a chance to call down a Fury of Elune to follow your target for 3 sec. Fury of Elune Calls down a beam of pure celestial energy, dealing [3000 / 1000 * 2 * (18.34% of Spell Power)] Astral damage over 3 sec within its area. Generates over its duration. Guardian Moonfire damage has a chance to call down a Fury of Elune to follow your target for 3 sec. Fury of Elune Calls down a beam of pure celestial energy, dealing [3000 / 1000 * 2 * (18.34% of Spell Power)] Astral damage over 3 sec within its area. Generates over its duration.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 429536,
+            "name": "Astral Insight",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429536,
+                "description": "Astral Insight Talent Requires Druid Balance Incarnation: Chosen of Elune increases Arcane damage from spells and abilities by 10% while active. Increases the duration and number of spells cast by Convoke the Spirits by 25%. Guardian Incarnation: Guardian of Ursoc increases Arcane damage from spells and abilities by 10% while active. Increases the duration and number of spells cast by Convoke the Spirits by 25%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94607
+        ],
+        "unlocks": [
+          94587
+        ],
+        "row": 5,
+        "col": 13
+      },
+      {
+        "node_id": 94586,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 429540,
+            "name": "Arcane Affinity",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429540,
+                "description": "Arcane Affinity Talent Requires Druid All Arcane damage from your spells and abilities is increased by 3%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 429539,
+            "name": "Lunation",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 429539,
+                "description": "Lunation Talent Requires Druid Balance Your Arcane abilities reduce the cooldown of Fury of Elune by 1.5 sec and the cooldown of New Moon, Half Moon, and Full Moon by 1.0 sec. Guardian Your Arcane abilities reduce the cooldown of Lunar Beam by 3.0 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Fury of Elune",
+                    "type": "cd_reduction",
+                    "value": 1.5,
+                    "unit": "seconds"
+                  },
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Lunar Beam",
+                    "type": "cd_reduction",
+                    "value": 3,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94597
+        ],
+        "unlocks": [
+          94587
+        ],
+        "row": 5,
+        "col": 14
+      },
+      {
+        "node_id": 109718,
+        "name": "Bask in Moonlight",
+        "spell_id": 1271305,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271305,
+            "description": "Bask in Moonlight Talent Requires Druid Guardian damage increased by 10%. Lunar Beam's damage dealt to its primary target increased by 30%. Balance Starsurge damage increased by 10%. Starfall damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109719
+        ],
+        "unlocks": [
+          94587
+        ],
+        "row": 5,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82160,
+        "name": "Innate Resolve",
+        "spell_id": 377811,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377811,
+            "description": "Innate Resolve Talent Requires Druid Frenzied Regeneration's healing is increased by up to 80% based on your missing health. Frenzied Regeneration has 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109275,
+          92227
+        ],
+        "unlocks": [
+          82157,
+          82143
+        ],
+        "row": 5,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82149,
+        "name": "Berserk",
+        "spell_id": 50334,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 50334,
+            "description": "Berserk Talent Requires Druid Go berserk for 15 sec, reducing the cooldowns of Mangle, Thrash, and Growl by 50% and the cooldown of Frenzied Regeneration by 100%.",
+            "cooldown": 180.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          92227,
+          92585
+        ],
+        "unlocks": [
+          82144,
+          82140,
+          82157
+        ],
+        "row": 5,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82131,
+        "name": "Vulnerable Flesh",
+        "spell_id": 372618,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 372618,
+            "description": "Vulnerable Flesh Talent Requires Druid Maul and Raze deal 30% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          92585,
+          109376
+        ],
+        "unlocks": [
+          82146,
+          82144
+        ],
+        "row": 5,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94587,
+        "name": "The Eternal Moon",
+        "spell_id": 424113,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 424113,
+            "description": "The Eternal Moon Talent Requires Druid Balance Further increases the power of Boundless Moonlight. Fury of Elune The flash of energy now generates and its damage is increased by 50%. Full Moon New Moon and Half Moon now also call down 1 Minor Moon. Guardian Further increases the power of Boundless Moonlight. Lunar Beam Lunar Beam increases Mastery by an additional (15 * $mas)%, deals 30% increased damage, and lasts 3 sec longer. Fury of Elune The flash of energy now generates &nbsp; and its damage is increased by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94590,
+          94585,
+          94586,
+          109718
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 13,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82143,
+        "name": "Survival of the Fittest",
+        "spell_id": 203965,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 203965,
+            "description": "Survival of the Fittest Talent Requires Druid Requires level 45 Reduces the cooldowns of Barkskin and Survival Instincts by 12%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 203965,
+            "description": "Survival of the Fittest Talent Requires Druid Requires level 45 Reduces the cooldowns of Barkskin and Survival Instincts by 12%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82160
+        ],
+        "unlocks": [
+          109378,
+          92226
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82157,
+        "name": "Reinvigoration",
+        "spell_id": 372945,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 372945,
+            "description": "Reinvigoration Talent Requires Druid Frenzied Regeneration heals over 1.0 additional sec and casts Rejuvenation and Regrowth on you at 100% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 372945,
+            "description": "Reinvigoration Talent Requires Druid Frenzied Regeneration heals over 1.0 additional sec and casts Rejuvenation and Regrowth on you at 100% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82160,
+          82149
+        ],
+        "unlocks": [
+          82156,
+          92226
+        ],
+        "row": 6,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82140,
+        "name": "After the Wildfire",
+        "spell_id": 371905,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 371905,
+            "description": "After the Wildfire Talent Requires Druid Every you spend causes a burst of restorative energy, healing up to 5 allies within 20 yds for (600% of Attack Power).",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82149
+        ],
+        "unlocks": [
+          82156,
+          82161,
+          109377
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82144,
+        "name": "Memory of Ysera",
+        "spell_id": 1250906,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1250906,
+            "description": "Memory of Ysera Talent Requires Druid Heal for 0.8% of your maximum health each time you spend .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1250906,
+            "description": "Memory of Ysera Talent Requires Druid Heal for 0.8% of your maximum health each time you spend .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82149,
+          82131
+        ],
+        "unlocks": [
+          109377,
+          109375
+        ],
+        "row": 6,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82146,
+        "name": "Scintillating Moonlight",
+        "spell_id": 238049,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 238049,
+            "description": "Scintillating Moonlight Talent Requires Druid Moonfire reduces damage dealt to you by 1%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 238049,
+            "description": "Scintillating Moonlight Talent Requires Druid Moonfire reduces damage dealt to you by 1%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82131
+        ],
+        "unlocks": [
+          82148,
+          109375
+        ],
+        "row": 6,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109378,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1250923,
+            "name": "Ward of the Forest",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1250923,
+                "description": "Ward of the Forest Talent Requires Druid Barkskin increases your maximum health by 20%, but its duration is reduced by 40%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 203953,
+            "name": "Brambles",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 203953,
+                "description": "Brambles Talent Requires Druid Requires level 15 Sharp brambles protect you, absorbing and reflecting up to (Attack Power * 0.2) damage from each attack. While Barkskin is active, the brambles also deal (7.5% of Attack Power) Nature damage to all nearby enemies every 1 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82143
+        ],
+        "unlocks": [
+          82159,
+          82152
+        ],
+        "row": 7,
+        "col": 17
+      },
+      {
+        "node_id": 92226,
+        "name": "Soul of the Forest",
+        "spell_id": 158477,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 158477,
+            "description": "Soul of the Forest Talent Requires Druid Requires level 40 Mangle generates 5 more Rage and deals 25% more damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82157,
+          82143
+        ],
+        "unlocks": [
+          82152
+        ],
+        "row": 7,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82156,
+        "name": "Natural Resilience",
+        "spell_id": 1278789,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1278789,
+            "description": "Natural Resilience Talent Requires Druid When Frenzied Regeneration would heal you above maximum health, 80% of its excess healing is instead converted to an absorb shield.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82140,
+          82157
+        ],
+        "unlocks": [
+          82137,
+          82152
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82161,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 393618,
+            "name": "Reinforced Fur",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 393618,
+                "description": "Reinforced Fur Talent Requires Druid Ironfur increases armor by an additional 15% and Barkskin reduces damage taken by an additional 10%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 155835,
+            "name": "Bristling Fur",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 155835,
+                "description": "Bristling Fur Talent Requires Druid Bristle your fur, causing you to generate Rage based on damage taken for 8 sec.",
+                "cooldown": 40.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82140
+        ],
+        "unlocks": [
+          82137
+        ],
+        "row": 7,
+        "col": 20
+      },
+      {
+        "node_id": 109377,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1251876,
+            "name": "Gift of an Ancient Guardian",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1251876,
+                "description": "Gift of an Ancient Guardian Talent Requires Druid Ironfur increases your Mastery by 5%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 155578,
+            "name": "Guardian of Elune",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 155578,
+                "description": "Guardian of Elune Talent Requires Druid Requires level 45 Mangle increases the duration of your next Ironfur by 3 sec, or the healing of your next Frenzied Regeneration by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "your next Ironfur",
+                    "type": "duration_increase",
+                    "value": 3,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82140,
+          82144
+        ],
+        "unlocks": [
+          92587,
+          82137
+        ],
+        "row": 7,
+        "col": 21
+      },
+      {
+        "node_id": 109375,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 393611,
+            "name": "Ursoc's Endurance",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 393611,
+                "description": "Ursoc's Endurance Talent Requires Druid Increases the duration of Barkskin and Ironfur by 2.0 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Barkskin and Ironfur",
+                    "type": "duration_increase",
+                    "value": 2,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 200854,
+            "name": "Gory Fur",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 200854,
+                "description": "Gory Fur Talent Requires Druid Mangle has a 15% chance to reduce the Rage cost of your next Ironfur by 25%. (Proc chance: 15%)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82146,
+          82144
+        ],
+        "unlocks": [
+          92587
+        ],
+        "row": 7,
+        "col": 22
+      },
+      {
+        "node_id": 82148,
+        "name": "Ursol's Warding",
+        "spell_id": 471492,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 471492,
+            "description": "Ursol's Warding Talent Requires Druid Gain magical damage reduction equal to 10% of your damage reduction from armor.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82146
+        ],
+        "unlocks": [
+          82147,
+          92587
+        ],
+        "row": 7,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94609,
+        "name": "Ravage",
+        "spell_id": 441583,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441583,
+            "description": "Ravage Talent Requires Druid Feral Your auto-attacks have a chance to make your next Ferocious Bite become Ravage. Ravage Finishing move that slashes through your target in a wide arc, dealing Physical damage per combo point to your target and consuming up to 25 additional Energy to increase that damage by up to 100%. Hits all other enemies in front of you for reduced damage per combo point spent. 1 point: [(185.6% of Attack Power) / 5] damage, [(84.46% of Attack Power) / 5] in an arc 2 points: [(185.6% of Attack Power) * 2 / 5] damage, [(84.46% of Attack Power) * 2 / 5] in an arc 3 points: [(185.6% of Attack Power) * 3 / 5] damage, [(84.46% of Attack Power) * 3 / 5] in an arc 4 points: [(185.6% of Attack Power) * 4 / 5] damage, [(84.46% of Attack Power) * 4 / 5] in an arc 5 points: [(185.6% of Attack Power) * 5 / 5] damage, [(84.46% of Attack Power) * 5 / 5] in an arc Guardian Your auto-attacks have a chance to make your next Maul become Ravage. Ravage Slash through your target in a wide arc, dealing (400% of Attack Power) Physical damage to your target and (210% of Attack Power) to all other enemies in front of you.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94620,
+          94618,
+          94611,
+          109722
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82152,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 204053,
+            "name": "Rend and Tear",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 204053,
+                "description": "Rend and Tear Talent Requires Druid Requires level 50 Each stack of Thrash reduces the target's damage to you by 2% and increases your damage to them by 2%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 372943,
+            "name": "Untamed Savagery",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 372943,
+                "description": "Untamed Savagery Talent Requires Druid Increases the damage and radius of Thrash by 25%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82156,
+          109378,
+          92226
+        ],
+        "unlocks": [
+          82154,
+          82159,
+          82142
+        ],
+        "row": 8,
+        "col": 18
+      },
+      {
+        "node_id": 82137,
+        "name": "Raze",
+        "spell_id": 400254,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 400254,
+            "description": "Raze Talent Requires Druid Requires Bear Form Strike with the might of Ursoc, dealing (312% of Attack Power) Physical damage to your target and (170% of Attack Power) to all other enemies in front of you. Damage reduced beyond 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82156,
+          82161,
+          109377
+        ],
+        "unlocks": [
+          82142,
+          92586,
+          82136
+        ],
+        "row": 8,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 92587,
+        "name": "Lunar Beam",
+        "spell_id": 204066,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 204066,
+            "description": "Lunar Beam Talent Requires Druid Summons a beam of lunar light at your target's location, dealing (40% of Attack Power) Arcane damage each second to your target and (40% of Attack Power) to up to 5 other enemies within the beam. Lunar Beam also increases your mastery by (14 * $mas)%, and heals you for [(280% of Attack Power) * 8] over 8 sec.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82148,
+          109377,
+          109375
+        ],
+        "unlocks": [
+          82138,
+          82147,
+          92586
+        ],
+        "row": 8,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94618,
+        "name": "Fount of Strength",
+        "spell_id": 441675,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441675,
+            "description": "Fount of Strength Talent Requires Druid Your maximum Energy and Rage are increased by 20. Frenzied Regeneration also increases your maximum health by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94609
+        ],
+        "unlocks": [
+          94610
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94620,
+        "name": "Dreadful Wound",
+        "spell_id": 441809,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441809,
+            "description": "Dreadful Wound Talent Requires Druid Guardian Ravage also inflicts a Bleed that causes (100% of Attack Power) damage over 6 sec and saps its victims' strength, reducing damage they deal to you by 15%. Dreadful Wound is not affected by Circle of Life and Death. Feral Ravage also inflicts a Bleed that causes (50.4% of Attack Power) damage over 6 sec and saps its victims' strength, reducing damage they deal to you by 4%. Dreadful Wound is not affected by Circle of Life and Death. If a Dreadful Wound benefiting from Tiger's Fury is re-applied, the new Dreadful Wound deals damage as if Tiger's Fury was active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94609
+        ],
+        "unlocks": [
+          94619
+        ],
+        "row": 9,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94611,
+        "name": "Bestial Strength",
+        "spell_id": 441841,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441841,
+            "description": "Bestial Strength Talent Requires Druid Feral Ferocious Bite and Rampant Ferocity damage increased by 10% and Primal Wrath's direct damage increased by 60%. Guardian Maul and Raze damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94609
+        ],
+        "unlocks": [
+          94615
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109722,
+        "name": "Limb from Limb",
+        "spell_id": 1271540,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271540,
+            "description": "Limb from Limb Talent Requires Druid Guardian Your auto-attacks are 30% more likely to make your next become Ravage. Feral Your auto-attacks are 30% more likely to make your next Ferocious Bite become Ravage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94609
+        ],
+        "unlocks": [
+          109723
+        ],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82159,
+        "name": "Ursoc's Fury",
+        "spell_id": 377210,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377210,
+            "description": "Ursoc's Fury Talent Requires Druid Thrash and Maul grant you an absorb shield for 30% of the damage dealt for 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109378,
+          82152
+        ],
+        "unlocks": [
+          109379,
+          82153
+        ],
+        "row": 9,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82154,
+        "name": "Flashing Claws",
+        "spell_id": 393427,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 393427,
+            "description": "Flashing Claws Talent Requires Druid Thrash has a 10% chance to trigger an additional Thrash. Thrash stacks 1 additional time.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 393427,
+            "description": "Flashing Claws Talent Requires Druid Thrash has a 10% chance to trigger an additional Thrash. Thrash stacks 1 additional time.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82152
+        ],
+        "unlocks": [
+          109379
+        ],
+        "row": 9,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82142,
+        "name": "Blood Frenzy",
+        "spell_id": 203962,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 203962,
+            "description": "Blood Frenzy Talent Requires Druid Requires level 15 Thrash also generates each time it deals damage, on up to 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82137,
+          82152
+        ],
+        "unlocks": [
+          109379,
+          82136
+        ],
+        "row": 9,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 92586,
+        "name": "Moonless Night",
+        "spell_id": 400278,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 400278,
+            "description": "Moonless Night Talent Requires Druid Your direct damage melee abilities against enemies afflicted by Moonfire cause them to burn for an additional 20% Arcane damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          92587,
+          82137
+        ],
+        "unlocks": [
+          82134,
+          82136
+        ],
+        "row": 9,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82138,
+        "name": "Fury of Nature",
+        "spell_id": 370695,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 370695,
+            "description": "Fury of Nature Talent Requires Druid While in Bear Form, you deal 10% increased Arcane damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 370695,
+            "description": "Fury of Nature Talent Requires Druid While in Bear Form, you deal 10% increased Arcane damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          92587
+        ],
+        "unlocks": [
+          82134
+        ],
+        "row": 9,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82147,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 372567,
+            "name": "Twin Moonfire",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 372567,
+                "description": "Twin Moonfire Talent Requires Druid Moonfire deals 8% increased damage and also hits another nearby enemy within 15 yds of the target.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1252871,
+            "name": "Red Moon",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1252871,
+                "description": "Red Moon Talent Requires Druid Channel the power of the enraged moon to deal (1040% of Spell Power) Arcane damage to your target over 8 sec. Casting Mangle extends its duration by 1.0 sec and generates .",
+                "cooldown": 30.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82148,
+          92587
+        ],
+        "unlocks": [
+          82134,
+          82145
+        ],
+        "row": 9,
+        "col": 23
+      },
+      {
+        "node_id": 94610,
+        "name": "Wildshape Mastery",
+        "spell_id": 441678,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441678,
+            "description": "Wildshape Mastery Talent Requires Druid Feral, Guardian Ironfur and Frenzied Regeneration persist in Cat Form. When transforming from Bear to Cat Form, you retain 80% of your Bear Form armor and health for 6 sec. For 6 sec after entering Bear Form, you heal for 10% of damage taken over 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94618
+        ],
+        "unlocks": [
+          94612
+        ],
+        "row": 10,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94619,
+        "name": "Exacerbating Wounds",
+        "spell_id": 1271839,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271839,
+            "description": "Exacerbating Wounds Talent Requires Druid Guardian Your Dreadful Wounds increase the damage afflicted enemies take from your Bleed damage over time effects by 15%. Feral Your Dreadful Wounds increase the damage afflicted enemies take from your Bleed damage over time effects by 8%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94620
+        ],
+        "unlocks": [
+          94616
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94615,
+        "name": "Pack's Endurance",
+        "spell_id": 441844,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441844,
+            "description": "Pack's Endurance Talent Requires Druid Stampeding Roar's duration is increased by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94611
+        ],
+        "unlocks": [
+          94614
+        ],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109723,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 441814,
+            "name": "Ruthless Aggression",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441814,
+                "description": "Ruthless Aggression Talent Requires Druid Ravage increases your auto-attack speed by 35% for 6 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 441824,
+            "name": "Killing Strikes",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441824,
+                "description": "Killing Strikes Talent Requires Druid Guardian Ravage increases your Agility by 8% and the armor granted by Ironfur by 20% for 8 sec. Your first Mangle after entering combat makes your next Maul become Ravage. Feral Ravage increases your Agility by 8% and the armor granted by Ironfur by 20% for 8 sec. Your first Tiger's Fury after entering combat makes your next Ferocious Bite become Ravage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109722
+        ],
+        "unlocks": [
+          109721
+        ],
+        "row": 10,
+        "col": 4
+      },
+      {
+        "node_id": 109379,
+        "name": "Harnessed Rage",
+        "spell_id": 1253035,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253035,
+            "description": "Harnessed Rage Talent Requires Druid Mangle has 1 additional charge and when Maul is cast at or above its chance to activate Gore is increased by 100%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82154,
+          82142,
+          82159
+        ],
+        "unlocks": [
+          92588,
+          82153
+        ],
+        "row": 10,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82136,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 102558,
+            "name": "Incarnation: Guardian of Ursoc",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 102558,
+                "description": "Incarnation: Guardian of Ursoc Talent Replaces Berserk Requires Druid Requires level 40 An improved Bear Form that grants the benefits of Berserk, causes Mangle to hit up to 3 targets, and increases maximum health by 30%. Lasts 30 sec. You may freely shapeshift in and out of this improved Bear Form for its duration.",
+                "cooldown": 180.0,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Berserk Requires Druid Requires level 40 An improved Bear Form that grants the benefits of Berserk, causes Mangle to hit up to 3 targets, and increases maximum health by 30%",
+                    "type": "replaces"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": {
+              "spell_id": null,
+              "name": "Berserk Requires Druid Requires level 40 An improved Bear Form that grants the benefits of Berserk, causes Mangle to hit up to 3 targets, and increases maximum health by 30%"
+            }
+          },
+          {
+            "spell_id": 391528,
+            "name": "Convoke the Spirits",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 391528,
+                "description": "Convoke the Spirits Talent Channeled () Requires Druid Call upon the spirits for an eruption of energy, channeling a rapid flurry of 16 / Ursoc's Guidance : 12 / Elune's Guidance : 12 / Astral Insight : 20 Druid spells and abilities over 4 sec. [ Ashamane's Guidance : Chance to use an exceptional spell or ability is increased ] You will cast Wild Growth, Swiftmend, Moonfire, Wrath, Regrowth, Rejuvenation, Rake, and Thrash on appropriate nearby targets, favoring your current shapeshift form.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          82142,
+          92586,
+          82137
+        ],
+        "unlocks": [
+          82135,
+          92588,
+          109302
+        ],
+        "row": 10,
+        "col": 20
+      },
+      {
+        "node_id": 82134,
+        "name": "Elune's Favored",
+        "spell_id": 370586,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 370586,
+            "description": "Elune's Favored Talent Requires Druid While in Bear Form, you are healed for 25% of all Arcane damage done.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          92586,
+          82138,
+          82147
+        ],
+        "unlocks": [
+          82145,
+          109302
+        ],
+        "row": 10,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94612,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 441689,
+            "name": "Empowered Shapeshifting",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441689,
+                "description": "Empowered Shapeshifting Talent Requires Druid Frenzied Regeneration can be cast in Cat Form for . Bear Form reduces magic damage you take by 6%. Shred and [ Brutal Slash / Swipe] damage increased by 10%. Mangle damage increased by 25%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 441691,
+            "name": "Wildpower Surge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441691,
+                "description": "Wildpower Surge Talent Requires Druid Feral Shred and Swipe grant Ursine Potential. When you have 8 stacks, the next time you transform into Bear Form, your next Mangle deals 50% increased damage or your next Swipe deals 50% increased damage. Either generates 15 extra Rage. Guardian Mangle grants Feline Potential. When you have 6 stacks, the next time you transform into Cat Form, gain 5 combo points and your next Ferocious Bite or Rip deals 50% increased damage for its full duration. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94610
+        ],
+        "unlocks": [
+          94613
+        ],
+        "row": 11,
+        "col": 1
+      },
+      {
+        "node_id": 94616,
+        "name": "Aggravate Wounds",
+        "spell_id": 441829,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441829,
+            "description": "Aggravate Wounds Talent Requires Druid Feral, Guardian Every [Maul, Raze, Mangle, &nbsp;Thrash, or Swipe / attack with an Energy cost that] you cast extends the duration of your Dreadful Wounds by 0.6 sec, up to 8 additional sec. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94619
+        ],
+        "unlocks": [
+          94613
+        ],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94614,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 441845,
+            "name": "Strike for the Heart",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441845,
+                "description": "Strike for the Heart Talent Requires Druid Guardian Mangle damage increased by 10% and its critical strike chance is increased by 10%. Mangle heals you for 5% of maximum health. Feral Shred, Swipe, and Rake damage increased by 10% and their critical strike chance is increased by 5%. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 441846,
+            "name": "Tear Down the Mighty",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 441846,
+                "description": "Tear Down the Mighty Talent Requires Druid Feral (Frantic Frenzy) Damage dealt by Chomp and Feral Frenzy. Feral Damage dealt by Chomp and Frantic Frenzy increased by 25%. Guardian The cooldown of Sundering Roar is reduced by 15 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94615
+        ],
+        "unlocks": [
+          94613
+        ],
+        "row": 11,
+        "col": 3
+      },
+      {
+        "node_id": 109721,
+        "name": "Twin Claw",
+        "spell_id": 1271635,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271635,
+            "description": "Twin Claw Talent Requires Druid Feral You have a 16% chance to follow up any single target melee ability with a Twin Claw, dealing (300% of Attack Power) Physical damage and generating . Guardian You have a 18% chance to follow up any single target melee ability or Raze with a Twin Claw, dealing (340% of Attack Power) Physical damage and generating . (200ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109723
+        ],
+        "unlocks": [
+          94613
+        ],
+        "row": 11,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82153,
+        "name": "Killing Blow",
+        "spell_id": 1252994,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1252994,
+            "description": "Killing Blow Talent Requires Druid Maul and Raze may consume up to 20 more Rage to deal up to 70% additional damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109379,
+          82159
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 92588,
+        "name": "Sundering Roar",
+        "spell_id": 1253799,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253799,
+            "description": "Sundering Roar Talent Requires Druid Requires Bear Form Roar with earthshattering ferocity, dealing (280% of Attack Power) Physical damage, and resetting the cooldown of Thrash and allowing it to stack 5 additional times for 12 sec. When Sundering Roar ends, any excess stacks of Thrash immediately deal their remaining damage.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82136,
+          109379
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82135,
+        "name": "Ursoc's Guidance",
+        "spell_id": 393414,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 393414,
+            "description": "Ursoc's Guidance Talent Requires Druid Incarnation: Guardian of Ursoc : Every you spend reduces the cooldown of Incarnation: Guardian of Ursoc by 1 sec. Convoke the Spirits : Convoke the Spirits' cooldown is reduced by 50% and its duration and number of spells cast is reduced by 25%. Convoke the Spirits has an increased chance to use an exceptional spell or ability.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Incarnation: Guardian of Ursoc",
+                "type": "cd_reduction",
+                "value": 1,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Incarnation: Guardian of Ursoc by 1 sec. Convoke the Spirits : Convoke the Spirits' cooldown is reduced",
+                "type": "cd_reduction",
+                "value": 50,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          82136
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109302,
+        "name": "Waking Nightmare",
+        "spell_id": 1253461,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1253461,
+            "description": "Waking Nightmare Talent Requires Druid Approximately 2 procs per minute Awaken memories of past conflicts, causing a Dread Shade to take form nearby. While active, shades slowly travel toward your target, dealing (70% of Attack Power) Nature damage to nearby enemies and mirroring your Thrash casts.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82134,
+          82136
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 82145,
+        "name": "Galactic Guardian",
+        "spell_id": 203964,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 203964,
+            "description": "Galactic Guardian Talent Requires Druid Requires level 40 Your damage has a 5% chance to trigger a free automatic Moonfire on that target. Moonfire : When this occurs, the next Moonfire you cast generates , and deals 300% increased direct damage. Red Moon : When this occurs, you gain 1 charge of Lunar Wrath. Spending Rage while Red Moon is active consumes a stack to deal (100% of Spell Power) additional Arcane damage to its target and heal you for (130% of Spell Power). (2s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          82134,
+          82147
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94613,
+        "name": "Claw Rampage",
+        "spell_id": 441835,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 441835,
+            "description": "Claw Rampage Talent Requires Druid Guardian During Berserk, Mangle, Thrash, and Swipe have a 20% chance to make your next Maul become Ravage. Feral During Berserk, Shred, and Swipe have a 20% chance to make your next Ferocious Bite become Ravage. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94614,
+          94616,
+          94612,
+          109721
+        ],
+        "unlocks": [],
+        "row": 12,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110431,
+        "name": "Wild Guardian",
+        "spell_id": 1269614,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1269614,
+            "description": "Wild Guardian Talent Requires Druid After you cast Berserk or Incarnation: Guardian of Ursoc, you gain access to Wild Guardian: Wild Guardian : Spirits of the wild come to your aid, causing your next 2 casts of Ironfur, Maul, and Frenzied Regeneration to be echoed at 50% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Druid of the Claw",
+      "nodes": [
+        {
+          "node_id": 94609,
+          "name": "Ravage",
+          "spell_id": 441583,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441583,
+              "description": "Ravage Talent Requires Druid Feral Your auto-attacks have a chance to make your next Ferocious Bite become Ravage. Ravage Finishing move that slashes through your target in a wide arc, dealing Physical damage per combo point to your target and consuming up to 25 additional Energy to increase that damage by up to 100%. Hits all other enemies in front of you for reduced damage per combo point spent. 1 point: [(185.6% of Attack Power) / 5] damage, [(84.46% of Attack Power) / 5] in an arc 2 points: [(185.6% of Attack Power) * 2 / 5] damage, [(84.46% of Attack Power) * 2 / 5] in an arc 3 points: [(185.6% of Attack Power) * 3 / 5] damage, [(84.46% of Attack Power) * 3 / 5] in an arc 4 points: [(185.6% of Attack Power) * 4 / 5] damage, [(84.46% of Attack Power) * 4 / 5] in an arc 5 points: [(185.6% of Attack Power) * 5 / 5] damage, [(84.46% of Attack Power) * 5 / 5] in an arc Guardian Your auto-attacks have a chance to make your next Maul become Ravage. Ravage Slash through your target in a wide arc, dealing (400% of Attack Power) Physical damage to your target and (210% of Attack Power) to all other enemies in front of you.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94620,
+            94618,
+            94611,
+            109722
+          ],
+          "row": 8,
+          "col": 2,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94610,
+          "name": "Wildshape Mastery",
+          "spell_id": 441678,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441678,
+              "description": "Wildshape Mastery Talent Requires Druid Feral, Guardian Ironfur and Frenzied Regeneration persist in Cat Form. When transforming from Bear to Cat Form, you retain 80% of your Bear Form armor and health for 6 sec. For 6 sec after entering Bear Form, you heal for 10% of damage taken over 8 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94618
+          ],
+          "unlocks": [
+            94612
+          ],
+          "row": 10,
+          "col": 1,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94611,
+          "name": "Bestial Strength",
+          "spell_id": 441841,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441841,
+              "description": "Bestial Strength Talent Requires Druid Feral Ferocious Bite and Rampant Ferocity damage increased by 10% and Primal Wrath's direct damage increased by 60%. Guardian Maul and Raze damage increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94609
+          ],
+          "unlocks": [
+            94615
+          ],
+          "row": 9,
+          "col": 3,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94612,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441689,
+              "name": "Empowered Shapeshifting",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441689,
+                  "description": "Empowered Shapeshifting Talent Requires Druid Frenzied Regeneration can be cast in Cat Form for . Bear Form reduces magic damage you take by 6%. Shred and [ Brutal Slash / Swipe] damage increased by 10%. Mangle damage increased by 25%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441691,
+              "name": "Wildpower Surge",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441691,
+                  "description": "Wildpower Surge Talent Requires Druid Feral Shred and Swipe grant Ursine Potential. When you have 8 stacks, the next time you transform into Bear Form, your next Mangle deals 50% increased damage or your next Swipe deals 50% increased damage. Either generates 15 extra Rage. Guardian Mangle grants Feline Potential. When you have 6 stacks, the next time you transform into Cat Form, gain 5 combo points and your next Ferocious Bite or Rip deals 50% increased damage for its full duration. (100ms cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94610
+          ],
+          "unlocks": [
+            94613
+          ],
+          "row": 11,
+          "col": 1
+        },
+        {
+          "node_id": 94613,
+          "name": "Claw Rampage",
+          "spell_id": 441835,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441835,
+              "description": "Claw Rampage Talent Requires Druid Guardian During Berserk, Mangle, Thrash, and Swipe have a 20% chance to make your next Maul become Ravage. Feral During Berserk, Shred, and Swipe have a 20% chance to make your next Ferocious Bite become Ravage. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94614,
+            94616,
+            94612,
+            109721
+          ],
+          "unlocks": [],
+          "row": 12,
+          "col": 2,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94614,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441845,
+              "name": "Strike for the Heart",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441845,
+                  "description": "Strike for the Heart Talent Requires Druid Guardian Mangle damage increased by 10% and its critical strike chance is increased by 10%. Mangle heals you for 5% of maximum health. Feral Shred, Swipe, and Rake damage increased by 10% and their critical strike chance is increased by 5%. (100ms cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441846,
+              "name": "Tear Down the Mighty",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441846,
+                  "description": "Tear Down the Mighty Talent Requires Druid Feral (Frantic Frenzy) Damage dealt by Chomp and Feral Frenzy. Feral Damage dealt by Chomp and Frantic Frenzy increased by 25%. Guardian The cooldown of Sundering Roar is reduced by 15 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94615
+          ],
+          "unlocks": [
+            94613
+          ],
+          "row": 11,
+          "col": 3
+        },
+        {
+          "node_id": 94615,
+          "name": "Pack's Endurance",
+          "spell_id": 441844,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441844,
+              "description": "Pack's Endurance Talent Requires Druid Stampeding Roar's duration is increased by 25%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94611
+          ],
+          "unlocks": [
+            94614
+          ],
+          "row": 10,
+          "col": 3,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94616,
+          "name": "Aggravate Wounds",
+          "spell_id": 441829,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441829,
+              "description": "Aggravate Wounds Talent Requires Druid Feral, Guardian Every [Maul, Raze, Mangle, &nbsp;Thrash, or Swipe / attack with an Energy cost that] you cast extends the duration of your Dreadful Wounds by 0.6 sec, up to 8 additional sec. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94619
+          ],
+          "unlocks": [
+            94613
+          ],
+          "row": 11,
+          "col": 2,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94618,
+          "name": "Fount of Strength",
+          "spell_id": 441675,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441675,
+              "description": "Fount of Strength Talent Requires Druid Your maximum Energy and Rage are increased by 20. Frenzied Regeneration also increases your maximum health by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94609
+          ],
+          "unlocks": [
+            94610
+          ],
+          "row": 9,
+          "col": 1,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94619,
+          "name": "Exacerbating Wounds",
+          "spell_id": 1271839,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271839,
+              "description": "Exacerbating Wounds Talent Requires Druid Guardian Your Dreadful Wounds increase the damage afflicted enemies take from your Bleed damage over time effects by 15%. Feral Your Dreadful Wounds increase the damage afflicted enemies take from your Bleed damage over time effects by 8%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94620
+          ],
+          "unlocks": [
+            94616
+          ],
+          "row": 10,
+          "col": 2,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94620,
+          "name": "Dreadful Wound",
+          "spell_id": 441809,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 441809,
+              "description": "Dreadful Wound Talent Requires Druid Guardian Ravage also inflicts a Bleed that causes (100% of Attack Power) damage over 6 sec and saps its victims' strength, reducing damage they deal to you by 15%. Dreadful Wound is not affected by Circle of Life and Death. Feral Ravage also inflicts a Bleed that causes (50.4% of Attack Power) damage over 6 sec and saps its victims' strength, reducing damage they deal to you by 4%. Dreadful Wound is not affected by Circle of Life and Death. If a Dreadful Wound benefiting from Tiger's Fury is re-applied, the new Dreadful Wound deals damage as if Tiger's Fury was active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94609
+          ],
+          "unlocks": [
+            94619
+          ],
+          "row": 9,
+          "col": 2,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109721,
+          "name": "Twin Claw",
+          "spell_id": 1271635,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271635,
+              "description": "Twin Claw Talent Requires Druid Feral You have a 16% chance to follow up any single target melee ability with a Twin Claw, dealing (300% of Attack Power) Physical damage and generating . Guardian You have a 18% chance to follow up any single target melee ability or Raze with a Twin Claw, dealing (340% of Attack Power) Physical damage and generating . (200ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109723
+          ],
+          "unlocks": [
+            94613
+          ],
+          "row": 11,
+          "col": 4,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109722,
+          "name": "Limb from Limb",
+          "spell_id": 1271540,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271540,
+              "description": "Limb from Limb Talent Requires Druid Guardian Your auto-attacks are 30% more likely to make your next become Ravage. Feral Your auto-attacks are 30% more likely to make your next Ferocious Bite become Ravage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94609
+          ],
+          "unlocks": [
+            109723
+          ],
+          "row": 9,
+          "col": 4,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109723,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 441814,
+              "name": "Ruthless Aggression",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441814,
+                  "description": "Ruthless Aggression Talent Requires Druid Ravage increases your auto-attack speed by 35% for 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 441824,
+              "name": "Killing Strikes",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 441824,
+                  "description": "Killing Strikes Talent Requires Druid Guardian Ravage increases your Agility by 8% and the armor granted by Ironfur by 20% for 8 sec. Your first Mangle after entering combat makes your next Maul become Ravage. Feral Ravage increases your Agility by 8% and the armor granted by Ironfur by 20% for 8 sec. Your first Tiger's Fury after entering combat makes your next Ferocious Bite become Ravage.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            109722
+          ],
+          "unlocks": [
+            109721
+          ],
+          "row": 10,
+          "col": 4
+        }
+      ]
+    },
+    {
+      "name": "Wildstalker",
+      "nodes": [
+        {
+          "node_id": 94621,
+          "name": "Wildstalker's Power",
+          "spell_id": 439926,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 439926,
+              "description": "Wildstalker's Power Talent Requires Druid Feral Rip and Ferocious Bite damage increased by 5%. Rejuvenation healing increased by 10%. Restoration Rip and Ferocious Bite damage increased by 5%. Rejuvenation, Efflorescence, and Lifebloom healing increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94626
+          ],
+          "unlocks": [
+            94625
+          ],
+          "row": 3,
+          "col": 26,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94622,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 439895,
+              "name": "Entangling Vortex",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 439895,
+                  "description": "Entangling Vortex Talent Requires Druid Enemies pulled into Ursol's Vortex are rooted in place for 3 sec. Damage may cancel the effect.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 439901,
+              "name": "Flower Walk",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 439901,
+                  "description": "Flower Walk Talent Requires Druid During Barkskin your movement speed is increased by 10% and every second flowers grow beneath your feet that heal up to 3 nearby injured allies for (20% of Spell Power).",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94623
+          ],
+          "unlocks": [
+            94630
+          ],
+          "row": 4,
+          "col": 25
+        },
+        {
+          "node_id": 94623,
+          "name": "Strategic Infusion",
+          "spell_id": 439890,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 439890,
+              "description": "Strategic Infusion Talent Requires Druid Restoration Attacking from Prowl increases the chance for Shred, Rake, and Swipe to critically strike by 8% for 6 sec. Your periodic heals have a 4% increased chance to critically heal. Feral Tiger's Fury and attacking from Prowl increase the chance for Shred, Rake, and Swipe to critically strike by 8% for 6 sec. Your periodic heals have a 4% increased chance to critically heal.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94626
+          ],
+          "unlocks": [
+            94622
+          ],
+          "row": 3,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94624,
+          "name": "Lethal Preservation",
+          "spell_id": 455461,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 455461,
+              "description": "Lethal Preservation Talent Requires Druid When you remove an effect with Soothe or [ Nature's Cure / Remove Corruption], gain a combo point and heal for 4% of your maximum health. If you are at full health an injured party or raid member will be healed instead.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94629
+          ],
+          "unlocks": [
+            94631
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94625,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 439929,
+              "name": "Bond with Nature",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 439929,
+                  "description": "Bond with Nature Talent Requires Druid Healing you receive is increased by 4%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440116,
+              "name": "Harmonious Constitution",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440116,
+                  "description": "Harmonious Constitution Talent Requires Druid Feral Your Regrowth's healing to yourself is increased by 25%. Restoration Your Regrowth's healing to yourself is increased by 35%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94621
+          ],
+          "unlocks": [
+            94628
+          ],
+          "row": 4,
+          "col": 26
+        },
+        {
+          "node_id": 94626,
+          "name": "Thriving Growth",
+          "spell_id": 439528,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 439528,
+              "description": "Thriving Growth Talent Requires Druid Feral Rip and Rake damage has a chance to cause Bloodseeker Vines to grow on the victim, dealing (97.5% of Attack Power) Bleed damage over 6 sec. Wild Growth and Regrowth healing has a chance to cause Symbiotic Blooms to grow on the target, healing for (219.6% of Spell Power) over 6 sec. Multiple instances of these can overlap. Restoration Rip and Rake damage has a chance to cause Bloodseeker Vines to grow on the victim, dealing (97.5% of Attack Power) Bleed damage over 6 sec. Wild Growth, Regrowth, and Efflorescence healing has a chance to cause Symbiotic Blooms to grow on the target, healing for (219.6% of Spell Power) over 6 sec. Multiple instances of these can overlap.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94629,
+            94623,
+            94621,
+            109717
+          ],
+          "row": 2,
+          "col": 26,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94627,
+          "name": "Vigorous Creepers",
+          "spell_id": 440119,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440119,
+              "description": "Vigorous Creepers Talent Requires Druid Bloodseeker Vines increase the damage your abilities deal to affected enemies by 4%. Symbiotic Blooms increase the healing your spells do to affected targets by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94630,
+            94628,
+            94631,
+            109715
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 26,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94628,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 440117,
+              "name": "Twin Sprouts",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440117,
+                  "description": "Twin Sprouts Talent Requires Druid When Bloodseeker Vines or Symbiotic Blooms grow, they have a 30% chance to cause another growth of the same type to immediately grow on a valid nearby target.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440118,
+              "name": "Implant",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440118,
+                  "description": "Implant Talent Requires Druid Restoration Casting Swiftmend or Wild Growth causes a Symbiotic Bloom to grow on a target for 6 sec. Feral When you gain or lose Tiger's Fury, your next single-target melee ability causes a Bloodseeker Vine to grow on the target for 4 sec. (200ms cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94625
+          ],
+          "unlocks": [
+            94627
+          ],
+          "row": 5,
+          "col": 26
+        },
+        {
+          "node_id": 94629,
+          "name": "Hunt Beneath the Open Skies",
+          "spell_id": 439868,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 439868,
+              "description": "Hunt Beneath the Open Skies Talent Requires Druid Damage and healing while in Cat Form increased by 3%. Moonfire and Sunfire damage increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94626
+          ],
+          "unlocks": [
+            94624
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94630,
+          "name": "Patient Custodian",
+          "spell_id": 1270592,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270592,
+              "description": "Patient Custodian Talent Requires Druid Feral Your Bleeds and other damage over time effects are 8% more effective. Restoration Your heal over time effects are 6% more effective.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94622
+          ],
+          "unlocks": [
+            94627
+          ],
+          "row": 5,
+          "col": 25,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94631,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 439880,
+              "name": "Resilient Flourishing",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 439880,
+                  "description": "Resilient Flourishing Talent Requires Druid Bloodseeker Vines and Symbiotic Blooms last 2 additional sec. When a target afflicted by Bloodseeker Vines dies, the vines jump to a valid nearby target for their remaining duration.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 439882,
+              "name": "Root Network",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 439882,
+                  "description": "Root Network Talent Requires Druid Each active Bloodseeker Vine increases the damage your abilities deal by 2%. Each active Symbiotic Bloom increases the healing of your spells by 2%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94624
+          ],
+          "unlocks": [
+            94627
+          ],
+          "row": 5,
+          "col": 24
+        },
+        {
+          "node_id": 109715,
+          "name": "Rampancy",
+          "spell_id": 1270586,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270586,
+              "description": "Rampancy Talent Requires Druid Feral Bloodseeker Vines have a 30% chance to trigger Bursting Growth every 2 sec at 100% effectiveness. Restoration Symbiotic Blooms have a 20% chance to trigger Bursting Growth every 2 sec at 100% effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109716
+          ],
+          "unlocks": [
+            94627
+          ],
+          "row": 5,
+          "col": 27,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109716,
+          "name": "Bursting Growth",
+          "spell_id": 440120,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 440120,
+              "description": "Bursting Growth Talent Requires Druid When Bloodseeker Vines expire or you use Ferocious Bite on their target they explode in thorns, dealing (86.4% of Attack Power) physical damage to nearby enemies. Damage reduced above 5 targets. When Symbiotic Blooms expire or you cast Rejuvenation on their target flowers grow around their target, healing them and up to 3 nearby allies for (42.09% of Spell Power).",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109717
+          ],
+          "unlocks": [
+            109715
+          ],
+          "row": 4,
+          "col": 27,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109717,
+          "name": "Green Thumb",
+          "spell_id": 1270565,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270565,
+              "description": "Green Thumb Talent Requires Druid Feral The rate at which Bloodseeker Vines grow is increased by 20%. Restoration The rate at which Symbiotic Blooms grow is increased by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94626
+          ],
+          "unlocks": [
+            109716
+          ],
+          "row": 3,
+          "col": 27,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Keeper of the Grove",
+      "nodes": [
+        {
+          "node_id": 94591,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429215,
+              "name": "Bounteous Bloom",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429215,
+                  "description": "Bounteous Bloom Talent Requires Druid Balance Force of Nature summons 4 Treants. Restoration Your Grove Guardians' healing is increased by 30%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 428937,
+              "name": "Early Spring",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 428937,
+                  "description": "Early Spring Talent Requires Druid Balance Force of Nature cooldown reduced by 15 sec. Restoration Swiftmend and Wild Growth cooldowns reduced by 1 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94605
+          ],
+          "unlocks": [
+            94606
+          ],
+          "row": 10,
+          "col": 12
+        },
+        {
+          "node_id": 94592,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 434220,
+              "name": "Power of the Dream",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434220,
+                  "description": "Power of the Dream Talent Requires Druid Restoration Dream Surge heals 1 additional ally. Balance Force of Nature grants an additional stack of Dream Burst.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 434249,
+              "name": "Control of the Dream",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434249,
+                  "description": "Control of the Dream Talent Requires Druid Balance Time elapsed while your major abilities are available to be used or at maximum charges is subtracted from that ability's cooldown after the next time you use it, up to 15 seconds. Affects Force of Nature, and Convoke the Spirits. Restoration Time elapsed while your major abilities are available to be used or at maximum charges is subtracted from that ability's cooldown after the next time you use it, up to 15 seconds. Affects Nature's Swiftness, Incarnation: Tree of Life, and Convoke the Spirits.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94604
+          ],
+          "unlocks": [
+            94606
+          ],
+          "row": 10,
+          "col": 13
+        },
+        {
+          "node_id": 94593,
+          "name": "Protective Growth",
+          "spell_id": 433748,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 433748,
+              "description": "Protective Growth Talent Requires Druid Your Regrowth protects you, reducing damage you take by 8% while your Regrowth is on you.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94600
+          ],
+          "unlocks": [
+            94595
+          ],
+          "row": 8,
+          "col": 14,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94595,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429402,
+              "name": "Grove's Inspiration",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429402,
+                  "description": "Grove's Inspiration Talent Requires Druid Balance Wrath and Starfire damage increased by 10%. Regrowth and Wild Growth healing increased by 9%. Restoration Wrath and Starfire damage increased by 10%. Regrowth, Wild Growth, and Swiftmend healing increased by 9%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 429420,
+              "name": "Potent Enchantments",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429420,
+                  "description": "Potent Enchantments Talent Requires Druid Balance Orbital Strike damage increased by 30%, and damage of Stellar Flares it applies increased by 30%. Whirling Stars increases the haste you gain during Celestial Alignment by an additional 10%. Balance (Incarnation: Chosen of Elune) Orbital Strike damage increased by 30%, and damage of Stellar Flares it applies increased by 30%. Whirling Stars increases the haste you gain during Incarnation: Chosen of Elune Restoration Reforestation grants Tree of Life for 6 additional sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94593
+          ],
+          "unlocks": [
+            94601
+          ],
+          "row": 9,
+          "col": 14
+        },
+        {
+          "node_id": 94599,
+          "name": "Treants of the Moon",
+          "spell_id": 428544,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 428544,
+              "description": "Treants of the Moon Talent Requires Druid Balance Your Force of Nature treants cast Moonfire on nearby targets about once every 6 sec. Restoration Your Grove Guardians cast Moonfire on nearby targets about once every 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94600
+          ],
+          "unlocks": [
+            94605
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94600,
+          "name": "Dream Surge",
+          "spell_id": 433831,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 433831,
+              "description": "Dream Surge Talent Requires Druid Balance Force of Nature grants 3 charges of Dream Burst, causing your next Wrath or Starfire to explode on the target, dealing [(302.1% of Attack Power) * 1.06] Nature damage to nearby enemies. Damage reduced above 5 targets. Restoration When Grove Guardians are summoned, they grow Dream Petals on your target, healing up to 3 nearby allies for (146.4% of Spell Power).",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94593,
+            94602,
+            94599,
+            109714
+          ],
+          "row": 7,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94601,
+          "name": "Blooming Infusion",
+          "spell_id": 429433,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429433,
+              "description": "Blooming Infusion Talent Requires Druid Balance Every 5 Regrowths you cast makes your next Wrath, Starfire, or Entangling Roots instant and increases damage it deals by 100%. Every 5 Starsurges or Starfalls you cast makes your next Regrowth or Entangling roots instant. Restoration Every 5 Regrowths you cast makes your next Wrath, Starfire, or Entangling Roots instant and increases damage it deals by 100%. Every 5 Starsurges you cast makes your next Regrowth or Entangling roots instant.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94595
+          ],
+          "unlocks": [
+            94606
+          ],
+          "row": 10,
+          "col": 14,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94602,
+          "name": "Expansiveness",
+          "spell_id": 429399,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429399,
+              "description": "Expansiveness Talent Requires Druid Balance Your maximum mana is increased by 5% and your maximum Astral Power is increased by 20. Restoration Your maximum mana is increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94600
+          ],
+          "unlocks": [
+            94604
+          ],
+          "row": 8,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94604,
+          "name": "Cenarius' Might",
+          "spell_id": 455797,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 455797,
+              "description": "Cenarius' Might Talent Requires Druid Balance Entering Eclipse increases your haste by 8% for 6 sec. Restoration Swiftmend healing is increased by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94602
+          ],
+          "unlocks": [
+            94592
+          ],
+          "row": 9,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94605,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 428859,
+              "name": "Power of Nature",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 428859,
+                  "description": "Power of Nature Talent Requires Druid Balance Your Force of Nature treants no longer taunt and deal 200 % increased melee damage. Restoration Your Grove Guardians increase the healing of your Rejuvenation, Efflorescence, and Lifebloom by 10% while active.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 429227,
+              "name": "Durability of Nature",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429227,
+                  "description": "Durability of Nature Talent Requires Druid Restoration Grove Guardians last 20% longer. Balance Your Force of Nature treants have 100% increased health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94599
+          ],
+          "unlocks": [
+            94591
+          ],
+          "row": 9,
+          "col": 12
+        },
+        {
+          "node_id": 94606,
+          "name": "Harmony of the Grove",
+          "spell_id": 428731,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 428731,
+              "description": "Harmony of the Grove Talent Requires Druid Balance Each of your Force of Nature treants increases damage your spells deal by 4 % while active. Restoration Each of your Grove Guardians increases your healing done by 5% while active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94601,
+            94592,
+            94591,
+            109712
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109712,
+          "name": "Spirit of the Thicket",
+          "spell_id": 1264899,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264899,
+              "description": "Spirit of the Thicket Talent Requires Druid Restoration Ironbark summons a Dryad to channel a beam of pure nature onto your target, healing them for (4392% of Spell Power) over 6 sec. Balance Your Starfall damage is increased by 12% and your Starsurge damage is increased by 8%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109713
+          ],
+          "unlocks": [
+            94606
+          ],
+          "row": 10,
+          "col": 15,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109713,
+          "name": "Dryad's Dance",
+          "spell_id": 1264776,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264776,
+              "description": "Dryad's Dance Talent Requires Druid Restoration Dryads cause Swiftmend to cool down 25% faster. Balance Dryads cause most of your Astral power generation to be increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109714
+          ],
+          "unlocks": [
+            109712
+          ],
+          "row": 9,
+          "col": 15,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109714,
+          "name": "Sylvan Beckoning",
+          "spell_id": 1264614,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264614,
+              "description": "Sylvan Beckoning Talent Requires Druid Approximately 1 procs per minute Balance Entering an Eclipse summons a Dryad to assist you for 8 sec, casting Starsurge dealing (150% of Spell Power) astral damage and Starfall at 200% effectiveness. Restoration Your periodic heals have a chance to empower your next Swiftmend to summon a Dryad to assist you, casting Tranquility at 10% effectiveness and Regrowth to heal (658.507% of Spell Power) damage onto your lowest health ally.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94600
+          ],
+          "unlocks": [
+            109713
+          ],
+          "row": 8,
+          "col": 15,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Elune's Chosen",
+      "nodes": [
+        {
+          "node_id": 94585,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 428655,
+              "name": "The Light of Elune",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 428655,
+                  "description": "The Light of Elune Talent Requires Druid Approximately 1 procs per minute Balance Moonfire damage has a chance to call down a Fury of Elune to follow your target for 3 sec. Fury of Elune Calls down a beam of pure celestial energy, dealing [3000 / 1000 * 2 * (18.34% of Spell Power)] Astral damage over 3 sec within its area. Generates over its duration. Guardian Moonfire damage has a chance to call down a Fury of Elune to follow your target for 3 sec. Fury of Elune Calls down a beam of pure celestial energy, dealing [3000 / 1000 * 2 * (18.34% of Spell Power)] Astral damage over 3 sec within its area. Generates over its duration.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 429536,
+              "name": "Astral Insight",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429536,
+                  "description": "Astral Insight Talent Requires Druid Balance Incarnation: Chosen of Elune increases Arcane damage from spells and abilities by 10% while active. Increases the duration and number of spells cast by Convoke the Spirits by 25%. Guardian Incarnation: Guardian of Ursoc increases Arcane damage from spells and abilities by 10% while active. Increases the duration and number of spells cast by Convoke the Spirits by 25%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94607
+          ],
+          "unlocks": [
+            94587
+          ],
+          "row": 5,
+          "col": 13
+        },
+        {
+          "node_id": 94586,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429540,
+              "name": "Arcane Affinity",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429540,
+                  "description": "Arcane Affinity Talent Requires Druid All Arcane damage from your spells and abilities is increased by 3%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 429539,
+              "name": "Lunation",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429539,
+                  "description": "Lunation Talent Requires Druid Balance Your Arcane abilities reduce the cooldown of Fury of Elune by 1.5 sec and the cooldown of New Moon, Half Moon, and Full Moon by 1.0 sec. Guardian Your Arcane abilities reduce the cooldown of Lunar Beam by 3.0 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Fury of Elune",
+                      "type": "cd_reduction",
+                      "value": 1.5,
+                      "unit": "seconds"
+                    },
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Lunar Beam",
+                      "type": "cd_reduction",
+                      "value": 3,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94597
+          ],
+          "unlocks": [
+            94587
+          ],
+          "row": 5,
+          "col": 14
+        },
+        {
+          "node_id": 94587,
+          "name": "The Eternal Moon",
+          "spell_id": 424113,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 424113,
+              "description": "The Eternal Moon Talent Requires Druid Balance Further increases the power of Boundless Moonlight. Fury of Elune The flash of energy now generates and its damage is increased by 50%. Full Moon New Moon and Half Moon now also call down 1 Minor Moon. Guardian Further increases the power of Boundless Moonlight. Lunar Beam Lunar Beam increases Mastery by an additional (15 * $mas)%, deals 30% increased damage, and lasts 3 sec longer. Fury of Elune The flash of energy now generates &nbsp; and its damage is increased by 50%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94590,
+            94585,
+            94586,
+            109718
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94588,
+          "name": "Lunar Insight",
+          "spell_id": 429530,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429530,
+              "description": "Lunar Insight Talent Requires Druid Balance Moonfire deals 20% additional damage. Guardian Moonfire deals 8% additional damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94608
+          ],
+          "unlocks": [
+            94607
+          ],
+          "row": 3,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94590,
+          "name": "Lunar Calling",
+          "spell_id": 429523,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429523,
+              "description": "Lunar Calling Talent Requires Druid Balance Starfire deals 120% increased damage to its primary target. Wrath no longer changes your Eclipse ability's mode to Solar Eclipse. Guardian Thrash now deals Arcane damage and its damage is increased by 12%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94596
+          ],
+          "unlocks": [
+            94587
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94594,
+          "name": "Glistening Fur",
+          "spell_id": 429533,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429533,
+              "description": "Glistening Fur Talent Requires Druid Bear Form and Moonkin Form reduce Arcane damage taken by 6% and all other magic damage taken by 3%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94608
+          ],
+          "unlocks": [
+            94597
+          ],
+          "row": 3,
+          "col": 14,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94596,
+          "name": "Stellar Command",
+          "spell_id": 429668,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429668,
+              "description": "Stellar Command Talent Requires Druid Balance Increases the damage of Fury of Elune by 15% and the damage of Full Moon by 25%. Guardian Increases the damage of Lunar Beam by 30% and Fury of Elune by 15%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Fury of Elune",
+                  "type": "damage_increase",
+                  "value": 15,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Lunar Beam",
+                  "type": "damage_increase",
+                  "value": 30,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94598
+          ],
+          "unlocks": [
+            94590
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94597,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429538,
+              "name": "Moondust",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429538,
+                  "description": "Moondust Talent Requires Druid Enemies affected by Moonfire are slowed by 20%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 443046,
+              "name": "Elune's Grace",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443046,
+                  "description": "Elune's Grace Talent Requires Druid Using Wild Charge while in Bear Form or Moonkin Form incurs a 3 sec shorter cooldown.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94594
+          ],
+          "unlocks": [
+            94586
+          ],
+          "row": 4,
+          "col": 14
+        },
+        {
+          "node_id": 94598,
+          "name": "Moon Guardian",
+          "spell_id": 429520,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429520,
+              "description": "Moon Guardian Talent Requires Druid Guardian Free automatic Moonfires from Galactic Guardian generate . Balance Moonfire and Starfire generate 2 additional Astral Power.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94608
+          ],
+          "unlocks": [
+            94596
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94607,
+          "name": "Atmospheric Exposure",
+          "spell_id": 429532,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429532,
+              "description": "Atmospheric Exposure Talent Requires Druid Balance Enemies damaged by Full Moon or Fury of Elune take 6% increased damage from you for 6 sec. Guardian Enemies damaged by Lunar Beam or Fury of Elune take 6% increased damage from you for 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94588
+          ],
+          "unlocks": [
+            94585
+          ],
+          "row": 4,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94608,
+          "name": "Boundless Moonlight",
+          "spell_id": 424058,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 424058,
+              "description": "Boundless Moonlight Talent Requires Druid Balance Fury of Elune Fury of Elune now ends with a flash of energy, blasting nearby enemies for (216.32% of Spell Power) Astral damage. Full Moon Full Moon calls down 2 Minor Moons that deal (188.5% of Spell Power) Astral damage and generate . Guardian Lunar Beam Lunar Beam now causes you to leech life equal to 10% of all damage dealt to enemies within the beam. Fury of Elune Fury of Elune now ends with a flash of energy, blasting nearby enemies for (216.32% of Spell Power) Astral damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94594,
+            94588,
+            94598,
+            109720
+          ],
+          "row": 2,
+          "col": 13,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109718,
+          "name": "Bask in Moonlight",
+          "spell_id": 1271305,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271305,
+              "description": "Bask in Moonlight Talent Requires Druid Guardian damage increased by 10%. Lunar Beam's damage dealt to its primary target increased by 30%. Balance Starsurge damage increased by 10%. Starfall damage increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109719
+          ],
+          "unlocks": [
+            94587
+          ],
+          "row": 5,
+          "col": 15,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109719,
+          "name": "Penumbral Swell",
+          "spell_id": 1271261,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271261,
+              "description": "Penumbral Swell Talent Requires Druid Guardian Lunar Beam increases Arcane damage you deal by 10% while it is active. Balance Lunar Eclipse increases Arcane damage by an additional 3%. Guardian Lunar Beam increases Arcane damage you deal by 10% while it is active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109720
+          ],
+          "unlocks": [
+            109718
+          ],
+          "row": 4,
+          "col": 15,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109720,
+          "name": "Star Cascade",
+          "spell_id": 1271206,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271206,
+              "description": "Star Cascade Talent Requires Druid Balance Gaining Astral Power with Wrath or Starfire has a 40% chance to launch a Starsurge at a victim at 70% effectiveness. Guardian Thrash has a 50% chance to launch a Starsurge at a victim at 120% effectiveness. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94608
+          ],
+          "unlocks": [
+            109719
+          ],
+          "row": 3,
+          "col": 15,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

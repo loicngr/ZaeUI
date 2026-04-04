@@ -1,0 +1,5336 @@
+{
+  "class": "Shaman",
+  "spec": "Elemental",
+  "scraped_at": "2026-03-25T19:08:44.468608+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99845,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 8
+      },
+      {
+        "node_id": 103588,
+        "name": "Chain Heal",
+        "spell_id": 1064,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1064,
+            "description": "Chain Heal Talent 15% of base mana Requires Shaman Heals the friendly target for (231% of Spell Power), then jumps up to 20 yards to heal the 3 most injured nearby allies. Healing is reduced by 30 % with each jump.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          103610,
+          103596
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103598,
+        "name": "Lava Burst",
+        "spell_id": 51505,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 51505,
+            "description": "Lava Burst Talent 0.5% of base mana Requires Shaman Hurls molten lava at the target, dealing (138.996% of Spell Power) Fire damage. Lava Burst will always critically strike if the target is affected by Flame Shock and its damage is increased by your critical strike chance. Elemental Generates .",
+            "cooldown": 8.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          103581,
+          103605,
+          103610
+        ],
+        "row": 2,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103583,
+        "name": "Chain Lightning",
+        "spell_id": 188443,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 188443,
+            "description": "Chain Lightning Talent 0.2% of base mana Requires Shaman Hurls a lightning bolt at the enemy, dealing (73.025% of Spell Power) Nature damage and then jumping to additional nearby enemies. Affects 3 total targets Enhancement Consumes Maelstrom Weapon for increased cast speed. Elemental Generates per target hit.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          103581,
+          109492
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103596,
+        "name": "Earth Shield",
+        "spell_id": 974,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 974,
+            "description": "Earth Shield Talent 5% of base mana Requires Shaman Requires level 30 (Elemental, Enhancement) Protects the target with an earthen shield, increasing your healing on them by 20% and healing them for [(73% of Spell Power) * (1.2)] when they take damage. This heal can only occur once every 3 sec. Maximum 9 charges . [ Elemental Orbit : Earth Shield can only be placed on the Shaman and one other target at a time. The Shaman can have up to two Elemental Shields active on them / Earth Shield can only be placed on one target at a time. Only one Elemental Shield can be active on the Shaman.] (3s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103588
+        ],
+        "unlocks": [
+          103591,
+          103602
+        ],
+        "row": 3,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103610,
+        "name": "Ancestral Wolf Affinity",
+        "spell_id": 382197,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382197,
+            "description": "Ancestral Wolf Affinity Talent Requires Shaman Cleanse Spirit, Wind Shear, Purge, and totem casts no longer cancel Ghost Wolf.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103598,
+          103588
+        ],
+        "unlocks": [
+          103616,
+          103591
+        ],
+        "row": 3,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103605,
+        "name": "Fire and Ice",
+        "spell_id": 382886,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382886,
+            "description": "Fire and Ice Talent Requires Shaman Increases all Fire and Frost damage you deal by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103598
+        ],
+        "unlocks": [
+          103616
+        ],
+        "row": 3,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103581,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 260878,
+            "name": "Spirit Wolf",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 260878,
+                "description": "Spirit Wolf Talent Requires Shaman Requires level 30 (Elemental, Enhancement) While transformed into a Ghost Wolf, you gain 5% increased movement speed and 5% damage reduction every 1 sec, stacking up to 4 times.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 378075,
+            "name": "Thunderous Paws",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 378075,
+                "description": "Thunderous Paws Talent Requires Shaman Ghost Wolf removes snares and increases your movement speed by an additional 25% for the first 3 sec. May only occur once every 20 sec. (20s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103583,
+          103598
+        ],
+        "unlocks": [
+          103613,
+          103616
+        ],
+        "row": 3,
+        "col": 5
+      },
+      {
+        "node_id": 109492,
+        "name": "Frost Shock",
+        "spell_id": 196840,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 196840,
+            "description": "Frost Shock Talent 0.2% of base mana Requires Shaman Enhancement, Restoration Chills the target with frost, causing (72.45% of Spell Power) Frost damage and reducing the target's movement speed by 50% for 6 sec. Elemental Chills the target with frost, causing (72.45% of Spell Power) Frost damage and reducing the target's movement speed by 50% for 6 sec. Elemental Generates .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103583
+        ],
+        "unlocks": [
+          103613,
+          109493
+        ],
+        "row": 3,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103602,
+        "name": "Elemental Orbit",
+        "spell_id": 383010,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383010,
+            "description": "Elemental Orbit Talent Requires Shaman Increases the number of Elemental Shields you can have active on yourself by 1. You can have Earth Shield on yourself and one ally at the same time.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103596
+        ],
+        "unlocks": [
+          103590
+        ],
+        "row": 4,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103591,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 58875,
+            "name": "Spirit Walk",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 58875,
+                "description": "Spirit Walk Talent Requires Shaman Removes all movement impairing effects and increases your movement speed by 60% for 8 sec.",
+                "cooldown": 60.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 192063,
+            "name": "Gust of Wind",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 192063,
+                "description": "Gust of Wind Talent Requires Shaman A gust of wind hurls you forward.",
+                "cooldown": 20.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103596,
+          103610
+        ],
+        "unlocks": [
+          103614,
+          103590
+        ],
+        "row": 4,
+        "col": 2
+      },
+      {
+        "node_id": 103616,
+        "name": "Astral Shift",
+        "spell_id": 108271,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108271,
+            "description": "Astral Shift Talent Requires Shaman Shift partially into the elemental planes, taking 40 % less damage for 12 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103581,
+          103610,
+          103605
+        ],
+        "unlocks": [
+          103614,
+          103582,
+          103611
+        ],
+        "row": 4,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103613,
+        "name": "Nature's Guardian",
+        "spell_id": 30884,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 30884,
+            "description": "Nature's Guardian Talent Requires Shaman Requires level 40 When your health is brought below 35%, you instantly heal for 40% of your maximum health. Cannot occur more than once every 45 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103581,
+          109492
+        ],
+        "unlocks": [
+          103582,
+          103615
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109493,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 462762,
+            "name": "Encasing Cold",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462762,
+                "description": "Encasing Cold Talent Requires Shaman Increases the cooldown of Frost Shock by 15 sec, but Frost Shock now freezes targets in place for 4 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 462764,
+            "name": "Arctic Snowstorm",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462764,
+                "description": "Arctic Snowstorm Talent Requires Shaman Enemies within 10 yds of your Frost Shock are snared by 30%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109492
+        ],
+        "unlocks": [
+          103615
+        ],
+        "row": 4,
+        "col": 7
+      },
+      {
+        "node_id": 103590,
+        "name": "Healing Stream Totem",
+        "spell_id": 5394,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 5394,
+            "description": "Healing Stream Totem Talent 5% of base mana Requires Shaman Summons a totem at your feet for 15 sec that heals [ Rushing Streams : two injured party or raid members / an injured party or raid member] within 40 yards for (67.68% of Spell Power) every 2 sec. If you already know Healing Stream Totem , instead gain 1 additional charge of Healing Stream Totem .",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Healing Stream Totem Talent 5% of base mana Requires Shaman Summons a totem at your feet for 15 sec that heals [ Rushing Streams : two injured party or raid members / an injured party or raid member] within 40 yards for (67.68% of Spell Power) every 2 sec. If you already know Healing Stream Totem , instead",
+                "type": "charge_increase",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          103591,
+          103602
+        ],
+        "unlocks": [
+          103622,
+          103601
+        ],
+        "row": 5,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103614,
+        "name": "Winds of Al'Akir",
+        "spell_id": 382215,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382215,
+            "description": "Winds of Al'Akir Talent Requires Shaman Increases your movement speed by 5% and the movement speed bonus of Ghost Wolf by an additional 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 382215,
+            "description": "Winds of Al'Akir Talent Requires Shaman Increases your movement speed by 5% and the movement speed bonus of Ghost Wolf by an additional 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103591,
+          103616
+        ],
+        "unlocks": [
+          103622,
+          103579
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103611,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 381647,
+            "name": "Planes Traveler",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 381647,
+                "description": "Planes Traveler Talent Requires Shaman Reduces the cooldown of Astral Shift by 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Astral Shift",
+                    "type": "cd_reduction",
+                    "value": 30,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 377933,
+            "name": "Astral Bulwark",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 377933,
+                "description": "Astral Bulwark Talent Requires Shaman Astral Shift reduces damage taken by an additional 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103616
+        ],
+        "unlocks": [
+          103579,
+          110085
+        ],
+        "row": 5,
+        "col": 4
+      },
+      {
+        "node_id": 103582,
+        "name": "Brimming with Life",
+        "spell_id": 381689,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381689,
+            "description": "Brimming with Life Talent Requires Shaman Stamina increased by 8%. While you are at full health, Reincarnation cools down 50% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 381689,
+            "description": "Brimming with Life Talent Requires Shaman Stamina increased by 8%. While you are at full health, Reincarnation cools down 50% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103613,
+          103616
+        ],
+        "unlocks": [
+          110085,
+          103606
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103615,
+        "name": "Wind Shear",
+        "spell_id": 57994,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 57994,
+            "description": "Wind Shear Talent Requires Shaman Elemental, Enhancement, Restoration Disrupts the target's concentration with a burst of wind, interrupting spellcasting and preventing any spell in that school from being cast for 4 sec.",
+            "cooldown": 12.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103613,
+          109493
+        ],
+        "unlocks": [
+          103628,
+          103606
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103601,
+        "name": "Elemental Resistance",
+        "spell_id": 462368,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 462368,
+            "description": "Elemental Resistance Talent Requires Shaman Healing from Healing Stream Totem reduces Fire, Frost, and Nature damage taken by 6% for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103590
+        ],
+        "unlocks": [
+          103594
+        ],
+        "row": 6,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103622,
+        "name": "Earthgrab Totem",
+        "spell_id": 51485,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 51485,
+            "description": "Earthgrab Totem Talent 0.5% of base mana Requires Shaman Requires level 30 Summons a totem at the target location for 20 sec. The totem pulses every 2 sec, rooting all enemies within 8 yards for 8 sec. Enemies previously rooted by the totem instead suffer 50% movement speed reduction.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103614,
+          103590
+        ],
+        "unlocks": [
+          103608,
+          103594
+        ],
+        "row": 6,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103579,
+        "name": "Capacitor Totem",
+        "spell_id": 192058,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 192058,
+            "description": "Capacitor Totem Talent 2% of base mana Requires Shaman Summons a totem at the target location that gathers electrical energy from the surrounding air and explodes after 2 sec, stunning all enemies within 8 yards for 3 sec.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103614,
+          103611
+        ],
+        "unlocks": [
+          103608,
+          103627,
+          103618
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110085,
+        "name": "Spiritual Awakening",
+        "spell_id": 1270375,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270375,
+            "description": "Spiritual Awakening Talent Requires Shaman Mastery increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103582,
+          103611
+        ],
+        "unlocks": [
+          103627,
+          103585
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103606,
+        "name": "Enhanced Imbues",
+        "spell_id": 462796,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 462796,
+            "description": "Enhanced Imbues Talent Requires Shaman Restoration The effects of your weapon and shield imbues are increased by 20%. Elemental The effects of your weapon and shield imbues are increased by 30%. Enhancement The effects of your weapon imbues are increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103615,
+          103582
+        ],
+        "unlocks": [
+          103585
+        ],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103628,
+        "name": "Windveil",
+        "spell_id": 355630,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 355630,
+            "description": "Windveil Talent Requires Shaman Interrupting a spell with Wind Shear reduces all spell damage taken by 15% for 12 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103615
+        ],
+        "unlocks": [
+          103623
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103594,
+        "name": "Refreshing Waters",
+        "spell_id": 378211,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378211,
+            "description": "Refreshing Waters Talent Requires Shaman Enhancement Your Healing Surge is 25% more effective on yourself. Elemental Your Healing Surge is 30% more effective on yourself. Restoration Your Healing Wave is 25% more effective on yourself.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103601,
+          103622
+        ],
+        "unlocks": [
+          103584,
+          103624
+        ],
+        "row": 7,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103608,
+        "name": "Cleanse Spirit",
+        "spell_id": 51886,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 51886,
+            "description": "Cleanse Spirit Talent 10% of base mana Requires Shaman Removes all Curse effects from a friendly target.",
+            "cooldown": 8.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103622,
+          103579
+        ],
+        "unlocks": [
+          103617,
+          103624
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103618,
+        "name": "Static Charge",
+        "spell_id": 265046,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 265046,
+            "description": "Static Charge Talent Requires Shaman Requires level 30 (Elemental, Enhancement) Reduces the cooldown of Capacitor Totem by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Capacitor Totem",
+                "type": "cd_reduction",
+                "value": 15,
+                "unit": "seconds"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "spell_id": 265046,
+            "description": "Static Charge Talent Requires Shaman Requires level 30 (Elemental, Enhancement) Reduces the cooldown of Capacitor Totem by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Capacitor Totem",
+                "type": "cd_reduction",
+                "value": 15,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          103579
+        ],
+        "unlocks": [
+          103617
+        ],
+        "row": 7,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103627,
+        "name": "Wind Rush Totem",
+        "spell_id": 192077,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 192077,
+            "description": "Wind Rush Totem Talent 1% of base mana Requires Shaman Requires level 40 Summons a totem at the target location for 15 sec, continually granting all allies who pass within 10 yards 40% increased movement speed for 5 sec.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110085,
+          103579
+        ],
+        "unlocks": [
+          103617,
+          103607
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103585,
+        "name": "Earth Elemental",
+        "spell_id": 198103,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 198103,
+            "description": "Earth Elemental Talent Requires Shaman Calls forth a Greater Earth Elemental to protect you and your allies, generating high threat and taunting enemies periodically for 30 sec.",
+            "cooldown": 180.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103606,
+          110085
+        ],
+        "unlocks": [
+          103623,
+          103612
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103624,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 370,
+            "name": "Purge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 370,
+                "description": "Purge Talent 14% of base mana Requires Shaman Purges the enemy target, removing 1 beneficial Magic effect.[Successfully purging a target grants a stack of Maelstrom Weapon.]",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 378773,
+            "name": "Greater Purge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 378773,
+                "description": "Greater Purge Talent 21% of base mana Requires Shaman Purges the enemy target, removing 2 beneficial Magic effects.",
+                "cooldown": 12.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103608,
+          103594
+        ],
+        "unlocks": [
+          103584,
+          109386
+        ],
+        "row": 8,
+        "col": 2
+      },
+      {
+        "node_id": 103617,
+        "name": "Nature's Fury",
+        "spell_id": 381655,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381655,
+            "description": "Nature's Fury Talent Requires Shaman Increases the critical strike chance of your Nature spells and abilities by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 381655,
+            "description": "Nature's Fury Talent Requires Shaman Increases the critical strike chance of your Nature spells and abilities by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103627,
+          103618,
+          103608
+        ],
+        "unlocks": [
+          103586,
+          109386
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103607,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 462791,
+            "name": "Ascending Air",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462791,
+                "description": "Ascending Air Talent Requires Shaman Wind Rush Totem's cooldown is reduced by 30 sec and its movement speed effect lasts an additional 2 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 462817,
+            "name": "Jet Stream",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462817,
+                "description": "Jet Stream Talent Requires Shaman Wind Rush Totem's movement speed bonus is increased by 10% and now removes snares.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103627
+        ],
+        "unlocks": [
+          103586,
+          103625
+        ],
+        "row": 8,
+        "col": 5
+      },
+      {
+        "node_id": 103612,
+        "name": "Primordial Bond",
+        "spell_id": 1279819,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1279819,
+            "description": "Primordial Bond Talent Requires Shaman Your Earth Elemental no longer taunts nearby enemies or generates threat and instead increases your maximum health by 15% while active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103585
+        ],
+        "unlocks": [
+          103625
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103623,
+        "name": "Hex",
+        "spell_id": 51514,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 51514,
+            "description": "Hex Talent Requires Shaman Transforms the enemy into a frog for 1 min. While hexed, the victim is incapacitated, and cannot attack or cast spells. Damage may cancel the effect. Limit 1. Only works on Humanoids and Beasts.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103628,
+          103585
+        ],
+        "unlocks": [
+          103600,
+          103625
+        ],
+        "row": 8,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103584,
+        "name": "Spiritwalker's Grace",
+        "spell_id": 79206,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 79206,
+            "description": "Spiritwalker's Grace Talent 2.82% of base mana Requires Shaman Calls upon the guidance of the spirits for 15 sec, permitting movement while casting Shaman spells. Castable while casting.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103594,
+          103624
+        ],
+        "unlocks": [
+          103626
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109386,
+        "name": "Totemic Projection",
+        "spell_id": 108287,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 108287,
+            "description": "Totemic Projection Talent Requires Shaman Relocates your active totems to the specified location.",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103617,
+          103624
+        ],
+        "unlocks": [
+          103587
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103586,
+        "name": "Elemental Warding",
+        "spell_id": 381650,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381650,
+            "description": "Elemental Warding Talent Requires Shaman Reduces all magic damage taken by 8%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103617,
+          103607
+        ],
+        "unlocks": [
+          103593,
+          103599,
+          103587
+        ],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103625,
+        "name": "Totemic Focus",
+        "spell_id": 382201,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382201,
+            "description": "Totemic Focus Talent Requires Shaman Restoration Increases the radius of your totem effects by 15%. Increases the duration of your Earthbind and Earthgrab Totems by 10 sec. Increases the duration of your Healing Stream, Tremor, Poison Cleansing, Ancestral Protection, Earthen Wall, and Wind Rush Totems by 3.0 sec. Elemental, Enhancement Increases the radius of your totem effects by 15%. Increases the duration of your Earthbind and Earthgrab Totems by 10 sec. Increases the duration of your Healing Stream, Tremor, Poison Cleansing, and Wind Rush Totems by 3.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Earthbind and Earthgrab Totems",
+                "type": "duration_increase",
+                "value": 10,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Healing Stream, Tremor, Poison Cleansing, Ancestral Protection, Earthen Wall, and Wind Rush Totems",
+                "type": "duration_increase",
+                "value": 3,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Earthbind and Earthgrab Totems",
+                "type": "duration_increase",
+                "value": 10,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Healing Stream, Tremor, Poison Cleansing, and Wind Rush Totems",
+                "type": "duration_increase",
+                "value": 3,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          103607,
+          103612,
+          103623
+        ],
+        "unlocks": [
+          109387,
+          103593
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103626,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 192088,
+            "name": "Graceful Spirit",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 192088,
+                "description": "Graceful Spirit Talent Requires Shaman Requires level 40 Reduces the cooldown of Spiritwalker's Grace by 30 sec and increases your movement speed by 20% while it is active.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Spiritwalker's Grace",
+                    "type": "cd_reduction",
+                    "value": 30,
+                    "unit": "seconds"
+                  },
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Spiritwalker's Grace by 30 sec and increases your movement speed",
+                    "type": "cd_reduction",
+                    "value": 20,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 378077,
+            "name": "Spiritwalker's Aegis",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 378077,
+                "description": "Spiritwalker's Aegis Talent Requires Shaman When you cast Spiritwalker's Grace, you become immune to Silence and Interrupt effects for 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103584
+        ],
+        "unlocks": [
+          103620
+        ],
+        "row": 10,
+        "col": 1
+      },
+      {
+        "node_id": 103587,
+        "name": "Mana Spring",
+        "spell_id": 381930,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381930,
+            "description": "Mana Spring Level 90 Talent Requires Shaman Restoration Your Lava Burst and Riptide casts restore 188 mana to you and 4 allies nearest to you within 40 yards. Allies can only benefit from one Shaman's Mana Spring effect at a time, prioritizing healers. Elemental Your Lava Burst casts restore 125 mana to you and 4 allies nearest to you within 40 yards. Allies can only benefit from one Shaman's Mana Spring effect at a time, prioritizing healers. Enhancement Your Lava BurstStormstrike casts restore 188 mana to you and 4 allies nearest to you within 40 yards. Allies can only benefit from one Shaman's Mana Spring effect at a time, prioritizing healers.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103586,
+          109386
+        ],
+        "unlocks": [
+          109388,
+          103620
+        ],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103599,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 8143,
+            "name": "Tremor Totem",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 8143,
+                "description": "Tremor Totem Talent 0.46% of base mana Requires Shaman Summons a totem at your feet that shakes the ground around it for 10 sec, removing Fear, Charm and Sleep effects from party and raid members within 30 yards.",
+                "cooldown": 60.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 383013,
+            "name": "Poison Cleansing Totem",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 383013,
+                "description": "Poison Cleansing Totem Talent 0.5% of base mana Requires Shaman Summons a totem at your feet that removes all Poison effects from a nearby party or raid member within 30 yards every 1.5 sec for 6 sec.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103586
+        ],
+        "unlocks": [
+          109388
+        ],
+        "row": 10,
+        "col": 4
+      },
+      {
+        "node_id": 103593,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1217622,
+            "name": "Therazane's Resilience",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1217622,
+                "description": "Therazane's Resilience Talent Requires Shaman Restoration Earth Shield and Water Shield no longer lose charges and are 115% effective. Elemental, Enhancement Earth Shield no longer loses charges and is 115% effective.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 462454,
+            "name": "Reactive Warding",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462454,
+                "description": "Reactive Warding Level 90 Talent Requires Shaman Elemental, Enhancement When refreshing Earth Shield, your target is healed for (218.663% of Spell Power) for each stack of Earth Shield they are missing. Additionally, Earth Shield can consume charges 1.0 sec faster. Restoration When refreshing Earth Shield, your target is healed for (218.663% of Spell Power) for each stack of Earth Shield they are missing. When refreshing Water Shield, you are refunded 357 mana for each stack of Water Shield missing. Additionally, Earth Shield and Water Shield can consume charges 1.0 sec faster.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103586,
+          103625
+        ],
+        "unlocks": [
+          109388,
+          109387
+        ],
+        "row": 10,
+        "col": 5
+      },
+      {
+        "node_id": 103600,
+        "name": "Voodoo Mastery",
+        "spell_id": 204268,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 204268,
+            "description": "Voodoo Mastery Talent Requires Shaman Your Hex target is slowed by 70% during Hex and for 6 sec after it ends. Reduces the cooldown of Hex by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Hex",
+                "type": "cd_reduction",
+                "value": 15,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          103623
+        ],
+        "unlocks": [
+          109387
+        ],
+        "row": 10,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103620,
+        "name": "Nature's Swiftness",
+        "spell_id": 378081,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378081,
+            "description": "Nature's Swiftness Talent Requires Shaman Your next healing or damaging Nature spell is instant cast and costs no mana.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103587,
+          103626
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109388,
+        "name": "Totemic Surge",
+        "spell_id": 381867,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381867,
+            "description": "Totemic Surge Talent Requires Shaman Reduces the cooldown of most totems by 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "most totems",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          103599,
+          103587,
+          103593
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109387,
+        "name": "Instinctive Imbuements",
+        "spell_id": 1270350,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270350,
+            "description": "Instinctive Imbuements Talent Requires Shaman Enhancement Lightning Shield increases your Agility by 3%. Casting Lightning Shield now applies your weapon imbuements. Earth Shield is also applied if you have the Elemental Orbit talent. Elemental Lightning Shield increases your Intellect by 3%. Casting Lightning Shield now applies your weapon imbuements. Earth Shield is also applied if you have the Elemental Orbit talent. Restoration Water Shield increases your Intellect by 3%. Casting Water Shield now applies your weapon imbuements. Earth Shield is also applied if you have the Elemental Orbit talent.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103593,
+          103625,
+          103600
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 94888,
+        "name": "Call of the Ancestors",
+        "spell_id": 443450,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443450,
+            "description": "Call of the Ancestors Talent Requires Shaman Elemental Stormkeeper calls an Ancestor to your side for 8 sec. Whenever you cast a healing or damaging spell, the Ancestor will cast a similar spell. Restoration Unleash Life calls an Ancestor to your side for 12 sec. Whenever you cast a healing or damaging spell, the Ancestor will cast a similar spell.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94884,
+          94862,
+          94869,
+          109732
+        ],
+        "row": 2,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80984,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 8042,
+            "name": "Earth Shock",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 8042,
+                "description": "Earth Shock Talent Requires Shaman ly shocks the target with concussive force, causing (686.961% of Spell Power) Nature damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 117014,
+            "name": "Elemental Blast",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 117014,
+                "description": "Elemental Blast Talent 0.55% of base mana / Requires Shaman Requires level 15 (Enhancement) Requires level 25 (Elemental) Enhancement Harnesses the raw power of the elements, dealing (201.25% of Spell Power) Elemental damage and increasing your Critical Strike or Haste by 3% or Mastery by (3 * 1.875 )% for 10 sec. Elemental Harnesses the raw power of the elements, dealing (201.25% of Spell Power) Elemental damage and increasing your Critical Strike or Haste by 8% or Mastery by (8 * 1.875 )% for 10 sec.",
+                "cooldown": 12.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          80981,
+          80983,
+          80985
+        ],
+        "row": 2,
+        "col": 17
+      },
+      {
+        "node_id": 94862,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 443449,
+            "name": "Latent Wisdom",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443449,
+                "description": "Latent Wisdom Talent Requires Shaman Your Ancestors' spells are 25% more powerful.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 443423,
+            "name": "Ancient Fellowship",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443423,
+                "description": "Ancient Fellowship Talent Requires Shaman Ancestors have a 20% chance to call another Ancestor for 8 sec when they depart.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94888
+        ],
+        "unlocks": [
+          94887
+        ],
+        "row": 3,
+        "col": 9
+      },
+      {
+        "node_id": 94884,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 443444,
+            "name": "Heed My Call",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443444,
+                "description": "Heed My Call Talent Requires Shaman Ancestors last an additional 4 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 443445,
+            "name": "Routine Communication",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443445,
+                "description": "Routine Communication Talent Requires Shaman Elemental Lightning Bolt, Lava Burst, Flame Shock, Voltaic Blaze, and Chain Lightning have a 8% chance to call an Ancestor to your side for 8 sec. Restoration Riptide has a 15% chance to call an Ancestor to your side for 8 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94888
+        ],
+        "unlocks": [
+          94860
+        ],
+        "row": 3,
+        "col": 10
+      },
+      {
+        "node_id": 94869,
+        "name": "Elemental Reverb",
+        "spell_id": 443418,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443418,
+            "description": "Elemental Reverb Talent Requires Shaman Elemental Lava Burst gains an additional charge and deals 10% increased damage. Restoration Lava Burst gains an additional charge and deals 10% increased damage. Riptide gains an additional charge and heals for 20% more.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94888
+        ],
+        "unlocks": [
+          94861
+        ],
+        "row": 3,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109732,
+        "name": "Ancestral Influence",
+        "spell_id": 1270446,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270446,
+            "description": "Ancestral Influence Talent Requires Shaman Your Intellect is increased by 1.0% for each Ancestor active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94888
+        ],
+        "unlocks": [
+          109731
+        ],
+        "row": 3,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80985,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 462620,
+            "name": "Earthquake",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462620,
+                "description": "Earthquake Talent Requires Shaman Causes the earth within 8 yards of your target to tremble and break, dealing [6 * (63.25% of Spell Power)] Nature damage over 6 sec and has a 5% chance to knock the enemy down. Multiple uses of Earthquake may overlap. This spell is cast at your target.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 61882,
+            "name": "Earthquake",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 61882,
+                "description": "Earthquake Talent Requires Shaman Causes the earth within 8 yards of the target location to tremble and break, dealing [6 * (63.25% of Spell Power)] Nature damage over 6 sec and has a 5% chance to knock the enemy down. Multiple uses of Earthquake may overlap. This spell is cast at a selected location.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          80984
+        ],
+        "unlocks": [
+          80990
+        ],
+        "row": 3,
+        "col": 16
+      },
+      {
+        "node_id": 80983,
+        "name": "Elemental Fury",
+        "spell_id": 60188,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 60188,
+            "description": "Elemental Fury Talent Requires Shaman Your damaging critical strikes deal (50 / Primordial Fury : 75 / Feedback Loop : 75 + 200)% damage instead of the usual 200%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80984
+        ],
+        "unlocks": [
+          81000
+        ],
+        "row": 3,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80981,
+        "name": "Echo of the Elements",
+        "spell_id": 333919,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 333919,
+            "description": "Echo of the Elements Talent Requires Shaman Requires level 15 Elemental Lava Burst has an additional charge. Restoration Riptide and Lava Burst have an additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80984
+        ],
+        "unlocks": [
+          80999
+        ],
+        "row": 3,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94887,
+        "name": "Offering from Beyond",
+        "spell_id": 443451,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443451,
+            "description": "Offering from Beyond Talent Requires Shaman Restoration When an Ancestor is called, they reduce the cooldown of Riptide by 2 sec. Elemental When an Ancestor is called, they reduce the cooldown of Stormkeeper by 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Riptide",
+                "type": "cd_reduction",
+                "value": 2,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Stormkeeper",
+                "type": "cd_reduction",
+                "value": 3,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94862
+        ],
+        "unlocks": [
+          94858
+        ],
+        "row": 4,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94860,
+        "name": "Primordial Capacity",
+        "spell_id": 443448,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443448,
+            "description": "Primordial Capacity Talent Requires Shaman Elemental Increases your maximum Maelstrom by 25. Restoration Increases your maximum mana by 10%. Tidal Waves can now stack up to 3 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94884
+        ],
+        "unlocks": [
+          94883
+        ],
+        "row": 4,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94861,
+        "name": "Spiritwalker's Momentum",
+        "spell_id": 443425,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443425,
+            "description": "Spiritwalker's Momentum Talent Requires Shaman Using spells with a cast time increases the duration of Spiritwalker's Grace and Spiritwalker's Aegis by 1 sec, up to a maximum of 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Spiritwalker's Grace and Spiritwalker's Aegis",
+                "type": "duration_increase",
+                "value": 1,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94869
+        ],
+        "unlocks": [
+          94875
+        ],
+        "row": 4,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109731,
+        "name": "Windspeaker",
+        "spell_id": 1270447,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270447,
+            "description": "Windspeaker Talent Requires Shaman Elemental The cast times of Healing Surge, Chain Heal and Lava Burst are reduced by 10%. Restoration The cast times of Healing Wave, Chain Heal, and Lava Burst are reduced by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109732
+        ],
+        "unlocks": [
+          109730
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80990,
+        "name": "Flash of Lightning",
+        "spell_id": 381936,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381936,
+            "description": "Flash of Lightning Talent Requires Shaman Increases the critical strike chance of Lightning Bolt and Chain Lightning by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80985
+        ],
+        "unlocks": [
+          80997,
+          103635
+        ],
+        "row": 4,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81000,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1258899,
+            "name": "Tectonic Collapse",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1258899,
+                "description": "Tectonic Collapse Talent Requires Shaman Earth Shock, Elemental Blast, and Earthquake deal 20% increased damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 273221,
+            "name": "Aftershock",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 273221,
+                "description": "Aftershock Talent Requires Shaman Requires level 25 Earth Shock, Elemental Blast, and Earthquake have a 25% chance to refund all Maelstrom spent.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          80983
+        ],
+        "unlocks": [
+          80988
+        ],
+        "row": 4,
+        "col": 17
+      },
+      {
+        "node_id": 80999,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1258843,
+            "name": "Molten Wrath",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1258843,
+                "description": "Molten Wrath Talent Requires Shaman Lava Burst deals 15% additional damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 16166,
+            "name": "Master of the Elements",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 16166,
+                "description": "Master of the Elements Talent Requires Shaman Requires level 35 Casting Lava Burst increases the damage or healing of your next Nature , Physical, or Frost spell by 15%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          80981
+        ],
+        "unlocks": [
+          81004
+        ],
+        "row": 4,
+        "col": 19
+      },
+      {
+        "node_id": 94858,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 443442,
+            "name": "Natural Harmony",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443442,
+                "description": "Natural Harmony Talent Requires Shaman Reduces the cooldown of Nature's Guardian by 15 sec and causes it to heal for an additional 10% of your maximum health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Nature's Guardian",
+                    "type": "cd_reduction",
+                    "value": 15,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 443441,
+            "name": "Earthen Communion",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 443441,
+                "description": "Earthen Communion Talent Requires Shaman Earth Shield has an additional 3 charges and heals you for 25% more.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94887
+        ],
+        "unlocks": [
+          94894
+        ],
+        "row": 5,
+        "col": 9
+      },
+      {
+        "node_id": 94883,
+        "name": "Maelstrom Supremacy",
+        "spell_id": 443447,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443447,
+            "description": "Maelstrom Supremacy Talent Requires Shaman Elemental Increases the damage of Earth Shock, Elemental Blast, and Earthquake by 25%. Increases the healing of Healing Surge and Chain Heal by 25%. Restoration Increases the healing done by Healing Wave, Downpour, and Chain Heal by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Earth Shock, Elemental Blast, and Earthquake",
+                "type": "damage_increase",
+                "value": 25,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94860
+        ],
+        "unlocks": [
+          94894
+        ],
+        "row": 5,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94875,
+        "name": "Final Calling",
+        "spell_id": 443446,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443446,
+            "description": "Final Calling Talent Requires Shaman Elemental When an Ancestor departs, they cast Elemental Blast at a nearby enemy. Restoration When an Ancestor departs, they cast Hydrobubble on a nearby injured ally. Hydrobubble Surrounds your target in a protective water bubble for 15 sec. The shield absorbs the next 0 incoming damage, but the absorb amount decays fully over its duration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94861
+        ],
+        "unlocks": [
+          94894
+        ],
+        "row": 5,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109730,
+        "name": "Mystic Knowledge",
+        "spell_id": 1270450,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270450,
+            "description": "Mystic Knowledge Talent Requires Shaman Restoration For 8 sec sec after casting Nature's Swiftness or Ancestral Swiftness, the recharge rate of Riptide is increased by 10%. Increases the chance for Lava Surge to occur by 20%. Elemental Increases the chance for Lava Surge to occur by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109731
+        ],
+        "unlocks": [
+          94894
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80997,
+        "name": "Lightning Capacitor",
+        "spell_id": 462862,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 462862,
+            "description": "Lightning Capacitor Talent Requires Shaman While Lightning Shield is active, your Nature damage dealt is increased by 8%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80990
+        ],
+        "unlocks": [
+          103638
+        ],
+        "row": 5,
+        "col": 14,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80988,
+        "name": "Stormkeeper",
+        "spell_id": 191634,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 191634,
+            "description": "Stormkeeper Talent Requires Shaman Requires level 50 Charge yourself with lightning, causing your next 2 Lightning Bolts to deal 150% more damage, and also causes your next 2 Lightning Bolts or Chain Lightings to be instant cast and trigger an Elemental Overload on every target. Elemental Generates .",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81000
+        ],
+        "unlocks": [
+          81016,
+          80998,
+          103639
+        ],
+        "row": 5,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81004,
+        "name": "Flametongue Weapon",
+        "spell_id": 318038,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 318038,
+            "description": "Flametongue Weapon Talent Requires Shaman Enhancement Imbue your weapon with the element of Fire for 1 hour, causing each of your attacks to deal (3.96% of Attack Power) additional Fire damage. Elemental Imbue your weapon with the element of Fire for 1 hour, increasing the damage of your Fire spells by 5.0%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80999
+        ],
+        "unlocks": [
+          103630
+        ],
+        "row": 5,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94894,
+        "name": "Ancestral Swiftness",
+        "spell_id": 443454,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 443454,
+            "description": "Ancestral Swiftness Talent Requires Shaman Your next healing or damaging spell is instant, costs no mana, and deals 10% increased damage and healing. If you know Nature's Swiftness, it is replaced by Ancestral Swiftness and causes Ancestral Swiftness to call an Ancestor to your side for 8 sec.",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94875,
+          94883,
+          94858,
+          109730
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103635,
+        "name": "Storm Frenzy",
+        "spell_id": 462695,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 462695,
+            "description": "Storm Frenzy Talent Requires Shaman Reduces the cast time of Lightning Bolt [ Tempest : Tempest ] and Chain Lightning by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80990
+        ],
+        "unlocks": [
+          80995,
+          103631,
+          103638
+        ],
+        "row": 6,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81016,
+        "name": "Swelling Maelstrom",
+        "spell_id": 381707,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381707,
+            "description": "Swelling Maelstrom Talent Requires Shaman Increases your maximum Maelstrom by 50. Increases Earth Shock, Elemental Blast, and Earthquake damage by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80988
+        ],
+        "unlocks": [
+          103631
+        ],
+        "row": 6,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103639,
+        "name": "Primordial Fury",
+        "spell_id": 378193,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378193,
+            "description": "Primordial Fury Talent Requires Shaman Elemental Fury increases critical strike damage by an additional 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80988
+        ],
+        "unlocks": [
+          103631,
+          110066
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80998,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 191717,
+            "name": "Fury of the Storms",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 191717,
+                "description": "Fury of the Storms Talent Requires Shaman Casting Stormkeeper summons a Greater Storm Elemental to hurl gusts of wind at your enemies for 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 468571,
+            "name": "Herald of the Storms",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 468571,
+                "description": "Herald of the Storms Talent Requires Shaman Reduces the cooldown of Stormkeeper by 15 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Stormkeeper",
+                    "type": "cd_reduction",
+                    "value": 15,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          80988
+        ],
+        "unlocks": [
+          81005,
+          103633
+        ],
+        "row": 6,
+        "col": 18
+      },
+      {
+        "node_id": 103630,
+        "name": "Flames of the Cauldron",
+        "spell_id": 378266,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378266,
+            "description": "Flames of the Cauldron Talent Requires Shaman Reduces the cooldown of Flame Shock and Voltaic Blaze by 1.5 sec. Flame Shock deals damage 15% faster.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Flame Shock and Voltaic Blaze",
+                "type": "cd_reduction",
+                "value": 1.5,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          81004
+        ],
+        "unlocks": [
+          110186,
+          81005
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94892,
+        "name": "Tempest",
+        "spell_id": 454009,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454009,
+            "description": "Tempest Talent Requires Shaman Enhancement Each Maelstrom Weapon spent has a 2.00% chance to upgrade your next Lightning Bolt to Tempest. Tempest 0.2% of base mana Requires Shaman Calls down a tremendous lightning strike that deals (388.125% of Spell Power) Nature damage to your target and [(388.125% of Spell Power) * 65 / 100] Nature damage to enemies within 8 yds of your target. Damage reduced beyond 5 targets. Elemental Each Maelstrom spent has a 0.30% chance to upgrade your next Lightning Bolt to Tempest. Tempest 0.2% of base mana Requires Shaman Calls down a tremendous lightning strike that deals (388.125% of Spell Power) Nature damage to your target and [(388.125% of Spell Power) * 65 / 100] Nature damage to enemies within 8 yds of your target. Damage reduced beyond 5 targets. Enhancement Consumes Maelstrom Weapon for increased cast speed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94886,
+          94893,
+          94863,
+          109729
+        ],
+        "row": 7,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103638,
+        "name": "Amped Up",
+        "spell_id": 1269360,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1269360,
+            "description": "Amped Up Talent Requires Shaman Increases your haste by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80997,
+          103635
+        ],
+        "unlocks": [
+          80995,
+          80996
+        ],
+        "row": 7,
+        "col": 14,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103631,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1258895,
+            "name": "Elemental Resonance",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1258895,
+                "description": "Elemental Resonance Talent Requires Shaman All Elemental damage increased by 3%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 462757,
+            "name": "Thunderstrike Ward",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462757,
+                "description": "Thunderstrike Ward Talent Requires Shaman Imbue your shield with the element of Lightning for 1 hour, giving Lightning Bolt and Chain Lightning a chance to call down 2 Thunderstrikes on your target for (71.5% of Spell Power) Nature damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103635,
+          81016,
+          103639
+        ],
+        "unlocks": [
+          80995,
+          81015,
+          103636
+        ],
+        "row": 7,
+        "col": 16
+      },
+      {
+        "node_id": 110066,
+        "name": "Path of the Seer",
+        "spell_id": 1269364,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1269364,
+            "description": "Path of the Seer Talent Requires Shaman Increases your Intellect by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103639
+        ],
+        "unlocks": [
+          81015
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103633,
+        "name": "Elemental Unity",
+        "spell_id": 462866,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 462866,
+            "description": "Elemental Unity Talent Requires Shaman While a Fire Elemental is active, your Fire damage dealt is increased by 6%. While a Storm Elemental is active, your Nature damage dealt is increased by 6%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80998
+        ],
+        "unlocks": [
+          103634,
+          81010,
+          81015
+        ],
+        "row": 7,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81005,
+        "name": "Searing Flames",
+        "spell_id": 381782,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381782,
+            "description": "Searing Flames Talent Requires Shaman Flame Shock damage has a chance to generate .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80998,
+          103630
+        ],
+        "unlocks": [
+          110186,
+          81010
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94886,
+        "name": "Unlimited Power",
+        "spell_id": 454391,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454391,
+            "description": "Unlimited Power Talent Requires Shaman Enhancement Spending Maelstrom Weapon stacks grants you 1% haste for 15 sec. Multiple applications may overlap. Elemental Spending Maelstrom grants you 1% haste for 15 sec. Multiple applications may overlap.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94892
+        ],
+        "unlocks": [
+          94873
+        ],
+        "row": 8,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94893,
+        "name": "Stormcaller",
+        "spell_id": 454021,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454021,
+            "description": "Stormcaller Talent Requires Shaman Enhancement Increases the critical strike chance of your Nature damage spells by 5% and the critical strike damage of your Nature spells by 10%. Elemental Increases the critical strike chance of your Nature damage spells by 5% and the critical strike damage of your Nature spells by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94892
+        ],
+        "unlocks": [
+          94885
+        ],
+        "row": 8,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94863,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 467778,
+            "name": "Lightning Conduit",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 467778,
+                "description": "Lightning Conduit Talent Requires Shaman You have a chance to get struck by lightning, increasing your movement speed by 50% for 5 sec. The effectiveness is increased to 100% in outdoor areas. You call down a Thunderstorm when you Reincarnate.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 454022,
+            "name": "Electroshock",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 454022,
+                "description": "Electroshock Talent Requires Shaman Tempest increases your movement speed by 20% for 5 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94892
+        ],
+        "unlocks": [
+          94889
+        ],
+        "row": 8,
+        "col": 11
+      },
+      {
+        "node_id": 109729,
+        "name": "Stormwell",
+        "spell_id": 1264762,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264762,
+            "description": "Stormwell Talent Requires Shaman Elemental Storm Elemental lasts 2 sec longer, and Stormkeeper generates . Enhancement Windfury Weapon damage increased by 10%. When Crash Lightning hits a single enemy, it activates Windfury Weapon.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94892
+        ],
+        "unlocks": [
+          109728
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80996,
+        "name": "Power of the Maelstrom",
+        "spell_id": 191861,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 191861,
+            "description": "Power of the Maelstrom Talent Requires Shaman Casting Lava Burst has a 15% chance to cause your next Lightning Bolt or Chain Lightning cast to trigger Elemental Overload an additional time, stacking up to 2 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103638
+        ],
+        "unlocks": [
+          80993
+        ],
+        "row": 8,
+        "col": 14,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80995,
+        "name": "Earthshatter",
+        "spell_id": 468626,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 468626,
+            "description": "Earthshatter Talent Requires Shaman Increases Earth Shock and Earthquake damage by 8% and the stat bonuses granted by Elemental Blast by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103635,
+          103631,
+          103638
+        ],
+        "unlocks": [
+          81003
+        ],
+        "row": 8,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103636,
+        "name": "Storm Infusion",
+        "spell_id": 1258889,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1258889,
+            "description": "Storm Infusion Talent Requires Shaman Elemental Resonance All elemental damage is increased by an additional 2%. Thunderstrike Ward Increases the chance for Thunderstrikes to occur by 30% and increases Thunderstrike damage by 75%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103631
+        ],
+        "unlocks": [
+          81003
+        ],
+        "row": 8,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81015,
+        "name": "Echo Chamber",
+        "spell_id": 382032,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382032,
+            "description": "Echo Chamber Talent Requires Shaman Increases the damage dealt by your Elemental Overloads by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110066,
+          103631,
+          103633
+        ],
+        "unlocks": [
+          81003,
+          81008,
+          80989
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103634,
+        "name": "Everlasting Elements",
+        "spell_id": 462867,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 462867,
+            "description": "Everlasting Elements Talent Requires Shaman Increases the duration of your Elementals by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103633
+        ],
+        "unlocks": [
+          81008
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81010,
+        "name": "Earthen Rage",
+        "spell_id": 170374,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 170374,
+            "description": "Earthen Rage Talent Requires Shaman Requires level 15 Your damaging spells incite the earth around you to come to your aid for 6 sec, repeatedly dealing (42.471% of Spell Power) Nature damage to your most recently attacked target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81005,
+          103633
+        ],
+        "unlocks": [
+          81008,
+          103641
+        ],
+        "row": 8,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110186,
+        "name": "Lava Flows",
+        "spell_id": 1273485,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1273485,
+            "description": "Lava Flows Talent Requires Shaman Lava Burst damage increased by 5%. Lava Burst and Lava Burst Overload generate 1 additional Maelstrom.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81005,
+          103630
+        ],
+        "unlocks": [
+          103641
+        ],
+        "row": 8,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94873,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 455088,
+            "name": "Storm Swell",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 455088,
+                "description": "Storm Swell Talent Requires Shaman Tempest grants (5 * $mas)% Mastery for 6 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 455110,
+            "name": "Supercharge",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 455110,
+                "description": "Supercharge Talent Requires Shaman Enhancement Lightning Bolt, Tempest, and Chain Lightning have a 35% chance to refund Weapon stacks. Elemental Lightning Bolt, Tempest, and Chain Lightning have a 50% chance to cause an additional Elemental Overload.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94886
+        ],
+        "unlocks": [
+          94870
+        ],
+        "row": 9,
+        "col": 9
+      },
+      {
+        "node_id": 94885,
+        "name": "Arc Discharge",
+        "spell_id": 455096,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 455096,
+            "description": "Arc Discharge Talent Requires Shaman Elemental Casting Tempest grants a charge of Stormkeeper. Enhancement Tempest causes your next Chain Lightning to be instant cast, deal 40% increased damage, and cast an additional time. Can accumulate up to 2 charges.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94893
+        ],
+        "unlocks": [
+          94868
+        ],
+        "row": 9,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94889,
+        "name": "Rolling Thunder",
+        "spell_id": 454026,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454026,
+            "description": "Rolling Thunder Talent Requires Shaman Enhancement Doom Winds summons a Nature Feral Spirit for 12 sec. Feral Spirit An Elemental Spirit infused with Nature magic, granting the summoner with 5 % increased Nature damage and 5 % Physical damage for 12 sec. Elemental Reduces the cooldown of Stormkeeper by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Stormkeeper",
+                "type": "cd_reduction",
+                "value": 15,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94863
+        ],
+        "unlocks": [
+          94880
+        ],
+        "row": 9,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109728,
+        "name": "Natural Gift",
+        "spell_id": 1264691,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264691,
+            "description": "Natural Gift Talent Requires Shaman Nature damage is increased by 2% (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109729
+        ],
+        "unlocks": [
+          109727
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80993,
+        "name": "Fusion of Elements",
+        "spell_id": 462840,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 462840,
+            "description": "Fusion of Elements Talent Requires Shaman Consuming Power of the Maelstrom additionally fires an Elemental Blast at your target at 40% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80996
+        ],
+        "unlocks": [
+          81012
+        ],
+        "row": 9,
+        "col": 14,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81003,
+        "name": "Eye of the Storm",
+        "spell_id": 381708,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381708,
+            "description": "Eye of the Storm Talent Requires Shaman Reduces the Maelstrom cost of Earth Shock and Earthquake by 5. Reduces the Maelstrom cost of Elemental Blast by 10.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80995,
+          81015,
+          103636
+        ],
+        "unlocks": [
+          81012,
+          81002
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80989,
+        "name": "Ascendance",
+        "spell_id": 114050,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 114050,
+            "description": "Ascendance Talent Requires Shaman Requires level 50 Transform into a Flame Ascendant for 15 sec, instantly casting a Flame Shock and a 100% effectiveness Lava Burst at up to 6 nearby enemies. While ascended, Elemental Overload damage is increased by 75% and spells affected by your Mastery: Elemental Overload cause 1 additional Elemental Overload.",
+            "cooldown": 180.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81015
+        ],
+        "unlocks": [
+          81002,
+          80992
+        ],
+        "row": 9,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81008,
+        "name": "Inferno Arc",
+        "spell_id": 1259047,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1259047,
+            "description": "Inferno Arc Talent Requires Shaman Lightning Bolt, Chain Lightning, Earth Shock, Elemental Blast, and Earthquake deal 10% increased damage to targets affected by Flame Shock.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81010,
+          103634,
+          81015
+        ],
+        "unlocks": [
+          81007
+        ],
+        "row": 9,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103641,
+        "name": "Flames of the Firelord",
+        "spell_id": 381784,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381784,
+            "description": "Flames of the Firelord Talent Requires Shaman Flame Shock damage increased by 100%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110186,
+          81010
+        ],
+        "unlocks": [
+          81007
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94870,
+        "name": "Voltaic Surge",
+        "spell_id": 454919,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 454919,
+            "description": "Voltaic Surge Talent Requires Shaman Enhancement Crash Lightning and Chain Lightning damage increased by 10%. Elemental Earthquake and Chain Lightning damage increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94873
+        ],
+        "unlocks": [
+          94867
+        ],
+        "row": 10,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94868,
+        "name": "Conductive Energy",
+        "spell_id": 455123,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 455123,
+            "description": "Conductive Energy Talent Requires Shaman Enhancement Gain the effects of the Lightning Rod talent: Lightning Rod [ Tempest : Tempest ] [ Elemental : Earth Shock, Elemental Blast, and Earthquake / Lightning Bolt and Chain Lightning] make your target a Lightning Rod for 8 sec. Lightning Rods take 8% of all damage you deal with [ Tempest : Tempest, Lightning Bolt / Lightning Bolt] and Chain Lightning. Elemental Lightning Rod targets now also take 10% of the damage that Tempest deals, and Tempest also applies Lightning Rod effect.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94885
+        ],
+        "unlocks": [
+          94867
+        ],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94880,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 454027,
+            "name": "Nature's Protection",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 454027,
+                "description": "Nature's Protection Talent Requires Shaman Lightning Shield reduces the damage you take by 3%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 454372,
+            "name": "Surging Currents",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 454372,
+                "description": "Surging Currents Talent Requires Shaman Casting Tempest grants Surging Currents, increasing the effectiveness of your next Chain Heal or Healing Surge by 16%, up to 80%. (900ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94889
+        ],
+        "unlocks": [
+          94867
+        ],
+        "row": 10,
+        "col": 11
+      },
+      {
+        "node_id": 109727,
+        "name": "Descending Skies",
+        "spell_id": 1264688,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1264688,
+            "description": "Descending Skies Talent Requires Shaman Enhancement Ascendance upgrades your next Lightning Bolt to Tempest. Elemental Casting Ascendance upgrades your next Lightning Bolt to Tempest. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109728
+        ],
+        "unlocks": [
+          94867
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81012,
+        "name": "Lightning Rod",
+        "spell_id": 210689,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 210689,
+            "description": "Lightning Rod Talent Requires Shaman Enhancement ( Enhancement Shaman ) Lightning Bolt and Chain Lightning make your target a Lightning Rod for 8 sec. Lightning Rods take 8% of all damage you deal with Lightning Bolt and Chain Lightning. Elemental [ Tempest : Tempest ] [ Elemental : Earth Shock, Elemental Blast, and Earthquake / Lightning Bolt and Chain Lightning ] make your target a Lightning Rod for 8 sec. Lightning Rods take 10% of all damage you deal with [ Tempest : Tempest, Lightning Bolt / Lightning Bolt] and Chain Lightning.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81003,
+          80993
+        ],
+        "unlocks": [
+          80991
+        ],
+        "row": 10,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81002,
+        "name": "Mountains Will Fall",
+        "spell_id": 381726,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 381726,
+            "description": "Mountains Will Fall Talent Requires Shaman Earth Shock, Elemental Blast, and Earthquake can trigger your Mastery: Elemental Overload at 50% effectiveness. Overloaded Earthquakes do not knock enemies down.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80989,
+          81003
+        ],
+        "unlocks": [],
+        "row": 10,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80992,
+        "name": "Call of Fire",
+        "spell_id": 378255,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378255,
+            "description": "Call of Fire Talent Requires Shaman Ascendance summons a Greater Fire Elemental to rain destruction on your enemies for 20 sec. While the Fire Elemental is active, Flame Shock deals damage 33% faster, and newly applied Flame Shocks last 100% longer.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80989
+        ],
+        "unlocks": [
+          80978,
+          103640
+        ],
+        "row": 10,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81007,
+        "name": "Voltaic Blaze",
+        "spell_id": 470057,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 470057,
+            "description": "Voltaic Blaze Talent 0.3% of base mana Requires Shaman Elemental ly shocks the target and 5 enemies within 10 yds with blazing thunder, applying Flame Shock and dealing (400% of Spell Power) Nature damage. Always critically strikes. Generates 1 stack of Maelstrom Weapon. Enhancement ly shocks the target and 5 enemies within 10 yds with blazing thunder, applying Flame Shock and dealing (400% of Spell Power) Nature damage. Always critically strikes. Generates 1 stack of Maelstrom Weapon. Elemental Generates .",
+            "cooldown": 10.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81008,
+          103641
+        ],
+        "unlocks": [
+          103637,
+          103632
+        ],
+        "row": 10,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94867,
+        "name": "Awakening Storms",
+        "spell_id": 455129,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 455129,
+            "description": "Awakening Storms Talent Requires Shaman Approximately 1.1 procs per minute Elemental Each Maelstrom spent has an additional 0.30% chance to upgrade your next Lightning Bolt to Tempest. Enhancement Stormstrike has a small chance to upgrade your next Lightning Bolt to Tempest.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94880,
+          94868,
+          94870,
+          109727
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 80991,
+        "name": "Charged Conduit",
+        "spell_id": 468625,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 468625,
+            "description": "Charged Conduit Talent Requires Shaman Increases the duration of Lightning Rod by 4 sec and its damage bonus by 25%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Lightning Rod",
+                "type": "duration_increase",
+                "value": 4,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          81012
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 14,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103640,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 462440,
+            "name": "First Ascendant",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462440,
+                "description": "First Ascendant Talent Requires Shaman Restoration The cooldown of Ascendance and Healing Tide Totem is reduced by 60 sec. Elemental The cooldown of Ascendance is reduced by 60 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 462443,
+            "name": "Preeminence",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 462443,
+                "description": "Preeminence Talent Requires Shaman Elemental Your haste is increased by 20% during Ascendance and its duration is increased by 3 sec. Restoration Your haste is increased by 25% while Ascendance or Healing Tide Totem is active and their durations are increased by 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          80992
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 16
+      },
+      {
+        "node_id": 80978,
+        "name": "Primal Elementalist",
+        "spell_id": 117013,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 117013,
+            "description": "Primal Elementalist Talent Requires Shaman Requires level 45 Your Earth, Fire, and Storm Elementals are drawn from primal elementals 80% more powerful than regular elementals, with additional abilities, and you gain direct control over your Primal Fire Elemental.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          80992
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103632,
+        "name": "Crackling Fury",
+        "spell_id": 1269215,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1269215,
+            "description": "Crackling Fury Talent Requires Shaman Voltaic Blaze's cooldown is reduced by 3 sec and its instant damage is increased by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1269215,
+            "description": "Crackling Fury Talent Requires Shaman Voltaic Blaze's cooldown is reduced by 3 sec and its instant damage is increased by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81007
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103637,
+        "name": "Purging Flames",
+        "spell_id": 1259471,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1259471,
+            "description": "Purging Flames Talent Requires Shaman Voltaic Blaze unleashes volcanic rage, causing your next Lava Burst to also fire at 5 additional targets with your Flame Shock at 80% effectiveness with reduced Maelstrom generation. Lava Burst damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81007
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110402,
+        "name": "Feedback Loop",
+        "spell_id": 1270061,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270061,
+            "description": "Feedback Loop Talent Requires Shaman Elemental Overload damage increased by 35%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Totemic",
+      "nodes": [
+        {
+          "node_id": 94859,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 445026,
+              "name": "Oversized Totems",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445026,
+                  "description": "Oversized Totems Talent Requires Shaman Increases the size and radius of your totems by 15%, and the health of your totems by 30%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 445027,
+              "name": "Swift Recall",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445027,
+                  "description": "Swift Recall Talent Requires Shaman Successfully removing a harmful effect with Tremor Totem or Poison Cleansing Totem, or controlling an enemy with Capacitor Totem or Earthgrab Totem reduces the cooldown of the totem used by 5 sec. Cannot occur more than once every 20 sec per totem.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "the totem used",
+                      "type": "cd_reduction",
+                      "value": 5,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94890
+          ],
+          "unlocks": [
+            94871
+          ],
+          "row": 4,
+          "col": 21
+        },
+        {
+          "node_id": 94866,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 445032,
+              "name": "Pulse Capacitor",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445032,
+                  "description": "Pulse Capacitor Talent Requires Shaman Enhancement Increases the damage of Surging Totem by 18%. Restoration Increases the healing done by Surging Totem by 25%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Surging Totem",
+                      "type": "damage_increase",
+                      "value": 18,
+                      "unit": "percent"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 445033,
+              "name": "Supportive Imbuements",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445033,
+                  "description": "Supportive Imbuements Talent Requires Shaman Enhancement Increases the critical strike chance of Flametongue Weapon by 25%, and its critical strike damage by 100%. Restoration Learn a new weapon imbue, Tidecaller's Guard. Tidecaller's Guard Imbue your shield with the element of Water for 1 hour. Your healing done is increased by 2.0% and the duration of your Healing Stream Totem is increased by 3.0 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94891
+          ],
+          "unlocks": [
+            94879
+          ],
+          "row": 5,
+          "col": 22
+        },
+        {
+          "node_id": 94871,
+          "name": "Imbuement Mastery",
+          "spell_id": 445028,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 445028,
+              "description": "Imbuement Mastery Talent Requires Shaman Enhancement Increases the chance for Windfury Weapon to trigger by 5% and increases its damage by 8%. When Flametongue Weapon triggers from Windfury Weapon attacks, it has a chance to gather a whirl of flame around the target, dealing 300% of its damage to all nearby enemies. Restoration Increases the duration of your Earthliving effect by 3 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Earthliving effect",
+                  "type": "duration_increase",
+                  "value": 3,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94859
+          ],
+          "unlocks": [
+            94879
+          ],
+          "row": 5,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94872,
+          "name": "Splitstream",
+          "spell_id": 445035,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 445035,
+              "description": "Splitstream Talent Requires Shaman Enhancement While Hot Hand is active Lava Lash shatters the earth, causing a Sundering at 80% effectiveness. Restoration Your Healing Stream Totems heals an additional ally at 30% effectiveness. Healing Tide Totem healing increased by 25%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94882
+          ],
+          "unlocks": [
+            94881
+          ],
+          "row": 4,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94874,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 445029,
+              "name": "Amplification Core",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445029,
+                  "description": "Amplification Core Talent Requires Shaman While Surging Totem is active, your damage and healing done is increased by 3%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 445030,
+              "name": "Oversurge",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445030,
+                  "description": "Oversurge Talent Requires Shaman Surging Totem deals 50% more damage while Ascendance or Healing Tide Totem is active.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94877
+          ],
+          "unlocks": [
+            94891
+          ],
+          "row": 3,
+          "col": 22
+        },
+        {
+          "node_id": 94877,
+          "name": "Surging Totem",
+          "spell_id": 444995,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444995,
+              "description": "Surging Totem Talent 6.5% of base mana Requires Shaman Enhancement Summons a totem at the target location that creates a Tremor immediately and every 6 sec for (122.382% of Attack Power) Flamestrike damage. Damage reduced beyond 5 targets. Lasts 25 sec. Restoration Summons a totem at the target location that maintains Healing Rain with 20% increased effectiveness for 25 sec. Replaces Healing Rain.",
+              "cooldown": 25.0,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Healing Rain",
+                  "type": "replaces"
+                }
+              ]
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94890,
+            94874,
+            94882,
+            109726
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": {
+            "spell_id": null,
+            "name": "Healing Rain"
+          }
+        },
+        {
+          "node_id": 94879,
+          "name": "Whirling Elements",
+          "spell_id": 445024,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 445024,
+              "description": "Whirling Elements Talent Requires Shaman Enhancement Elemental motes orbit around your Surging Totem. Your abilities consume the motes for enhanced effects. Air: [ Enhancement : Your next Lightning Bolt, Chain Lightning or Elemental Blast unleashes 3 Surging Bolts at your Surging Totem / Elemental, Restoration The cast time of your next healing spell is reduced by 40% ] Earth: [ Enhancement : Your next Sundering deals 100% increased damage and summons a Searing Totem / Elemental, Restoration Your next Chain Heal applies Earthliving at 150% effectiveness to all targets hit ] Fire: Your next Lava Lash grants you Hot Hand for 8 sec. Restoration Elemental motes orbit around your Surging Totem. Your abilities consume the motes for enhanced effects. Water: Your next Healing Wave also heals an ally inside of your Healing Rain at 50% effectiveness. Air: [ Enhancement : Your next Lightning Bolt, Chain Lightning or Elemental Blast unleashes 3 Surging Bolts at your Surging Totem / Elemental, Restoration The cast time of your next healing spell is reduced by 40% ] Earth: [ Enhancement : Your next Sundering deals 100% increased damage and summons a Searing Totem / Elemental, Restoration Your next Chain Heal applies Earthliving at 150% effectiveness to all targets hit ]",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94881,
+            94866,
+            94871,
+            109724
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94881,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 445036,
+              "name": "Totemic Coordination",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445036,
+                  "description": "Totemic Coordination Talent Requires Shaman Restoration Chain Heals from Lively Totem and Totemic Rebound are 25% more effective. Enhancement Increases the critical strike chance of your Searing Totem's attacks by 15%, and its critical strike damage by 30%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 455590,
+              "name": "Earthsurge",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 455590,
+                  "description": "Earthsurge Talent Requires Shaman Restoration Allies affected by your Earthliving effect receive 15% increased healing from you. Enhancement Casting Sundering within 40 yards of your Surging Totem causes it to create a Tremor at 125% effectiveness at the target area.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94872
+          ],
+          "unlocks": [
+            94879
+          ],
+          "row": 5,
+          "col": 23
+        },
+        {
+          "node_id": 94882,
+          "name": "Lively Totems",
+          "spell_id": 445034,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 445034,
+              "description": "Lively Totems Talent Requires Shaman Enhancement Lava Lash has a chance to summon a Searing Totem to hurl Searing Bolts that deal (65.205% of Spell Power) Fire damage to a nearby enemy. Lasts 8 sec. Lava Lash and Voltaic Blaze cause your Searing Totems to shoot a Searing Volley at up to 5 nearby enemies for (92.736% of Spell Power) Fire damage. Restoration When you summon a Healing Tide Totem, Healing Stream Totem, or Spirit Link Totem you cast a free instant Chain Heal at 100% effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94877
+          ],
+          "unlocks": [
+            94872
+          ],
+          "row": 3,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94890,
+          "name": "Totemic Rebound",
+          "spell_id": 445025,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 445025,
+              "description": "Totemic Rebound Talent Requires Shaman Approximately 10 procs per minute Restoration Chain Heal now jumps to a nearby totem within 20 yards once it reaches its last target, causing the totem to cast Chain Heal on an injured ally within 30 yards for (220.5% of Spell Power). Jumps to 2 nearby targets within 20 yards. Enhancement Lightning Bolt, Chain Lightning and Elemental Blast has a chance to unleash a Surging Bolt at your Surging Totem, increasing the totem's damage by 10%, and then redirecting the bolt to your target for (161% of Attack Power) Nature damage. The damage bonus effect can stack.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94877
+          ],
+          "unlocks": [
+            94859
+          ],
+          "row": 3,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94891,
+          "name": "Wind Barrier",
+          "spell_id": 445031,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 445031,
+              "description": "Wind Barrier Talent Requires Shaman If you have a totem active, your totem grants you a shield absorbing (Total Health * 6 / 100) damage for 30 sec every 30 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94874
+          ],
+          "unlocks": [
+            94866
+          ],
+          "row": 4,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109724,
+          "name": "Primal Catalyst",
+          "spell_id": 1260874,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260874,
+              "description": "Primal Catalyst Talent Requires Shaman Enhancement After casting Surging Totem, your next Lava Lash casts again at 150% effectiveness. Restoration Healing Stream Totem and Healing Tide Totem healing has a 8% chance to apply Earthliving to allies it heals. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109725
+          ],
+          "unlocks": [
+            94879
+          ],
+          "row": 5,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109725,
+          "name": "Elemental Attunement",
+          "spell_id": 1263288,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1263288,
+              "description": "Elemental Attunement Talent Requires Shaman Mastery increased by 2%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109726
+          ],
+          "unlocks": [
+            109724
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109726,
+          "name": "Totemic Momentum",
+          "spell_id": 1260644,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1260644,
+              "description": "Totemic Momentum Talent Requires Shaman Enhancement Lava Lash damage increased by 10%. Each stack of Maelstrom Weapon consumed increases the duration of an active Hot Hand by 0.20 sec. Restoration Reduces the cooldown of Healing Stream Totem by 3 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Healing Stream Totem",
+                  "type": "cd_reduction",
+                  "value": 3,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "an active Hot Hand",
+                  "type": "duration_increase",
+                  "value": 0.2,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94877
+          ],
+          "unlocks": [
+            109725
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Stormbringer",
+      "nodes": [
+        {
+          "node_id": 94863,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 467778,
+              "name": "Lightning Conduit",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 467778,
+                  "description": "Lightning Conduit Talent Requires Shaman You have a chance to get struck by lightning, increasing your movement speed by 50% for 5 sec. The effectiveness is increased to 100% in outdoor areas. You call down a Thunderstorm when you Reincarnate.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 454022,
+              "name": "Electroshock",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 454022,
+                  "description": "Electroshock Talent Requires Shaman Tempest increases your movement speed by 20% for 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94892
+          ],
+          "unlocks": [
+            94889
+          ],
+          "row": 8,
+          "col": 11
+        },
+        {
+          "node_id": 94867,
+          "name": "Awakening Storms",
+          "spell_id": 455129,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 455129,
+              "description": "Awakening Storms Talent Requires Shaman Approximately 1.1 procs per minute Elemental Each Maelstrom spent has an additional 0.30% chance to upgrade your next Lightning Bolt to Tempest. Enhancement Stormstrike has a small chance to upgrade your next Lightning Bolt to Tempest.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94880,
+            94868,
+            94870,
+            109727
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94868,
+          "name": "Conductive Energy",
+          "spell_id": 455123,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 455123,
+              "description": "Conductive Energy Talent Requires Shaman Enhancement Gain the effects of the Lightning Rod talent: Lightning Rod [ Tempest : Tempest ] [ Elemental : Earth Shock, Elemental Blast, and Earthquake / Lightning Bolt and Chain Lightning] make your target a Lightning Rod for 8 sec. Lightning Rods take 8% of all damage you deal with [ Tempest : Tempest, Lightning Bolt / Lightning Bolt] and Chain Lightning. Elemental Lightning Rod targets now also take 10% of the damage that Tempest deals, and Tempest also applies Lightning Rod effect.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94885
+          ],
+          "unlocks": [
+            94867
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94870,
+          "name": "Voltaic Surge",
+          "spell_id": 454919,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 454919,
+              "description": "Voltaic Surge Talent Requires Shaman Enhancement Crash Lightning and Chain Lightning damage increased by 10%. Elemental Earthquake and Chain Lightning damage increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94873
+          ],
+          "unlocks": [
+            94867
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94873,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 455088,
+              "name": "Storm Swell",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 455088,
+                  "description": "Storm Swell Talent Requires Shaman Tempest grants (5 * $mas)% Mastery for 6 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 455110,
+              "name": "Supercharge",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 455110,
+                  "description": "Supercharge Talent Requires Shaman Enhancement Lightning Bolt, Tempest, and Chain Lightning have a 35% chance to refund Weapon stacks. Elemental Lightning Bolt, Tempest, and Chain Lightning have a 50% chance to cause an additional Elemental Overload.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94886
+          ],
+          "unlocks": [
+            94870
+          ],
+          "row": 9,
+          "col": 9
+        },
+        {
+          "node_id": 94880,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 454027,
+              "name": "Nature's Protection",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 454027,
+                  "description": "Nature's Protection Talent Requires Shaman Lightning Shield reduces the damage you take by 3%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 454372,
+              "name": "Surging Currents",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 454372,
+                  "description": "Surging Currents Talent Requires Shaman Casting Tempest grants Surging Currents, increasing the effectiveness of your next Chain Heal or Healing Surge by 16%, up to 80%. (900ms cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94889
+          ],
+          "unlocks": [
+            94867
+          ],
+          "row": 10,
+          "col": 11
+        },
+        {
+          "node_id": 94885,
+          "name": "Arc Discharge",
+          "spell_id": 455096,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 455096,
+              "description": "Arc Discharge Talent Requires Shaman Elemental Casting Tempest grants a charge of Stormkeeper. Enhancement Tempest causes your next Chain Lightning to be instant cast, deal 40% increased damage, and cast an additional time. Can accumulate up to 2 charges.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94893
+          ],
+          "unlocks": [
+            94868
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94886,
+          "name": "Unlimited Power",
+          "spell_id": 454391,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 454391,
+              "description": "Unlimited Power Talent Requires Shaman Enhancement Spending Maelstrom Weapon stacks grants you 1% haste for 15 sec. Multiple applications may overlap. Elemental Spending Maelstrom grants you 1% haste for 15 sec. Multiple applications may overlap.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94892
+          ],
+          "unlocks": [
+            94873
+          ],
+          "row": 8,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94889,
+          "name": "Rolling Thunder",
+          "spell_id": 454026,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 454026,
+              "description": "Rolling Thunder Talent Requires Shaman Enhancement Doom Winds summons a Nature Feral Spirit for 12 sec. Feral Spirit An Elemental Spirit infused with Nature magic, granting the summoner with 5 % increased Nature damage and 5 % Physical damage for 12 sec. Elemental Reduces the cooldown of Stormkeeper by 15 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Stormkeeper",
+                  "type": "cd_reduction",
+                  "value": 15,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94863
+          ],
+          "unlocks": [
+            94880
+          ],
+          "row": 9,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94892,
+          "name": "Tempest",
+          "spell_id": 454009,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 454009,
+              "description": "Tempest Talent Requires Shaman Enhancement Each Maelstrom Weapon spent has a 2.00% chance to upgrade your next Lightning Bolt to Tempest. Tempest 0.2% of base mana Requires Shaman Calls down a tremendous lightning strike that deals (388.125% of Spell Power) Nature damage to your target and [(388.125% of Spell Power) * 65 / 100] Nature damage to enemies within 8 yds of your target. Damage reduced beyond 5 targets. Elemental Each Maelstrom spent has a 0.30% chance to upgrade your next Lightning Bolt to Tempest. Tempest 0.2% of base mana Requires Shaman Calls down a tremendous lightning strike that deals (388.125% of Spell Power) Nature damage to your target and [(388.125% of Spell Power) * 65 / 100] Nature damage to enemies within 8 yds of your target. Damage reduced beyond 5 targets. Enhancement Consumes Maelstrom Weapon for increased cast speed.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94886,
+            94893,
+            94863,
+            109729
+          ],
+          "row": 7,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94893,
+          "name": "Stormcaller",
+          "spell_id": 454021,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 454021,
+              "description": "Stormcaller Talent Requires Shaman Enhancement Increases the critical strike chance of your Nature damage spells by 5% and the critical strike damage of your Nature spells by 10%. Elemental Increases the critical strike chance of your Nature damage spells by 5% and the critical strike damage of your Nature spells by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94892
+          ],
+          "unlocks": [
+            94885
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109727,
+          "name": "Descending Skies",
+          "spell_id": 1264688,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264688,
+              "description": "Descending Skies Talent Requires Shaman Enhancement Ascendance upgrades your next Lightning Bolt to Tempest. Elemental Casting Ascendance upgrades your next Lightning Bolt to Tempest. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109728
+          ],
+          "unlocks": [
+            94867
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109728,
+          "name": "Natural Gift",
+          "spell_id": 1264691,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264691,
+              "description": "Natural Gift Talent Requires Shaman Nature damage is increased by 2% (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109729
+          ],
+          "unlocks": [
+            109727
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109729,
+          "name": "Stormwell",
+          "spell_id": 1264762,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1264762,
+              "description": "Stormwell Talent Requires Shaman Elemental Storm Elemental lasts 2 sec longer, and Stormkeeper generates . Enhancement Windfury Weapon damage increased by 10%. When Crash Lightning hits a single enemy, it activates Windfury Weapon.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94892
+          ],
+          "unlocks": [
+            109728
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Farseer",
+      "nodes": [
+        {
+          "node_id": 94858,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 443442,
+              "name": "Natural Harmony",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443442,
+                  "description": "Natural Harmony Talent Requires Shaman Reduces the cooldown of Nature's Guardian by 15 sec and causes it to heal for an additional 10% of your maximum health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Nature's Guardian",
+                      "type": "cd_reduction",
+                      "value": 15,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 443441,
+              "name": "Earthen Communion",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443441,
+                  "description": "Earthen Communion Talent Requires Shaman Earth Shield has an additional 3 charges and heals you for 25% more.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94887
+          ],
+          "unlocks": [
+            94894
+          ],
+          "row": 5,
+          "col": 9
+        },
+        {
+          "node_id": 94860,
+          "name": "Primordial Capacity",
+          "spell_id": 443448,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443448,
+              "description": "Primordial Capacity Talent Requires Shaman Elemental Increases your maximum Maelstrom by 25. Restoration Increases your maximum mana by 10%. Tidal Waves can now stack up to 3 times.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94884
+          ],
+          "unlocks": [
+            94883
+          ],
+          "row": 4,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94861,
+          "name": "Spiritwalker's Momentum",
+          "spell_id": 443425,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443425,
+              "description": "Spiritwalker's Momentum Talent Requires Shaman Using spells with a cast time increases the duration of Spiritwalker's Grace and Spiritwalker's Aegis by 1 sec, up to a maximum of 4 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Spiritwalker's Grace and Spiritwalker's Aegis",
+                  "type": "duration_increase",
+                  "value": 1,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94869
+          ],
+          "unlocks": [
+            94875
+          ],
+          "row": 4,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94862,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 443449,
+              "name": "Latent Wisdom",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443449,
+                  "description": "Latent Wisdom Talent Requires Shaman Your Ancestors' spells are 25% more powerful.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 443423,
+              "name": "Ancient Fellowship",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443423,
+                  "description": "Ancient Fellowship Talent Requires Shaman Ancestors have a 20% chance to call another Ancestor for 8 sec when they depart.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94888
+          ],
+          "unlocks": [
+            94887
+          ],
+          "row": 3,
+          "col": 9
+        },
+        {
+          "node_id": 94869,
+          "name": "Elemental Reverb",
+          "spell_id": 443418,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443418,
+              "description": "Elemental Reverb Talent Requires Shaman Elemental Lava Burst gains an additional charge and deals 10% increased damage. Restoration Lava Burst gains an additional charge and deals 10% increased damage. Riptide gains an additional charge and heals for 20% more.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94888
+          ],
+          "unlocks": [
+            94861
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94875,
+          "name": "Final Calling",
+          "spell_id": 443446,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443446,
+              "description": "Final Calling Talent Requires Shaman Elemental When an Ancestor departs, they cast Elemental Blast at a nearby enemy. Restoration When an Ancestor departs, they cast Hydrobubble on a nearby injured ally. Hydrobubble Surrounds your target in a protective water bubble for 15 sec. The shield absorbs the next 0 incoming damage, but the absorb amount decays fully over its duration.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94861
+          ],
+          "unlocks": [
+            94894
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94883,
+          "name": "Maelstrom Supremacy",
+          "spell_id": 443447,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443447,
+              "description": "Maelstrom Supremacy Talent Requires Shaman Elemental Increases the damage of Earth Shock, Elemental Blast, and Earthquake by 25%. Increases the healing of Healing Surge and Chain Heal by 25%. Restoration Increases the healing done by Healing Wave, Downpour, and Chain Heal by 25%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Earth Shock, Elemental Blast, and Earthquake",
+                  "type": "damage_increase",
+                  "value": 25,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94860
+          ],
+          "unlocks": [
+            94894
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94884,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 443444,
+              "name": "Heed My Call",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443444,
+                  "description": "Heed My Call Talent Requires Shaman Ancestors last an additional 4 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 443445,
+              "name": "Routine Communication",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 443445,
+                  "description": "Routine Communication Talent Requires Shaman Elemental Lightning Bolt, Lava Burst, Flame Shock, Voltaic Blaze, and Chain Lightning have a 8% chance to call an Ancestor to your side for 8 sec. Restoration Riptide has a 15% chance to call an Ancestor to your side for 8 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94888
+          ],
+          "unlocks": [
+            94860
+          ],
+          "row": 3,
+          "col": 10
+        },
+        {
+          "node_id": 94887,
+          "name": "Offering from Beyond",
+          "spell_id": 443451,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443451,
+              "description": "Offering from Beyond Talent Requires Shaman Restoration When an Ancestor is called, they reduce the cooldown of Riptide by 2 sec. Elemental When an Ancestor is called, they reduce the cooldown of Stormkeeper by 3 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Riptide",
+                  "type": "cd_reduction",
+                  "value": 2,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Stormkeeper",
+                  "type": "cd_reduction",
+                  "value": 3,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94862
+          ],
+          "unlocks": [
+            94858
+          ],
+          "row": 4,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94888,
+          "name": "Call of the Ancestors",
+          "spell_id": 443450,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443450,
+              "description": "Call of the Ancestors Talent Requires Shaman Elemental Stormkeeper calls an Ancestor to your side for 8 sec. Whenever you cast a healing or damaging spell, the Ancestor will cast a similar spell. Restoration Unleash Life calls an Ancestor to your side for 12 sec. Whenever you cast a healing or damaging spell, the Ancestor will cast a similar spell.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94884,
+            94862,
+            94869,
+            109732
+          ],
+          "row": 2,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94894,
+          "name": "Ancestral Swiftness",
+          "spell_id": 443454,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 443454,
+              "description": "Ancestral Swiftness Talent Requires Shaman Your next healing or damaging spell is instant, costs no mana, and deals 10% increased damage and healing. If you know Nature's Swiftness, it is replaced by Ancestral Swiftness and causes Ancestral Swiftness to call an Ancestor to your side for 8 sec.",
+              "cooldown": 30.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94875,
+            94883,
+            94858,
+            109730
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109730,
+          "name": "Mystic Knowledge",
+          "spell_id": 1270450,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270450,
+              "description": "Mystic Knowledge Talent Requires Shaman Restoration For 8 sec sec after casting Nature's Swiftness or Ancestral Swiftness, the recharge rate of Riptide is increased by 10%. Increases the chance for Lava Surge to occur by 20%. Elemental Increases the chance for Lava Surge to occur by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109731
+          ],
+          "unlocks": [
+            94894
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109731,
+          "name": "Windspeaker",
+          "spell_id": 1270447,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270447,
+              "description": "Windspeaker Talent Requires Shaman Elemental The cast times of Healing Surge, Chain Heal and Lava Burst are reduced by 10%. Restoration The cast times of Healing Wave, Chain Heal, and Lava Burst are reduced by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109732
+          ],
+          "unlocks": [
+            109730
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109732,
+          "name": "Ancestral Influence",
+          "spell_id": 1270446,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270446,
+              "description": "Ancestral Influence Talent Requires Shaman Your Intellect is increased by 1.0% for each Ancestor active.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94888
+          ],
+          "unlocks": [
+            109731
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4829 @@
+{
+  "class": "Warrior",
+  "spec": "Fury",
+  "scraped_at": "2026-03-25T17:30:28.805250+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99852,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 11
+      },
+      {
+        "node_id": 90325,
+        "name": "Berserker Stance",
+        "spell_id": 386196,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386196,
+            "description": "Berserker Stance Talent Requires Warrior An aggressive combat state that increases the damage of your auto-attacks by 15% and reduces the duration of Fear, Sap and Incapacitate effects on you by 10%. Lasts until canceled.",
+            "cooldown": 3.0,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your auto-attacks",
+                "type": "damage_increase",
+                "value": 15,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90328,
+          90344
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 92538,
+        "name": "Defensive Stance",
+        "spell_id": 386208,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386208,
+            "description": "Defensive Stance Talent Requires Warrior Arms, Fury A defensive combat state that reduces all damage you take by 15% and all damage you deal by 10%. Lasts until canceled. Protection A defensive combat state that reduces all damage you take by 15% . Lasts until canceled.",
+            "cooldown": 3.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90371,
+          90343
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90344,
+        "name": "Fast Footwork",
+        "spell_id": 382260,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382260,
+            "description": "Fast Footwork Talent Requires Warrior Movement speed increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90325
+        ],
+        "unlocks": [
+          109391,
+          90326
+        ],
+        "row": 3,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90328,
+        "name": "War Machine",
+        "spell_id": 262231,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 262231,
+            "description": "War Machine Talent Requires Warrior Requires level 15 Arms Your auto-attacks generate 1050% more Rage. Killing an enemy instantly generates and increases your movement speed by 30% for 8 sec. Fury, Protection Your auto-attacks generate 50% more Rage. Killing an enemy instantly generates and increases your movement speed by 30% for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90325
+        ],
+        "unlocks": [
+          90346,
+          90326,
+          90352
+        ],
+        "row": 3,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90343,
+        "name": "Thunder Clap",
+        "spell_id": 6343,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 6343,
+            "description": "Thunder Clap Talent Requires Warrior Blasts all enemies within 8 yards for (235.68% of Attack Power) Physical damage [ Thunderstruck : roots them for 4 sec ] and reduces their movement speed by 20% for 10 sec. Deals reduced damage beyond 5 / Recklessness : 8 / Crashing Thunder : 85 targets. [ Rend : Inflicts Rend on all targets / If you know Rend, inflicts Rend on all targets.] [ Generates . ]",
+            "cooldown": 6.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          92538
+        ],
+        "unlocks": [
+          90337,
+          90346,
+          95959
+        ],
+        "row": 3,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90371,
+        "name": "Leeching Strikes",
+        "spell_id": 382258,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382258,
+            "description": "Leeching Strikes Talent Requires Warrior Leech increased by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          92538
+        ],
+        "unlocks": [
+          90337,
+          108674
+        ],
+        "row": 3,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90326,
+        "name": "Impending Victory",
+        "spell_id": 202168,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 202168,
+            "description": "Impending Victory Talent Replaces Victory Rush Requires Warrior Requires level 25 (Arms, Fury) Requires level 40 (Protection) ly attack the target, causing (59% of Attack Power) damage and healing you for 30% of your maximum health. Killing an enemy that yields experience or honor resets the cooldown of Impending Victory and makes it cost no Rage.",
+            "cooldown": 25.0,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Victory Rush Requires Warrior Requires level 25 (Arms, Fury) Requires level 40 (Protection) ly attack the target, causing (59% of Attack Power) damage and healing you for 30% of your maximum health",
+                "type": "replaces"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90344,
+          90328
+        ],
+        "unlocks": [
+          109391,
+          90332,
+          90352
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": {
+          "spell_id": null,
+          "name": "Victory Rush Requires Warrior Requires level 25 (Arms, Fury) Requires level 40 (Protection) ly attack the target, causing (59% of Attack Power) damage and healing you for 30% of your maximum health"
+        }
+      },
+      {
+        "node_id": 90346,
+        "name": "Heroic Leap",
+        "spell_id": 6544,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 6544,
+            "description": "Heroic Leap Talent 8 - Requires Warrior Protection Leap through the air toward a target location, slamming down with destructive force to deal (23.5% of Attack Power) Physical damage to all enemies within 8 yards and resetting the remaining cooldown on Taunt. Arms, Fury Leap through the air toward a target location, slamming down with destructive force to deal (23.5% of Attack Power) Physical damage to all enemies within 8 yards.",
+            "cooldown": 45.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90328,
+          90343
+        ],
+        "unlocks": [
+          90355,
+          90353,
+          90352
+        ],
+        "row": 4,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95959,
+        "name": "Crackling Thunder",
+        "spell_id": 203201,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 203201,
+            "description": "Crackling Thunder Talent Requires Warrior Requires level 35 Thunder Clap's radius is increased by 50% and it reduces affected target's movement speed by an additional 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90343
+        ],
+        "unlocks": [],
+        "row": 4,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90337,
+        "name": "Storm Bolt",
+        "spell_id": 107570,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 107570,
+            "description": "Storm Bolt Talent Requires Warrior Requires level 25 (Arms, Fury, Protection) Requires Melee Weapon Hurls your weapon at an enemy, causing (28.5% of Attack Power) Physical damage and stunning for 4 sec. [ Storm Bolts : Also hits 2 additional nearby targets, stunning for 2 sec ]",
+            "cooldown": 30.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90371,
+          90343
+        ],
+        "unlocks": [
+          90353,
+          108674
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109391,
+        "name": "Rend",
+        "spell_id": 772,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 772,
+            "description": "Rend Talent Requires Warrior Requires level 30 Requires Melee Weapon Lash out with your weapon, striking all targets within 8 yds for (259.248% of Attack Power) Physical damage instantly and wounding them for an additional (190.465% of Attack Power) Bleed damage over 15 sec.",
+            "cooldown": 6.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90344,
+          90326
+        ],
+        "unlocks": [
+          90351,
+          90375
+        ],
+        "row": 5,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90332,
+        "name": "Second Wind",
+        "spell_id": 29838,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 29838,
+            "description": "Second Wind Talent Requires Warrior Requires level 35 Restores 6% health every 1 sec when you have not taken damage for 5 sec. Restores 2% health every 1 sec while you are below 35% health. The amount restored increases the closer you are to death.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90326
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90352,
+        "name": "Frothing Berserker",
+        "spell_id": 392792,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 392792,
+            "description": "Frothing Berserker Talent Requires Warrior Arms Mortal Strike and Cleave have a 20% chance to immediately refund 10% of the Rage spent. Fury Rampage has a 20% chance to immediately refund 10% of the Rage spent. Protection Revenge has a 20% chance to immediately refund 50% of the Rage spent. (Proc chance: 20%, 500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90326,
+          90346,
+          90328
+        ],
+        "unlocks": [
+          90375,
+          90378,
+          90331
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90355,
+        "name": "Bounding Stride",
+        "spell_id": 202163,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 202163,
+            "description": "Bounding Stride Talent Requires Warrior Requires level 35 Reduces the cooldown of Heroic Leap by 15 sec and Heroic Leap also increases your movement speed by 70% for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Heroic Leap",
+                "type": "cd_reduction",
+                "value": 15,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Heroic Leap by 15 sec and Heroic Leap also increases your movement speed",
+                "type": "cd_reduction",
+                "value": 70,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90346
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90353,
+        "name": "Pain and Gain",
+        "spell_id": 382549,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382549,
+            "description": "Pain and Gain Talent Requires Warrior When you take any damage, heal for 2.0% of your maximum health. This can only occur once every 10 sec. (10s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90337,
+          90346
+        ],
+        "unlocks": [
+          90331,
+          90385,
+          110119
+        ],
+        "row": 5,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108674,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 3411,
+            "name": "Intervene",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 3411,
+                "description": "Intervene Talent Requires Warrior Run at high speed toward an ally, intercepting all melee and ranged attacks against them for 6 sec while they remain within 10 yds.",
+                "cooldown": 30.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1244088,
+            "name": "Interpose",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1244088,
+                "description": "Interpose Talent Requires Warrior Run at high speed toward a target location near your allies, taking 30% of all damage dealt to allies within 3 yards for 8 sec or until you take at least [(0.2) * Total Health] damage from this effect.",
+                "cooldown": 30.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90337,
+          90371
+        ],
+        "unlocks": [
+          90385,
+          95956
+        ],
+        "row": 5,
+        "col": 7
+      },
+      {
+        "node_id": 90375,
+        "name": "Shockwave",
+        "spell_id": 46968,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 46968,
+            "description": "Shockwave Talent Requires Warrior Sends a wave of force in a frontal cone, causing (20% of Attack Power) damage and stunning all enemies within 10 yards for 2 sec .",
+            "cooldown": 40.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109391,
+          90352
+        ],
+        "unlocks": [
+          90348,
+          90351,
+          90374
+        ],
+        "row": 6,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90378,
+        "name": "Overwhelming Rage",
+        "spell_id": 382767,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382767,
+            "description": "Overwhelming Rage Talent Requires Warrior Maximum Rage increased by 30.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90352
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90331,
+        "name": "Rallying Cry",
+        "spell_id": 97462,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 97462,
+            "description": "Rallying Cry Talent Requires Warrior Lets loose a rallying cry, granting all party or raid members within 40 yards 10 % temporary and maximum health for 10 sec . Health granted increased by 50% when not in a raid.",
+            "cooldown": 180.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90353,
+          90352
+        ],
+        "unlocks": [
+          90348,
+          108705
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110119,
+        "name": "Field Dressing",
+        "spell_id": 1271926,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271926,
+            "description": "Field Dressing Talent Requires Warrior Healing received increased by 3% and all self-healing increased by an additional 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90353
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90385,
+        "name": "Spell Reflection",
+        "spell_id": 23920,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 23920,
+            "description": "Spell Reflection Talent Requires Warrior Protection Raise your shield, reflecting the first spell cast on you and reducing magic damage you take by 20% for 5 sec. Arms, Fury Raise your weapon, reflecting the first spell cast on you and reducing magic damage you take by 20% for 5 sec.",
+            "cooldown": 25.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108674,
+          90353
+        ],
+        "unlocks": [
+          95956,
+          108705
+        ],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90351,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 384110,
+            "name": "Wrecking Throw",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 384110,
+                "description": "Wrecking Throw Talent Requires Warrior Requires Melee Weapon Hurl your weapon at the enemy, causing (600% of Attack Power) Physical damage, ignoring armor. Deals up to 500% increased damage to absorb shields.",
+                "cooldown": 45.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 64382,
+            "name": "Shattering Throw",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 64382,
+                "description": "Shattering Throw Talent Requires Warrior Requires Melee Weapon Hurl your weapon at the enemy, &nbsp;removing any magical immunities and causing (600% of Attack Power) Physical damage, ignoring armor. Deals up to 500% increased damage to absorb shields.",
+                "cooldown": 180.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90375,
+          109391
+        ],
+        "unlocks": [
+          90366
+        ],
+        "row": 7,
+        "col": 1
+      },
+      {
+        "node_id": 90374,
+        "name": "Rumbling Earth",
+        "spell_id": 275339,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 275339,
+            "description": "Rumbling Earth Talent Requires Warrior Requires level 25 Shockwave's range increased by 6 yards and when it strikes at least 3 targets its cooldown is reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90375
+        ],
+        "unlocks": [],
+        "row": 7,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90348,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 384100,
+            "name": "Berserker Shout",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 384100,
+                "description": "Berserker Shout Talent Requires Warrior Go berserk, removing and granting immunity to Fear, Sap, and Incapacitate effects for 6 sec. Also remove fear effects from group members within 12 yds.",
+                "cooldown": 60.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1271925,
+            "name": "Fearless",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1271925,
+                "description": "Fearless Talent Requires Warrior Cooldown of Berserker Rage is reduced by 50% and Berseker Rage removes all movement speed-impairing effects.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90375,
+          90331
+        ],
+        "unlocks": [
+          90382,
+          90366
+        ],
+        "row": 7,
+        "col": 3
+      },
+      {
+        "node_id": 108705,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 5246,
+            "name": "Intimidating Shout",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 5246,
+                "description": "Intimidating Shout Talent Requires Warrior Causes the targeted enemy to cower in fear while all enemies within 8 yards flee from you and their movement speed is reduced by 70% for 8 sec. Damage may cancel the effect.",
+                "cooldown": 90.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 12323,
+            "name": "Piercing Howl",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 12323,
+                "description": "Piercing Howl Talent Requires Warrior Snares all enemies within 12 yards, reducing their movement speed by 70% for 8 sec. Spurs all allies within 6 yards, increasing their movement speed by 30% for 4 sec.",
+                "cooldown": 90.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90331,
+          90385
+        ],
+        "unlocks": [
+          90382,
+          90368
+        ],
+        "row": 7,
+        "col": 5
+      },
+      {
+        "node_id": 95956,
+        "name": "Honed Reflexes",
+        "spell_id": 391271,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391271,
+            "description": "Honed Reflexes Talent Requires Warrior Arms Cooldown of Die By the Sword, Intervene, Interpose, Spell Reflection, Storm Bolt, and Pummel reduced by 10%. Successfully interrupting an enemy increases the damage you deal to them by 5% for 10 sec. Fury Cooldown of Enraged Regeneration, Intervene, Interpose, Spell Reflection, Storm Bolt, and Pummel reduced by 10%. Successfully interrupting an enemy increases the damage you deal to them by 5% for 10 sec. Protection Cooldown of Shield Wall, Intervene, Spell Reflection, Storm Bolt, and Pummel reduced by 10%. Successfully interrupting an enemy increases the damage you deal to them by 5% for 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108674,
+          90385
+        ],
+        "unlocks": [
+          90368
+        ],
+        "row": 7,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90366,
+        "name": "Armored to the Teeth",
+        "spell_id": 384124,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384124,
+            "description": "Armored to the Teeth Talent Requires Warrior Protection Gain Strength equal to 2% of your Armor. Arms, Fury Gain Strength equal to 5% of your Armor.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 384124,
+            "description": "Armored to the Teeth Talent Requires Warrior Protection Gain Strength equal to 2% of your Armor. Arms, Fury Gain Strength equal to 5% of your Armor.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90351,
+          90348
+        ],
+        "unlocks": [
+          110118,
+          90347
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90382,
+        "name": "Double Time",
+        "spell_id": 103827,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 103827,
+            "description": "Double Time Talent Requires Warrior Requires level 25 Charge gains 1 additional charge and its cooldown is reduced by 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Double Time Talent Requires Warrior Requires level 25 Charge",
+                "type": "charge_increase",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90348,
+          108705
+        ],
+        "unlocks": [
+          108685,
+          110118
+        ],
+        "row": 8,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90368,
+        "name": "Reinforced Plates",
+        "spell_id": 382939,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382939,
+            "description": "Reinforced Plates Talent Requires Warrior Stamina increased by 5% and Armor increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 382939,
+            "description": "Reinforced Plates Talent Requires Warrior Stamina increased by 5% and Armor increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95956,
+          108705
+        ],
+        "unlocks": [
+          108685,
+          108686
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90347,
+        "name": "Barbaric Training",
+        "spell_id": 383082,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383082,
+            "description": "Barbaric Training Talent Requires Warrior Fury (Crashing Thunder) Thunder Clap, Whirlwind, and Raging Blow deal 10% more damage and 5% increased critical strike damage. Protection Revenge deals 10% more damage and 5% increased critical strike damage. Arms Slam, Whirlwind, and Cleave deal 10% more damage and 5% increased critical strike damage. Fury Whirlwind and Raging Blow deal 10% more damage and 5% increased critical strike damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90366
+        ],
+        "unlocks": [
+          90381
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110118,
+        "name": "Javelineer",
+        "spell_id": 1271948,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271948,
+            "description": "Javelineer Talent Requires Warrior Range of your thrown abilities is increased by 5 yards. Damage dealt by Champion's Spear, Shattering Throw, and Wrecking Throw increased by 20%. Shattering Throw and Wrecking Throw silence non-players for 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90366,
+          90382
+        ],
+        "unlocks": [
+          90381,
+          90373
+        ],
+        "row": 9,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108685,
+        "name": "Resonant Voice",
+        "spell_id": 1243660,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1243660,
+            "description": "Resonant Voice Talent Requires Warrior The effects of your shouts last 20% longer.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90382,
+          90368
+        ],
+        "unlocks": [
+          90360,
+          90373
+        ],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108686,
+        "name": "Crushing Force",
+        "spell_id": 382764,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382764,
+            "description": "Crushing Force Talent Requires Warrior Fury Bloodthirst deals an additional 5% damage and deals 5% increased critical strike damage. Arms Mortal Strike deals an additional 5% damage and deals 5% increased critical strike damage. Protection Shield Slam deals an additional 5% damage and deals 5% increased critical strike damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90368
+        ],
+        "unlocks": [
+          90360
+        ],
+        "row": 9,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90381,
+        "name": "Cruel Strikes",
+        "spell_id": 392777,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 392777,
+            "description": "Cruel Strikes Talent Requires Warrior Critical strike chance increased by 1% and critical strike damage of Execute increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 392777,
+            "description": "Cruel Strikes Talent Requires Warrior Critical strike chance increased by 1% and critical strike damage of Execute increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110118,
+          90347
+        ],
+        "unlocks": [
+          90380,
+          108543
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90373,
+        "name": "Dual Wield Specialization",
+        "spell_id": 382900,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382900,
+            "description": "Dual Wield Specialization Talent Requires Warrior While dual wielding your damage is increased by 3% and movement speed is increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 382900,
+            "description": "Dual Wield Specialization Talent Requires Warrior While dual wielding your damage is increased by 3% and movement speed is increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110118,
+          108685
+        ],
+        "unlocks": [
+          108542,
+          90380
+        ],
+        "row": 10,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90360,
+        "name": "Wild Strikes",
+        "spell_id": 382946,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 382946,
+            "description": "Wild Strikes Talent Requires Warrior Haste increased by 1% and your auto-attack critical strikes increase your auto-attack speed by 10% for 10 sec. (8s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 382946,
+            "description": "Wild Strikes Talent Requires Warrior Haste increased by 1% and your auto-attack critical strikes increase your auto-attack speed by 10% for 10 sec. (8s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          108685,
+          108686
+        ],
+        "unlocks": [
+          108542,
+          108544
+        ],
+        "row": 10,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108543,
+        "name": "Anger Management",
+        "spell_id": 152278,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 152278,
+            "description": "Anger Management Talent Requires Warrior Requires level 50 (Arms, Fury, Protection) Arms Every you spend on attacks reduces the remaining cooldown on Avatar and Colossus Smash by 1 sec. Fury Every you spend on attacks reduces the remaining cooldown on Avatar and Recklessness by 1 sec. Protection Every you spend reduces the remaining cooldown on Avatar and Shield Wall by 1 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90381
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90380,
+        "name": "Champion's Spear",
+        "spell_id": 376079,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 376079,
+            "description": "Champion's Spear Talent Requires Warrior Throw a spear at the target location, chaining all enemies in the area to the spear's location and dealing (239.25% of Attack Power) Physical damage instantly and an additional (326.25% of Attack Power) Physical damage over 6 sec. While the spear is active, activating this ability will cause you to leap to the spear, dealing (47% of Attack Power) Physical damage to all targets. All damage dealt reduced beyond 5 targets. Generates .",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90381,
+          90373
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108542,
+        "name": "Stance Mastery",
+        "spell_id": 1280961,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1280961,
+            "description": "Stance Mastery Talent Requires Warrior Fury Your stances have additional effects. Berserker Stance Increases your auto-attack speed by 3%. Defensive Stance When an attack deals 20% or more of your maximum health in damage, that damage is reduced by 15%. Arms, Protection Your stances have additional effects. Battle Stance Increases the critical strike damage of your abilities by 3%. Defensive Stance When an attack deals 20% or more of your maximum health in damage, that damage is reduced by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90360,
+          90373
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 108544,
+        "name": "Battlefield Commander",
+        "spell_id": 424742,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 424742,
+            "description": "Battlefield Commander Talent Requires Warrior Your Shout abilities have additional effects. Battle Shout : Grants you an additional 3% attack power. Rallying Cry : Grants an additional 2% health and duration increased by 3 sec. Piercing Howl : Radius increased by 100% Berserker Shout : Radius increased by 100%. Intimidating Shout : Cooldown reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90360
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 94803,
+        "name": "Lightning Strikes",
+        "spell_id": 434969,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 434969,
+            "description": "Lightning Strikes Talent Requires Warrior Fury Damaging enemies with Thunder Clap, Raging Blow, or Execute has a 25% chance to also strike one with a lightning bolt, dealing (155.1% of Attack Power) Nature damage . Lightning Strikes occur 30% more often during Avatar. Protection Damaging enemies with Thunder Clap, Revenge, or Execute has a 25% chance to also strike one with a lightning bolt, dealing (155.1% of Attack Power) Nature damage . Lightning Strikes occur 30% more often during Avatar.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94816,
+          94800,
+          94808,
+          109811
+        ],
+        "row": 1,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94814,
+        "name": "Slayer's Dominance",
+        "spell_id": 444767,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444767,
+            "description": "Slayer's Dominance Talent Requires Warrior Your attacks against your primary target have a 15% chance to overwhelm their defenses and trigger a Slayer's Strike, dealing (600.3% of Attack Power) Physical damage and granting you a stack of Executioner, increasing your Execute damage by 3% for 12 sec. Multiple stacks of Executioner may overlap. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          94810,
+          94788,
+          94795,
+          109817
+        ],
+        "row": 2,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90392,
+        "name": "Bloodthirst",
+        "spell_id": 23881,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 23881,
+            "description": "Bloodthirst Talent Requires Warrior Requires Melee Weapon Assault the target in a bloodthirsty craze, dealing (424.203% of Attack Power) Physical damage and restoring 3% of your health. Generates (80 / Recklessness : 120 / Seethe : 100 / 10) Rage and has a 30 % chance to Enrage you.",
+            "cooldown": 4.5,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          90396
+        ],
+        "row": 2,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94816,
+        "name": "Crashing Thunder",
+        "spell_id": 436707,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 436707,
+            "description": "Crashing Thunder Talent Requires Warrior Fury Stormstrike or Nature damage your abilities deal is increased by 5%. Stormstrike damage ignores Armor. Thunder Clap damage increased by 30%, no longer costs Rage, and now generates . Improved Whirlwind, Meat Cleaver, and Barbaric Training affect Thunder Clap in addition to Whirlwind. Protection Stormstrike or Nature damage your abilities deal is increased by 5%. Stormstrike damage ignores Armor. Thunder Clap damage increased by 30%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94803
+        ],
+        "unlocks": [
+          94785
+        ],
+        "row": 2,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94800,
+        "name": "Ground Current",
+        "spell_id": 436148,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 436148,
+            "description": "Ground Current Talent Requires Warrior Lightning Strikes also deal (29.81% of Attack Power) Nature damage to enemies near their target. Damage reduced beyond 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94803
+        ],
+        "unlocks": [
+          94817
+        ],
+        "row": 2,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94808,
+        "name": "Strength of the Mountain",
+        "spell_id": 437068,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 437068,
+            "description": "Strength of the Mountain Talent Requires Warrior Fury Shield Slam damage increased by 15%. Bloodthirst and Rampage damage increased by 25%. Protection Shield Slam damage increased by 15%. Demoralizing Shout reduces damage enemies deal to you by an additional 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94803
+        ],
+        "unlocks": [
+          94798
+        ],
+        "row": 2,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109811,
+        "name": "Storm Surge",
+        "spell_id": 275336,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 275336,
+            "description": "Storm Surge Talent Requires Warrior Requires level 45 Avatar increases the damage of Thunder Clap by 50% and reduces its cooldown by 50%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Thunder Clap",
+                "type": "damage_increase",
+                "value": 50,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94803
+        ],
+        "unlocks": [
+          109810
+        ],
+        "row": 2,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94788,
+        "name": "Imminent Demise",
+        "spell_id": 444769,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444769,
+            "description": "Imminent Demise Talent Requires Warrior Every 3 Slayer's Strikes you gain Sudden Death. Using Sudden Death accelerates your next Bladestorm, striking 1 additional time (max 3). Bladestorm's total duration is unchanged. Sudden Death has a 100% chance to trigger Reap the Storm.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94814
+        ],
+        "unlocks": [
+          94813
+        ],
+        "row": 3,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94810,
+        "name": "Overwhelming Blades",
+        "spell_id": 444772,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444772,
+            "description": "Overwhelming Blades Talent Requires Warrior Each strike of Bladestorm applies Overwhelmed to all enemies affected, increasing damage you deal to them by 1 % for 20 sec, max 5 stacks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94814
+        ],
+        "unlocks": [
+          94786
+        ],
+        "row": 3,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94795,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444776,
+            "name": "Relentless Pursuit",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444776,
+                "description": "Relentless Pursuit Talent Requires Warrior Charge increases your movement speed by 70% for 3 sec. Charge removes all movement impairing effects, this effect cannot occur more than once every 30 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444777,
+            "name": "Vicious Agility",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444777,
+                "description": "Vicious Agility Talent Requires Warrior Heroic Leap reduces the cooldown of Charge by 5 sec and Charge reduces the cooldown of Heroic Leap by 2 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Charge",
+                    "type": "cd_reduction",
+                    "value": 5,
+                    "unit": "seconds"
+                  },
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Heroic Leap",
+                    "type": "cd_reduction",
+                    "value": 2,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94814
+        ],
+        "unlocks": [
+          94787
+        ],
+        "row": 3,
+        "col": 11
+      },
+      {
+        "node_id": 109817,
+        "name": "Violent Euphoria",
+        "spell_id": 1270717,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270717,
+            "description": "Violent Euphoria Talent Requires Warrior Bladestorm puts you into a battle trance, granting you 15% haste for 8 sec after you stop Bladestorming.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94814
+        ],
+        "unlocks": [
+          109816
+        ],
+        "row": 3,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90396,
+        "name": "Raging Blow",
+        "spell_id": 85288,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 85288,
+            "description": "Raging Blow Talent Requires Warrior Requires Melee Weapon A mighty blow with both weapons that deals a total of [(172.498% of Attack Power) + (172.498% of Attack Power)] Physical damage. [ Improved Raging Blow : Raging Blow has a 25% chance to instantly reset its own cooldown ] Generates ( 120 / 10) Rage.",
+            "cooldown": 8.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90392
+        ],
+        "unlocks": [
+          90398,
+          90429,
+          90430
+        ],
+        "row": 3,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94785,
+        "name": "Thunder Blast",
+        "spell_id": 435607,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 435607,
+            "description": "Thunder Blast Talent Requires Warrior Shield Slam and Bloodthirst have a 35% chance to grant you Thunder Blast, stacking up to 2 charges. Thunder Blast Your next Thunder Clap becomes a Thunder Blast that deals (152.139% of Attack Power) Stormstrike damage and generates .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94816
+        ],
+        "unlocks": [
+          94797
+        ],
+        "row": 3,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94817,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 436162,
+            "name": "Storm Bolts",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 436162,
+                "description": "Storm Bolts Talent Requires Warrior Storm Bolt also hits 2 additional nearby targets, stunning them for 2 sec, but its cooldown is increased by 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 438597,
+            "name": "Storm Shield",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 438597,
+                "description": "Storm Shield Talent Requires Warrior Intervening a target grants them a shield for 5 sec that absorbs magic damage equal to 3 times your Armor.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94800
+        ],
+        "unlocks": [
+          94792
+        ],
+        "row": 3,
+        "col": 22
+      },
+      {
+        "node_id": 94798,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 438590,
+            "name": "Keep Your Feet on the Ground",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 438590,
+                "description": "Keep Your Feet on the Ground Talent Requires Warrior Physical damage taken reduced by 2%. Thunder Blast reduces damage you take by 8% for 5 sec. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 434970,
+            "name": "Steadfast as the Peaks",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 434970,
+                "description": "Steadfast as the Peaks Talent Requires Warrior Stamina increased by 5%. [ Impending Victory / Victory Rush] increases your maximum health by 10% for 5 sec. When this health increase expires, you heal for any amount of the original [ Impending Victory / Victory Rush] that healed you in excess of your full health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94808
+        ],
+        "unlocks": [
+          94807
+        ],
+        "row": 3,
+        "col": 23
+      },
+      {
+        "node_id": 109810,
+        "name": "Conductivity",
+        "spell_id": 1270723,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270723,
+            "description": "Conductivity Talent Requires Warrior Lightning Strike damage increased by 10% and critical strike damage increased by 10%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109811
+        ],
+        "unlocks": [
+          109809
+        ],
+        "row": 3,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94813,
+        "name": "Death Drive",
+        "spell_id": 444770,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444770,
+            "description": "Death Drive Talent Requires Warrior You heal for 15% of damage dealt by Sudden Death.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94788
+        ],
+        "unlocks": [
+          94784
+        ],
+        "row": 4,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94786,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444778,
+            "name": "Culling Cyclone",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444778,
+                "description": "Culling Cyclone Talent Requires Warrior Each strike of Bladestorm deals an additional 20% damage evenly split across all targets.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 446085,
+            "name": "Brutal Finish",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 446085,
+                "description": "Brutal Finish Talent Requires Warrior Arms Your next Mortal Strike after Bladestorm ends deals 50% additional damage. Fury Your next Rampage after Bladestorm ends deals 50% additional damage.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94810
+        ],
+        "unlocks": [
+          94809
+        ],
+        "row": 4,
+        "col": 10
+      },
+      {
+        "node_id": 94787,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 444773,
+            "name": "Fierce Followthrough",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444773,
+                "description": "Fierce Followthrough Talent Requires Warrior Fury Bloodthirst critical strikes increase the damage of your next Bloodthirst by 20%. Arms Mortal Strike critical strikes increase the damage of your next Mortal Strike by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "your next Bloodthirst",
+                    "type": "damage_increase",
+                    "value": 20,
+                    "unit": "percent"
+                  },
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "your next Mortal Strike",
+                    "type": "damage_increase",
+                    "value": 20,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 444774,
+            "name": "Opportunist",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 444774,
+                "description": "Opportunist Talent Requires Warrior Arms When Overpower has its cooldown reset by Tactician, your next Overpower deals 10% additional damage and 10% additional critical damage. Stacking up to 2 times. Fury When Raging Blow resets its own cooldown, your next Raging Blow deals 10% additional damage and 10% additional critical damage. Stacking up to 2 times.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94795
+        ],
+        "unlocks": [
+          94801
+        ],
+        "row": 4,
+        "col": 11
+      },
+      {
+        "node_id": 109816,
+        "name": "Deadly Focus",
+        "spell_id": 1270718,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270718,
+            "description": "Deadly Focus Talent Requires Warrior Executioner's duration is increased by 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109817
+        ],
+        "unlocks": [
+          109815
+        ],
+        "row": 4,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90430,
+        "name": "Sudden Death",
+        "spell_id": 29725,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 29725,
+            "description": "Sudden Death Talent Requires Warrior Requires level 15 Approximately 1.7 procs per minute Fury, Protection Your attacks have a chance to make your next Execute be usable on any target regardless of their health. Arms Your attacks have a chance to make your next Execute cost no Rage, be usable on any target regardless of their health, and deal damage as if you spent . (3s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90396
+        ],
+        "unlocks": [
+          90395,
+          90403
+        ],
+        "row": 4,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90398,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 383848,
+            "name": "Frenzied Enrage",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 383848,
+                "description": "Frenzied Enrage Talent Requires Warrior Enrage increases your haste by 15% and your movement speed by 10%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 440277,
+            "name": "Powerful Enrage",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 440277,
+                "description": "Powerful Enrage Talent Requires Warrior Enrage increases your mastery by 15% and your Leech by 3%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90396
+        ],
+        "unlocks": [
+          90394,
+          90395
+        ],
+        "row": 4,
+        "col": 18
+      },
+      {
+        "node_id": 90429,
+        "name": "Improved Execute",
+        "spell_id": 316402,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 316402,
+            "description": "Improved Execute Talent Requires Warrior Execute no longer costs Rage and now generates .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90396
+        ],
+        "unlocks": [
+          90394,
+          90427
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94797,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 437079,
+            "name": "Flashing Skies",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 437079,
+                "description": "Flashing Skies Talent Requires Warrior Thunder Blast calls down a Lightning Strike on an enemy it hits.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 456270,
+            "name": "Snap Induction",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 456270,
+                "description": "Snap Induction Talent Requires Warrior Protection Activating Demoralizing Shout grants a charge of Thunder Blast. Fury Activating Recklessness grants a charge of Thunder Blast. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94785
+        ],
+        "unlocks": [
+          94805
+        ],
+        "row": 4,
+        "col": 21
+      },
+      {
+        "node_id": 94792,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 436201,
+            "name": "Gathering Clouds",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 436201,
+                "description": "Gathering Clouds Talent Requires Warrior Your attacks trigger Lightning Strikes 30% more often.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 436152,
+            "name": "Thorim's Might",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 436152,
+                "description": "Thorim's Might Talent Requires Warrior Fury Lightning Strikes generate . Raging Blow and Execute damage increased by 25%. Protection Lightning Strikes generate . Revenge and Execute damage increased by 25%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          94817
+        ],
+        "unlocks": [
+          94805
+        ],
+        "row": 4,
+        "col": 22
+      },
+      {
+        "node_id": 94807,
+        "name": "Burst of Power",
+        "spell_id": 437118,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 437118,
+            "description": "Burst of Power Talent Requires Warrior Fury Lightning Strikes have a 15% chance to make your next 2 Bloodthirsts have no cooldown, deal 35% increased damage, and generate 2 additional Rage. Protection Lightning Strikes have a 15% chance to make your next 2 Shield Slams have no cooldown. (Proc chance: 15%, 100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94798
+        ],
+        "unlocks": [
+          94805
+        ],
+        "row": 4,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109809,
+        "name": "Capacitance",
+        "spell_id": 1270724,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1270724,
+            "description": "Capacitance Talent Requires Warrior During Avatar, Thunder Blast extends Avatar's duration by 2.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109810
+        ],
+        "unlocks": [
+          94805
+        ],
+        "row": 4,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94784,
+        "name": "Show No Mercy",
+        "spell_id": 444771,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444771,
+            "description": "Show No Mercy Talent Requires Warrior Executioner also increases your Execute critical strike chance and critical strike damage by 3% per stack.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94813
+        ],
+        "unlocks": [
+          94820
+        ],
+        "row": 5,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94809,
+        "name": "Reap the Storm",
+        "spell_id": 444775,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444775,
+            "description": "Reap the Storm Talent Requires Warrior Fury Bloodthirst has a 20% chance to cause you to unleash a flurry of steel, striking all nearby enemies for (593.776% of Attack Power) Physical damage and applying Overwhelmed. Deals reduced damage beyond 8 targets. Arms Mortal Strike and Cleave when it hits 3 or more targets have a 20% chance to cause you to unleash a flurry of steel, striking all nearby enemies for (593.776% of Attack Power) Physical damage and applying Overwhelmed. Deals reduced damage beyond 8 targets. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94786
+        ],
+        "unlocks": [
+          94820
+        ],
+        "row": 5,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94801,
+        "name": "Slayer's Malice",
+        "spell_id": 444779,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444779,
+            "description": "Slayer's Malice Talent Requires Warrior Arms Overpower and Execute damage increased by 15%. Fury Raging Blow and Execute damage increased by 15%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94787
+        ],
+        "unlocks": [
+          94820
+        ],
+        "row": 5,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109815,
+        "name": "Unhinged",
+        "spell_id": 386628,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386628,
+            "description": "Unhinged Talent Requires Warrior Fury Every 2 strikes of Bladestorm, you automatically cast a Bloodthirst at your target or random nearby enemy, dealing 100% of normal damage. Arms Every 2 strikes of Bladestorm, you automatically cast a Mortal Strike at your target or random nearby enemy, dealing 100% of normal damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109816
+        ],
+        "unlocks": [
+          94820
+        ],
+        "row": 5,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90403,
+        "name": "Focus in Chaos",
+        "spell_id": 383486,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383486,
+            "description": "Focus in Chaos Talent Requires Warrior While Enraged, your auto-attacks can no longer miss.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90430
+        ],
+        "unlocks": [
+          90410,
+          90399
+        ],
+        "row": 5,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90395,
+        "name": "Enraged Regeneration",
+        "spell_id": 184364,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 184364,
+            "description": "Enraged Regeneration Talent Requires Warrior Reduces damage taken by 30% and Bloodthirst restores an additional 20% health for 8 sec . Usable while stunned or incapacitated.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90430,
+          90398
+        ],
+        "unlocks": [
+          90399,
+          90408,
+          110330
+        ],
+        "row": 5,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90394,
+        "name": "Warpaint",
+        "spell_id": 208154,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 208154,
+            "description": "Warpaint Talent Requires Warrior Requires level 35 You take 10% reduced damage while Enrage is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90429,
+          90398
+        ],
+        "unlocks": [
+          90390,
+          90408
+        ],
+        "row": 5,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90427,
+        "name": "Improved Whirlwind",
+        "spell_id": 12950,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 12950,
+            "description": "Improved Whirlwind Talent Requires Warrior Whirlwind [ Crashing Thunder : and Thunder Clap cause / causes] your next 4 single-target attacks to strike up to 4 additional targets for 65% damage. Whirlwind generates plus an additional 1 per target hit. Maximum .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90429
+        ],
+        "unlocks": [
+          90391,
+          90390
+        ],
+        "row": 5,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94805,
+        "name": "Avatar of the Storm",
+        "spell_id": 437134,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 437134,
+            "description": "Avatar of the Storm Talent Requires Warrior Casting Avatar grants you 2 charges of Thunder Blast and resets the cooldown of Thunder Clap. While Avatar is not active, Lightning Strikes have a 10% chance to grant you Avatar for 4 secs. Thunder Blast Your next Thunder Clap becomes a Thunder Blast that deals Stormstrike damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          94797,
+          94792,
+          94807,
+          109809
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 94820,
+        "name": "Unrelenting Onslaught",
+        "spell_id": 444780,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 444780,
+            "description": "Unrelenting Onslaught Talent Requires Warrior Using Sudden Death causes you to both reduce the cooldown of Bladestorm by 5 sec and apply 1 stack of Overwhelmed to your primary target per stack of Executioner you have. You can use Pummel and Storm Bolt while Bladestorming.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Bladestorm",
+                "type": "cd_reduction",
+                "value": 5,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          94801,
+          94809,
+          94784,
+          109815
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90410,
+        "name": "Massacre",
+        "spell_id": 206315,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 206315,
+            "description": "Massacre Talent Requires Warrior Requires level 30 Execute is usable on targets below 35% health and its cooldown is reduced by 1.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90403
+        ],
+        "unlocks": [
+          109966
+        ],
+        "row": 6,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90399,
+        "name": "Fresh Meat",
+        "spell_id": 215568,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 215568,
+            "description": "Fresh Meat Talent Requires Warrior Requires level 15 Bloodthirst always Enrages you the first time you strike a target and it has a 15% increased chance to trigger Enrage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90395,
+          90403
+        ],
+        "unlocks": [
+          90397,
+          109966
+        ],
+        "row": 6,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110330,
+        "name": "Invigorating Fury",
+        "spell_id": 383468,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383468,
+            "description": "Invigorating Fury Talent Requires Warrior Enraged Regeneration lasts 3 sec longer and instantly heals for 10% of your maximum health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90395
+        ],
+        "unlocks": [],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90408,
+        "name": "Rampage",
+        "spell_id": 184367,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 184367,
+            "description": "Rampage Talent Requires Warrior Requires Melee Weapon Unleash a series of 4 brutal strikes for a total of [(203.065% of Attack Power) + (118.455% of Attack Power) + (270.756% of Attack Power) + (152.3% of Attack Power)] Physical damage. Enrages you. Fury While Improved Whirlwind is active, you instead deal ((135.377% of Attack Power) + (78.9703% of Attack Power) + (180.505% of Attack Power) + (101.533% of Attack Power)) Physical damage to all enemies in front of you. Deals reduced damage beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90394,
+          90395
+        ],
+        "unlocks": [
+          90407,
+          109969,
+          109965
+        ],
+        "row": 6,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90390,
+        "name": "Improved Raging Blow",
+        "spell_id": 383854,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383854,
+            "description": "Improved Raging Blow Talent Requires Warrior Raging Blow has 2 charges and has a 25% chance to instantly reset its own cooldown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90427,
+          90394
+        ],
+        "unlocks": [
+          109967,
+          90428
+        ],
+        "row": 6,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90391,
+        "name": "Rampaging Ruin",
+        "spell_id": 1265357,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265357,
+            "description": "Rampaging Ruin Talent Requires Warrior While Improved Whirlwind is active Rampage instead strikes all targets in front of you for [(135.377% of Attack Power) + (78.9703% of Attack Power) + (180.505% of Attack Power) + (101.533% of Attack Power)] Physical damage. Deals reduced damage beyond 5 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90427
+        ],
+        "unlocks": [
+          109967
+        ],
+        "row": 6,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109966,
+        "name": "Deep Wounds",
+        "spell_id": 1261060,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1261060,
+            "description": "Deep Wounds Talent Requires Warrior Execute inflicts Deep Wounds on the target. Deep Wounds Causes the target to suffer (145.48% of Attack Power) Bleed damage over 6 sec. If this effect is reapplied, any remaining damage will be added to the new Deep Wounds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90410,
+          90399
+        ],
+        "unlocks": [],
+        "row": 7,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90397,
+        "name": "Spite",
+        "spell_id": 383852,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383852,
+            "description": "Spite Talent Requires Warrior Bloodthirst and Raging Blow damage increased by 2.5% and critical strike damage increased by 2.5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 383852,
+            "description": "Spite Talent Requires Warrior Bloodthirst and Raging Blow damage increased by 2.5% and critical strike damage increased by 2.5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90399
+        ],
+        "unlocks": [
+          90402,
+          109962
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109969,
+        "name": "Scent of Blood",
+        "spell_id": 1265355,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265355,
+            "description": "Scent of Blood Talent Requires Warrior Rampage increases the damage of your next Bloodthirst by 10%, stacking up to 2 times. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Bloodthirst",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90408
+        ],
+        "unlocks": [
+          90412,
+          109962
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109965,
+        "name": "Kill or Be Killed",
+        "spell_id": 1265361,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265361,
+            "description": "Kill or Be Killed Talent Requires Warrior When you would sustain fatal damage, you instead fly into an unstoppable rage, becoming unkillable and immune to movement-impairing effects for 8 sec as you seek revenge on your would-be killer. If you kill your killer in that time, you emerge from your blind rage triumphant, with at least 20% of your max health intact. If you are not victorious, you die. This effect can only occur once every 5 min and if your killer is alive when you sustain fatal damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90408
+        ],
+        "unlocks": [
+          90412
+        ],
+        "row": 7,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90407,
+        "name": "Hack and Slash",
+        "spell_id": 383877,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383877,
+            "description": "Hack and Slash Talent Requires Warrior Each Rampage strike has a 25% chance to refund a charge of Raging Blow. (Proc chance: 25%)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90408
+        ],
+        "unlocks": [
+          90412,
+          90405
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90428,
+        "name": "Cruelty",
+        "spell_id": 392931,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 392931,
+            "description": "Cruelty Talent Requires Warrior While Enraged, Bloodthirst and Raging Blow deal 5% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 392931,
+            "description": "Cruelty Talent Requires Warrior While Enraged, Bloodthirst and Raging Blow deal 5% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90390
+        ],
+        "unlocks": [
+          90387,
+          90405
+        ],
+        "row": 7,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109967,
+        "name": "Meat Cleaver",
+        "spell_id": 280392,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 280392,
+            "description": "Meat Cleaver Talent Requires Warrior Requires level 45 Whirlwind [ Crashing Thunder : and Thunder Clap deal / deals] 50% additional damage when [ Crashing Thunder : they hit / it hits] 3 or more targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90391,
+          90390
+        ],
+        "unlocks": [],
+        "row": 7,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90402,
+        "name": "Cold Steel, Hot Blood",
+        "spell_id": 383959,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383959,
+            "description": "Cold Steel, Hot Blood Talent Requires Warrior Bloodthirst critical strikes generate 4 additional Rage and inflict a Gushing Wound that deals 9 Bleed damage over 6 sec and heals you for the damage dealt. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90397
+        ],
+        "unlocks": [
+          90421
+        ],
+        "row": 8,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109962,
+        "name": "Ragedrinker",
+        "spell_id": 1265356,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265356,
+            "description": "Ragedrinker Talent Requires Warrior Bloodthirst critical strikes restore 3% additional health and increase the damage of Raging Blow by 10% for 4 sec. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Raging Blow",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90397,
+          109969
+        ],
+        "unlocks": [
+          90406,
+          90421
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90412,
+        "name": "Recklessness",
+        "spell_id": 1719,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1719,
+            "description": "Recklessness Talent Requires Warrior Go berserk, increasing all Rage generation by 50% and granting your abilities 20% increased critical strike chance for 12 sec. Fury Generates .",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90407,
+          109969,
+          109965
+        ],
+        "unlocks": [
+          90406
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90405,
+        "name": "Bloodcraze",
+        "spell_id": 393950,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 393950,
+            "description": "Bloodcraze Talent Requires Warrior Raging Blow increases the damage of your next Bloodthirst by 5%, stacking up to 5 times.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Bloodthirst",
+                "type": "damage_increase",
+                "value": 5,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          90428,
+          90407
+        ],
+        "unlocks": [
+          90406,
+          90425
+        ],
+        "row": 8,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90387,
+        "name": "Wrath and Fury",
+        "spell_id": 392936,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 392936,
+            "description": "Wrath and Fury Talent Requires Warrior Raging Blow deals 15% increased damage and while Enraged, Raging Blow has a 10% increased chance to instantly reset its own cooldown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90428
+        ],
+        "unlocks": [
+          90425
+        ],
+        "row": 8,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90421,
+        "name": "Deft Experience",
+        "spell_id": 383295,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383295,
+            "description": "Deft Experience Talent Requires Warrior Bloodthirst's critical strike chance increased by 5% and if you are Enraged, Bloodthirst extends your Enrage by 0.5 sec. This extension is doubled if Bloodthirst critically strikes your primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 383295,
+            "description": "Deft Experience Talent Requires Warrior Bloodthirst's critical strike chance increased by 5% and if you are Enraged, Bloodthirst extends your Enrage by 0.5 sec. This extension is doubled if Bloodthirst critically strikes your primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90402,
+          109962
+        ],
+        "unlocks": [
+          109963,
+          110203
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90406,
+        "name": "Frenzy",
+        "spell_id": 335077,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 335077,
+            "description": "Frenzy Talent Requires Warrior Requires level 30 Rampage increases your haste by 2% for 12 sec. Multiple instances of this effect may overlap. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90405,
+          90412,
+          109962
+        ],
+        "unlocks": [
+          90401,
+          110203
+        ],
+        "row": 9,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90425,
+        "name": "Critical Thinking",
+        "spell_id": 383297,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383297,
+            "description": "Critical Thinking Talent Requires Warrior Raging Blow's critical strike chance increased by 5% and critical strike damage increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 383297,
+            "description": "Critical Thinking Talent Requires Warrior Raging Blow's critical strike chance increased by 5% and critical strike damage increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90405,
+          90387
+        ],
+        "unlocks": [
+          109964,
+          90401
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109963,
+        "name": "Vicious Contempt",
+        "spell_id": 383885,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383885,
+            "description": "Vicious Contempt Talent Requires Warrior Bloodthirst deals 25% increased damage to enemies who are below 35% health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90421
+        ],
+        "unlocks": [
+          109968
+        ],
+        "row": 10,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110203,
+        "name": "Odyn's Fury",
+        "spell_id": 385059,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385059,
+            "description": "Odyn's Fury Talent Requires Warrior Requires Melee Weapon Unleashes your power, dealing [(182.598% of Attack Power)% + (182.598% of Attack Power)% + (182.598% of Attack Power)% + (182.598% of Attack Power)%] Physical damage and an additional (520% of Attack Power) Bleed damage over 4 sec to all enemies within 12 yards. Deals reduced damage beyond 8 targets. Enrages you and generates .",
+            "cooldown": 45.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90406,
+          90421
+        ],
+        "unlocks": [
+          90388,
+          109968
+        ],
+        "row": 10,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90401,
+        "name": "Bloodborne",
+        "spell_id": 385703,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385703,
+            "description": "Bloodborne Talent Requires Warrior Bloodthirst causes your Bleeds to deal 20% additional damage for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90425,
+          90406
+        ],
+        "unlocks": [
+          90415,
+          90388
+        ],
+        "row": 10,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109964,
+        "name": "Surge of Adrenaline",
+        "spell_id": 1265359,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265359,
+            "description": "Surge of Adrenaline Talent Requires Warrior When Raging Blow resets its own cooldown, your auto-attack damage and speed is increased by 30% for 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90425
+        ],
+        "unlocks": [
+          90415
+        ],
+        "row": 10,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109968,
+        "name": "Executioner's Wrath",
+        "spell_id": 1265570,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265570,
+            "description": "Executioner's Wrath Talent Requires Warrior Execute generates 5 additional Rage and increases the damage of Rampage by 10% for 4 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Rampage",
+                "type": "damage_increase",
+                "value": 10,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          109963,
+          110203
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90388,
+        "name": "Reckless Abandon",
+        "spell_id": 396749,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 396749,
+            "description": "Reckless Abandon Talent Requires Warrior Activating Recklessness generates and while Recklessness is active, Raging Blow and Bloodthirst are upgraded to Crushing Blow and Bloodbath. Crushing Blow Deals increased damage and deals 20% additional critical strike damage. Bloodbath Deals increased damage and wounds the target to suffer (60% of Attack Power) Bleed damage over 6 sec. Using Bloodbath on a target affected by Bloodbath extends the bleed by 6 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          90401,
+          110203
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90415,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 107574,
+            "name": "Avatar",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 107574,
+                "description": "Avatar Talent Requires Warrior Requires level Transform into a colossus, increasing all damage you deal by 20% and increasing your movement speed by 5% for 20 sec. Protection Transform into a colossus, increasing all damage you deal by 20% and reducing all damage you take by 3% for 20 sec. Arms Transform into a colossus, increasing all damage you deal by 20% and reducing damage you take from area of effect attacks by 5% for 20 sec.",
+                "cooldown": 90.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 227847,
+            "name": "Bladestorm",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 227847,
+                "description": "Bladestorm Talent Requires Warrior Requires Melee Weapon Fury Become an unstoppable storm of destructive force, striking all nearby enemies for [5 * (271.635% of Attack Power)%] Physical damage over 4 sec. Deals reduced damage beyond 8 targets. You are immune to movement impairing and loss of control effects, but can use defensive abilities and can avoid attacks. Generates on each strike. Arms Become an unstoppable storm of destructive force, striking all nearby enemies for [7 * (271.635% of Attack Power)%] Physical damage over 6 sec. Deals reduced damage beyond 8 targets. You are immune to movement impairing and loss of control effects, but can use defensive abilities and can avoid attacks.",
+                "cooldown": 90.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          90401,
+          109964
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 20
+      },
+      {
+        "node_id": 110412,
+        "name": "Rampaging Berserker",
+        "spell_id": 1269308,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1269308,
+            "description": "Rampaging Berserker Talent Requires Warrior Rampage damage increased by 10% and Rampage makes you go Berserk, increasing your Strength by 3% for 8 sec. Multiple applications of Berserk may overlap. (500ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Slayer",
+      "nodes": [
+        {
+          "node_id": 94784,
+          "name": "Show No Mercy",
+          "spell_id": 444771,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444771,
+              "description": "Show No Mercy Talent Requires Warrior Executioner also increases your Execute critical strike chance and critical strike damage by 3% per stack.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94813
+          ],
+          "unlocks": [
+            94820
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94786,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444778,
+              "name": "Culling Cyclone",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444778,
+                  "description": "Culling Cyclone Talent Requires Warrior Each strike of Bladestorm deals an additional 20% damage evenly split across all targets.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 446085,
+              "name": "Brutal Finish",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 446085,
+                  "description": "Brutal Finish Talent Requires Warrior Arms Your next Mortal Strike after Bladestorm ends deals 50% additional damage. Fury Your next Rampage after Bladestorm ends deals 50% additional damage.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94810
+          ],
+          "unlocks": [
+            94809
+          ],
+          "row": 4,
+          "col": 10
+        },
+        {
+          "node_id": 94787,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444773,
+              "name": "Fierce Followthrough",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444773,
+                  "description": "Fierce Followthrough Talent Requires Warrior Fury Bloodthirst critical strikes increase the damage of your next Bloodthirst by 20%. Arms Mortal Strike critical strikes increase the damage of your next Mortal Strike by 20%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "your next Bloodthirst",
+                      "type": "damage_increase",
+                      "value": 20,
+                      "unit": "percent"
+                    },
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "your next Mortal Strike",
+                      "type": "damage_increase",
+                      "value": 20,
+                      "unit": "percent"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444774,
+              "name": "Opportunist",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444774,
+                  "description": "Opportunist Talent Requires Warrior Arms When Overpower has its cooldown reset by Tactician, your next Overpower deals 10% additional damage and 10% additional critical damage. Stacking up to 2 times. Fury When Raging Blow resets its own cooldown, your next Raging Blow deals 10% additional damage and 10% additional critical damage. Stacking up to 2 times.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94795
+          ],
+          "unlocks": [
+            94801
+          ],
+          "row": 4,
+          "col": 11
+        },
+        {
+          "node_id": 94788,
+          "name": "Imminent Demise",
+          "spell_id": 444769,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444769,
+              "description": "Imminent Demise Talent Requires Warrior Every 3 Slayer's Strikes you gain Sudden Death. Using Sudden Death accelerates your next Bladestorm, striking 1 additional time (max 3). Bladestorm's total duration is unchanged. Sudden Death has a 100% chance to trigger Reap the Storm.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94814
+          ],
+          "unlocks": [
+            94813
+          ],
+          "row": 3,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94795,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 444776,
+              "name": "Relentless Pursuit",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444776,
+                  "description": "Relentless Pursuit Talent Requires Warrior Charge increases your movement speed by 70% for 3 sec. Charge removes all movement impairing effects, this effect cannot occur more than once every 30 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 444777,
+              "name": "Vicious Agility",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 444777,
+                  "description": "Vicious Agility Talent Requires Warrior Heroic Leap reduces the cooldown of Charge by 5 sec and Charge reduces the cooldown of Heroic Leap by 2 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Charge",
+                      "type": "cd_reduction",
+                      "value": 5,
+                      "unit": "seconds"
+                    },
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Heroic Leap",
+                      "type": "cd_reduction",
+                      "value": 2,
+                      "unit": "seconds"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94814
+          ],
+          "unlocks": [
+            94787
+          ],
+          "row": 3,
+          "col": 11
+        },
+        {
+          "node_id": 94801,
+          "name": "Slayer's Malice",
+          "spell_id": 444779,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444779,
+              "description": "Slayer's Malice Talent Requires Warrior Arms Overpower and Execute damage increased by 15%. Fury Raging Blow and Execute damage increased by 15%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94787
+          ],
+          "unlocks": [
+            94820
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94809,
+          "name": "Reap the Storm",
+          "spell_id": 444775,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444775,
+              "description": "Reap the Storm Talent Requires Warrior Fury Bloodthirst has a 20% chance to cause you to unleash a flurry of steel, striking all nearby enemies for (593.776% of Attack Power) Physical damage and applying Overwhelmed. Deals reduced damage beyond 8 targets. Arms Mortal Strike and Cleave when it hits 3 or more targets have a 20% chance to cause you to unleash a flurry of steel, striking all nearby enemies for (593.776% of Attack Power) Physical damage and applying Overwhelmed. Deals reduced damage beyond 8 targets. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94786
+          ],
+          "unlocks": [
+            94820
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94810,
+          "name": "Overwhelming Blades",
+          "spell_id": 444772,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444772,
+              "description": "Overwhelming Blades Talent Requires Warrior Each strike of Bladestorm applies Overwhelmed to all enemies affected, increasing damage you deal to them by 1 % for 20 sec, max 5 stacks.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94814
+          ],
+          "unlocks": [
+            94786
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94813,
+          "name": "Death Drive",
+          "spell_id": 444770,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444770,
+              "description": "Death Drive Talent Requires Warrior You heal for 15% of damage dealt by Sudden Death.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94788
+          ],
+          "unlocks": [
+            94784
+          ],
+          "row": 4,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94814,
+          "name": "Slayer's Dominance",
+          "spell_id": 444767,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444767,
+              "description": "Slayer's Dominance Talent Requires Warrior Your attacks against your primary target have a 15% chance to overwhelm their defenses and trigger a Slayer's Strike, dealing (600.3% of Attack Power) Physical damage and granting you a stack of Executioner, increasing your Execute damage by 3% for 12 sec. Multiple stacks of Executioner may overlap. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94810,
+            94788,
+            94795,
+            109817
+          ],
+          "row": 2,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94820,
+          "name": "Unrelenting Onslaught",
+          "spell_id": 444780,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 444780,
+              "description": "Unrelenting Onslaught Talent Requires Warrior Using Sudden Death causes you to both reduce the cooldown of Bladestorm by 5 sec and apply 1 stack of Overwhelmed to your primary target per stack of Executioner you have. You can use Pummel and Storm Bolt while Bladestorming.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Bladestorm",
+                  "type": "cd_reduction",
+                  "value": 5,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94801,
+            94809,
+            94784,
+            109815
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109815,
+          "name": "Unhinged",
+          "spell_id": 386628,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 386628,
+              "description": "Unhinged Talent Requires Warrior Fury Every 2 strikes of Bladestorm, you automatically cast a Bloodthirst at your target or random nearby enemy, dealing 100% of normal damage. Arms Every 2 strikes of Bladestorm, you automatically cast a Mortal Strike at your target or random nearby enemy, dealing 100% of normal damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109816
+          ],
+          "unlocks": [
+            94820
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109816,
+          "name": "Deadly Focus",
+          "spell_id": 1270718,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270718,
+              "description": "Deadly Focus Talent Requires Warrior Executioner's duration is increased by 6 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109817
+          ],
+          "unlocks": [
+            109815
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109817,
+          "name": "Violent Euphoria",
+          "spell_id": 1270717,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270717,
+              "description": "Violent Euphoria Talent Requires Warrior Bladestorm puts you into a battle trance, granting you 15% haste for 8 sec after you stop Bladestorming.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94814
+          ],
+          "unlocks": [
+            109816
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Mountain Thane",
+      "nodes": [
+        {
+          "node_id": 94785,
+          "name": "Thunder Blast",
+          "spell_id": 435607,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 435607,
+              "description": "Thunder Blast Talent Requires Warrior Shield Slam and Bloodthirst have a 35% chance to grant you Thunder Blast, stacking up to 2 charges. Thunder Blast Your next Thunder Clap becomes a Thunder Blast that deals (152.139% of Attack Power) Stormstrike damage and generates .",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94816
+          ],
+          "unlocks": [
+            94797
+          ],
+          "row": 3,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94792,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 436201,
+              "name": "Gathering Clouds",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 436201,
+                  "description": "Gathering Clouds Talent Requires Warrior Your attacks trigger Lightning Strikes 30% more often.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 436152,
+              "name": "Thorim's Might",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 436152,
+                  "description": "Thorim's Might Talent Requires Warrior Fury Lightning Strikes generate . Raging Blow and Execute damage increased by 25%. Protection Lightning Strikes generate . Revenge and Execute damage increased by 25%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94817
+          ],
+          "unlocks": [
+            94805
+          ],
+          "row": 4,
+          "col": 22
+        },
+        {
+          "node_id": 94797,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 437079,
+              "name": "Flashing Skies",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 437079,
+                  "description": "Flashing Skies Talent Requires Warrior Thunder Blast calls down a Lightning Strike on an enemy it hits.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 456270,
+              "name": "Snap Induction",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 456270,
+                  "description": "Snap Induction Talent Requires Warrior Protection Activating Demoralizing Shout grants a charge of Thunder Blast. Fury Activating Recklessness grants a charge of Thunder Blast. (100ms cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94785
+          ],
+          "unlocks": [
+            94805
+          ],
+          "row": 4,
+          "col": 21
+        },
+        {
+          "node_id": 94798,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 438590,
+              "name": "Keep Your Feet on the Ground",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 438590,
+                  "description": "Keep Your Feet on the Ground Talent Requires Warrior Physical damage taken reduced by 2%. Thunder Blast reduces damage you take by 8% for 5 sec. (100ms cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 434970,
+              "name": "Steadfast as the Peaks",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 434970,
+                  "description": "Steadfast as the Peaks Talent Requires Warrior Stamina increased by 5%. [ Impending Victory / Victory Rush] increases your maximum health by 10% for 5 sec. When this health increase expires, you heal for any amount of the original [ Impending Victory / Victory Rush] that healed you in excess of your full health.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94808
+          ],
+          "unlocks": [
+            94807
+          ],
+          "row": 3,
+          "col": 23
+        },
+        {
+          "node_id": 94800,
+          "name": "Ground Current",
+          "spell_id": 436148,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 436148,
+              "description": "Ground Current Talent Requires Warrior Lightning Strikes also deal (29.81% of Attack Power) Nature damage to enemies near their target. Damage reduced beyond 5 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94803
+          ],
+          "unlocks": [
+            94817
+          ],
+          "row": 2,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94803,
+          "name": "Lightning Strikes",
+          "spell_id": 434969,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 434969,
+              "description": "Lightning Strikes Talent Requires Warrior Fury Damaging enemies with Thunder Clap, Raging Blow, or Execute has a 25% chance to also strike one with a lightning bolt, dealing (155.1% of Attack Power) Nature damage . Lightning Strikes occur 30% more often during Avatar. Protection Damaging enemies with Thunder Clap, Revenge, or Execute has a 25% chance to also strike one with a lightning bolt, dealing (155.1% of Attack Power) Nature damage . Lightning Strikes occur 30% more often during Avatar.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94816,
+            94800,
+            94808,
+            109811
+          ],
+          "row": 1,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94805,
+          "name": "Avatar of the Storm",
+          "spell_id": 437134,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 437134,
+              "description": "Avatar of the Storm Talent Requires Warrior Casting Avatar grants you 2 charges of Thunder Blast and resets the cooldown of Thunder Clap. While Avatar is not active, Lightning Strikes have a 10% chance to grant you Avatar for 4 secs. Thunder Blast Your next Thunder Clap becomes a Thunder Blast that deals Stormstrike damage.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94797,
+            94792,
+            94807,
+            109809
+          ],
+          "unlocks": [],
+          "row": 5,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94807,
+          "name": "Burst of Power",
+          "spell_id": 437118,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 437118,
+              "description": "Burst of Power Talent Requires Warrior Fury Lightning Strikes have a 15% chance to make your next 2 Bloodthirsts have no cooldown, deal 35% increased damage, and generate 2 additional Rage. Protection Lightning Strikes have a 15% chance to make your next 2 Shield Slams have no cooldown. (Proc chance: 15%, 100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94798
+          ],
+          "unlocks": [
+            94805
+          ],
+          "row": 4,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94808,
+          "name": "Strength of the Mountain",
+          "spell_id": 437068,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 437068,
+              "description": "Strength of the Mountain Talent Requires Warrior Fury Shield Slam damage increased by 15%. Bloodthirst and Rampage damage increased by 25%. Protection Shield Slam damage increased by 15%. Demoralizing Shout reduces damage enemies deal to you by an additional 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94803
+          ],
+          "unlocks": [
+            94798
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94816,
+          "name": "Crashing Thunder",
+          "spell_id": 436707,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 436707,
+              "description": "Crashing Thunder Talent Requires Warrior Fury Stormstrike or Nature damage your abilities deal is increased by 5%. Stormstrike damage ignores Armor. Thunder Clap damage increased by 30%, no longer costs Rage, and now generates . Improved Whirlwind, Meat Cleaver, and Barbaric Training affect Thunder Clap in addition to Whirlwind. Protection Stormstrike or Nature damage your abilities deal is increased by 5%. Stormstrike damage ignores Armor. Thunder Clap damage increased by 30%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94803
+          ],
+          "unlocks": [
+            94785
+          ],
+          "row": 2,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94817,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 436162,
+              "name": "Storm Bolts",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 436162,
+                  "description": "Storm Bolts Talent Requires Warrior Storm Bolt also hits 2 additional nearby targets, stunning them for 2 sec, but its cooldown is increased by 10 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 438597,
+              "name": "Storm Shield",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 438597,
+                  "description": "Storm Shield Talent Requires Warrior Intervening a target grants them a shield for 5 sec that absorbs magic damage equal to 3 times your Armor.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94800
+          ],
+          "unlocks": [
+            94792
+          ],
+          "row": 3,
+          "col": 22
+        },
+        {
+          "node_id": 109809,
+          "name": "Capacitance",
+          "spell_id": 1270724,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270724,
+              "description": "Capacitance Talent Requires Warrior During Avatar, Thunder Blast extends Avatar's duration by 2.0 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109810
+          ],
+          "unlocks": [
+            94805
+          ],
+          "row": 4,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109810,
+          "name": "Conductivity",
+          "spell_id": 1270723,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270723,
+              "description": "Conductivity Talent Requires Warrior Lightning Strike damage increased by 10% and critical strike damage increased by 10%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109811
+          ],
+          "unlocks": [
+            109809
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109811,
+          "name": "Storm Surge",
+          "spell_id": 275336,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 275336,
+              "description": "Storm Surge Talent Requires Warrior Requires level 45 Avatar increases the damage of Thunder Clap by 50% and reduces its cooldown by 50%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Thunder Clap",
+                  "type": "damage_increase",
+                  "value": 50,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94803
+          ],
+          "unlocks": [
+            109810
+          ],
+          "row": 2,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Colossus",
+      "nodes": [
+        {
+          "node_id": 94789,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429639,
+              "name": "Boneshaker",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429639,
+                  "description": "Boneshaker Talent Requires Warrior Shockwave's stun duration is increased by 1 sec and reduces the movement speed of affected enemies by 40% for 3 sec after the stun ends.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440992,
+              "name": "Earthquaker",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440992,
+                  "description": "Earthquaker Talent Requires Warrior Shockwave also knocks enemies into the air and its cooldown is reduced by 5 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94818
+          ],
+          "unlocks": [
+            94815
+          ],
+          "row": 8,
+          "col": 11
+        },
+        {
+          "node_id": 94793,
+          "name": "Dominance of the Colossus",
+          "spell_id": 429636,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429636,
+              "description": "Dominance of the Colossus Talent Requires Warrior Colossal Might stacks up to 10 times. If you would gain a stack of Colossal Might and are at max stacks, the cooldown of Demolish is reduced by 2 sec. Enemies affected by Demolish take up to 10% more damage from you and deal up to 10% less damage to you for 10 sec based on the number of stacks of Colossal Might consumed by Demolish.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94806,
+            94794,
+            94796,
+            109812
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94794,
+          "name": "Precise Might",
+          "spell_id": 431548,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431548,
+              "description": "Precise Might Talent Requires Warrior Arms Mortal Strike critical strikes grant an additional stack of Colossal Might. Protection Shield Slam critical strikes grant an additional stack of Colossal Might.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94811
+          ],
+          "unlocks": [
+            94793
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94796,
+          "name": "Practiced Strikes",
+          "spell_id": 429647,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429647,
+              "description": "Practiced Strikes Talent Requires Warrior Arms Mortal Strike, Cleave, and Slam damage increased by 20%. Protection Shield Slam and Revenge damage increased by 15%. Shield Slam generates an additional .",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94799
+          ],
+          "unlocks": [
+            94793
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94799,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429637,
+              "name": "One Against Many",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429637,
+                  "description": "One Against Many Talent Requires Warrior Protection Shockwave and Revenge deal 5% more damage per target affected up to 5. Arms Shockwave, Cleave, and Whirlwind deal 5% more damage per target affected up to 5.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440995,
+              "name": "Arterial Bleed",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440995,
+                  "description": "Arterial Bleed Talent Requires Warrior Colossal Might increases the damage of your Rend and Deep Wounds by 3% per stack.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "your Rend and Deep Wounds",
+                      "type": "damage_increase",
+                      "value": 3,
+                      "unit": "percent"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94812
+          ],
+          "unlocks": [
+            94796
+          ],
+          "row": 9,
+          "col": 9
+        },
+        {
+          "node_id": 94806,
+          "name": "Mountain of Muscle and Scars",
+          "spell_id": 429642,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429642,
+              "description": "Mountain of Muscle and Scars Talent Requires Warrior You deal 5% more damage and take 5% less damage. Size increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94815
+          ],
+          "unlocks": [
+            94793
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94811,
+          "name": "Tide of Battle",
+          "spell_id": 429641,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429641,
+              "description": "Tide of Battle Talent Requires Warrior Arms Colossal Might increases the damage of your Overpower by 3% per stack. Protection Colossal Might increases the damage of your Revenge by 3% per stack.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Overpower",
+                  "type": "damage_increase",
+                  "value": 3,
+                  "unit": "percent"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "your Revenge",
+                  "type": "damage_increase",
+                  "value": 3,
+                  "unit": "percent"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            94819
+          ],
+          "unlocks": [
+            94794
+          ],
+          "row": 9,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94812,
+          "name": "Martial Expert",
+          "spell_id": 429638,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429638,
+              "description": "Martial Expert Talent Requires Warrior Critical strike damage of your abilities is increased by 10% and the amount of damage blocked by your critical blocks is increased by 20%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94818
+          ],
+          "unlocks": [
+            94799
+          ],
+          "row": 8,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94815,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 429644,
+              "name": "No Stranger to Pain",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 429644,
+                  "description": "No Stranger to Pain Talent Requires Warrior Damage prevented by each use of Ignore Pain is increased by 20%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 440993,
+              "name": "Veteran Vitality",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 440993,
+                  "description": "Veteran Vitality Talent Requires Warrior When your health is brought below 35%, you gain a Second Wind, healing you for 12% of your max health over 2 sec. This effect cannot occur more than once every 60 sec. (1m cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            94789
+          ],
+          "unlocks": [
+            94806
+          ],
+          "row": 9,
+          "col": 11
+        },
+        {
+          "node_id": 94818,
+          "name": "Demolish",
+          "spell_id": 436358,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 436358,
+              "description": "Demolish Talent Channeled () Requires Warrior Requires Melee Weapon Unleash a series of precise and powerful strikes against your target, dealing [(531.455% of Attack Power) + (531.455% of Attack Power) + (1232.36% of Attack Power)] damage to it, and (1232.36% of Attack Power) damage to enemies within 8 yds of it. Deals reduced damage beyond 8 targets. While channeling Demolish, you take 10% less damage and are immune to stuns, knockbacks, and forced movement effects. You can block, parry, dodge, and use certain defensive abilities while channeling Demolish.",
+              "cooldown": 45.0,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            94812,
+            94819,
+            94789,
+            109814
+          ],
+          "row": 7,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 94819,
+          "name": "Colossal Might",
+          "spell_id": 429634,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 429634,
+              "description": "Colossal Might Talent Requires Warrior Arms Colossal Might increases damage dealt by your next Demolish by 5%, stacking up to 5 times. Mortal Strike grants a stack of Colossal Might and Cleave grants a stack of Colossal Might when it strikes 3 or more targets. Protection Colossal Might increases damage dealt by your next Demolish by 5%, stacking up to 5 times. Shield Slam grants a stack of Colossal Might and Revenge grants a stack of Colossal Might when it strikes 3 or more targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94818
+          ],
+          "unlocks": [
+            94811
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109812,
+          "name": "Celeritous Conclusion",
+          "spell_id": 1270710,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270710,
+              "description": "Celeritous Conclusion Talent Requires Warrior Arms Demolish's final strike grants 10% Haste for 10 sec and increases the critical strike chance of your next Mortal Strike by 100%. Protection Demolish's final strike grants 10% Haste for 10 sec and increases the critical strike chance of your next Shield Slam by 100%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109813
+          ],
+          "unlocks": [
+            94793
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109813,
+          "name": "Cut to the Bone",
+          "spell_id": 1270709,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270709,
+              "description": "Cut to the Bone Talent Requires Warrior Arms Mortal Strike critical strikes increase your Rend and Deep Wounds damage by 15% for 8 sec. Protection Shield Slam critical strikes increase your Rend and Deep Wounds damage by 15% for 8 sec. (500ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109814
+          ],
+          "unlocks": [
+            109812
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109814,
+          "name": "Decimator",
+          "spell_id": 1270704,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1270704,
+              "description": "Decimator Talent Requires Warrior Demolish's final strike applies Deep Wounds to all targets, at 100% effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            94818
+          ],
+          "unlocks": [
+            109813
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5494 @@
+{
+  "class": "Paladin",
+  "spec": "Protection",
+  "scraped_at": "2026-03-25T18:50:51.689767+00:00",
+  "source": {
+    "structure": "blizzard_api",
+    "details": "wowhead_tooltip"
+  },
+  "class_tree": {
+    "nodes": [
+      {
+        "node_id": 99838,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 1,
+        "col": 10
+      },
+      {
+        "node_id": 81597,
+        "name": "Lay on Hands",
+        "spell_id": 633,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 633,
+            "description": "Lay on Hands Talent Requires Paladin Heals a friendly target for an amount equal to 100% your maximum health. Cannot be used on a target with Forbearance. Causes Forbearance for 30 sec.",
+            "cooldown": 600.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          81507,
+          109999,
+          103859
+        ],
+        "row": 2,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81600,
+        "name": "Auras of the Resolute",
+        "spell_id": 385633,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385633,
+            "description": "Auras of the Resolute Talent Requires Paladin Learn Concentration Aura, Devotion Aura, and Crusader Aura: Concentration Aura : Interrupt and Silence effects on party and raid members within 40 yds are 30% shorter. Devotion Aura : Party and raid members within 40 yds are bolstered by their devotion, reducing damage taken by 3%. Crusader Aura : Increases mounted speed by 20% for all party and raid members within 40 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          81598,
+          81632,
+          109999
+        ],
+        "row": 2,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81510,
+        "name": "Hammer of Wrath",
+        "spell_id": 1241288,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1241288,
+            "description": "Hammer of Wrath Talent Requires Paladin Holy, Protection During Avenging Wrath, Judgment is empowered into Hammer of Wrath. Hammer of Wrath Hurls a divine hammer that strikes an enemy for [(123.75% of Attack Power) * 1 ] [ Blades of Light : Holystrike / Holy] damage. Generates . Retribution During Avenging Wrath, Judgment is empowered into Hammer of Wrath. Hammer of Wrath Hurls a divine hammer that strikes an enemy for [(143.871% of Attack Power) * 1 ] Holy damage. Generates .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          81603,
+          93010,
+          81598
+        ],
+        "row": 2,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81507,
+        "name": "Cleanse Toxins",
+        "spell_id": 213644,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 213644,
+            "description": "Cleanse Toxins Talent 10% of base mana Requires Paladin Cleanses a friendly target, removing all Poison and Disease effects.",
+            "cooldown": 8.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81597
+        ],
+        "unlocks": [
+          93188,
+          103858
+        ],
+        "row": 3,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103859,
+        "name": "Empyreal Ward",
+        "spell_id": 387791,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 387791,
+            "description": "Empyreal Ward Talent Requires Paladin Lay on Hands grants the target 30% increased armor for 8 sec and now ignores healing reduction effects.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81597
+        ],
+        "unlocks": [
+          93188
+        ],
+        "row": 3,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109999,
+        "name": "Fist of Justice",
+        "spell_id": 234299,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 234299,
+            "description": "Fist of Justice Talent Requires Paladin Requires level 30 Hammer of Justice's cooldown is reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81600,
+          81597
+        ],
+        "unlocks": [
+          110012,
+          93188,
+          81632
+        ],
+        "row": 3,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81598,
+        "name": "Blinding Light",
+        "spell_id": 115750,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 115750,
+            "description": "Blinding Light Talent 1.2% of base mana Requires Paladin Requires level 30 Emits dazzling light in all directions, blinding enemies within 10 yds, causing them to wander disoriented for 6 sec. Damage may cancel the effect.",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81510,
+          81600
+        ],
+        "unlocks": [
+          81603,
+          103854,
+          81632
+        ],
+        "row": 3,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93010,
+        "name": "Turn Evil",
+        "spell_id": 10326,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 10326,
+            "description": "Turn Evil Talent 2.1% of base mana Requires Paladin The power of the Light compels an Undead, Aberration, or Demon target to flee for up to 40 sec. Damage may break the effect. Lesser creatures have a chance to be destroyed. Only one target can be turned at a time.",
+            "cooldown": 15.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81510
+        ],
+        "unlocks": [
+          103855
+        ],
+        "row": 3,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103858,
+        "name": "A Just Reward",
+        "spell_id": 469411,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469411,
+            "description": "A Just Reward Talent Requires Paladin Protection, Retribution After Cleanse Toxins successfully removes an effect from an ally, they are healed for [(540% of Spell Power)]. Holy After Cleanse successfully removes an effect from an ally, they are healed for [(540% of Spell Power)].",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 469411,
+            "description": "A Just Reward Talent Requires Paladin Protection, Retribution After Cleanse Toxins successfully removes an effect from an ally, they are healed for [(540% of Spell Power)]. Holy After Cleanse successfully removes an effect from an ally, they are healed for [(540% of Spell Power)].",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81507
+        ],
+        "unlocks": [
+          103860
+        ],
+        "row": 4,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93188,
+        "name": "Afterimage",
+        "spell_id": 385414,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385414,
+            "description": "Afterimage Talent Requires Paladin After you spend , your next Word of Glory echoes onto a nearby ally at 30% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81507,
+          109999,
+          103859
+        ],
+        "unlocks": [
+          103860,
+          81630
+        ],
+        "row": 4,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110012,
+        "name": "Guided Prayer",
+        "spell_id": 404357,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 404357,
+            "description": "Guided Prayer Talent Requires Paladin When your health is brought below 25%, you instantly cast a free Word of Glory at 60% effectiveness on yourself. Cannot occur more than once every 60 sec. (1m cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109999
+        ],
+        "unlocks": [],
+        "row": 4,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81632,
+        "name": "Divine Steed",
+        "spell_id": 190784,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 190784,
+            "description": "Divine Steed Talent Requires Paladin Leap atop your Charger for 3 sec , increasing movement speed by 100%. Usable while indoors or in combat.",
+            "cooldown": 45.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81598,
+          81600,
+          109999
+        ],
+        "unlocks": [
+          81605,
+          81631,
+          103857
+        ],
+        "row": 4,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103854,
+        "name": "Light's Countenance",
+        "spell_id": 469325,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469325,
+            "description": "Light's Countenance Talent Requires Paladin The cooldown of Blinding Light is reduced by 15 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81598
+        ],
+        "unlocks": [],
+        "row": 4,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81603,
+        "name": "Greater Judgment",
+        "spell_id": 231663,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 231663,
+            "description": "Greater Judgment Talent Requires Paladin Holy, Retribution Judgment causes the target to take 20% increased damage from your next Holy Power ability. Multiple applications may overlap. Protection Judgment causes the target to take 40% increased damage from your next Holy Power ability. Multiple applications may overlap.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81510,
+          81598
+        ],
+        "unlocks": [
+          81604,
+          93009
+        ],
+        "row": 4,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103855,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 460720,
+            "name": "Wrench Evil",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 460720,
+                "description": "Wrench Evil Talent Requires Paladin Turn Evil's cast time is reduced by 100%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 469317,
+            "name": "Stand Against Evil",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469317,
+                "description": "Stand Against Evil Talent Requires Paladin Turn Evil now affects 5 additional enemies.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          93010
+        ],
+        "unlocks": [
+          81604
+        ],
+        "row": 4,
+        "col": 7
+      },
+      {
+        "node_id": 103860,
+        "name": "Holy Reprieve",
+        "spell_id": 469445,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469445,
+            "description": "Holy Reprieve Talent Requires Paladin Your Forbearance's duration is reduced by 10 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93188,
+          103858
+        ],
+        "unlocks": [
+          93168,
+          81630
+        ],
+        "row": 5,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81605,
+        "name": "Cavalier",
+        "spell_id": 230332,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 230332,
+            "description": "Cavalier Talent Requires Paladin Requires level 35 Divine Steed now has 2 charges.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81632
+        ],
+        "unlocks": [
+          110006,
+          81614,
+          81630
+        ],
+        "row": 5,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103857,
+        "name": "Divine Spurs",
+        "spell_id": 469409,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469409,
+            "description": "Divine Spurs Talent Requires Paladin Divine Steed's cooldown is reduced by 20%, but its duration is reduced by 40%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81632
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81631,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 469304,
+            "name": "Steed of Liberty",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469304,
+                "description": "Steed of Liberty Talent Requires Paladin Divine Steed also grants Blessing of Freedom for 3.0 sec. Blessing of Freedom : Blesses a party or raid member, granting immunity to movement impairing effects [ Unbound Freedom : and increasing movement speed by 30% ]for 8 sec. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1044,
+            "name": "Blessing of Freedom",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1044,
+                "description": "Blessing of Freedom Talent 1.4% of base mana Requires Paladin Blesses a party or raid member, granting immunity to movement impairing effects [ Unbound Freedom : and increasing movement speed by 30% ]for 8 sec.",
+                "cooldown": 25.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81632
+        ],
+        "unlocks": [
+          110006,
+          93187,
+          93009
+        ],
+        "row": 5,
+        "col": 5
+      },
+      {
+        "node_id": 81604,
+        "name": "Rebuke",
+        "spell_id": 96231,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 96231,
+            "description": "Rebuke Talent Requires Paladin Interrupts spellcasting and prevents any spell in that school from being cast for 5 sec.",
+            "cooldown": 15.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81603,
+          103855
+        ],
+        "unlocks": [
+          93165,
+          93009
+        ],
+        "row": 5,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81630,
+        "name": "Obduracy",
+        "spell_id": 385427,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385427,
+            "description": "Obduracy Talent Requires Paladin Speed increased by 2% and damage taken from area of effect attacks reduced by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 385427,
+            "description": "Obduracy Talent Requires Paladin Speed increased by 2% and damage taken from area of effect attacks reduced by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81605,
+          103860,
+          93188
+        ],
+        "unlocks": [
+          109998,
+          81614,
+          93168
+        ],
+        "row": 6,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110006,
+        "name": "Divine Toll",
+        "spell_id": 375576,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 375576,
+            "description": "Divine Toll Talent 3% of base mana Requires Paladin Holy, Protection ly cast Holy Shock, Avenger's Shield, or Judgment on up to 5 targets within 30 yds. Retribution ly cast Judgment on up to 5 targets within 30 yds. Divine Toll's Judgment deals 100% increased damage.",
+            "cooldown": 60.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81631,
+          81605
+        ],
+        "unlocks": [
+          81479,
+          81616,
+          81614
+        ],
+        "row": 6,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93187,
+        "name": "Unbound Freedom",
+        "spell_id": 305394,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 305394,
+            "description": "Unbound Freedom Talent Requires Paladin Blessing of Freedom increases movement speed by 30%, and you gain Blessing of Freedom when cast on a friendly target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81631
+        ],
+        "unlocks": [
+          81616
+        ],
+        "row": 6,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93009,
+        "name": "Sanctified Plates",
+        "spell_id": 402964,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 402964,
+            "description": "Sanctified Plates Talent Requires Paladin Holy, Retribution Armor increased by 10%, Stamina increased by 5% and damage taken from area of effect attacks reduced by 3%. Protection Armor increased by 5%, Stamina increased by 5% and damage taken from area of effect attacks reduced by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 402964,
+            "description": "Sanctified Plates Talent Requires Paladin Holy, Retribution Armor increased by 10%, Stamina increased by 5% and damage taken from area of effect attacks reduced by 3%. Protection Armor increased by 5%, Stamina increased by 5% and damage taken from area of effect attacks reduced by 3%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81604,
+          81631,
+          81603
+        ],
+        "unlocks": [
+          109997,
+          81543,
+          81616
+        ],
+        "row": 6,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93165,
+        "name": "Punishment",
+        "spell_id": 403530,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 403530,
+            "description": "Punishment Talent Requires Paladin Retribution Successfully interrupting an enemy with Rebuke casts an extra Crusader Strike. Holy Successfully interrupting an enemy with Rebuke casts an extra Holy Shock. Protection Successfully interrupting an enemy with Rebuke casts an extra Crusader Strike.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81604
+        ],
+        "unlocks": [
+          81543
+        ],
+        "row": 6,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 93168,
+        "name": "Divine Reach",
+        "spell_id": 469476,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469476,
+            "description": "Divine Reach Talent Requires Paladin The radius of your auras is increased by 20 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103860,
+          81630
+        ],
+        "unlocks": [
+          103850,
+          81609,
+          103853
+        ],
+        "row": 7,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109998,
+        "name": "Brought to Light",
+        "spell_id": 1265549,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265549,
+            "description": "Brought to Light Talent Requires Paladin Killing an enemy that yields experience or honor causes you to explode with holy energy, healing up to 5 nearby allies and yourself for (500% of Attack Power), split evenly among them.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81630
+        ],
+        "unlocks": [
+          81609
+        ],
+        "row": 7,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81614,
+        "name": "Blessing of Sacrifice",
+        "spell_id": 6940,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 6940,
+            "description": "Blessing of Sacrifice Talent 1.4% of base mana Requires Paladin Blesses a party or raid member, reducing their damage taken by 30%, but you suffer 100% of damage prevented. Last 12 sec, or until transferred damage would cause you to fall below 20% health.",
+            "cooldown": 120.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110006,
+          81605,
+          81630
+        ],
+        "unlocks": [
+          81607,
+          93192,
+          81609
+        ],
+        "row": 7,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81479,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 386738,
+            "name": "Divine Resonance",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 386738,
+                "description": "Divine Resonance Talent Requires Paladin Protection After casting Divine Toll, you instantly cast Avenger's Shield every 5 sec for 15 sec. Retribution After casting Divine Toll, you instantly cast Judgment every 5 sec for 15 sec. Holy After casting Holy Prism, Holy Armament, or Divine Toll, you instantly cast Holy Shock every 5 sec for 15 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 379391,
+            "name": "Quickened Invocation",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 379391,
+                "description": "Quickened Invocation Talent Requires Paladin Protection Divine Toll's cooldown is reduced by 15 sec. Retribution Divine Toll's cooldown is reduced by 30 sec. Holy Divine Toll's, Holy Armament's, and Holy Prism's cooldown is reduced by 15 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          110006
+        ],
+        "unlocks": [],
+        "row": 7,
+        "col": 4
+      },
+      {
+        "node_id": 81616,
+        "name": "Blessing of Protection",
+        "spell_id": 1022,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1022,
+            "description": "Blessing of Protection Talent 3% of base mana Requires Paladin Holy, Retribution Blesses a party or raid member, granting immunity to Physical damage and harmful effects for 10 sec. Cannot be used on a target with Forbearance. Causes Forbearance for 30 sec. Protection Blesses a party or raid member, granting immunity to Physical damage and harmful effects for 10 sec. Cannot be used on a target with Forbearance. Causes Forbearance for 30 sec. Shares a cooldown with Blessing of Spellwarding.",
+            "cooldown": 300.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110006,
+          93187,
+          93009
+        ],
+        "unlocks": [
+          93192,
+          81617,
+          81615
+        ],
+        "row": 7,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109997,
+        "name": "Fear No Evil",
+        "spell_id": 1265541,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1265541,
+            "description": "Fear No Evil Talent Requires Paladin Fear duration on you reduced by 20%. This effect is increased to 60% during Avenging Wrath.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93009
+        ],
+        "unlocks": [
+          81615
+        ],
+        "row": 7,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81543,
+        "name": "Consecrated Ground",
+        "spell_id": 204054,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 204054,
+            "description": "Consecrated Ground Talent Requires Paladin Your Consecration is 15% larger, and enemies within it have 50% reduced movement speed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93165,
+          93009
+        ],
+        "unlocks": [
+          81615,
+          81608
+        ],
+        "row": 7,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95234,
+        "name": "Holy Bulwark",
+        "spell_id": 432459,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432459,
+            "description": "Holy Bulwark Talent 1 min recharge Requires Paladin Will the Light to coalesce and become manifest as a Holy Armament, wielded by your friendly target. Holy Bulwark : While wielding a Holy Bulwark, gain an absorb shield for 15.0% of your max health and an additional 2.0% every 2 sec. Lasts 20 sec. Becomes Sacred Weapon after use.",
+            "cooldown": 60.0,
+            "charges": 2,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          95233,
+          95235,
+          95228,
+          109742
+        ],
+        "row": 7,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81609,
+        "name": "Holy Aegis",
+        "spell_id": 385515,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385515,
+            "description": "Holy Aegis Talent Requires Paladin Armor and critical strike chance increased by 4%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93168,
+          81614,
+          109998
+        ],
+        "unlocks": [
+          103850,
+          103853,
+          103867
+        ],
+        "row": 8,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81607,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 384820,
+            "name": "Sacrifice of the Just",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 384820,
+                "description": "Sacrifice of the Just Talent Requires Paladin Reduces the cooldown of Blessing of Sacrifice by 60 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Blessing of Sacrifice",
+                    "type": "cd_reduction",
+                    "value": 60,
+                    "unit": "seconds"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 384914,
+            "name": "Recompense",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 384914,
+                "description": "Recompense Talent Requires Paladin After your Blessing of Sacrifice ends, 50% of the total damage it diverted is added to your next Judgment as bonus damage, or your next Word of Glory as bonus healing. This effect's bonus damage cannot exceed 30% of your maximum health and its bonus healing cannot exceed 100% of your maximum health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81614
+        ],
+        "unlocks": [
+          103865,
+          103866,
+          103867
+        ],
+        "row": 8,
+        "col": 3
+      },
+      {
+        "node_id": 93192,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 469337,
+            "name": "Sacred Strength",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469337,
+                "description": "Sacred Strength Talent Requires Paladin Holy Power spending abilities have 2% increased damage and healing.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 223817,
+            "name": "Divine Purpose",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 223817,
+                "description": "Divine Purpose Talent Requires Paladin Requires level spending abilities have a 15% chance to make your next Holy Power spending ability free and deal 15% increased damage and healing. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81614,
+          81616
+        ],
+        "unlocks": [
+          103866,
+          103868
+        ],
+        "row": 8,
+        "col": 4
+      },
+      {
+        "node_id": 81617,
+        "name": "Improved Blessing of Protection",
+        "spell_id": 384909,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384909,
+            "description": "Improved Blessing of Protection Talent Requires Paladin Protection Reduces the cooldown of Blessing of Protection and Blessing of Spellwarding by 60 sec. Holy, Retribution Reduces the cooldown of Blessing of Protection by 60 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Blessing of Protection and Blessing of Spellwarding",
+                "type": "cd_reduction",
+                "value": 60,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Blessing of Protection",
+                "type": "cd_reduction",
+                "value": 60,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          81616
+        ],
+        "unlocks": [
+          103864,
+          103868
+        ],
+        "row": 8,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81615,
+        "name": "Unbreakable Spirit",
+        "spell_id": 114154,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 114154,
+            "description": "Unbreakable Spirit Talent Requires Paladin Requires level 35 Reduces the cooldown of your Divine Shield, [ Shield of Vengeance : Shield of Vengeance ] [ Ardent Defender / Divine Protection ], and Lay on Hands by 30%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your Divine Shield, [ Shield of Vengeance : Shield of Vengeance ] [ Ardent Defender / Divine Protection ], and Lay on Hands",
+                "type": "cd_reduction",
+                "value": 30,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          81543,
+          81616,
+          109997
+        ],
+        "unlocks": [
+          103864,
+          81608
+        ],
+        "row": 8,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103853,
+        "name": "Lightforged Blessing",
+        "spell_id": 406468,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 406468,
+            "description": "Lightforged Blessing Talent Requires Paladin [ Denounce / Shield of the Righteous] heals you and up to 2 nearby allies for (100% of Attack Power).",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93168,
+          81609
+        ],
+        "unlocks": [
+          81495
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103850,
+        "name": "Lightforged Blessing",
+        "spell_id": 406468,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 406468,
+            "description": "Lightforged Blessing Talent Requires Paladin [ Denounce / Shield of the Righteous] heals you and up to 2 nearby allies for (100% of Attack Power).",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81609,
+          93168
+        ],
+        "unlocks": [
+          81495
+        ],
+        "row": 9,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103867,
+        "name": "Lead the Charge",
+        "spell_id": 469780,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469780,
+            "description": "Lead the Charge Talent Requires Paladin Divine Steed reduces the cooldown of 4 nearby ally's major movement ability by 3.0 sec. Your movement speed is increased by 3%. (300ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "4 nearby ally's major movement ability",
+                "type": "cd_reduction",
+                "value": 3,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "4 nearby ally's major movement ability by 3.0 sec. Your movement speed is increased",
+                "type": "cd_reduction",
+                "value": 3,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          81609,
+          81607
+        ],
+        "unlocks": [
+          81495,
+          103862,
+          81621
+        ],
+        "row": 9,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103865,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 469279,
+            "name": "Worthy Sacrifice",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469279,
+                "description": "Worthy Sacrifice Talent Requires Paladin You automatically cast Blessing of Sacrifice onto an ally within 40 yds when they are below 35% health and you are not in a loss of control effect. This effect activates 100% of Blessing of Sacrifice's cooldown.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 469321,
+            "name": "Righteous Protection",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469321,
+                "description": "Righteous Protection Talent Requires Paladin Blessing of Sacrifice now removes and prevents all Poison and Disease effects.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81607
+        ],
+        "unlocks": [
+          81621
+        ],
+        "row": 9,
+        "col": 3
+      },
+      {
+        "node_id": 103866,
+        "name": "Holy Ritual",
+        "spell_id": 199422,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 199422,
+            "description": "Holy Ritual Talent Requires Paladin Allies are healed for (2000% of Spell Power) when you cast Blessing of Protection or Blessing of Sacrifice on them.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          93192,
+          81607
+        ],
+        "unlocks": [
+          103851,
+          81621
+        ],
+        "row": 9,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103868,
+        "name": "Blessed Calling",
+        "spell_id": 469770,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469770,
+            "description": "Blessed Calling Talent Requires Paladin Allies affected by your Blessings have 15% increased movement speed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81617,
+          93192
+        ],
+        "unlocks": [
+          103851
+        ],
+        "row": 9,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103864,
+        "name": "Inspired Guard",
+        "spell_id": 469439,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469439,
+            "description": "Inspired Guard Talent Requires Paladin Protection Ardent Defender increases healing taken by 15% for its duration. Holy, Retribution Divine Protection increases healing taken by 15% for its duration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81617,
+          81615
+        ],
+        "unlocks": [
+          81628,
+          103851,
+          103856
+        ],
+        "row": 9,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81608,
+        "name": "Light's Revocation",
+        "spell_id": 146956,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 146956,
+            "description": "Light's Revocation Talent Requires Paladin Removing harmful effects with Divine Shield heals you for 10% for each effect removed. &nbsp;This heal cannot exceed 30% of your maximum health. Divine Shield may now be cast while Forbearance is active.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81615,
+          81543
+        ],
+        "unlocks": [
+          103856
+        ],
+        "row": 9,
+        "col": 7,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81495,
+        "name": "Faith's Armor",
+        "spell_id": 406101,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 406101,
+            "description": "Faith's Armor Talent Requires Paladin Protection Shield of the Righteous grants 5% bonus armor for 4.5 sec. Holy, Retribution Word of Glory grants 20% bonus armor for 4.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103850,
+          103853,
+          103867
+        ],
+        "unlocks": [
+          93357
+        ],
+        "row": 10,
+        "col": 1,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103862,
+        "name": "Stoicism",
+        "spell_id": 469316,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469316,
+            "description": "Stoicism Talent Requires Paladin The duration of stun effects on you is reduced by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103867
+        ],
+        "unlocks": [
+          93357
+        ],
+        "row": 10,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81621,
+        "name": "Seal of Might",
+        "spell_id": 385450,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 385450,
+            "description": "Seal of Might Talent Requires Paladin Holy Mastery increased by 2% and Intellect increased by 2%. Protection, Retribution Mastery increased by 2% and Strength increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 385450,
+            "description": "Seal of Might Talent Requires Paladin Holy Mastery increased by 2% and Intellect increased by 2%. Protection, Retribution Mastery increased by 2% and Strength increased by 2%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103866,
+          103865,
+          103867
+        ],
+        "unlocks": [
+          103861,
+          93357
+        ],
+        "row": 10,
+        "col": 3,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103851,
+        "name": "Vengeful Wrath",
+        "spell_id": 1241958,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1241958,
+            "description": "Vengeful Wrath Talent Requires Paladin Hammer of Wrath deals up to 50% additional damage based on its target's health. Lower health targets receive more damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 1241958,
+            "description": "Vengeful Wrath Talent Requires Paladin Hammer of Wrath deals up to 50% additional damage based on its target's health. Lower health targets receive more damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103866,
+          103864,
+          103868
+        ],
+        "unlocks": [
+          103863,
+          103861
+        ],
+        "row": 10,
+        "col": 5,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81628,
+        "name": "Eye for an Eye",
+        "spell_id": 469309,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469309,
+            "description": "Eye for an Eye Talent Requires Paladin Protection Melee and ranged attackers receive (35% of Spell Power) Holy damage each time they strike you during Ardent Defender and Divine Shield. Holy, Retribution Melee and ranged attackers receive (35% of Spell Power) Holy damage each time they strike you during Divine Protection and Divine Shield.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103864
+        ],
+        "unlocks": [
+          103863
+        ],
+        "row": 10,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103856,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 377128,
+            "name": "Golden Path",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 377128,
+                "description": "Golden Path Talent Requires Paladin Consecration heals you and 5 allies within it for [(5% of Attack Power)] every 1 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 469434,
+            "name": "Selfless Healer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469434,
+                "description": "Selfless Healer Talent Requires Paladin Holy Flash of Light and Holy Light are 30% more effective on your allies and 40% of the healing done also heals you. Protection, Retribution Flash of Light is 30% more effective on your allies and 40% of the healing done also heals you.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          103864,
+          81608
+        ],
+        "unlocks": [
+          103863
+        ],
+        "row": 10,
+        "col": 7
+      },
+      {
+        "node_id": 93357,
+        "name": "Blessing of Dawn",
+        "spell_id": 183416,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 183416,
+            "description": "Blessing of Dawn Talent Requires Paladin While you are above 85% health, 5% of all damage taken by allies within 20 yds is redirected to you, up to a maximum of (5 * Total Health / 100) every 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81495,
+          81621,
+          103862
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 2,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103861,
+        "name": "Lightbearer",
+        "spell_id": 469416,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469416,
+            "description": "Lightbearer Talent Requires Paladin 10% of all healing done to you from other sources heals up to 4 nearby allies, divided evenly among them.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103851,
+          81621
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 4,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103863,
+        "name": "Blessing of Dusk",
+        "spell_id": 1241945,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1241945,
+            "description": "Blessing of Dusk Talent Requires Paladin Damage taken reduced by up to 10%, increasing as your health decreases.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          103851,
+          103856,
+          81628
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 6,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "spec_tree": {
+    "nodes": [
+      {
+        "node_id": 95180,
+        "name": "Light's Guidance",
+        "spell_id": 427445,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 427445,
+            "description": "Light's Guidance Talent Requires Paladin Protection Divine Toll is replaced with Hammer of Light for 20 sec after it is cast. Hammer of Light : Hammer down your enemy with the power of the Light, dealing (696.774% of Attack Power) Holy damage and (348% of Attack Power) Holy damage up to 7 nearby enemies. Additionally, calls down Empyrean Hammers from the sky to strike 3 nearby enemies for (46.55% of Attack Power) Holy damage each. Costs . Retribution Wake of Ashes is replaced with Hammer of Light for 20 sec after it is cast. Hammer of Light : Hammer down your enemy with the power of the Light, dealing (696.774% of Attack Power) Holy damage and (348% of Attack Power) Holy damage up to 7 nearby enemies. Additionally, calls down Empyrean Hammers from the sky to strike 3 nearby enemies for (46.55% of Attack Power) Holy damage each. Costs .",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          95177,
+          95187,
+          95183,
+          109747
+        ],
+        "row": 1,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81502,
+        "name": "Avenger's Shield",
+        "spell_id": 31935,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 31935,
+            "description": "Avenger's Shield Talent Requires Paladin Hurls your shield at an enemy target, dealing (155% of Attack Power) Holy damage, interrupting and silencing the non-Player target for 3 sec, and then jumping to 2 additional nearby enemies. Protection Shields you for 8 sec, absorbing 60% as much damage as it dealt. Protection Deals ((12% of Attack Power)) additional damage to all enemies within 5 yds of each target hit.",
+            "cooldown": 15.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          81469,
+          81489
+        ],
+        "row": 2,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95183,
+        "name": "Zealous Vindication",
+        "spell_id": 431463,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431463,
+            "description": "Zealous Vindication Talent Requires Paladin Hammer of Light instantly calls down 2 Empyrean Hammers on your target when it is cast.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95180
+        ],
+        "unlocks": [
+          95179
+        ],
+        "row": 2,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95187,
+        "name": "Shake the Heavens",
+        "spell_id": 431533,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431533,
+            "description": "Shake the Heavens Talent Requires Paladin After casting Hammer of Light, you call down an Empyrean Hammer on a nearby target every 2 sec, for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95180
+        ],
+        "unlocks": [
+          95178
+        ],
+        "row": 2,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95177,
+        "name": "Wrathful Descent",
+        "spell_id": 431551,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431551,
+            "description": "Wrathful Descent Talent Requires Paladin When Empyrean Hammer critically strikes, 50% of its damage is dealt to nearby enemies. Enemies hit by this effect deal 5% reduced damage to you for 8 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95180
+        ],
+        "unlocks": [
+          95181
+        ],
+        "row": 2,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109747,
+        "name": "Divine Hammer",
+        "spell_id": 432929,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432929,
+            "description": "Divine Hammer Talent Requires Paladin Divine Toll summons Divine Hammers that spin around you for 8 sec. Divine Hammer Strikes all enemies nearby for [ Burning Crusade : [(144% of Attack Power)% * 1.05] Radiant / (144% of Attack Power)% Holy] damage every 2 sec. Deals reduced damage beyond 8 targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95180
+        ],
+        "unlocks": [
+          109746
+        ],
+        "row": 2,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81489,
+        "name": "Shining Light",
+        "spell_id": 321136,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 321136,
+            "description": "Shining Light Talent Requires Paladin Every 3 Shields of the Righteous make your next Word of Glory cost no Holy Power. Maximum 2 stacks.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81502
+        ],
+        "unlocks": [
+          81494,
+          81487
+        ],
+        "row": 3,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81469,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 53595,
+            "name": "Hammer of the Righteous",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 53595,
+                "description": "Hammer of the Righteous Talent 0.32% of base mana 5 sec recharge Requires Paladin Hammers the current target for (150% of Attack Power)% Physical damage. [ Consecration : Hammer of the Righteous also causes a wave of light that hits all other targets within 8 yds for (21% of Attack Power)% Holy damage ] [ While you are standing in your Consecration, Hammer of the Righteous also causes a wave of light that hits all other targets within 8 yds for (21% of Attack Power)% Holy damage ] Generates .",
+                "cooldown": 5.0,
+                "charges": 2,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 204019,
+            "name": "Blessed Hammer",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 204019,
+                "description": "Blessed Hammer Talent Replaces Crusader Strike 0.32% of base mana 5 sec recharge Requires Paladin Requires level 15 Throws a Blessed Hammer that spirals outward, dealing (25% of Attack Power) Holy damage to enemies and reducing the next damage they deal to you by (Attack Power * 30 / 100). Generates .",
+                "cooldown": 5.0,
+                "charges": 3,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Crusader Strike 0",
+                    "type": "replaces"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": {
+              "spell_id": null,
+              "name": "Crusader Strike 0"
+            }
+          }
+        ],
+        "dependencies": [
+          81502
+        ],
+        "unlocks": [
+          81487,
+          81498
+        ],
+        "row": 3,
+        "col": 19
+      },
+      {
+        "node_id": 95179,
+        "name": "Sacrosanct Crusade",
+        "spell_id": 431730,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431730,
+            "description": "Sacrosanct Crusade Talent Requires Paladin Protection Divine Toll surrounds you with a Holy barrier for 15% of your maximum health. Hammer of Light heals you for 15% of your maximum health, increased by 2% for each additional target hit. Any overhealing done with this effect gets converted into a Holy barrier instead. Retribution Wake of Ashes surrounds you with a Holy barrier for 10% of your maximum health. Hammer of Light heals you for 5% of your maximum health, increased by 1% for each additional target hit. Any overhealing done with this effect gets converted into a Holy barrier instead. (5s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95183
+        ],
+        "unlocks": [
+          95185
+        ],
+        "row": 3,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95178,
+        "name": "Higher Calling",
+        "spell_id": 431687,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 431687,
+            "description": "Higher Calling Talent Requires Paladin Retribution Crusader Strike, Hammer of Wrath and Blade of Justice extend the duration of Shake the Heavens by 1 sec. Protection Crusader Strike, Hammer of Wrath and Judgment extend the duration of Shake the Heavens by 1 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95187
+        ],
+        "unlocks": [
+          95184
+        ],
+        "row": 3,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95181,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 432992,
+            "name": "Bonds of Fellowship",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 432992,
+                "description": "Bonds of Fellowship Talent Requires Paladin You receive 20% less damage from Blessing of Sacrifice and each time its target takes damage, you gain 4% movement speed up to a maximum of 40%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 432990,
+            "name": "Unrelenting Charger",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 432990,
+                "description": "Unrelenting Charger Talent Requires Paladin Divine Steed lasts 2 sec longer and increases your movement speed by an additional 30% for the first 3 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95177
+        ],
+        "unlocks": [
+          95186
+        ],
+        "row": 3,
+        "col": 23
+      },
+      {
+        "node_id": 109746,
+        "name": "Light's Judicator",
+        "spell_id": 1261525,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1261525,
+            "description": "Light's Judicator Talent Requires Paladin Empyrean Hammer deals 20% increased critical strike damage and its critical strikes have 50% chance to grant an additional stack of Light's Deliverance. (Proc chance: 50%)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109747
+        ],
+        "unlocks": [
+          109745
+        ],
+        "row": 3,
+        "col": 24,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81494,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1276945,
+            "name": "Imbued Shield",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1276945,
+                "description": "Imbued Shield Talent Requires Paladin Shield of the Righteous reduces magical damage taken by 10%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 280373,
+            "name": "Redoubt",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 280373,
+                "description": "Redoubt Talent Requires Paladin Requires level 15 Armor granted by Shield of the Righteous is increased by up to 50%, based on your missing health.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81489
+        ],
+        "unlocks": [
+          81486,
+          81476
+        ],
+        "row": 4,
+        "col": 16
+      },
+      {
+        "node_id": 81487,
+        "name": "Grand Crusader",
+        "spell_id": 85043,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 85043,
+            "description": "Grand Crusader Talent Requires Paladin When you avoid a melee attack or use [ Hammer of the Righteous ] [ Blessed Hammer / Crusader Strike ], you have a 15% chance to reset the remaining cooldown on Avenger's Shield [ Inspiring Vanguard : and increase your Strength by 2% for 8 sec / .] (1s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81469,
+          81489
+        ],
+        "unlocks": [
+          81476,
+          81481,
+          81501
+        ],
+        "row": 4,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81498,
+        "name": "Seal of Charity",
+        "spell_id": 384815,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 384815,
+            "description": "Seal of Charity Talent Requires Paladin When you cast Word of Glory on someone other than yourself, you are also healed for 100% of the amount healed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81469
+        ],
+        "unlocks": [
+          101927,
+          81501
+        ],
+        "row": 4,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95185,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 432615,
+            "name": "Endless Wrath",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 432615,
+                "description": "Endless Wrath Talent Requires Paladin Empyrean Hammer has a 10% increased chance to critically strike.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 432977,
+            "name": "Sanctification",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 432977,
+                "description": "Sanctification Talent Requires Paladin Casting Judgment increases the damage of Empyrean Hammer by 5% for 10 sec. Multiple applications may overlap.",
+                "cooldown": null,
+                "charges": null,
+                "effects": [
+                  {
+                    "target_spell_id": null,
+                    "target_spell_name": "Empyrean Hammer",
+                    "type": "damage_increase",
+                    "value": 5,
+                    "unit": "percent"
+                  }
+                ]
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95179
+        ],
+        "unlocks": [
+          95182
+        ],
+        "row": 4,
+        "col": 21
+      },
+      {
+        "node_id": 95184,
+        "name": "Hammerfall",
+        "spell_id": 432463,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432463,
+            "description": "Hammerfall Talent Requires Paladin Retribution and Divine Storm calls down an Empyrean Hammer on a nearby enemy. While Shake the Heavens is active, this effect calls down an additional Empyrean Hammer. Protection Shield of the Righteous and Word of Glory calls down an Empyrean Hammer on a nearby enemy. While Shake the Heavens is active, this effect calls down an additional Empyrean Hammer. (100ms cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95178
+        ],
+        "unlocks": [
+          95182
+        ],
+        "row": 4,
+        "col": 22,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95186,
+        "name": "Undisputed Ruling",
+        "spell_id": 432626,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432626,
+            "description": "Undisputed Ruling Talent Requires Paladin Retribution Hammer of Light applies Judgment to its targets, and increases your Haste by 12% for 6 sec. Protection Hammer of Light grants Shield of the Righteous, erupts a Consecration beneath its target, and increases your Haste by 12% for 6 sec. (1s cooldown)",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95181
+        ],
+        "unlocks": [
+          95182
+        ],
+        "row": 4,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109745,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1260429,
+            "name": "Divine Exaction",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1260429,
+                "description": "Divine Exaction Talent Requires Paladin Divine Toll casts 2 additional times on your target at 150% effectiveness.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1263252,
+            "name": "Seal of the Templar",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1263252,
+                "description": "Seal of the Templar Talent Requires Paladin Retribution damage increased by 25%. Protection Judgment damage increased by 30%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          109746
+        ],
+        "unlocks": [
+          95182
+        ],
+        "row": 4,
+        "col": 24
+      },
+      {
+        "node_id": 81486,
+        "name": "Refining Fire",
+        "spell_id": 469883,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 469883,
+            "description": "Refining Fire Talent Unlimited range Requires Paladin Enemies struck by Avenger's Shield burn with holy fire, suffering 100% additional Radiant damage over 5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81494
+        ],
+        "unlocks": [
+          81499,
+          81492,
+          81474
+        ],
+        "row": 5,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81476,
+        "name": "Valiant Crusade",
+        "spell_id": 1245979,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1245979,
+            "description": "Valiant Crusade Talent Unlimited range Requires Paladin While out of combat, Divine Steed grants Shield of the Righteous for its duration and an additional 4.0 sec after it fades.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81487,
+          81494
+        ],
+        "unlocks": [
+          81499
+        ],
+        "row": 5,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81481,
+        "name": "Ardent Defender",
+        "spell_id": 31850,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 31850,
+            "description": "Ardent Defender Talent Requires Paladin Reduces all damage you take by 20% for 8 sec. While Ardent Defender is active, the next attack that would otherwise kill you will instead bring you to 20% of your maximum health.",
+            "cooldown": 90.0,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81487
+        ],
+        "unlocks": [
+          81499,
+          81503,
+          90062
+        ],
+        "row": 5,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81501,
+        "name": "Searing Sunlight",
+        "spell_id": 1244070,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244070,
+            "description": "Searing Sunlight Talent Unlimited range Requires Paladin Casting Avenger's Shield causes Consecration to deal its damage and healing again immediately at 100% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81487,
+          81498
+        ],
+        "unlocks": [
+          81503
+        ],
+        "row": 5,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101927,
+        "name": "Solace",
+        "spell_id": 1245891,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1245891,
+            "description": "Solace Talent Unlimited range Requires Paladin Consecration heals you for 300% of the damage it deals.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81498
+        ],
+        "unlocks": [
+          81470,
+          81503,
+          81485
+        ],
+        "row": 5,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95182,
+        "name": "Light's Deliverance",
+        "spell_id": 425518,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 425518,
+            "description": "Light's Deliverance Talent Requires Paladin Protection You gain a stack of Light's Deliverance when you call down an Empyrean Hammer. While Divine Toll and Hammer of Light are unavailable, you consume 60 stacks of Light's Deliverance, empowering yourself to cast Hammer of Light an additional time for free. Retribution You gain a stack of Light's Deliverance when you call down an Empyrean Hammer. While Wake of Ashes and Hammer of Light are unavailable, you consume 60 stacks of Light's Deliverance, empowering yourself to cast Hammer of Light an additional time for free.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95186,
+          95184,
+          95185,
+          109745
+        ],
+        "unlocks": [],
+        "row": 5,
+        "col": 23,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81492,
+        "name": "Undying Embers",
+        "spell_id": 1244019,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1244019,
+            "description": "Undying Embers Talent Unlimited range Requires Paladin You are healed for 100% of the damage dealt by Refining Fire.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81486
+        ],
+        "unlocks": [
+          81474,
+          101928
+        ],
+        "row": 6,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81499,
+        "name": "Bulwark of Order",
+        "spell_id": 209389,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 209389,
+            "description": "Bulwark of Order Talent Requires Paladin Avenger's Shield also shields you for 8 sec, absorbing 60% as much damage as it dealt, up to 50% of your maximum health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81476,
+          81481,
+          81486
+        ],
+        "unlocks": [
+          81474,
+          81483,
+          81506
+        ],
+        "row": 6,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 90062,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 393114,
+            "name": "Improved Ardent Defender",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 393114,
+                "description": "Improved Ardent Defender Talent Requires Paladin Ardent Defender reduces damage taken by an additional 10%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 204018,
+            "name": "Blessing of Spellwarding",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 204018,
+                "description": "Blessing of Spellwarding Talent 3% of base mana Requires Paladin Requires level 35 (Protection) Blesses a party or raid member, granting immunity to magical damage and harmful effects for 10 sec. Cannot be used on a target with Forbearance. Causes Forbearance for 30 sec. Shares a cooldown with Blessing of Protection.",
+                "cooldown": 300.0,
+                "charges": 1,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81481
+        ],
+        "unlocks": [
+          81483
+        ],
+        "row": 6,
+        "col": 18
+      },
+      {
+        "node_id": 81503,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 378405,
+            "name": "Light of the Titans",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 378405,
+                "description": "Light of the Titans Talent Requires Paladin Word of Glory heals for an additional 40% over 10 sec. Increased by 100% if cast on yourself while you are afflicted by a harmful damage over time effect.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 392928,
+            "name": "Tirion's Devotion",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 392928,
+                "description": "Tirion's Devotion Talent Requires Paladin Lay on Hands' cooldown is reduced by 1.0 sec per Holy Power spent. (1s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81501,
+          81481,
+          101927
+        ],
+        "unlocks": [
+          81485,
+          81483,
+          81612
+        ],
+        "row": 6,
+        "col": 19
+      },
+      {
+        "node_id": 81470,
+        "name": "Vision of Sanctity",
+        "spell_id": 1245354,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1245354,
+            "description": "Vision of Sanctity Talent Unlimited range Requires Paladin Consecration deals 100% increased damage when it strikes a single target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          101927
+        ],
+        "unlocks": [
+          81473,
+          81485
+        ],
+        "row": 6,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95234,
+        "name": "Holy Bulwark",
+        "spell_id": 432459,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432459,
+            "description": "Holy Bulwark Talent 1 min recharge Requires Paladin Will the Light to coalesce and become manifest as a Holy Armament, wielded by your friendly target. Holy Bulwark : While wielding a Holy Bulwark, gain an absorb shield for 15.0% of your max health and an additional 2.0% every 2 sec. Lasts 20 sec. Becomes Sacred Weapon after use.",
+            "cooldown": 60.0,
+            "charges": 2,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [
+          95233,
+          95235,
+          95228,
+          109742
+        ],
+        "row": 7,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81474,
+        "name": "Tyr's Enforcer",
+        "spell_id": 378285,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378285,
+            "description": "Tyr's Enforcer Talent Requires Paladin Your Avenger's Shield is imbued with holy fire, causing it to deal [(12% of Attack Power)] Holy damage to all enemies within 5 yards of each target hit.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 378285,
+            "description": "Tyr's Enforcer Talent Requires Paladin Your Avenger's Shield is imbued with holy fire, causing it to deal [(12% of Attack Power)] Holy damage to all enemies within 5 yards of each target hit.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81499,
+          81492,
+          81486
+        ],
+        "unlocks": [
+          81629,
+          101928,
+          81472
+        ],
+        "row": 7,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81506,
+        "name": "Relentless Inquisitor",
+        "spell_id": 383388,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 383388,
+            "description": "Relentless Inquisitor Talent Requires Paladin Your haste is increased by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81499
+        ],
+        "unlocks": [
+          81629
+        ],
+        "row": 7,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81483,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 31884,
+            "name": "Avenging Wrath",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 31884,
+                "description": "Avenging Wrath Talent Requires Paladin Call upon the Light to become an avatar of retribution, [causing Judgment to generate 1 additional Holy Power,][each Holy Power spent causing you to explode with Holy light for (13.5% of Attack Power) damage to nearby enemies,]increasing your damage, healing, and critical strike chance by 20% [ Crusade : and Haste by 3% ] for 20 sec / Divine Wrath : 24 sec / Call of the Righteous : 15 sec . [ Crusade : Each Holy Power spent increases Haste by an additional 2%, up to 20% ]",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 389539,
+            "name": "Sentinel",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 389539,
+                "description": "Sentinel Talent Requires Paladin Requires level 45 Call upon the Light and gain 15 stacks of Divine Resolve, increasing your maximum health by 1% and reducing your damage taken by 2% per stack for 16 sec. After 5.0 sec, you will begin to lose 1 stack per second, but each spent will delay the loss of your next stack by 1 sec. [ Sanctified Wrath : While active, your Judgment generates 1 additional Holy Power, your damage and healing is increased by 20%, and Hammer of Wrath may be cast on any target ] [ While active, your Judgment generates 1 additional Holy Power ] [ Avenging Wrath : While active, your damage and healing is increased by 20%, and Hammer of Wrath may be cast on any target ] Combines with Avenging Wrath.",
+                "cooldown": 120.0,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81503,
+          81499,
+          90062
+        ],
+        "unlocks": [
+          81490,
+          81475,
+          81629
+        ],
+        "row": 7,
+        "col": 18
+      },
+      {
+        "node_id": 81612,
+        "name": "Crusader's Judgment",
+        "spell_id": 204023,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 204023,
+            "description": "Crusader's Judgment Talent Requires Paladin Requires level 25 Judgment now has 2 charges, and Grand Crusader now also reduces the cooldown of Judgment by 3 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Judgment",
+                "type": "cd_reduction",
+                "value": 3,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          81503
+        ],
+        "unlocks": [
+          81475
+        ],
+        "row": 7,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81485,
+        "name": "Consecration in Flame",
+        "spell_id": 379022,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 379022,
+            "description": "Consecration in Flame Talent Requires Paladin Consecration lasts 2 sec longer and its damage is increased by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 379022,
+            "description": "Consecration in Flame Talent Requires Paladin Consecration lasts 2 sec longer and its damage is increased by 20%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81503,
+          81470,
+          101927
+        ],
+        "unlocks": [
+          81473,
+          81475,
+          81500
+        ],
+        "row": 7,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95233,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 433568,
+            "name": "Rite of Sanctification",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 433568,
+                "description": "Rite of Sanctification Talent Requires Paladin Imbue your weapon with the power of the Light, increasing your armor by 5% and your primary stat by 2%. Lasts 1 hour.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 433583,
+            "name": "Rite of Adjuration",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 433583,
+                "description": "Rite of Adjuration Talent Requires Paladin Imbue your weapon with the power of the Light, increasing your Stamina by 3% and causing your Holy Power abilities to sometimes unleash a burst of healing around a target. Lasts 1 hour.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          110257,
+          95234
+        ],
+        "unlocks": [
+          95236
+        ],
+        "row": 8,
+        "col": 9
+      },
+      {
+        "node_id": 95228,
+        "name": "Solidarity",
+        "spell_id": 432802,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432802,
+            "description": "Solidarity Talent Requires Paladin If you bestow an Armament upon an ally, you also gain its benefits. If you bestow an Armament upon yourself, a nearby ally also gains its benefits.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110257,
+          95234
+        ],
+        "unlocks": [
+          95231
+        ],
+        "row": 8,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95235,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 433106,
+            "name": "Divine Guidance",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 433106,
+                "description": "Divine Guidance Talent Requires Paladin Holy For each Holy Power ability cast, your next Consecration deals [(Spell Power * 30 / 10) * (1 + Versatility) * 2.86] damage or healing immediately, split across all enemies and allies. Protection For each Holy Power ability cast, your next Consecration deals [(Spell Power * 37 / 10) * (1 + Versatility) * 1.07] damage or healing immediately, split across all enemies and allies.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 433015,
+            "name": "Blessed Assurance",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 433015,
+                "description": "Blessed Assurance Talent Requires Paladin Protection Casting a Holy Power ability increases the damage and healing of your next Crusader Strike by 200%. Holy Casting a Holy Power ability increases the damage and healing of your next Holy Shock by 200%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          110257,
+          95234
+        ],
+        "unlocks": [
+          95232
+        ],
+        "row": 8,
+        "col": 11
+      },
+      {
+        "node_id": 109742,
+        "name": "Masterwork",
+        "spell_id": 1271387,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271387,
+            "description": "Masterwork Talent Requires Paladin After casting a Holy Armament, your next 3 abilities cast a Lesser Armament of the same kind on a nearby ally.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          110257,
+          95234
+        ],
+        "unlocks": [
+          109743
+        ],
+        "row": 8,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 101928,
+        "name": "Soaring Shield",
+        "spell_id": 378457,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378457,
+            "description": "Soaring Shield Talent Requires Paladin Avenger's Shield jumps to 2 additional targets.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81474,
+          81492
+        ],
+        "unlocks": [
+          81472,
+          81493
+        ],
+        "row": 8,
+        "col": 15,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81629,
+        "name": "Seal of Reprisal",
+        "spell_id": 377053,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 377053,
+            "description": "Seal of Reprisal Talent Requires Paladin Your [ Blessed Hammer ] [ Hammer of the Righteous / Crusader Strike ] deals 20% increased damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81474,
+          81506,
+          81483
+        ],
+        "unlocks": [
+          81472
+        ],
+        "row": 8,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81490,
+        "name": "Guardian of Ancient Kings",
+        "spell_id": 86659,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 86659,
+            "description": "Guardian of Ancient Kings Talent Requires Paladin Empowers you with the spirit of ancient kings, reducing all damage you take by 50% for 8 sec.",
+            "cooldown": 180.0,
+            "charges": 1,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81483
+        ],
+        "unlocks": [
+          81484,
+          81497,
+          103877
+        ],
+        "row": 8,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81475,
+        "name": "Hand of the Protector",
+        "spell_id": 315924,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 315924,
+            "description": "Hand of the Protector Talent Requires Paladin Requires level 45 When you cast Word of Glory on someone other than yourself, its healing is increased by up to 100% based on the target's missing health.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81485,
+          81612,
+          81483
+        ],
+        "unlocks": [
+          81500
+        ],
+        "row": 8,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81473,
+        "name": "Sanctuary",
+        "spell_id": 379021,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 379021,
+            "description": "Sanctuary Talent Requires Paladin While in your Consecration and for 4.0 sec after leaving it, your damage taken is reduced by 5%.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81470,
+          81485
+        ],
+        "unlocks": [
+          81488,
+          81500
+        ],
+        "row": 8,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95236,
+        "name": "Laying Down Arms",
+        "spell_id": 432866,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432866,
+            "description": "Laying Down Arms Talent Requires Paladin Holy When an Armament fades from you, the cooldown of Lay on Hands is reduced by 15.0 sec and you gain Infusion of Light. Protection When an Armament fades from you, the cooldown of Lay on Hands is reduced by 15.0 sec and you gain Shining Light.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95233
+        ],
+        "unlocks": [
+          95237
+        ],
+        "row": 9,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95231,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 432964,
+            "name": "Divine Inspiration",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 432964,
+                "description": "Divine Inspiration Talent Requires Paladin Your spells and abilities have a chance to manifest a Holy Armament for a nearby ally. (1s cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 432804,
+            "name": "Forewarning",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 432804,
+                "description": "Forewarning Talent Requires Paladin The cooldown of Holy Armaments is reduced by 20%.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95228
+        ],
+        "unlocks": [
+          95229
+        ],
+        "row": 9,
+        "col": 10
+      },
+      {
+        "node_id": 95232,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 469886,
+            "name": "Authoritative Rebuke",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469886,
+                "description": "Authoritative Rebuke Talent Requires Paladin Holy Successfully dispelling a harmful effect reduces Cleanse's cooldown by 1.0 sec. Effect increased by 100% while wielding a Holy Armament. Protection Successfully interrupting an enemy spellcast reduces Rebuke's cooldown by 1.0 sec. Effect increased by 100% while wielding a Holy Armament. (100ms cooldown)",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 469701,
+            "name": "Tempered in Battle",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 469701,
+                "description": "Tempered in Battle Talent Requires Paladin When you or an ally wielding a Holy Bulwark are healed above maximum health, transfer 100% of the overhealing to your ally. When you or an ally wielding a Sacred Weapon drop below 40% health, redistribute your health immediately and every 1 sec for 4 sec. May only occur once per cast.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          95235
+        ],
+        "unlocks": [
+          95238
+        ],
+        "row": 9,
+        "col": 11
+      },
+      {
+        "node_id": 109743,
+        "name": "Hammer and Anvil",
+        "spell_id": 433718,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 433718,
+            "description": "Hammer and Anvil Talent Requires Paladin Protection Judgment critical strikes cause a shockwave around the target, dealing (230% of Attack Power) damage to enemies within 5 yards. Damage reduced above 5 targets. Holy Judgment critical strikes cause a shockwave around the target, healing to up to 5 injuried allies for (84% of Spell Power).",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109742
+        ],
+        "unlocks": [
+          109744
+        ],
+        "row": 9,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81472,
+        "name": "Focused Enmity",
+        "spell_id": 378845,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378845,
+            "description": "Focused Enmity Talent Requires Paladin When Avenger's Shield strikes a single enemy, it deals 100% additional Holy damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81474,
+          81629,
+          101928
+        ],
+        "unlocks": [
+          81482,
+          81493
+        ],
+        "row": 9,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81484,
+        "name": "Gift of the Golden Val'kyr",
+        "spell_id": 378279,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378279,
+            "description": "Gift of the Golden Val'kyr Talent Requires Paladin Each enemy hit by Avenger's Shield reduces the remaining cooldown on Guardian of Ancient Kings by 1.0 sec. When you drop below 30% health, you become infused with Guardian of Ancient Kings for 4 sec. This cannot occur again for 45 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81490
+        ],
+        "unlocks": [
+          81482,
+          81491,
+          81497
+        ],
+        "row": 9,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 103877,
+        "name": "Sanctified Wrath",
+        "spell_id": 53376,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 53376,
+            "description": "Sanctified Wrath Talent Requires Paladin Requires level 45 Holy Avenging Wrath and Avenging Crusader have 50% increased duration. Protection The duration of Avenging Wrath is increased by 25%.Avenging Wrath and Sentinel cause Judgment to generate 1 additional Holy Power, and have 25% increased duration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81490
+        ],
+        "unlocks": [
+          81471,
+          81497,
+          81504
+        ],
+        "row": 9,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81500,
+        "name": "Uther's Counsel",
+        "spell_id": 378425,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378425,
+            "description": "Uther's Counsel Talent Requires Paladin Your Lay on Hands, Divine Shield, Blessing of Protection, and Blessing of Spellwarding have 15% reduced cooldown.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81473,
+          81475,
+          81485
+        ],
+        "unlocks": [
+          81488,
+          81471
+        ],
+        "row": 9,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95237,
+        "name": "Shared Resolve",
+        "spell_id": 432821,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432821,
+            "description": "Shared Resolve Talent Requires Paladin The effect of your active Aura is increased by 33% on targets with your Armaments.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95236
+        ],
+        "unlocks": [
+          95230
+        ],
+        "row": 10,
+        "col": 9,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95229,
+        "name": "Valiance",
+        "spell_id": 432919,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 432919,
+            "description": "Valiance Talent Requires Paladin Holy Consuming Infusion of Light reduces the cooldown of Holy Armaments by 3.0 sec. Protection Consuming Shining Light reduces the cooldown of Holy Armaments by 3.0 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Holy Armaments",
+                "type": "cd_reduction",
+                "value": 3,
+                "unit": "seconds"
+              },
+              {
+                "target_spell_id": null,
+                "target_spell_name": "Holy Armaments",
+                "type": "cd_reduction",
+                "value": 3,
+                "unit": "seconds"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          95231
+        ],
+        "unlocks": [
+          95230
+        ],
+        "row": 10,
+        "col": 10,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95238,
+        "name": "Reflection of Radiance",
+        "spell_id": 1271466,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271466,
+            "description": "Reflection of Radiance Talent Requires Paladin Holy When your Holy Bulwark absorbs damage or your Sacred Weapon deals damage or healing, you have a chance to gain Awakening. Protection When your Holy Bulwark absorbs damage or your Sacred Weapon deals damage or healing, you have a chance to gain Grand Crusader.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95232
+        ],
+        "unlocks": [
+          95230
+        ],
+        "row": 10,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 109744,
+        "name": "Resounding Strike",
+        "spell_id": 1271553,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1271553,
+            "description": "Resounding Strike Talent Requires Paladin Protection Divine Toll activates Hammer and Anvil at 100% effectiveness. Holy Holy Armaments activate Hammer and Anvil at 100% effectiveness.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          109743
+        ],
+        "unlocks": [
+          95230
+        ],
+        "row": 10,
+        "col": 12,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81493,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 393071,
+            "name": "Strength in Adversity",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 393071,
+                "description": "Strength in Adversity Talent Requires Paladin For each target hit by Avenger's Shield, gain 3% parry for 15 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 380188,
+            "name": "Crusader's Resolve",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 380188,
+                "description": "Crusader's Resolve Talent Requires Paladin Enemies hit by Avenger's Shield deal 10% reduced melee damage to you for 10 sec.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81472,
+          101928
+        ],
+        "unlocks": [
+          81505
+        ],
+        "row": 10,
+        "col": 15
+      },
+      {
+        "node_id": 81482,
+        "name": "Ferren Marcus's Fervor",
+        "spell_id": 378762,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 378762,
+            "description": "Ferren Marcus's Fervor Talent Requires Paladin Avenger's Shield deals 10% increased damage to its primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 378762,
+            "description": "Ferren Marcus's Fervor Talent Requires Paladin Avenger's Shield deals 10% increased damage to its primary target.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81472,
+          81484
+        ],
+        "unlocks": [
+          81505,
+          81491
+        ],
+        "row": 10,
+        "col": 16,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81497,
+        "name": "Empyrean Authority",
+        "spell_id": 1246481,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1246481,
+            "description": "Empyrean Authority Talent Requires Paladin Guardian of Ancient Kings has 1 additional charge.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81484,
+          81490,
+          103877
+        ],
+        "unlocks": [
+          81504,
+          81491
+        ],
+        "row": 10,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81471,
+        "name": "Zealot's Paragon",
+        "spell_id": 391142,
+        "node_type": "PASSIVE",
+        "max_rank": 2,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 391142,
+            "description": "Zealot's Paragon Talent Requires Paladin Hammer of Wrath and Judgment deal 10% additional damage and extend the duration of [ Echo : Crusade ] [ Avenging Crusader ] [ Sentinel / Avenging Wrath ] by 0.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          },
+          {
+            "rank": 2,
+            "spell_id": 391142,
+            "description": "Zealot's Paragon Talent Requires Paladin Hammer of Wrath and Judgment deal 10% additional damage and extend the duration of [ Echo : Crusade ] [ Avenging Crusader ] [ Sentinel / Avenging Wrath ] by 0.5 sec.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81500,
+          103877
+        ],
+        "unlocks": [
+          81477,
+          81504
+        ],
+        "row": 10,
+        "col": 20,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81488,
+        "name": "Instrument of the Divine",
+        "spell_id": 1277162,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1277162,
+            "description": "Instrument of the Divine Talent Requires Paladin Shield of the Righteous consumes up to 2 more Holy Power and deals 50% increased damage for each additional Holy Power consumed.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81500,
+          81473
+        ],
+        "unlocks": [
+          81477
+        ],
+        "row": 10,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 95230,
+        "name": "Blessing of the Forge",
+        "spell_id": 433011,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 433011,
+            "description": "Blessing of the Forge Talent Requires Paladin Avenging Wrath summons an additional Sacred Weapon, and during Avenging Wrath your Sacred Weapon casts spells on your target and echoes the effects of your Holy Power abilities.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          95238,
+          95229,
+          95237,
+          109744
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 11,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81505,
+        "node_type": "CHOICE",
+        "max_rank": 1,
+        "choices": [
+          {
+            "spell_id": 1246488,
+            "name": "Sweeping Verdict",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1246488,
+                "description": "Sweeping Verdict Talent Requires Paladin Judgment chains to 2 additional targets at 50% effectiveness.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          },
+          {
+            "spell_id": 1277005,
+            "name": "Adjudication",
+            "ranks": [
+              {
+                "rank": 1,
+                "spell_id": 1277005,
+                "description": "Adjudication Talent Requires Paladin Judgment causes its primary target's successful melee attacks against you to grant a Physical absorb shield for 20% of the damage dealt. Limit 1.",
+                "cooldown": null,
+                "charges": null,
+                "effects": []
+              }
+            ],
+            "enriched": true,
+            "replaces_spell": null
+          }
+        ],
+        "dependencies": [
+          81482,
+          81493
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 15
+      },
+      {
+        "node_id": 81491,
+        "name": "Bulwark of Righteous Fury",
+        "spell_id": 386653,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 386653,
+            "description": "Bulwark of Righteous Fury Talent Requires Paladin Avenger's Shield increases the damage of your next Shield of the Righteous by 20% for each target hit by Avenger's Shield, stacking up to 5 times, and increases its radius by 6 yds.",
+            "cooldown": null,
+            "charges": null,
+            "effects": [
+              {
+                "target_spell_id": null,
+                "target_spell_name": "your next Shield of the Righteous",
+                "type": "damage_increase",
+                "value": 20,
+                "unit": "percent"
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          81482,
+          81497,
+          81484
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 17,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81504,
+        "name": "Final Stand",
+        "spell_id": 204077,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 204077,
+            "description": "Final Stand Talent Requires Paladin Requires level 50 During Divine Shield, all targets within 15 yds are taunted.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81497,
+          81471,
+          103877
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 19,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 81477,
+        "name": "Righteous Protector",
+        "spell_id": 204074,
+        "node_type": "PASSIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 204074,
+            "description": "Righteous Protector Talent Requires Paladin Requires level 50 Avenging Wrath and Sentinel have 50% reduced cooldown and 40% reduced duration.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [
+          81488,
+          81471
+        ],
+        "unlocks": [],
+        "row": 11,
+        "col": 21,
+        "enriched": true,
+        "replaces_spell": null
+      },
+      {
+        "node_id": 110418,
+        "name": "Glory of the Vanguard",
+        "spell_id": 1267203,
+        "node_type": "ACTIVE",
+        "max_rank": 1,
+        "ranks": [
+          {
+            "rank": 1,
+            "spell_id": 1267203,
+            "description": "Glory of the Vanguard Talent Requires Paladin Judgment has a chance to grant you Vanguard, causing your next Avenger's Shield to leave an echoing bolt of light in a line between you and the initial target, piercing any enemies for (300% of Attack Power) Holy damage.",
+            "cooldown": null,
+            "charges": null,
+            "effects": []
+          }
+        ],
+        "dependencies": [],
+        "unlocks": [],
+        "row": 12,
+        "col": 18,
+        "enriched": true,
+        "replaces_spell": null
+      }
+    ]
+  },
+  "hero_trees": [
+    {
+      "name": "Templar",
+      "nodes": [
+        {
+          "node_id": 95177,
+          "name": "Wrathful Descent",
+          "spell_id": 431551,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431551,
+              "description": "Wrathful Descent Talent Requires Paladin When Empyrean Hammer critically strikes, 50% of its damage is dealt to nearby enemies. Enemies hit by this effect deal 5% reduced damage to you for 8 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95180
+          ],
+          "unlocks": [
+            95181
+          ],
+          "row": 2,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95178,
+          "name": "Higher Calling",
+          "spell_id": 431687,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431687,
+              "description": "Higher Calling Talent Requires Paladin Retribution Crusader Strike, Hammer of Wrath and Blade of Justice extend the duration of Shake the Heavens by 1 sec. Protection Crusader Strike, Hammer of Wrath and Judgment extend the duration of Shake the Heavens by 1 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95187
+          ],
+          "unlocks": [
+            95184
+          ],
+          "row": 3,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95179,
+          "name": "Sacrosanct Crusade",
+          "spell_id": 431730,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431730,
+              "description": "Sacrosanct Crusade Talent Requires Paladin Protection Divine Toll surrounds you with a Holy barrier for 15% of your maximum health. Hammer of Light heals you for 15% of your maximum health, increased by 2% for each additional target hit. Any overhealing done with this effect gets converted into a Holy barrier instead. Retribution Wake of Ashes surrounds you with a Holy barrier for 10% of your maximum health. Hammer of Light heals you for 5% of your maximum health, increased by 1% for each additional target hit. Any overhealing done with this effect gets converted into a Holy barrier instead. (5s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95183
+          ],
+          "unlocks": [
+            95185
+          ],
+          "row": 3,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95180,
+          "name": "Light's Guidance",
+          "spell_id": 427445,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 427445,
+              "description": "Light's Guidance Talent Requires Paladin Protection Divine Toll is replaced with Hammer of Light for 20 sec after it is cast. Hammer of Light : Hammer down your enemy with the power of the Light, dealing (696.774% of Attack Power) Holy damage and (348% of Attack Power) Holy damage up to 7 nearby enemies. Additionally, calls down Empyrean Hammers from the sky to strike 3 nearby enemies for (46.55% of Attack Power) Holy damage each. Costs . Retribution Wake of Ashes is replaced with Hammer of Light for 20 sec after it is cast. Hammer of Light : Hammer down your enemy with the power of the Light, dealing (696.774% of Attack Power) Holy damage and (348% of Attack Power) Holy damage up to 7 nearby enemies. Additionally, calls down Empyrean Hammers from the sky to strike 3 nearby enemies for (46.55% of Attack Power) Holy damage each. Costs .",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95177,
+            95187,
+            95183,
+            109747
+          ],
+          "row": 1,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95181,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 432992,
+              "name": "Bonds of Fellowship",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 432992,
+                  "description": "Bonds of Fellowship Talent Requires Paladin You receive 20% less damage from Blessing of Sacrifice and each time its target takes damage, you gain 4% movement speed up to a maximum of 40%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 432990,
+              "name": "Unrelenting Charger",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 432990,
+                  "description": "Unrelenting Charger Talent Requires Paladin Divine Steed lasts 2 sec longer and increases your movement speed by an additional 30% for the first 3 sec.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95177
+          ],
+          "unlocks": [
+            95186
+          ],
+          "row": 3,
+          "col": 23
+        },
+        {
+          "node_id": 95182,
+          "name": "Light's Deliverance",
+          "spell_id": 425518,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 425518,
+              "description": "Light's Deliverance Talent Requires Paladin Protection You gain a stack of Light's Deliverance when you call down an Empyrean Hammer. While Divine Toll and Hammer of Light are unavailable, you consume 60 stacks of Light's Deliverance, empowering yourself to cast Hammer of Light an additional time for free. Retribution You gain a stack of Light's Deliverance when you call down an Empyrean Hammer. While Wake of Ashes and Hammer of Light are unavailable, you consume 60 stacks of Light's Deliverance, empowering yourself to cast Hammer of Light an additional time for free.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95186,
+            95184,
+            95185,
+            109745
+          ],
+          "unlocks": [],
+          "row": 5,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95183,
+          "name": "Zealous Vindication",
+          "spell_id": 431463,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431463,
+              "description": "Zealous Vindication Talent Requires Paladin Hammer of Light instantly calls down 2 Empyrean Hammers on your target when it is cast.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95180
+          ],
+          "unlocks": [
+            95179
+          ],
+          "row": 2,
+          "col": 21,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95184,
+          "name": "Hammerfall",
+          "spell_id": 432463,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432463,
+              "description": "Hammerfall Talent Requires Paladin Retribution and Divine Storm calls down an Empyrean Hammer on a nearby enemy. While Shake the Heavens is active, this effect calls down an additional Empyrean Hammer. Protection Shield of the Righteous and Word of Glory calls down an Empyrean Hammer on a nearby enemy. While Shake the Heavens is active, this effect calls down an additional Empyrean Hammer. (100ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95178
+          ],
+          "unlocks": [
+            95182
+          ],
+          "row": 4,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95185,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 432615,
+              "name": "Endless Wrath",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 432615,
+                  "description": "Endless Wrath Talent Requires Paladin Empyrean Hammer has a 10% increased chance to critically strike.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 432977,
+              "name": "Sanctification",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 432977,
+                  "description": "Sanctification Talent Requires Paladin Casting Judgment increases the damage of Empyrean Hammer by 5% for 10 sec. Multiple applications may overlap.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "Empyrean Hammer",
+                      "type": "damage_increase",
+                      "value": 5,
+                      "unit": "percent"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95179
+          ],
+          "unlocks": [
+            95182
+          ],
+          "row": 4,
+          "col": 21
+        },
+        {
+          "node_id": 95186,
+          "name": "Undisputed Ruling",
+          "spell_id": 432626,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432626,
+              "description": "Undisputed Ruling Talent Requires Paladin Retribution Hammer of Light applies Judgment to its targets, and increases your Haste by 12% for 6 sec. Protection Hammer of Light grants Shield of the Righteous, erupts a Consecration beneath its target, and increases your Haste by 12% for 6 sec. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95181
+          ],
+          "unlocks": [
+            95182
+          ],
+          "row": 4,
+          "col": 23,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95187,
+          "name": "Shake the Heavens",
+          "spell_id": 431533,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431533,
+              "description": "Shake the Heavens Talent Requires Paladin After casting Hammer of Light, you call down an Empyrean Hammer on a nearby target every 2 sec, for 8 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95180
+          ],
+          "unlocks": [
+            95178
+          ],
+          "row": 2,
+          "col": 22,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109745,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 1260429,
+              "name": "Divine Exaction",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1260429,
+                  "description": "Divine Exaction Talent Requires Paladin Divine Toll casts 2 additional times on your target at 150% effectiveness.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 1263252,
+              "name": "Seal of the Templar",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 1263252,
+                  "description": "Seal of the Templar Talent Requires Paladin Retribution damage increased by 25%. Protection Judgment damage increased by 30%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            109746
+          ],
+          "unlocks": [
+            95182
+          ],
+          "row": 4,
+          "col": 24
+        },
+        {
+          "node_id": 109746,
+          "name": "Light's Judicator",
+          "spell_id": 1261525,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1261525,
+              "description": "Light's Judicator Talent Requires Paladin Empyrean Hammer deals 20% increased critical strike damage and its critical strikes have 50% chance to grant an additional stack of Light's Deliverance. (Proc chance: 50%)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109747
+          ],
+          "unlocks": [
+            109745
+          ],
+          "row": 3,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109747,
+          "name": "Divine Hammer",
+          "spell_id": 432929,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432929,
+              "description": "Divine Hammer Talent Requires Paladin Divine Toll summons Divine Hammers that spin around you for 8 sec. Divine Hammer Strikes all enemies nearby for [ Burning Crusade : [(144% of Attack Power)% * 1.05] Radiant / (144% of Attack Power)% Holy] damage every 2 sec. Deals reduced damage beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95180
+          ],
+          "unlocks": [
+            109746
+          ],
+          "row": 2,
+          "col": 24,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Lightsmith",
+      "nodes": [
+        {
+          "node_id": 95228,
+          "name": "Solidarity",
+          "spell_id": 432802,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432802,
+              "description": "Solidarity Talent Requires Paladin If you bestow an Armament upon an ally, you also gain its benefits. If you bestow an Armament upon yourself, a nearby ally also gains its benefits.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110257,
+            95234
+          ],
+          "unlocks": [
+            95231
+          ],
+          "row": 8,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95229,
+          "name": "Valiance",
+          "spell_id": 432919,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432919,
+              "description": "Valiance Talent Requires Paladin Holy Consuming Infusion of Light reduces the cooldown of Holy Armaments by 3.0 sec. Protection Consuming Shining Light reduces the cooldown of Holy Armaments by 3.0 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": [
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Holy Armaments",
+                  "type": "cd_reduction",
+                  "value": 3,
+                  "unit": "seconds"
+                },
+                {
+                  "target_spell_id": null,
+                  "target_spell_name": "Holy Armaments",
+                  "type": "cd_reduction",
+                  "value": 3,
+                  "unit": "seconds"
+                }
+              ]
+            }
+          ],
+          "dependencies": [
+            95231
+          ],
+          "unlocks": [
+            95230
+          ],
+          "row": 10,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95230,
+          "name": "Blessing of the Forge",
+          "spell_id": 433011,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 433011,
+              "description": "Blessing of the Forge Talent Requires Paladin Avenging Wrath summons an additional Sacred Weapon, and during Avenging Wrath your Sacred Weapon casts spells on your target and echoes the effects of your Holy Power abilities.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95238,
+            95229,
+            95237,
+            109744
+          ],
+          "unlocks": [],
+          "row": 11,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95231,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 432964,
+              "name": "Divine Inspiration",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 432964,
+                  "description": "Divine Inspiration Talent Requires Paladin Your spells and abilities have a chance to manifest a Holy Armament for a nearby ally. (1s cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 432804,
+              "name": "Forewarning",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 432804,
+                  "description": "Forewarning Talent Requires Paladin The cooldown of Holy Armaments is reduced by 20%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95228
+          ],
+          "unlocks": [
+            95229
+          ],
+          "row": 9,
+          "col": 10
+        },
+        {
+          "node_id": 95232,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 469886,
+              "name": "Authoritative Rebuke",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 469886,
+                  "description": "Authoritative Rebuke Talent Requires Paladin Holy Successfully dispelling a harmful effect reduces Cleanse's cooldown by 1.0 sec. Effect increased by 100% while wielding a Holy Armament. Protection Successfully interrupting an enemy spellcast reduces Rebuke's cooldown by 1.0 sec. Effect increased by 100% while wielding a Holy Armament. (100ms cooldown)",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 469701,
+              "name": "Tempered in Battle",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 469701,
+                  "description": "Tempered in Battle Talent Requires Paladin When you or an ally wielding a Holy Bulwark are healed above maximum health, transfer 100% of the overhealing to your ally. When you or an ally wielding a Sacred Weapon drop below 40% health, redistribute your health immediately and every 1 sec for 4 sec. May only occur once per cast.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95235
+          ],
+          "unlocks": [
+            95238
+          ],
+          "row": 9,
+          "col": 11
+        },
+        {
+          "node_id": 95233,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 433568,
+              "name": "Rite of Sanctification",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 433568,
+                  "description": "Rite of Sanctification Talent Requires Paladin Imbue your weapon with the power of the Light, increasing your armor by 5% and your primary stat by 2%. Lasts 1 hour.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 433583,
+              "name": "Rite of Adjuration",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 433583,
+                  "description": "Rite of Adjuration Talent Requires Paladin Imbue your weapon with the power of the Light, increasing your Stamina by 3% and causing your Holy Power abilities to sometimes unleash a burst of healing around a target. Lasts 1 hour.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            110257,
+            95234
+          ],
+          "unlocks": [
+            95236
+          ],
+          "row": 8,
+          "col": 9
+        },
+        {
+          "node_id": 95234,
+          "name": "Holy Bulwark",
+          "spell_id": 432459,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432459,
+              "description": "Holy Bulwark Talent 1 min recharge Requires Paladin Will the Light to coalesce and become manifest as a Holy Armament, wielded by your friendly target. Holy Bulwark : While wielding a Holy Bulwark, gain an absorb shield for 15.0% of your max health and an additional 2.0% every 2 sec. Lasts 20 sec. Becomes Sacred Weapon after use.",
+              "cooldown": 60.0,
+              "charges": 2,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95233,
+            95235,
+            95228,
+            109742
+          ],
+          "row": 7,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95235,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 433106,
+              "name": "Divine Guidance",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 433106,
+                  "description": "Divine Guidance Talent Requires Paladin Holy For each Holy Power ability cast, your next Consecration deals [(Spell Power * 30 / 10) * (1 + Versatility) * 2.86] damage or healing immediately, split across all enemies and allies. Protection For each Holy Power ability cast, your next Consecration deals [(Spell Power * 37 / 10) * (1 + Versatility) * 1.07] damage or healing immediately, split across all enemies and allies.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 433015,
+              "name": "Blessed Assurance",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 433015,
+                  "description": "Blessed Assurance Talent Requires Paladin Protection Casting a Holy Power ability increases the damage and healing of your next Crusader Strike by 200%. Holy Casting a Holy Power ability increases the damage and healing of your next Holy Shock by 200%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            110257,
+            95234
+          ],
+          "unlocks": [
+            95232
+          ],
+          "row": 8,
+          "col": 11
+        },
+        {
+          "node_id": 95236,
+          "name": "Laying Down Arms",
+          "spell_id": 432866,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432866,
+              "description": "Laying Down Arms Talent Requires Paladin Holy When an Armament fades from you, the cooldown of Lay on Hands is reduced by 15.0 sec and you gain Infusion of Light. Protection When an Armament fades from you, the cooldown of Lay on Hands is reduced by 15.0 sec and you gain Shining Light.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95233
+          ],
+          "unlocks": [
+            95237
+          ],
+          "row": 9,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95237,
+          "name": "Shared Resolve",
+          "spell_id": 432821,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432821,
+              "description": "Shared Resolve Talent Requires Paladin The effect of your active Aura is increased by 33% on targets with your Armaments.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95236
+          ],
+          "unlocks": [
+            95230
+          ],
+          "row": 10,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95238,
+          "name": "Reflection of Radiance",
+          "spell_id": 1271466,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271466,
+              "description": "Reflection of Radiance Talent Requires Paladin Holy When your Holy Bulwark absorbs damage or your Sacred Weapon deals damage or healing, you have a chance to gain Awakening. Protection When your Holy Bulwark absorbs damage or your Sacred Weapon deals damage or healing, you have a chance to gain Grand Crusader.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95232
+          ],
+          "unlocks": [
+            95230
+          ],
+          "row": 10,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109742,
+          "name": "Masterwork",
+          "spell_id": 1271387,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271387,
+              "description": "Masterwork Talent Requires Paladin After casting a Holy Armament, your next 3 abilities cast a Lesser Armament of the same kind on a nearby ally.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            110257,
+            95234
+          ],
+          "unlocks": [
+            109743
+          ],
+          "row": 8,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109743,
+          "name": "Hammer and Anvil",
+          "spell_id": 433718,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 433718,
+              "description": "Hammer and Anvil Talent Requires Paladin Protection Judgment critical strikes cause a shockwave around the target, dealing (230% of Attack Power) damage to enemies within 5 yards. Damage reduced above 5 targets. Holy Judgment critical strikes cause a shockwave around the target, healing to up to 5 injuried allies for (84% of Spell Power).",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109742
+          ],
+          "unlocks": [
+            109744
+          ],
+          "row": 9,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109744,
+          "name": "Resounding Strike",
+          "spell_id": 1271553,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1271553,
+              "description": "Resounding Strike Talent Requires Paladin Protection Divine Toll activates Hammer and Anvil at 100% effectiveness. Holy Holy Armaments activate Hammer and Anvil at 100% effectiveness.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109743
+          ],
+          "unlocks": [
+            95230
+          ],
+          "row": 10,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 110257,
+          "name": "Holy Bulwark",
+          "spell_id": 432459,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 432459,
+              "description": "Holy Bulwark Talent 1 min recharge Requires Paladin Will the Light to coalesce and become manifest as a Holy Armament, wielded by your friendly target. Holy Bulwark : While wielding a Holy Bulwark, gain an absorb shield for 15.0% of your max health and an additional 2.0% every 2 sec. Lasts 20 sec. Becomes Sacred Weapon after use.",
+              "cooldown": 60.0,
+              "charges": 2,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            109742,
+            95235,
+            95228,
+            95233
+          ],
+          "row": 7,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    },
+    {
+      "name": "Herald of the Sun",
+      "nodes": [
+        {
+          "node_id": 95069,
+          "name": "Aurora",
+          "spell_id": 439760,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 439760,
+              "description": "Aurora Talent Requires Paladin Holy After you cast Holy Prism or Divine Toll, gain Divine Purpose. Divine Purpose Your next Holy Power spending ability is free and deals 15% increased damage and healing. Retribution After you cast Wake of Ashes, gain Divine Purpose. Divine Purpose Your next Holy Power spending ability is free and deals 10% increased damage and healing. (2s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95098
+          ],
+          "unlocks": [
+            95105
+          ],
+          "row": 5,
+          "col": 9,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95071,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 445200,
+              "name": "Blessing of An'she",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 445200,
+                  "description": "Blessing of An'she Talent Requires Paladin Approximately 2 procs per minute Holy The healing and damage of Holy Shock is increased by 15%. Retribution Your damage and healing over time effects have a chance to increase the damage of your next Judgment by 50%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": [
+                    {
+                      "target_spell_id": null,
+                      "target_spell_name": "your next Judgment",
+                      "type": "damage_increase",
+                      "value": 50,
+                      "unit": "percent"
+                    }
+                  ]
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 431407,
+              "name": "Lingering Radiance",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431407,
+                  "description": "Lingering Radiance Talent Requires Paladin Dawnlight leaves an Eternal Flame for 6 sec on allies or a Greater Judgment on enemies when it expires or is extended.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95095
+          ],
+          "unlocks": [
+            95094
+          ],
+          "row": 4,
+          "col": 10
+        },
+        {
+          "node_id": 95072,
+          "name": "Sun Sear",
+          "spell_id": 431413,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431413,
+              "description": "Sun Sear Talent Requires Paladin Retribution Hammer of Wrath and Divine Storm critical strikes cause the target to burn for an additional (48% of Spell Power) Radiant damage over 4 sec. Holy Holy Shock and Light of Dawn critical strikes cause the target to be healed for an additional (54% of Spell Power) over 4 sec.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95080
+          ],
+          "unlocks": [
+            95086
+          ],
+          "row": 4,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95073,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 431482,
+              "name": "Morning Star",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431482,
+                  "description": "Morning Star Talent Requires Paladin Every 5.0 sec, your next Dawnlight's damage or healing is increased by 5%, stacking up to 10 times. Morning Star stacks twice as fast while out of combat.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 431480,
+              "name": "Gleaming Rays",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431480,
+                  "description": "Gleaming Rays Talent Requires Paladin Your Holy Power spenders deal 3% additional damage and healing.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95099
+          ],
+          "unlocks": [
+            95098
+          ],
+          "row": 3,
+          "col": 9
+        },
+        {
+          "node_id": 95080,
+          "name": "Luminosity",
+          "spell_id": 431402,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431402,
+              "description": "Luminosity Talent Requires Paladin Retribution Critical Strike chance of Hammer of Wrath and Divine Storm increased by 10%. Holy Critical Strike chance of Holy Shock and Light of Dawn increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95099
+          ],
+          "unlocks": [
+            95072
+          ],
+          "row": 3,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95086,
+          "name": "Second Sunrise",
+          "spell_id": 431474,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431474,
+              "description": "Second Sunrise Talent Requires Paladin Retribution Divine Storm and Hammer of Wrath have a 15% chance to cast again at 30% effectiveness. Holy Light of Dawn and Holy Shock have a 15% chance to cast again at 30% effectiveness. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95072
+          ],
+          "unlocks": [
+            95105
+          ],
+          "row": 5,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95094,
+          "name": "Walk Into Light",
+          "spell_id": 1263782,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1263782,
+              "description": "Walk Into Light Talent Requires Paladin Retribution You have a 100% chance to gain Blessing of An'she and generate after casting Avenging Wrath. During Avenging Wrath, Hammer of Wrath casts Blade of Justice at 100% effectiveness. Holy You have a 100% chance to generate after casting Avenging Wrath. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95071
+          ],
+          "unlocks": [
+            95105
+          ],
+          "row": 5,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95095,
+          "name": "Eternal Flame",
+          "spell_id": 156322,
+          "node_type": "ACTIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 156322,
+              "description": "Eternal Flame Talent / 0.6% of base mana Requires Paladin Heals an ally for (378% of Spell Power) and an additional (109.44% of Spell Power) over 16 sec. Healing increased by 25% when cast on self.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95099
+          ],
+          "unlocks": [
+            95071
+          ],
+          "row": 3,
+          "col": 10,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95098,
+          "node_type": "CHOICE",
+          "max_rank": 1,
+          "choices": [
+            {
+              "spell_id": 431423,
+              "name": "Illumine",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431423,
+                  "description": "Illumine Talent Requires Paladin Dawnlight reduces the movement speed of enemies by 50% and increases the movement speed of allies by 20%.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            },
+            {
+              "spell_id": 431406,
+              "name": "Will of the Dawn",
+              "ranks": [
+                {
+                  "rank": 1,
+                  "spell_id": 431406,
+                  "description": "Will of the Dawn Talent Requires Paladin Movement speed increased by 5% while above 80% health. When your health is brought below 35%, your movement speed is increased by 40% for 5 sec. Cannot occur more than once every 1 min.",
+                  "cooldown": null,
+                  "charges": null,
+                  "effects": []
+                }
+              ],
+              "enriched": true,
+              "replaces_spell": null
+            }
+          ],
+          "dependencies": [
+            95073
+          ],
+          "unlocks": [
+            95069
+          ],
+          "row": 4,
+          "col": 9
+        },
+        {
+          "node_id": 95099,
+          "name": "Dawnlight",
+          "spell_id": 431377,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431377,
+              "description": "Dawnlight Talent Requires Paladin Holy Casting Holy Prism or Divine Toll causes your next spending abilities to apply Dawnlight on your target, dealing (255% of Spell Power) Radiant damage or (538.2% of Spell Power) healing over 8 sec. 8% of Dawnlight's damage and healing radiates to nearby allies or enemies, reduced beyond 5 targets. Dawnlight's healing does not transfer to Beacon of Light. Retribution Casting Wake of Ashes causes your next spending abilities to apply Dawnlight on your target, dealing (255% of Spell Power) Radiant damage or (538.2% of Spell Power) healing over 8 sec. 4% of Dawnlight's damage and healing radiates to nearby allies or enemies, reduced beyond 5 targets. (250ms cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [],
+          "unlocks": [
+            95095,
+            95073,
+            95080,
+            109748
+          ],
+          "row": 2,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 95105,
+          "name": "Sun's Avatar",
+          "spell_id": 431425,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431425,
+              "description": "Sun's Avatar Talent Requires Paladin Holy You link to your Dawnlights within 30 yds, causing (21.6% of Spell Power) Radiant damage to enemies or (37.26% of Spell Power) healing to allies that pass through the beams, reduced beyond 5 targets. Retribution You link to your Dawnlights within 30 yds, causing (21.6% of Spell Power) Radiant damage to enemies or (37.26% of Spell Power) healing to allies that pass through the beams, reduced beyond 8 targets.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95086,
+            95094,
+            95069,
+            109749
+          ],
+          "unlocks": [],
+          "row": 6,
+          "col": 11,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109748,
+          "name": "Endless Gleam",
+          "spell_id": 1263787,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1263787,
+              "description": "Endless Gleam Talent Requires Paladin Retribution Dawnlight's duration is increased by 0.3 sec whenever struck by Divine Storm or Templar's Verdict. When 2 Dawnlights are struck by Divine Storm, their durations are extended by an additional 0.3 sec. Holy Dawnlight's duration is increased by 0.5 sec when it heals an ally with full health.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            95099
+          ],
+          "unlocks": [
+            109750
+          ],
+          "row": 3,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109749,
+          "name": "Born in Sunlight",
+          "spell_id": 1263920,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 1263920,
+              "description": "Born in Sunlight Talent Requires Paladin Dawnlight's critical strike chance is increased by 15% during Avenging Wrath. (1s cooldown)",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109750
+          ],
+          "unlocks": [
+            95105
+          ],
+          "row": 5,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        },
+        {
+          "node_id": 109750,
+          "name": "Solar Grace",
+          "spell_id": 431404,
+          "node_type": "PASSIVE",
+          "max_rank": 1,
+          "ranks": [
+            {
+              "rank": 1,
+              "spell_id": 431404,
+              "description": "Solar Grace Talent Requires Paladin Retribution Haste is increased by 2%. Holy Haste is increased by 5%.",
+              "cooldown": null,
+              "charges": null,
+              "effects": []
+            }
+          ],
+          "dependencies": [
+            109748
+          ],
+          "unlocks": [
+            109749
+          ],
+          "row": 4,
+          "col": 12,
+          "enriched": true,
+          "replaces_spell": null
+        }
+      ]
+    }
+  ]
+}
