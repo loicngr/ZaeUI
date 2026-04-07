@@ -189,9 +189,10 @@ function events.GROUP_ROSTER_UPDATE()
     ns.cleanGroupData()
     if ns.cleanStaleAssignments then ns.cleanStaleAssignments() end
     ns.sendSync()
-    -- Refresh assignment panel and marker display
+    -- Refresh assignment panel, marker display, and main display
     if ns.refreshAssignPanel then ns.refreshAssignPanel() end
     if ns.refreshMarkerDisplay then ns.refreshMarkerDisplay() end
+    if ns.refreshDisplay then ns.refreshDisplay() end
 end
 
 function events.CHAT_MSG_ADDON(_, prefix, message, _, sender)
@@ -233,13 +234,21 @@ end
 function events.CHALLENGE_MODE_START()
     -- Mythic+ keystone activated: the group category may transition (HOME→INSTANCE),
     -- which can cause GROUP_ROSTER_UPDATE to fire with a temporarily false group state
-    -- and stop the heartbeat. Restart it once the group has stabilized.
-    C_Timer.After(1, function()
-        if ns.isInAnyGroup() then
-            startHeartbeat()
-            ns.sendSync()
+    -- and stop the heartbeat. Perform graduated recovery attempts until the group
+    -- has stabilized, then restart heartbeat, re-sync, and refresh the display.
+    local function recover()
+        if not ns.isInAnyGroup() then return end
+        startHeartbeat()
+        ns.rebuildClassColorCache()
+        ns.sendSync()
+        if db.showFrame then
+            ns.showDisplay()
         end
-    end)
+    end
+    C_Timer.After(1, recover)
+    C_Timer.After(3, recover)
+    C_Timer.After(6, recover)
+    C_Timer.After(10, recover)
 end
 
 function events.UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
@@ -373,12 +382,27 @@ local QUEUE_RETRY_INTERVAL = 1
 local QUEUE_MAX_AGE = 30
 
 --- Try to send a message, returns true on success (result == 0).
+--- Falls back to alternate channel if the primary one fails (handles
+--- HOME↔INSTANCE group category transitions in M+).
 --- @param msg string The message to send
 --- @return boolean sent
 local function trySend(msg)
     -- Enum.SendAddonMessageResult: 0 = Success
-    local result = C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, getChannel())
-    return result == 0
+    local channel = getChannel()
+    local result = C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, channel)
+    if result == 0 then return true end
+    -- Fallback: try the other party/instance channel
+    local fallback
+    if channel == "INSTANCE_CHAT" then
+        fallback = "PARTY"
+    elseif channel == "PARTY" then
+        fallback = "INSTANCE_CHAT"
+    end
+    if fallback then
+        result = C_ChatInfo.SendAddonMessage(COMM_PREFIX, msg, fallback)
+        return result == 0
+    end
+    return false
 end
 
 --- Flush queued messages that were blocked by lockdown/throttle.
@@ -419,16 +443,16 @@ local function queueOnUpdate(_, elapsed)
     end
 end
 
---- Safely send an addon message, queuing on lockdown/throttle.
+--- Safely send an addon message, queuing on lockdown/throttle/transition.
 --- @param msg string The message to send
 local function safeSend(msg)
-    if not canSendMessage() then return end
-    if not trySend(msg) then
+    if not canSendMessage() or not trySend(msg) then
         sendQueue[#sendQueue + 1] = { msg = msg, time = GetTime() }
         if #sendQueue == 1 then
             queueElapsed = 0
             queueFrame:SetScript("OnUpdate", queueOnUpdate)
         end
+        return
     end
 end
 ns.safeSend = safeSend
@@ -636,6 +660,7 @@ function ns.handleAddonMessage(message, sender)
         local spellID = tonumber(payload)
         if spellID then
             groupData[name] = groupData[name] or { spells = {}, cooldowns = {}, counters = {} }
+            groupData[name].spells[spellID] = true
             groupData[name].cooldowns[spellID] = nil
         end
     elseif msgType == "MARKS" then
@@ -661,19 +686,29 @@ function ns.resetCounters()
 end
 
 --- Remove data for players no longer in the group.
+--- Skips the wipe when the roster is not yet resolved (loading screen,
+--- M+ HOME→INSTANCE transition) to avoid destroying valid peer data.
 function ns.cleanGroupData()
-    local currentMembers = {}
+    if not ns.isInAnyGroup() then return end
     local numMembers = GetNumGroupMembers()
+    if numMembers == 0 then return end
+    local currentMembers = {}
+    local resolved = 0
     local isRaid = IsInRaid()
     local count = isRaid and numMembers or (numMembers - 1)
     for i = 1, count do
         local unit = isRaid and ("raid" .. i) or ("party" .. i)
         local name = UnitName(unit)
-        if name then currentMembers[name] = true end
+        if name then
+            currentMembers[name] = true
+            resolved = resolved + 1
+        end
     end
     -- Always include the player
     local myName = UnitName("player")
     if myName then currentMembers[myName] = true end
+    -- Abort if most names are unresolved (loading screen / zone transition)
+    if count > 0 and resolved == 0 then return end
     for name, _ in pairs(groupData) do
         if not currentMembers[name] then
             groupData[name] = nil
