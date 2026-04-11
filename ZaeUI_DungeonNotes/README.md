@@ -49,6 +49,11 @@ The import parser is strict (no `loadstring`, no arbitrary code execution). Only
 
 - **ZaeUI_Shared** — required dependency ([install from CurseForge](https://www.curseforge.com/wow/addons/zaeui-shared))
 
+## Download
+
+- [CurseForge](https://www.curseforge.com/wow/addons/zaeui-dungeonnotes)
+- [GitHub Releases](https://github.com/loicngr/ZaeUI/releases)
+
 ## Why this addon?
 
 Most guide content for dungeons and raids lives outside the game (Notion, Discord, wiki pages). Alt-tabbing to consult notes during a pull is impractical. ZaeUI_DungeonNotes lets you jot your own reminders — kick priorities, pull routes, boss mechanics you keep forgetting — and have them surface exactly when you need them, at the instance door.

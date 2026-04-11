@@ -3,7 +3,7 @@
 ## Notes: Personal notes per dungeon, shown on instance entry.
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
-## Version: 1.0.0
+## Version: 1.0.1
 ## SavedVariablesPerCharacter: ZaeUI_DungeonNotesCharDB
 ## Dependencies: ZaeUI_Shared
 

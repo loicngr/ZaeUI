@@ -12,7 +12,7 @@ A collection of lightweight World of Warcraft addons for Retail / Midnight.
 | [ZaeUI_Shared](ZaeUI_Shared/) | Shared utilities and minimap button for all ZaeUI addons | — | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-shared) |
 | [ZaeUI_ActionBars](ZaeUI_ActionBars/) | Hide action bars with mouse hover fade in/out | `/zab` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-actionbars) |
 | [ZaeUI_Defensives](ZaeUI_Defensives/) | Track defensive cooldowns for your group in a floating tracker window | `/zdef` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-defensives) |
-| [ZaeUI_DungeonNotes](ZaeUI_DungeonNotes/) | Personal notes per dungeon and raid, shown on instance entry | `/zdn` | — |
+| [ZaeUI_DungeonNotes](ZaeUI_DungeonNotes/) | Personal notes per dungeon and raid, shown on instance entry | `/zdn` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-dungeonnotes) |
 | [ZaeUI_FriendlyPlates](ZaeUI_FriendlyPlates/) | Friendly nameplates with name-only mode, class colors and custom font size | `/zfp` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-friendly-plates) |
 | [ZaeUI_Interrupts](ZaeUI_Interrupts/) | Track interrupt, stun and knockback cooldowns for your group with kick marker assignments | `/zint` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-interrupts) |
 | [ZaeUI_Nameplates](ZaeUI_Nameplates/) | Enhance your target nameplate with scaling, overlap adjustment, arrow indicators, highlight and options panel | `/znp` | [CurseForge](https://www.curseforge.com/wow/addons/zaeui-nameplates) |
