@@ -4,6 +4,12 @@ Track interrupt, stun and knockback cooldowns for all group members running the 
 
 Works with **Midnight (12.0.0+)** and requires all group members to have the addon for full cooldown tracking.
 
+> ⚠️ **Group sync does not work in Mythic+, Arenas, or while a raid boss encounter is in progress.**
+>
+> Since the Midnight pre-patch (12.0, January 2026), Blizzard restricts addon-to-addon communication during active instanced competitive content: once a Mythic+ keystone is activated, a PvP match has started, or a raid encounter is in progress, addon messages between party members are silently blocked by the game. This affects every cooldown-sharing addon, not just ZaeUI_Interrupts.
+>
+> **What still works:** open world, dungeons before the keystone is activated, raids between pulls, solo play, and any non-instanced group content. Your own cooldowns always display correctly — only the real-time broadcast *to* and *from* other players is affected inside active M+ / Arena / encounters. Kick marker assignments propagated via addon messages are subject to the same restriction.
+
 ## How it works
 
 - **Addon Messaging**: Players broadcast their available spells and cooldown usage via addon-to-addon communication
@@ -46,6 +52,8 @@ Works with **Midnight (12.0.0+)** and requires all group members to have the add
 ## Addon Messaging Protocol
 
 All messages are sent via `C_ChatInfo.SendAddonMessage` with prefix `ZaeInt` on `PARTY`, `RAID` or `INSTANCE_CHAT` channel.
+
+> Blizzard silently drops these messages while a Mythic+ run, a PvP match, or a raid encounter is active (Patch 12.0+). See the warning at the top of this README.
 
 | Message | Direction | Format | Description |
 |---------|-----------|--------|-------------|

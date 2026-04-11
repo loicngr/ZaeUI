@@ -4,6 +4,12 @@ Track defensive cooldowns for all group members — displayed in a floating trac
 
 Works with **Midnight (12.0.0+)** and requires all group members to have the addon for cooldown tracking.
 
+> ⚠️ **Group sync does not work in Mythic+, Arenas, or while a raid boss encounter is in progress.**
+>
+> Since the Midnight pre-patch (12.0, January 2026), Blizzard restricts addon-to-addon communication during active instanced competitive content: once a Mythic+ keystone is activated, a PvP match has started, or a raid encounter is in progress, addon messages between party members are silently blocked by the game. This affects every cooldown-sharing addon, not just ZaeUI_Defensives.
+>
+> **What still works:** open world, dungeons before the keystone is activated, raids between pulls, solo play, and any non-instanced group content. Your own cooldowns always display correctly — only the real-time broadcast *to* and *from* other players is affected inside active M+ / Arena / encounters.
+
 ## Display Modes
 
 ### Floating Tracker (Default)
@@ -18,7 +24,7 @@ Works with **Midnight (12.0.0+)** and requires all group members to have the add
 
 ## How it works
 
-- **Addon Messaging**: Players broadcast their available defensive spells and cooldown usage via addon-to-addon communication
+- **Addon Messaging**: Players broadcast their available defensive spells and cooldown usage via addon-to-addon communication (blocked by Blizzard inside active M+ / Arena / raid encounters — see warning above)
 - **Talent-Aware Cooldowns**: Automatically adjusts cooldown durations based on active talents and specialization
 - **Three Categories**: Externals (Pain Suppression, Ironbark…), Personal (Fortifying Brew, Astral Shift…), Raidwide (Rallying Cry, Aura Mastery…)
 - **Category Filters**: Show or hide externals, personal and raidwide defensives independently
