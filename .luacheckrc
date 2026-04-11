@@ -1,6 +1,13 @@
 std = "lua51"
 max_line_length = false
 
+-- Third-party libraries vendored in ZaeUI_Shared/Libs are out of scope:
+-- they ship with their own style and naming and we don't modify them.
+exclude_files = {
+    "**/Libs/**",
+    "ZaeUI_Shared/Libs/",
+}
+
 globals = {
     -- SavedVariables (writable)
     "ZaeUI_NameplatesDB",
@@ -9,12 +16,17 @@ globals = {
     "ZaeUI_ActionBarsDB",
     "ZaeUI_FriendlyPlatesDB",
     "ZaeUI_DefensivesDB",
+    "ZaeUI_DungeonNotesCharDB",
+    "ZaeUI_SharedDB",
 
     -- Shared library (writable in ZaeUI_Shared, read by other addons)
     "ZaeUI_Shared",
 
     -- Shared settings category (writable, used by multiple addons)
     "ZaeUI_SettingsCategory",
+
+    -- Blizzard StaticPopup system (addons register dialogs by assigning into it)
+    "StaticPopupDialogs",
 
     -- Slash command system (assigned in addon code)
     "SlashCmdList",
@@ -23,6 +35,7 @@ globals = {
     "SLASH_ZAEUIACTIONBARS1",
     "SLASH_ZAEUIFRIENDLYPLATES1",
     "SLASH_ZAEUIDEFENSIVES1",
+    "SLASH_ZAEUIDUNGEONNOTES1",
 }
 
 read_globals = {
@@ -71,6 +84,15 @@ read_globals = {
     "UnitExists",
     "FindSpellOverrideByID",
     "UnitName",
+    "GetInstanceInfo",
+    "StaticPopup_Show",
+    "StaticPopup_Hide",
+    "UIFrameFadeIn",
+    "UIFrameFadeOut",
+    "GetCursorPosition",
+    "IsShiftKeyDown",
+    "Minimap",
+    "LibStub",
 
     -- WoW global objects
     "PartyFrame",

@@ -1,9 +1,12 @@
 -- ZaeUI_Shared: Common utilities for all ZaeUI addons
--- Provides shared UI widgets, backdrop styling and helper functions
+-- Provides shared UI widgets, backdrop styling, a minimap button and helper
+-- functions. Hosts the "ZaeUI" parent category for Blizzard Settings.
 
 local CreateFrame = CreateFrame
 local math_floor = math.floor
 local string_format = string.format
+local type = type
+local pairs = pairs
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
 
@@ -15,7 +18,57 @@ local SHARED_BACKDROP = {
     insets = { left = 2, right = 2, top = 2, bottom = 2 },
 }
 
+-- Shared SavedVariables defaults. The `minimapButton` sub-table uses the
+-- key names expected by LibDBIcon-1.0 (hide, lock, minimapPos, ...).
+local SHARED_DEFAULTS = {
+    minimapButton = {
+        hide = false,
+        minimapPos = 225, -- degrees, 225° = bottom-left of the minimap
+    },
+}
+
+-- LibDBIcon-1.0 key used to register / look up our button.
+local MINIMAP_BUTTON_KEY = "ZaeUI"
+
 ZaeUI_Shared = {}
+
+-- Module-level state populated on ADDON_LOADED / PLAYER_LOGIN.
+local sharedDB
+
+--- Initialize ZaeUI_SharedDB with defaults for any missing keys.
+--- Also migrates from the pre-LibDBIcon flat layout that existed only in
+--- unreleased 1.3.0 dev builds (minimapButtonEnabled / minimapButtonAngle).
+local function initSharedDB()
+    if not ZaeUI_SharedDB then
+        ZaeUI_SharedDB = {}
+    end
+    if ZaeUI_SharedDB.minimapButtonEnabled ~= nil or ZaeUI_SharedDB.minimapButtonAngle ~= nil then
+        ZaeUI_SharedDB.minimapButton = ZaeUI_SharedDB.minimapButton or {
+            hide = ZaeUI_SharedDB.minimapButtonEnabled == false,
+            minimapPos = ZaeUI_SharedDB.minimapButtonAngle or 225,
+        }
+        ZaeUI_SharedDB.minimapButtonEnabled = nil
+        ZaeUI_SharedDB.minimapButtonAngle = nil
+    end
+    for key, value in pairs(SHARED_DEFAULTS) do
+        if ZaeUI_SharedDB[key] == nil then
+            if type(value) == "table" then
+                local copy = {}
+                for k, v in pairs(value) do copy[k] = v end
+                ZaeUI_SharedDB[key] = copy
+            else
+                ZaeUI_SharedDB[key] = value
+            end
+        end
+    end
+    -- Fill any missing keys inside the minimapButton sub-table.
+    for k, v in pairs(SHARED_DEFAULTS.minimapButton) do
+        if ZaeUI_SharedDB.minimapButton[k] == nil then
+            ZaeUI_SharedDB.minimapButton[k] = v
+        end
+    end
+    sharedDB = ZaeUI_SharedDB
+end
 
 --- Check if the player is in any type of group.
 --- Covers manual groups (LE_PARTY_CATEGORY_HOME) and LFG/instance groups
@@ -32,6 +85,119 @@ function ZaeUI_Shared.applyBackdrop(frame)
     frame:SetBackdrop(SHARED_BACKDROP)
     frame:SetBackdropColor(0, 0, 0, 0.8)
     frame:SetBackdropBorderColor(0.3, 0.3, 0.3, 1)
+end
+
+-- Right-click context menu -----------------------------------------------
+
+-- Ordered list of actions registered by sub-addons for the right-click menu.
+local menuActions = {}
+local table_sort = table.sort
+
+--- Public: register an action to appear in the minimap button right-click menu.
+--- Sub-addons should call this from their ADDON_LOADED handler so the entry
+--- is available the first time the menu is opened.
+--- @param label string Menu label (displayed as-is)
+--- @param onClick function Handler called with no arguments when clicked
+--- @param order number|nil Sort order (lower = earlier). Defaults to registration order.
+function ZaeUI_Shared.registerMenuAction(label, onClick, order)
+    if type(label) ~= "string" or type(onClick) ~= "function" then return end
+    menuActions[#menuActions + 1] = {
+        label = label,
+        onClick = onClick,
+        order = order or (#menuActions + 1),
+    }
+    table_sort(menuActions, function(a, b) return a.order < b.order end)
+end
+
+--- Open the Blizzard Settings on the ZaeUI parent category.
+local function openZaeUISettings()
+    if ZaeUI_SettingsCategory and Settings and Settings.OpenToCategory then
+        Settings.OpenToCategory(ZaeUI_SettingsCategory.ID)
+    end
+end
+
+--- Show the minimap button right-click context menu.
+--- @param owner table The frame that anchors the menu (usually the LDB button)
+local function showContextMenu(owner)
+    if not MenuUtil or not MenuUtil.CreateContextMenu then return end
+    MenuUtil.CreateContextMenu(owner, function(_, rootDescription)
+        rootDescription:CreateTitle("ZaeUI")
+        rootDescription:CreateButton("Open Settings", openZaeUISettings)
+        if #menuActions > 0 then
+            rootDescription:CreateDivider()
+            for _, action in ipairs(menuActions) do
+                rootDescription:CreateButton(action.label, action.onClick)
+            end
+        end
+        rootDescription:CreateDivider()
+        rootDescription:CreateButton("Hide minimap button", function()
+            ZaeUI_Shared.setMinimapButtonShown(false)
+        end)
+    end)
+end
+
+-- Minimap button (LibDBIcon-1.0) ------------------------------------------
+
+--- Register the LDB launcher and the minimap button. Safe to call multiple
+--- times; LibDBIcon guards against double-registration via IsRegistered.
+local function registerMinimapButton()
+    if not sharedDB then return end
+    if not LibStub then return end
+    local LibDBIcon = LibStub("LibDBIcon-1.0", true)
+    local LibDataBroker = LibStub("LibDataBroker-1.1", true)
+    if not LibDBIcon or not LibDataBroker then return end
+    if LibDBIcon:IsRegistered(MINIMAP_BUTTON_KEY) then return end
+
+    -- NewDataObject returns nil if the name is already taken, so reuse the
+    -- existing object in that case (edge case when the addon is reloaded).
+    local launcher = LibDataBroker:GetDataObjectByName(MINIMAP_BUTTON_KEY)
+    if not launcher then
+        launcher = LibDataBroker:NewDataObject(MINIMAP_BUTTON_KEY, {
+            type = "launcher",
+            label = "ZaeUI",
+            text = "ZaeUI",
+            icon = "Interface\\AddOns\\ZaeUI_Shared\\Textures\\logo",
+            OnClick = function(self, button)
+                if button == "RightButton" then
+                    showContextMenu(self)
+                    return
+                end
+                openZaeUISettings()
+            end,
+            OnTooltipShow = function(tooltip)
+                if not tooltip or not tooltip.AddLine then return end
+                tooltip:AddLine("ZaeUI")
+                tooltip:AddLine("|cffffffffLeft-click|r to open settings", 1, 1, 1)
+                tooltip:AddLine("|cffffffffRight-click|r for actions", 1, 1, 1)
+                tooltip:AddLine("|cffffffffDrag|r to reposition", 1, 1, 1)
+            end,
+        })
+    end
+    if not launcher then return end
+
+    LibDBIcon:Register(MINIMAP_BUTTON_KEY, launcher, sharedDB.minimapButton)
+end
+
+--- Public: toggle the minimap button visibility and persist the choice.
+--- @param shown boolean
+function ZaeUI_Shared.setMinimapButtonShown(shown)
+    if not sharedDB or not sharedDB.minimapButton then return end
+    sharedDB.minimapButton.hide = not shown
+    if not LibStub then return end
+    local LibDBIcon = LibStub("LibDBIcon-1.0", true)
+    if not LibDBIcon then return end
+    if shown then
+        LibDBIcon:Show(MINIMAP_BUTTON_KEY)
+    else
+        LibDBIcon:Hide(MINIMAP_BUTTON_KEY)
+    end
+end
+
+--- Public: return whether the minimap button is currently visible.
+--- @return boolean
+function ZaeUI_Shared.isMinimapButtonShown()
+    if not sharedDB or not sharedDB.minimapButton then return false end
+    return not sharedDB.minimapButton.hide
 end
 
 --- Ensure the shared ZaeUI parent settings category exists.
@@ -53,11 +219,50 @@ function ZaeUI_Shared.ensureParentCategory()
     parentDesc:SetPoint("TOPLEFT", parentTitle, "BOTTOMLEFT", 0, -8)
     parentDesc:SetText("A collection of lightweight World of Warcraft addons.")
 
+    -- Global ZaeUI settings section (shared across every sub-addon)
+    local globalHeader = parentPanel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    globalHeader:SetPoint("TOPLEFT", parentDesc, "BOTTOMLEFT", 0, -20)
+    globalHeader:SetText("Global")
+
+    local minimapCb, _ = ZaeUI_Shared.createCheckbox(
+        parentPanel,
+        -(16 + 16 + 20 + 20 + 16 + 24), -- initial y offset below the header
+        "Show minimap button",
+        function() return ZaeUI_Shared.isMinimapButtonShown() end,
+        function(checked) ZaeUI_Shared.setMinimapButtonShown(checked) end
+    )
+    -- Re-anchor the checkbox directly under the Global header for a clean layout,
+    -- independent of the createCheckbox initial positioning math above.
+    minimapCb:ClearAllPoints()
+    minimapCb:SetPoint("TOPLEFT", globalHeader, "BOTTOMLEFT", 0, -6)
+
+    local hint = parentPanel:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    hint:SetPoint("TOPLEFT", minimapCb, "BOTTOMLEFT", 4, -4)
+    hint:SetText("Click the button to open this panel. Shift-drag to reposition it around the minimap.")
+
     local category = Settings.RegisterCanvasLayoutCategory(parentPanel, "ZaeUI")
     Settings.RegisterAddOnCategory(category)
     ZaeUI_SettingsCategory = category
     return category
 end
+
+-- Shared addon lifecycle --------------------------------------------------
+
+local sharedFrame = CreateFrame("Frame")
+sharedFrame:RegisterEvent("ADDON_LOADED")
+sharedFrame:RegisterEvent("PLAYER_LOGIN")
+sharedFrame:SetScript("OnEvent", function(self, event, addonName)
+    if event == "ADDON_LOADED" then
+        if addonName ~= "ZaeUI_Shared" then return end
+        initSharedDB()
+        self:UnregisterEvent("ADDON_LOADED")
+    elseif event == "PLAYER_LOGIN" then
+        -- Register with LibDBIcon on PLAYER_LOGIN so Minimap dimensions and
+        -- external minimap shape providers (MBB, SexyMap, ...) are ready.
+        registerMinimapButton()
+        self:UnregisterEvent("PLAYER_LOGIN")
+    end
+end)
 
 --- Create a checkbox control.
 --- @param parent table Parent frame

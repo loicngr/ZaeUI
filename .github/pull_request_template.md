@@ -11,6 +11,7 @@
 
 - [ ] ZaeUI_ActionBars
 - [ ] ZaeUI_Defensives
+- [ ] ZaeUI_DungeonNotes
 - [ ] ZaeUI_FriendlyPlates
 - [ ] ZaeUI_Interrupts
 - [ ] ZaeUI_Nameplates

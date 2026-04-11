@@ -1,8 +1,9 @@
 ## Interface: 120001
 ## Title: ZaeUI_Interrupts
 ## Notes: Track interrupt, stun and knockback cooldowns for your group.
+## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
-## Version: 2.3.2
+## Version: 2.3.3
 ## SavedVariables: ZaeUI_InterruptsDB
 ## Dependencies: ZaeUI_Shared
 
