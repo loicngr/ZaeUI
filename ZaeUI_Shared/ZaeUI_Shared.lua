@@ -42,6 +42,12 @@ local function initSharedDB()
     if not ZaeUI_SharedDB then
         ZaeUI_SharedDB = {}
     end
+    if not ZaeUI_SharedDB.DefensivesInspectorCache then
+        ZaeUI_SharedDB.DefensivesInspectorCache = {}
+    end
+    if not ZaeUI_SharedDB.DefensivesTalentCache then
+        ZaeUI_SharedDB.DefensivesTalentCache = {}
+    end
     if ZaeUI_SharedDB.minimapButtonEnabled ~= nil or ZaeUI_SharedDB.minimapButtonAngle ~= nil then
         ZaeUI_SharedDB.minimapButton = ZaeUI_SharedDB.minimapButton or {
             hide = ZaeUI_SharedDB.minimapButtonEnabled == false,

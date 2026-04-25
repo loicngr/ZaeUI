@@ -1,5 +1,5 @@
-## Interface: 120001
-## Title: ZaeUI_Nameplates
+## Interface: 120005
+## Title: ZaeUI |cff3bb5ffNameplates|r
 ## Notes: Enhance your target nameplate with scaling, overlap adjustment, highlight and arrow indicators.
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr

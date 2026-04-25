@@ -1,5 +1,5 @@
-## Interface: 120001
-## Title: ZaeUI_FriendlyPlates
+## Interface: 120005
+## Title: ZaeUI |cff3bb5ffFriendlyPlates|r
 ## Notes: Friendly nameplates with name-only mode, class colors and custom font size.
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
