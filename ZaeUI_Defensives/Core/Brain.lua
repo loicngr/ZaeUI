@@ -676,8 +676,15 @@ function Brain:Init()
                     if IsPlayerSpell and IsPlayerSpell(spellID) then
                         eligible[#eligible + 1] = spellID
                     end
-                elseif not hasTalentData or talents[spellID] then
-                    eligible[#eligible + 1] = spellID
+                elseif hasTalentData then
+                    if talents[spellID] then
+                        eligible[#eligible + 1] = spellID
+                    end
+                else
+                    local info = ns.SpellData[spellID]
+                    if not info.replaces then
+                        eligible[#eligible + 1] = spellID
+                    end
                 end
             end
         end
