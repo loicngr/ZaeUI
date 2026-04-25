@@ -3,7 +3,7 @@
 ## Notes: Enhance your target nameplate with scaling, overlap adjustment, highlight and arrow indicators.
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
-## Version: 2.2.3
+## Version: 2.2.4
 ## SavedVariables: ZaeUI_NameplatesDB
 ## Dependencies: ZaeUI_Shared
 

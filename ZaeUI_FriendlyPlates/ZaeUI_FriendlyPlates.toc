@@ -3,7 +3,7 @@
 ## Notes: Friendly nameplates with name-only mode, class colors and custom font size.
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
-## Version: 1.2.9
+## Version: 1.2.10
 ## SavedVariables: ZaeUI_FriendlyPlatesDB
 ## Dependencies: ZaeUI_Shared
 

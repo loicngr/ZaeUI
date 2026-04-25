@@ -3,7 +3,7 @@
 ## Notes: Track interrupt, stun and knockback cooldowns for your group.
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
-## Version: 2.3.3
+## Version: 2.3.4
 ## SavedVariables: ZaeUI_InterruptsDB
 ## Dependencies: ZaeUI_Shared
 

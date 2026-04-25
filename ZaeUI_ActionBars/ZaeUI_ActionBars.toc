@@ -3,7 +3,7 @@
 ## Notes: Hide action bars with mouse hover fade in/out
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
-## Version: 1.2.3
+## Version: 1.2.4
 ## SavedVariables: ZaeUI_ActionBarsDB
 ## Dependencies: ZaeUI_Shared
 
