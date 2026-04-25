@@ -418,12 +418,8 @@ local function onAuraRemoved(unit, auraInstanceID)
         return
     end
 
+    commitCooldown(guid, unit, spellID, info, tracked.startTime, measuredDuration)
     if Store then Store:EndBuff(guid, spellID) end
-
-    local existing = Store and Store:Get(guid, spellID) or nil
-    if not existing or existing.startedAt == 0 then
-        commitCooldown(guid, unit, spellID, info, tracked.startTime, measuredDuration)
-    end
 end
 
 local function onAuraChanged(unit, updateInfo)

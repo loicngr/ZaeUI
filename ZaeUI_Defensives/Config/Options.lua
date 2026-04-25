@@ -8,21 +8,23 @@ ns.Config = ns.Config or {}
 
 local O = {}
 
-StaticPopupDialogs = StaticPopupDialogs or {}
-StaticPopupDialogs["ZAEUI_DEFENSIVES_RESET_CONFIRM"] = {
-    text = "This will reset all ZaeUI_Defensives settings to defaults and reload the UI. Continue?",
-    button1 = ACCEPT or "Accept",
-    button2 = CANCEL or "Cancel",
-    OnAccept = function()
-        if ns.ResetAll then ns.ResetAll() end
-    end,
-    timeout = 0,
-    whileDead = true,
-    hideOnEscape = true,
-    preferredIndex = 3,
-}
-
 local function db() return ZaeUI_DefensivesDB end
+
+local function ensureResetDialog()
+    if StaticPopupDialogs["ZAEUI_DEFENSIVES_RESET_CONFIRM"] then return end
+    StaticPopupDialogs["ZAEUI_DEFENSIVES_RESET_CONFIRM"] = {
+        text = "This will reset all ZaeUI_Defensives settings to defaults and reload the UI. Continue?",
+        button1 = ACCEPT or "Accept",
+        button2 = CANCEL or "Cancel",
+        OnAccept = function()
+            if ns.ResetAll then ns.ResetAll() end
+        end,
+        timeout = 0,
+        whileDead = true,
+        hideOnEscape = true,
+        preferredIndex = 3,
+    }
+end
 
 local function buildPanel()
     local panel = CreateFrame("Frame")
@@ -311,6 +313,7 @@ local function buildPanel()
     btnReset:SetSize(160, 22)
     btnReset:SetPoint("TOPLEFT", 16, y)
     btnReset:SetScript("OnClick", function()
+        ensureResetDialog()
         if StaticPopup_Show then StaticPopup_Show("ZAEUI_DEFENSIVES_RESET_CONFIRM") end
     end)
     y = y - 32
