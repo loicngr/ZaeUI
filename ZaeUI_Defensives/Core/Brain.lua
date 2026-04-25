@@ -17,6 +17,10 @@ local _, ns = ...
 ns.Core = ns.Core or {}
 local Util = ns.Utils and ns.Utils.Util
 
+local GetTime = GetTime
+local UnitClass = UnitClass
+local mathAbs = math.abs
+
 local Brain = {}
 
 local Store, TR, Inspector, AuraWatcher
@@ -59,6 +63,19 @@ local EVIDENCE_WINDOW = 0.15
 -- Reverse lookup: spell name -> list of spellIDs. Built once at Init.
 local spellsByName = {}
 
+-- Reverse lookup: castSpellId -> SpellData key. Built once at Init.
+local castSpellIdIndex = {}
+
+-- Reverse lookup: class+category -> list of spellIDs. Built once at Init.
+local spellsByClassCategory = {}
+
+-- Reverse talent gate indexes. Built once at Init.
+local spellsRequiringTalent = {}
+local spellsExcludedByTalent = {}
+
+-- Reusable buffer for seedForUnit (avoids per-call allocation).
+local seedBuf = {}
+
 -- ------------------------------------------------------------------
 -- Evidence system
 -- ------------------------------------------------------------------
@@ -73,22 +90,22 @@ local unitCanFeign = {}
 
 local function buildEvidenceSet(unit, detectionTime)
     local ev = nil
-    if lastDebuffTime[unit] and math.abs(lastDebuffTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
+    if lastDebuffTime[unit] and mathAbs(lastDebuffTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
         ev = ev or {}
         ev.Debuff = true
     end
-    if lastShieldTime[unit] and math.abs(lastShieldTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
+    if lastShieldTime[unit] and mathAbs(lastShieldTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
         ev = ev or {}
         ev.Shield = true
     end
-    if lastFeignDeathTime[unit] and math.abs(lastFeignDeathTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
+    if lastFeignDeathTime[unit] and mathAbs(lastFeignDeathTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
         ev = ev or {}
         ev.FeignDeath = true
-    elseif lastUnitFlagsTime[unit] and math.abs(lastUnitFlagsTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
+    elseif lastUnitFlagsTime[unit] and mathAbs(lastUnitFlagsTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
         ev = ev or {}
         ev.UnitFlags = true
     end
-    if lastCastTime[unit] and math.abs(lastCastTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
+    if lastCastTime[unit] and mathAbs(lastCastTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
         ev = ev or {}
         ev.Cast = true
     end
@@ -156,6 +173,30 @@ function Brain.MatchAuraToSpell(spellID, unitClass, unitSpec, _unitRace, matchMo
 end
 
 -- ------------------------------------------------------------------
+-- Talent gate helpers
+-- ------------------------------------------------------------------
+
+local function hasTalent(talentID, talents, defaults)
+    if talents and talents[talentID] then return true end
+    if defaults and defaults[talentID] then return true end
+    return false
+end
+
+local function passesTalentGates(info, talents, defaults)
+    if info.excludeIfTalent then
+        if hasTalent(info.excludeIfTalent, talents, defaults) then
+            return false
+        end
+    end
+    if info.requiresTalent then
+        if not hasTalent(info.requiresTalent, talents, defaults) then
+            return false
+        end
+    end
+    return true
+end
+
+-- ------------------------------------------------------------------
 -- Cooldown commit helper
 -- ------------------------------------------------------------------
 
@@ -191,6 +232,18 @@ local function commitCooldown(casterGUID, casterUnit, spellID, info, startedAt, 
             effectiveID = effID,
             source = "aura",
         })
+        if info.excludeIfTalent and Store.RemoveSpell then
+            local list = spellsRequiringTalent[info.excludeIfTalent]
+            if list then
+                for i = 1, #list do Store:RemoveSpell(casterGUID, list[i]) end
+            end
+        end
+        if info.requiresTalent and Store.RemoveSpell then
+            local list = spellsExcludedByTalent[info.requiresTalent]
+            if list then
+                for i = 1, #list do Store:RemoveSpell(casterGUID, list[i]) end
+            end
+        end
     end
 end
 
@@ -200,6 +253,8 @@ end
 
 local function onLocalCast(spellID)
     if not spellID then return end
+    local mapped = castSpellIdIndex[spellID]
+    if mapped then spellID = mapped end
     local info = ns.SpellData and ns.SpellData[spellID]
     if not info then return end
     local now = GetTime and GetTime() or 0
@@ -245,34 +300,40 @@ local function durationMatches(measuredDuration, info)
     if info.canCancelEarly then
         return measuredDuration <= expected + DURATION_TOLERANCE
     end
-    return math.abs(measuredDuration - expected) <= DURATION_TOLERANCE
+    return mathAbs(measuredDuration - expected) <= DURATION_TOLERANCE
 end
 
-local function matchByDuration(measuredDuration, unitClass, unitSpec, category, evidence)
+local function matchByDuration(measuredDuration, unitClass, unitSpec, category, evidence, talents, defaults)
+    local byClass = spellsByClassCategory[unitClass]
+    if not byClass then return nil, nil end
+
+    local cat = category or "Personal"
+    local list = byClass[cat]
+    if not list then return nil, nil end
+
     local bestSpellID, bestInfo, bestDelta
-    for spellID, info in pairs(ns.SpellData or {}) do
-        if info.class == unitClass then
-            local skip
-            if category then
-                skip = info.category ~= category
-            else
-                skip = isExternalSpell(info)
+    for i = 1, #list do
+        local spellID = list[i]
+        local info = ns.SpellData[spellID]
+        if not info then break end
+        local skip = false
+        if not passesTalentGates(info, talents, defaults) then
+            skip = true
+        end
+        if not skip and info.specs and unitSpec then
+            skip = true
+            for _, s in ipairs(info.specs) do
+                if s == unitSpec then skip = false; break end
             end
-            if not skip and info.specs and unitSpec then
-                skip = true
-                for _, s in ipairs(info.specs) do
-                    if s == unitSpec then skip = false; break end
-                end
-            end
-            if not skip and not evidenceMatchesReq(info.requiresEvidence, evidence) then
-                skip = true
-            end
-            if not skip and durationMatches(measuredDuration, info) then
-                local expected = info.duration or 0
-                local delta = math.abs(measuredDuration - expected)
-                if not bestDelta or delta < bestDelta then
-                    bestSpellID, bestInfo, bestDelta = spellID, info, delta
-                end
+        end
+        if not skip and not evidenceMatchesReq(info.requiresEvidence, evidence) then
+            skip = true
+        end
+        if not skip and durationMatches(measuredDuration, info) then
+            local expected = info.duration or 0
+            local delta = mathAbs(measuredDuration - expected)
+            if not bestDelta or delta < bestDelta then
+                bestSpellID, bestInfo, bestDelta = spellID, info, delta
             end
         end
     end
@@ -405,7 +466,10 @@ local function onAuraRemoved(unit, auraInstanceID)
     end
 
     if not info and classToken then
-        spellID, info = matchByDuration(measuredDuration, classToken, spec, tracked.auraType, evidence)
+        local name = Util and Util.SafeNameUnmodified(unit) or nil
+        local talents = name and Inspector and Inspector:GetTalents(name) or nil
+        local defaults = spec and ns.DefaultTalents and ns.DefaultTalents[spec] or nil
+        spellID, info = matchByDuration(measuredDuration, classToken, spec, tracked.auraType, evidence, talents, defaults)
         if spellID then
             debugPrint("Duration match:", info.name, "measured=", format("%.1f", measuredDuration),
                        "expected=", info.duration, "type=", tostring(tracked.auraType), "on", unit)
@@ -506,12 +570,21 @@ local function tryImmediateDetection(unit, aura)
     local _, classToken = UnitClass(unit)
     local spec = Inspector and Inspector:GetSpec(unit) or nil
     local evidence = buildEvidenceSet(unit, GetTime and GetTime() or 0)
+    local unitName = Util and Util.SafeNameUnmodified(unit) or nil
+    local talents = unitName and Inspector and Inspector:GetTalents(unitName) or nil
+    local defaults = spec and ns.DefaultTalents and ns.DefaultTalents[spec] or nil
+
+    local byClass = spellsByClassCategory[classToken]
+    local list = byClass and byClass["Personal"]
+    if not list then return end
 
     local matchID, matchInfo
     local count = 0
-    for sid, sinfo in pairs(ns.SpellData or {}) do
-        if sinfo.category == "Personal" and sinfo.class == classToken
-           and (sinfo.duration or 0) > 0
+    for i = 1, #list do
+        local sid = list[i]
+        local sinfo = ns.SpellData[sid]
+        if (sinfo.duration or 0) > 0
+           and passesTalentGates(sinfo, talents, defaults)
            and evidenceMatchesReq(sinfo.requiresEvidence, evidence) then
             local specOk = true
             if sinfo.specs and spec then
@@ -560,7 +633,7 @@ local function attachEvidenceToRecentAuras(unit, key, now)
     local unitAuras = trackedAuras[unit]
     if not unitAuras then return end
     for _, tracked in pairs(unitAuras) do
-        if math.abs(tracked.startTime - now) <= EVIDENCE_WINDOW then
+        if mathAbs(tracked.startTime - now) <= EVIDENCE_WINDOW then
             tracked.evidence = tracked.evidence or {}
             tracked.evidence[key] = true
         end
@@ -613,16 +686,45 @@ function Brain:Init()
     if TR and TR.SetTalentSource and Inspector and Inspector.GetTalents then
         TR:SetTalentSource(function(unit)
             local name = Util and Util.SafeNameUnmodified(unit) or nil
-            return name and Inspector:GetTalents(name) or {}
+            local talents = name and Inspector:GetTalents(name) or nil
+            if talents and next(talents) then return talents end
+            local spec = Inspector and Inspector:GetSpec(unit) or nil
+            return spec and ns.DefaultTalents and ns.DefaultTalents[spec] or {}
         end)
     end
 
-    -- Build name → spellID reverse index
-    for spellID, info in pairs(ns.SpellData or {}) do
+    -- Build all reverse indexes from SpellData (once at init)
+    for spellID, info in pairs(ns.SpellData) do
         local name = info.name
         if name then
             spellsByName[name] = spellsByName[name] or {}
             local list = spellsByName[name]
+            list[#list + 1] = spellID
+        end
+        if info.castSpellId then
+            if type(info.castSpellId) == "table" then
+                for _, cid in ipairs(info.castSpellId) do
+                    castSpellIdIndex[cid] = spellID
+                end
+            else
+                castSpellIdIndex[info.castSpellId] = spellID
+            end
+        end
+        if info.class and info.category then
+            spellsByClassCategory[info.class] = spellsByClassCategory[info.class] or {}
+            local byClass = spellsByClassCategory[info.class]
+            byClass[info.category] = byClass[info.category] or {}
+            local list = byClass[info.category]
+            list[#list + 1] = spellID
+        end
+        if info.requiresTalent then
+            spellsRequiringTalent[info.requiresTalent] = spellsRequiringTalent[info.requiresTalent] or {}
+            local list = spellsRequiringTalent[info.requiresTalent]
+            list[#list + 1] = spellID
+        end
+        if info.excludeIfTalent then
+            spellsExcludedByTalent[info.excludeIfTalent] = spellsExcludedByTalent[info.excludeIfTalent] or {}
+            local list = spellsExcludedByTalent[info.excludeIfTalent]
             list[#list + 1] = spellID
         end
     end
@@ -668,29 +770,69 @@ function Brain:Init()
         local isLocal = UnitIsUnit and UnitIsUnit(unit, "player")
         local talents = Inspector and Inspector:GetTalents(name) or {}
         local hasTalentData = not isLocal and next(talents) ~= nil
+        local defaults = spec and ns.DefaultTalents and ns.DefaultTalents[spec] or nil
 
-        local eligible = {}
-        for spellID, _ in pairs(ns.SpellData or {}) do
+        local eligibleN = 0
+        local eligibleSet = {}
+        for spellID, info in pairs(ns.SpellData) do
             if Brain.MatchAuraToSpell(spellID, classToken, spec, race, "seed") then
                 if isLocal then
                     if IsPlayerSpell and IsPlayerSpell(spellID) then
-                        eligible[#eligible + 1] = spellID
+                        eligibleN = eligibleN + 1
+                        seedBuf[eligibleN] = spellID
+                        eligibleSet[spellID] = true
                     end
                 elseif hasTalentData then
-                    if talents[spellID] then
-                        eligible[#eligible + 1] = spellID
+                    if talents[spellID] and passesTalentGates(info, talents, nil) then
+                        eligibleN = eligibleN + 1
+                        seedBuf[eligibleN] = spellID
+                        eligibleSet[spellID] = true
                     end
                 else
-                    local info = ns.SpellData[spellID]
-                    if not info.replaces then
-                        eligible[#eligible + 1] = spellID
+                    if passesTalentGates(info, nil, defaults) then
+                        eligibleN = eligibleN + 1
+                        seedBuf[eligibleN] = spellID
+                        eligibleSet[spellID] = true
                     end
                 end
             end
         end
-        if Store and Store.SeedKnownSpells then
-            Store:SeedKnownSpells(guid, eligible)
+        for i = eligibleN + 1, #seedBuf do seedBuf[i] = nil end
+        if Store then
+            if Store.SeedKnownSpells then
+                Store:SeedKnownSpells(guid, seedBuf)
+            end
+            if Store.RemoveSpell then
+                local toRemove
+                for sid in Store:IterateKnownSpells(guid) do
+                    if not eligibleSet[sid] then
+                        local cd = Store:Get(guid, sid)
+                        if cd and cd.source == "seed" then
+                            toRemove = toRemove or {}
+                            toRemove[#toRemove + 1] = sid
+                        end
+                    end
+                end
+                if toRemove then
+                    for _, sid in ipairs(toRemove) do
+                        Store:RemoveSpell(guid, sid)
+                    end
+                end
+            end
         end
+    end
+
+    local function resetState()
+        for k in pairs(trackedAuras)       do trackedAuras[k] = nil end
+        for k in pairs(lastDetection)      do lastDetection[k] = nil end
+        for k in pairs(lastUnitFlagsTime)  do lastUnitFlagsTime[k] = nil end
+        for k in pairs(lastFeignDeathTime) do lastFeignDeathTime[k] = nil end
+        for k in pairs(lastFeignDeathState) do lastFeignDeathState[k] = nil end
+        for k in pairs(lastShieldTime)     do lastShieldTime[k] = nil end
+        for k in pairs(lastDebuffTime)     do lastDebuffTime[k] = nil end
+        for k in pairs(lastCastTime)       do lastCastTime[k] = nil end
+        for k in pairs(unitCanFeign)       do unitCanFeign[k] = nil end
+        if Store and Store.Reset then Store:Reset() end
     end
 
     local function seedRoster()
@@ -714,7 +856,12 @@ function Brain:Init()
     end
 
     local seedFrame = CreateFrame("Frame")
-    seedFrame:SetScript("OnEvent", function() seedRoster() end)
+    seedFrame:SetScript("OnEvent", function(_, event)
+        if event == "PLAYER_ENTERING_WORLD" then
+            resetState()
+        end
+        seedRoster()
+    end)
     seedFrame:RegisterEvent("GROUP_ROSTER_UPDATE")
     seedFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 

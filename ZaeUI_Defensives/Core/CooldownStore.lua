@@ -254,6 +254,18 @@ function Store:SeedKnownSpells(guid, spellIDs)
     end
 end
 
+--- Removes a single spell entry from a player's cooldowns table.
+--- Used when a talent variant is detected, to remove the base spell's seed.
+--- @param guid string
+--- @param spellID number
+function Store:RemoveSpell(guid, spellID)
+    local rec = store[guid]
+    if not rec then return end
+    if not rec.cooldowns[spellID] then return end
+    rec.cooldowns[spellID] = nil
+    fire("KnownSpellsChanged", guid, rec)
+end
+
 --- Iterates all cooldowns (ready + on-cooldown) for a player.
 --- Returns a pairs() iterator over rec.cooldowns, empty iterator if unknown.
 --- @param guid string

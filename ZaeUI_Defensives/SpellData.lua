@@ -15,7 +15,9 @@ local _, ns = ...
 ---@field cdModifiers table?            # see shape below
 ---@field charges number?               # default 1
 ---@field chargeModifiers table?        # { { talent = spellID, bonus = number } }
----@field overrides number[]?           # talent-based variant spellIDs
+---@field castSpellId number|number[]?  # button spell ID(s) when different from the aura spell ID
+---@field requiresTalent number?        # only seed if this talent is known or assumed
+---@field excludeIfTalent number?       # exclude from seeding if this talent is known or assumed
 ---@field requiresEvidence string|table|false|nil  # nil=unconstrained, false=none, string=key, table=all keys
 ---@field canCancelEarly boolean?       # true: accept measuredDuration <= expected + tolerance
 ---@field minDuration boolean?          # true: accept measuredDuration >= expected - tolerance (extensions)
@@ -53,12 +55,13 @@ local SpellData = {
                  cdModifiers = { { talent = 202424, reduction = 30 } } },
     [1022]   = { name = "Blessing of Protection", cooldown = 300, duration = 10, category = "External", class = "PALADIN",
                  requiresEvidence = { "Debuff", "UnitFlags" },
+                 excludeIfTalent = 204018,
                  cdModifiers = { { talent = 384909, reduction = 60 } } },
     [47788]  = { name = "Guardian Spirit",        cooldown = 180, duration = 10, category = "External", class = "PRIEST",
                  specs = { 257 } },
     [204018] = { name = "Blessing of Spellwarding", cooldown = 300, duration = 10, category = "External", class = "PALADIN",
                  requiresEvidence = "Shield",
-                 replaces = 1022,
+                 requiresTalent = 204018,
                  cdModifiers = { { talent = 384909, reduction = 60 } } },
     [53480]  = { name = "Roar of Sacrifice",      cooldown = 120, duration = 12, category = "External", class = "HUNTER" },
     [357170] = { name = "Time Dilation",           cooldown = 60,  duration = 8,  category = "External", class = "EVOKER",
@@ -99,18 +102,19 @@ local SpellData = {
                  requiresEvidence = false,
                  minDuration = true },
     [45438]  = { name = "Ice Block",              cooldown = 240, duration = 10, category = "Personal", class = "MAGE",
-                 requiresEvidence = "UnitFlags",
+                 requiresEvidence = false,
                  canCancelEarly = true,
+                 excludeIfTalent = 414659,
                  charges = 1,
                  chargeModifiers = { { talent = 1244110, bonus = 1 } },
                  cdModifiers = { { ranks = { { talent = 382424, reduction = 60 },
                                              { talent = 382424, reduction = 30 } } },
-                                 { talent = 1265517, reduction = 30 } },
-                 overrides = { 414658 } },
-    [414658] = { name = "Ice Cold",               cooldown = 240, duration = 6,  category = "Personal", class = "MAGE",
-                 requiresEvidence = "UnitFlags",
+                                 { talent = 1265517, reduction = 30 } } },
+    [414659] = { name = "Ice Cold",               cooldown = 240, duration = 6,  category = "Personal", class = "MAGE",
+                 requiresEvidence = false,
                  canCancelEarly = true,
-                 replaces = 45438,
+                 castSpellId = 414658,
+                 requiresTalent = 414659,
                  charges = 1,
                  chargeModifiers = { { talent = 1244110, bonus = 1 } },
                  cdModifiers = { { talent = 1265517, reduction = 30 } } },
@@ -177,9 +181,15 @@ local SpellData = {
                  charges = 1,
                  chargeModifiers = { { talent = 375406, bonus = 1 } } },
     [48707]  = { name = "Anti-Magic Shell",       cooldown = 60,  duration = 5,  category = "Personal", class = "DEATHKNIGHT",
-                 requiresEvidence = "Shield" },
+                 requiresEvidence = false },
 }
 
 ns.SpellData = SpellData
+
+local DefaultTalents = {
+    [64] = { [414659] = true, [1244110] = true },
+}
+
+ns.DefaultTalents = DefaultTalents
 
 ZaeUI_DefensivesSpellData = SpellData
