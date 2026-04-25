@@ -1,5 +1,5 @@
-## Interface: 120001
-## Title: ZaeUI_DungeonNotes
+## Interface: 120005
+## Title: ZaeUI |cff3bb5ffDungeonNotes|r
 ## Notes: Personal notes per dungeon, shown on instance entry.
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr

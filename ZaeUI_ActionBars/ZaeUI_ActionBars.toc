@@ -1,5 +1,5 @@
-## Interface: 120001
-## Title: ZaeUI_ActionBars
+## Interface: 120005
+## Title: ZaeUI |cff3bb5ffActionBars|r
 ## Notes: Hide action bars with mouse hover fade in/out
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr

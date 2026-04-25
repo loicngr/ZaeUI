@@ -50,6 +50,20 @@ ZaeUI/
 - Prefer native CVars and existing Blizzard systems when possible
 - Test compatibility with popular addons (Plater, ElvUI, WeakAuras)
 
+### WoW 11.0+ "secret" / taint pitfalls (Midnight)
+
+Blizzard now marks many UI values as *secret* / tainted. Reading them in a boolean test or comparison throws an error and can blacklist the addon from protected calls. Use the official tools, not `pcall`:
+
+- **`issecretvalue(v)` (global)** — returns true if `v` is a tainted value. Always test *before* using a value in `if`, `==`, `..`, or as a table key. Many aura fields (`spellId`, `sourceUnit`, `duration`, `auraInstanceID`, `isHarmful`) can be secret on private/hidden auras.
+- **`C_UnitAuras.IsAuraFilteredOutByInstanceID(unit, auraInstanceID, filter)`** — lets you probe aura properties (`"HARMFUL"`, `"HELPFUL"`, `"HELPFUL|EXTERNAL_DEFENSIVE"`, `"HELPFUL|IMPORTANT"`, etc.) *without* reading the aura's tainted fields. Returns true if the aura is filtered OUT by that mask; negate to test membership.
+- **`COMBAT_LOG_EVENT_UNFILTERED`** — blocked under ADDON_ACTION_FORBIDDEN in current protection rules. Do not register. Derive information from `UNIT_AURA` + `UNIT_SPELLCAST_SUCCEEDED` + `UNIT_FLAGS` + `UNIT_ABSORB_AMOUNT_CHANGED` instead.
+- **Remote `UNIT_SPELLCAST_SUCCEEDED` spell IDs are secret.** Only the `player` unit yields a non-secret ID usable for matching. Snapshot locally, never cross-match against a remote unit's cast ID.
+- **Guard concatenation and table keys**: `secret .. "x"` silently produces another secret value, but using it as a table key throws. Always `IsSecret(x)`-guard before building keys like `aid .. "|" .. name`.
+
+### Cooldown swipe animations
+
+`CooldownFrameTemplate:SetCooldown(start, duration)` *restarts* the swipe each call. Do not invoke it every frame with `(GetTime(), remaining)` — the animation will loop forever and the icon will stay dark. Pass the real `startedAt` and total `duration`, and only call `SetCooldown` when those values change.
+
 ## Git Policy
 
 - **Never commit or push without explicit user confirmation first**
