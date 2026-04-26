@@ -101,5 +101,34 @@ function Util.SafeCall(fn, ...)
     return ok
 end
 
+--- Returns true when (cd, info, rec) passes every per-cooldown display gate
+--- defined in the Defensives DB: role filters, category filters, and the
+--- "hide own externals" toggle. Centralized so FloatingDisplay and
+--- FrameDisplay cannot drift apart.
+--- @param cd table Cooldown record (kept on signature for future filters).
+--- @param info table SpellData entry (must carry .category).
+--- @param rec table Player record (must carry .role and .name).
+--- @param db table The Defensives DB table (ZaeUI_DefensivesDB).
+--- @return boolean
+function Util.ShouldDisplayCooldown(cd, info, rec, db)
+    if not db or not info or not rec then return false end
+    local role = rec.role
+    if role == "TANK"    and db.trackerShowTankCooldowns   == false then return false end
+    if role == "HEALER"  and db.trackerShowHealerCooldowns == false then return false end
+    if role == "DAMAGER" and db.trackerShowDpsCooldowns    == false then return false end
+    local cat = info.category
+    if cat == "External" and db.trackerShowExternal == false then return false end
+    if cat == "Personal" and db.trackerShowPersonal == false then return false end
+    if cat == "Raidwide" and db.trackerShowRaidwide == false then return false end
+    if db.trackerHideOwnExternals and cat == "External" then
+        local playerName = Util.SafeNameUnmodified("player")
+        if rec.name and playerName and rec.name == playerName then return false end
+    end
+    -- cd is currently unused but kept on the signature: future filters may
+    -- look at currentCharges, source, or buffActive without changing callers.
+    local _ = cd
+    return true
+end
+
 ns.Utils.Util = Util
 return Util

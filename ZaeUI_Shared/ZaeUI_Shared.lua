@@ -93,6 +93,38 @@ function ZaeUI_Shared.applyBackdrop(frame)
     frame:SetBackdropBorderColor(0.3, 0.3, 0.3, 1)
 end
 
+-- Class color helpers ----------------------------------------------------
+
+local classColorCache = {}
+
+--- Returns "rrggbb" hex string for a class token using RAID_CLASS_COLORS.
+--- Memoized: the at-most-thirteen distinct values are computed once. Falls
+--- back to "ffffff" when the class is unknown.
+--- @param class string|nil class token (e.g. "PALADIN")
+--- @return string
+function ZaeUI_Shared.classColorHex(class)
+    if not class then return "ffffff" end
+    local cached = classColorCache[class]
+    if cached then return cached end
+    if RAID_CLASS_COLORS and RAID_CLASS_COLORS[class] then
+        local c = RAID_CLASS_COLORS[class]
+        local hex = string_format("%02x%02x%02x", c.r * 255, c.g * 255, c.b * 255)
+        classColorCache[class] = hex
+        return hex
+    end
+    return "ffffff"
+end
+
+--- Returns a sortable rank for a group role token: TANK < HEALER < DAMAGER/UNKNOWN.
+--- Used by trackers and roster panels to keep tanks/healers visually grouped.
+--- @param role string|nil
+--- @return number
+function ZaeUI_Shared.roleOrder(role)
+    if role == "TANK" then return 1
+    elseif role == "HEALER" then return 2
+    else return 3 end
+end
+
 -- Right-click context menu -----------------------------------------------
 
 -- Ordered list of actions registered by sub-addons for the right-click menu.

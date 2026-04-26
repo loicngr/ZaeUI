@@ -8,14 +8,12 @@ local _, ns = ...
 ns.Modules = ns.Modules or {}
 local Util = ns.Utils and ns.Utils.Util
 local Store = nil
-local LCG = LibStub and LibStub("LibCustomGlow-1.0", true)
 
 local D = {}
 
 -- UI state
 local mainFrame
 local rowPool   = {}
-local iconPool  = {}
 local iconIndex = {}  -- [guid][spellID] = iconFrame, maintained by refresh
 local activeRows = {} -- ordered list of currently visible rows
 
@@ -26,115 +24,45 @@ local ICON_GAP   = 2
 local NAME_WIDTH = 96  -- reserved space for player name before icons
 local PAD_X      = 4
 
--- Glow colors per category
-local GLOW_COLORS = {
-    External = { 1.00, 0.82, 0.20, 1.0 }, -- gold
-    Personal = { 0.23, 0.71, 1.00, 1.0 }, -- ZaeUI cyan
-    Raidwide = { 0.30, 1.00, 0.30, 1.0 }, -- green
-}
+-- Lazily resolved at Init time, since IconWidget loads after Util but the
+-- module-local upvalue resolution happens at file-load time.
+local IconWidget
 
 local function db() return ZaeUI_DefensivesDB end
 
 local function roleOrder(role)
-    if role == "TANK" then return 1
-    elseif role == "HEALER" then return 2
-    else return 3 end
+    return ZaeUI_Shared and ZaeUI_Shared.roleOrder and ZaeUI_Shared.roleOrder(role) or 3
 end
 
---- Compute a "rrggbb" hex string from a class token using RAID_CLASS_COLORS.
---- Falls back to white when the class is unknown.
 local function classColorHex(class)
-    if class and RAID_CLASS_COLORS and RAID_CLASS_COLORS[class] then
-        local c = RAID_CLASS_COLORS[class]
-        return string.format("%02x%02x%02x", c.r * 255, c.g * 255, c.b * 255)
+    if ZaeUI_Shared and ZaeUI_Shared.classColorHex then
+        return ZaeUI_Shared.classColorHex(class)
     end
     return "ffffff"
 end
 
 local function shouldDisplay(cd, info, rec)
-    if not db() then return false end
-    local d = db()
-    -- Role filter
-    if rec.role == "TANK"    and d.trackerShowTankCooldowns   == false then return false end
-    if rec.role == "HEALER"  and d.trackerShowHealerCooldowns == false then return false end
-    if rec.role == "DAMAGER" and d.trackerShowDpsCooldowns    == false then return false end
-    -- Category filter
-    if info.category == "External" and d.trackerShowExternal == false then return false end
-    if info.category == "Personal" and d.trackerShowPersonal == false then return false end
-    if info.category == "Raidwide" and d.trackerShowRaidwide == false then return false end
-    -- Hide own externals
-    if d.trackerHideOwnExternals and info.category == "External" then
-        local playerName = Util and Util.SafeNameUnmodified("player") or nil
-        if rec.name and playerName and rec.name == playerName then return false end
-    end
-    -- Silence unused-variable warning; cd may influence future filters.
-    local _ = cd
-    return true
+    return Util and Util.ShouldDisplayCooldown
+        and Util.ShouldDisplayCooldown(cd, info, rec, db())
 end
 
 -- ------------------------------------------------------------------
 -- Pool helpers
 -- ------------------------------------------------------------------
 
-local function onIconEnter(self)
-    if not self._spellID then return end
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetSpellByID(self._spellID)
-    GameTooltip:Show()
-end
-
-local function onIconLeave()
-    GameTooltip:Hide()
-end
+local ICON_OPTS = {
+    countFont = "NumberFontNormal",
+    countAnchor = "BOTTOMRIGHT",
+    countOffsetX = -2,
+    countOffsetY = 1,
+}
 
 local function acquireIcon(parent)
-    local n = #iconPool
-    if n > 0 then
-        local f = iconPool[n]
-        iconPool[n] = nil
-        f:SetParent(parent)
-        f:Show()
-        return f
-    end
-    local f = CreateFrame("Frame", nil, parent)
-    f:SetSize(ICON_SIZE, ICON_SIZE)
-    f:EnableMouse(true)
-    f:SetScript("OnEnter", onIconEnter)
-    f:SetScript("OnLeave", onIconLeave)
-    f.Texture = f:CreateTexture(nil, "ARTWORK")
-    f.Texture:SetAllPoints()
-    f.Texture:SetTexCoord(0.08, 0.92, 0.08, 0.92)
-    f.Cooldown = CreateFrame("Cooldown", nil, f, "CooldownFrameTemplate")
-    f.Cooldown:SetAllPoints()
-    f.Cooldown:EnableMouse(false)
-    f.Cooldown:SetHideCountdownNumbers(true)
-    f.TextOverlay = CreateFrame("Frame", nil, f)
-    f.TextOverlay:SetAllPoints()
-    f.TextOverlay:SetFrameLevel(f.Cooldown:GetFrameLevel() + 2)
-    f.Text = f.TextOverlay:CreateFontString(nil, "OVERLAY")
-    f.Text:SetFont(STANDARD_TEXT_FONT, 8, "OUTLINE")
-    f.Text:SetPoint("BOTTOM", 0, -2)
-    f.Count = f:CreateFontString(nil, "OVERLAY", "NumberFontNormal")
-    f.Count:SetPoint("BOTTOMRIGHT", -2, 1)
-    f.Count:Hide()
-    return f
+    return IconWidget.Acquire(parent, ICON_SIZE, ICON_OPTS)
 end
 
 local function releaseIcon(f)
-    if not f then return end
-    f:Hide()
-    f:ClearAllPoints()
-    f:SetScript("OnUpdate", nil)
-    if f.Cooldown then f.Cooldown:Clear() end
-    if f.Text then f.Text:SetText("") end
-    if f.Count then f.Count:Hide() end
-    if LCG and f._glowing then
-        LCG.PixelGlow_Stop(f)
-        f._glowing = false
-    end
-    f._cdStart, f._cdDur = nil, nil
-    f._spellID = nil
-    iconPool[#iconPool + 1] = f
+    IconWidget.Release(f)
 end
 
 local function acquireRow(parent)
@@ -167,85 +95,6 @@ local function releaseRow(r)
     r:Hide()
     r:ClearAllPoints()
     rowPool[#rowPool + 1] = r
-end
-
--- ------------------------------------------------------------------
--- Icon state update
--- ------------------------------------------------------------------
-
--- Shared top-level OnUpdate handler. Reads state from `self._cdStart/_cdDur`
--- set by setIconState, avoiding per-icon closures that would allocate on
--- every refresh (which is expensive in raid 20 where rebuilds are frequent).
--- Caches last displayed integer to skip the string.format allocation when
--- the visible value hasn't changed (10 Hz × N icons = N string allocs/s).
-local function iconTimerOnUpdate(self, elapsed)
-    self._timerAcc = (self._timerAcc or 0) + elapsed
-    if self._timerAcc < 0.1 then return end
-    self._timerAcc = 0
-    local now = GetTime and GetTime() or 0
-    local remaining = (self._cdStart or 0) + (self._cdDur or 0) - now
-    if remaining <= 0 then
-        self.Text:SetText("")
-        self._lastTimerText = nil
-        self:SetScript("OnUpdate", nil)
-        return
-    end
-    local seconds = math.floor(remaining + 0.5)
-    if seconds ~= self._lastTimerText then
-        local txt
-        if seconds >= 60 then
-            local m = math.floor(seconds / 60)
-            local s = seconds - m * 60
-            txt = m .. ":" .. (s < 10 and "0" or "") .. s
-        else
-            txt = tostring(seconds)
-        end
-        self.Text:SetText(txt)
-        self._lastTimerText = seconds
-    end
-end
-
-local function setIconState(icon, cd, info)
-    icon._spellID = cd.effectiveID or cd.spellID
-    local iconTexture = Util and Util.GetSpellIcon(cd.effectiveID or cd.spellID) or nil
-    icon.Texture:SetTexture(iconTexture)
-    -- Cooldown swipe: call SetCooldown ONLY when (startedAt, duration) changes
-    local onCooldown = cd.startedAt and cd.startedAt > 0
-                       and cd.duration and cd.duration > 0
-    if onCooldown then
-        if icon._cdStart ~= cd.startedAt or icon._cdDur ~= cd.duration then
-            icon.Cooldown:SetCooldown(cd.startedAt, cd.duration)
-            icon._cdStart = cd.startedAt
-            icon._cdDur = cd.duration
-            icon._lastTimerText = nil
-        end
-        icon._timerAcc = 0
-        icon:SetScript("OnUpdate", iconTimerOnUpdate)
-    else
-        icon.Cooldown:Clear()
-        icon.Text:SetText("")
-        icon:SetScript("OnUpdate", nil)
-        icon._cdStart, icon._cdDur = nil, nil
-        icon._lastTimerText = nil
-    end
-    -- Charge counter
-    if icon.Count then
-        if cd.maxCharges and cd.maxCharges > 1 then
-            icon.Count:SetText(tostring(cd.currentCharges or 0))
-            icon.Count:Show()
-        else
-            icon.Count:Hide()
-        end
-    end
-    -- Glow
-    if LCG and cd.buffActive and info then
-        local color = GLOW_COLORS[info.category] or { 1, 1, 1, 1 }
-        LCG.PixelGlow_Start(icon, color, 8, 0.25, 10, 1)
-        icon._glowing = true
-    elseif LCG and icon._glowing and not cd.buffActive then
-        LCG.PixelGlow_Stop(icon)
-        icon._glowing = false
-    end
 end
 
 -- ------------------------------------------------------------------
@@ -299,7 +148,7 @@ local function refresh()
                 local icon = acquireIcon(row)
                 icon:ClearAllPoints()
                 icon:SetPoint("LEFT", row, "LEFT", ix, 0)
-                setIconState(icon, entry.cd, entry.info)
+                IconWidget.Apply(icon, entry.cd, entry.info)
                 row.Icons[i] = icon
                 iconIndex[rec.guid] = iconIndex[rec.guid] or {}
                 iconIndex[rec.guid][entry.cd.effectiveID or entry.spellID] = icon
@@ -324,8 +173,7 @@ local function onCooldownStart(guid, spellID, cd)
     if not mainFrame or not mainFrame:IsShown() then return end
     local icon = iconIndex[guid] and iconIndex[guid][spellID]
     if icon then
-        local info = ns.SpellData and ns.SpellData[cd.spellID]
-        setIconState(icon, cd, info)
+        IconWidget.Apply(icon, cd, ns.SpellData and ns.SpellData[cd.spellID])
     else
         refresh()  -- unknown icon: full rebuild
     end
@@ -335,29 +183,22 @@ local function onCooldownEnd(guid, spellID, cd)
     if not mainFrame or not mainFrame:IsShown() then return end
     local icon = iconIndex[guid] and iconIndex[guid][spellID]
     if icon then
-        local info = ns.SpellData and ns.SpellData[cd.spellID]
-        setIconState(icon, cd, info)
+        IconWidget.Apply(icon, cd, ns.SpellData and ns.SpellData[cd.spellID])
     end
 end
 
 local function onBuffStart(guid, spellID, cd)
     if not mainFrame or not mainFrame:IsShown() then return end
     local icon = iconIndex[guid] and iconIndex[guid][spellID]
-    if icon and LCG then
-        local info = ns.SpellData and ns.SpellData[cd.spellID]
-        local color = (info and GLOW_COLORS[info.category]) or { 1, 1, 1, 1 }
-        LCG.PixelGlow_Start(icon, color, 8, 0.25, 10, 1)
-        icon._glowing = true
+    if icon then
+        IconWidget.StartGlow(icon, ns.SpellData and ns.SpellData[cd.spellID])
     end
 end
 
 local function onBuffEnd(guid, spellID)
     if not mainFrame or not mainFrame:IsShown() then return end
     local icon = iconIndex[guid] and iconIndex[guid][spellID]
-    if icon and LCG and icon._glowing then
-        LCG.PixelGlow_Stop(icon)
-        icon._glowing = false
-    end
+    IconWidget.StopGlow(icon)
 end
 
 -- ------------------------------------------------------------------
@@ -403,7 +244,8 @@ function D:Hide() if mainFrame then mainFrame:Hide() end end
 
 function D:Init()
     Store = ns.Core and ns.Core.CooldownStore
-    if not Store then return end
+    IconWidget = ns.Core and ns.Core.IconWidget
+    if not Store or not IconWidget then return end
 
     mainFrame = CreateFrame("Frame", "ZaeUIDefensivesV3Floating", UIParent, "BackdropTemplate")
     mainFrame:SetSize((db() and db().frameWidth) or 250, 100)

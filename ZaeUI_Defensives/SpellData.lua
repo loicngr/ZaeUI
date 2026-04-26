@@ -21,6 +21,8 @@ local _, ns = ...
 ---@field requiresEvidence string|table|false|nil  # nil=unconstrained, false=none, string=key, table=all keys
 ---@field canCancelEarly boolean?       # true: accept measuredDuration <= expected + tolerance
 ---@field minDuration boolean?          # true: accept measuredDuration >= expected - tolerance (extensions)
+---@field auraFilter string|table?      # "BigDefensive" | "Important" | "External" — Blizzard filter the buff appears under (nil = match any)
+---@field excludeFromPrediction boolean? # true: never commit via the unique-classify aura-add fast path; require duration match at removal
 
 -- cdModifiers shape:
 --   { talent = spellID, reduction = seconds }                              -- single-rank
@@ -82,15 +84,18 @@ local SpellData = {
     [198589] = { name = "Blur",                   cooldown = 60,  duration = 10, category = "Personal", class = "DEMONHUNTER",
                  specs = { 577, 1480 },
                  requiresEvidence = false,
+                 auraFilter = "BigDefensive",
                  charges = 1,
                  chargeModifiers = { { talent = 1266307, bonus = 1 } } },
     [204021] = { name = "Fiery Brand",            cooldown = 60,  duration = 12, category = "Personal", class = "DEMONHUNTER",
                  specs = { 581 },
                  requiresEvidence = false,
+                 auraFilter = "BigDefensive",
                  minDuration = true },
     [187827] = { name = "Metamorphosis",          cooldown = 120, duration = 15, category = "Personal", class = "DEMONHUNTER",
                  specs = { 581 },
                  requiresEvidence = false,
+                 auraFilter = "Important",
                  minDuration = true },
     [22812]  = { name = "Barkskin",               cooldown = 45,  duration = 8,  category = "Personal", class = "DRUID",
                  requiresEvidence = false },
@@ -142,6 +147,12 @@ local SpellData = {
                  requiresEvidence = false },
     [5277]   = { name = "Evasion",                cooldown = 120, duration = 10, category = "Personal", class = "ROGUE",
                  requiresEvidence = false },
+    [121471] = { name = "Shadow Blades",          cooldown = 90,  duration = 16, category = "Personal", class = "ROGUE",
+                 specs = { 261 },
+                 requiresEvidence = false,
+                 auraFilter = "Important",
+                 minDuration = true,
+                 excludeFromPrediction = true },
     [871]    = { name = "Shield Wall",            cooldown = 180, duration = 8,  category = "Personal", class = "WARRIOR",
                  specs = { 73 },
                  requiresEvidence = false,

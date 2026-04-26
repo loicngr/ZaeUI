@@ -883,3 +883,460 @@ fw.describe("Brain tracking — deferred backfill", function()
     end)
 end)
 
+fw.describe("Brain tracking — auraFilter splits BigDefensive vs Important", function()
+    -- Same-class same-display-category siblings (Fiery Brand BigDefensive,
+    -- Metamorphosis Important on Vengeance DH) only differ by Blizzard's
+    -- narrower filter. The auraFilter field routes each Blizzard filter to
+    -- its dedicated spell so the two never collide on duration matching.
+    local function buildDhEnv()
+        local env = buildInitializedEnv()
+        env.ns.SpellData[204021] = {
+            name = "Fiery Brand", cooldown = 60, duration = 12,
+            category = "Personal", class = "DEMONHUNTER",
+            specs = { 581 }, requiresEvidence = false,
+            auraFilter = "BigDefensive", minDuration = true,
+        }
+        env.ns.SpellData[187827] = {
+            name = "Metamorphosis", cooldown = 120, duration = 15,
+            category = "Personal", class = "DEMONHUNTER",
+            specs = { 581 }, requiresEvidence = false,
+            auraFilter = "Important", minDuration = true,
+        }
+        stubs.roster["party1"] = { guid = "P-DH", name = "Dh", class = "DEMONHUNTER",
+                                   race = "NightElf", spec = 581, role = "TANK" }
+        env.ns.Core.Brain:Init()
+        return env
+    end
+
+    fw.it("BIG_DEFENSIVE-classified aura attributes to Fiery Brand, not Metamorphosis", function()
+        local env = buildDhEnv()
+        env.stubs.setTime(40000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party1"] = {
+            [3001] = { "HELPFUL|BIG_DEFENSIVE" },
+        }
+
+        env.fire.OnAuraChanged("party1", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 3001, name = secretName },
+            },
+        })
+
+        local cd = env.Store:Get("P-DH", 204021)
+        fw.assertTrue(cd, "Fiery Brand must be detected immediately on a BigDefensive aura")
+        fw.assertEq(cd.duration, 60)
+        fw.assertNil(env.Store:Get("P-DH", 187827),
+                     "Metamorphosis must not be triggered by a BigDefensive aura")
+    end)
+
+    fw.it("IMPORTANT-classified aura attributes to Metamorphosis, not Fiery Brand", function()
+        local env = buildDhEnv()
+        env.stubs.setTime(41000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party1"] = {
+            [3002] = { "HELPFUL|IMPORTANT" },
+        }
+
+        env.fire.OnAuraChanged("party1", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 3002, name = secretName },
+            },
+        })
+
+        local cd = env.Store:Get("P-DH", 187827)
+        fw.assertTrue(cd, "Metamorphosis must be detected immediately on an Important aura")
+        fw.assertEq(cd.duration, 120)
+        fw.assertNil(env.Store:Get("P-DH", 204021),
+                     "Fiery Brand must not be triggered by an Important aura")
+    end)
+
+    fw.it("auraFilter accepts a table for spells that surface under multiple filters", function()
+        -- A spell can legitimately surface under several Blizzard filters
+        -- (e.g. Divine Protection appearing as both BigDefensive and
+        -- Important). The accepts() check must allow either.
+        local env = buildDhEnv()
+        local accepts = env.ns.Core.Brain._auraFilterAccepts
+        fw.assertTrue(accepts({ "BigDefensive", "Important" }, "BigDefensive"))
+        fw.assertTrue(accepts({ "BigDefensive", "Important" }, "Important"))
+        fw.assertEq(accepts({ "BigDefensive", "Important" }, "External"), false)
+    end)
+
+    fw.it("auraFilter string form behaves identically to a single-element table", function()
+        local env = buildDhEnv()
+        local accepts = env.ns.Core.Brain._auraFilterAccepts
+        fw.assertTrue(accepts("BigDefensive", "BigDefensive"))
+        fw.assertEq(accepts("BigDefensive", "Important"), false)
+    end)
+
+    fw.it("auraFilter gate is disabled when either side is nil", function()
+        local env = buildDhEnv()
+        local accepts = env.ns.Core.Brain._auraFilterAccepts
+        fw.assertTrue(accepts(nil, "BigDefensive"), "untagged spell accepts any aura")
+        fw.assertTrue(accepts("BigDefensive", nil), "tagged spell accepts unclassified aura")
+        fw.assertTrue(accepts(nil, nil))
+    end)
+
+    fw.it("Charred-Flesh-extended Fiery Brand removal still attributes to Fiery Brand", function()
+        -- An 18s BigDefensive aura (FB extended via Charred Flesh) must
+        -- stay attributed to FB. Without the auraFilter gate the absolute
+        -- delta would pull the match toward Meta's 15s baseline.
+        local env = buildDhEnv()
+        env.stubs.setTime(42000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party1"] = {
+            [3003] = { "HELPFUL|BIG_DEFENSIVE" },
+        }
+        env.fire.OnAuraChanged("party1", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 3003, name = secretName },
+            },
+        })
+        env.stubs.setTime(42018)
+        env.fire.OnAuraChanged("party1", {
+            removedAuraInstanceIDs = { 3003 },
+        })
+
+        fw.assertTrue(env.Store:Get("P-DH", 204021),
+                      "Fiery Brand kept as the BigDefensive candidate even at extended duration")
+        fw.assertNil(env.Store:Get("P-DH", 187827),
+                     "Metamorphosis must remain unattributed for a BigDefensive aura")
+    end)
+end)
+
+fw.describe("Brain tracking — castSpellId remap on immediate detection", function()
+    -- Talent overrides apply a buff whose spellId matches the cast id rather
+    -- than the catalog id. The Brain must remap before looking up SpellData
+    -- so an Ice-Cold-style override still triggers detection.
+    fw.it("aura with cast id is mapped to its catalog entry", function()
+        local env = buildInitializedEnv()
+
+        -- Inject a catalog entry with castSpellId different from spellID.
+        env.ns.SpellData[414659] = {
+            name = "Ice Cold", cooldown = 240, duration = 6,
+            category = "Personal", class = "MAGE",
+            castSpellId = 414658, requiresEvidence = false,
+        }
+        stubs.roster["party1"] = { guid = "P-Mage1", name = "Mageo", class = "MAGE", race = "Human" }
+
+        -- Re-init Brain so its castSpellIdIndex picks up the new entry.
+        env.ns.Core.Brain:Init()
+
+        env.stubs.setTime(30000)
+        -- Aura uses the cast id, not the catalog id.
+        env.fire.OnAuraChanged("party1", {
+            addedAuras = {
+                { spellId = 414658, auraInstanceID = 5000, name = "Ice Cold" },
+            },
+        })
+
+        local cd = env.Store:Get("P-Mage1", 414659)
+        fw.assertTrue(cd, "Catalog entry must be reached via the cast id remap")
+        fw.assertEq(cd.duration, 240)
+    end)
+end)
+
+fw.describe("Brain tracking — excludeFromPrediction skips unique-classify", function()
+    -- Some spells share Blizzard's IMPORTANT filter with siblings that we
+    -- don't catalog (Sub Rogue's Shadow Blades alongside Shadow Dance). For
+    -- those we must not commit a unique-classify match on a secret spellId,
+    -- since the aura might actually be the uncatalogued sibling. Duration
+    -- match at removal still resolves them when the duration disambiguates.
+    local function buildRogueEnv()
+        local env = buildInitializedEnv()
+        env.ns.SpellData[121471] = {
+            name = "Shadow Blades", cooldown = 90, duration = 16,
+            category = "Personal", class = "ROGUE",
+            specs = { 261 }, requiresEvidence = false,
+            auraFilter = "Important", minDuration = true,
+            excludeFromPrediction = true,
+        }
+        stubs.roster["party3"] = { guid = "P-Rogue", name = "Wayfu",
+                                   class = "ROGUE", race = "Human",
+                                   spec = 261, role = "DAMAGER" }
+        env.ns.Core.Brain:Init()
+        return env
+    end
+
+    fw.it("does not commit at aura-add when only candidate is excluded", function()
+        local env = buildRogueEnv()
+        env.stubs.setTime(80000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party3"] = {
+            [7001] = { "HELPFUL|IMPORTANT" },
+        }
+        env.fire.OnAuraChanged("party3", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 7001, name = secretName },
+            },
+        })
+        fw.assertNil(env.Store:Get("P-Rogue", 121471),
+                     "Shadow Blades must not unique-classify when excluded")
+    end)
+
+    fw.it("Still commits at aura-removal via duration match", function()
+        local env = buildRogueEnv()
+        env.stubs.setTime(81000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party3"] = {
+            [7002] = { "HELPFUL|IMPORTANT" },
+        }
+        env.fire.OnAuraChanged("party3", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 7002, name = secretName },
+            },
+        })
+        env.stubs.setTime(81016)
+        env.fire.OnAuraChanged("party3", {
+            removedAuraInstanceIDs = { 7002 },
+        })
+
+        fw.assertTrue(env.Store:Get("P-Rogue", 121471),
+                      "duration match still resolves Shadow Blades at removal")
+    end)
+end)
+
+fw.describe("Brain tracking — unique-classify defers when evidence is pending", function()
+    -- When a candidate is gated only by an unmet requiresEvidence (e.g. DS
+    -- waiting on UnitFlags), the unique-match commit is held off so a
+    -- sibling with no evidence requirement (DP) cannot claim the cast.
+    -- matchByDuration at removal — with full evidence — resolves it.
+    local function buildPalEnv()
+        local env = buildInitializedEnv()
+        env.ns.SpellData[498] = {
+            name = "Divine Protection", cooldown = 60, duration = 8,
+            category = "Personal", class = "PALADIN",
+            specs = { 65 }, requiresEvidence = false,
+        }
+        env.ns.Core.Brain:Init()  -- rebuild reverse indexes
+        return env
+    end
+
+    fw.it("does not commit DP while DS is still waiting on UnitFlags", function()
+        local env = buildPalEnv()
+        env.stubs.setTime(50000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["player"] = {
+            [4001] = { "HELPFUL|BIG_DEFENSIVE" },
+        }
+        env.fire.OnAuraChanged("player", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 4001, name = secretName },
+            },
+        })
+
+        fw.assertNil(env.Store:Get("P-Player", 498),
+                     "DP must not commit while DS evidence is pending")
+        fw.assertNil(env.Store:Get("P-Player", 642),
+                     "DS must not commit either at this point")
+    end)
+
+    fw.it("commits the right spell at removal once evidence has been observed", function()
+        local env = buildPalEnv()
+        env.stubs.setTime(50000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["player"] = {
+            [4002] = { "HELPFUL|BIG_DEFENSIVE" },
+        }
+        env.fire.OnAuraChanged("player", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 4002, name = secretName },
+            },
+        })
+        -- UnitFlags arrives after the aura, attached to recent auras.
+        env.stubs.setTime(50000.05)
+        env.fire.OnUnitFlags("player")
+
+        env.stubs.setTime(50008)
+        env.fire.OnAuraChanged("player", {
+            removedAuraInstanceIDs = { 4002 },
+        })
+
+        fw.assertTrue(env.Store:Get("P-Player", 642),
+                      "DS must win the duration tie thanks to its evidence requirement")
+        fw.assertNil(env.Store:Get("P-Player", 498),
+                     "DP must not commit when DS is the right answer")
+    end)
+end)
+
+fw.describe("Brain tracking — duration-match tiebreaker prefers requiresEvidence", function()
+    -- Same-duration siblings (Pal Prot's Divine Shield, Ardent Defender,
+    -- Guardian of Ancient Kings — all 8s) tie on absolute delta. The
+    -- tiebreaker promotes the candidate whose requiresEvidence gate is
+    -- explicitly satisfied so iteration order does not decide the winner.
+    local function buildProtEnv()
+        local env = buildInitializedEnv()
+        env.ns.SpellData[498] = nil  -- avoid Holy DP confusing matters
+        env.ns.SpellData[31850] = {
+            name = "Ardent Defender", cooldown = 90, duration = 8,
+            category = "Personal", class = "PALADIN",
+            specs = { 66 }, requiresEvidence = false,
+        }
+        env.ns.SpellData[86659] = {
+            name = "Guardian of Ancient Kings", cooldown = 180, duration = 8,
+            category = "Personal", class = "PALADIN",
+            specs = { 66 }, requiresEvidence = false,
+        }
+        stubs.roster["party3"] = { guid = "P-ProtPal", name = "Tonk",
+                                   class = "PALADIN", race = "Human",
+                                   spec = 66, role = "TANK" }
+        env.ns.Core.Brain:Init()
+        return env
+    end
+
+    fw.it("Divine Shield wins over AD/GoAK when UnitFlags evidence is met", function()
+        local env = buildProtEnv()
+        env.stubs.setTime(60000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party3"] = {
+            [5001] = { "HELPFUL|BIG_DEFENSIVE" },
+        }
+        env.fire.OnAuraChanged("party3", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 5001, name = secretName },
+            },
+        })
+        env.stubs.setTime(60000.05)
+        env.fire.OnUnitFlags("party3")
+
+        env.stubs.setTime(60008)
+        env.fire.OnAuraChanged("party3", {
+            removedAuraInstanceIDs = { 5001 },
+        })
+
+        fw.assertTrue(env.Store:Get("P-ProtPal", 642),
+                      "Divine Shield is preferred when UnitFlags evidence is observed")
+        fw.assertNil(env.Store:Get("P-ProtPal", 31850), "AD must not be the chosen candidate")
+        fw.assertNil(env.Store:Get("P-ProtPal", 86659), "GoAK must not be the chosen candidate")
+    end)
+
+    fw.it("Falls back to AD when no UnitFlags evidence is gathered", function()
+        local env = buildProtEnv()
+        env.stubs.setTime(61000)
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party3"] = {
+            [5002] = { "HELPFUL|BIG_DEFENSIVE" },
+        }
+        env.fire.OnAuraChanged("party3", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 5002, name = secretName },
+            },
+        })
+        -- No UnitFlags event fired. DS evidence stays unmet.
+        env.stubs.setTime(61008)
+        env.fire.OnAuraChanged("party3", {
+            removedAuraInstanceIDs = { 5002 },
+        })
+
+        fw.assertNil(env.Store:Get("P-ProtPal", 642),
+                     "DS must not commit without UnitFlags evidence")
+        local ad = env.Store:Get("P-ProtPal", 31850)
+        local goak = env.Store:Get("P-ProtPal", 86659)
+        fw.assertTrue(ad or goak, "Either AD or GoAK must commit as the fallback")
+    end)
+end)
+
+fw.describe("Brain tracking — external attribution uses cast evidence", function()
+    -- Two Paladins in the same group make Blessing of Sacrifice ambiguous
+    -- on class match alone. The cast-evidence pass picks the caster whose
+    -- UNIT_SPELLCAST_SUCCEEDED fired within the evidence window of the
+    -- aura's start, falling back to single-class attribution otherwise.
+    local function buildTwoPalEnv()
+        local env = buildInitializedEnv()
+        stubs.roster["party3"] = { guid = "P-ProtPal", name = "Tonk",
+                                   class = "PALADIN", race = "Human",
+                                   spec = 66, role = "TANK" }
+        -- buildInitializedEnv pins GetNumGroupMembers to 3; widen to include
+        -- party3 so the roster iteration in tryAttributeExternal sees it.
+        _G.GetNumGroupMembers = function() return 4 end
+        env.ns.Core.Brain:Init()
+        return env
+    end
+
+    fw.it("Resolves BoS to the Pal whose cast event fired near the aura", function()
+        local env = buildTwoPalEnv()
+        env.stubs.setTime(70000)
+
+        -- BoS aura lands on party2 (the Druid healer in the test fixture).
+        -- We stamp lastCastTime for the tank Pal (party3) but NOT for the
+        -- player so only the tank passes the cast-evidence pass.
+        env.Brain._lastCastTime["party3"] = 70000.02
+
+        env.stubs.auraFilters["party2"] = {
+            [6001] = { "HELPFUL|EXTERNAL_DEFENSIVE" },
+        }
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+
+        env.fire.OnAuraChanged("party2", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 6001, name = secretName },
+            },
+        })
+        -- Shield evidence on the buff target — required by the BoS rule.
+        env.fire.OnShieldChanged("party2")
+        env.stubs.setTime(70012)
+        env.fire.OnAuraChanged("party2", {
+            removedAuraInstanceIDs = { 6001 },
+        })
+
+        local tankRec = env.Store:GetPlayerRec("P-ProtPal")
+        fw.assertTrue(tankRec, "Tank Pal must exist as the attributed caster")
+        fw.assertTrue(tankRec.cooldowns[6940],
+                      "Blessing of Sacrifice must be on cooldown for the tank Pal")
+        local playerRec = env.Store:GetPlayerRec("P-Player")
+        fw.assertTrue(not (playerRec and playerRec.cooldowns and playerRec.cooldowns[6940]),
+                      "Player Pal must NOT be falsely attributed as the BoS caster")
+    end)
+
+    fw.it("Falls back to single-class attribution when no cast evidence exists", function()
+        local env = buildTwoPalEnv()
+        env.stubs.setTime(71000)
+
+        -- Drop one of the two Paladins so the single-candidate fallback is
+        -- the only remaining attribution path.
+        stubs.roster["party3"] = nil
+
+        env.stubs.auraFilters["party2"] = {
+            [6002] = { "HELPFUL|EXTERNAL_DEFENSIVE" },
+        }
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+
+        env.fire.OnAuraChanged("party2", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 6002, name = secretName },
+            },
+        })
+        env.fire.OnShieldChanged("party2")
+        env.stubs.setTime(71012)
+        env.fire.OnAuraChanged("party2", {
+            removedAuraInstanceIDs = { 6002 },
+        })
+
+        local rec = env.Store:GetPlayerRec("P-Player")
+        fw.assertTrue(rec and rec.cooldowns[6940],
+                      "Sole Pal candidate must be attributed when no cast evidence exists")
+    end)
+end)
+
+

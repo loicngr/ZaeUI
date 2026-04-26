@@ -97,3 +97,102 @@ fw.describe("Util.SafeCall", function()
         fw.assertEq(ok, false)
     end)
 end)
+
+fw.describe("Util.ShouldDisplayCooldown — role filters", function()
+    stubs.reset()
+    stubs.roster["player"] = { name = "Self" }
+    local Util = loadUtil()
+    local cd = {}
+    local info = { category = "Personal" }
+
+    fw.it("hides TANK cooldowns when toggle is false", function()
+        local rec = { role = "TANK", name = "Tonk" }
+        local db = { trackerShowTankCooldowns = false }
+        fw.assertEq(Util.ShouldDisplayCooldown(cd, info, rec, db), false)
+    end)
+
+    fw.it("hides HEALER cooldowns when toggle is false", function()
+        local rec = { role = "HEALER", name = "Healz" }
+        local db = { trackerShowHealerCooldowns = false }
+        fw.assertEq(Util.ShouldDisplayCooldown(cd, info, rec, db), false)
+    end)
+
+    fw.it("hides DAMAGER cooldowns when toggle is false", function()
+        local rec = { role = "DAMAGER", name = "Dps" }
+        local db = { trackerShowDpsCooldowns = false }
+        fw.assertEq(Util.ShouldDisplayCooldown(cd, info, rec, db), false)
+    end)
+
+    fw.it("shows by default when toggles are absent", function()
+        local rec = { role = "TANK", name = "Tonk" }
+        fw.assertTrue(Util.ShouldDisplayCooldown(cd, info, rec, {}))
+    end)
+end)
+
+fw.describe("Util.ShouldDisplayCooldown — category filters", function()
+    stubs.reset()
+    stubs.roster["player"] = { name = "Self" }
+    local Util = loadUtil()
+    local cd = {}
+    local rec = { role = "DAMAGER", name = "Dps" }
+
+    fw.it("hides External when trackerShowExternal=false", function()
+        local db = { trackerShowExternal = false }
+        fw.assertEq(Util.ShouldDisplayCooldown(cd, { category = "External" }, rec, db), false)
+    end)
+    fw.it("hides Personal when trackerShowPersonal=false", function()
+        local db = { trackerShowPersonal = false }
+        fw.assertEq(Util.ShouldDisplayCooldown(cd, { category = "Personal" }, rec, db), false)
+    end)
+    fw.it("hides Raidwide when trackerShowRaidwide=false", function()
+        local db = { trackerShowRaidwide = false }
+        fw.assertEq(Util.ShouldDisplayCooldown(cd, { category = "Raidwide" }, rec, db), false)
+    end)
+end)
+
+fw.describe("Util.ShouldDisplayCooldown — hide own externals", function()
+    stubs.reset()
+    stubs.roster["player"] = { name = "Self" }
+    local Util = loadUtil()
+    local cd = {}
+
+    fw.it("hides Externals cast on the local player when toggle is on", function()
+        local rec = { role = "DAMAGER", name = "Self" }
+        local db = { trackerHideOwnExternals = true }
+        fw.assertEq(
+            Util.ShouldDisplayCooldown(cd, { category = "External" }, rec, db),
+            false
+        )
+    end)
+
+    fw.it("does not hide Externals on someone else", function()
+        local rec = { role = "DAMAGER", name = "Other" }
+        local db = { trackerHideOwnExternals = true }
+        fw.assertTrue(
+            Util.ShouldDisplayCooldown(cd, { category = "External" }, rec, db)
+        )
+    end)
+
+    fw.it("does not hide Personal cooldowns under the same toggle", function()
+        local rec = { role = "DAMAGER", name = "Self" }
+        local db = { trackerHideOwnExternals = true }
+        fw.assertTrue(
+            Util.ShouldDisplayCooldown(cd, { category = "Personal" }, rec, db)
+        )
+    end)
+end)
+
+fw.describe("Util.ShouldDisplayCooldown — defensive guards", function()
+    local Util = loadUtil()
+    fw.it("returns false when db is nil", function()
+        fw.assertEq(Util.ShouldDisplayCooldown({}, { category = "Personal" },
+                                               { role = "TANK" }, nil), false)
+    end)
+    fw.it("returns false when info is nil", function()
+        fw.assertEq(Util.ShouldDisplayCooldown({}, nil, { role = "TANK" }, {}), false)
+    end)
+    fw.it("returns false when rec is nil", function()
+        fw.assertEq(Util.ShouldDisplayCooldown({}, { category = "Personal" }, nil, {}),
+                    false)
+    end)
+end)

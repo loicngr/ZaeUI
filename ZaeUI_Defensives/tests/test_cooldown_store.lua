@@ -183,6 +183,36 @@ fw.describe("CooldownStore — GetByName via nameIndex", function()
     end)
 end)
 
+fw.describe("CooldownStore — Reset fires PlayerRemoved per GUID", function()
+    -- Without these fires, displays would keep iconIndex / containersByGUID
+    -- entries pointing at players that no longer exist in the store.
+    stubs.reset()
+    local Store = loadStore()
+    Store:Reset()
+
+    local removed = {}
+    Store:RegisterCallback("PlayerRemoved", function(guid)
+        removed[#removed + 1] = guid
+    end)
+
+    Store:RegisterPlayer("G-Reset-A", { name = "A", class = "PALADIN" })
+    Store:RegisterPlayer("G-Reset-B", { name = "B", class = "MONK" })
+    Store:Reset()
+
+    fw.it("fires PlayerRemoved once per known GUID", function()
+        fw.assertEq(#removed, 2)
+    end)
+    fw.it("the store is empty after reset", function()
+        fw.assertNil(Store:GetPlayerRec("G-Reset-A"))
+        fw.assertNil(Store:GetPlayerRec("G-Reset-B"))
+    end)
+    fw.it("no PlayerRemoved is fired when Reset runs on an empty store", function()
+        local before = #removed
+        Store:Reset()
+        fw.assertEq(#removed, before)
+    end)
+end)
+
 fw.describe("CooldownStore — ResetPlayer", function()
     stubs.reset()
     local Store = loadStore()
@@ -228,6 +258,65 @@ fw.describe("CooldownStore — SeedKnownSpells", function()
         local cd = Store:Get("GK", 642)
         fw.assertEq(cd.startedAt, 999)   -- preserved from StartCooldown
         fw.assertEq(cd.source, "aura")   -- NOT replaced by "seed"
+    end)
+end)
+
+fw.describe("CooldownStore — multi-charge swipe restart between charges", function()
+    -- When a charge is regained but more are still recharging, the recharge
+    -- timer must fire CooldownStart so displays restart their cooldown swipe
+    -- with the new (start, duration) pair.
+    stubs.reset()
+    local Store = loadStore()
+    Store:Reset()
+    stubs.setTime(0)
+
+    local startEvents = {}
+    local endEvents = {}
+    Store:RegisterCallback("CooldownStart", function(guid, sid, cd)
+        startEvents[#startEvents + 1] = { guid = guid, sid = sid, startedAt = cd.startedAt }
+    end)
+    Store:RegisterCallback("CooldownEnd", function(guid, sid)
+        endEvents[#endEvents + 1] = guid .. ":" .. sid
+    end)
+
+    -- Two casts within the cooldown window: 0 -> 1 charge consumed, 1 -> 2 consumed.
+    Store:StartCooldown("GMC", 45438, {
+        name = "Mage", class = "MAGE", spec = 64, role = "DAMAGER",
+        startedAt = 0, duration = 240, maxCharges = 2, source = "aura",
+    })
+    stubs.setTime(1)
+    Store:StartCooldown("GMC", 45438, {
+        name = "Mage", class = "MAGE", spec = 64, role = "DAMAGER",
+        startedAt = 1, duration = 240, maxCharges = 2, source = "aura",
+    })
+
+    fw.it("two casts produce two CooldownStart events", function()
+        fw.assertEq(#startEvents, 2)
+    end)
+
+    -- First charge regenerates at t = 1 + 240 = 241. Second still missing.
+    stubs.setTime(241)
+    stubs.flushTimers(241)
+
+    fw.it("intermediate recharge fires a fresh CooldownStart", function()
+        fw.assertEq(#startEvents, 3, "three starts (2 casts + 1 swipe restart)")
+    end)
+    fw.it("intermediate recharge restamps startedAt to GetTime()", function()
+        fw.assertEq(startEvents[3].startedAt, 241)
+    end)
+    fw.it("no premature CooldownEnd while still missing a charge", function()
+        fw.assertEq(#endEvents, 0)
+    end)
+
+    -- Final charge regenerates at t = 241 + 240 = 481.
+    stubs.setTime(481)
+    stubs.flushTimers(481)
+
+    fw.it("final recharge fires CooldownEnd", function()
+        fw.assertEq(#endEvents, 1)
+    end)
+    fw.it("final recharge does not fire another CooldownStart", function()
+        fw.assertEq(#startEvents, 3, "no extra start at the final recharge")
     end)
 end)
 
