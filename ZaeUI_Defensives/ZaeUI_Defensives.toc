@@ -3,7 +3,7 @@
 ## Notes: Track defensive cooldowns for your group (local detection, works in M+/arena/raid encounters).
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
-## Version: 3.0.1
+## Version: 3.1.0
 ## SavedVariables: ZaeUI_DefensivesDB
 ## Dependencies: ZaeUI_Shared
 
@@ -16,6 +16,7 @@ Core\Inspector.lua
 Core\TalentResolver.lua
 Core\AuraWatcher.lua
 Core\Brain.lua
+Core\IconWidget.lua
 Modules\FloatingDisplay.lua
 Modules\FrameDisplay.lua
 Modules\TestMode.lua

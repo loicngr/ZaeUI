@@ -137,9 +137,13 @@ scheduleRecharge = function(guid, spellID)
         if not c or c._gen ~= gen then return end  -- stale timer, skip
         c.currentCharges = c.currentCharges + 1
         if c.currentCharges < c.maxCharges then
-            -- Still missing charges: restart swipe window and recurse
+            -- More charges still recharging: restart the swipe window and
+            -- notify displays so the icon picks up the new (start, duration)
+            -- pair. Without the CooldownStart fire, the previous swipe ends
+            -- and no event refreshes the icon for the next charge.
             c.startedAt = (GetTime and GetTime()) or (c.startedAt + c.duration)
             c._gen = c._gen + 1
+            fire("CooldownStart", guid, spellID, c)
             scheduleRecharge(guid, spellID)
         else
             fire("CooldownEnd", guid, spellID, c)
@@ -205,8 +209,23 @@ function Store:ResetPlayer(guid)
 end
 
 function Store:Reset()
+    -- Capture the GUIDs we are about to drop so display modules can release
+    -- per-player state (icons, anchored containers, glow handles) without
+    -- N² re-renders: their PlayerRemoved handlers full-refresh the display,
+    -- so we wipe first then notify once per departed GUID against an empty
+    -- store.
+    local removed
+    for guid in pairs(store) do
+        removed = removed or {}
+        removed[#removed + 1] = guid
+    end
     for k in pairs(store) do store[k] = nil end
     for k in pairs(nameIndex) do nameIndex[k] = nil end
+    if removed then
+        for i = 1, #removed do
+            fire("PlayerRemoved", removed[i])
+        end
+    end
 end
 
 function Store:RegisterCallback(event, fn)

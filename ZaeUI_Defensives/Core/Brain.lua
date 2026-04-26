@@ -76,6 +76,11 @@ local spellsExcludedByTalent = {}
 -- Reusable buffer for seedForUnit (avoids per-call allocation).
 local seedBuf = {}
 
+-- Snapshot of the last observed roster: unit token -> guid. Used to diff
+-- on GROUP_ROSTER_UPDATE so we can purge per-unit and per-guid state when
+-- a member leaves or a slot is reassigned to a different player.
+local rosterSnapshot = {}
+
 -- ------------------------------------------------------------------
 -- Evidence system
 -- ------------------------------------------------------------------
@@ -127,20 +132,52 @@ local function evidenceMatchesReq(req, evidence)
 end
 
 -- Filter-based aura classification (secret-safe, works in M+).
+-- `category` drives the display bucket (External vs Personal). `auraFilter`
+-- carries Blizzard's narrower classification (BigDefensive / Important /
+-- External) and is used to break duration-match ties when several spells
+-- of the same class share the same display category — e.g. on a Vengeance
+-- DH, Fiery Brand (BigDefensive 12s) and Metamorphosis (Important 15s)
+-- both land in `Personal` but only one filter ever applies to a given aura.
 local DEFENSIVE_FILTERS = {
-    { filter = "HELPFUL|EXTERNAL_DEFENSIVE", category = "External" },
-    { filter = "HELPFUL|BIG_DEFENSIVE",      category = "Personal" },
-    { filter = "HELPFUL|IMPORTANT",          category = "Personal" },
+    { filter = "HELPFUL|EXTERNAL_DEFENSIVE", category = "External", auraFilter = "External" },
+    { filter = "HELPFUL|BIG_DEFENSIVE",      category = "Personal", auraFilter = "BigDefensive" },
+    { filter = "HELPFUL|IMPORTANT",          category = "Personal", auraFilter = "Important" },
 }
 
+--- Returns (displayCategory, auraFilter) or nil when no Blizzard filter
+--- claims the aura.
 local function classifyAura(unit, auraInstanceID)
     if not (Util and Util.AuraMatchesFilter) then return nil end
     for _, entry in ipairs(DEFENSIVE_FILTERS) do
         if Util.AuraMatchesFilter(unit, auraInstanceID, entry.filter) then
-            return entry.category
+            return entry.category, entry.auraFilter
         end
     end
     return nil
+end
+
+--- True when a spell's `auraFilter` declaration accepts the aura's actual
+--- Blizzard filter. Accepts a string (single filter) or an array of strings
+--- so a spell that legitimately surfaces under multiple filters (e.g. some
+--- Paladin defensives appearing as both BigDefensive and Important) can be
+--- declared with `auraFilter = { "BigDefensive", "Important" }`.
+--- A nil declaration on either side disables the gate.
+--- @param spellFilter string|table|nil
+--- @param auraFilter string|nil
+--- @return boolean
+local function auraFilterAccepts(spellFilter, auraFilter)
+    if not spellFilter or not auraFilter then return true end
+    local t = type(spellFilter)
+    if t == "string" then
+        return spellFilter == auraFilter
+    end
+    if t == "table" then
+        for i = 1, #spellFilter do
+            if spellFilter[i] == auraFilter then return true end
+        end
+        return false
+    end
+    return true
 end
 
 -- ------------------------------------------------------------------
@@ -303,37 +340,77 @@ local function durationMatches(measuredDuration, info)
     return mathAbs(measuredDuration - expected) <= DURATION_TOLERANCE
 end
 
-local function matchByDuration(measuredDuration, unitClass, unitSpec, category, evidence, talents, defaults)
-    local byClass = spellsByClassCategory[unitClass]
-    if not byClass then return nil, nil end
-
+local function matchByDuration(measuredDuration, unitClass, unitSpec, category, evidence, talents, defaults, auraFilter)
     local cat = category or "Personal"
-    local list = byClass[cat]
-    if not list then return nil, nil end
+    -- For Externals the buff lives on a target whose class doesn't constrain
+    -- the caster (a Pal's BoS lands on a Druid, etc.) so we must walk every
+    -- class' External list. Personals and Raidwides stay class-scoped.
+    local listOfLists = {}
+    if cat == "External" then
+        for _, byClass in pairs(spellsByClassCategory) do
+            if byClass[cat] then listOfLists[#listOfLists + 1] = byClass[cat] end
+        end
+    else
+        local byClass = spellsByClassCategory[unitClass]
+        if not byClass then return nil, nil end
+        local list = byClass[cat]
+        if not list then return nil, nil end
+        listOfLists[1] = list
+    end
 
-    local bestSpellID, bestInfo, bestDelta
-    for i = 1, #list do
-        local spellID = list[i]
-        local info = ns.SpellData[spellID]
-        if not info then break end
-        local skip = false
-        if not passesTalentGates(info, talents, defaults) then
-            skip = true
-        end
-        if not skip and info.specs and unitSpec then
-            skip = true
-            for _, s in ipairs(info.specs) do
-                if s == unitSpec then skip = false; break end
+    local bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq
+    for _, list in ipairs(listOfLists) do
+        for i = 1, #list do
+            local spellID = list[i]
+            local info = ns.SpellData[spellID]
+            if not info then break end
+            local skip = false
+            -- Talent / spec gates only meaningful for Personals: those are
+            -- evaluated against the buffed unit (the caster). For Externals
+            -- the caster is unknown at this stage; tryAttributeExternal
+            -- enforces the class match in a later pass.
+            if cat ~= "External" then
+                if not passesTalentGates(info, talents, defaults) then
+                    skip = true
+                end
+                if not skip and info.specs and unitSpec then
+                    skip = true
+                    for _, s in ipairs(info.specs) do
+                        if s == unitSpec then skip = false; break end
+                    end
+                end
             end
-        end
-        if not skip and not evidenceMatchesReq(info.requiresEvidence, evidence) then
-            skip = true
-        end
-        if not skip and durationMatches(measuredDuration, info) then
-            local expected = info.duration or 0
-            local delta = mathAbs(measuredDuration - expected)
-            if not bestDelta or delta < bestDelta then
-                bestSpellID, bestInfo, bestDelta = spellID, info, delta
+            if not skip and not evidenceMatchesReq(info.requiresEvidence, evidence) then
+                skip = true
+            end
+            -- Aura-filter gate: prevents BigDefensive/Important collisions when
+            -- two spells of the same class share a display category but each
+            -- only ever applies under one Blizzard filter (e.g. Vengeance DH
+            -- Fiery Brand vs Metamorphosis on long Charred Flesh extensions).
+            if not skip and not auraFilterAccepts(info.auraFilter, auraFilter) then
+                skip = true
+            end
+            if not skip and durationMatches(measuredDuration, info) then
+                local expected = info.duration or 0
+                local delta = mathAbs(measuredDuration - expected)
+                -- Tie-break: when several class spells share the same duration
+                -- (e.g. Pal Prot's Divine Shield, Ardent Defender, GoAK all 8s),
+                -- prefer the candidate whose explicit requiresEvidence gate is
+                -- satisfied. A spell that demands UnitFlags / Shield / Debuff
+                -- and got it is a stronger signal than one with no requirement.
+                local hasEvidenceReq = info.requiresEvidence and info.requiresEvidence ~= false
+                local replace = false
+                if not bestDelta then
+                    replace = true
+                elseif delta < bestDelta then
+                    replace = true
+                elseif delta == bestDelta and hasEvidenceReq and not bestHasEvidenceReq then
+                    replace = true
+                end
+                if replace then
+                    bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq =
+                        spellID, info, delta, hasEvidenceReq
+                end
             end
         end
     end
@@ -344,23 +421,63 @@ end
 -- External attribution: find the caster among group candidates
 -- ------------------------------------------------------------------
 
+-- Reused on every external buff: filling the same 21-slot array beats
+-- allocating a fresh roster table for every Ironbark / BoP that lands.
+local rosterBuf = {}
+
 local function tryAttributeExternal(targetUnit, spellID, info, startedAt, measuredDuration)
-    local units = {}
     local n = GetNumGroupMembers and GetNumGroupMembers() or 0
     local inRaid = IsInRaid and IsInRaid()
-    units[#units + 1] = "player"
+    local count = 1
+    rosterBuf[1] = "player"
     if inRaid then
         for i = 1, n do
-            units[#units + 1] = "raid" .. i
+            count = count + 1
+            rosterBuf[count] = "raid" .. i
         end
     else
         for i = 1, n - 1 do
-            units[#units + 1] = "party" .. i
+            count = count + 1
+            rosterBuf[count] = "party" .. i
         end
     end
+    -- Trim leftover entries from a previously larger roster.
+    for i = count + 1, #rosterBuf do rosterBuf[i] = nil end
 
+    -- Pass 1: prefer the candidate whose UNIT_SPELLCAST_SUCCEEDED fired
+    -- within the evidence window of this aura's start time. With multiple
+    -- Paladins in group, Blessing of Sacrifice / Spellwarding would tie
+    -- otherwise — cast evidence breaks the tie when only one candidate
+    -- actually cast something near the aura.
+    local evidenceUnit, evidenceGUID
+    local evidenceCount = 0
+    for i = 1, count do
+        local u = rosterBuf[i]
+        if u ~= targetUnit and lastCastTime[u]
+           and mathAbs(lastCastTime[u] - startedAt) <= EVIDENCE_WINDOW then
+            local _, classToken = UnitClass(u)
+            if classToken and info.class == classToken then
+                local spec = Inspector and Inspector:GetSpec(u) or nil
+                if Brain.MatchAuraToSpell(spellID, classToken, spec, nil, "caster") then
+                    local guid = Util and Util.SafeGUID(u) or nil
+                    if guid then
+                        evidenceCount = evidenceCount + 1
+                        evidenceUnit, evidenceGUID = u, guid
+                    end
+                end
+            end
+        end
+    end
+    if evidenceCount == 1 then
+        debugPrint("External attribution (cast evidence):", info.name, "→", evidenceUnit)
+        commitCooldown(evidenceGUID, evidenceUnit, spellID, info, startedAt, measuredDuration)
+        return
+    end
+
+    -- Pass 2: fall back to "single class candidate" attribution.
     local bestUnit, bestGUID
-    for _, u in ipairs(units) do
+    for i = 1, count do
+        local u = rosterBuf[i]
         if u ~= targetUnit then
             local _, classToken = UnitClass(u)
             if classToken and info.class == classToken then
@@ -407,13 +524,14 @@ local function onAuraAdded(unit, aura)
         end
     end
 
-    local auraType = classifyAura(unit, auraInstanceID)
+    local auraType, auraFilter = classifyAura(unit, auraInstanceID)
 
     if not isKnown and not auraType then return end
 
     debugPrint("Track aura:", auraInstanceID, "on", unit,
                "spell=", tostring(spellID), "name=", tostring(auraName),
-               "type=", tostring(auraType))
+               "type=", tostring(auraType),
+               "filter=", tostring(auraFilter))
 
     trackedAuras[unit] = trackedAuras[unit] or {}
     trackedAuras[unit][auraInstanceID] = {
@@ -421,6 +539,7 @@ local function onAuraAdded(unit, aura)
         spellID = spellID,
         auraName = auraName,
         auraType = auraType,
+        auraFilter = auraFilter,
         evidence = buildEvidenceSet(unit, now),
     }
 end
@@ -469,10 +588,16 @@ local function onAuraRemoved(unit, auraInstanceID)
         local name = Util and Util.SafeNameUnmodified(unit) or nil
         local talents = name and Inspector and Inspector:GetTalents(name) or nil
         local defaults = spec and ns.DefaultTalents and ns.DefaultTalents[spec] or nil
-        spellID, info = matchByDuration(measuredDuration, classToken, spec, tracked.auraType, evidence, talents, defaults)
+        spellID, info = matchByDuration(measuredDuration, classToken, spec, tracked.auraType, evidence, talents, defaults, tracked.auraFilter)
         if spellID then
             debugPrint("Duration match:", info.name, "measured=", format("%.1f", measuredDuration),
                        "expected=", info.duration, "type=", tostring(tracked.auraType), "on", unit)
+        else
+            debugPrint("No duration match: aid=", auraInstanceID,
+                       "measured=", format("%.1f", measuredDuration),
+                       "type=", tostring(tracked.auraType),
+                       "class=", tostring(classToken), "spec=", tostring(spec),
+                       "on", unit)
         end
     end
     if not info then return end
@@ -532,6 +657,11 @@ local function tryImmediateDetection(unit, aura)
     local spellID = Util and Util.SafeAuraField(aura, "spellId") or nil
 
     if spellID then
+        -- Talent overrides: an aura whose spellId is the cast id (e.g. Ice
+        -- Cold's button id) must be remapped to its catalog entry. Without
+        -- this, the SpellData lookup fails and detection is missed.
+        local mapped = castSpellIdIndex[spellID]
+        if mapped then spellID = mapped end
         local info = ns.SpellData and ns.SpellData[spellID]
         if not info then return end
 
@@ -562,7 +692,7 @@ local function tryImmediateDetection(unit, aura)
     -- spellID is secret: classify via filter API, try unique candidate match
     local auraInstanceID = Util and Util.SafeAuraField(aura, "auraInstanceID") or nil
     if not auraInstanceID then return end
-    local auraType = classifyAura(unit, auraInstanceID)
+    local auraType, auraFilter = classifyAura(unit, auraInstanceID)
     if auraType ~= "Personal" then return end
 
     local guid = Util and Util.SafeGUID(unit) or nil
@@ -578,14 +708,26 @@ local function tryImmediateDetection(unit, aura)
     local list = byClass and byClass["Personal"]
     if not list then return end
 
+    -- Two-bucket count: candidates that pass everything (`ready`) vs those
+    -- gated only by an unmet requiresEvidence (`pending`). When any pending
+    -- candidate exists we hold off on a unique-match commit — its evidence
+    -- might still arrive within the deferred-backfill window and would
+    -- change which spell wins the comparison. Letting matchByDuration
+    -- decide at aura removal (with full evidence) avoids false attributions
+    -- like "Holy Pal cast Divine Shield, addon flagged Divine Protection".
     local matchID, matchInfo
-    local count = 0
+    local readyCount, pendingCount = 0, 0
     for i = 1, #list do
         local sid = list[i]
         local sinfo = ns.SpellData[sid]
+        -- excludeFromPrediction: spells whose Blizzard filter overlaps with
+        -- another that we don't catalog (e.g. Sub Rogue's Shadow Blades is
+        -- Important like Shadow Dance) cannot be inferred safely from the
+        -- filter alone. Duration-match at removal still resolves them.
         if (sinfo.duration or 0) > 0
+           and not sinfo.excludeFromPrediction
            and passesTalentGates(sinfo, talents, defaults)
-           and evidenceMatchesReq(sinfo.requiresEvidence, evidence) then
+           and auraFilterAccepts(sinfo.auraFilter, auraFilter) then
             local specOk = true
             if sinfo.specs and spec then
                 specOk = false
@@ -594,21 +736,34 @@ local function tryImmediateDetection(unit, aura)
                 end
             end
             if specOk then
-                count = count + 1
-                matchID, matchInfo = sid, sinfo
+                if evidenceMatchesReq(sinfo.requiresEvidence, evidence) then
+                    readyCount = readyCount + 1
+                    matchID, matchInfo = sid, sinfo
+                else
+                    pendingCount = pendingCount + 1
+                end
             end
         end
     end
 
-    if count == 1 then
+    if readyCount == 1 and pendingCount == 0 then
         local now = GetTime and GetTime() or 0
-        debugPrint("Unique classify match:", matchInfo.name, "on", unit)
+        debugPrint("Unique classify match:", matchInfo.name, "on", unit, "filter=", tostring(auraFilter))
         commitCooldown(guid, unit, matchID, matchInfo, now, matchInfo.duration or 0)
+    elseif pendingCount > 0 then
+        debugPrint("Unique classify deferred (pending evidence): unit=", unit,
+                   "filter=", tostring(auraFilter),
+                   "ready=", readyCount, "pending=", pendingCount)
     end
 end
 
 -- ------------------------------------------------------------------
 -- Deferred backfill: re-collect evidence after a short delay
+--
+-- Scheduling one C_Timer.After per added aura allocates a closure and a
+-- timer entry on every UNIT_AURA fire, which adds up sharply on raid pulls.
+-- Instead we keep a FIFO queue and a single in-flight timer that drains
+-- ready entries and re-schedules itself only when work remains.
 -- ------------------------------------------------------------------
 
 local function deferredBackfill(unit, auraInstanceID)
@@ -624,6 +779,88 @@ local function deferredBackfill(unit, auraInstanceID)
         end
     end
 end
+
+-- FIFO queue with explicit head/tail indices. Plain `#queue + 1` would be
+-- unsafe here: after a partial drain (head > 1) the array has holes at the
+-- low end, and the length operator on sparse arrays is undefined in Lua 5.1.
+local backfillQueue = {}
+local backfillHead = 1
+local backfillTail = 0
+local backfillScheduled = false
+
+-- Pool of entry tables. Reused so a raid-pull burst of UNIT_AURA fires does
+-- not allocate one fresh table per aura. Capacity grows naturally with the
+-- worst-case queue depth observed across the session and never shrinks.
+local backfillEntryPool = {}
+
+local function acquireEntry(unit, aid, fireAt)
+    local n = #backfillEntryPool
+    if n > 0 then
+        local e = backfillEntryPool[n]
+        backfillEntryPool[n] = nil
+        e.unit, e.aid, e.fireAt = unit, aid, fireAt
+        return e
+    end
+    return { unit = unit, aid = aid, fireAt = fireAt }
+end
+
+local function releaseEntry(e)
+    e.unit, e.aid, e.fireAt = nil, nil, 0
+    backfillEntryPool[#backfillEntryPool + 1] = e
+end
+
+local processBackfillQueue
+processBackfillQueue = function()
+    backfillScheduled = false
+    local now = GetTime and GetTime() or 0
+    while backfillHead <= backfillTail and backfillQueue[backfillHead].fireAt <= now do
+        local entry = backfillQueue[backfillHead]
+        backfillQueue[backfillHead] = nil
+        backfillHead = backfillHead + 1
+        deferredBackfill(entry.unit, entry.aid)
+        releaseEntry(entry)
+    end
+    -- Empty: reset to keep the array dense (avoids unbounded growth of the
+    -- head index over a long session).
+    if backfillHead > backfillTail then
+        backfillHead, backfillTail = 1, 0
+        return
+    end
+    if C_Timer and C_Timer.After then
+        backfillScheduled = true
+        local delay = backfillQueue[backfillHead].fireAt - now
+        if delay < 0 then delay = 0 end
+        C_Timer.After(delay, processBackfillQueue)
+    end
+end
+
+local function enqueueBackfill(unit, aid)
+    if not (C_Timer and C_Timer.After) then return end
+    local now = GetTime and GetTime() or 0
+    backfillTail = backfillTail + 1
+    backfillQueue[backfillTail] = acquireEntry(unit, aid, now + EVIDENCE_WINDOW)
+    if not backfillScheduled then
+        backfillScheduled = true
+        C_Timer.After(EVIDENCE_WINDOW, processBackfillQueue)
+    end
+end
+
+local function purgeBackfillQueue()
+    for i = backfillHead, backfillTail do
+        local e = backfillQueue[i]
+        if e then
+            backfillQueue[i] = nil
+            releaseEntry(e)
+        end
+    end
+    backfillHead, backfillTail = 1, 0
+    -- Leave backfillScheduled as-is: a stale timer in flight will fire,
+    -- find the queue empty, and silently exit.
+end
+
+Brain._enqueueBackfill = enqueueBackfill
+Brain._backfillQueueLen = function() return backfillTail - backfillHead + 1 end
+Brain._purgeBackfillQueue = purgeBackfillQueue
 
 -- ------------------------------------------------------------------
 -- Evidence callbacks
@@ -735,13 +972,8 @@ function Brain:Init()
             if updateInfo and not updateInfo.isFullUpdate and updateInfo.addedAuras then
                 for _, aura in ipairs(updateInfo.addedAuras) do
                     tryImmediateDetection(unit, aura)
-                    -- Deferred backfill: re-collect evidence after 0.15s
                     local aid = Util and Util.SafeAuraField(aura, "auraInstanceID") or nil
-                    if aid and C_Timer and C_Timer.After then
-                        C_Timer.After(EVIDENCE_WINDOW, function()
-                            deferredBackfill(unit, aid)
-                        end)
-                    end
+                    if aid then enqueueBackfill(unit, aid) end
                 end
             end
         end)
@@ -822,6 +1054,17 @@ function Brain:Init()
         end
     end
 
+    local function clearUnitState(u)
+        trackedAuras[u]       = nil
+        lastUnitFlagsTime[u]  = nil
+        lastFeignDeathTime[u] = nil
+        lastFeignDeathState[u] = nil
+        lastShieldTime[u]     = nil
+        lastDebuffTime[u]     = nil
+        lastCastTime[u]       = nil
+        unitCanFeign[u]       = nil
+    end
+
     local function resetState()
         for k in pairs(trackedAuras)       do trackedAuras[k] = nil end
         for k in pairs(lastDetection)      do lastDetection[k] = nil end
@@ -832,43 +1075,108 @@ function Brain:Init()
         for k in pairs(lastDebuffTime)     do lastDebuffTime[k] = nil end
         for k in pairs(lastCastTime)       do lastCastTime[k] = nil end
         for k in pairs(unitCanFeign)       do unitCanFeign[k] = nil end
+        for k in pairs(rosterSnapshot)     do rosterSnapshot[k] = nil end
+        purgeBackfillQueue()
         if Store and Store.Reset then Store:Reset() end
     end
 
-    local function seedRoster()
-        if C_Timer and C_Timer.After then
-            C_Timer.After(0.2, function()
-                seedForUnit("player")
-                local n = GetNumGroupMembers and GetNumGroupMembers() or 0
-                if n <= 1 then return end
-                local inRaid = IsInRaid and IsInRaid()
-                if inRaid then
-                    for i = 1, n do
-                        seedForUnit("raid" .. i)
-                    end
-                else
-                    for i = 1, n - 1 do
-                        seedForUnit("party" .. i)
-                    end
-                end
-            end)
+    -- Reusable scratch tables: one diff per GROUP_ROSTER_UPDATE.
+    local nextSnapshot = {}
+    local guidSeen = {}
+
+    local function onRosterChanged()
+        for k in pairs(nextSnapshot) do nextSnapshot[k] = nil end
+        for k in pairs(guidSeen)     do guidSeen[k] = nil end
+
+        local function note(u)
+            local g = Util and Util.SafeGUID(u) or nil
+            if g then
+                nextSnapshot[u] = g
+                guidSeen[g] = true
+            end
         end
+
+        note("player")
+        local n = GetNumGroupMembers and GetNumGroupMembers() or 0
+        local inRaid = IsInRaid and IsInRaid()
+        if inRaid then
+            for i = 1, n do note("raid" .. i) end
+        elseif n > 1 then
+            for i = 1, n - 1 do note("party" .. i) end
+        end
+
+        -- Per-unit purge: token vanished, or slot now holds a different GUID.
+        for u, prevGuid in pairs(rosterSnapshot) do
+            if nextSnapshot[u] ~= prevGuid then
+                clearUnitState(u)
+            end
+        end
+
+        -- Per-GUID purge: player no longer in any roster slot.
+        for _, prevGuid in pairs(rosterSnapshot) do
+            if not guidSeen[prevGuid] then
+                lastDetection[prevGuid] = nil
+                if Store and Store.ResetPlayer then Store:ResetPlayer(prevGuid) end
+            end
+        end
+
+        for k in pairs(rosterSnapshot) do rosterSnapshot[k] = nil end
+        for u, g in pairs(nextSnapshot) do rosterSnapshot[u] = g end
     end
+
+    -- Exposed for tests.
+    Brain._onRosterChanged = onRosterChanged
+    Brain._clearUnitState = clearUnitState
+    Brain._rosterSnapshot = rosterSnapshot
+
+    -- GROUP_ROSTER_UPDATE can fire many times within a few hundred ms (every
+    -- pet up/down, every group buff). Coalesce all calls within the debounce
+    -- window into a single full-roster seed.
+    local seedPending = false
+    local function seedRoster()
+        if seedPending then return end
+        if not (C_Timer and C_Timer.After) then return end
+        seedPending = true
+        C_Timer.After(0.2, function()
+            seedPending = false
+            seedForUnit("player")
+            local n = GetNumGroupMembers and GetNumGroupMembers() or 0
+            if n <= 1 then return end
+            local inRaid = IsInRaid and IsInRaid()
+            if inRaid then
+                for i = 1, n do
+                    seedForUnit("raid" .. i)
+                end
+            else
+                for i = 1, n - 1 do
+                    seedForUnit("party" .. i)
+                end
+            end
+        end)
+    end
+    Brain._seedRoster = seedRoster
+    Brain._isSeedPending = function() return seedPending end
 
     local seedFrame = CreateFrame("Frame")
     seedFrame:SetScript("OnEvent", function(_, event)
         if event == "PLAYER_ENTERING_WORLD" then
             resetState()
         end
+        onRosterChanged()
         seedRoster()
     end)
     seedFrame:RegisterEvent("GROUP_ROSTER_UPDATE")
     seedFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+    seedFrame:RegisterEvent("GROUP_LEFT")
 
     if Inspector and Inspector.RegisterCallback then
         Inspector:RegisterCallback(function(unit) seedForUnit(unit) end)
     end
 end
+
+-- Exposed for tests.
+Brain._auraFilterAccepts = auraFilterAccepts
+Brain._lastCastTime = lastCastTime
 
 ns.Core.Brain = Brain
 return Brain

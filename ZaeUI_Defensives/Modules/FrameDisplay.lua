@@ -8,7 +8,6 @@ local _, ns = ...
 ns.Modules = ns.Modules or {}
 local Util = ns.Utils and ns.Utils.Util
 local Store = nil
-local LCG = LibStub and LibStub("LibCustomGlow-1.0", true)
 
 local D = {}
 
@@ -16,15 +15,10 @@ local D = {}
 local containers = {}
 -- Secondary index guid → state for O(1) fast-path on BuffStart/End.
 local containersByGUID = {}
-local iconPool   = {}
 local customFrameworkDetected = nil
 
--- Glow colors (same palette as FloatingDisplay)
-local GLOW_COLORS = {
-    External = { 1.00, 0.82, 0.20, 1.0 },
-    Personal = { 0.23, 0.71, 1.00, 1.0 },
-    Raidwide = { 0.30, 1.00, 0.30, 1.0 },
-}
+-- Resolved at Init time (Core.IconWidget loads before this module via TOC).
+local IconWidget
 
 local function db() return ZaeUI_DefensivesDB end
 
@@ -55,156 +49,34 @@ local function shouldAnchor()
 end
 
 -- ------------------------------------------------------------------
--- Filter (same logic as FloatingDisplay)
+-- Filter (delegates to Util.ShouldDisplayCooldown)
 -- ------------------------------------------------------------------
 
 local function shouldDisplay(cd, info, rec)
-    if not db() then return false end
-    local d = db()
-    if rec.role == "TANK"    and d.trackerShowTankCooldowns   == false then return false end
-    if rec.role == "HEALER"  and d.trackerShowHealerCooldowns == false then return false end
-    if rec.role == "DAMAGER" and d.trackerShowDpsCooldowns    == false then return false end
-    if info.category == "External" and d.trackerShowExternal  == false then return false end
-    if info.category == "Personal" and d.trackerShowPersonal  == false then return false end
-    if info.category == "Raidwide" and d.trackerShowRaidwide  == false then return false end
-    if d.trackerHideOwnExternals and info.category == "External" then
-        local playerName = Util and Util.SafeNameUnmodified("player") or nil
-        if rec.name == playerName then return false end
-    end
-    local _ = cd
-    return true
+    return Util and Util.ShouldDisplayCooldown
+        and Util.ShouldDisplayCooldown(cd, info, rec, db())
 end
 
 -- ------------------------------------------------------------------
--- Icon pool
+-- Icon helpers (delegate to Core.IconWidget)
 -- ------------------------------------------------------------------
 
-local function onIconEnter(self)
-    if not self._spellID then return end
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetSpellByID(self._spellID)
-    GameTooltip:Show()
-end
-
-local function onIconLeave()
-    GameTooltip:Hide()
-end
+local ICON_OPTS = {
+    countFont = "NumberFontNormalSmall",
+    countAnchor = "BOTTOMRIGHT",
+    countOffsetX = -1,
+    countOffsetY = 1,
+    -- Anchored icons run larger than the floating tracker (default 28px),
+    -- so we bump the timer font from the global 7px default to 9px.
+    timerSize = 9,
+}
 
 local function acquireIcon(parent, size)
-    local n = #iconPool
-    if n > 0 then
-        local f = iconPool[n]
-        iconPool[n] = nil
-        f:SetParent(parent)
-        f:SetSize(size, size)
-        f:Show()
-        return f
-    end
-    local f = CreateFrame("Frame", nil, parent)
-    f:SetSize(size, size)
-    f:EnableMouse(true)
-    f:SetScript("OnEnter", onIconEnter)
-    f:SetScript("OnLeave", onIconLeave)
-    f.Texture = f:CreateTexture(nil, "ARTWORK")
-    f.Texture:SetAllPoints()
-    f.Texture:SetTexCoord(0.08, 0.92, 0.08, 0.92)
-    f.Cooldown = CreateFrame("Cooldown", nil, f, "CooldownFrameTemplate")
-    f.Cooldown:SetAllPoints()
-    f.Cooldown:EnableMouse(false)
-    f.Cooldown:SetHideCountdownNumbers(true)
-    f.TextOverlay = CreateFrame("Frame", nil, f)
-    f.TextOverlay:SetAllPoints()
-    f.TextOverlay:SetFrameLevel(f.Cooldown:GetFrameLevel() + 2)
-    f.Text = f.TextOverlay:CreateFontString(nil, "OVERLAY")
-    f.Text:SetFont(STANDARD_TEXT_FONT, 9, "OUTLINE")
-    f.Text:SetPoint("CENTER", 0, 0)
-    f.Count = f:CreateFontString(nil, "OVERLAY", "NumberFontNormalSmall")
-    f.Count:SetPoint("BOTTOMRIGHT", -1, 1)
-    f.Count:Hide()
-    return f
-end
-
-local function iconTimerOnUpdate(self, elapsed)
-    self._timerAcc = (self._timerAcc or 0) + elapsed
-    if self._timerAcc < 0.1 then return end
-    self._timerAcc = 0
-    local now = GetTime and GetTime() or 0
-    local remaining = (self._cdStart or 0) + (self._cdDur or 0) - now
-    if remaining <= 0 then
-        self.Text:SetText("")
-        self._lastTimerText = nil
-        self:SetScript("OnUpdate", nil)
-        return
-    end
-    local seconds = math.floor(remaining + 0.5)
-    if seconds ~= self._lastTimerText then
-        local txt
-        if seconds >= 60 then
-            local m = math.floor(seconds / 60)
-            local s = seconds - m * 60
-            txt = m .. ":" .. (s < 10 and "0" or "") .. s
-        else
-            txt = tostring(seconds)
-        end
-        self.Text:SetText(txt)
-        self._lastTimerText = seconds
-    end
+    return IconWidget.Acquire(parent, size, ICON_OPTS)
 end
 
 local function releaseIcon(f)
-    if not f then return end
-    f:Hide()
-    f:SetScript("OnUpdate", nil)
-    if f.Cooldown then f.Cooldown:Clear() end
-    if f.Text then f.Text:SetText("") end
-    if f.Count then f.Count:Hide() end
-    if LCG and f._glowing then
-        LCG.PixelGlow_Stop(f)
-        f._glowing = false
-    end
-    f._cdStart, f._cdDur = nil, nil
-    f._lastTimerText = nil
-    f._spellID = nil
-    iconPool[#iconPool + 1] = f
-end
-
-local function setIconState(icon, cd, info)
-    icon._spellID = cd.effectiveID or cd.spellID
-    icon.Texture:SetTexture(Util and Util.GetSpellIcon(cd.effectiveID or cd.spellID) or nil)
-    local onCooldown = cd.startedAt and cd.startedAt > 0
-                       and cd.duration and cd.duration > 0
-    if onCooldown then
-        if icon._cdStart ~= cd.startedAt or icon._cdDur ~= cd.duration then
-            icon.Cooldown:SetCooldown(cd.startedAt, cd.duration)
-            icon._cdStart = cd.startedAt
-            icon._cdDur = cd.duration
-            icon._lastTimerText = nil
-        end
-        icon._timerAcc = 0
-        icon:SetScript("OnUpdate", iconTimerOnUpdate)
-    else
-        icon.Cooldown:Clear()
-        if icon.Text then icon.Text:SetText("") end
-        icon:SetScript("OnUpdate", nil)
-        icon._cdStart, icon._cdDur = nil, nil
-        icon._lastTimerText = nil
-    end
-    if icon.Count then
-        if cd.maxCharges and cd.maxCharges > 1 then
-            icon.Count:SetText(tostring(cd.currentCharges or 0))
-            icon.Count:Show()
-        else
-            icon.Count:Hide()
-        end
-    end
-    if LCG and cd.buffActive and info then
-        local color = GLOW_COLORS[info.category] or { 1, 1, 1, 1 }
-        LCG.PixelGlow_Start(icon, color, 8, 0.25, 10, 1)
-        icon._glowing = true
-    elseif LCG and icon._glowing and not cd.buffActive then
-        LCG.PixelGlow_Stop(icon)
-        icon._glowing = false
-    end
+    IconWidget.Release(f)
 end
 
 -- ------------------------------------------------------------------
@@ -324,7 +196,7 @@ local function attachToUnitFrame(unitFrame, unit)
         icon:ClearAllPoints()
         icon:SetPoint("TOPLEFT", state.container, "TOPLEFT",
                       col * (size + spacing), -(row * (size + spacing)))
-        setIconState(icon, entry.cd, entry.info)
+        IconWidget.Apply(icon, entry.cd, entry.info)
     end
 
     -- Resize container to fit the grid
@@ -348,19 +220,38 @@ local function isFriendlyCuf(frame)
     return false
 end
 
-local function iterateCompactUnitFrames(fn)
-    if CompactRaidFrameContainer then
-        for _, child in ipairs({ CompactRaidFrameContainer:GetChildren() }) do
-            if isFriendlyCuf(child) and child.unit then fn(child, child.unit) end
-            for _, sub in ipairs({ child:GetChildren() }) do
-                if isFriendlyCuf(sub) and sub.unit then fn(sub, sub.unit) end
-            end
+-- Walk a parent's children via varargs instead of `{ parent:GetChildren() }`.
+-- Capturing the call once into a function's `...` lets `select(i, ...)` index
+-- without re-invoking GetChildren and without allocating a temporary table.
+local function visitDirectChildren(fn, ...)
+    local count = select("#", ...)
+    for i = 1, count do
+        local child = (select(i, ...))
+        if isFriendlyCuf(child) and child.unit then
+            fn(child, child.unit)
         end
     end
-    if CompactPartyFrame and CompactPartyFrame:IsShown() then
-        for _, child in ipairs({ CompactPartyFrame:GetChildren() }) do
-            if isFriendlyCuf(child) and child.unit then fn(child, child.unit) end
+end
+
+local function visitTwoLevels(fn, ...)
+    local count = select("#", ...)
+    for i = 1, count do
+        local child = (select(i, ...))
+        if isFriendlyCuf(child) and child.unit then
+            fn(child, child.unit)
         end
+        if child and child.GetChildren then
+            visitDirectChildren(fn, child:GetChildren())
+        end
+    end
+end
+
+local function iterateCompactUnitFrames(fn)
+    if CompactRaidFrameContainer then
+        visitTwoLevels(fn, CompactRaidFrameContainer:GetChildren())
+    end
+    if CompactPartyFrame and CompactPartyFrame:IsShown() then
+        visitDirectChildren(fn, CompactPartyFrame:GetChildren())
     end
 end
 
@@ -397,7 +288,8 @@ function D:HideAll() detachAll() end
 
 function D:Init()
     Store = ns.Core and ns.Core.CooldownStore
-    if not Store then return end
+    IconWidget = ns.Core and ns.Core.IconWidget
+    if not Store or not IconWidget then return end
 
     customFrameworkDetected = detectCustomFrameworks()
     if customFrameworkDetected and db() and not db().frameDisplayCustomWarningShown then
@@ -418,7 +310,7 @@ function D:Init()
     Store:RegisterCallback("CooldownStart", function(guid, spellID, cd)
         local icon = fastUpdateIcon(guid, spellID)
         if icon then
-            setIconState(icon, cd, ns.SpellData and ns.SpellData[cd.spellID])
+            IconWidget.Apply(icon, cd, ns.SpellData and ns.SpellData[cd.spellID])
         else
             local state = containersByGUID[guid]
             if state and state.unitFrame and state.unit then
@@ -431,24 +323,18 @@ function D:Init()
     Store:RegisterCallback("CooldownEnd", function(guid, spellID, cd)
         local icon = fastUpdateIcon(guid, spellID)
         if icon then
-            setIconState(icon, cd, ns.SpellData and ns.SpellData[cd.spellID])
+            IconWidget.Apply(icon, cd, ns.SpellData and ns.SpellData[cd.spellID])
         end
     end)
     Store:RegisterCallback("BuffStart", function(guid, spellID, cd)
         local icon = fastUpdateIcon(guid, spellID)
-        if icon and LCG then
-            local info = ns.SpellData and ns.SpellData[cd.spellID]
-            local color = info and GLOW_COLORS[info.category] or { 1, 1, 1, 1 }
-            LCG.PixelGlow_Start(icon, color, 8, 0.25, 10, 1)
-            icon._glowing = true
+        if icon then
+            IconWidget.StartGlow(icon, ns.SpellData and ns.SpellData[cd.spellID])
         end
     end)
     Store:RegisterCallback("BuffEnd", function(guid, spellID)
         local icon = fastUpdateIcon(guid, spellID)
-        if icon and LCG and icon._glowing then
-            LCG.PixelGlow_Stop(icon)
-            icon._glowing = false
-        end
+        IconWidget.StopGlow(icon)
     end)
     Store:RegisterCallback("KnownSpellsChanged", function() refreshAll() end)
     Store:RegisterCallback("PlayerAdded",        function() refreshAll() end)

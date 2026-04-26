@@ -3,7 +3,7 @@
 ## Notes: Shared utilities for ZaeUI addons
 ## IconTexture: Interface\AddOns\ZaeUI_Shared\Textures\logo.tga
 ## Author: loicngr
-## Version: 1.4.1
+## Version: 1.5.0
 ## SavedVariables: ZaeUI_SharedDB
 ## X-Curse-Project-ID: 1488489
 

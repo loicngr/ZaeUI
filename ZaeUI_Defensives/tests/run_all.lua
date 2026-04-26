@@ -14,6 +14,8 @@ local testFiles = {
     "ZaeUI_Defensives/tests/test_talent_resolver.lua",
     "ZaeUI_Defensives/tests/test_brain_matching.lua",
     "ZaeUI_Defensives/tests/test_brain_tracking.lua",
+    "ZaeUI_Defensives/tests/test_brain_roster.lua",
+    "ZaeUI_Defensives/tests/test_icon_widget.lua",
 }
 
 for _, path in ipairs(testFiles) do
