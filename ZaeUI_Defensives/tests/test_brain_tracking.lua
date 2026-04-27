@@ -1669,3 +1669,176 @@ fw.describe("Brain — spec change wipes stale source=aura entries", function()
     end)
 end)
 
+fw.describe("Brain tracking — Raidwide cross-class duration match", function()
+    -- Rallying Cry is class=WARRIOR, category=Raidwide. Its buff lands on
+    -- every party member; the bearer's class is independent of the caster's.
+    -- The bearer-cast lookup must not pin the buff on the wrong unit and
+    -- the cross-class roster pass must attribute to the warrior caster.
+    local function buildEnv()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [97463] = { name = "Rallying Cry", cooldown = 180, duration = 10,
+                            category = "Raidwide", class = "WARRIOR",
+                            requiresEvidence = false },
+            },
+        })
+        stubs.roster["party3"] = { guid = "P-War", name = "Hapy",
+                                   class = "WARRIOR", race = "Human",
+                                   spec = 72, role = "DAMAGER" }
+        _G.GetNumGroupMembers = function() return 4 end
+        env.ns.Core.Brain:Init()
+        return env
+    end
+
+    fw.it("Pal bearer of Rallying Cry attributes to the warrior caster via cast evidence", function()
+        local env = buildEnv()
+        env.stubs.setTime(50000)
+        env.Brain._lastCastTime["party3"] = 50000.02
+
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["player"] = {
+            [9001] = { "HELPFUL|IMPORTANT" },
+        }
+        env.fire.OnAuraChanged("player", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 9001, name = secretName },
+            },
+        })
+        env.stubs.setTime(50010)
+        env.fire.OnAuraChanged("player", {
+            removedAuraInstanceIDs = { 9001 },
+        })
+
+        local warRec = env.Store:GetPlayerRec("P-War")
+        fw.assertTrue(warRec and warRec.cooldowns[97463],
+                      "Rallying Cry must commit on the warrior, not the Pal bearer")
+        local palRec = env.Store:GetPlayerRec("P-Player")
+        fw.assertTrue(not (palRec and palRec.cooldowns and palRec.cooldowns[97463]),
+                      "Pal bearer must not be marked as the Rallying Cry caster")
+    end)
+
+    fw.it("Warrior bearer commits on the warrior — bearer is the caster", function()
+        local env = buildEnv()
+        env.stubs.setTime(51000)
+
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party3"] = {
+            [9002] = { "HELPFUL|IMPORTANT" },
+        }
+        env.fire.OnAuraChanged("party3", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 9002, name = secretName },
+            },
+        })
+        env.stubs.setTime(51010)
+        env.fire.OnAuraChanged("party3", {
+            removedAuraInstanceIDs = { 9002 },
+        })
+
+        local cd = env.Store:Get("P-War", 97463)
+        fw.assertTrue(cd, "Rallying Cry must commit on the warrior bearer")
+    end)
+
+    fw.it("Readable Rallying Cry spellID on a non-warrior bearer is not stamped on the bearer", function()
+        local env = buildEnv()
+        env.stubs.setTime(52000)
+        env.Brain._lastCastTime["party3"] = 52000.02
+
+        env.fire.OnAuraChanged("player", {
+            addedAuras = {
+                { spellId = 97463, auraInstanceID = 9003, name = "Rallying Cry" },
+            },
+        })
+        env.stubs.setTime(52010)
+        env.fire.OnAuraChanged("player", {
+            removedAuraInstanceIDs = { 9003 },
+        })
+
+        local palRec = env.Store:GetPlayerRec("P-Player")
+        fw.assertTrue(not (palRec and palRec.cooldowns and palRec.cooldowns[97463]),
+                      "Bearer with mismatched class must never receive the cooldown")
+        local warRec = env.Store:GetPlayerRec("P-War")
+        fw.assertTrue(warRec and warRec.cooldowns[97463],
+                      "Cross-class Raidwide must attribute to the warrior caster")
+    end)
+end)
+
+fw.describe("Brain tracking — racial duration match (secret spellID)", function()
+    -- Racials are race-keyed in SpellData (no info.class). The bearer-cast
+    -- duration match must walk spellsByRace[bearer's race] alongside the
+    -- per-class lists, otherwise an M+ tainted aura on a Dark Iron Dwarf
+    -- never resolves to Fireblood.
+    local function buildEnv()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [265221] = { name = "Fireblood", cooldown = 120, duration = 8,
+                             category = "Personal", race = "DarkIronDwarf",
+                             requiresEvidence = false },
+            },
+        })
+        stubs.roster["party3"] = { guid = "P-Dwarf", name = "Hapy",
+                                   class = "WARRIOR", race = "DarkIronDwarf",
+                                   spec = 72, role = "DAMAGER" }
+        _G.GetNumGroupMembers = function() return 4 end
+        env.ns.Core.Brain:Init()
+        return env
+    end
+
+    fw.it("Fireblood on a Dark Iron Dwarf resolves at removal", function()
+        local env = buildEnv()
+        env.stubs.setTime(53000)
+
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party3"] = {
+            [9100] = { "HELPFUL|IMPORTANT" },
+        }
+        env.fire.OnAuraChanged("party3", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 9100, name = secretName },
+            },
+        })
+        env.stubs.setTime(53008)
+        env.fire.OnAuraChanged("party3", {
+            removedAuraInstanceIDs = { 9100 },
+        })
+
+        local cd = env.Store:Get("P-Dwarf", 265221)
+        fw.assertTrue(cd, "Fireblood must commit on the Dark Iron Dwarf bearer")
+    end)
+
+    fw.it("Same-duration racial does not match a non-matching race", function()
+        local env = buildEnv()
+        env.stubs.setTime(54000)
+        stubs.roster["party4"] = { guid = "P-Human", name = "Notdwarf",
+                                   class = "WARRIOR", race = "Human",
+                                   spec = 72, role = "DAMAGER" }
+        _G.GetNumGroupMembers = function() return 5 end
+        env.ns.Core.Brain:Init()
+
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+        env.stubs.auraFilters["party4"] = {
+            [9101] = { "HELPFUL|IMPORTANT" },
+        }
+        env.fire.OnAuraChanged("party4", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 9101, name = secretName },
+            },
+        })
+        env.stubs.setTime(54008)
+        env.fire.OnAuraChanged("party4", {
+            removedAuraInstanceIDs = { 9101 },
+        })
+
+        fw.assertNil(env.Store:Get("P-Human", 265221),
+                     "Fireblood must never attach to a Human bearer")
+    end)
+end)
+
