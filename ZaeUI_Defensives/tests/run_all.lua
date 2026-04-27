@@ -12,6 +12,7 @@ local testFiles = {
     "ZaeUI_Defensives/tests/test_migration.lua",
     "ZaeUI_Defensives/tests/test_cooldown_store.lua",
     "ZaeUI_Defensives/tests/test_talent_resolver.lua",
+    "ZaeUI_Defensives/tests/test_inspector.lua",
     "ZaeUI_Defensives/tests/test_brain_matching.lua",
     "ZaeUI_Defensives/tests/test_brain_tracking.lua",
     "ZaeUI_Defensives/tests/test_brain_roster.lua",
