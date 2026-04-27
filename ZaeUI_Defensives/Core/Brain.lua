@@ -69,6 +69,10 @@ local castSpellIdIndex = {}
 -- Reverse lookup: class+category -> list of spellIDs. Built once at Init.
 local spellsByClassCategory = {}
 
+-- Reverse lookup: race -> list of spellIDs (racial defensives). Built once
+-- at Init. Racials are not class-bound so they bypass spellsByClassCategory.
+local spellsByRace = {}
+
 -- Reverse talent gate indexes. Built once at Init.
 local spellsRequiringTalent = {}
 local spellsExcludedByTalent = {}
@@ -485,61 +489,161 @@ end
 local function matchByDuration(measuredDuration, unit, unitClass, unitSpec, category, evidence, talents, defaults, auraFilter, startedAt)
     local cat = category or "Personal"
 
-    -- Personal / Raidwide path: the buffed unit IS the caster, so unitClass
-    -- already constrains the candidate set. Talent/spec gates apply directly.
+    -- Bearer-as-caster path. Considers, in order:
+    --   1. byClass[unitClass][cat]               — Personal / Raidwide of bearer's class
+    --   2. byClass[unitClass].Raidwide           — when cat="Personal" the bearer
+    --                                              may also be the caster of a
+    --                                              raidwide buff (e.g. Warrior
+    --                                              casting Rallying Cry)
+    --   3. spellsByRace[unitRace]                — racials are race-keyed and
+    --                                              never indexed by class
+    -- Then, if no bearer-cast spell matched, walks the roster and tests every
+    -- caster's Raidwide list — needed when the bearer is NOT the caster.
     if cat ~= "External" then
-        local byClass = spellsByClassCategory[unitClass]
-        if not byClass then return nil, nil, nil, nil end
-        local list = byClass[cat]
-        if not list then return nil, nil, nil, nil end
-
         local bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq
-        for i = 1, #list do
-            local spellID = list[i]
-            local info = ns.SpellData[spellID]
-            if not info then break end
-            local skip = false
-            if not passesTalentGates(info, talents, defaults) then skip = true end
-            if not skip and info.specs and unitSpec then
-                skip = true
-                for _, s in ipairs(info.specs) do
-                    if s == unitSpec then skip = false; break end
-                end
-            end
-            if not skip and not evidenceMatchesReq(info.requiresEvidence, evidence) then
-                skip = true
-            end
-            if not skip and not auraFilterAccepts(info.auraFilter, auraFilter) then
-                skip = true
-            end
-            if not skip then
-                local expected
-                if TR and TR.Resolve then
-                    local _, _, _, resolved = TR:Resolve(unit or "player", spellID)
-                    if type(resolved) == "number" and resolved > 0 then
-                        expected = resolved
+
+        local function tryBearerList(list)
+            if not list then return end
+            for i = 1, #list do
+                local spellID = list[i]
+                local info = ns.SpellData[spellID]
+                if not info then break end
+                local skip = false
+                if not passesTalentGates(info, talents, defaults) then skip = true end
+                if not skip and info.specs and unitSpec then
+                    skip = true
+                    for _, s in ipairs(info.specs) do
+                        if s == unitSpec then skip = false; break end
                     end
                 end
-                if not expected then expected = info.duration or 0 end
-                if durationMatches(measuredDuration, expected, info) then
-                    local delta = mathAbs(measuredDuration - expected)
-                    local hasEvidenceReq = info.requiresEvidence and info.requiresEvidence ~= false
-                    local replace = false
-                    if not bestDelta then
-                        replace = true
-                    elseif delta < bestDelta then
-                        replace = true
-                    elseif delta == bestDelta and hasEvidenceReq and not bestHasEvidenceReq then
-                        replace = true
+                if not skip and not evidenceMatchesReq(info.requiresEvidence, evidence) then
+                    skip = true
+                end
+                if not skip and not auraFilterAccepts(info.auraFilter, auraFilter) then
+                    skip = true
+                end
+                if not skip then
+                    local expected
+                    if TR and TR.Resolve then
+                        local _, _, _, resolved = TR:Resolve(unit or "player", spellID)
+                        if type(resolved) == "number" and resolved > 0 then
+                            expected = resolved
+                        end
                     end
-                    if replace then
-                        bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq =
-                            spellID, info, delta, hasEvidenceReq
+                    if not expected then expected = info.duration or 0 end
+                    if durationMatches(measuredDuration, expected, info) then
+                        local delta = mathAbs(measuredDuration - expected)
+                        local hasEvidenceReq = info.requiresEvidence and info.requiresEvidence ~= false
+                        local replace = false
+                        if not bestDelta then
+                            replace = true
+                        elseif delta < bestDelta then
+                            replace = true
+                        elseif delta == bestDelta and hasEvidenceReq and not bestHasEvidenceReq then
+                            replace = true
+                        end
+                        if replace then
+                            bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq =
+                                spellID, info, delta, hasEvidenceReq
+                        end
                     end
                 end
             end
         end
-        return bestSpellID, bestInfo, nil, nil
+
+        local byClass = spellsByClassCategory[unitClass]
+        if byClass then
+            tryBearerList(byClass[cat])
+            if cat ~= "Raidwide" then tryBearerList(byClass.Raidwide) end
+        end
+        local _, unitRace = UnitRace(unit)
+        if unitRace and spellsByRace then
+            tryBearerList(spellsByRace[unitRace])
+        end
+
+        if bestSpellID then return bestSpellID, bestInfo, nil, nil end
+
+        -- Roster Raidwide: bearer is not the caster. Walk every roster
+        -- candidate (the bearer is already excluded by buildCasterCandidates)
+        -- and score their Raidwide list. Same-class candidates of a
+        -- different spec still need this pass — e.g. Holy Pal casting Aura
+        -- Mastery while a Prot Pal bears the buff. Cast evidence breaks
+        -- ties the same way it does on the External path.
+        local rosterCount = buildCasterCandidates(unit, nil, startedAt)
+        local bestUnit, bestHasCastEvidence
+        for i = 1, rosterCount do
+            local u = candUnitBuf[i]
+            local hasCast = candHasCastBuf[i]
+            local _, casterClass = UnitClass(u)
+            if casterClass then
+                local byClassU = spellsByClassCategory[casterClass]
+                local list = byClassU and byClassU.Raidwide
+                if list then
+                    for j = 1, #list do
+                        local spellID = list[j]
+                        local info = ns.SpellData[spellID]
+                        if not info then break end
+                        local skip = false
+                        if not evidenceMatchesReq(info.requiresEvidence, evidence) then
+                            skip = true
+                        end
+                        if not skip and not auraFilterAccepts(info.auraFilter, auraFilter) then
+                            skip = true
+                        end
+                        if not skip and u == "player"
+                                and castSnapshotRejects("player", spellID, startedAt) then
+                            skip = true
+                        end
+                        if not skip then
+                            local expected
+                            if TR and TR.Resolve then
+                                local _, _, _, resolved = TR:Resolve(u, spellID)
+                                if type(resolved) == "number" and resolved > 0 then
+                                    expected = resolved
+                                end
+                            end
+                            if not expected then expected = info.duration or 0 end
+                            if durationMatches(measuredDuration, expected, info) then
+                                local delta = mathAbs(measuredDuration - expected)
+                                local hasEvidenceReq = info.requiresEvidence
+                                    and info.requiresEvidence ~= false
+                                local replace = false
+                                if not bestDelta then
+                                    replace = true
+                                elseif hasCast and not bestHasCastEvidence then
+                                    replace = true
+                                elseif hasCast == bestHasCastEvidence then
+                                    if delta < bestDelta then
+                                        replace = true
+                                    elseif delta == bestDelta and hasEvidenceReq
+                                            and not bestHasEvidenceReq then
+                                        replace = true
+                                    end
+                                end
+                                if replace then
+                                    bestSpellID, bestInfo = spellID, info
+                                    bestUnit = u
+                                    bestDelta = delta
+                                    bestHasEvidenceReq = hasEvidenceReq
+                                    bestHasCastEvidence = hasCast
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+
+        local bestGUID
+        if bestUnit then
+            bestGUID = Util and Util.SafeGUID(bestUnit) or nil
+            if not bestGUID then
+                -- Caster left between scan and commit; drop the cross-unit
+                -- pick rather than misattribute on a stale unit token.
+                bestSpellID, bestInfo, bestUnit = nil, nil, nil
+            end
+        end
+        return bestSpellID, bestInfo, bestUnit, bestGUID
     end
 
     -- External path: walk roster, group candidate casters by class, and
@@ -852,6 +956,16 @@ local function onAuraRemoved(unit, auraInstanceID)
         spellID = nil
     end
 
+    -- A Raidwide entry whose class does not match the bearer is meant for
+    -- a cross-unit caster. Drop the readable-spellID shortcut so the
+    -- matchByDuration cross-class path attributes to the right caster
+    -- instead of stamping the buff on the bearer.
+    if info and info.category == "Raidwide" and info.class
+       and classToken and info.class ~= classToken then
+        info = nil
+        spellID = nil
+    end
+
     local matchedCasterUnit, matchedCasterGUID
     if not info and classToken then
         local name = Util and Util.SafeNameUnmodified(unit) or nil
@@ -873,13 +987,17 @@ local function onAuraRemoved(unit, auraInstanceID)
     end
     if not info then return end
 
+    -- matchByDuration returns a non-nil caster when it picked a cross-unit
+    -- match (External or cross-class Raidwide). Always honor that — it has
+    -- already resolved the caster via cast evidence + class match.
+    if matchedCasterGUID and matchedCasterUnit then
+        commitCooldown(matchedCasterGUID, matchedCasterUnit, spellID, info,
+                       tracked.startTime, measuredDuration)
+        return
+    end
+
     if isExternalSpell(info) then
-        if matchedCasterGUID and matchedCasterUnit then
-            commitCooldown(matchedCasterGUID, matchedCasterUnit, spellID, info,
-                           tracked.startTime, measuredDuration)
-        else
-            tryAttributeExternal(unit, spellID, info, tracked.startTime, measuredDuration)
-        end
+        tryAttributeExternal(unit, spellID, info, tracked.startTime, measuredDuration)
         return
     end
 
@@ -982,9 +1100,6 @@ local function tryImmediateDetection(unit, aura)
     local defaults = spec and ns.DefaultTalents and ns.DefaultTalents[spec] or nil
 
     local byClass = spellsByClassCategory[classToken]
-    local list = byClass and byClass["Personal"]
-    if not list then return end
-
     -- Two-bucket count: candidates that pass everything (`ready`) vs those
     -- gated only by an unmet requiresEvidence (`pending`). When any pending
     -- candidate exists we hold off on a unique-match commit — its evidence
@@ -994,33 +1109,46 @@ local function tryImmediateDetection(unit, aura)
     -- like "Holy Pal cast Divine Shield, addon flagged Divine Protection".
     local matchID, matchInfo
     local readyCount, pendingCount = 0, 0
-    for i = 1, #list do
-        local sid = list[i]
-        local sinfo = ns.SpellData[sid]
-        -- excludeFromPrediction: spells whose Blizzard filter overlaps with
-        -- another that we don't catalog (e.g. Sub Rogue's Shadow Blades is
-        -- Important like Shadow Dance) cannot be inferred safely from the
-        -- filter alone. Duration-match at removal still resolves them.
-        if (sinfo.duration or 0) > 0
-           and not sinfo.excludeFromPrediction
-           and passesTalentGates(sinfo, talents, defaults)
-           and auraFilterAccepts(sinfo.auraFilter, auraFilter) then
-            local specOk = true
-            if sinfo.specs and spec then
-                specOk = false
-                for _, s in ipairs(sinfo.specs) do
-                    if s == spec then specOk = true; break end
+    local function consider(list)
+        if not list then return end
+        for i = 1, #list do
+            local sid = list[i]
+            local sinfo = ns.SpellData[sid]
+            -- excludeFromPrediction: spells whose Blizzard filter overlaps
+            -- with another that we don't catalog (e.g. Sub Rogue's Shadow
+            -- Blades is Important like Shadow Dance) cannot be inferred
+            -- safely from the filter alone. Duration-match at removal still
+            -- resolves them.
+            if (sinfo.duration or 0) > 0
+               and not sinfo.excludeFromPrediction
+               and passesTalentGates(sinfo, talents, defaults)
+               and auraFilterAccepts(sinfo.auraFilter, auraFilter) then
+                local specOk = true
+                if sinfo.specs and spec then
+                    specOk = false
+                    for _, s in ipairs(sinfo.specs) do
+                        if s == spec then specOk = true; break end
+                    end
                 end
-            end
-            if specOk then
-                if evidenceMatchesReq(sinfo.requiresEvidence, evidence) then
-                    readyCount = readyCount + 1
-                    matchID, matchInfo = sid, sinfo
-                else
-                    pendingCount = pendingCount + 1
+                if specOk then
+                    if evidenceMatchesReq(sinfo.requiresEvidence, evidence) then
+                        readyCount = readyCount + 1
+                        matchID, matchInfo = sid, sinfo
+                    else
+                        pendingCount = pendingCount + 1
+                    end
                 end
             end
         end
+    end
+
+    if byClass then
+        consider(byClass["Personal"])
+        consider(byClass.Raidwide)
+    end
+    local _, unitRace = UnitRace(unit)
+    if unitRace and spellsByRace then
+        consider(spellsByRace[unitRace])
     end
 
     if readyCount == 1 and pendingCount == 0 then
@@ -1224,16 +1352,31 @@ function Brain:Init()
                 castSpellIdIndex[info.castSpellId] = spellID
             end
         end
-        -- Racial entries (info.race, no info.class) are intentionally NOT
-        -- indexed here: matchByDuration's secret-spellID path keys on class
-        -- only. Racials resolve via the readable-spellID fast path
-        -- (tryImmediateDetection) and the local cast path (onLocalCast).
         if info.class and info.category then
             spellsByClassCategory[info.class] = spellsByClassCategory[info.class] or {}
             local byClass = spellsByClassCategory[info.class]
             byClass[info.category] = byClass[info.category] or {}
             local list = byClass[info.category]
             list[#list + 1] = spellID
+        end
+        -- Race-keyed index for racial defensives. info.race is a string for
+        -- single-race spells (Stoneform → "Dwarf") or a table when several
+        -- races share the same spell. matchByDuration's bearer-cast path
+        -- iterates spellsByRace[bearer's race] alongside the per-class lists.
+        if info.race then
+            local races = info.race
+            if type(races) == "string" then
+                spellsByRace[races] = spellsByRace[races] or {}
+                local raceList = spellsByRace[races]
+                raceList[#raceList + 1] = spellID
+            elseif type(races) == "table" then
+                for k = 1, #races do
+                    local r = races[k]
+                    spellsByRace[r] = spellsByRace[r] or {}
+                    local raceList = spellsByRace[r]
+                    raceList[#raceList + 1] = spellID
+                end
+            end
         end
         if info.requiresTalent then
             spellsRequiringTalent[info.requiresTalent] = spellsRequiringTalent[info.requiresTalent] or {}
