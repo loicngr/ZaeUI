@@ -5,7 +5,13 @@ local stubs = require("wow_stubs")
 -- the internal functions exposed via callbacks. Since Brain's internal
 -- functions (onLocalCast, onAuraAdded, etc.) are local, we test them
 -- through the full Init path with a mock AuraWatcher.
-local function buildInitializedEnv()
+--
+-- Optional opts:
+--   spellDataOverrides : map<spellID, info> merged into the default catalog
+--                        (overrides existing entries by spellID)
+--   talentsByName      : map<unitName, table>; backs Inspector:GetTalents
+local function buildInitializedEnv(opts)
+    opts = opts or {}
     stubs.reset()
     stubs.setTime(1000)
 
@@ -56,12 +62,22 @@ local function buildInitializedEnv()
                      category = "Personal", class = "DEATHKNIGHT",
                      requiresEvidence = "Shield" },
     }
+    if opts.spellDataOverrides then
+        for spellID, info in pairs(opts.spellDataOverrides) do
+            ns.SpellData[spellID] = info
+        end
+    end
 
     local fstore = assert(loadfile("ZaeUI_Defensives/Core/CooldownStore.lua"))
     fstore("ZaeUI_Defensives", ns)
 
+    local talentsByName = opts.talentsByName or {}
+    local ftr = assert(loadfile("ZaeUI_Defensives/Core/TalentResolver.lua"))
+    ftr("ZaeUI_Defensives", ns)
+
     -- Mock AuraWatcher that captures callbacks
     -- Mock Inspector that reads spec from roster
+    local specCallbacks = {}
     ns.Core.Inspector = {
         GetSpec = function(_, unit)
             return stubs.roster[unit] and stubs.roster[unit].spec or nil
@@ -69,8 +85,10 @@ local function buildInitializedEnv()
         GetRoleHint = function(_, unit)
             return stubs.roster[unit] and stubs.roster[unit].role or "UNKNOWN"
         end,
-        GetTalents = function(_, _name) return {} end,
-        RegisterCallback = function(_, _fn) end,
+        GetTalents = function(_, name) return talentsByName[name] or {} end,
+        RegisterCallback = function(_, fn)
+            specCallbacks[#specCallbacks + 1] = fn
+        end,
     }
 
     local awCallbacks = {}
@@ -90,6 +108,7 @@ local function buildInitializedEnv()
     fbrain("ZaeUI_Defensives", ns)
 
     ns.Core.Brain:Init()
+    ns.Core.TalentResolver:InvalidateCache()
 
     return {
         Brain = ns.Core.Brain,
@@ -97,6 +116,11 @@ local function buildInitializedEnv()
         ns = ns,
         stubs = stubs,
         fire = awCallbacks,
+        fireSpecChanged = function(unit, reason)
+            for i = 1, #specCallbacks do
+                specCallbacks[i](unit, reason)
+            end
+        end,
     }
 end
 
@@ -366,7 +390,7 @@ fw.describe("Brain tracking — seeded spells can be activated by detection", fu
     fw.it("duration match overwrites seeded (startedAt=0) entry", function()
         -- Seed Fortifying Brew as "ready"
         env.Store:RegisterPlayer("P-Monk", { name = "Monko", class = "MONK" })
-        env.Store:SeedKnownSpells("P-Monk", { 115203 })
+        env.Store:SeedKnownSpells("P-Monk", { [115203] = 1 })
         local seeded = env.Store:Get("P-Monk", 115203)
         fw.assertTrue(seeded, "Seeded entry should exist")
         fw.assertEq(seeded.startedAt, 0, "Seeded entry has startedAt=0")
@@ -1339,4 +1363,309 @@ fw.describe("Brain tracking — external attribution uses cast evidence", functi
     end)
 end)
 
+fw.describe("Brain tracking — commitCooldown uses TR-resolved duration", function()
+    -- Aura-add path passes info.duration (12) as the buffDuration parameter.
+    -- TR resolves duration to 12+4=16 thanks to the talented bonus, and that
+    -- TR result must take precedence over the parameter when storing the CD.
+    -- Asserting before aura-removal isolates the aura-add commit from the
+    -- second commit that happens on removal with measuredDuration.
+    fw.it("Ironbark with talent-extended duration commits TR-resolved buffDuration", function()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [102342] = { name = "Ironbark", cooldown = 90, duration = 12,
+                             category = "External", class = "DRUID", specs = { 105 },
+                             durationModifiers = { { talent = 392116, bonus = 4 } } },
+            },
+            talentsByName = {
+                Druido = { [392116] = true },
+            },
+        })
+
+        env.stubs.setTime(0)
+        env.fire.OnAuraChanged("party1", {
+            addedAuras = {
+                { spellId = 102342, auraInstanceID = 9100, name = "Ironbark",
+                  sourceUnit = "party2" },
+            },
+        })
+
+        local cd = env.Store:Get("P-Druid", 102342)
+        fw.assertTrue(cd, "Ironbark CD must be committed on the Druid caster")
+        fw.assertClose(cd.buffDuration, 16, 0.5,
+                       "buffDuration must reflect TR-resolved 12+4=16, not the base 12")
+    end)
+end)
+
+fw.describe("Brain tracking — player cast snapshot rejects mismatched spell", function()
+    -- Two Paladins in group; player just cast Divine Shield (Personal),
+    -- not Blessing of Sacrifice. A BoS aura then lands on a teammate. The
+    -- player must NOT be credited as the BoS caster even though their cast
+    -- timestamp falls within the evidence window — the snapshot's spellID
+    -- list (642) provably does not match the External BoS (6940).
+    local function buildTwoPalEnv()
+        local env = buildInitializedEnv()
+        stubs.roster["party3"] = { guid = "P-ProtPal", name = "Tonk",
+                                   class = "PALADIN", race = "Human",
+                                   spec = 66, role = "TANK" }
+        _G.GetNumGroupMembers = function() return 4 end
+        env.ns.Core.Brain:Init()
+        return env
+    end
+
+    fw.it("player who cast Divine Shield is not credited for a BoS on a teammate", function()
+        local env = buildTwoPalEnv()
+        env.stubs.setTime(80000)
+
+        -- Player cast Divine Shield 20ms before the BoS aura starts.
+        env.fire.OnLocalCast(642)
+        env.stubs.setTime(80000.02)
+
+        env.stubs.auraFilters["party2"] = {
+            [6101] = { "HELPFUL|EXTERNAL_DEFENSIVE" },
+        }
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+
+        env.fire.OnAuraChanged("party2", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 6101, name = secretName },
+            },
+        })
+        env.fire.OnShieldChanged("party2")
+        env.stubs.setTime(80012)
+        env.fire.OnAuraChanged("party2", {
+            removedAuraInstanceIDs = { 6101 },
+        })
+
+        local playerRec = env.Store:GetPlayerRec("P-Player")
+        fw.assertTrue(not (playerRec and playerRec.cooldowns and playerRec.cooldowns[6940]),
+                      "Player must NOT be attributed as the BoS caster after casting Divine Shield")
+    end)
+end)
+
+fw.describe("Brain tracking — self-cast External fallback", function()
+    -- Disc Priest (party2) self-casts Pain Suppression. The aura lands on
+    -- party2 themselves. Detection must attribute the External to the Disc
+    -- Priest (the target IS the caster), not silently drop the event.
+    fw.it("self-cast Pain Suppression on Disc Priest commits to themselves", function()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [33206] = { name = "Pain Suppression", cooldown = 180, duration = 8,
+                            category = "External", class = "PRIEST", specs = { 256 } },
+            },
+        })
+        stubs.roster["party2"] = { guid = "P-Disc", name = "Discy",
+                                   class = "PRIEST", race = "Human",
+                                   spec = 256, role = "HEALER" }
+        env.ns.Core.Brain:Init()
+
+        env.stubs.setTime(90000)
+
+        env.stubs.auraFilters["party2"] = {
+            [7001] = { "HELPFUL|EXTERNAL_DEFENSIVE" },
+        }
+        local secretId, secretName = {}, {}
+        env.stubs.secretValues[secretId] = true
+        env.stubs.secretValues[secretName] = true
+
+        env.fire.OnAuraChanged("party2", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 7001, name = secretName },
+            },
+        })
+        env.stubs.setTime(90008)
+        env.fire.OnAuraChanged("party2", {
+            removedAuraInstanceIDs = { 7001 },
+        })
+
+        local rec = env.Store:GetPlayerRec("P-Disc")
+        fw.assertTrue(rec, "Disc Priest record must exist as the self-attributed caster")
+        fw.assertTrue(rec.cooldowns[33206],
+                      "Pain Suppression must be on cooldown for the self-casting Disc Priest")
+    end)
+end)
+
+fw.describe("Brain tracking — racial defensive readable-spellID path", function()
+    fw.it("Stoneform on a Dwarf commits via tryImmediateDetection", function()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [20594] = { name = "Stoneform", cooldown = 120, duration = 8,
+                            category = "Personal", race = "Dwarf",
+                            requiresEvidence = false },
+            },
+        })
+        stubs.roster["party3"] = { guid = "P-Dwarf", name = "Brewbeard",
+                                   class = "WARRIOR", race = "Dwarf",
+                                   role = "TANK" }
+        env.ns.Core.Brain:Init()
+
+        env.stubs.setTime(30000)
+        env.fire.OnAuraChanged("party3", {
+            addedAuras = {
+                { spellId = 20594, auraInstanceID = 4000, name = "Stoneform" },
+            },
+        })
+
+        local cd = env.Store:Get("P-Dwarf", 20594)
+        fw.assertTrue(cd, "Stoneform CD should exist for the Dwarf unit")
+        fw.assertEq(cd.duration, 120)
+        fw.assertTrue(cd.buffActive, "buff should be active")
+    end)
+
+    fw.it("Stoneform on a non-Dwarf does NOT commit", function()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [20594] = { name = "Stoneform", cooldown = 120, duration = 8,
+                            category = "Personal", race = "Dwarf",
+                            requiresEvidence = false },
+            },
+        })
+        stubs.roster["party3"] = { guid = "P-Human", name = "Joe",
+                                   class = "WARRIOR", race = "Human",
+                                   role = "TANK" }
+        env.ns.Core.Brain:Init()
+
+        env.stubs.setTime(31000)
+        env.fire.OnAuraChanged("party3", {
+            addedAuras = {
+                { spellId = 20594, auraInstanceID = 4001, name = "Stoneform" },
+            },
+        })
+
+        local cd = env.Store:Get("P-Human", 20594)
+        fw.assertNil(cd, "Stoneform must not be committed on a non-Dwarf unit")
+    end)
+end)
+
+fw.describe("Brain tracking — racial defensive seedForUnit path", function()
+    fw.it("seed includes Stoneform when local player is a Dwarf", function()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [20594] = { name = "Stoneform", cooldown = 120, duration = 8,
+                            category = "Personal", race = "Dwarf",
+                            requiresEvidence = false },
+            },
+        })
+        -- Make the local player a Dwarf and mark Stoneform as a known spell.
+        stubs.roster["player"] = { guid = "P-Player", name = "Myself",
+                                   class = "WARRIOR", race = "Dwarf",
+                                   role = "TANK", spec = 73 }
+        stubs.playerKnownSpells[20594] = true
+
+        env.Brain._seedRoster()
+        env.stubs.flushTimers(env.stubs.currentTime + 1)
+
+        local cd = env.Store:Get("P-Player", 20594)
+        fw.assertTrue(cd, "Stoneform must be seeded for a Dwarf player")
+    end)
+
+    fw.it("seed probes castSpellId when the catalog key is the aura ID", function()
+        -- Real Stoneform: catalog key 65116 (aura), castSpellId 20594.
+        -- IsPlayerSpell(65116) returns false; the seed must probe castSpellId
+        -- instead so the entry is included for a Dwarf who knows the spell.
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [65116] = { name = "Stoneform", cooldown = 120, duration = 8,
+                            category = "Personal", race = "Dwarf",
+                            castSpellId = 20594, requiresEvidence = false },
+            },
+        })
+        stubs.roster["player"] = { guid = "P-Player", name = "Myself",
+                                   class = "WARRIOR", race = "Dwarf",
+                                   role = "TANK", spec = 73 }
+        -- Only the cast ID is known to the player; aura ID is never returned by IsPlayerSpell.
+        stubs.playerKnownSpells[20594] = true
+
+        env.Brain._seedRoster()
+        env.stubs.flushTimers(env.stubs.currentTime + 1)
+
+        local cd = env.Store:Get("P-Player", 65116)
+        fw.assertTrue(cd, "Stoneform aura ID must be seeded via castSpellId probe")
+    end)
+
+    fw.it("seed does NOT include Stoneform for a Human player", function()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [20594] = { name = "Stoneform", cooldown = 120, duration = 8,
+                            category = "Personal", race = "Dwarf",
+                            requiresEvidence = false },
+            },
+        })
+        stubs.roster["player"] = { guid = "P-Player", name = "Myself",
+                                   class = "WARRIOR", race = "Human",
+                                   role = "TANK", spec = 73 }
+        stubs.playerKnownSpells[20594] = true
+
+        env.Brain._seedRoster()
+        env.stubs.flushTimers(env.stubs.currentTime + 1)
+
+        local cd = env.Store:Get("P-Player", 20594)
+        fw.assertNil(cd, "Stoneform must not be seeded for a non-Dwarf player")
+    end)
+end)
+
+fw.describe("Brain — spec change wipes stale source=aura entries", function()
+    fw.it("reason='spec' purges a player record holding a converted entry", function()
+        stubs.reset()
+        stubs.playerKnownSpells[642] = true
+        stubs.roster["player"] = { guid = "P-Player", name = "Myself",
+                                   class = "PALADIN", race = "Human",
+                                   role = "HEALER", spec = 65 }
+        local env = buildInitializedEnv()
+
+        env.stubs.setTime(1000)
+        env.fire.OnLocalCast(642)
+        local before = env.Store:Get("P-Player", 642)
+        fw.assertTrue(before, "precondition: Divine Shield CD entry exists")
+        fw.assertEq(before.source, "aura")
+
+        env.stubs.roster["player"].spec = 70
+        env.fireSpecChanged("player", "spec")
+
+        local after = env.Store:Get("P-Player", 642)
+        fw.assertTrue(after == nil or after.source ~= "aura",
+                      "spec change must drop the stale source=aura entry")
+    end)
+
+    fw.it("reason='talents' preserves a converted entry (back-compat)", function()
+        stubs.reset()
+        stubs.playerKnownSpells[642] = true
+        stubs.roster["player"] = { guid = "P-Player", name = "Myself",
+                                   class = "PALADIN", race = "Human",
+                                   role = "HEALER", spec = 65 }
+        local env = buildInitializedEnv()
+
+        env.stubs.setTime(1000)
+        env.fire.OnLocalCast(642)
+        local before = env.Store:Get("P-Player", 642)
+        fw.assertTrue(before, "precondition: Divine Shield CD entry exists")
+        fw.assertEq(before.source, "aura")
+
+        env.fireSpecChanged("player", "talents")
+
+        local after = env.Store:Get("P-Player", 642)
+        fw.assertTrue(after, "talents-only respec must keep the active CD entry")
+        fw.assertEq(after.source, "aura")
+        fw.assertEq(after.startedAt, 1000)
+    end)
+
+    fw.it("nil reason behaves like talents (back-compat with 1-arg callers)", function()
+        stubs.reset()
+        stubs.playerKnownSpells[642] = true
+        stubs.roster["player"] = { guid = "P-Player", name = "Myself",
+                                   class = "PALADIN", race = "Human",
+                                   role = "HEALER", spec = 65 }
+        local env = buildInitializedEnv()
+
+        env.stubs.setTime(1000)
+        env.fire.OnLocalCast(642)
+
+        env.fireSpecChanged("player", nil)
+
+        local after = env.Store:Get("P-Player", 642)
+        fw.assertTrue(after, "1-arg callers must not destroy active CD entries")
+        fw.assertEq(after.source, "aura")
+    end)
+end)
 

@@ -249,18 +249,25 @@ end
 --- they are known to have (based on class+spec resolved by the Brain).
 --- Existing entries are left untouched — only new spells are added.
 --- Fires KnownSpellsChanged exactly once if at least one new spell was added.
+---
+--- spellMap is a hash table `{ [spellID] = maxCharges }`. maxCharges must be
+--- a number ≥ 1; non-numeric / missing values fall back to 1. Initial state
+--- is currentCharges = maxCharges so the first StartCooldown consumes the
+--- correct amount on multi-charge spells (Ice Block + Glacial Bulwark, etc.).
 --- @param guid string
---- @param spellIDs number[]
-function Store:SeedKnownSpells(guid, spellIDs)
+--- @param spellMap table<number, number>
+function Store:SeedKnownSpells(guid, spellMap)
     local rec = store[guid]
     if not rec then return end
     local changed = false
-    for _, spellID in ipairs(spellIDs) do
+    for spellID, maxCharges in pairs(spellMap) do
         if not rec.cooldowns[spellID] then
+            local mc = (type(maxCharges) == "number" and maxCharges >= 1)
+                       and maxCharges or 1
             rec.cooldowns[spellID] = {
                 spellID = spellID, effectiveID = spellID,
                 startedAt = 0, duration = 0,
-                currentCharges = 1, maxCharges = 1,
+                currentCharges = mc, maxCharges = mc,
                 buffActive = false,
                 source = "seed",
                 _gen = 0,

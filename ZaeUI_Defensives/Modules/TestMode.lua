@@ -54,6 +54,8 @@ local function buildRaidRoster()
     end
 end
 
+local seedMap = {}
+
 local function seedRoster(roster)
     for _, p in ipairs(roster) do
         if Store.RegisterPlayer then
@@ -62,7 +64,15 @@ local function seedRoster(roster)
             })
         end
         if Store.SeedKnownSpells then
-            Store:SeedKnownSpells(p.guid, SAMPLE_SPELLS[p.guid] or {})
+            for k in pairs(seedMap) do seedMap[k] = nil end
+            local list = SAMPLE_SPELLS[p.guid]
+            if list then
+                for _, sid in ipairs(list) do
+                    local info = ns.SpellData and ns.SpellData[sid]
+                    seedMap[sid] = (info and info.charges) or 1
+                end
+            end
+            Store:SeedKnownSpells(p.guid, seedMap)
         end
     end
 end

@@ -142,12 +142,14 @@ end
 
 local function Now() return GetTime and GetTime() or 0 end
 
-local function fireSpecChanged(unit)
+-- reason is "spec" for an authoritative spec change (Brain must purge stale
+-- state) or "talents" for a talents-only respec (Brain only re-seeds).
+local function fireSpecChanged(unit, reason)
     for i = 1, #callbacks do
         if Util and Util.SafeCall then
-            Util.SafeCall(callbacks[i], unit)
+            Util.SafeCall(callbacks[i], unit, reason)
         else
-            callbacks[i](unit)
+            callbacks[i](unit, reason)
         end
     end
 end
@@ -247,6 +249,39 @@ end
 function Inspector:RegisterCallback(fn)
     if not fn then return end
     callbacks[#callbacks + 1] = fn
+end
+
+--- Re-decodes the local player's talent loadout, invalidates the
+--- TalentResolver cache, and notifies listeners with unit "player".
+--- Brain re-seeds the player on this notification, picking up freshly
+--- toggled requiresTalent / excludeIfTalent gates and the
+--- chargeModifiers-derived maxCharges. Triggered by TRAIT_CONFIG_UPDATED.
+function Inspector:RebuildPlayerTalents()
+    local playerName = Util and Util.SafeNameUnmodified("player")
+    if playerName and C_ClassTalents and C_Traits
+       and C_ClassTalents.GetActiveConfigID
+       and C_Traits.GenerateImportString then
+        local configId = C_ClassTalents.GetActiveConfigID()
+        if configId then
+            local exportStr = C_Traits.GenerateImportString(configId)
+            if exportStr then
+                local specIdx = GetSpecialization and GetSpecialization()
+                local specID = specIdx and GetSpecializationInfo
+                    and GetSpecializationInfo(specIdx)
+                if specID then
+                    local decoded = decodeTalentString(specID, exportStr)
+                    if decoded then
+                        talentsByName[playerName] = decoded
+                    end
+                end
+            end
+        end
+    end
+    local tr = ns.Core and ns.Core.TalentResolver
+    if tr and tr.InvalidateCache then
+        tr:InvalidateCache()
+    end
+    fireSpecChanged("player", "talents")
 end
 
 function Inspector:ClearCache()
@@ -417,7 +452,7 @@ function Inspector:Init()
                     local g = Util and Util.SafeGUID(u)
                     if g then
                         specByGUID[g] = { specID = specID, lastSeen = Now() }
-                        fireSpecChanged(u)
+                        fireSpecChanged(u, "spec")
                     end
                     break
                 end
@@ -450,7 +485,7 @@ function Inspector:Init()
                         local before = e.specID
                         e.specID = specID
                         e.lastSeen = Now()
-                        if before ~= specID then fireSpecChanged(requestedUnit) end
+                        if before ~= specID then fireSpecChanged(requestedUnit, "spec") end
                     end
                 end
                 if isOurInspect and ClearInspectPlayer then ClearInspectPlayer() end
@@ -471,33 +506,10 @@ function Inspector:Init()
                 if tr and tr.InvalidateCache then
                     tr:InvalidateCache()
                 end
-                fireSpecChanged(arg1)
+                fireSpecChanged(arg1, "spec")
             end
         elseif event == "TRAIT_CONFIG_UPDATED" then
-            local playerName = Util and Util.SafeNameUnmodified("player")
-            if playerName and C_ClassTalents and C_Traits
-               and C_ClassTalents.GetActiveConfigID
-               and C_Traits.GenerateImportString then
-                local configId = C_ClassTalents.GetActiveConfigID()
-                if configId then
-                    local exportStr = C_Traits.GenerateImportString(configId)
-                    if exportStr then
-                        local specIdx = GetSpecialization and GetSpecialization()
-                        local specID = specIdx and GetSpecializationInfo
-                            and GetSpecializationInfo(specIdx)
-                        if specID then
-                            local decoded = decodeTalentString(specID, exportStr)
-                            if decoded then
-                                talentsByName[playerName] = decoded
-                            end
-                        end
-                    end
-                end
-                local tr = ns.Core and ns.Core.TalentResolver
-                if tr and tr.InvalidateCache then
-                    tr:InvalidateCache()
-                end
-            end
+            Inspector:RebuildPlayerTalents()
         end
     end)
     events:RegisterEvent("INSPECT_READY")

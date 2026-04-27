@@ -60,12 +60,12 @@ end
 --- Resolves the effective cooldown/charges/ID for (unit, spellID).
 --- @param unit string
 --- @param spellID number
---- @return number cooldown, number maxCharges, number effectiveSpellID
+--- @return number cooldown, number maxCharges, number effectiveSpellID, number duration
 function Resolver:Resolve(unit, spellID)
     local spellData = ns.SpellData
-    if not spellData then return 0, 1, spellID end
+    if not spellData then return 0, 1, spellID, 0 end
     local info = spellData[spellID]
-    if not info then return 0, 1, spellID end
+    if not info then return 0, 1, spellID, 0 end
 
     -- Avoid string concat for the cache key: use a 2D table indexed by
     -- (guid, specID, spellID). Talent identity is checked via table
@@ -77,7 +77,7 @@ function Resolver:Resolve(unit, spellID)
 
     local bySpec, cached = getOrCreateCacheSlot(guid, specID or 0, spellID)
     if cached and cached.talents == talents then
-        return cached.cd, cached.charges, cached.effID
+        return cached.cd, cached.charges, cached.effID, cached.duration
     end
     -- Use a local `talents` table for isTalentActive — pass nil-safe empty.
     talents = talents or {}
@@ -119,6 +119,26 @@ function Resolver:Resolve(unit, spellID)
         end
     end
 
+    -- durationModifiers: signed bonuses added to the base buff duration.
+    -- Multi-rank entries pick the first active rank (strongest-first by
+    -- catalog convention); single-rank entries stack additively across the list.
+    local duration = info.duration or 0
+    if info.durationModifiers then
+        for _, mod in ipairs(info.durationModifiers) do
+            if mod.ranks then
+                for r = 1, #mod.ranks do
+                    local rank = mod.ranks[r]
+                    if isTalentActive(unit, rank.talent, talents) then
+                        duration = duration + (rank.bonus or 0)
+                        break
+                    end
+                end
+            elseif mod.talent and isTalentActive(unit, mod.talent, talents) then
+                duration = duration + (mod.bonus or 0)
+            end
+        end
+    end
+
     local effID = spellID
     if info.overrides and FindSpellOverrideByID then
         local override = FindSpellOverrideByID(spellID)
@@ -136,11 +156,13 @@ function Resolver:Resolve(unit, spellID)
     -- every miss (the slot may already be present with a stale talents ref).
     local entry = bySpec[spellID]
     if entry then
-        entry.cd, entry.charges, entry.effID, entry.talents = cd, charges, effID, talents
+        entry.cd, entry.charges, entry.effID, entry.duration, entry.talents =
+            cd, charges, effID, duration, talents
     else
-        bySpec[spellID] = { cd = cd, charges = charges, effID = effID, talents = talents }
+        bySpec[spellID] = { cd = cd, charges = charges, effID = effID,
+                            duration = duration, talents = talents }
     end
-    return cd, charges, effID
+    return cd, charges, effID, duration
 end
 
 function Resolver:InvalidateCache()

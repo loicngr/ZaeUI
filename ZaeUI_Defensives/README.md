@@ -20,13 +20,19 @@ Works with **Midnight (12.0.0+)**. Only you need the addon installed — allied 
 > list view. Per-unit icon grids are too cramped to be useful under Blizzard
 > compact raid frames.
 
+> ⚠️ **PvP is not supported.** Detection is tuned for PvE (Mythic+, raid,
+> open world). Arena / battleground edge cases — Precognition mirroring,
+> Grounding Totem multi-shaman attribution, mind-control swaps,
+> faction-mirror buffs — are out of scope. The tracker still runs in PvP
+> instances but expect false positives and missed attributions there.
+
 ## How it works
 
 ZaeUI_Defensives v3 infers allied cooldowns locally from observable aura
 events. It does **not** rely on addon-to-addon messaging, which means it
-works in every context — including active Mythic+ keystones, raid
-encounters, and arenas — where Blizzard blocks addon communication since
-the Midnight pre-patch (12.0).
+works in every context — including active Mythic+ keystones and raid
+encounters — where Blizzard blocks addon communication since the
+Midnight pre-patch (12.0).
 
 - **Detection sources**: `UNIT_AURA` for visible buffs, `UNIT_FLAGS` for
   immune/combat flag changes (e.g. Aspect of the Turtle), local player

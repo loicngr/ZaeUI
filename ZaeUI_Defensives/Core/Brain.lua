@@ -73,7 +73,8 @@ local spellsByClassCategory = {}
 local spellsRequiringTalent = {}
 local spellsExcludedByTalent = {}
 
--- Reusable buffer for seedForUnit (avoids per-call allocation).
+-- Reusable map for seedForUnit (avoids per-call allocation).
+-- Shape: { [spellID] = maxCharges } — passed to Store:SeedKnownSpells.
 local seedBuf = {}
 
 -- Snapshot of the last observed roster: unit token -> guid. Used to diff
@@ -90,7 +91,16 @@ local lastFeignDeathTime = {}
 local lastFeignDeathState = {}
 local lastShieldTime = {}
 local lastDebuffTime = {}
-local lastCastTime = {}
+-- Two-table cast tracking: lastCastTimeAny[unit] = scalar timestamp drives
+-- the boolean "did anything cast in window" used by buildEvidenceSet and
+-- caster attribution. lastCastSpellIds["player"] = list of recent { spellID,
+-- time } entries powers a negative-signal check on the local player only —
+-- under 12.0.5+ remote casts have secret spellIDs, so only the player ever
+-- populates the list in production.
+local lastCastTimeAny = {}
+local lastCastSpellIds = {}
+local CAST_SNAPSHOT_WINDOW = 0.5
+local MAX_CAST_SNAPSHOT = 8
 local unitCanFeign = {}
 
 local function buildEvidenceSet(unit, detectionTime)
@@ -110,11 +120,56 @@ local function buildEvidenceSet(unit, detectionTime)
         ev = ev or {}
         ev.UnitFlags = true
     end
-    if lastCastTime[unit] and mathAbs(lastCastTime[unit] - detectionTime) <= EVIDENCE_WINDOW then
+    if lastCastTimeAny[unit] and mathAbs(lastCastTimeAny[unit] - detectionTime) <= EVIDENCE_WINDOW then
         ev = ev or {}
         ev.Cast = true
     end
     return ev
+end
+
+local function pruneCastSnapshot(unit, now)
+    local list = lastCastSpellIds[unit]
+    if not list then return nil end
+    local n = #list
+    -- Drop entries older than the snapshot window. List is time-ordered
+    -- (insertion order), so we can stop at the first in-window entry.
+    local firstKeep = n + 1
+    for i = 1, n do
+        if (now - list[i].time) <= CAST_SNAPSHOT_WINDOW then
+            firstKeep = i
+            break
+        end
+    end
+    if firstKeep > 1 then
+        local w = 0
+        for i = firstKeep, n do
+            w = w + 1
+            list[w] = list[i]
+        end
+        for i = w + 1, n do list[i] = nil end
+    end
+    return list
+end
+
+-- Negative signal for the local player: returns true when the snapshot has
+-- entries in the cast window AND none of them match the aura we're trying
+-- to attribute. An empty (or out-of-window) snapshot returns false — the
+-- caller falls back to existing logic without rejecting the candidate.
+local function castSnapshotRejects(unit, auraSpellID, detectionTime)
+    if not auraSpellID then return false end
+    local list = lastCastSpellIds[unit]
+    if not list or #list == 0 then return false end
+    local sawInWindow = false
+    for i = 1, #list do
+        local entry = list[i]
+        if mathAbs(entry.time - detectionTime) <= CAST_SNAPSHOT_WINDOW then
+            sawInWindow = true
+            local sid = entry.spellID
+            if sid == auraSpellID then return false end
+            if castSpellIdIndex[sid] == auraSpellID then return false end
+        end
+    end
+    return sawInWindow
 end
 
 local function evidenceMatchesReq(req, evidence)
@@ -184,16 +239,32 @@ end
 -- Pure functions (tested hors-WoW)
 -- ------------------------------------------------------------------
 
-function Brain.MatchAuraToSpell(spellID, unitClass, unitSpec, _unitRace, matchMode)
+function Brain.MatchAuraToSpell(spellID, unitClass, unitSpec, unitRace, matchMode)
     local info = ns.SpellData and ns.SpellData[spellID]
     if not info then return false, "no spelldata" end
-    if not info.class then return false, "no class" end
 
     if matchMode == "target" then
         return true, "target"
     end
 
-    if unitClass ~= info.class then return false, "class mismatch" end
+    if info.class then
+        if unitClass ~= info.class then return false, "class mismatch" end
+    elseif info.race then
+        local r = info.race
+        if type(r) == "string" then
+            if unitRace ~= r then return false, "race mismatch" end
+        elseif type(r) == "table" then
+            local hit = false
+            for i = 1, #r do
+                if r[i] == unitRace then hit = true; break end
+            end
+            if not hit then return false, "race mismatch" end
+        else
+            return false, "invalid race field"
+        end
+    else
+        return false, "no class or race"
+    end
 
     if info.specs then
         if unitSpec == nil then
@@ -243,11 +314,23 @@ local function commitCooldown(casterGUID, casterUnit, spellID, info, startedAt, 
     if isDebounced(casterGUID, spellID, now) then return end
     markDetected(casterGUID, spellID, now)
 
-    local cd, maxCharges, effID
-    if TR then cd, maxCharges, effID = TR:Resolve(casterUnit or "player", spellID) end
+    local cd, maxCharges, effID, resolvedDuration
+    if TR then cd, maxCharges, effID, resolvedDuration = TR:Resolve(casterUnit or "player", spellID) end
     if not cd or cd == 0 then cd = info.cooldown or 0 end
     if not maxCharges then maxCharges = info.charges or 1 end
     if not effID then effID = spellID end
+
+    -- Prefer TR-resolved duration (it accounts for talented durationModifiers).
+    -- Fall back to the caller-supplied buffDuration when TR has nothing useful
+    -- (test harnesses without TR, secret-id paths, etc.); finally to info.duration.
+    local effectiveBuffDuration
+    if type(resolvedDuration) == "number" and resolvedDuration > 0 then
+        effectiveBuffDuration = resolvedDuration
+    elseif type(buffDuration) == "number" and buffDuration > 0 then
+        effectiveBuffDuration = buffDuration
+    else
+        effectiveBuffDuration = info.duration or 0
+    end
 
     local casterName = Util and Util.SafeNameUnmodified(casterUnit or "player") or nil
     local _, classToken = UnitClass(casterUnit or "player")
@@ -255,7 +338,7 @@ local function commitCooldown(casterGUID, casterUnit, spellID, info, startedAt, 
     local role = Inspector and Inspector:GetRoleHint(casterUnit or "player") or "UNKNOWN"
 
     debugPrint("CD start:", info.name, "caster=", casterName,
-               "class=", classToken, "cd=", cd, "buffDur=", buffDuration)
+               "class=", classToken, "cd=", cd, "buffDur=", effectiveBuffDuration)
 
     if Store then
         Store:StartCooldown(casterGUID, effID, {
@@ -264,8 +347,8 @@ local function commitCooldown(casterGUID, casterUnit, spellID, info, startedAt, 
             startedAt = startedAt, duration = cd,
             maxCharges = maxCharges,
             buffStartedAt = startedAt,
-            buffDuration = buffDuration,
-            buffActive = buffDuration > 0,
+            buffDuration = effectiveBuffDuration,
+            buffActive = effectiveBuffDuration > 0,
             effectiveID = effID,
             source = "aura",
         })
@@ -297,7 +380,20 @@ local function onLocalCast(spellID)
     local now = GetTime and GetTime() or 0
     debugPrint("Local cast:", info.name, "(", spellID, ")")
 
-    lastCastTime["player"] = now
+    lastCastTimeAny["player"] = now
+
+    local list = lastCastSpellIds["player"]
+    if not list then
+        list = {}
+        lastCastSpellIds["player"] = list
+    end
+    pruneCastSnapshot("player", now)
+    list[#list + 1] = { spellID = spellID, time = now }
+    -- Cap the list defensively: a broken event flow must not let it grow
+    -- without bound. The cap is well above the worst-case pruned size.
+    while #list > MAX_CAST_SNAPSHOT do
+        table.remove(list, 1)
+    end
 
     local playerGUID = Util and Util.SafeGUID("player") or nil
     commitCooldown(playerGUID, "player", spellID, info, now, info.duration or 0)
@@ -328,8 +424,8 @@ local function findSpellByNameAndClass(auraName, unitClass)
     return nil, nil
 end
 
-local function durationMatches(measuredDuration, info)
-    local expected = info.duration or 0
+local function durationMatches(measuredDuration, expected, info)
+    expected = expected or 0
     if expected <= 0 then return false end
     if info.minDuration then
         return measuredDuration >= expected - DURATION_TOLERANCE
@@ -340,165 +436,337 @@ local function durationMatches(measuredDuration, info)
     return mathAbs(measuredDuration - expected) <= DURATION_TOLERANCE
 end
 
-local function matchByDuration(measuredDuration, unitClass, unitSpec, category, evidence, talents, defaults, auraFilter)
-    local cat = category or "Personal"
-    -- For Externals the buff lives on a target whose class doesn't constrain
-    -- the caster (a Pal's BoS lands on a Druid, etc.) so we must walk every
-    -- class' External list. Personals and Raidwides stay class-scoped.
-    local listOfLists = {}
-    if cat == "External" then
-        for _, byClass in pairs(spellsByClassCategory) do
-            if byClass[cat] then listOfLists[#listOfLists + 1] = byClass[cat] end
-        end
-    else
-        local byClass = spellsByClassCategory[unitClass]
-        if not byClass then return nil, nil end
-        local list = byClass[cat]
-        if not list then return nil, nil end
-        listOfLists[1] = list
-    end
+-- Module-level parallel buffers for the External caster scaffolding. Filled
+-- by buildCasterCandidates and consumed in the same call frame; never read
+-- after the calling function returns. Sized for raid (≤40 entries).
+local candUnitBuf = {}
+local candHasCastBuf = {}
 
-    local bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq
-    for _, list in ipairs(listOfLists) do
+-- Fills candUnitBuf/candHasCastBuf with non-target roster members and a
+-- per-unit hasCastEvidence flag (lastCastTimeAny[unit] within
+-- EVIDENCE_WINDOW of startedAt). When `negSignalSpellID` is non-nil, the
+-- player slot is dropped upfront if the cast snapshot proves they cast
+-- something else (negative signal). When nil, callers handle the per-spell
+-- negative-signal check inside their own loop. GUID resolution is deferred
+-- — callers fetch GUIDs lazily, only after a candidate survives their
+-- ranking pass, so a roster scan with zero matching spells costs zero
+-- SafeGUID calls.
+local function buildCasterCandidates(targetUnit, negSignalSpellID, startedAt)
+    local n = GetNumGroupMembers and GetNumGroupMembers() or 0
+    local inRaid = IsInRaid and IsInRaid()
+    local count = 0
+    local function pushIfEligible(u)
+        if u == targetUnit then return end
+        if negSignalSpellID and u == "player"
+                and castSnapshotRejects("player", negSignalSpellID, startedAt) then
+            return
+        end
+        local hasCast = startedAt and lastCastTimeAny[u]
+            and mathAbs(lastCastTimeAny[u] - startedAt) <= EVIDENCE_WINDOW
+            or false
+        count = count + 1
+        candUnitBuf[count] = u
+        candHasCastBuf[count] = hasCast
+    end
+    pushIfEligible("player")
+    if inRaid then
+        for i = 1, n do pushIfEligible("raid" .. i) end
+    else
+        for i = 1, n - 1 do pushIfEligible("party" .. i) end
+    end
+    -- Trim leftover entries from a previously larger roster.
+    for i = count + 1, #candUnitBuf do
+        candUnitBuf[i] = nil
+        candHasCastBuf[i] = nil
+    end
+    return count
+end
+
+local function matchByDuration(measuredDuration, unit, unitClass, unitSpec, category, evidence, talents, defaults, auraFilter, startedAt)
+    local cat = category or "Personal"
+
+    -- Personal / Raidwide path: the buffed unit IS the caster, so unitClass
+    -- already constrains the candidate set. Talent/spec gates apply directly.
+    if cat ~= "External" then
+        local byClass = spellsByClassCategory[unitClass]
+        if not byClass then return nil, nil, nil, nil end
+        local list = byClass[cat]
+        if not list then return nil, nil, nil, nil end
+
+        local bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq
         for i = 1, #list do
             local spellID = list[i]
             local info = ns.SpellData[spellID]
             if not info then break end
             local skip = false
-            -- Talent / spec gates only meaningful for Personals: those are
-            -- evaluated against the buffed unit (the caster). For Externals
-            -- the caster is unknown at this stage; tryAttributeExternal
-            -- enforces the class match in a later pass.
-            if cat ~= "External" then
-                if not passesTalentGates(info, talents, defaults) then
-                    skip = true
-                end
-                if not skip and info.specs and unitSpec then
-                    skip = true
-                    for _, s in ipairs(info.specs) do
-                        if s == unitSpec then skip = false; break end
-                    end
+            if not passesTalentGates(info, talents, defaults) then skip = true end
+            if not skip and info.specs and unitSpec then
+                skip = true
+                for _, s in ipairs(info.specs) do
+                    if s == unitSpec then skip = false; break end
                 end
             end
             if not skip and not evidenceMatchesReq(info.requiresEvidence, evidence) then
                 skip = true
             end
-            -- Aura-filter gate: prevents BigDefensive/Important collisions when
-            -- two spells of the same class share a display category but each
-            -- only ever applies under one Blizzard filter (e.g. Vengeance DH
-            -- Fiery Brand vs Metamorphosis on long Charred Flesh extensions).
             if not skip and not auraFilterAccepts(info.auraFilter, auraFilter) then
                 skip = true
             end
-            if not skip and durationMatches(measuredDuration, info) then
-                local expected = info.duration or 0
-                local delta = mathAbs(measuredDuration - expected)
-                -- Tie-break: when several class spells share the same duration
-                -- (e.g. Pal Prot's Divine Shield, Ardent Defender, GoAK all 8s),
-                -- prefer the candidate whose explicit requiresEvidence gate is
-                -- satisfied. A spell that demands UnitFlags / Shield / Debuff
-                -- and got it is a stronger signal than one with no requirement.
-                local hasEvidenceReq = info.requiresEvidence and info.requiresEvidence ~= false
-                local replace = false
-                if not bestDelta then
-                    replace = true
-                elseif delta < bestDelta then
-                    replace = true
-                elseif delta == bestDelta and hasEvidenceReq and not bestHasEvidenceReq then
-                    replace = true
+            if not skip then
+                local expected
+                if TR and TR.Resolve then
+                    local _, _, _, resolved = TR:Resolve(unit or "player", spellID)
+                    if type(resolved) == "number" and resolved > 0 then
+                        expected = resolved
+                    end
                 end
-                if replace then
-                    bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq =
-                        spellID, info, delta, hasEvidenceReq
-                end
-            end
-        end
-    end
-    return bestSpellID, bestInfo
-end
-
--- ------------------------------------------------------------------
--- External attribution: find the caster among group candidates
--- ------------------------------------------------------------------
-
--- Reused on every external buff: filling the same 21-slot array beats
--- allocating a fresh roster table for every Ironbark / BoP that lands.
-local rosterBuf = {}
-
-local function tryAttributeExternal(targetUnit, spellID, info, startedAt, measuredDuration)
-    local n = GetNumGroupMembers and GetNumGroupMembers() or 0
-    local inRaid = IsInRaid and IsInRaid()
-    local count = 1
-    rosterBuf[1] = "player"
-    if inRaid then
-        for i = 1, n do
-            count = count + 1
-            rosterBuf[count] = "raid" .. i
-        end
-    else
-        for i = 1, n - 1 do
-            count = count + 1
-            rosterBuf[count] = "party" .. i
-        end
-    end
-    -- Trim leftover entries from a previously larger roster.
-    for i = count + 1, #rosterBuf do rosterBuf[i] = nil end
-
-    -- Pass 1: prefer the candidate whose UNIT_SPELLCAST_SUCCEEDED fired
-    -- within the evidence window of this aura's start time. With multiple
-    -- Paladins in group, Blessing of Sacrifice / Spellwarding would tie
-    -- otherwise — cast evidence breaks the tie when only one candidate
-    -- actually cast something near the aura.
-    local evidenceUnit, evidenceGUID
-    local evidenceCount = 0
-    for i = 1, count do
-        local u = rosterBuf[i]
-        if u ~= targetUnit and lastCastTime[u]
-           and mathAbs(lastCastTime[u] - startedAt) <= EVIDENCE_WINDOW then
-            local _, classToken = UnitClass(u)
-            if classToken and info.class == classToken then
-                local spec = Inspector and Inspector:GetSpec(u) or nil
-                if Brain.MatchAuraToSpell(spellID, classToken, spec, nil, "caster") then
-                    local guid = Util and Util.SafeGUID(u) or nil
-                    if guid then
-                        evidenceCount = evidenceCount + 1
-                        evidenceUnit, evidenceGUID = u, guid
+                if not expected then expected = info.duration or 0 end
+                if durationMatches(measuredDuration, expected, info) then
+                    local delta = mathAbs(measuredDuration - expected)
+                    local hasEvidenceReq = info.requiresEvidence and info.requiresEvidence ~= false
+                    local replace = false
+                    if not bestDelta then
+                        replace = true
+                    elseif delta < bestDelta then
+                        replace = true
+                    elseif delta == bestDelta and hasEvidenceReq and not bestHasEvidenceReq then
+                        replace = true
+                    end
+                    if replace then
+                        bestSpellID, bestInfo, bestDelta, bestHasEvidenceReq =
+                            spellID, info, delta, hasEvidenceReq
                     end
                 end
             end
         end
-    end
-    if evidenceCount == 1 then
-        debugPrint("External attribution (cast evidence):", info.name, "→", evidenceUnit)
-        commitCooldown(evidenceGUID, evidenceUnit, spellID, info, startedAt, measuredDuration)
-        return
+        return bestSpellID, bestInfo, nil, nil
     end
 
-    -- Pass 2: fall back to "single class candidate" attribution.
-    local bestUnit, bestGUID
-    for i = 1, count do
-        local u = rosterBuf[i]
-        if u ~= targetUnit then
-            local _, classToken = UnitClass(u)
-            if classToken and info.class == classToken then
-                local spec = Inspector and Inspector:GetSpec(u) or nil
-                if Brain.MatchAuraToSpell(spellID, classToken, spec, nil, "caster") then
-                    local guid = Util and Util.SafeGUID(u) or nil
-                    if guid then
-                        if not bestGUID then
-                            bestUnit, bestGUID = u, guid
-                        else
-                            bestUnit, bestGUID = nil, nil
-                            break
+    -- External path: walk roster, group candidate casters by class, and
+    -- resolve duration on the CASTER (talents that extend the buff live on
+    -- the caster, not the target). Picks the best (caster, spell) pair via
+    -- a stable tie-break: cast evidence > smaller delta > evidence-req.
+    -- GUID lookup is deferred until a winner is selected — a 40-man scan
+    -- with zero matching Externals costs zero SafeGUID calls.
+    local rosterCount = buildCasterCandidates(unit, nil, startedAt)
+
+    local bestSpellID, bestInfo, bestUnit
+    local bestDelta, bestHasEvidenceReq, bestHasCastEvidence
+
+    for i = 1, rosterCount do
+        local u = candUnitBuf[i]
+        local hasCast = candHasCastBuf[i]
+        local _, classToken = UnitClass(u)
+        if classToken then
+            local byClass = spellsByClassCategory[classToken]
+            local list = byClass and byClass.External
+            if list then
+                for j = 1, #list do
+                    local spellID = list[j]
+                    local info = ns.SpellData[spellID]
+                    if not info then break end
+                    local skip = false
+                    if not evidenceMatchesReq(info.requiresEvidence, evidence) then
+                        skip = true
+                    end
+                    if not skip and not auraFilterAccepts(info.auraFilter, auraFilter) then
+                        skip = true
+                    end
+                    -- Negative signal for the local player: snapshot has
+                    -- entries in the cast window but none of them match
+                    -- this candidate spellID. The player demonstrably
+                    -- cast something else, so they cannot be its caster.
+                    if not skip and u == "player"
+                            and castSnapshotRejects("player", spellID, startedAt) then
+                        skip = true
+                    end
+                    if not skip then
+                        local expected
+                        if TR and TR.Resolve then
+                            local _, _, _, resolved = TR:Resolve(u, spellID)
+                            if type(resolved) == "number" and resolved > 0 then
+                                expected = resolved
+                            end
+                        end
+                        if not expected then expected = info.duration or 0 end
+                        if durationMatches(measuredDuration, expected, info) then
+                            local delta = mathAbs(measuredDuration - expected)
+                            local hasEvidenceReq = info.requiresEvidence
+                                and info.requiresEvidence ~= false
+                            local replace = false
+                            if not bestDelta then
+                                replace = true
+                            elseif hasCast and not bestHasCastEvidence then
+                                replace = true
+                            elseif hasCast == bestHasCastEvidence then
+                                if delta < bestDelta then
+                                    replace = true
+                                elseif delta == bestDelta and hasEvidenceReq
+                                        and not bestHasEvidenceReq then
+                                    replace = true
+                                end
+                            end
+                            if replace then
+                                bestSpellID, bestInfo = spellID, info
+                                bestUnit = u
+                                bestDelta = delta
+                                bestHasEvidenceReq = hasEvidenceReq
+                                bestHasCastEvidence = hasCast
+                            end
                         end
                     end
                 end
             end
         end
     end
-    if bestGUID then
-        debugPrint("External attribution:", info.name, "→", bestUnit)
-        commitCooldown(bestGUID, bestUnit, spellID, info, startedAt, measuredDuration)
+
+    local bestGUID
+    if bestUnit then
+        bestGUID = Util and Util.SafeGUID(bestUnit) or nil
+        if not bestGUID then
+            -- Lost the GUID race (unit left between scan and commit). Drop
+            -- the cross-unit pick; self-cast fallback below will reconsider.
+            bestSpellID, bestInfo, bestUnit = nil, nil, nil
+            bestDelta = nil
+        end
+    end
+
+    -- Self-cast last-resort fallback: this branch fires when onAuraRemoved
+    -- routes through matchByDuration (no spellID known at aura-add time).
+    -- Cross-unit casters yielded nothing, but the buffed unit's own class
+    -- matches `info.class` (e.g. Disc Priest self-Pain-Suppression,
+    -- Mistweaver self-Life-Cocoon). Resolve duration on the target itself
+    -- and accept if it matches. Counterpart in tryAttributeExternal Pass 3
+    -- covers the path where spellID was already known at aura-add.
+    if not bestSpellID then
+        local _, targetClass = UnitClass(unit)
+        if targetClass then
+            local byClass = spellsByClassCategory[targetClass]
+            local selfList = byClass and byClass.External
+            if selfList then
+                local selfGUID = Util and Util.SafeGUID(unit) or nil
+                if selfGUID then
+                    for j = 1, #selfList do
+                        local spellID = selfList[j]
+                        local info = ns.SpellData[spellID]
+                        if not info then break end
+                        local skip = false
+                        if not evidenceMatchesReq(info.requiresEvidence, evidence) then
+                            skip = true
+                        end
+                        if not skip and not auraFilterAccepts(info.auraFilter, auraFilter) then
+                            skip = true
+                        end
+                        if not skip then
+                            local expected
+                            if TR and TR.Resolve then
+                                local _, _, _, resolved = TR:Resolve(unit, spellID)
+                                if type(resolved) == "number" and resolved > 0 then
+                                    expected = resolved
+                                end
+                            end
+                            if not expected then expected = info.duration or 0 end
+                            if durationMatches(measuredDuration, expected, info) then
+                                local delta = mathAbs(measuredDuration - expected)
+                                if not bestDelta or delta < bestDelta then
+                                    bestSpellID, bestInfo = spellID, info
+                                    bestUnit, bestGUID = unit, selfGUID
+                                    bestDelta = delta
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    return bestSpellID, bestInfo, bestUnit, bestGUID
+end
+
+-- ------------------------------------------------------------------
+-- External attribution: find the caster among group candidates
+-- ------------------------------------------------------------------
+
+local function tryAttributeExternal(targetUnit, spellID, info, startedAt, measuredDuration)
+    local count = buildCasterCandidates(targetUnit, spellID, startedAt)
+
+    -- Pass 1: prefer the candidate whose UNIT_SPELLCAST_SUCCEEDED fired
+    -- within the evidence window of this aura's start time. With multiple
+    -- Paladins in group, Blessing of Sacrifice / Spellwarding would tie
+    -- otherwise — cast evidence breaks the tie when only one candidate
+    -- actually cast something near the aura. GUID lookup is deferred to
+    -- the single survivor.
+    local evidenceUnit
+    local evidenceCount = 0
+    for i = 1, count do
+        if candHasCastBuf[i] then
+            local u = candUnitBuf[i]
+            local _, classToken = UnitClass(u)
+            if classToken and info.class == classToken then
+                local spec = Inspector and Inspector:GetSpec(u) or nil
+                if Brain.MatchAuraToSpell(spellID, classToken, spec, nil, "caster") then
+                    evidenceCount = evidenceCount + 1
+                    evidenceUnit = u
+                end
+            end
+        end
+    end
+    if evidenceCount == 1 then
+        local evidenceGUID = Util and Util.SafeGUID(evidenceUnit) or nil
+        if evidenceGUID then
+            debugPrint("External attribution (cast evidence):", info.name, "→", evidenceUnit)
+            commitCooldown(evidenceGUID, evidenceUnit, spellID, info, startedAt, measuredDuration)
+            return
+        end
+    end
+
+    -- Pass 2: fall back to "single class candidate" attribution.
+    local bestUnit
+    local bestCount = 0
+    for i = 1, count do
+        local u = candUnitBuf[i]
+        local _, classToken = UnitClass(u)
+        if classToken and info.class == classToken then
+            local spec = Inspector and Inspector:GetSpec(u) or nil
+            if Brain.MatchAuraToSpell(spellID, classToken, spec, nil, "caster") then
+                bestCount = bestCount + 1
+                if bestCount > 1 then
+                    bestUnit = nil
+                    break
+                end
+                bestUnit = u
+            end
+        end
+    end
+    if bestUnit then
+        local bestGUID = Util and Util.SafeGUID(bestUnit) or nil
+        if bestGUID then
+            debugPrint("External attribution:", info.name, "→", bestUnit)
+            commitCooldown(bestGUID, bestUnit, spellID, info, startedAt, measuredDuration)
+            return
+        end
+    end
+
+    -- Pass 3: self-cast last-resort fallback. Fires when onAuraRemoved
+    -- already knew tracked.spellID at aura-add and reached
+    -- tryAttributeExternal directly (no matchByDuration call). The buffed
+    -- unit's class matches `info.class`, so they may have cast the
+    -- External on themselves (Disc Priest self-Pain-Suppression, Mistweaver
+    -- self-Life-Cocoon, Ret Pal self-BoP). Pass 1 and Pass 2 excluded the
+    -- target; here we revisit it once everything else has failed.
+    -- Counterpart in matchByDuration External tail covers the path where
+    -- spellID was unknown at aura-add and matchByDuration drives matching.
+    local _, targetClass = UnitClass(targetUnit)
+    if targetClass and info.class == targetClass then
+        local targetSpec = Inspector and Inspector:GetSpec(targetUnit) or nil
+        if Brain.MatchAuraToSpell(spellID, targetClass, targetSpec, nil, "caster") then
+            local selfGUID = Util and Util.SafeGUID(targetUnit) or nil
+            if selfGUID then
+                debugPrint("External self-cast attribution:", info.name, "→", targetUnit)
+                commitCooldown(selfGUID, targetUnit, spellID, info, startedAt, measuredDuration)
+            end
+        end
     end
 end
 
@@ -584,11 +852,14 @@ local function onAuraRemoved(unit, auraInstanceID)
         spellID = nil
     end
 
+    local matchedCasterUnit, matchedCasterGUID
     if not info and classToken then
         local name = Util and Util.SafeNameUnmodified(unit) or nil
         local talents = name and Inspector and Inspector:GetTalents(name) or nil
         local defaults = spec and ns.DefaultTalents and ns.DefaultTalents[spec] or nil
-        spellID, info = matchByDuration(measuredDuration, classToken, spec, tracked.auraType, evidence, talents, defaults, tracked.auraFilter)
+        spellID, info, matchedCasterUnit, matchedCasterGUID = matchByDuration(
+            measuredDuration, unit, classToken, spec, tracked.auraType,
+            evidence, talents, defaults, tracked.auraFilter, tracked.startTime)
         if spellID then
             debugPrint("Duration match:", info.name, "measured=", format("%.1f", measuredDuration),
                        "expected=", info.duration, "type=", tostring(tracked.auraType), "on", unit)
@@ -603,7 +874,12 @@ local function onAuraRemoved(unit, auraInstanceID)
     if not info then return end
 
     if isExternalSpell(info) then
-        tryAttributeExternal(unit, spellID, info, tracked.startTime, measuredDuration)
+        if matchedCasterGUID and matchedCasterUnit then
+            commitCooldown(matchedCasterGUID, matchedCasterUnit, spellID, info,
+                           tracked.startTime, measuredDuration)
+        else
+            tryAttributeExternal(unit, spellID, info, tracked.startTime, measuredDuration)
+        end
         return
     end
 
@@ -671,7 +947,8 @@ local function tryImmediateDetection(unit, aura)
         if not isExternalSpell(info) then
             local _, classToken = UnitClass(unit)
             local spec = Inspector and Inspector:GetSpec(unit) or nil
-            if Brain.MatchAuraToSpell(spellID, classToken, spec, nil, "caster") then
+            local race = select(2, UnitRace(unit))
+            if Brain.MatchAuraToSpell(spellID, classToken, spec, race, "caster") then
                 local now = GetTime and GetTime() or 0
                 commitCooldown(guid, unit, spellID, info, now, info.duration or 0)
             end
@@ -947,6 +1224,10 @@ function Brain:Init()
                 castSpellIdIndex[info.castSpellId] = spellID
             end
         end
+        -- Racial entries (info.race, no info.class) are intentionally NOT
+        -- indexed here: matchByDuration's secret-spellID path keys on class
+        -- only. Racials resolve via the readable-spellID fast path
+        -- (tryImmediateDetection) and the local cast path (onLocalCast).
         if info.class and info.category then
             spellsByClassCategory[info.class] = spellsByClassCategory[info.class] or {}
             local byClass = spellsByClassCategory[info.class]
@@ -1004,32 +1285,62 @@ function Brain:Init()
         local hasTalentData = not isLocal and next(talents) ~= nil
         local defaults = spec and ns.DefaultTalents and ns.DefaultTalents[spec] or nil
 
-        local eligibleN = 0
+        for k in pairs(seedBuf) do seedBuf[k] = nil end
         local eligibleSet = {}
+        local function include(spellID, info, talentsForResolve)
+            -- maxCharges resolution priority:
+            --   1. TalentResolver when talents are reliable (local player or
+            --      remote with inspected data) — picks up chargeModifiers.
+            --   2. info.charges base value otherwise (defaults / no data).
+            -- A wrong base on the seed self-corrects on the first commitCooldown,
+            -- which always re-resolves via TR with the full unit context.
+            local mc = info.charges or 1
+            if talentsForResolve and TR and TR.Resolve then
+                local _, resolved = TR:Resolve(unit, spellID)
+                if type(resolved) == "number" and resolved >= 1 then
+                    mc = resolved
+                end
+            end
+            seedBuf[spellID] = mc
+            eligibleSet[spellID] = true
+        end
+        -- Returns true if the local player knows the spell. When the catalog
+        -- key is the aura ID (different from the cast ID), IsPlayerSpell on
+        -- the aura ID returns false, so we probe the castSpellId(s) when
+        -- present. castSpellId may be a single number or a list.
+        local function localKnowsSpell(info, spellID)
+            if not IsPlayerSpell then return false end
+            local cast = info.castSpellId
+            if cast == nil then
+                return IsPlayerSpell(spellID) == true
+            end
+            if type(cast) == "number" then
+                return IsPlayerSpell(cast) == true
+            end
+            if type(cast) == "table" then
+                for i = 1, #cast do
+                    if IsPlayerSpell(cast[i]) == true then return true end
+                end
+            end
+            return false
+        end
         for spellID, info in pairs(ns.SpellData) do
             if Brain.MatchAuraToSpell(spellID, classToken, spec, race, "seed") then
                 if isLocal then
-                    if IsPlayerSpell and IsPlayerSpell(spellID) then
-                        eligibleN = eligibleN + 1
-                        seedBuf[eligibleN] = spellID
-                        eligibleSet[spellID] = true
+                    if localKnowsSpell(info, spellID) then
+                        include(spellID, info, true)
                     end
                 elseif hasTalentData then
                     if talents[spellID] and passesTalentGates(info, talents, nil) then
-                        eligibleN = eligibleN + 1
-                        seedBuf[eligibleN] = spellID
-                        eligibleSet[spellID] = true
+                        include(spellID, info, talents)
                     end
                 else
                     if passesTalentGates(info, nil, defaults) then
-                        eligibleN = eligibleN + 1
-                        seedBuf[eligibleN] = spellID
-                        eligibleSet[spellID] = true
+                        include(spellID, info, nil)
                     end
                 end
             end
         end
-        for i = eligibleN + 1, #seedBuf do seedBuf[i] = nil end
         if Store then
             if Store.SeedKnownSpells then
                 Store:SeedKnownSpells(guid, seedBuf)
@@ -1061,7 +1372,8 @@ function Brain:Init()
         lastFeignDeathState[u] = nil
         lastShieldTime[u]     = nil
         lastDebuffTime[u]     = nil
-        lastCastTime[u]       = nil
+        lastCastTimeAny[u]    = nil
+        lastCastSpellIds[u]   = nil
         unitCanFeign[u]       = nil
     end
 
@@ -1073,7 +1385,8 @@ function Brain:Init()
         for k in pairs(lastFeignDeathState) do lastFeignDeathState[k] = nil end
         for k in pairs(lastShieldTime)     do lastShieldTime[k] = nil end
         for k in pairs(lastDebuffTime)     do lastDebuffTime[k] = nil end
-        for k in pairs(lastCastTime)       do lastCastTime[k] = nil end
+        for k in pairs(lastCastTimeAny)    do lastCastTimeAny[k] = nil end
+        for k in pairs(lastCastSpellIds)   do lastCastSpellIds[k] = nil end
         for k in pairs(unitCanFeign)       do unitCanFeign[k] = nil end
         for k in pairs(rosterSnapshot)     do rosterSnapshot[k] = nil end
         purgeBackfillQueue()
@@ -1169,14 +1482,33 @@ function Brain:Init()
     seedFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
     seedFrame:RegisterEvent("GROUP_LEFT")
 
+    -- reason "spec" = authoritative spec change: wipe per-unit evidence and
+    -- the Store record so source=aura/cast entries from the previous spec do
+    -- not survive into the new spec's seed. reason "talents" (or nil for
+    -- back-compat 1-arg callers) keeps active CDs and just re-seeds.
+    local function onSpecChanged(unit, reason)
+        if reason == "spec" then
+            clearUnitState(unit)
+            local guid = Util and Util.SafeGUID(unit) or nil
+            if guid and Store and Store.ResetPlayer then
+                Store:ResetPlayer(guid)
+            end
+        end
+        seedForUnit(unit)
+    end
+    Brain._onSpecChanged = onSpecChanged
+
     if Inspector and Inspector.RegisterCallback then
-        Inspector:RegisterCallback(function(unit) seedForUnit(unit) end)
+        Inspector:RegisterCallback(onSpecChanged)
     end
 end
 
 -- Exposed for tests.
 Brain._auraFilterAccepts = auraFilterAccepts
-Brain._lastCastTime = lastCastTime
+Brain._lastCastTime = lastCastTimeAny
+Brain._lastCastSpellIds = lastCastSpellIds
+Brain._durationMatches = durationMatches
+Brain._matchByDuration = matchByDuration
 
 ns.Core.Brain = Brain
 return Brain

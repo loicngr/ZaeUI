@@ -244,7 +244,7 @@ fw.describe("CooldownStore — SeedKnownSpells", function()
 
     local changed = false
     Store:RegisterCallback("KnownSpellsChanged", function() changed = true end)
-    Store:SeedKnownSpells("GK", { 642, 498, 633 })  -- 642 existing, 498/633 new
+    Store:SeedKnownSpells("GK", { [642] = 1, [498] = 1, [633] = 1 })  -- 642 existing, 498/633 new
 
     fw.it("fires KnownSpellsChanged", function() fw.assertTrue(changed) end)
     fw.it("adds new spells as ready", function()
@@ -317,6 +317,53 @@ fw.describe("CooldownStore — multi-charge swipe restart between charges", func
     end)
     fw.it("final recharge does not fire another CooldownStart", function()
         fw.assertEq(#startEvents, 3, "no extra start at the final recharge")
+    end)
+end)
+
+fw.describe("CooldownStore — SeedKnownSpells respects per-spell maxCharges", function()
+    -- Bug fix: seed must initialize currentCharges = maxCharges so the first
+    -- cast on a multi-charge spell consumes the right amount. Before the fix,
+    -- maxCharges was hardcoded to 1, which caused the first cast on a 2-charge
+    -- spell (Ice Block w/ Glacial Bulwark, Pain Suppression w/ talent) to
+    -- display 0/2 instead of 1/2.
+    stubs.reset()
+    local Store = loadStore()
+    Store:Reset()
+    Store:RegisterPlayer("GMC", { name = "Mage", class = "MAGE", spec = 64, role = "DAMAGER" })
+    -- map form: { [spellID] = maxCharges }
+    Store:SeedKnownSpells("GMC", { [45438] = 2, [498] = 1 })
+
+    fw.it("seeds 2-charge spell with currentCharges == 2", function()
+        local cd = Store:Get("GMC", 45438)
+        fw.assertTrue(cd ~= nil, "expected seed entry for 45438")
+        fw.assertEq(cd.maxCharges, 2)
+        fw.assertEq(cd.currentCharges, 2)
+    end)
+    fw.it("seeds 1-charge spell with currentCharges == 1", function()
+        local cd = Store:Get("GMC", 498)
+        fw.assertEq(cd.maxCharges, 1)
+        fw.assertEq(cd.currentCharges, 1)
+    end)
+end)
+
+fw.describe("CooldownStore — first cast after multi-charge seed", function()
+    -- Regression: with the seed initializing currentCharges = maxCharges,
+    -- a first StartCooldown must leave (maxCharges - 1) charges available.
+    stubs.reset()
+    local Store = loadStore()
+    Store:Reset()
+    Store:RegisterPlayer("GMC2", { name = "Mage", class = "MAGE", spec = 64, role = "DAMAGER" })
+    Store:SeedKnownSpells("GMC2", { [45438] = 2 })
+
+    Store:StartCooldown("GMC2", 45438, {
+        name = "Mage", class = "MAGE", spec = 64, role = "DAMAGER",
+        startedAt = 100, duration = 240, maxCharges = 2, source = "aura",
+    })
+
+    fw.it("first cast leaves one charge available, not zero", function()
+        local cd = Store:Get("GMC2", 45438)
+        fw.assertEq(cd.maxCharges, 2)
+        fw.assertEq(cd.currentCharges, 1)
     end)
 end)
 
