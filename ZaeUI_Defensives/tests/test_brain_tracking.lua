@@ -54,7 +54,8 @@ local function buildInitializedEnv(opts)
                      requiresEvidence = "UnitFlags", canCancelEarly = true },
         [264735] = { name = "Survival of the Fittest", cooldown = 90, duration = 6,
                      category = "Personal", class = "HUNTER",
-                     requiresEvidence = false, minDuration = true },
+                     requiresEvidence = false, minDuration = true,
+                     durationModifiers = { { talent = 388039, bonus = 2 } } },
         [6940]   = { name = "Blessing of Sacrifice", cooldown = 120, duration = 12,
                      category = "External", class = "PALADIN",
                      requiresEvidence = "Shield" },
@@ -1535,6 +1536,69 @@ fw.describe("Brain tracking — racial defensive readable-spellID path", functio
 
         local cd = env.Store:Get("P-Human", 20594)
         fw.assertNil(cd, "Stoneform must not be committed on a non-Dwarf unit")
+    end)
+end)
+
+fw.describe("Brain tracking — racial defensive name fallback when spellId secret", function()
+    fw.it("Fireblood on a Dark Iron Dwarf bearer commits via name fallback", function()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [265221] = { name = "Fireblood", cooldown = 120, duration = 8,
+                             category = "Personal", race = "DarkIronDwarf",
+                             requiresEvidence = false },
+            },
+        })
+        stubs.roster["party1"] = { guid = "P-DID", name = "Happy",
+                                   class = "WARRIOR", race = "DarkIronDwarf",
+                                   role = "DAMAGER" }
+        env.ns.Core.Brain:Init()
+
+        env.stubs.setTime(40000)
+        local secretId = {}
+        env.stubs.secretValues[secretId] = true
+        env.fire.OnAuraChanged("party1", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 4100, name = "Fireblood" },
+            },
+        })
+        env.stubs.setTime(40008)
+        env.fire.OnAuraChanged("party1", {
+            removedAuraInstanceIDs = { 4100 },
+        })
+
+        local cd = env.Store:Get("P-DID", 265221)
+        fw.assertTrue(cd, "Fireblood CD should commit on the Dark Iron Dwarf bearer")
+        fw.assertEq(cd.duration, 120)
+    end)
+
+    fw.it("Fireblood name on a non-Dark-Iron-Dwarf bearer does NOT commit", function()
+        local env = buildInitializedEnv({
+            spellDataOverrides = {
+                [265221] = { name = "Fireblood", cooldown = 120, duration = 8,
+                             category = "Personal", race = "DarkIronDwarf",
+                             requiresEvidence = false },
+            },
+        })
+        stubs.roster["party1"] = { guid = "P-Human2", name = "Joe2",
+                                   class = "WARRIOR", race = "Human",
+                                   role = "DAMAGER" }
+        env.ns.Core.Brain:Init()
+
+        env.stubs.setTime(41000)
+        local secretId = {}
+        env.stubs.secretValues[secretId] = true
+        env.fire.OnAuraChanged("party1", {
+            addedAuras = {
+                { spellId = secretId, auraInstanceID = 4101, name = "Fireblood" },
+            },
+        })
+        env.stubs.setTime(41008)
+        env.fire.OnAuraChanged("party1", {
+            removedAuraInstanceIDs = { 4101 },
+        })
+
+        local cd = env.Store:Get("P-Human2", 265221)
+        fw.assertNil(cd, "Fireblood must not commit on a non-DID bearer")
     end)
 end)
 

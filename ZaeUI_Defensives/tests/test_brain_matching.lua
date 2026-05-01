@@ -209,6 +209,46 @@ fw.describe("Brain._durationMatches — explicit expected parameter", function()
     end)
 end)
 
+fw.describe("Brain._durationMatches — minDuration upper bound", function()
+    local B = loadBrain()
+
+    fw.it("rejects measured beyond base + sum of positive durationModifiers", function()
+        local info = { duration = 6, minDuration = true,
+                       durationModifiers = { { talent = 1, bonus = 2 } } }
+        fw.assertEq(B._durationMatches(11.0, 6, info), false)
+    end)
+
+    fw.it("accepts measured equal to base + bonus (talented variant)", function()
+        local info = { duration = 6, minDuration = true,
+                       durationModifiers = { { talent = 1, bonus = 2 } } }
+        fw.assertTrue(B._durationMatches(8.0, 6, info))
+    end)
+
+    fw.it("accepts measured equal to base", function()
+        local info = { duration = 6, minDuration = true,
+                       durationModifiers = { { talent = 1, bonus = 2 } } }
+        fw.assertTrue(B._durationMatches(6.0, 6, info))
+    end)
+
+    fw.it("with no durationModifiers, upper bound is base + tolerance", function()
+        local info = { duration = 6, minDuration = true }
+        fw.assertEq(B._durationMatches(8.0, 6, info), false)
+        fw.assertTrue(B._durationMatches(6.4, 6, info))
+    end)
+
+    fw.it("rejects measured below the lower tolerance", function()
+        local info = { duration = 6, minDuration = true,
+                       durationModifiers = { { talent = 1, bonus = 2 } } }
+        fw.assertEq(B._durationMatches(5.0, 6, info), false)
+    end)
+
+    fw.it("upper bound widens when expected is the talent-resolved value", function()
+        local info = { duration = 6, minDuration = true,
+                       durationModifiers = { { talent = 1, bonus = 2 } } }
+        fw.assertTrue(B._durationMatches(8.3, 8, info))
+    end)
+end)
+
 fw.describe("Brain._matchByDuration — uses talent-resolved duration per candidate", function()
     -- Ironbark base 12s, talent 392116 adds 4s → measured 16s should match.
     -- Without the per-candidate Resolve call, the function would only see the

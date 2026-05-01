@@ -411,7 +411,7 @@ local function isExternalSpell(info)
     return info.category == "External"
 end
 
-local function findSpellByNameAndClass(auraName, unitClass)
+local function findSpellByNameAndClass(auraName, unitClass, unitRace)
     local candidates = spellsByName[auraName]
     if not candidates then return nil, nil end
     for _, spellID in ipairs(candidates) do
@@ -420,8 +420,18 @@ local function findSpellByNameAndClass(auraName, unitClass)
             if isExternalSpell(info) then
                 return spellID, info
             end
-            if info.class == unitClass then
+            if info.class and info.class == unitClass then
                 return spellID, info
+            end
+            if info.race and unitRace then
+                local r = info.race
+                if type(r) == "string" then
+                    if r == unitRace then return spellID, info end
+                elseif type(r) == "table" then
+                    for i = 1, #r do
+                        if r[i] == unitRace then return spellID, info end
+                    end
+                end
             end
         end
     end
@@ -432,7 +442,16 @@ local function durationMatches(measuredDuration, expected, info)
     expected = expected or 0
     if expected <= 0 then return false end
     if info.minDuration then
-        return measuredDuration >= expected - DURATION_TOLERANCE
+        if measuredDuration < expected - DURATION_TOLERANCE then return false end
+        local upper = info.duration or expected
+        if info.durationModifiers then
+            for i = 1, #info.durationModifiers do
+                local m = info.durationModifiers[i]
+                if m and m.bonus and m.bonus > 0 then upper = upper + m.bonus end
+            end
+        end
+        if upper < expected then upper = expected end
+        return measuredDuration <= upper + DURATION_TOLERANCE
     end
     if info.canCancelEarly then
         return measuredDuration <= expected + DURATION_TOLERANCE
@@ -889,7 +908,8 @@ local function onAuraAdded(unit, aura)
     local isKnown = spellID and ns.SpellData and ns.SpellData[spellID]
     if not isKnown and auraName then
         local _, classToken = UnitClass(unit)
-        local candidate = findSpellByNameAndClass(auraName, classToken)
+        local _, unitRace = UnitRace(unit)
+        local candidate = findSpellByNameAndClass(auraName, classToken, unitRace)
         if candidate then
             spellID = candidate
             isKnown = true
